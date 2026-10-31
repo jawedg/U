@@ -11,9 +11,12 @@
     "voice:3d": "python3 scripts/voice_gemini.py --voice Charon",
     "render:3d": "remotion render Erklaervideo3D out/erklaervideo-3d.mp4 --gl=angle",
     "video:3d": "npm run voice:3d && npm run render:3d",
-    "voice:3d:offline": "python3 scripts/voice_piper.py"
+    "voice:3d:offline": "python3 scripts/voice_piper.py",
+    "voice:athan": "python3 scripts/voice_gemini.py --project athan --voice Charon",
+    "render:athan": "remotion render ErsterAdhan out/erster-adhan.mp4 --gl=angle"
   },
   "dependencies": {
+    "@fontsource/amiri": "^5.3.0",
     "@react-three/fiber": "^9.2.0",
     "@remotion/cli": "4.0.539",
     "@remotion/three": "^4.0.539",

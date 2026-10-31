@@ -1,0 +1,1137 @@
+{
+ "lines": [
+  {
+   "file": "athan/line-0.wav",
+   "seconds": 4.128,
+   "words": [
+    {
+     "word": "Wusstest",
+     "start": 0.1
+    },
+    {
+     "word": "du,",
+     "start": 0.526
+    },
+    {
+     "word": "dass",
+     "start": 0.909
+    },
+    {
+     "word": "der",
+     "start": 1.165
+    },
+    {
+     "word": "Gebetsruf",
+     "start": 1.378
+    },
+    {
+     "word": "im",
+     "start": 1.846
+    },
+    {
+     "word": "Islam",
+     "start": 2.017
+    },
+    {
+     "word": "mit",
+     "start": 2.315
+    },
+    {
+     "word": "einem",
+     "start": 2.528
+    },
+    {
+     "word": "*Traum*",
+     "start": 2.826
+    },
+    {
+     "word": "begann?",
+     "start": 3.124
+    }
+   ]
+  },
+  {
+   "file": "athan/line-1.wav",
+   "seconds": 6.844,
+   "words": [
+    {
+     "word": "Medina,",
+     "start": 0.1
+    },
+    {
+     "word": "im",
+     "start": 0.935
+    },
+    {
+     "word": "Jahr",
+     "start": 1.192
+    },
+    {
+     "word": "*622*.",
+     "start": 1.577
+    },
+    {
+     "word": "Die",
+     "start": 2.219
+    },
+    {
+     "word": "Muslime",
+     "start": 2.54
+    },
+    {
+     "word": "hatten",
+     "start": 3.118
+    },
+    {
+     "word": "gerade",
+     "start": 3.632
+    },
+    {
+     "word": "ihre",
+     "start": 4.146
+    },
+    {
+     "word": "erste",
+     "start": 4.531
+    },
+    {
+     "word": "*Moschee*",
+     "start": 4.981
+    },
+    {
+     "word": "gebaut.",
+     "start": 5.559
+    }
+   ]
+  },
+  {
+   "file": "athan/line-2.wav",
+   "seconds": 6.605,
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.1
+    },
+    {
+     "word": "es",
+     "start": 0.354
+    },
+    {
+     "word": "gab",
+     "start": 0.523
+    },
+    {
+     "word": "ein",
+     "start": 0.735
+    },
+    {
+     "word": "*Problem*.",
+     "start": 0.947
+    },
+    {
+     "word": "Niemand",
+     "start": 1.54
+    },
+    {
+     "word": "wusste",
+     "start": 1.921
+    },
+    {
+     "word": "genau,",
+     "start": 2.26
+    },
+    {
+     "word": "wann",
+     "start": 2.768
+    },
+    {
+     "word": "das",
+     "start": 3.022
+    },
+    {
+     "word": "Gebet",
+     "start": 3.233
+    },
+    {
+     "word": "beginnt.",
+     "start": 3.53
+    },
+    {
+     "word": "Die",
+     "start": 4.123
+    },
+    {
+     "word": "Leute",
+     "start": 4.334
+    },
+    {
+     "word": "*schätzten*",
+     "start": 4.631
+    },
+    {
+     "word": "die",
+     "start": 5.097
+    },
+    {
+     "word": "Zeit",
+     "start": 5.308
+    },
+    {
+     "word": "einfach.",
+     "start": 5.562
+    }
+   ]
+  },
+  {
+   "file": "athan/line-3.wav",
+   "seconds": 4.61,
+   "words": [
+    {
+     "word": "Also",
+     "start": 0.1
+    },
+    {
+     "word": "beriet",
+     "start": 0.354
+    },
+    {
+     "word": "sich",
+     "start": 0.692
+    },
+    {
+     "word": "der",
+     "start": 0.946
+    },
+    {
+     "word": "Prophet,",
+     "start": 1.157
+    },
+    {
+     "word": "Friede",
+     "start": 1.749
+    },
+    {
+     "word": "sei",
+     "start": 2.088
+    },
+    {
+     "word": "mit",
+     "start": 2.299
+    },
+    {
+     "word": "ihm,",
+     "start": 2.511
+    },
+    {
+     "word": "mit",
+     "start": 2.934
+    },
+    {
+     "word": "seinen",
+     "start": 3.145
+    },
+    {
+     "word": "*Gefährten*.",
+     "start": 3.483
+    }
+   ]
+  },
+  {
+   "file": "athan/line-4.wav",
+   "seconds": 7.501,
+   "words": [
+    {
+     "word": "Manche",
+     "start": 0.1
+    },
+    {
+     "word": "schlugen",
+     "start": 0.456
+    },
+    {
+     "word": "eine",
+     "start": 0.902
+    },
+    {
+     "word": "*Glocke*",
+     "start": 1.169
+    },
+    {
+     "word": "vor,",
+     "start": 1.526
+    },
+    {
+     "word": "wie",
+     "start": 1.972
+    },
+    {
+     "word": "bei",
+     "start": 2.194
+    },
+    {
+     "word": "den",
+     "start": 2.417
+    },
+    {
+     "word": "Christen.",
+     "start": 2.64
+    },
+    {
+     "word": "Andere",
+     "start": 3.308
+    },
+    {
+     "word": "ein",
+     "start": 3.665
+    },
+    {
+     "word": "*Horn*,",
+     "start": 3.888
+    },
+    {
+     "word": "wie",
+     "start": 4.378
+    },
+    {
+     "word": "bei",
+     "start": 4.601
+    },
+    {
+     "word": "den",
+     "start": 4.823
+    },
+    {
+     "word": "Juden.",
+     "start": 5.046
+    },
+    {
+     "word": "Wieder",
+     "start": 5.581
+    },
+    {
+     "word": "andere",
+     "start": 5.937
+    },
+    {
+     "word": "ein",
+     "start": 6.294
+    },
+    {
+     "word": "*Feuer*.",
+     "start": 6.517
+    }
+   ]
+  },
+  {
+   "file": "athan/line-5.wav",
+   "seconds": 7.817,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Gefährte",
+     "start": 0.388
+    },
+    {
+     "word": "namens",
+     "start": 0.965
+    },
+    {
+     "word": "*Abdullah",
+     "start": 1.426
+    },
+    {
+     "word": "ibn",
+     "start": 2.003
+    },
+    {
+     "word": "Zaid*",
+     "start": 2.291
+    },
+    {
+     "word": "ging",
+     "start": 2.638
+    },
+    {
+     "word": "besorgt",
+     "start": 2.984
+    },
+    {
+     "word": "nach",
+     "start": 3.503
+    },
+    {
+     "word": "Hause.",
+     "start": 3.849
+    },
+    {
+     "word": "In",
+     "start": 4.541
+    },
+    {
+     "word": "dieser",
+     "start": 4.771
+    },
+    {
+     "word": "Nacht",
+     "start": 5.233
+    },
+    {
+     "word": "hatte",
+     "start": 5.636
+    },
+    {
+     "word": "er",
+     "start": 6.04
+    },
+    {
+     "word": "einen",
+     "start": 6.271
+    },
+    {
+     "word": "*Traum*.",
+     "start": 6.674
+    }
+   ]
+  },
+  {
+   "file": "athan/line-6.wav",
+   "seconds": 7.734,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Mann",
+     "start": 0.325
+    },
+    {
+     "word": "in",
+     "start": 0.594
+    },
+    {
+     "word": "*grüner*",
+     "start": 0.774
+    },
+    {
+     "word": "Kleidung",
+     "start": 1.133
+    },
+    {
+     "word": "trug",
+     "start": 1.582
+    },
+    {
+     "word": "eine",
+     "start": 1.851
+    },
+    {
+     "word": "Glocke.",
+     "start": 2.121
+    },
+    {
+     "word": "Abdullah",
+     "start": 2.704
+    },
+    {
+     "word": "fragte",
+     "start": 3.153
+    },
+    {
+     "word": "ihn:",
+     "start": 3.512
+    },
+    {
+     "word": "Verkaufst",
+     "start": 3.962
+    },
+    {
+     "word": "du",
+     "start": 4.455
+    },
+    {
+     "word": "sie",
+     "start": 4.635
+    },
+    {
+     "word": "mir?",
+     "start": 4.86
+    },
+    {
+     "word": "Wir",
+     "start": 5.309
+    },
+    {
+     "word": "wollen",
+     "start": 5.533
+    },
+    {
+     "word": "damit",
+     "start": 5.892
+    },
+    {
+     "word": "zum",
+     "start": 6.207
+    },
+    {
+     "word": "*Gebet*",
+     "start": 6.431
+    },
+    {
+     "word": "rufen.",
+     "start": 6.745
+    }
+   ]
+  },
+  {
+   "file": "athan/line-7.wav",
+   "seconds": 6.352,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.1
+    },
+    {
+     "word": "Mann",
+     "start": 0.32
+    },
+    {
+     "word": "antwortete:",
+     "start": 0.583
+    },
+    {
+     "word": "Soll",
+     "start": 1.331
+    },
+    {
+     "word": "ich",
+     "start": 1.594
+    },
+    {
+     "word": "dir",
+     "start": 1.814
+    },
+    {
+     "word": "nicht",
+     "start": 2.034
+    },
+    {
+     "word": "etwas",
+     "start": 2.342
+    },
+    {
+     "word": "*Besseres*",
+     "start": 2.649
+    },
+    {
+     "word": "zeigen?",
+     "start": 3.089
+    },
+    {
+     "word": "Und",
+     "start": 3.66
+    },
+    {
+     "word": "er",
+     "start": 3.88
+    },
+    {
+     "word": "lehrte",
+     "start": 4.056
+    },
+    {
+     "word": "ihn",
+     "start": 4.407
+    },
+    {
+     "word": "die",
+     "start": 4.627
+    },
+    {
+     "word": "Worte",
+     "start": 4.847
+    },
+    {
+     "word": "des",
+     "start": 5.155
+    },
+    {
+     "word": "*Adhan*.",
+     "start": 5.374
+    }
+   ]
+  },
+  {
+   "file": "athan/line-8.wav",
+   "seconds": 11.379,
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.1
+    },
+    {
+     "word": "Morgen",
+     "start": 0.3
+    },
+    {
+     "word": "erzählte",
+     "start": 0.699
+    },
+    {
+     "word": "Abdullah",
+     "start": 1.198
+    },
+    {
+     "word": "dem",
+     "start": 1.697
+    },
+    {
+     "word": "Propheten,",
+     "start": 1.946
+    },
+    {
+     "word": "Friede",
+     "start": 2.745
+    },
+    {
+     "word": "sei",
+     "start": 3.144
+    },
+    {
+     "word": "mit",
+     "start": 3.394
+    },
+    {
+     "word": "ihm,",
+     "start": 3.643
+    },
+    {
+     "word": "davon.",
+     "start": 4.142
+    },
+    {
+     "word": "Er",
+     "start": 4.741
+    },
+    {
+     "word": "sagte:",
+     "start": 4.941
+    },
+    {
+     "word": "Das",
+     "start": 5.539
+    },
+    {
+     "word": "ist",
+     "start": 5.789
+    },
+    {
+     "word": "ein",
+     "start": 6.038
+    },
+    {
+     "word": "*wahrer*",
+     "start": 6.288
+    },
+    {
+     "word": "Traum.",
+     "start": 6.687
+    },
+    {
+     "word": "Bring",
+     "start": 7.286
+    },
+    {
+     "word": "es",
+     "start": 7.635
+    },
+    {
+     "word": "*Bilal*",
+     "start": 7.835
+    },
+    {
+     "word": "bei,",
+     "start": 8.184
+    },
+    {
+     "word": "denn",
+     "start": 8.683
+    },
+    {
+     "word": "er",
+     "start": 8.983
+    },
+    {
+     "word": "hat",
+     "start": 9.182
+    },
+    {
+     "word": "die",
+     "start": 9.432
+    },
+    {
+     "word": "kräftigere",
+     "start": 9.681
+    },
+    {
+     "word": "*Stimme*.",
+     "start": 10.28
+    }
+   ]
+  },
+  {
+   "file": "athan/line-9.wav",
+   "seconds": 13.2,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "Bilal?",
+     "start": 0.35
+    },
+    {
+     "word": "Er",
+     "start": 0.95
+    },
+    {
+     "word": "war",
+     "start": 1.15
+    },
+    {
+     "word": "einst",
+     "start": 1.4
+    },
+    {
+     "word": "ein",
+     "start": 1.75
+    },
+    {
+     "word": "*Sklave*",
+     "start": 2.0
+    },
+    {
+     "word": "aus",
+     "start": 2.4
+    },
+    {
+     "word": "Abessinien.",
+     "start": 2.65
+    },
+    {
+     "word": "In",
+     "start": 3.5
+    },
+    {
+     "word": "Mekka",
+     "start": 3.7
+    },
+    {
+     "word": "quälte",
+     "start": 4.05
+    },
+    {
+     "word": "man",
+     "start": 4.45
+    },
+    {
+     "word": "ihn",
+     "start": 4.7
+    },
+    {
+     "word": "unter",
+     "start": 4.95
+    },
+    {
+     "word": "der",
+     "start": 5.3
+    },
+    {
+     "word": "glühenden",
+     "start": 5.55
+    },
+    {
+     "word": "Sonne,",
+     "start": 6.1
+    },
+    {
+     "word": "mit",
+     "start": 6.7
+    },
+    {
+     "word": "einem",
+     "start": 6.95
+    },
+    {
+     "word": "*Felsen*",
+     "start": 7.3
+    },
+    {
+     "word": "auf",
+     "start": 7.7
+    },
+    {
+     "word": "der",
+     "start": 7.95
+    },
+    {
+     "word": "Brust.",
+     "start": 8.2
+    },
+    {
+     "word": "Doch",
+     "start": 8.8
+    },
+    {
+     "word": "er",
+     "start": 9.1
+    },
+    {
+     "word": "sagte",
+     "start": 9.3
+    },
+    {
+     "word": "immer",
+     "start": 9.65
+    },
+    {
+     "word": "nur:",
+     "start": 10.0
+    },
+    {
+     "word": "*Ahad*,",
+     "start": 10.5
+    },
+    {
+     "word": "*Ahad*.",
+     "start": 11.05
+    },
+    {
+     "word": "Gott",
+     "start": 11.6
+    },
+    {
+     "word": "ist",
+     "start": 11.9
+    },
+    {
+     "word": "*Einer*.",
+     "start": 12.15
+    }
+   ]
+  },
+  {
+   "file": "athan/line-10.wav",
+   "seconds": 8.659,
+   "words": [
+    {
+     "word": "Abu",
+     "start": 0.1
+    },
+    {
+     "word": "Bakr",
+     "start": 0.334
+    },
+    {
+     "word": "kaufte",
+     "start": 0.616
+    },
+    {
+     "word": "ihn",
+     "start": 0.991
+    },
+    {
+     "word": "*frei*.",
+     "start": 1.225
+    },
+    {
+     "word": "Und",
+     "start": 1.741
+    },
+    {
+     "word": "nun",
+     "start": 1.975
+    },
+    {
+     "word": "stieg",
+     "start": 2.209
+    },
+    {
+     "word": "genau",
+     "start": 2.537
+    },
+    {
+     "word": "dieser",
+     "start": 2.866
+    },
+    {
+     "word": "Mann",
+     "start": 3.241
+    },
+    {
+     "word": "auf",
+     "start": 3.522
+    },
+    {
+     "word": "das",
+     "start": 3.756
+    },
+    {
+     "word": "höchste",
+     "start": 3.991
+    },
+    {
+     "word": "Dach",
+     "start": 4.412
+    },
+    {
+     "word": "neben",
+     "start": 4.694
+    },
+    {
+     "word": "der",
+     "start": 5.022
+    },
+    {
+     "word": "Moschee.",
+     "start": 5.256
+    },
+    {
+     "word": "Er",
+     "start": 5.912
+    },
+    {
+     "word": "wurde",
+     "start": 6.1
+    },
+    {
+     "word": "der",
+     "start": 6.428
+    },
+    {
+     "word": "erste",
+     "start": 6.662
+    },
+    {
+     "word": "*Muezzin*",
+     "start": 6.99
+    },
+    {
+     "word": "des",
+     "start": 7.412
+    },
+    {
+     "word": "Islam.",
+     "start": 7.647
+    }
+   ]
+  },
+  {
+   "file": "",
+   "seconds": 14.0,
+   "words": []
+  },
+  {
+   "file": "athan/line-11.wav",
+   "seconds": 8.308,
+   "words": [
+    {
+     "word": "Als",
+     "start": 0.1
+    },
+    {
+     "word": "*Umar*",
+     "start": 0.313
+    },
+    {
+     "word": "den",
+     "start": 0.569
+    },
+    {
+     "word": "Ruf",
+     "start": 0.782
+    },
+    {
+     "word": "hörte,",
+     "start": 0.995
+    },
+    {
+     "word": "eilte",
+     "start": 1.507
+    },
+    {
+     "word": "er",
+     "start": 1.805
+    },
+    {
+     "word": "so",
+     "start": 1.975
+    },
+    {
+     "word": "schnell",
+     "start": 2.146
+    },
+    {
+     "word": "hinaus,",
+     "start": 2.53
+    },
+    {
+     "word": "dass",
+     "start": 3.084
+    },
+    {
+     "word": "er",
+     "start": 3.339
+    },
+    {
+     "word": "seinen",
+     "start": 3.51
+    },
+    {
+     "word": "Umhang",
+     "start": 3.851
+    },
+    {
+     "word": "hinter",
+     "start": 4.192
+    },
+    {
+     "word": "sich",
+     "start": 4.533
+    },
+    {
+     "word": "herzog.",
+     "start": 4.789
+    },
+    {
+     "word": "Er",
+     "start": 5.343
+    },
+    {
+     "word": "sagte:",
+     "start": 5.513
+    },
+    {
+     "word": "Ich",
+     "start": 6.025
+    },
+    {
+     "word": "habe",
+     "start": 6.238
+    },
+    {
+     "word": "*genau",
+     "start": 6.494
+    },
+    {
+     "word": "dasselbe*",
+     "start": 6.792
+    },
+    {
+     "word": "geträumt!",
+     "start": 7.218
+    }
+   ]
+  },
+  {
+   "file": "athan/line-12.wav",
+   "seconds": 6.409,
+   "words": [
+    {
+     "word": "Seit",
+     "start": 0.1
+    },
+    {
+     "word": "über",
+     "start": 0.414
+    },
+    {
+     "word": "*1400*",
+     "start": 0.728
+    },
+    {
+     "word": "Jahren",
+     "start": 1.042
+    },
+    {
+     "word": "erklingen",
+     "start": 1.46
+    },
+    {
+     "word": "dieselben",
+     "start": 2.036
+    },
+    {
+     "word": "Worte.",
+     "start": 2.611
+    },
+    {
+     "word": "Fünfmal",
+     "start": 3.239
+    },
+    {
+     "word": "am",
+     "start": 3.71
+    },
+    {
+     "word": "Tag,",
+     "start": 3.919
+    },
+    {
+     "word": "auf",
+     "start": 4.442
+    },
+    {
+     "word": "der",
+     "start": 4.704
+    },
+    {
+     "word": "*ganzen",
+     "start": 4.965
+    },
+    {
+     "word": "Welt*.",
+     "start": 5.384
+    }
+   ]
+  },
+  {
+   "file": "athan/line-13.wav",
+   "seconds": 2.273,
+   "words": [
+    {
+     "word": "Folge",
+     "start": 0.1
+    },
+    {
+     "word": "für",
+     "start": 0.328
+    },
+    {
+     "word": "mehr",
+     "start": 0.49
+    },
+    {
+     "word": "*Geschichten*",
+     "start": 0.685
+    },
+    {
+     "word": "aus",
+     "start": 1.108
+    },
+    {
+     "word": "dem",
+     "start": 1.27
+    },
+    {
+     "word": "Islam.",
+     "start": 1.433
+    }
+   ]
+  }
+ ]
+}

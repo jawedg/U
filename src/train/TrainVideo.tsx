@@ -4,7 +4,6 @@ import {
   Audio,
   Sequence,
   interpolate,
-  spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
@@ -14,8 +13,8 @@ import script from "./script.json";
 import timing from "./timing.json";
 import { SHOTS } from "./shots";
 import { TrainScene } from "./TrainScene";
+import { Caption, Word } from "../common/Caption";
 
-type Word = { word: string; start: number };
 type Line = { file: string; seconds: number; words: Word[] };
 
 const SENTENCES = script.sentences as { shot: string; text: string }[];
@@ -35,40 +34,6 @@ const lineInfo = (i: number): Line => {
 
 export const trainDurationFrames = (fps: number) =>
   SENTENCES.reduce((sum, _, i) => sum + Math.ceil(lineInfo(i).seconds * fps), 0);
-
-const Caption: React.FC<{ words: Word[] }> = ({ words }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const t = frame / fps;
-  let idx = -1;
-  words.forEach((w, i) => {
-    if (t >= w.start) idx = i;
-  });
-  if (idx < 0) return null;
-  const w = words[idx];
-  const key = w.word.includes("*");
-  const clean = w.word.replace(/\*/g, "").replace(/[.,:!?]$/, "");
-  const label = clean.charAt(0).toUpperCase() + clean.slice(1);
-  const pop = spring({ frame: frame - Math.round(w.start * fps), fps, config: { damping: 11, stiffness: 260 } });
-  return (
-    <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", top: 120 }}>
-      <div
-        style={{
-          fontFamily: "Inter, 'DejaVu Sans', sans-serif",
-          fontWeight: 800,
-          fontSize: label.length > 14 ? 74 : 92,
-          color: key ? "#ffc531" : "white",
-          transform: `scale(${0.75 + 0.25 * pop})`,
-          textShadow: "0 0 6px rgba(0,0,0,0.9), 0 4px 14px rgba(0,0,0,0.75)",
-          WebkitTextStroke: "2px rgba(0,0,0,0.35)",
-          letterSpacing: 0.5,
-        }}
-      >
-        {label}
-      </div>
-    </AbsoluteFill>
-  );
-};
 
 const Shot: React.FC<{ index: number; duration: number }> = ({ index, duration }) => {
   const frame = useCurrentFrame();

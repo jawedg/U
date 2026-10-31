@@ -22,3 +22,14 @@ npx remotion render Erklaervideo3D out/<name>.mp4 --gl=swangle --concurrency=4 \
   --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
 ```
 Lokal reicht `npm run render:3d`.
+
+## TikTok-Kanal: Islam (Geschichten, Fakten)
+- Erstes Video: `src/athan/` (Komposition `ErsterAdhan`) – „Der erste Adhan“, ca. 1:55 min.
+- Zielänge: **1:30–2:00 min** (über 1 min für Creator Rewards, nicht gehetzt, max. ~2:30).
+- **Keine Darstellung von Propheten, Sahaba oder anderen Menschen** – nur Orte, Licht, Symbole.
+- Bei Erwähnung des Propheten: „Friede sei mit ihm“ sprechen.
+- Fakten nur mit Quellen (Hadith-Nummern) – Quellen in `script.json` -> `sources` und in die TikTok-Beschreibung.
+- Echte Adhan-Aufnahme: Datei vom Nutzer nach `public/athan/athan.mp3`, dann in `src/athan/script.json`
+  `"athanFile": "athan/athan.mp3"` setzen (Länge über `athanSeconds`). Ohne Datei bleibt die Stelle still (nur Wind).
+- Kein Musik-Hintergrund, nur leiser Wind (`public/athan/wind.mp3`).
+- Stimme: `npm run voice:athan` (Gemini Charon). Tageslimit beachten.
