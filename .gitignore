@@ -5,3 +5,6 @@ public/voice/*.mp3
 .env
 !out/erklaervideo-3d.mp4
 models/
+out/stimmproben/*.wav
+!out/stimmproben/*.mp3
+!out/erklaervideo-3d-algenib.mp4
