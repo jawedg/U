@@ -1,0 +1,5 @@
+node_modules/
+out/*
+!out/video.mp4
+public/voice/*.mp3
+.env

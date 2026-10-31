@@ -1,0 +1,22 @@
+{
+  "name": "tiktok-text-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TikTok-Textvideos (9:16) mit Remotion + kostenloser KI-Stimme (edge-tts)",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "python3 scripts/voice.py",
+    "render": "remotion render TextVideo out/video.mp4",
+    "video": "npm run voice && npm run render"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}
