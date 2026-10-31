@@ -6,5 +6,6 @@ public/voice/*.mp3
 !out/erklaervideo-3d.mp4
 models/
 out/stimmproben/*.wav
+!out/stimmproben/
 !out/stimmproben/*.mp3
-!out/erklaervideo-3d-algenib.mp4
+!out/erklaervideo-3d-charon.mp4
