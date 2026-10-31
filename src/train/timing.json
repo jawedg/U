@@ -1,0 +1,314 @@
+{
+ "lines": [
+  {
+   "file": "train/line-0.wav",
+   "seconds": 3.303,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.12
+    },
+    {
+     "word": "*Schnellzug*",
+     "start": 0.316
+    },
+    {
+     "word": "fährt",
+     "start": 0.786
+    },
+    {
+     "word": "mit",
+     "start": 1.061
+    },
+    {
+     "word": "*dreihundert*",
+     "start": 1.257
+    },
+    {
+     "word": "Kilometern",
+     "start": 1.767
+    },
+    {
+     "word": "pro",
+     "start": 2.237
+    },
+    {
+     "word": "Stunde.",
+     "start": 2.433
+    }
+   ]
+  },
+  {
+   "file": "train/line-1.wav",
+   "seconds": 2.549,
+   "words": [
+    {
+     "word": "Plötzlich",
+     "start": 0.12
+    },
+    {
+     "word": "steht",
+     "start": 0.541
+    },
+    {
+     "word": "da",
+     "start": 0.809
+    },
+    {
+     "word": "vorne",
+     "start": 0.962
+    },
+    {
+     "word": "ein",
+     "start": 1.23
+    },
+    {
+     "word": "*rotes*",
+     "start": 1.421
+    },
+    {
+     "word": "*Signal*.",
+     "start": 1.689
+    }
+   ]
+  },
+  {
+   "file": "train/line-2.wav",
+   "seconds": 3.582,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.12
+    },
+    {
+     "word": "*Problem*:",
+     "start": 0.302
+    },
+    {
+     "word": "Bis",
+     "start": 0.776
+    },
+    {
+     "word": "der",
+     "start": 0.958
+    },
+    {
+     "word": "Zug",
+     "start": 1.141
+    },
+    {
+     "word": "steht,",
+     "start": 1.323
+    },
+    {
+     "word": "braucht",
+     "start": 1.724
+    },
+    {
+     "word": "er",
+     "start": 2.052
+    },
+    {
+     "word": "fast",
+     "start": 2.198
+    },
+    {
+     "word": "*drei*",
+     "start": 2.417
+    },
+    {
+     "word": "*Kilometer*.",
+     "start": 2.635
+    }
+   ]
+  },
+  {
+   "file": "train/line-3.wav",
+   "seconds": 2.235,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.12
+    },
+    {
+     "word": "Signal",
+     "start": 0.311
+    },
+    {
+     "word": "wäre",
+     "start": 0.616
+    },
+    {
+     "word": "also",
+     "start": 0.844
+    },
+    {
+     "word": "*längst*",
+     "start": 1.073
+    },
+    {
+     "word": "*vorbei*.",
+     "start": 1.378
+    }
+   ]
+  },
+  {
+   "file": "train/line-4.wav",
+   "seconds": 4.604,
+   "words": [
+    {
+     "word": "Deshalb",
+     "start": 0.12
+    },
+    {
+     "word": "liegt",
+     "start": 0.473
+    },
+    {
+     "word": "ein",
+     "start": 0.748
+    },
+    {
+     "word": "*Kabel*",
+     "start": 0.945
+    },
+    {
+     "word": "im",
+     "start": 1.22
+    },
+    {
+     "word": "Gleis,",
+     "start": 1.377
+    },
+    {
+     "word": "das",
+     "start": 1.809
+    },
+    {
+     "word": "die",
+     "start": 2.005
+    },
+    {
+     "word": "Signale",
+     "start": 2.201
+    },
+    {
+     "word": "direkt",
+     "start": 2.555
+    },
+    {
+     "word": "in",
+     "start": 2.869
+    },
+    {
+     "word": "den",
+     "start": 3.026
+    },
+    {
+     "word": "*Führerstand*",
+     "start": 3.222
+    },
+    {
+     "word": "sendet.",
+     "start": 3.733
+    }
+   ]
+  },
+  {
+   "file": "train/line-5.wav",
+   "seconds": 3.582,
+   "words": [
+    {
+     "word": "So",
+     "start": 0.12
+    },
+    {
+     "word": "kennt",
+     "start": 0.271
+    },
+    {
+     "word": "der",
+     "start": 0.536
+    },
+    {
+     "word": "Zug",
+     "start": 0.725
+    },
+    {
+     "word": "die",
+     "start": 0.914
+    },
+    {
+     "word": "Strecke",
+     "start": 1.103
+    },
+    {
+     "word": "bis",
+     "start": 1.443
+    },
+    {
+     "word": "zu",
+     "start": 1.632
+    },
+    {
+     "word": "*dreizehn*",
+     "start": 1.783
+    },
+    {
+     "word": "*Kilometer*",
+     "start": 2.161
+    },
+    {
+     "word": "im",
+     "start": 2.577
+    },
+    {
+     "word": "Voraus.",
+     "start": 2.728
+    }
+   ]
+  },
+  {
+   "file": "train/line-6.wav",
+   "seconds": 3.199,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.12
+    },
+    {
+     "word": "reagiert",
+     "start": 0.294
+    },
+    {
+     "word": "der",
+     "start": 0.642
+    },
+    {
+     "word": "Lokführer",
+     "start": 0.816
+    },
+    {
+     "word": "nicht,",
+     "start": 1.199
+    },
+    {
+     "word": "bremst",
+     "start": 1.581
+    },
+    {
+     "word": "der",
+     "start": 1.86
+    },
+    {
+     "word": "Zug",
+     "start": 2.034
+    },
+    {
+     "word": "*automatisch*.",
+     "start": 2.208
+    }
+   ]
+  }
+ ]
+}

@@ -7,13 +7,20 @@
     "studio": "remotion studio",
     "voice": "python3 scripts/voice.py",
     "render": "remotion render TextVideo out/video.mp4",
-    "video": "npm run voice && npm run render"
+    "video": "npm run voice && npm run render",
+    "voice:3d": "python3 scripts/voice_piper.py",
+    "render:3d": "remotion render Erklaervideo3D out/erklaervideo-3d.mp4 --gl=angle",
+    "video:3d": "npm run voice:3d && npm run render:3d"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.2.0",
     "@remotion/cli": "4.0.539",
+    "@remotion/three": "^4.0.539",
+    "@types/three": "^0.178.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "remotion": "4.0.539"
+    "remotion": "4.0.539",
+    "three": "^0.178.0"
   },
   "devDependencies": {
     "@types/react": "19.1.0",

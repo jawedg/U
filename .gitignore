@@ -3,3 +3,5 @@ out/*
 !out/video.mp4
 public/voice/*.mp3
 .env
+!out/erklaervideo-3d.mp4
+models/

@@ -1,0 +1,33 @@
+{
+  "title": "Warum ein Schnellzug kein Signal sehen muss",
+  "sentences": [
+    {
+      "shot": "intro",
+      "text": "Ein *Schnellzug* fährt mit *dreihundert* Kilometern pro Stunde."
+    },
+    {
+      "shot": "redAhead",
+      "text": "Plötzlich steht da vorne ein *rotes* *Signal*."
+    },
+    {
+      "shot": "brakeBar",
+      "text": "Das *Problem*: Bis der Zug steht, braucht er fast *drei* *Kilometer*."
+    },
+    {
+      "shot": "passed",
+      "text": "Das Signal wäre also *längst* *vorbei*."
+    },
+    {
+      "shot": "cable",
+      "text": "Deshalb liegt ein *Kabel* im Gleis, das die Signale direkt in den *Führerstand* sendet."
+    },
+    {
+      "shot": "blocks",
+      "text": "So kennt der Zug die Strecke bis zu *dreizehn* *Kilometer* im Voraus."
+    },
+    {
+      "shot": "emergency",
+      "text": "Und reagiert der Lokführer nicht, bremst der Zug *automatisch*."
+    }
+  ]
+}
