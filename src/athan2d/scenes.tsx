@@ -174,10 +174,10 @@ export const SCENES: Record<string, SceneDef> = {
     ],
     draw: ({ t, D, w }) => (
       <Council t={t} D={D} zoom={1.08}>
-        <Bubble x={250} y={850} o={fade(t, w("Glocke") - 0.15, 0.35)} tailX={-40}>
+        <Bubble x={290} y={860} o={fade(t, w("Glocke") - 0.15, 0.35)} tailX={-40}>
           <Bell s={1.1} swing={Math.sin(t * 6) * 12 * clamp(1 - (t - w("Glocke")) / 2)} />
         </Bubble>
-        <Bubble x={830} y={850} o={fade(t, w("Horn") - 0.15, 0.35)} tailX={40}>
+        <Bubble x={790} y={860} o={fade(t, w("Horn") - 0.15, 0.35)} tailX={40}>
           <Horn s={1.1} />
         </Bubble>
         <Bubble x={540} y={700} o={fade(t, w("Feuer") - 0.15, 0.35)}>
@@ -253,10 +253,10 @@ export const SCENES: Record<string, SceneDef> = {
           <circle cx={300} cy={1270} r={lerp(30, 70, t / D)} fill="url(#sunGlow)" />
           <Ground y={1300} />
           <Town y={1300} seed={9} t={t} gapL={200} gapR={1100} dim />
-          <Mosque x={760} y={1300} s={0.9} doorGlow={1} />
-          <HolyLight x={760} y={1225} r={110} o={0.9} t={t} />
+          <Mosque x={680} y={1300} s={0.75} doorGlow={1} />
+          <HolyLight x={680} y={1225} r={110} o={0.9} t={t} />
           <Person x={lerp(80, 560, t / (D * 0.5))} y={1320} s={0.8} pose={t < D * 0.5 ? "walk" : "stand"} phase={t * 6} head="turban" glow={1} />
-          <Person x={950} y={1320} s={0.85} head="cap" glow={bilal} opacity={bilal} flip />
+          <Person x={880} y={1320} s={0.85} head="cap" glow={bilal} opacity={bilal} flip />
         </Cam>
       );
     },
@@ -438,12 +438,12 @@ const Council: React.FC<{ t: number; D: number; zoom?: number; children?: React.
     ))}
     <Ground y={1300} />
     <HolyLight x={540} y={1200} r={120} o={0.95} t={t} />
-    <Person x={230} y={1330} s={0.8} pose="sit" head="turban" />
+    <Person x={270} y={1330} s={0.8} pose="sit" head="turban" />
     <Person x={380} y={1350} s={0.8} pose="sit" head="shawl" />
     <Person x={700} y={1350} s={0.8} pose="sit" head="cap" flip />
-    <Person x={850} y={1330} s={0.8} pose="sit" head="turban" flip />
-    <Person x={130} y={1380} s={0.85} pose="sit" head="cap" />
-    <Person x={950} y={1380} s={0.85} pose="sit" head="shawl" flip />
+    <Person x={810} y={1330} s={0.8} pose="sit" head="turban" flip />
+    <Person x={190} y={1380} s={0.85} pose="sit" head="cap" />
+    <Person x={890} y={1380} s={0.85} pose="sit" head="shawl" flip />
     {children}
   </Cam>
 );
