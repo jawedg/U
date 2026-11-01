@@ -32,6 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
 PAUSE = 0.3  # Sekunden Pause nach jeder Szene
+ALIGN = True  # Schnittpunkte per Gemini-Transkription bestimmen (genauer bei langen Blöcken)
 
 
 def tts(text: str, voice: str) -> bytes:
@@ -107,7 +108,7 @@ def spoken(s: dict) -> str:
     return s.get("say", s["text"]).replace("*", "")
 
 
-def split(full: Path, texts: list[str], out_dir: Path) -> list[Path]:
+def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list[Path]:
     """Schnittpunkte: erwartete Position (nach Textlänge) -> nächste echte Sprechpause."""
     n = len(texts)
     log = subprocess.run(
@@ -121,27 +122,32 @@ def split(full: Path, texts: list[str], out_dir: Path) -> list[Path]:
     speech_start = ends[0] if starts and starts[0] <= 0.05 else 0.0
     speech_end = starts[-1] if len(starts) > len(ends) or (starts and starts[-1] > ends[-1]) else total
     weights = [len(t) + 12 for t in texts]  # +12 ~ Pause zwischen Szenen
-    cuts, used, acc = [], set(), 0
-    for i in range(n - 1):
-        acc += weights[i]
-        expected = speech_start + (speech_end - speech_start) * acc / sum(weights)
-        # Kandidaten: nahe Pausen, längere Pausen bevorzugt
-        best, best_score = None, 1e9
-        for k, (s, e) in enumerate(gaps):
-            if k in used or (cuts and (s + e) / 2 <= cuts[-1]):
-                continue
-            score = abs((s + e) / 2 - expected) - 6 * (e - s)
-            if score < best_score:
-                best, best_score = k, score
-        if best is None:
-            sys.exit("❌ Konnte die Erzählung nicht sauber in Szenen schneiden.")
-        used.add(best)
-        cuts.append(sum(gaps[best]) / 2)
+    cuts = align_cuts(full, texts, gaps, total) if (ALIGN and n > 2) else None
+    if cuts:
+        print("   ✓ Schnitte per Transkript-Abgleich")
+    else:
+        if ALIGN and n > 2:
+            print("   ⚠️  Abgleich fehlgeschlagen – schätze nach Textlänge")
+        cuts, used, acc = [], set(), 0
+        for i in range(n - 1):
+            acc += weights[i]
+            expected = speech_start + (speech_end - speech_start) * acc / sum(weights)
+            best, best_score = None, 1e9
+            for k, (s, e) in enumerate(gaps):
+                if k in used or (cuts and (s + e) / 2 <= cuts[-1]):
+                    continue
+                score = abs((s + e) / 2 - expected) - 6 * (e - s)
+                if score < best_score:
+                    best, best_score = k, score
+            if best is None:
+                sys.exit("❌ Konnte die Erzählung nicht sauber in Szenen schneiden.")
+            used.add(best)
+            cuts.append(sum(gaps[best]) / 2)
     bounds = [0.0] + cuts + [total]
     out_dir.mkdir(parents=True, exist_ok=True)
     files = []
     for i in range(n):
-        f = out_dir / f"line-{i}.wav"
+        f = out_dir / f"line-{prefix}{i}.wav"
         subprocess.run(
             ["ffmpeg", "-loglevel", "error", "-y", "-i", str(full), "-ss", f"{bounds[i]:.3f}",
              "-to", f"{bounds[i + 1]:.3f}", str(f)],
@@ -149,6 +155,83 @@ def split(full: Path, texts: list[str], out_dir: Path) -> list[Path]:
         )
         files.append(f)
     return files
+
+
+TEXT_MODELS = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-latest", "gemini-3.8-flash"]
+
+
+def _text_model(parts: list, timeout: int = 600) -> str | None:
+    key = os.environ.get("GEMINI_API_KEY")
+    body = json.dumps({"contents": [{"parts": parts}]}).encode()
+    for model in TEXT_MODELS * 2:
+        req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                                     data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.load(r)["candidates"][0]["content"]["parts"][0]["text"]
+        except Exception as e:  # noqa: BLE001
+            print(f"   … {model}: {e}")
+            time.sleep(8)
+    return None
+
+
+def _norm(txt: str) -> list[str]:
+    return re.sub(r"[^a-zäöüß0-9 ]", " ", txt.lower().replace("ß", "ss")).split()
+
+
+def align_cuts(full: Path, texts: list[str], gaps: list[tuple[float, float]], total: float) -> list[float] | None:
+    """Schneidet an echten Sprechpausen: jede Phrase zwischen zwei Pausen wird von Gemini transkribiert,
+    das Transkript wird Wort für Wort mit dem Skript abgeglichen."""
+    import difflib
+    bounds = [0.0] + [(s + e) / 2 for s, e in gaps] + [total]
+    chunks = [(bounds[i], bounds[i + 1]) for i in range(len(bounds) - 1)]
+    tmp = full.parent / "_chunks"
+    tmp.mkdir(exist_ok=True)
+    parts = []
+    for i, (a, b) in enumerate(chunks):
+        f = tmp / f"c{i}.mp3"
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(full), "-ss", f"{a:.3f}", "-to", f"{b:.3f}",
+                        "-ac", "1", "-b:a", "40k", str(f)], check=True)
+        parts += [{"text": f"Audio {i + 1}:"}, {"inlineData": {"mimeType": "audio/mp3", "data": base64.b64encode(f.read_bytes()).decode()}}]
+        f.unlink()
+    tmp.rmdir()
+    parts.append({"text": f"Es sind {len(chunks)} kurze Audios einer deutschen Aufnahme. Transkribiere JEDES wortwörtlich. "
+                          "Zahlen als Wörter. Format: eine Zeile pro Audio: 'N | Text'. Ist ein Audio still, schreibe 'N | -'."})
+    out = _text_model(parts)
+    if not out:
+        return None
+    trans: dict[int, list[str]] = {}
+    for line in out.splitlines():
+        m = re.match(r"\s*(\d+)\s*\|(.*)", line)
+        if m:
+            trans[int(m.group(1)) - 1] = _norm(m.group(2))
+    t_words, t_chunk = [], []
+    for i in range(len(chunks)):
+        for w in trans.get(i, []):
+            t_words.append(w)
+            t_chunk.append(i)
+    s_words, scene_first = [], []
+    for k, t in enumerate(texts):
+        scene_first.append(len(s_words))
+        s_words += _norm(t)
+    sm = difflib.SequenceMatcher(a=s_words, b=t_words, autojunk=False)
+    m_of = {}
+    for blk in sm.get_matching_blocks():
+        for j in range(blk.size):
+            m_of[blk.a + j] = blk.b + j
+    cuts = []
+    for k in range(1, len(texts)):
+        idx = scene_first[k]
+        # erstes zugeordnetes Wort ab Szenenanfang (max. 6 Wörter weiter suchen)
+        tb = next((m_of[x] for x in range(idx, min(idx + 6, len(s_words))) if x in m_of), None)
+        if tb is None:
+            return None
+        ci = t_chunk[tb]
+        cut = bounds[ci]
+        if cuts and cut <= cuts[-1]:
+            return None
+        cuts.append(cut)
+    return cuts
 
 
 def word_times(text: str, dur: float) -> list[dict]:
@@ -181,14 +264,21 @@ def main() -> None:
     samples_dir = ROOT / "out" / "stimmproben"
     samples_dir.mkdir(parents=True, exist_ok=True)
 
-    def full_path(v: str) -> Path:
-        return samples_dir / (f"{v}.wav" if a.project == "train" else f"{a.project}-{v}.wav")
+    # Lange Skripte: Szenen mit "part" werden blockweise aufgenommen (1 Anfrage pro Block)
+    parts = sorted({s.get("part", 0) for s in voiced})
+    multi = len(parts) > 1
 
-    def narrate(v: str) -> Path:
-        f = full_path(v)
+    def full_path(v: str, part: int = 0) -> Path:
+        if a.project == "train":
+            return samples_dir / f"{v}.wav"
+        return samples_dir / (f"{a.project}-{v}-p{part}.wav" if multi else f"{a.project}-{v}.wav")
+
+    def narrate(v: str, part: int = 0) -> Path:
+        f = full_path(v, part)
         if a.neu or not f.exists():
-            print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}) …")
-            save_audio(f, tts("\n\n".join(spoken(s) for s in voiced), v))
+            block = [s for s in voiced if s.get("part", 0) == part]
+            print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}), Block {part} …")
+            save_audio(f, tts("\n\n".join(spoken(s) for s in block), v))
         return f
 
     if a.samples:
@@ -196,7 +286,11 @@ def main() -> None:
             print(f"🎧 {narrate(v).relative_to(ROOT)}")
         return
 
-    files = iter(split(narrate(a.voice), [spoken(s) for s in voiced], out_dir))
+    all_files: list[Path] = []
+    for part in parts:
+        block = [s for s in voiced if s.get("part", 0) == part]
+        all_files += split(narrate(a.voice, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "")
+    files = iter(all_files)
     lines = []
     for i, s in enumerate(scenes):
         if not s.get("text"):

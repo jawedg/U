@@ -11,3 +11,4 @@ out/stimmproben/*.wav
 !out/erklaervideo-3d-charon.mp4
 !out/erster-adhan.mp4
 !out/erster-adhan-2d.mp4
+public/wiso/line-*.wav
