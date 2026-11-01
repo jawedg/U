@@ -122,9 +122,20 @@ def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list
     speech_start = ends[0] if starts and starts[0] <= 0.05 else 0.0
     speech_end = starts[-1] if len(starts) > len(ends) or (starts and starts[-1] > ends[-1]) else total
     weights = [len(t) + 12 for t in texts]  # +12 ~ Pause zwischen Szenen
-    cuts = align_cuts(full, texts, gaps, total) if (ALIGN and n > 2) else None
-    if cuts:
-        print("   ✓ Schnitte per Transkript-Abgleich")
+    import hashlib
+    cache = full.with_suffix(".cuts.json")
+    sig = hashlib.sha1(("\n".join(texts) + str(total)).encode()).hexdigest()
+    cuts = None
+    if cache.exists():
+        c = json.loads(cache.read_text())
+        if c.get("sig") == sig:
+            cuts = c["cuts"]
+            print("   ✓ Schnitte aus Cache")
+    if cuts is None and ALIGN and n > 2:
+        cuts = align_cuts(full, texts, gaps, total)
+        if cuts:
+            cache.write_text(json.dumps({"sig": sig, "cuts": cuts}))
+            print("   ✓ Schnitte per Transkript-Abgleich")
     else:
         if ALIGN and n > 2:
             print("   ⚠️  Abgleich fehlgeschlagen – schätze nach Textlänge")
@@ -157,7 +168,7 @@ def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list
     return files
 
 
-TEXT_MODELS = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-flash-latest", "gemini-3.8-flash"]
+TEXT_MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest", "gemini-flash-lite-latest"]
 
 
 def _text_model(parts: list, timeout: int = 600) -> str | None:
