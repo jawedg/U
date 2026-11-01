@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
 PAUSE = 0.3  # Sekunden Pause nach jeder Szene
-ALIGN = True  # Schnittpunkte per Gemini-Transkription bestimmen (genauer bei langen Blöcken)
+ALIGN = False  # Schnittpunkte per Gemini-Transkription bestimmen (genauer bei langen Blöcken)
 
 
 def tts(text: str, voice: str) -> bytes:
@@ -131,13 +131,22 @@ def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list
         if c.get("sig") == sig:
             cuts = c["cuts"]
             print("   ✓ Schnitte aus Cache")
+    if cuts is None and n > 2:
+        cuts = local_align(full, texts, gaps, total)
+        if cuts:
+            cache.write_text(json.dumps({"sig": sig, "cuts": cuts}))
+            print("   ✓ Schnitte per lokaler Spracherkennung (Whisper)")
+    if cuts is None and n > 2:
+        cuts = dp_cuts(texts, gaps, speech_start, speech_end)
+        if cuts:
+            print("   ✓ Schnitte per Tempo-Optimierung")
     if cuts is None and ALIGN and n > 2:
         cuts = align_cuts(full, texts, gaps, total)
         if cuts:
             cache.write_text(json.dumps({"sig": sig, "cuts": cuts}))
             print("   ✓ Schnitte per Transkript-Abgleich")
-    else:
-        if ALIGN and n > 2:
+    if cuts is None:
+        if n > 2:
             print("   ⚠️  Abgleich fehlgeschlagen – schätze nach Textlänge")
         cuts, used, acc = [], set(), 0
         for i in range(n - 1):
@@ -169,6 +178,157 @@ def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list
 
 
 TEXT_MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest", "gemini-flash-lite-latest"]
+
+
+def dp_cuts(texts: list[str], gaps: list[tuple[float, float]], speech_start: float, speech_end: float) -> list[float] | None:
+    """Optimale Schnitte: wählt aus allen Sprechpausen die Kombination, bei der die Länge jedes Stücks
+    am besten zur Textlänge passt (gleichmäßiges Sprechtempo) – lange Pausen werden bevorzugt."""
+    import math
+    n = len(texts)
+    chars = [len(t) for t in texts]
+    rate = (speech_end - speech_start) / sum(chars)
+    pts = [speech_start] + [(a + b) / 2 for a, b in gaps] + [speech_end]
+    glen = [0.0] + [b - a for a, b in gaps] + [0.0]
+    m = len(pts)
+    INF = float("inf")
+    # cost[k][j]: beste Kosten, wenn Stück k bei Punkt j endet
+    best = [[INF] * m for _ in range(n + 1)]
+    back = [[-1] * m for _ in range(n + 1)]
+    best[0][0] = 0.0
+    for k in range(1, n + 1):
+        exp = chars[k - 1] * rate
+        last = k == n
+        for j in (range(m - 1, m) if last else range(1, m - 1)):
+            for i in range(0, j):
+                if best[k - 1][i] == INF:
+                    continue
+                d = pts[j] - pts[i] - 0.5 * (glen[i] + glen[j])
+                if d <= 0.2:
+                    continue
+                c = best[k - 1][i] + math.log(d / exp) ** 2 * 10 - (0 if last else 2.0 * min(glen[j], 1.2))
+                if c < best[k][j]:
+                    best[k][j], back[k][j] = c, i
+    if best[n][m - 1] == INF:
+        return None
+    cuts, j = [], m - 1
+    for k in range(n, 0, -1):
+        i = back[k][j]
+        if k > 1:
+            cuts.append(pts[i])
+        j = i
+    return sorted(cuts)
+
+
+WHISPER_DIRS = [ROOT / "models" / "sherpa-onnx-whisper-base", Path("/tmp/models/sherpa-onnx-whisper-base")]
+_REC = None
+
+
+def whisper():
+    """Lokale Spracherkennung (Whisper base über sherpa-onnx) – kostenlos, ohne Limit.
+    Modell: https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-base.tar.bz2"""
+    global _REC
+    if _REC is None:
+        d = next((x for x in WHISPER_DIRS if x.exists()), None)
+        if d is None:
+            return None
+        import sherpa_onnx
+        _REC = sherpa_onnx.OfflineRecognizer.from_whisper(
+            encoder=str(d / "base-encoder.int8.onnx"), decoder=str(d / "base-decoder.int8.onnx"),
+            tokens=str(d / "base-tokens.txt"), language="de", task="transcribe", num_threads=4)
+    return _REC
+
+
+def transcribe(path: Path, a: float = 0, b: float | None = None) -> str:
+    import soundfile as sf
+    rec = whisper()
+    tmp = path.parent / "_asr.wav"
+    cmd = ["ffmpeg", "-loglevel", "error", "-y", "-i", str(path), "-ss", f"{a:.3f}"]
+    if b is not None:
+        cmd += ["-to", f"{b:.3f}"]
+    subprocess.run(cmd + ["-ar", "16000", "-ac", "1", str(tmp)], check=True)
+    audio, sr = sf.read(str(tmp), dtype="float32")
+    tmp.unlink()
+    out = []
+    for k in range(0, len(audio), sr * 28):  # Whisper: max. 30 s am Stück
+        st = rec.create_stream()
+        st.accept_waveform(sr, audio[k:k + sr * 28])
+        rec.decode_stream(st)
+        out.append(st.result.text)
+    return " ".join(out)
+
+
+_AUDIO: dict = {}
+
+
+def quietest(path: Path, a: float, b: float) -> float:
+    """Zeitpunkt mit der geringsten Lautstärke (20-ms-Fenster) zwischen a und b."""
+    import numpy as np
+    import soundfile as sf
+    if str(path) not in _AUDIO:
+        x, sr = sf.read(str(path), dtype="float32")
+        if x.ndim > 1:
+            x = x.mean(axis=1)
+        _AUDIO[str(path)] = (x, sr)
+    x, sr = _AUDIO[str(path)]
+    win = int(0.02 * sr)
+    i0, i1 = max(0, int(a * sr)), min(len(x) - win, int(b * sr))
+    best, bt = 1e9, (a + b) / 2
+    for i in range(i0, i1, win // 2):
+        e = float(np.sqrt(np.mean(x[i:i + win] ** 2)))
+        if e < best:
+            best, bt = e, (i + win / 2) / sr
+    return bt
+
+
+def local_align(full: Path, texts: list[str], gaps: list[tuple[float, float]], total: float) -> list[float] | None:
+    """Jede Phrase zwischen zwei Sprechpausen lokal transkribieren und Wort für Wort mit dem Skript abgleichen."""
+    import difflib
+    if whisper() is None:
+        return None
+    bounds = [0.0]
+    for a_, b_ in gaps:
+        mid = (a_ + b_) / 2
+        if mid - bounds[-1] >= 0.4:  # sehr kurze Phrasen mit der nächsten zusammenlegen
+            bounds.append(mid)
+    bounds.append(total)
+    t_words, t_chunk, t_first = [], [], []
+    for i in range(len(bounds) - 1):
+        ws = _norm(transcribe(full, bounds[i], bounds[i + 1]))
+        for k, w in enumerate(ws):
+            t_words.append(w)
+            t_chunk.append(i)
+            t_first.append(k == 0)
+    s_words, scene_first = [], []
+    for t in texts:
+        scene_first.append(len(s_words))
+        s_words += _norm(t)
+    sm = difflib.SequenceMatcher(a=s_words, b=t_words, autojunk=False)
+    m_of = {}
+    for blk in sm.get_matching_blocks():
+        for j in range(blk.size):
+            m_of[blk.a + j] = blk.b + j
+    cuts = []
+    for k in range(1, len(texts)):
+        idx = scene_first[k]
+        cand = [(x - idx, m_of[x]) for x in range(idx, min(idx + 6, len(s_words))) if x in m_of]
+        if not cand:
+            return None
+        off, tb = cand[0]
+        # Transkript-Wort zurück auf den Szenenanfang schieben
+        tb = max(0, tb - off)
+        cut = bounds[t_chunk[tb]]
+        if not t_first[tb]:
+            # Szene beginnt mitten in einer Phrase: Position über den Wortanteil schätzen
+            # und an der leisesten Stelle in der Nähe schneiden
+            ci = t_chunk[tb]
+            idxs = [x for x in range(len(t_chunk)) if t_chunk[x] == ci]
+            pos = (tb - idxs[0]) / len(idxs)
+            est = bounds[ci] + pos * (bounds[ci + 1] - bounds[ci])
+            cut = quietest(full, est - 0.6, est + 0.6)
+        if cuts and cut <= cuts[-1]:
+            return None
+        cuts.append(cut)
+    return cuts
 
 
 def _text_model(parts: list, timeout: int = 600) -> str | None:

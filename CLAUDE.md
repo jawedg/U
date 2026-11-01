@@ -41,3 +41,14 @@ Lokal reicht `npm run render:3d`.
 - Kein Musik-Hintergrund.
 - Stimme: `python3 scripts/voice_gemini.py --project athan2d` (Gemini Charon). Tageslimit beachten.
 - Rendern 2D (ohne --gl): `npx remotion render ErsterAdhan2D out/erster-adhan-2d.mp4 --concurrency=4 --browser-executable=...`
+
+## Lernvideos (Schule / AP2)
+- `src/wiso/` (Komposition `WisoKB4`, 1920×1080, 25 fps): Lernvideo WiSo KB IV „Selbstständigkeit“.
+  Skript entsteht aus `scripts/build_wiso_script.py` (Szenen mit `part`, `topic`, `step`, `text`, `v` = Visualisierung).
+  Visualisierungen in `src/wiso/Visuals.tsx` (title, board, balance, form, formtable, kapital, definition, exam, …).
+- Stil Lernvideo: Karopapier, Handschrift-Überschriften (Caveat), Farbe pro Thema, Lukas als roter Faden,
+  Kopfzeile mit Unterrichtsphase, Untertitel unten. Leise UI-Sounds (`scripts/sfx_wiso.py`).
+- Lange Sprachaufnahmen: Szenen per `part` in Blöcke (je ~500–700 Wörter, 1 TTS-Anfrage pro Block).
+  Schnitt in Szenen per **lokaler Whisper-Erkennung** (sherpa-onnx, Modell von GitHub:
+  `sherpa-onnx-whisper-base`, nach `models/` oder `/tmp/models/`), danach `npm run check:wiso` zur Kontrolle.
+- Gemini-Textmodelle (flash) haben nur ~20 Anfragen/Tag – nicht für Massen-Transkription verwenden.
