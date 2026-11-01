@@ -1,0 +1,28 @@
+{
+  "title": "Der erste Adhan",
+  "athanFile": null,
+  "athanSeconds": 14,
+  "sentences": [
+    { "shot": "hook", "text": "Wusstest du, dass der Gebetsruf im Islam mit einem *Traum* begann?" },
+    { "shot": "mosque", "text": "Medina, im Jahr *622*. Die Muslime hatten gerade ihre erste *Moschee* gebaut." },
+    { "shot": "courtyard", "text": "Doch es gab ein *Problem*. Niemand wusste genau, wann das Gebet beginnt. Die Leute *schätzten* die Zeit einfach." },
+    { "shot": "council", "text": "Also beriet sich der Prophet, Friede sei mit ihm, mit seinen *Gefährten*." },
+    { "shot": "symbols", "text": "Manche schlugen eine *Glocke* vor, wie bei den Christen. Andere ein *Horn*, wie bei den Juden. Wieder andere ein *Feuer*." },
+    { "shot": "house", "text": "Ein Gefährte namens *Abdullah ibn Zaid* ging besorgt nach Hause. In dieser Nacht hatte er einen *Traum*." },
+    { "shot": "dream", "text": "Ein Mann in *grüner* Kleidung trug eine Glocke. Abdullah fragte ihn: Verkaufst du sie mir? Wir wollen damit zum *Gebet* rufen." },
+    { "shot": "words", "text": "Der Mann antwortete: Soll ich dir nicht etwas *Besseres* zeigen? Und er lehrte ihn die Worte des *Adhan*." },
+    { "shot": "morning", "text": "Am Morgen erzählte Abdullah dem Propheten, Friede sei mit ihm, davon. Er sagte: Das ist ein *wahrer* Traum. Bring es *Bilal* bei, denn er hat die kräftigere *Stimme*." },
+    { "shot": "desert", "text": "Und Bilal? Er war einst ein *Sklave* aus Abessinien. In Mekka quälte man ihn unter der glühenden Sonne, mit einem *Felsen* auf der Brust. Doch er sagte immer nur: *Ahad*, *Ahad*. Gott ist *Einer*." },
+    { "shot": "rooftop", "text": "Abu Bakr kaufte ihn *frei*. Und nun stieg genau dieser Mann auf das höchste Dach neben der Moschee. Er wurde der erste *Muezzin* des Islam." },
+    { "shot": "athan", "athan": true, "text": "" },
+    { "shot": "umar", "text": "Als *Umar* den Ruf hörte, eilte er so schnell hinaus, dass er seinen Umhang hinter sich herzog. Er sagte: Ich habe *genau dasselbe* geträumt!" },
+    { "shot": "globe", "text": "Seit über *1400* Jahren erklingen dieselben Worte. Fünfmal am Tag, auf der *ganzen Welt*." },
+    { "shot": "outro", "text": "Folge für mehr *Geschichten* aus dem Islam." }
+  ],
+  "sources": [
+    "Sahih al-Bukhari 603, 604 (Beratung: Feuer, Glocke, Horn)",
+    "Sunan Abi Dawud 499, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706 (Traum von Abdullah ibn Zaid, Bilal, Umar)",
+    "Sunan Abi Dawud 519 (Bilal ruft vom höchsten Haus neben der Moschee)",
+    "Sira von Ibn Ishaq / Ibn Hisham (Bilals Folter, 'Ahad, Ahad', Freikauf durch Abu Bakr)"
+  ]
+}

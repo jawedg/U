@@ -13,7 +13,10 @@
     "video:3d": "npm run voice:3d && npm run render:3d",
     "voice:3d:offline": "python3 scripts/voice_piper.py",
     "voice:athan": "python3 scripts/voice_gemini.py --project athan --voice Charon",
-    "render:athan": "remotion render ErsterAdhan out/erster-adhan.mp4 --gl=angle"
+    "render:athan": "remotion render ErsterAdhan out/erster-adhan.mp4 --gl=angle",
+    "sfx": "python3 scripts/sfx.py",
+    "voice:athan2d": "python3 scripts/voice_gemini.py --project athan2d --voice Charon",
+    "render:athan2d": "remotion render ErsterAdhan2D out/erster-adhan-2d.mp4"
   },
   "dependencies": {
     "@fontsource/amiri": "^5.3.0",

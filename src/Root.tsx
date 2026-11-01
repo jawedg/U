@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { TextVideo, sceneDurations } from "./TextVideo";
 import { TrainVideo, trainDurationFrames } from "./train/TrainVideo";
 import { AthanVideo, athanDurationFrames } from "./athan/AthanVideo";
+import { Video2D, video2dFrames } from "./athan2d/Video2D";
 
 export const FPS = 30;
 
@@ -30,6 +31,14 @@ export const RemotionRoot: React.FC = () => {
       id="ErsterAdhan"
       component={AthanVideo}
       durationInFrames={athanDurationFrames(FPS)}
+      fps={FPS}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="ErsterAdhan2D"
+      component={Video2D}
+      durationInFrames={video2dFrames(FPS)}
       fps={FPS}
       width={1080}
       height={1920}

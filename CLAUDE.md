@@ -4,7 +4,10 @@
 - Sprache: Deutsch, einfach erklären.
 - **Stimme: Google Gemini TTS, Stimme „Charon“** (`npm run voice:3d` bzw. `python3 scripts/voice_gemini.py --voice Charon`).
   - Piper/edge-tts gefallen dem Nutzer NICHT (zu roboterhaft).
-- Stil: 3D-Erklärvideo wie `src/train/` (Low-Poly-Nachtszene, Kamerafahrten, ein großes Wort pro Moment als Untertitel, Schlüsselwörter gelb), Format 1080×1920.
+- **Stil: 2D-Strichzeichnung („von früher“)** wie `src/athan2d/` – helle Linien auf dunklem Grund, Gold-Akzente,
+  Papier-Körnung, Ort-Label + arabischer Text oben, Satz-Untertitel unten (gesprochene Wörter hell, Schlüsselwörter gold).
+  3D (`src/train`, `src/athan`) gefällt dem Nutzer NICHT mehr (zu holprig).
+- Format 1080×1920.
 
 ## Gemini-TTS – wichtig
 - API-Schlüssel kommt aus der Umgebungsvariable `GEMINI_API_KEY`. Niemals ins Repo schreiben.
@@ -24,12 +27,17 @@ npx remotion render Erklaervideo3D out/<name>.mp4 --gl=swangle --concurrency=4 \
 Lokal reicht `npm run render:3d`.
 
 ## TikTok-Kanal: Islam (Geschichten, Fakten)
-- Erstes Video: `src/athan/` (Komposition `ErsterAdhan`) – „Der erste Adhan“, ca. 1:55 min.
+- Erstes Video: `src/athan2d/` (Komposition `ErsterAdhan2D`) – „Der erste Adhan“, ca. 1:55 min.
+  Neue Videos: Ordner kopieren, `script.json` + `scenes.tsx` anpassen, `art.tsx` wiederverwenden.
 - Zielänge: **1:30–2:00 min** (über 1 min für Creator Rewards, nicht gehetzt, max. ~2:30).
-- **Keine Darstellung von Propheten, Sahaba oder anderen Menschen** – nur Orte, Licht, Symbole.
+- **Menschen dürfen gezeigt werden, aber NIE mit Gesicht** (leerer Kopf). Sahaba/wichtige Personen zusätzlich mit
+  Licht über dem Kopf (`glow`). **Den Propheten ﷺ nie darstellen** – nur als Licht (`HolyLight`).
+- **Immer Sound:** Atmo in jeder Szene (nie Stille) + passende Effekte (`scripts/sfx.py`, synthetisch erzeugt,
+  in `scenes.tsx` per `sfx` an gesprochene Wörter gekoppelt). Keine Musik.
 - Bei Erwähnung des Propheten: „Friede sei mit ihm“ sprechen.
 - Fakten nur mit Quellen (Hadith-Nummern) – Quellen in `script.json` -> `sources` und in die TikTok-Beschreibung.
-- Echte Adhan-Aufnahme: Datei vom Nutzer nach `public/athan/athan.mp3`, dann in `src/athan/script.json`
+- Echte Adhan-Aufnahme: Datei vom Nutzer nach `public/athan/athan.mp3`, dann in `src/athan2d/script.json`
   `"athanFile": "athan/athan.mp3"` setzen (Länge über `athanSeconds`). Ohne Datei bleibt die Stelle still (nur Wind).
-- Kein Musik-Hintergrund, nur leiser Wind (`public/athan/wind.mp3`).
-- Stimme: `npm run voice:athan` (Gemini Charon). Tageslimit beachten.
+- Kein Musik-Hintergrund.
+- Stimme: `python3 scripts/voice_gemini.py --project athan2d` (Gemini Charon). Tageslimit beachten.
+- Rendern 2D (ohne --gl): `npx remotion render ErsterAdhan2D out/erster-adhan-2d.mp4 --concurrency=6 --browser-executable=...`
