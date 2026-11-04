@@ -516,7 +516,7 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 6,
@@ -542,7 +542,7 @@
     "cueRight": "Käufer",
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 6,
@@ -552,7 +552,7 @@
     "type": "merke",
     "text": "Werbung ≠ Antrag · Antrag + Annahme = Vertrag"
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 7,
@@ -561,7 +561,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 7,
@@ -586,7 +586,7 @@
     "cueRight": "Eigentum",
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 7,
@@ -934,7 +934,7 @@
     "type": "merke",
     "text": "3 Jahre, Start am Jahresende · Neubeginn = Uhr auf null · Hemmung = Uhr angehalten"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 11,
@@ -943,7 +943,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 11,
@@ -969,7 +969,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 11,
@@ -979,7 +979,7 @@
     "type": "merke",
     "text": "Beratung = Verbraucherzentrale · Tests = Stiftung Warentest"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 12,
@@ -988,7 +988,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 12,
@@ -1000,7 +1000,7 @@
     "text": "Vertrag ohne persönlichen Kontakt (Internet, Telefon, Katalog)",
     "cue": ""
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 12,
@@ -1038,7 +1038,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 12,
@@ -1048,7 +1048,7 @@
     "type": "merke",
     "text": "Online = 14 Tage ohne Grund · im Laden NICHT (nur Kulanz)"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 13,
@@ -1057,7 +1057,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 13,
@@ -1069,7 +1069,7 @@
     "text": "Vorformulierte Vertragsbedingungen für viele Verträge.",
     "cue": ""
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 13,
@@ -1103,7 +1103,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 13,
@@ -1113,7 +1113,7 @@
     "type": "merke",
     "text": "AGB dürfen nicht überraschen und keine gesetzlichen Rechte wegnehmen"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 14,
@@ -1122,7 +1122,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 14,
@@ -1152,7 +1152,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 14,
@@ -1469,7 +1469,7 @@
      }
     ]
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 17,
@@ -1479,7 +1479,7 @@
     "type": "merke",
     "text": "Haushaltsplan ➜ Schuldnerberatung ➜ Insolvenz ➜ nach 3 Jahren Neustart"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 17,
@@ -1489,7 +1489,7 @@
     "type": "kb",
     "outro": true
    },
-   "part": 3
+   "part": 2
   }
  ]
 }

@@ -953,12 +953,12 @@ GmbH und UG schützen das Privatvermögen. Thema vier: Kapitalbedarf minus Eigen
                     it("3: Einzel/GbR privat haften · GmbH (25.000 €) / UG (1 €) geschützt", "Einzelunternehmen"), it("4: Kapitalbedarf − Eigenkapital = Kredit · monatlich × Monate", "Kapitalbedarf")])
 
 # ---------------------------------------------------------------------------------- Ausgabe
-MAX_WORDS = 650
+MAX_WORDS = {1: 800, 2: 800, 3: 800, 4: 650}  # 3.8-Modell schafft ~800 Wörter pro Anfrage
 for n, d in KB.items():
     part, words = 0, 0
     for s in d["sentences"]:
         w = len(s["text"].split())
-        if words and words + w > MAX_WORDS:
+        if words and words + w > MAX_WORDS[n]:
             part, words = part + 1, 0
         s["part"] = part
         words += w

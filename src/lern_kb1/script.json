@@ -397,7 +397,7 @@
      }
     ]
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 3,
@@ -451,7 +451,7 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 3,
@@ -483,7 +483,7 @@
     ],
     "note": "Mehr Urlaub erlaubt, weniger nicht"
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 3,
@@ -777,7 +777,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 5,
@@ -810,7 +810,7 @@
      }
     ]
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 5,
@@ -820,7 +820,7 @@
     "type": "merke",
     "text": "ordentlich 4 Wochen zum 15./Monatsende · außerordentlich fristlos · allg. Schutz: > 6 Monate + > 10 MA · SESBA"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 6,
@@ -829,7 +829,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 6,
@@ -856,7 +856,7 @@
     "cueRight": "qualifizierte",
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 6,
@@ -921,7 +921,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 6,
@@ -994,7 +994,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 6,
@@ -1230,7 +1230,7 @@
      }
     ]
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 8,
@@ -1240,7 +1240,7 @@
     "type": "merke",
     "text": "Tarifautonomie = ohne Staat · Streik: 75 % dafür · Ende: 25 % reichen"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1249,7 +1249,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1283,7 +1283,7 @@
     ],
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1346,7 +1346,7 @@
     ],
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1374,7 +1374,7 @@
     "cueRight": "Zusatzversicherungen",
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1384,7 +1384,7 @@
     "type": "merke",
     "text": "5 Zweige · 50/50 vom Brutto · Unfall: AG allein · wichtigste Zusatzversicherung: Haftpflicht"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1393,7 +1393,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1425,7 +1425,7 @@
     ],
     "note": "Netto − Sparrate / Vorschuss = Auszahlung"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1463,7 +1463,7 @@
     ],
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1595,7 +1595,7 @@
     ],
     "note": "einfache Strecke × Pauschale (laut Anlage) × Arbeitstage"
    },
-   "part": 4
+   "part": 3
   },
   {
    "topic": 11,
@@ -1621,7 +1621,7 @@
     ],
     "note": null
    },
-   "part": 4
+   "part": 3
   },
   {
    "topic": 11,
@@ -1631,7 +1631,7 @@
     "type": "merke",
     "text": "Werbungskosten = Beruf (mind. 1.230 €) · Sonderausgaben = Kirche, Spenden, Vorsorge · Freizeit zählt nicht"
    },
-   "part": 4
+   "part": 3
   },
   {
    "topic": 11,
@@ -1641,7 +1641,7 @@
     "type": "kb",
     "outro": true
    },
-   "part": 4
+   "part": 3
   }
  ]
 }

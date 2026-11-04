@@ -444,7 +444,7 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 4,
@@ -473,7 +473,7 @@
     "cueRight": "Mindestpreis",
     "note": null
    },
-   "part": 1
+   "part": 0
   },
   {
    "topic": 4,
@@ -803,7 +803,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 7,
@@ -848,7 +848,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 7,
@@ -882,7 +882,7 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 7,
@@ -908,7 +908,7 @@
     "cueRight": "Gewinner",
     "note": "Gefahr: Lohn-Preis-Spirale 🌀"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 7,
@@ -918,7 +918,7 @@
     "type": "merke",
     "text": "Inflation ⬆ ➜ Kaufkraft ⬇ · Reallohn = Lohnerhöhung − Inflationsrate"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 8,
@@ -927,7 +927,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 1
   },
   {
    "topic": 8,
@@ -1144,7 +1144,7 @@
     "cueRight": "Kritik",
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 9,
@@ -1154,7 +1154,7 @@
     "type": "merke",
     "text": "Ein hohes BIP heißt nicht automatisch, dass es den Menschen gut geht."
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1163,7 +1163,7 @@
    "v": {
     "type": "topic"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1188,7 +1188,7 @@
      }
     ]
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1233,7 +1233,7 @@
     ],
     "note": "Aufschwung: Aufträge ⬆ ➜ BIP ⬆ ➜ Arbeitslosigkeit ⬇"
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1269,7 +1269,7 @@
     ],
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1296,7 +1296,7 @@
     "cueRight": "dir",
     "note": null
    },
-   "part": 3
+   "part": 2
   },
   {
    "topic": 10,
@@ -1306,7 +1306,7 @@
     "type": "kb",
     "outro": true
    },
-   "part": 3
+   "part": 2
   }
  ]
 }
