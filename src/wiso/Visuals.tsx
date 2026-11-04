@@ -168,7 +168,7 @@ const V: Record<string, React.FC<VProps>> = {
           <div style={{ position: "absolute", left: -80, right: -80, top: 120, height: 150, background: `${TOPIC[n]}22`, transform: `scaleX(${sweep})`, transformOrigin: "left", borderRadius: 30 }} />
           <Appear at={0} from="zoom"><div style={{ fontSize: 150 }}>{v.icon}</div></Appear>
           <Appear at={0.15}>
-            <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 52, letterSpacing: 10, color: TOPIC[n] }}>{n <= 4 ? `THEMA ${n} VON 4` : "SPICKZETTEL"}</div>
+            <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 52, letterSpacing: 10, color: TOPIC[n] }}>{v.label ?? (n <= 4 ? `THEMA ${n} VON 4` : "SPICKZETTEL")}</div>
           </Appear>
           <Appear at={0.35}><div style={{ position: "relative", fontFamily: HAND, fontWeight: 700, fontSize: 150, color: INK }}>{v.title}</div></Appear>
         </div>
@@ -177,7 +177,7 @@ const V: Record<string, React.FC<VProps>> = {
   },
 
   roadmap: ({ v, t, cue }) => {
-    const names = [["🧑‍💼", "Selbstständigkeit", "Passt das zu mir?"], ["🗺️", "Geschäftsplan & Standort", "Plan + Ort"], ["⚖️", "Rechtsformen", "Wer haftet?"], ["🧮", "Kapitalbedarfsplan", "Wie viel Geld?"]];
+    const names: string[][] = v.names ?? [["🧑‍💼", "Selbstständigkeit", "Passt das zu mir?"], ["🗺️", "Geschäftsplan & Standort", "Plan + Ort"], ["⚖️", "Rechtsformen", "Wer haftet?"], ["🧮", "Kapitalbedarfsplan", "Wie viel Geld?"]];
     return (
       <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 18 }}>
         {names.map(([ic, n, s], i) => {
@@ -226,13 +226,13 @@ const V: Record<string, React.FC<VProps>> = {
   compare: ({ v, cue, topic }) => {
     const side = (s: any, at: number, col: string) => (
       <Appear at={at} style={{ flex: 1 }} from={at > 0 ? "right" : "left"}>
-        <Card color={col} style={{ height: 560 }}>
+        <Card color={col} style={{ height: 500 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
             <div style={{ fontSize: 80 }}>{s.icon}</div>
             <Title color={col} size={78}>{s.title}</Title>
           </div>
           {s.items.map((x: string, i: number) => (
-            <div key={i} style={{ fontFamily: SANS, fontWeight: 600, fontSize: 44, color: INK, margin: "18px 0", display: "flex", gap: 16 }}>
+            <div key={i} style={{ fontFamily: SANS, fontWeight: 600, fontSize: s.items.length > 4 ? 36 : 42, color: INK, margin: s.items.length > 4 ? "10px 0" : "16px 0", display: "flex", gap: 16 }}>
               <span style={{ color: col }}>●</span>
               {x}
             </div>
@@ -241,10 +241,13 @@ const V: Record<string, React.FC<VProps>> = {
       </Appear>
     );
     return (
-      <div style={{ height: "100%", display: "flex", alignItems: "center", gap: 50, padding: "0 70px" }}>
-        {side(v.left, 0, TOPIC[topic])}
-        <div style={{ fontFamily: HAND, fontSize: 90, color: MUTED }}>vs.</div>
-        {side(v.right, cue(v.cueRight), AMBER)}
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 70px", gap: 24 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 50 }}>
+          {side(v.left, 0, TOPIC[topic])}
+          <div style={{ fontFamily: HAND, fontSize: 90, color: MUTED }}>vs.</div>
+          {side(v.right, cue(v.cueRight), AMBER)}
+        </div>
+        {v.footer ? <Note text={v.footer} at={cue(v.cueFooter)} color={TOPIC[topic]} /> : null}
       </div>
     );
   },
@@ -870,7 +873,320 @@ const V: Record<string, React.FC<VProps>> = {
       ))}
     </div>
   ),
+  grid: ({ v, cue, topic }) => {
+    const items = v.items as Item[];
+    const cols = items.length <= 3 ? items.length : items.length === 4 ? 2 : 3;
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 22 }}>
+        <Title color={TOPIC[topic]} size={80}>{v.title}</Title>
+        <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, ${cols === 2 ? 720 : 520}px)`, gap: 24 }}>
+          {items.map((it, i) => (
+            <Appear key={i} at={cue(it.cue)} from="zoom">
+              <Card color={`${TOPIC[topic]}66`} style={{ minHeight: 150, display: "flex", alignItems: "center", gap: 22, padding: "20px 28px" }}>
+                <div style={{ fontSize: 70 }}>{it.icon}</div>
+                <div style={{ fontFamily: SANS, fontWeight: 750, fontSize: 36, color: INK, lineHeight: 1.2 }}>{it.text}</div>
+              </Card>
+            </Appear>
+          ))}
+        </div>
+        {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+      </div>
+    );
+  },
+
+  pillars: ({ v, cue, topic }) => (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
+      <Title color={TOPIC[topic]} size={80}>{v.title}</Title>
+      <div style={{ width: 1600, height: 40, background: TOPIC[topic], borderRadius: "20px 20px 0 0", clipPath: "polygon(4% 100%, 50% 0, 96% 100%)" }} />
+      <div style={{ display: "flex", gap: 26 }}>
+        {(v.items as Item[]).map((it, i) => (
+          <Appear key={i} at={cue(it.cue)} from="up">
+            <div style={{ width: 290, height: 380, background: "#fff", border: `5px solid ${TOPIC[topic]}`, borderRadius: 14, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 14 }}>
+              <div style={{ fontSize: 90 }}>{it.icon}</div>
+              <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 40, color: INK }}>{it.text}</div>
+              <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 24, color: MUTED }}>versicherung</div>
+              <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 34, color: TOPIC[topic], marginTop: 10 }}>{it.sub}</div>
+            </div>
+          </Appear>
+        ))}
+      </div>
+      <div style={{ width: 1600, height: 26, background: TOPIC[topic], borderRadius: 8 }} />
+      {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+    </div>
+  ),
+
+  table: ({ v, cue, topic }) => {
+    const head = v.head as string[];
+    const cols = head.length === 2 ? "1fr 1.4fr" : head.length === 3 ? "1.1fr 1fr 1.3fr" : "1fr 0.7fr 1.2fr 1.3fr";
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14 }}>
+        <Title color={TOPIC[topic]} size={76}>{v.title}</Title>
+        <div style={{ width: 1600, display: "grid", gridTemplateColumns: cols, gap: 8 }}>
+          {head.map((h, i) => (
+            <div key={i} style={{ background: TOPIC[topic], color: "#fff", fontFamily: SANS, fontWeight: 900, fontSize: 32, padding: "12px 20px", borderRadius: i === 0 ? "16px 0 0 0" : i === head.length - 1 ? "0 16px 0 0" : 0 }}>{h}</div>
+          ))}
+          {(v.rows as any[]).map((r, i) => (
+            <React.Fragment key={i}>
+              {(r.cells as string[]).map((c, k) => (
+                <Appear key={k} at={cue(r.cue)} style={{ background: r.hl ? "#dcfce7" : "#fff", border: r.hl ? `3px solid ${GREEN}` : "none", fontFamily: SANS, fontWeight: k === 0 ? 800 : 600, fontSize: (v.rows as any[]).length > 5 ? 30 : 34, color: INK, padding: "14px 20px", boxShadow: "0 3px 10px rgba(0,0,0,0.05)" }}>{c}</Appear>
+              ))}
+            </React.Fragment>
+          ))}
+        </div>
+        {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+      </div>
+    );
+  },
+
+  flow: ({ v, cue, topic }) => {
+    const items = v.items as Item[];
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 40 }}>
+        <Title color={TOPIC[topic]} size={84}>{v.title}</Title>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          {items.map((it, i) => (
+            <React.Fragment key={i}>
+              <Appear at={cue(it.cue)} from="zoom">
+                <div style={{ width: items.length > 4 ? 300 : 360, height: 300, background: "#fff", border: `4px solid ${TOPIC[topic]}`, borderRadius: 26, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 18, boxShadow: "0 10px 24px rgba(0,0,0,0.08)" }}>
+                  <div style={{ fontSize: 86 }}>{it.icon}</div>
+                  <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: items.length > 4 ? 32 : 36, color: INK, lineHeight: 1.2 }}>{it.text}</div>
+                </div>
+              </Appear>
+              {i < items.length - 1 ? <Appear at={cue(items[i + 1].cue)}><div style={{ fontSize: 56, color: TOPIC[topic] }}>➜</div></Appear> : null}
+            </React.Fragment>
+          ))}
+        </div>
+        {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+      </div>
+    );
+  },
+
+  stairs: ({ v, cue, topic }) => {
+    const items = v.items as Item[];
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 140px", gap: 12 }}>
+        <Title color={TOPIC[topic]} size={80}>{v.title}</Title>
+        {items.map((it, i) => (
+          <Appear key={i} at={cue(it.cue)} from="left" style={{ marginLeft: i * 90 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 24, background: "#fff", borderLeft: `14px solid ${TOPIC[topic]}`, borderRadius: 18, padding: "14px 26px", width: 1250 - i * 90, boxShadow: "0 6px 16px rgba(0,0,0,0.08)" }}>
+              <div style={{ width: 66, height: 66, borderRadius: 33, background: TOPIC[topic], color: "#fff", fontFamily: SANS, fontWeight: 900, fontSize: 36, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</div>
+              <div>
+                <div style={{ fontFamily: SANS, fontWeight: 850, fontSize: 40, color: INK }}>{it.text}</div>
+                {it.sub ? <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 30, color: MUTED }}>{it.sub}</div> : null}
+              </div>
+            </div>
+          </Appear>
+        ))}
+        {v.note ? <div style={{ marginTop: 10 }}><Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /></div> : null}
+      </div>
+    );
+  },
+
+  ledger: ({ v, t, cue, topic }) => {
+    const rows = v.rows as any[];
+    let run = 0;
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
+        <Card style={{ width: 1500, padding: "24px 44px" }} color={`${TOPIC[topic]}66`}>
+          <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 40, color: TOPIC[topic], marginBottom: 8 }}>{v.title}</div>
+          {rows.map((r, i) => {
+            const at = cue(r.cue);
+            const on = t >= at;
+            if (!r.total && typeof r.amount === "number" && on) run += r.amount;
+            const val = r.total ? run : r.amount;
+            return (
+              <Appear key={i} at={at} from="left">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 30, padding: "10px 0", borderTop: r.total ? `4px solid ${INK}` : "2px solid #f1f5f9", fontFamily: SANS }}>
+                  <div style={{ fontWeight: r.total ? 900 : 700, fontSize: r.total ? 42 : 36, color: r.total ? TOPIC[topic] : INK }}>{r.label}</div>
+                  {v.plain ? (
+                    <div style={{ fontWeight: 600, fontSize: 30, color: MUTED, textAlign: "right", maxWidth: 820 }}>{r.text}</div>
+                  ) : (
+                    <div style={{ fontWeight: 900, fontSize: r.total ? 46 : 38, color: r.total ? TOPIC[topic] : val < 0 ? RED : INK }}>{val.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €</div>
+                  )}
+                </div>
+              </Appear>
+            );
+          })}
+        </Card>
+        {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+      </div>
+    );
+  },
+
+  timeline: ({ v, t, cue, topic }) => {
+    const at = cue(v.cue);
+    const p = clamp((t - at) / 4);
+    const pts = v.points as string[];
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 60 }}>
+        <Title color={TOPIC[topic]} size={80}>{v.title}</Title>
+        <div style={{ position: "relative", width: 1500, height: 220 }}>
+          <div style={{ position: "absolute", top: 60, left: 0, right: 0, height: 10, background: "#e2e8f0", borderRadius: 5 }} />
+          <div style={{ position: "absolute", top: 60, left: 0, width: `${p * 100}%`, height: 10, background: TOPIC[topic], borderRadius: 5 }} />
+          {pts.map((x, i) => {
+            const pos = i === 0 ? 0.08 : i === 1 ? 0.38 : 0.92;
+            const on = p >= pos - 0.02;
+            return (
+              <div key={i} style={{ position: "absolute", left: `${pos * 100}%`, top: 40, transform: "translateX(-50%)", textAlign: "center", width: 360 }}>
+                <div style={{ width: 50, height: 50, borderRadius: 25, margin: "0 auto", background: on ? (i === 2 ? RED : TOPIC[topic]) : "#cbd5e1" }} />
+                <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 32, color: on ? INK : "#94a3b8", marginTop: 16 }}>{x}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  },
+
+  triangle: ({ v, cue, topic }) => {
+    const pos = [[560, 40], [120, 560], [1000, 560]];
+    return (
+      <div style={{ height: "100%", position: "relative" }}>
+        <svg width="1920" height="780" style={{ position: "absolute" }}>
+          <polygon points="760,150 320,640 1200,640" fill={`${TOPIC[topic]}12`} stroke={TOPIC[topic]} strokeWidth={6} strokeDasharray="16 10" />
+          <text x="760" y="520" textAnchor="middle" fontFamily={HAND} fontWeight={700} fontSize={64} fill={INK}>magisches Dreieck</text>
+          <text x="760" y="575" textAnchor="middle" fontFamily={SANS} fontWeight={600} fontSize={28} fill={MUTED}>nie alle drei gleichzeitig maximal</text>
+        </svg>
+        {(v.corners as string[][]).map(([name, icon, c], i) => (
+          <Appear key={i} at={cue(c)} from="zoom" style={{ position: "absolute", left: pos[i][0], top: pos[i][1] }}>
+            <div style={{ width: 400, height: 170, background: "#fff", border: `5px solid ${TOPIC[topic]}`, borderRadius: 28, display: "flex", alignItems: "center", justifyContent: "center", gap: 16, fontFamily: SANS, fontWeight: 900, fontSize: 44, color: INK }}>
+              <span style={{ fontSize: 64 }}>{icon}</span>{name}
+            </div>
+          </Appear>
+        ))}
+        <div style={{ position: "absolute", right: 30, top: 200, display: "flex", flexDirection: "column", gap: 16 }}>
+          {(v.compare as any[]).map((c, i) => (
+            <Appear key={i} at={cue(c.cue)} from="right">
+              <div style={{ width: 400, background: "#fff", borderRadius: 18, padding: "14px 20px", boxShadow: "0 6px 16px rgba(0,0,0,0.1)", fontFamily: SANS }}>
+                <div style={{ fontWeight: 900, fontSize: 32, color: TOPIC[topic] }}>{c.name}</div>
+                {["Sicherheit", "Liquidität", "Rendite"].map((k, j) => (
+                  <div key={k} style={{ fontSize: 29, fontWeight: 650, color: INK }}>{k}: <b>{c.vals[j]}</b></div>
+                ))}
+              </div>
+            </Appear>
+          ))}
+        </div>
+      </div>
+    );
+  },
+
+  chart: ({ v, t, cue, topic }) => {
+    // Achsen: x = Menge (0..100), y = Preis (0..6); Kurven als Geraden
+    const X = (q: number) => 190 + q * 10;
+    const Y = (p: number) => 690 - p * 105;
+    const dem = (sh: number) => `M ${X(10 + sh)} ${Y(5.5)} L ${X(100 + sh * 0.6)} ${Y(0.5)}`;
+    const sup = (sh: number) => `M ${X(10 + sh)} ${Y(0.5)} L ${X(100 + sh * 0.6)} ${Y(5.5)}`;
+    const basic = v.mode === "basic";
+    const pe = basic ? clamp((t - cue(v.cueEq)) / 0.6) : 1;
+    const shD = basic ? 0 : 22 * clamp((t - cue(v.cueDemand)) / 1.2) * (t < cue(v.cueSupply) ? 1 : clamp(1 - (t - cue(v.cueSupply)) / 0.8));
+    const shS = basic ? 0 : 22 * clamp((t - cue(v.cueSupply)) / 1.2);
+    const over = basic && t >= cue(v.cueOver);
+    const under = basic && t >= cue(v.cueUnder);
+    return (
+      <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 40 }}>
+        <svg width="1380" height="760">
+          <line x1={X(0)} y1={Y(0)} x2={X(110)} y2={Y(0)} stroke={INK} strokeWidth={4} />
+          <line x1={X(0)} y1={Y(0)} x2={X(0)} y2={Y(6.2)} stroke={INK} strokeWidth={4} />
+          <text x={X(108)} y={Y(0) + 46} fontFamily={SANS} fontWeight={800} fontSize={32} fill={INK} textAnchor="end">Menge</text>
+          <text x={X(0) - 20} y={Y(6.1)} fontFamily={SANS} fontWeight={800} fontSize={32} fill={INK} textAnchor="end">Preis</text>
+          <path d={dem(0)} stroke="#2563eb" strokeWidth={7} opacity={shD > 0 ? 0.25 : 1} />
+          <path d={sup(0)} stroke="#ea580c" strokeWidth={7} opacity={shS > 0 ? 0.25 : 1} />
+          {shD > 0 ? <path d={dem(shD)} stroke="#2563eb" strokeWidth={7} /> : null}
+          {shS > 0 ? <path d={sup(shS)} stroke="#ea580c" strokeWidth={7} /> : null}
+          <text x={X(102)} y={Y(0.4)} fontFamily={SANS} fontWeight={900} fontSize={36} fill="#2563eb">N</text>
+          <text x={X(102)} y={Y(5.6)} fontFamily={SANS} fontWeight={900} fontSize={36} fill="#ea580c">A</text>
+          {basic ? (
+            <g opacity={pe}>
+              <line x1={X(0)} y1={Y(3)} x2={X(55)} y2={Y(3)} stroke={GREEN} strokeWidth={3} strokeDasharray="10 8" />
+              <line x1={X(55)} y1={Y(0)} x2={X(55)} y2={Y(3)} stroke={GREEN} strokeWidth={3} strokeDasharray="10 8" />
+              <circle cx={X(55)} cy={Y(3)} r={16} fill={GREEN} />
+              <text x={X(0) - 14} y={Y(3) + 10} textAnchor="end" fontFamily={SANS} fontWeight={900} fontSize={30} fill={GREEN}>GG-Preis</text>
+              <text x={X(55)} y={Y(0) + 40} textAnchor="middle" fontFamily={SANS} fontWeight={900} fontSize={30} fill={GREEN}>GG-Menge</text>
+            </g>
+          ) : null}
+          {over ? (
+            <g>
+              <line x1={X(30)} y1={Y(4.4)} x2={X(80)} y2={Y(4.4)} stroke={RED} strokeWidth={5} />
+              <text x={X(55)} y={Y(4.4) - 16} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={30} fill={RED}>Angebotsüberhang ➜ Preis ↓</text>
+            </g>
+          ) : null}
+          {under ? (
+            <g>
+              <line x1={X(30)} y1={Y(1.6)} x2={X(80)} y2={Y(1.6)} stroke={AMBER} strokeWidth={5} />
+              <text x={X(55)} y={Y(1.6) + 44} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={30} fill="#b45309">Nachfrageüberhang ➜ Preis ↑</text>
+            </g>
+          ) : null}
+        </svg>
+        {!basic ? (
+          <div style={{ display: "flex", flexDirection: "column", gap: 20, width: 420 }}>
+            <Appear at={cue(v.cueDemand)}><Card color="#2563eb" style={{ padding: "16px 22px" }}><div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 32 }}>Nachfrage ↑ (Hitzewelle 🍦)</div><div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 30, color: GREEN }}>Preis ↑ · Menge ↑</div></Card></Appear>
+            <Appear at={cue(v.cueSupply)}><Card color="#ea580c" style={{ padding: "16px 22px" }}><div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 32 }}>Angebot ↑ (Rekordernte 🌾)</div><div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 30, color: GREEN }}>Preis ↓ · Menge ↑</div></Card></Appear>
+            <Appear at={cue(v.cueSupply) + 3}><Card color={RED} style={{ padding: "16px 22px" }}><div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 32 }}>Angebot ↓ (Missernte)</div><div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 30, color: RED }}>Preis ↑ · Menge ↓</div></Card></Appear>
+          </div>
+        ) : null}
+      </div>
+    );
+  },
+
+  formula2: ({ v, cue, topic }) => (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 46 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 24, background: "#fff", borderRadius: 36, padding: "36px 50px", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }}>
+        {(v.parts as string[][]).map(([p, c, cu], i) => (
+          <Appear key={i} at={cue(cu)} from="zoom">
+            <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 64, color: c, whiteSpace: "nowrap" }}>{p}</div>
+          </Appear>
+        ))}
+      </div>
+      {v.note ? <Note text={v.note} at={cue(v.cueNote)} color={TOPIC[topic]} /> : null}
+    </div>
+  ),
+
+  cycle: ({ v, t, cue, topic }) => {
+    const X0 = 140, W = 1640, Y0 = 380, A = 190;
+    const pts = Array.from({ length: 161 }, (_, i) => {
+      const x = i / 160;
+      return [X0 + x * W, Y0 - x * 90 - Math.sin(x * Math.PI * 2 * 1.25 - Math.PI / 2) * A] as const;
+    });
+    const firstCue = cue(v.cues[0]);
+    const draw = clamp((t - firstCue + 0.5) / 5);
+    const n = Math.max(2, Math.round(draw * 160));
+    const d = pts.slice(0, n).map(([x, y], i) => `${i ? "L" : "M"} ${x} ${y}`).join(" ");
+    const labels = [["Aufschwung", 0.12, "📈"], ["Hochkonjunktur", 0.4, "🔝"], ["Abschwung", 0.6, "📉"], ["Tiefstand", 0.8, "🕳️"]] as const;
+    return (
+      <div style={{ height: "100%", position: "relative" }}>
+        <svg width="1920" height="620" style={{ position: "absolute", top: 0 }}>
+          <line x1={X0} y1={Y0} x2={X0 + W} y2={Y0 - 90} stroke="#94a3b8" strokeWidth={4} strokeDasharray="14 10" />
+          <text x={X0 + W - 10} y={Y0 - 110} textAnchor="end" fontFamily={HAND} fontWeight={700} fontSize={44} fill={MUTED}>Trend</text>
+          <path d={d} stroke={TOPIC[topic]} strokeWidth={9} fill="none" strokeLinecap="round" />
+          {labels.map(([l, x], i) => {
+            const at = cue(v.cues[i]);
+            if (t < at) return null;
+            const [px, py] = pts[Math.round(x * 160)];
+            return (
+              <g key={i}>
+                <circle cx={px} cy={py} r={16} fill={TOPIC[topic]} />
+                <text x={px} y={py + (i === 1 ? -36 : i === 3 ? 60 : -30)} textAnchor="middle" fontFamily={SANS} fontWeight={900} fontSize={38} fill={INK}>{labels[i][2]} {l}</text>
+              </g>
+            );
+          })}
+        </svg>
+        <div style={{ position: "absolute", top: 600, left: 0, right: 0, display: "flex", justifyContent: "center", gap: 24 }}>
+          {(v.ind as Item[]).map((it, i) => (
+            <Appear key={i} at={cue(it.cue)}>
+              <div style={{ background: "#fff", border: `3px solid ${TOPIC[topic]}`, borderRadius: 18, padding: "12px 22px", fontFamily: SANS, fontWeight: 800, fontSize: 32, color: INK }}>{it.text}</div>
+            </Appear>
+          ))}
+        </div>
+      </div>
+    );
+  },
 };
+
+const Note: React.FC<{ text: string; at: number; color: string }> = ({ text, at, color }) => (
+  <Appear at={at}>
+    <div style={{ background: `${color}14`, border: `3px dashed ${color}`, borderRadius: 18, padding: "12px 26px", fontFamily: SANS, fontWeight: 750, fontSize: 32, color: INK, textAlign: "center", maxWidth: 1600 }}>💡 {text}</div>
+  </Appear>
+);
 
 // Fortschritt 0..1 einer Linie, die ab `at` gezeichnet wird
 function useAppearT(at: number) {

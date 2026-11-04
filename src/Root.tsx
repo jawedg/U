@@ -5,6 +5,7 @@ import { TrainVideo, trainDurationFrames } from "./train/TrainVideo";
 import { AthanVideo, athanDurationFrames } from "./athan/AthanVideo";
 import { Video2D, video2dFrames } from "./athan2d/Video2D";
 import { WisoVideo, wisoFrames, WFPS } from "./wiso/WisoVideo";
+import { AllVideo, allFrames, AFPS } from "./wiso_all/AllVideo";
 
 export const FPS = 30;
 
@@ -49,6 +50,14 @@ export const RemotionRoot: React.FC = () => {
       component={WisoVideo}
       durationInFrames={wisoFrames()}
       fps={WFPS}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="WisoAlle"
+      component={AllVideo}
+      durationInFrames={allFrames()}
+      fps={AFPS}
       width={1920}
       height={1080}
     />
