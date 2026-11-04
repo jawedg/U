@@ -13,3 +13,4 @@ out/stimmproben/*.wav
 !out/erster-adhan-2d.mp4
 public/wiso/line-*.wav
 public/wiso_all/line-*.wav
+public/lern_kb*/line-*.wav

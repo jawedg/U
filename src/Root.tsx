@@ -6,6 +6,7 @@ import { AthanVideo, athanDurationFrames } from "./athan/AthanVideo";
 import { Video2D, video2dFrames } from "./athan2d/Video2D";
 import { WisoVideo, wisoFrames, WFPS } from "./wiso/WisoVideo";
 import { AllVideo, allFrames, AFPS } from "./wiso_all/AllVideo";
+import { LernVideo, lernFrames, LFPS } from "./lern/LernVideo";
 
 export const FPS = 30;
 
@@ -61,6 +62,18 @@ export const RemotionRoot: React.FC = () => {
       width={1920}
       height={1080}
     />
+    {[1, 2, 3, 4].map((kb) => (
+      <Composition
+        key={kb}
+        id={`LernKB${kb}`}
+        component={LernVideo}
+        defaultProps={{ kb }}
+        durationInFrames={lernFrames(kb)}
+        fps={LFPS}
+        width={1920}
+        height={1080}
+      />
+    ))}
     </>
   );
 };

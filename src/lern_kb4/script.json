@@ -1,0 +1,662 @@
+{
+ "kb": 4,
+ "title": "Entscheidungen bei einer Selbstständigkeit",
+ "topics": [
+  "Selbstständigkeit",
+  "Geschäftsplan und Standort",
+  "Rechtsformen",
+  "Kapitalbedarfsplan"
+ ],
+ "sentences": [
+  {
+   "topic": 0,
+   "tname": "Überblick",
+   "text": "Willkommen zum Kompetenzbereich vier: *Entscheidungen bei einer Selbstständigkeit*. Hier geht es darum, ein eigenes Unternehmen zu gründen. *Vier Themen*, genau wie auf deinem Lernzettel.",
+   "v": {
+    "type": "kb"
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Thema eins: die *Selbstständigkeit*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Selbstständig ist, wer sein *eigenes Unternehmen* führt. Du hast *keinen Chef* mehr, aber du trägst das *ganze Risiko*.",
+   "v": {
+    "type": "def",
+    "term": "Selbstständigkeit",
+    "text": "Wer sein eigenes Unternehmen führt. Kein Chef, aber das ganze Risiko.",
+    "cue": ""
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Warum macht man das? Die *Motive*: *eigener Chef* sein, *eigene Ideen* umsetzen, *mehr verdienen*, *Selbstverwirklichung*, und manchmal, weil *kein passender Job* in Aussicht ist. Lukas zum Beispiel möchte sich als Elektriker auf Photovoltaik spezialisieren und sein eigener Chef sein.",
+   "v": {
+    "type": "points",
+    "title": "Motive",
+    "label": null,
+    "items": [
+     {
+      "text": "eigener Chef sein",
+      "cue": "eigener"
+     },
+     {
+      "text": "eigene Ideen umsetzen",
+      "cue": "Ideen"
+     },
+     {
+      "text": "mehr verdienen",
+      "cue": "verdienen"
+     },
+     {
+      "text": "Selbstverwirklichung",
+      "cue": "Selbstverwirklichung"
+     },
+     {
+      "text": "kein passender Job in Aussicht",
+      "cue": "Job"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Man braucht *Unternehmereigenschaften*, und die nennst du *immer mit Begründung*. *Belastbarkeit*, weil es viel Arbeit und Stress gibt. *Kommunikationsfähigkeit*, weil man mit Kunden, Mitarbeitern und der Bank reden muss. *Fachwissen*, um das Handwerk zu beherrschen. *Kaufmännisches Wissen*, um zu rechnen und zu planen. *Entscheidungsfreude*, weil man allein entscheidet. Und *Risikobereitschaft*, weil das eigene Geld verloren gehen kann.",
+   "v": {
+    "type": "table",
+    "title": "Unternehmereigenschaften (mit Begründung!)",
+    "head": [
+     "Eigenschaft",
+     "weil …"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Belastbarkeit",
+       "viel Arbeit und Stress"
+      ],
+      "cue": "Belastbarkeit",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Kommunikationsfähigkeit",
+       "mit Kunden, Mitarbeitern, Bank reden"
+      ],
+      "cue": "Kommunikationsfähigkeit",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Fachwissen",
+       "das Handwerk beherrschen"
+      ],
+      "cue": "Fachwissen",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Kaufmännisches Wissen",
+       "rechnen und planen"
+      ],
+      "cue": "Kaufmännisches",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Entscheidungsfreude",
+       "allein entscheiden"
+      ],
+      "cue": "Entscheidungsfreude",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Risikobereitschaft",
+       "eigenes Geld kann verloren gehen"
+      ],
+      "cue": "Risikobereitschaft",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Jetzt die *Chancen und Risiken*, immer in vier Bereichen. *Einkommen*: Chance, mehr verdienen, der Gewinn gehört einem selbst. Risiko, kein festes Gehalt, eigenes Geld kann verloren gehen, bis zur *Insolvenz*. *Arbeitszeit*: Chance, Zeit selbst einteilen. Risiko, viel Arbeit, auch am Wochenende, wenig Urlaub. *Verantwortung*: Chance, eigener Chef, selbst entscheiden. Risiko, für alles verantwortlich, auch für Mitarbeiter. Und *Absicherung*: Chance, Versicherungen frei wählen. Risiko, alles *selbst zahlen*, keine Lohnfortzahlung bei Krankheit, kein bezahlter Urlaub.",
+   "v": {
+    "type": "table",
+    "title": "Chancen & Risiken",
+    "head": [
+     "Bereich",
+     "Chance ➕",
+     "Risiko ➖"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Einkommen",
+       "mehr verdienen, Gewinn gehört mir",
+       "kein festes Gehalt, bis Insolvenz"
+      ],
+      "cue": "Einkommen",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Arbeitszeit",
+       "Zeit selbst einteilen",
+       "viel Arbeit, Wochenende, wenig Urlaub"
+      ],
+      "cue": "Arbeitszeit",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Verantwortung",
+       "eigener Chef, selbst entscheiden",
+       "für alles verantwortlich, auch Mitarbeiter"
+      ],
+      "cue": "Verantwortung",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Absicherung",
+       "Versicherungen frei wählen",
+       "alles selbst zahlen, keine Lohnfortzahlung"
+      ],
+      "cue": "Absicherung",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Selbstständigkeit",
+   "text": "Der Trick, damit du die vier Bereiche nie vergisst: *Geld, Zeit, Verantwortung, Absicherung*.",
+   "v": {
+    "type": "merke",
+    "text": "Trick: Geld – Zeit – Verantwortung – Absicherung"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Geschäftsplan und Standort",
+   "text": "Thema zwei: *Geschäftsplan und Standort*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Geschäftsplan und Standort",
+   "text": "Der *Geschäftsplan* ist ein *schriftliches Konzept* für die Gründung. Er beantwortet zwei Fragen: *Was* will ich machen, und *wie* verdiene ich damit Geld?",
+   "v": {
+    "type": "def",
+    "term": "Geschäftsplan",
+    "text": "Schriftliches Konzept für die Gründung: Was will ich machen, und wie verdiene ich damit Geld?",
+    "cue": ""
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Geschäftsplan und Standort",
+   "text": "Der *Inhalt*: die *Geschäftsidee*, die *Gründerperson* mit Ausbildung und Erfahrung, *Kunden und Markt*, die *Konkurrenz*, das *Marketing*, der *Standort*, die *Rechtsform*, das *Personal* und die *Finanzen*, also der Kapitalbedarfsplan. Die *Funktion*: alles *durchdenken*, dann hat man weniger Risiko, und einen *Kredit* bekommen. Die *Adressaten*, also wer ihn liest: die *Bank*, der *Gründer selbst* und *Förderstellen*, zum Beispiel die Agentur für Arbeit.",
+   "v": {
+    "type": "points",
+    "title": "Geschäftsplan",
+    "label": null,
+    "items": [
+     {
+      "text": "Inhalt: Idee, Gründerperson, Kunden & Markt, Konkurrenz",
+      "cue": "Geschäftsidee"
+     },
+     {
+      "text": "… Marketing, Standort, Rechtsform, Personal, Finanzen",
+      "cue": "Marketing"
+     },
+     {
+      "text": "Funktion: durchdenken ➜ weniger Risiko + Kredit",
+      "cue": "Funktion"
+     },
+     {
+      "text": "Adressaten: Bank, Gründer selbst, Förderstellen",
+      "cue": "Adressaten"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Geschäftsplan und Standort",
+   "text": "Der *Standort* ist der *Ort*, an dem das Unternehmen sitzt. Er entscheidet oft über *Erfolg oder Misserfolg*. Die *Standortfaktoren*: *Kunden* in der Nähe, *Konkurrenz* in der Nähe, die *Kosten*, also Miete oder Pacht, die *Erreichbarkeit*, also Parkplätze, Bus und Bahn, und *Größe und Ausstattung*, also Platz und Erweiterungsmöglichkeiten.",
+   "v": {
+    "type": "points",
+    "title": "Standortfaktoren",
+    "label": null,
+    "items": [
+     {
+      "text": "Kunden in der Nähe",
+      "cue": "Kunden"
+     },
+     {
+      "text": "Konkurrenz in der Nähe",
+      "cue": "Konkurrenz"
+     },
+     {
+      "text": "Kosten (Miete, Pacht)",
+      "cue": "Kosten"
+     },
+     {
+      "text": "Erreichbarkeit (Parkplätze, Bus, Bahn)",
+      "cue": "Erreichbarkeit"
+     },
+     {
+      "text": "Größe & Ausstattung (Platz, Erweiterung)",
+      "cue": "Größe"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Geschäftsplan und Standort",
+   "text": "In der Prüfung bekommst du oft eine *Bewertungstabelle*. Erstens: Jeden Faktor pro Standort mit *Punkten* bewerten, passend zur *Anlage*. Zweitens: die Punkte *addieren*. Drittens: den Standort mit den *meisten Punkten* empfehlen, und zwar *mit Begründung*.",
+   "v": {
+    "type": "case",
+    "title": "Bewertungstabelle",
+    "items": [
+     {
+      "text": "Punkte pro Faktor & Standort (passend zur Anlage)",
+      "cue": "Punkten"
+     },
+     {
+      "text": "Punkte addieren",
+      "cue": "addieren"
+     },
+     {
+      "text": "meiste Punkte ➜ empfehlen + begründen",
+      "cue": "meisten"
+     }
+    ]
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Thema drei: die *Rechtsformen*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Die Rechtsform regelt vor allem, *wer haftet* und *wie viel Geld* man zum Gründen braucht. Verglichen wird nach *drei Merkmalen*: *Mindestkapital*, *Haftung* und *Geschäftsführung*.",
+   "v": {
+    "type": "def",
+    "term": "Rechtsform",
+    "text": "Regelt vor allem, wer haftet und wie viel Geld man zum Gründen braucht. Merkmale: Mindestkapital, Haftung, Geschäftsführung.",
+    "cue": ""
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Das *Einzelunternehmen*: *eine Person*, *kein* Mindestkapital, die Haftung ist *unbeschränkt*, also auch mit dem *Privatvermögen*, und die Geschäftsführung macht der *Inhaber allein*. Die *GbR*: *mindestens zwei* Personen, *kein* Mindestkapital, *alle* haften *unbeschränkt* mit dem Privatvermögen, und zwar *jeder für alles*. Die Geschäftsführung machen *alle gemeinsam*.",
+   "v": {
+    "type": "table",
+    "title": "Einzelunternehmen & GbR",
+    "head": [
+     "",
+     "Einzelunternehmen",
+     "GbR"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Personen",
+       "1",
+       "mind. 2"
+      ],
+      "cue": "Person",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Mindestkapital",
+       "keins",
+       "keins"
+      ],
+      "cue": "Mindestkapital",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Haftung",
+       "unbeschränkt, auch privat",
+       "alle unbeschränkt, jeder für alles"
+      ],
+      "cue": "unbeschränkt",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Geschäftsführung",
+       "Inhaber allein",
+       "alle gemeinsam"
+      ],
+      "cue": "Inhaber",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Die *GmbH*: ab *einer Person*, Mindestkapital *fünfundzwanzigtausend Euro*, die Haftung ist *beschränkt*, das *Privatvermögen* ist *geschützt*, und es gibt einen *Geschäftsführer*. Die *UG haftungsbeschränkt*, die *Mini-GmbH*: ab einer Person, Mindestkapital schon *ab einem Euro*, ebenfalls beschränkte Haftung und ein Geschäftsführer. Aber sie muss *fünfundzwanzig Prozent* vom Gewinn zurücklegen, bis fünfundzwanzigtausend Euro erreicht sind.",
+   "v": {
+    "type": "table",
+    "title": "GmbH & UG",
+    "head": [
+     "",
+     "GmbH",
+     "UG (haftungsbeschränkt)"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Personen",
+       "ab 1",
+       "ab 1"
+      ],
+      "cue": "GmbH",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Mindestkapital",
+       "25.000 €",
+       "ab 1 €"
+      ],
+      "cue": "fünfundzwanzigtausend",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Haftung",
+       "beschränkt, privat geschützt",
+       "beschränkt, privat geschützt"
+      ],
+      "cue": "beschränkt",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Geschäftsführung",
+       "Geschäftsführer",
+       "Geschäftsführer"
+      ],
+      "cue": "Geschäftsführer",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Besonderheit",
+       "–",
+       "25 % vom Gewinn zurücklegen bis 25.000 €"
+      ],
+      "cue": "Prozent",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Wie wählst du die *passende* Rechtsform? Drei Fragen. Erstens: *Wie viele* gründen, allein oder mehrere? Zweitens: *Wie viel Geld* ist da? Wenig Geld, dann keine GmbH. Drittens: Soll das *Privatvermögen geschützt* sein? Dann GmbH oder UG.",
+   "v": {
+    "type": "case",
+    "title": "So wählst du die Rechtsform",
+    "items": [
+     {
+      "text": "Wie viele gründen?",
+      "cue": "viele"
+     },
+     {
+      "text": "Wie viel Geld? Wenig ➜ keine GmbH",
+      "cue": "Geld"
+     },
+     {
+      "text": "Privatvermögen schützen? ➜ GmbH / UG",
+      "cue": "Privatvermögen"
+     }
+    ]
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Rechtsformen",
+   "text": "Merke: Einzelunternehmen und GbR gleich kein Kapital, aber privat haften. GmbH und UG gleich Privatvermögen geschützt. GmbH fünfundzwanzigtausend Euro, UG ein Euro.",
+   "v": {
+    "type": "merke",
+    "text": "Einzel + GbR = kein Kapital, aber privat haften · GmbH (25.000 €) + UG (1 €) = Privatvermögen geschützt"
+   },
+   "part": 0
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Thema vier, das letzte: der *Kapitalbedarfsplan*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Der Kapitalbedarfsplan zeigt, *wie viel Geld* man *insgesamt* für die Gründung braucht, und wie viel man davon *von der Bank* leihen muss.",
+   "v": {
+    "type": "def",
+    "term": "Kapitalbedarfsplan",
+    "text": "Zeigt, wie viel Geld man insgesamt für die Gründung braucht und wie viel davon von der Bank geliehen werden muss.",
+    "cue": ""
+   },
+   "part": 0
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Was gehört rein? a, die *Investitionen*, also einmalige Anschaffungen: Einrichtung, Umbau, Maschinen, Werkzeug, Fahrzeug, Computer, Kasse. b, die *ersten Waren*, zum Beispiel Fahrräder für den Laden. c, die *Gründungskosten*: Notar, Gewerbeanmeldung, Beratung. d, die *laufenden Kosten* für die Anfangszeit, für einige Monate: Miete oder Pacht, Löhne, Werbung. e, die *Lebenshaltungskosten* des Gründers, denn am Anfang verdient man wenig, muss aber trotzdem selbst leben. Und f, eine *Reserve* für Unvorhergesehenes.",
+   "v": {
+    "type": "points",
+    "title": "Was gehört rein?",
+    "label": null,
+    "items": [
+     {
+      "text": "a) Investitionen (Einrichtung, Maschinen, Fahrzeug …)",
+      "cue": "Investitionen"
+     },
+     {
+      "text": "b) erste Waren",
+      "cue": "Waren"
+     },
+     {
+      "text": "c) Gründungskosten (Notar, Gewerbeanmeldung)",
+      "cue": "Gründungskosten"
+     },
+     {
+      "text": "d) laufende Kosten Anfangszeit (Miete, Löhne, Werbung)",
+      "cue": "laufenden"
+     },
+     {
+      "text": "e) Lebenshaltungskosten des Gründers",
+      "cue": "Lebenshaltungskosten"
+     },
+     {
+      "text": "f) Reserve",
+      "cue": "Reserve"
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Ganz wichtig: Bei *monatlichen* Kosten rechnest du *mal die Monate*. Pacht zwölfhundert Euro *mal zwölf* Monate. Und die Rechnung lautet: *Kapitalbedarf minus Eigenkapital gleich Kredit* von der Bank, also *Fremdkapital*.",
+   "v": {
+    "type": "formula",
+    "parts": [
+     [
+      "Kapitalbedarf",
+      "#ea580c",
+      "Kapitalbedarf"
+     ],
+     [
+      "− Eigenkapital",
+      "#16a34a",
+      "Eigenkapital"
+     ],
+     [
+      "= Kredit (Fremdkapital)",
+      "#dc2626",
+      "Kredit"
+     ]
+    ],
+    "note": "monatliche Kosten × Monate (z. B. Pacht 1.200 € × 12)"
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Das Beispiel aus deinem Lernzettel: Stefan gründet einen *Fahrradladen* und hat fünfundzwanzigtausend Euro Eigenkapital. *Einrichtung* fünfzehntausend, *Werkzeug* fünftausend, *Lieferwagen* zwölftausend, *erste Fahrräder* zwanzigtausend, *Gründungskosten* tausendfünfhundert, *Pacht* zwölfhundert mal zwölf gleich vierzehntausendvierhundert, *Lebenshaltung* fünfzehnhundert mal zwölf gleich achtzehntausend und eine *Reserve* von fünftausend. Das ergibt einen *Kapitalbedarf* von neunzigtausendneunhundert Euro. Minus fünfundzwanzigtausend Eigenkapital, das sind *fünfundsechzigtausendneunhundert Euro Kredit*.",
+   "v": {
+    "type": "ledger",
+    "title": "Kapitalbedarf Stefan (Fahrradladen)",
+    "rows": [
+     {
+      "label": "Einrichtung",
+      "amount": 15000,
+      "cue": "Einrichtung"
+     },
+     {
+      "label": "Werkzeug",
+      "amount": 5000,
+      "cue": "Werkzeug"
+     },
+     {
+      "label": "Lieferwagen",
+      "amount": 12000,
+      "cue": "Lieferwagen"
+     },
+     {
+      "label": "Erste Fahrräder",
+      "amount": 20000,
+      "cue": "erste"
+     },
+     {
+      "label": "Gründungskosten",
+      "amount": 1500,
+      "cue": "Gründungskosten"
+     },
+     {
+      "label": "Pacht 1.200 € × 12",
+      "amount": 14400,
+      "cue": "Pacht"
+     },
+     {
+      "label": "Lebenshaltung 1.500 € × 12",
+      "amount": 18000,
+      "cue": "Lebenshaltung"
+     },
+     {
+      "label": "Reserve",
+      "amount": 5000,
+      "cue": "Reserve"
+     },
+     {
+      "label": "= Kapitalbedarf",
+      "amount": null,
+      "cue": "Kapitalbedarf",
+      "total": true
+     }
+    ],
+    "note": "90.900 € − 25.000 € Eigenkapital = 65.900 € Kredit",
+    "cueNote": "fünfundsechzigtausendneunhundert"
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Kapitalbedarfsplan",
+   "text": "Und zum Schluss das *Merke alles* für Kompetenzbereich vier. Thema eins: Motive, Eigenschaften mit Begründung, Chancen und Risiken: Geld, Zeit, Verantwortung, Absicherung. Thema zwei: Geschäftsplan gleich Konzept für die *Bank*, Standort per *Punktetabelle* begründet wählen. Thema drei: Einzelunternehmen und GbR haften privat, ohne Kapital, GmbH und UG schützen das Privatvermögen. Thema vier: Kapitalbedarf minus Eigenkapital gleich Kredit, monatliche Kosten mal Monate. Viel Erfolg in deiner Prüfung, du schaffst das!",
+   "v": {
+    "type": "points",
+    "title": "Merke alles 🧠",
+    "label": null,
+    "items": [
+     {
+      "text": "1: Motive, Eigenschaften + Begründung, Geld – Zeit – Verantwortung – Absicherung",
+      "cue": "Motive"
+     },
+     {
+      "text": "2: Geschäftsplan = Konzept für die Bank · Standort per Punktetabelle",
+      "cue": "Geschäftsplan"
+     },
+     {
+      "text": "3: Einzel/GbR privat haften · GmbH (25.000 €) / UG (1 €) geschützt",
+      "cue": "Einzelunternehmen"
+     },
+     {
+      "text": "4: Kapitalbedarf − Eigenkapital = Kredit · monatlich × Monate",
+      "cue": "Kapitalbedarf"
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  }
+ ]
+}

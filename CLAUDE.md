@@ -56,3 +56,11 @@ Lokal reicht `npm run render:3d`.
   `scripts/build_wiso_all_script.py` (Szenen mit `sub` = Unterthema in der Kopfzeile). Nutzt `src/wiso/Visuals.tsx`
   (zusätzlich: grid, pillars, table, flow, stairs, ledger, timeline, triangle, chart, formula2, cycle).
   Spickzettel: `videos/wiso-komplett-spickzettel.md`.
+
+## Ausführliche Lernvideos nach Lernzettel (aktueller Wunsch-Stil)
+- 4 Videos `LernKB1`–`LernKB4` (1920×1080, 25 fps), Skripte aus `scripts/build_lern_scripts.py` (folgt exakt dem
+  Lernzettel des Nutzers: Definition, Stichpunkte, „Was passiert?“, Merke) → `src/lern_kbN/script.json`.
+- **Minimal-Design** (`src/lern/Min.tsx`, `src/lern/LernVideo.tsx`): heller Hintergrund, viel Weißraum, Inter,
+  eine Akzentfarbe pro KB, Kopfzeile „KB I · Titel“ + „Thema x/n“, Untertitel ohne Box. Gefällt dem Nutzer.
+- Stimme pro Video EIN Modell (Charon): KB1+KB2 3.1-preview, KB3 2.5-pro-preview, KB4 3.8 (Tageslimits!).
+- YouTube/Bing sind in der Cloud-Umgebung gesperrt – für Stil-Vorbilder Bildschirmaufnahme hochladen lassen.

@@ -1,0 +1,1647 @@
+{
+ "kb": 1,
+ "title": "Die Rolle des Mitarbeiters in der Arbeitswelt",
+ "topics": [
+  "Duale Ausbildung",
+  "Ausbildungsvertrag",
+  "Schutzgesetze",
+  "Arbeitsvertrag",
+  "Kündigung und Kündigungsschutz",
+  "Arbeitszeugnis",
+  "Betriebsrat",
+  "Tarifvertrag und Arbeitskampf",
+  "Sozialversicherung",
+  "Lohnabrechnung",
+  "Steuererklärung"
+ ],
+ "sentences": [
+  {
+   "topic": 0,
+   "tname": "Überblick",
+   "text": "Willkommen zum Kompetenzbereich eins: Die Rolle des Mitarbeiters in der Arbeitswelt. Wir gehen *elf Themen* durch, genau in der Reihenfolge deines Lernzettels. Bei jedem Thema erkläre ich dir zuerst, worum es geht, dann kommen Beispiele, und am Ende gibt es immer ein *Merke*. Begleiten wird uns Lukas, er macht eine Ausbildung zum Elektroniker für Betriebstechnik.",
+   "v": {
+    "type": "kb"
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Duale Ausbildung",
+   "text": "Thema eins: die *duale Ausbildung*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Duale Ausbildung",
+   "text": "Dual heißt einfach *zwei*. Du lernst an zwei *Lernorten*: im *Betrieb* die Praxis und in der *Berufsschule* die Theorie. Und für beide gibt es einen eigenen Plan. Der Betrieb richtet sich nach der *Ausbildungsordnung*, die kommt vom *Bund*, und darin steckt der *Ausbildungsrahmenplan*. Die Berufsschule richtet sich nach dem *Rahmenlehrplan*, und der kommt vom *Land*.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Betrieb",
+     "items": [
+      "Praxis",
+      "Ausbildungsordnung (Bund)",
+      "darin: Ausbildungsrahmenplan"
+     ]
+    },
+    "right": {
+     "title": "Berufsschule",
+     "items": [
+      "Theorie",
+      "Rahmenlehrplan (Land)"
+     ]
+    },
+    "cueRight": "Berufsschule",
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Duale Ausbildung",
+   "text": "Wer ist an deiner Ausbildung beteiligt? Es sind *sechs*. Erstens der *Auszubildende*, also du: Du lernst. Zweitens der *Ausbildende*, das ist die *Firma*. Sie schließt den Vertrag mit dir und zahlt die Vergütung. Drittens der *Ausbilder*, das ist eine *Person*, die dich wirklich ausbildet. Die muss *persönlich und fachlich geeignet* sein. Viertens die *Berufsschule*. Fünftens die *Kammer*, also IHK oder Handwerkskammer: Sie überwacht, berät und nimmt die Prüfungen ab. Und sechstens die *Eltern*: Die unterschreiben mit, wenn du noch unter achtzehn bist.",
+   "v": {
+    "type": "points",
+    "title": "Die 6 Beteiligten",
+    "label": null,
+    "items": [
+     {
+      "text": "Auszubildender – lernt",
+      "cue": "Auszubildende"
+     },
+     {
+      "text": "Ausbildender = Firma – Vertrag, Vergütung",
+      "cue": "Ausbildende"
+     },
+     {
+      "text": "Ausbilder = Person – persönlich & fachlich geeignet",
+      "cue": "Ausbilder"
+     },
+     {
+      "text": "Berufsschule – Theorie",
+      "cue": "Viertens"
+     },
+     {
+      "text": "Kammer (IHK/HWK) – überwacht, berät, prüft",
+      "cue": "Kammer"
+     },
+     {
+      "text": "Eltern – unterschreiben unter 18",
+      "cue": "Eltern"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Duale Ausbildung",
+   "text": "Was bringt dir das duale System? Du lernst *Praxis und Theorie* zusammen, du verdienst schon *Geld*, und oft wirst du nach der Ausbildung *übernommen*. Der Nachteil: Die *Qualität* hängt stark vom Betrieb ab. Ein guter Betrieb bringt dir viel bei, ein schlechter lässt dich nur Hilfsarbeiten machen.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Vorteile",
+     "items": [
+      "Praxis + Theorie",
+      "schon Geld verdienen",
+      "Übernahmechance"
+     ]
+    },
+    "right": {
+     "title": "Nachteil",
+     "items": [
+      "Qualität hängt vom Betrieb ab"
+     ]
+    },
+    "cueRight": "Nachteil",
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Duale Ausbildung",
+   "text": "Und hier das Merke, da kommen viele durcheinander: Der *Ausbildende* ist die *Firma*, die den Vertrag macht und zahlt. Der *Ausbilder* ist die *Person*, die dich ausbildet.",
+   "v": {
+    "type": "merke",
+    "text": "Ausbildender = Firma (Vertrag, Geld) · Ausbilder = Person (bildet aus)"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Thema zwei: der *Ausbildungsvertrag*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Wie kommt er zustande? Der Vertrag wird *schriftlich* und *vor Beginn* der Ausbildung abgeschlossen, von beiden *unterschrieben* und bei der *Kammer eingetragen*. Bist du unter achtzehn, müssen deine *Eltern* mitunterschreiben, und du brauchst eine *ärztliche Erstuntersuchung*.",
+   "v": {
+    "type": "points",
+    "title": "Zustandekommen",
+    "label": null,
+    "items": [
+     {
+      "text": "schriftlich",
+      "cue": "schriftlich"
+     },
+     {
+      "text": "vor Beginn der Ausbildung",
+      "cue": "Beginn"
+     },
+     {
+      "text": "unterschrieben",
+      "cue": "unterschrieben"
+     },
+     {
+      "text": "bei der Kammer eingetragen",
+      "cue": "Kammer"
+     },
+     {
+      "text": "unter 18: Eltern + ärztliche Erstuntersuchung",
+      "cue": "Eltern"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Was steht drin? Der *Beruf*, *Beginn und Dauer*, die tägliche *Ausbildungszeit*, die *Probezeit*, die ist *ein bis vier Monate* lang, die *Vergütung*, die jedes Jahr steigt, der *Urlaub* und die Regeln zur *Kündigung*.",
+   "v": {
+    "type": "points",
+    "title": "Inhalt",
+    "label": null,
+    "items": [
+     {
+      "text": "Beruf",
+      "cue": "Beruf"
+     },
+     {
+      "text": "Beginn und Dauer",
+      "cue": "Dauer"
+     },
+     {
+      "text": "Ausbildungszeit",
+      "cue": "Ausbildungszeit"
+     },
+     {
+      "text": "Probezeit 1–4 Monate",
+      "cue": "Probezeit"
+     },
+     {
+      "text": "Vergütung (steigt jährlich)",
+      "cue": "Vergütung"
+     },
+     {
+      "text": "Urlaub, Kündigung",
+      "cue": "Urlaub"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Aus dem Vertrag folgen Pflichten. Du als *Azubi* musst *lernen*, die *Berufsschule* besuchen, dein *Berichtsheft* führen, *Weisungen* befolgen, *sorgfältig* arbeiten und Betriebsgeheimnisse für dich behalten. Der *Betrieb* muss dich *ausbilden*, dir *Werkzeug kostenlos* stellen, dich für Schule und Prüfung *freistellen*, dich *bezahlen* und dir am Ende ein *Zeugnis* geben. Und ganz wichtig: Er darf dir keine *ausbildungsfremden* Arbeiten geben. Den Arbeitsplatz aufräumen gehört dazu. Aber jeden Tag nur Kaffee holen, das ist ausbildungsfremd.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Pflichten Azubi",
+     "items": [
+      "lernen",
+      "Berufsschule",
+      "Berichtsheft",
+      "Weisungen befolgen",
+      "sorgfältig, schweigen"
+     ]
+    },
+    "right": {
+     "title": "Pflichten Betrieb",
+     "items": [
+      "ausbilden",
+      "Werkzeug kostenlos",
+      "freistellen",
+      "zahlen, Zeugnis",
+      "keine ausbildungsfremden Arbeiten"
+     ]
+    },
+    "cueRight": "Betrieb",
+    "note": "Arbeitsplatz aufräumen ✅ · ständig Kaffee holen ❌"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Und wenn es Ärger gibt? Dann gehst du Schritt für Schritt vor: zuerst das *Gespräch* mit dem Ausbilder. Hilft das nicht, der *Betriebsrat* oder die *JAV*, also die Jugend- und Auszubildendenvertretung. Dann die *Kammer*, und ganz am Ende das *Arbeitsgericht*. Und bevor ein Betrieb einem Azubi kündigt, kommt meistens vorher eine *Abmahnung*.",
+   "v": {
+    "type": "case",
+    "title": "Konflikte lösen",
+    "items": [
+     {
+      "text": "Gespräch",
+      "cue": "Gespräch"
+     },
+     {
+      "text": "Betriebsrat / JAV",
+      "cue": "Betriebsrat"
+     },
+     {
+      "text": "Kammer",
+      "cue": "Kammer"
+     },
+     {
+      "text": "Arbeitsgericht",
+      "cue": "Arbeitsgericht"
+     }
+    ]
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Jetzt die *Kündigung*. Sie muss immer *schriftlich* sein. In der *Probezeit* dürfen *beide* jederzeit kündigen, ohne Grund und ohne Frist. *Nach* der Probezeit darf der *Betrieb* nur noch *fristlos* kündigen, und zwar nur aus einem *wichtigen Grund*, zum Beispiel bei Diebstahl. Der *Azubi* darf nach der Probezeit auch fristlos aus wichtigem Grund kündigen, oder mit *vier Wochen* Frist, wenn er den *Beruf wechselt* oder die Ausbildung ganz aufgibt.",
+   "v": {
+    "type": "table",
+    "title": "Kündigung (immer schriftlich)",
+    "head": [
+     "Wann?",
+     "Wer?",
+     "Wie?"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Probezeit",
+       "beide",
+       "jederzeit, ohne Grund"
+      ],
+      "cue": "Probezeit",
+      "hl": false
+     },
+     {
+      "cells": [
+       "danach",
+       "Betrieb",
+       "nur fristlos aus wichtigem Grund"
+      ],
+      "cue": "Betrieb",
+      "hl": false
+     },
+     {
+      "cells": [
+       "danach",
+       "Azubi",
+       "fristlos ODER 4 Wochen bei Berufswechsel"
+      ],
+      "cue": "vier",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Wann *endet* die Ausbildung? Mit *Ablauf* der Ausbildungszeit oder schon mit der *bestandenen Prüfung*. Fällst du durch, kannst du *verlängern*, bis zu *einem Jahr*. Und Achtung: Arbeitest du nach dem Ende einfach weiter, ohne dass etwas vereinbart wurde, entsteht automatisch ein *unbefristetes* Arbeitsverhältnis.",
+   "v": {
+    "type": "points",
+    "title": "Ende der Ausbildung",
+    "label": null,
+    "items": [
+     {
+      "text": "Ablauf der Ausbildungszeit",
+      "cue": "Ablauf"
+     },
+     {
+      "text": "oder bestandene Prüfung",
+      "cue": "bestandenen"
+     },
+     {
+      "text": "nicht bestanden ➜ Verlängerung bis 1 Jahr",
+      "cue": "verlängern"
+     },
+     {
+      "text": "einfach weiterarbeiten ➜ unbefristet!",
+      "cue": "unbefristetes"
+     }
+    ],
+    "note": null
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Ausbildungsvertrag",
+   "text": "Merke: In der *Probezeit* kann *jeder jederzeit* kündigen. Danach der *Betrieb* nur *fristlos*. Der *Azubi* zusätzlich mit *vier Wochen*, wenn er den Beruf wechselt.",
+   "v": {
+    "type": "merke",
+    "text": "Probezeit: jeder jederzeit · danach Betrieb nur fristlos · Azubi auch 4 Wochen bei Berufswechsel"
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Thema drei: die *Schutzgesetze*, auch *sozialer Arbeitsschutz* genannt.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Für *Jugendliche* unter achtzehn gibt es das Jugendarbeitsschutzgesetz. Merk dir die Zahlenreihe *acht, vierzig, fünf, zwölf*: höchstens *acht Stunden* am Tag, *vierzig Stunden* in der Woche, an *fünf Tagen*, und mindestens *zwölf Stunden* Freizeit zwischen zwei Arbeitstagen. Außerdem: keine Arbeit zwischen *zwanzig und sechs Uhr*. Ein Berufsschultag mit *mehr als fünf* Stunden zählt als *voller Arbeitstag*. Jugendliche bekommen *mehr Urlaub*, müssen vor Beginn zum *Arzt*, und *gefährliche Arbeiten* und *Akkordarbeit* sind verboten.",
+   "v": {
+    "type": "big",
+    "big": "8 – 40 – 5 – 12",
+    "sub": "Jugendarbeitsschutz (unter 18)",
+    "items": [
+     {
+      "text": "8 Std./Tag · 40 Std./Woche · 5 Tage · 12 Std. Freizeit",
+      "cue": "acht"
+     },
+     {
+      "text": "keine Arbeit 20–6 Uhr",
+      "cue": "zwanzig"
+     },
+     {
+      "text": "Berufsschultag > 5 Std. = voller Arbeitstag",
+      "cue": "Berufsschultag"
+     },
+     {
+      "text": "mehr Urlaub, Arzt vor Beginn",
+      "cue": "Urlaub"
+     },
+     {
+      "text": "verboten: gefährliche Arbeit, Akkord",
+      "cue": "gefährliche"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Die *Ruhepausen* für Jugendliche: Wer mehr als *viereinhalb* Stunden arbeitet, bekommt *dreißig Minuten* Pause. Wer mehr als *sechs* Stunden arbeitet, bekommt insgesamt *sechzig Minuten*. Und eine Pause zählt erst ab *fünfzehn Minuten*. Zwei Mal fünf Minuten Kaffee sind also keine Pause. Für *Erwachsene* gilt: *acht* Stunden am Tag, kurzzeitig auch *zehn*, und *elf Stunden* Ruhe.",
+   "v": {
+    "type": "table",
+    "title": "Pausen & Arbeitszeit",
+    "head": [
+     "",
+     "Jugendliche",
+     "Erwachsene"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Arbeitszeit",
+       "8 Std.",
+       "8 Std., kurz 10"
+      ],
+      "cue": "Ruhepausen",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Pause",
+       "> 4,5 Std. ➜ 30 Min. · > 6 Std. ➜ 60 Min.",
+       "(30 / 45 Min.)"
+      ],
+      "cue": "viereinhalb",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Pause zählt ab",
+       "15 Minuten",
+       "15 Minuten"
+      ],
+      "cue": "fünfzehn",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Ruhe zwischen Arbeitstagen",
+       "12 Std.",
+       "11 Std."
+      ],
+      "cue": "elf",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Der *Urlaub* für Erwachsene: mindestens *vierundzwanzig Werktage*. Werktage sind Montag bis Samstag, also sechs Tage pro Woche. Du arbeitest aber nur fünf. Darum rechnest du: vierundzwanzig *geteilt durch sechs* mal *fünf*, das sind *zwanzig Arbeitstage*. Mehr Urlaub ist erlaubt, weniger nicht.",
+   "v": {
+    "type": "formula",
+    "parts": [
+     [
+      "24 Werktage",
+      "#2563eb",
+      "vierundzwanzig"
+     ],
+     [
+      "÷ 6 × 5",
+      "#1f2937",
+      "geteilt"
+     ],
+     [
+      "=",
+      "#1f2937",
+      "zwanzig"
+     ],
+     [
+      "20 Arbeitstage",
+      "#16a34a",
+      "zwanzig"
+     ]
+    ],
+    "note": "Mehr Urlaub erlaubt, weniger nicht"
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Beim *Mutterschutz* darf eine Frau *sechs Wochen vor* und *acht Wochen nach* der Geburt nicht arbeiten. Kündigungsschutz gilt *ab der Schwangerschaft* bis *vier Monate* nach der Geburt. *Elternzeit* können *beide Eltern* nehmen, bis zum *dritten Geburtstag* des Kindes. Währenddessen gibt es Kündigungsschutz, und *Elterngeld* zahlt der *Staat*. *Überwacht* wird das alles vom *Gewerbeaufsichtsamt*, der *Berufsgenossenschaft* und dem *Betriebsrat*.",
+   "v": {
+    "type": "points",
+    "title": "Mutterschutz & Elternzeit",
+    "label": null,
+    "items": [
+     {
+      "text": "Mutterschutz: 6 Wochen vor, 8 nach der Geburt",
+      "cue": "Mutterschutz"
+     },
+     {
+      "text": "Kündigungsschutz ab Schwangerschaft bis 4 Monate danach",
+      "cue": "Kündigungsschutz"
+     },
+     {
+      "text": "Elternzeit: beide Eltern, bis zum 3. Geburtstag",
+      "cue": "Elternzeit"
+     },
+     {
+      "text": "Elterngeld vom Staat",
+      "cue": "Elterngeld"
+     },
+     {
+      "text": "Überwachung: Gewerbeaufsichtsamt, Berufsgenossenschaft, Betriebsrat",
+      "cue": "Überwacht"
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Schutzgesetze",
+   "text": "Merke dir drei Begriffe, die oft verwechselt werden: Die *Ruhepause* ist *in* der Arbeit, also dreißig oder sechzig Minuten. Die *Freizeit* ist *zwischen* zwei Arbeitstagen, zwölf Stunden. Und die *Nachtruhe* ist eine *Uhrzeit*: zwanzig bis sechs Uhr.",
+   "v": {
+    "type": "merke",
+    "text": "Ruhepause = IN der Arbeit · Freizeit = ZWISCHEN zwei Tagen (12 Std.) · Nachtruhe = UHRZEIT (20–6 Uhr)"
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Arbeitsvertrag",
+   "text": "Thema vier: der *Arbeitsvertrag*. Ganz einfach gesagt: Der Arbeitnehmer *arbeitet*, der Arbeitgeber *zahlt*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Arbeitsvertrag",
+   "text": "Schon beim *Vorstellungsgespräch* gibt es Regeln. *Zulässig* sind Fragen, die mit der Arbeit zu tun haben: deine *Ausbildung*, deine *Erfahrung*, deine *Kenntnisse*. *Unzulässig* sind Fragen nach *Schwangerschaft*, *Religion*, *Partei* oder deinen *Finanzen*. Auf eine unzulässige Frage darfst du sogar *lügen*, das nennt man das *Recht zur Lüge*. Fragt der Chef eine Bewerberin, ob sie schwanger ist, darf sie Nein sagen, ohne Folgen.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Zulässig ✅",
+     "items": [
+      "Ausbildung",
+      "Erfahrung",
+      "Kenntnisse"
+     ]
+    },
+    "right": {
+     "title": "Unzulässig ❌",
+     "items": [
+      "Schwangerschaft",
+      "Religion, Partei",
+      "Finanzen",
+      "➜ Recht zur Lüge"
+     ]
+    },
+    "cueRight": "Unzulässig",
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Arbeitsvertrag",
+   "text": "Muss der Vertrag schriftlich sein? Nein, er ist *formfrei*. Sogar ein *Handschlag* ist gültig. Aber der Arbeitgeber muss dir die wichtigsten *Bedingungen schriftlich* aushändigen, so steht es im *Nachweisgesetz*. Eine Ausnahme ist die *Befristung*: Wird sie *nicht schriftlich* vereinbart, dann gilt der Vertrag als *unbefristet*.",
+   "v": {
+    "type": "points",
+    "title": "Form",
+    "label": null,
+    "items": [
+     {
+      "text": "formfrei – Handschlag gültig",
+      "cue": "formfrei"
+     },
+     {
+      "text": "Bedingungen schriftlich aushändigen (Nachweisgesetz)",
+      "cue": "Bedingungen"
+     },
+     {
+      "text": "Befristung ohne Schriftform ➜ unbefristet!",
+      "cue": "Befristung"
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Arbeitsvertrag",
+   "text": "Die Pflichten: Der *Arbeitnehmer* muss *arbeiten*, *Weisungen* befolgen, Betriebsgeheimnisse für sich behalten und sich *krank melden*. Der *Arbeitgeber* muss *zahlen*, auch bei Krankheit, und zwar bis zu *sechs Wochen*. Er hat eine *Fürsorgepflicht*, muss also für Sicherheit sorgen, und er muss *Urlaub* gewähren und ein *Zeugnis* ausstellen.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Arbeitnehmer",
+     "items": [
+      "arbeiten",
+      "Weisungen befolgen",
+      "schweigen",
+      "krank melden"
+     ]
+    },
+    "right": {
+     "title": "Arbeitgeber",
+     "items": [
+      "zahlen (krank bis 6 Wochen)",
+      "Fürsorge",
+      "Urlaub",
+      "Zeugnis"
+     ]
+    },
+    "cueRight": "Arbeitgeber",
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Arbeitsvertrag",
+   "text": "Merke: Arbeitnehmer arbeitet, Arbeitgeber zahlt. Unzulässige Fragen darf man falsch beantworten. Und eine Befristung ohne Schriftform macht den Vertrag unbefristet.",
+   "v": {
+    "type": "merke",
+    "text": "AN arbeitet, AG zahlt · unzulässige Frage ➜ Recht zur Lüge · Befristung ohne Schriftform ➜ unbefristet"
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Thema fünf: *Kündigung und Kündigungsschutz*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Wie kann ein Arbeitsverhältnis *enden*? Durch *Kündigung*, durch einen *Aufhebungsvertrag*, wenn eine *Befristung* abläuft, oder mit der *Rente*. Ein *befristeter* Vertrag hat ein Enddatum und muss *schriftlich* sein. *Ohne Grund* darf man höchstens *zwei Jahre* befristen, *mit Grund*, zum Beispiel als Vertretung, auch länger.",
+   "v": {
+    "type": "points",
+    "title": "Ende & Befristung",
+    "label": null,
+    "items": [
+     {
+      "text": "Kündigung",
+      "cue": "Kündigung"
+     },
+     {
+      "text": "Aufhebungsvertrag",
+      "cue": "Aufhebungsvertrag"
+     },
+     {
+      "text": "Befristung läuft ab",
+      "cue": "Befristung"
+     },
+     {
+      "text": "Rente",
+      "cue": "Rente"
+     },
+     {
+      "text": "befristet: Enddatum, schriftlich, ohne Grund max. 2 Jahre",
+      "cue": "zwei"
+     }
+    ],
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Die Kündigung ist eine *empfangsbedürftige einseitige Willenserklärung*. Einseitig heißt: Der andere muss nicht zustimmen. Empfangsbedürftig heißt: Sie wird erst wirksam, wenn sie beim anderen *ankommt*. Und sie muss immer *schriftlich* sein, eine WhatsApp reicht nicht.",
+   "v": {
+    "type": "def",
+    "term": "Kündigung",
+    "text": "empfangsbedürftige, einseitige Willenserklärung – immer schriftlich",
+    "cue": "empfangsbedürftige"
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Es gibt zwei Arten. Die *ordentliche* Kündigung hält eine Frist ein: *vier Wochen*, also *achtundzwanzig Tage*, zum *Fünfzehnten* oder zum *Monatsende*. In der Probezeit sind es *zwei Wochen*. Kündigt der *Chef*, wird die Frist *länger*, je länger du im Betrieb bist, das steht dann in der Anlage. Die *außerordentliche* Kündigung ist *fristlos* und nur mit einem *wichtigen Grund* möglich, zum Beispiel Diebstahl.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "ordentlich 🚶",
+     "items": [
+      "4 Wochen (28 Tage) zum 15. / Monatsende",
+      "Probezeit: 2 Wochen",
+      "Chef kündigt ➜ länger (Anlage)"
+     ]
+    },
+    "right": {
+     "title": "außerordentlich 🚨",
+     "items": [
+      "fristlos",
+      "nur mit wichtigem Grund",
+      "z. B. Diebstahl"
+     ]
+    },
+    "cueRight": "außerordentliche",
+    "note": null
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Ein Rechenbeispiel. Lukas' Kündigung kommt am *zehnten März* an. Plus *achtundzwanzig Tage*, das ist der *siebte April*. Jetzt nimmst du den *nächsten* möglichen Termin, also den Fünfzehnten oder das Monatsende. Der nächste ist der *fünfzehnte April*. An dem Tag endet das Arbeitsverhältnis.",
+   "v": {
+    "type": "case",
+    "title": "Rechenbeispiel ordentliche Kündigung",
+    "items": [
+     {
+      "text": "Kündigung kommt an: 10. März",
+      "cue": "zehnten"
+     },
+     {
+      "text": "+ 28 Tage = 7. April",
+      "cue": "achtundzwanzig"
+     },
+     {
+      "text": "nächster Termin (15. / Monatsende)",
+      "cue": "nächsten"
+     },
+     {
+      "text": "Ende: 15. April",
+      "cue": "fünfzehnte"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Dann der *allgemeine Kündigungsschutz*. Er gilt, wenn du *mehr als sechs Monate* im Betrieb bist *und* der Betrieb *mehr als zehn* Mitarbeiter hat. Dann braucht der Chef einen *Grund*, und es gibt nur drei: Er liegt in der *Person*, du *kannst* nicht, zum Beispiel wegen langer Krankheit. Im *Verhalten*, du *willst* nicht, zum Beispiel ständiges Zuspätkommen. Oder im *Betrieb*, zum Beispiel weil Aufträge wegfallen. Dann gibt es eine *Sozialauswahl*: Wer am wenigsten schutzbedürftig ist, geht zuerst. Wichtig: Der *Betriebsrat* muss vorher *angehört* werden, sonst ist die Kündigung *unwirksam*. Und wehren kannst du dich mit einer *Klage* innerhalb von *drei Wochen*.",
+   "v": {
+    "type": "points",
+    "title": "Allgemeiner Kündigungsschutz",
+    "label": null,
+    "items": [
+     {
+      "text": "> 6 Monate UND > 10 Mitarbeiter",
+      "cue": "sechs"
+     },
+     {
+      "text": "Person – kann nicht (Krankheit)",
+      "cue": "Person"
+     },
+     {
+      "text": "Verhalten – will nicht (Zuspätkommen)",
+      "cue": "Verhalten"
+     },
+     {
+      "text": "Betrieb – Aufträge fehlen ➜ Sozialauswahl",
+      "cue": "Betrieb"
+     },
+     {
+      "text": "Betriebsrat anhören, sonst unwirksam",
+      "cue": "angehört"
+     },
+     {
+      "text": "Klage innerhalb 3 Wochen",
+      "cue": "Klage"
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Und der *besondere Kündigungsschutz* gilt *immer*, egal wie groß der Betrieb ist. Merk dir das Wort *S E S B A*: *Schwangere*, Menschen in *Elternzeit*, *Schwerbehinderte*, Mitglieder des *Betriebsrats* und *Azubis* nach der Probezeit.",
+   "v": {
+    "type": "big",
+    "big": "S – E – S – B – A",
+    "sub": "Besonderer Kündigungsschutz (gilt immer)",
+    "items": [
+     {
+      "text": "Schwangere",
+      "cue": "Schwangere"
+     },
+     {
+      "text": "Elternzeit",
+      "cue": "Elternzeit"
+     },
+     {
+      "text": "Schwerbehinderte",
+      "cue": "Schwerbehinderte"
+     },
+     {
+      "text": "Betriebsrat",
+      "cue": "Betriebsrats"
+     },
+     {
+      "text": "Azubis nach Probezeit",
+      "cue": "Azubis"
+     }
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Kündigung und Kündigungsschutz",
+   "text": "Merke: Ordentlich vier Wochen zum Fünfzehnten oder Monatsende, außerordentlich fristlos mit wichtigem Grund. Allgemeiner Schutz ab sechs Monaten und mehr als zehn Mitarbeitern. Besonderer Schutz: SESBA.",
+   "v": {
+    "type": "merke",
+    "text": "ordentlich 4 Wochen zum 15./Monatsende · außerordentlich fristlos · allg. Schutz: > 6 Monate + > 10 MA · SESBA"
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Arbeitszeugnis",
+   "text": "Thema sechs: das *Arbeitszeugnis*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Arbeitszeugnis",
+   "text": "Es gibt zwei Arten. Das *einfache* Zeugnis enthält nur deinen *Namen*, deine *Tätigkeit* und die *Dauer*. Das *qualifizierte* Zeugnis bewertet zusätzlich deine *Leistung* und deine *Führung*, also dein Verhalten. Das qualifizierte bekommst du aber nur auf *Verlangen*, du musst also danach fragen.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "einfach",
+     "items": [
+      "Name",
+      "Tätigkeit",
+      "Dauer"
+     ]
+    },
+    "right": {
+     "title": "qualifiziert",
+     "items": [
+      "+ Leistung",
+      "+ Führung (Verhalten)",
+      "nur auf Verlangen"
+     ]
+    },
+    "cueRight": "qualifizierte",
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Arbeitszeugnis",
+   "text": "Ein Zeugnis muss *wahr* und *wohlwollend* sein. Der Chef darf also nichts Schlechtes direkt reinschreiben. Darum gibt es die *Zeugnissprache*. Für die *Leistung*: „*stets* zu unserer *vollsten* Zufriedenheit“ ist eine *Eins*. „Stets zur *vollen*“ eine *Zwei*. „Zur vollen“ eine *Drei*. „Zu unserer *Zufriedenheit*“ eine *Vier*. „*Im Großen und Ganzen*“ eine *Fünf*. Und „er war *bemüht*“ ist eine *Sechs*.",
+   "v": {
+    "type": "table",
+    "title": "Zeugnissprache – Leistung",
+    "head": [
+     "Formulierung",
+     "Note"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "stets zu unserer vollsten Zufriedenheit",
+       "1"
+      ],
+      "cue": "Eins",
+      "hl": false
+     },
+     {
+      "cells": [
+       "stets zur vollen Zufriedenheit",
+       "2"
+      ],
+      "cue": "Zwei",
+      "hl": false
+     },
+     {
+      "cells": [
+       "zur vollen Zufriedenheit",
+       "3"
+      ],
+      "cue": "Drei",
+      "hl": false
+     },
+     {
+      "cells": [
+       "zu unserer Zufriedenheit",
+       "4"
+      ],
+      "cue": "Vier",
+      "hl": false
+     },
+     {
+      "cells": [
+       "im Großen und Ganzen",
+       "5"
+      ],
+      "cue": "Fünf",
+      "hl": false
+     },
+     {
+      "cells": [
+       "bemüht",
+       "6"
+      ],
+      "cue": "Sechs",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Arbeitszeugnis",
+   "text": "Für die *Führung*: „*stets vorbildlich*“ ist eine Eins, „*vorbildlich*“ eine Zwei, „*stets einwandfrei*“ eine Drei und „*einwandfrei*“ eine Vier. Achte auch auf das, was *fehlt*: Werden die *Vorgesetzten nicht erwähnt*, gab es Ärger mit dem Chef. Und „*erfrischende Offenheit*“ heißt: Er war *vorlaut*. Eine gute *Schlussformel* enthält *Bedauern*, *Dank* und gute *Wünsche*. Und „*auf eigenen Wunsch*“ heißt, du hast selbst gekündigt, das ist positiv.",
+   "v": {
+    "type": "table",
+    "title": "Zeugnissprache – Führung",
+    "head": [
+     "Formulierung",
+     "Bedeutung"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "stets vorbildlich",
+       "1"
+      ],
+      "cue": "Führung",
+      "hl": false
+     },
+     {
+      "cells": [
+       "vorbildlich",
+       "2"
+      ],
+      "cue": "Zwei",
+      "hl": false
+     },
+     {
+      "cells": [
+       "stets einwandfrei",
+       "3"
+      ],
+      "cue": "Drei",
+      "hl": false
+     },
+     {
+      "cells": [
+       "einwandfrei",
+       "4"
+      ],
+      "cue": "Vier",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Vorgesetzte fehlen",
+       "Ärger mit dem Chef"
+      ],
+      "cue": "fehlt",
+      "hl": false
+     },
+     {
+      "cells": [
+       "„erfrischende Offenheit“",
+       "vorlaut"
+      ],
+      "cue": "erfrischende",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Schlussformel: Bedauern, Dank, Wünsche",
+       "gut"
+      ],
+      "cue": "Schlussformel",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Arbeitszeugnis",
+   "text": "Merke: Einfach gleich Name, Tätigkeit, Dauer. Qualifiziert plus Leistung und Führung, nur auf Verlangen. Wahr und wohlwollend, darum Zeugnissprache.",
+   "v": {
+    "type": "merke",
+    "text": "einfach: Name, Tätigkeit, Dauer · qualifiziert: + Leistung & Führung (auf Verlangen) · wahr + wohlwollend"
+   },
+   "part": 2
+  },
+  {
+   "topic": 7,
+   "tname": "Betriebsrat",
+   "text": "Thema sieben: der *Betriebsrat*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 2
+  },
+  {
+   "topic": 7,
+   "tname": "Betriebsrat",
+   "text": "Der Betriebsrat ist die *gewählte Vertretung* der Mitarbeiter, geregelt im *Betriebsverfassungsgesetz*. Gewählt werden kann er ab *fünf* Arbeitnehmern, und zwar alle *vier Jahre*. *Wählen* darfst du ab *sechzehn*, *gewählt werden* ab *achtzehn* und nach *sechs Monaten* im Betrieb. Seine *Aufgaben*: Er *überwacht*, ob Gesetze eingehalten werden, *vertritt* die Interessen der Mitarbeiter, nimmt *Beschwerden* an, setzt sich für *Schwächere* ein und schließt *Betriebsvereinbarungen* mit dem Chef. Seine Bedeutung: *Allein* ist ein Mitarbeiter *schwach*, *zusammen* sind alle *stark*.",
+   "v": {
+    "type": "points",
+    "title": "Betriebsrat (BetrVG)",
+    "label": null,
+    "items": [
+     {
+      "text": "ab 5 Arbeitnehmern · Wahl alle 4 Jahre",
+      "cue": "fünf"
+     },
+     {
+      "text": "wählen ab 16 · gewählt werden ab 18 + 6 Monate",
+      "cue": "Wählen"
+     },
+     {
+      "text": "überwacht, vertritt Interessen, Beschwerden",
+      "cue": "überwacht"
+     },
+     {
+      "text": "setzt sich für Schwächere ein, Betriebsvereinbarungen",
+      "cue": "Schwächere"
+     },
+     {
+      "text": "allein schwach, zusammen stark",
+      "cue": "Allein"
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 7,
+   "tname": "Betriebsrat",
+   "text": "Ganz wichtig für die Prüfung sind die *drei Stufen*. Stufe eins: *Information*. Der Chef muss *Bescheid sagen*, zum Beispiel bei *neuer Technik* oder *Automatisierung*. Stufe zwei: *Mitwirkung*. Der Betriebsrat wird *angehört*, aber der *Chef entscheidet*, zum Beispiel bei einer *Kündigung*, einer *Einstellung* oder einer *Versetzung*. Stufe drei: *Mitbestimmung*. Hier braucht der Chef die *Zustimmung*, zum Beispiel bei der *Arbeitszeit*, den *Pausen*, bei *Überstunden* und beim *Urlaubsplan*.",
+   "v": {
+    "type": "stairs",
+    "title": "Die 3 Stufen",
+    "items": [
+     {
+      "text": "Information = Bescheid sagen",
+      "cue": "Information",
+      "sub": "neue Technik, Automatisierung"
+     },
+     {
+      "text": "Mitwirkung = anhören, Chef entscheidet",
+      "cue": "Mitwirkung",
+      "sub": "Kündigung, Einstellung, Versetzung"
+     },
+     {
+      "text": "Mitbestimmung = Chef braucht Zustimmung",
+      "cue": "Mitbestimmung",
+      "sub": "Arbeitszeit, Pausen, Überstunden, Urlaubsplan"
+     }
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 7,
+   "tname": "Betriebsrat",
+   "text": "Merke die drei Stufen: Information heißt Bescheid sagen. Mitwirkung heißt anhören. Mitbestimmung heißt zustimmen.",
+   "v": {
+    "type": "merke",
+    "text": "Information = Bescheid sagen · Mitwirkung = anhören · Mitbestimmung = zustimmen"
+   },
+   "part": 2
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Thema acht: *Tarifvertrag und Arbeitskampf*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 2
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Ein Tarifvertrag ist ein Vertrag zwischen der *Gewerkschaft* und dem *Arbeitgeberverband*. Die beiden nennt man *Sozialpartner*. Sie verhandeln *ohne den Staat*, das heißt *Tarifautonomie*.",
+   "v": {
+    "type": "points",
+    "title": "Tarifvertrag",
+    "label": null,
+    "items": [
+     {
+      "text": "Gewerkschaft + Arbeitgeberverband = Sozialpartner",
+      "cue": "Gewerkschaft"
+     },
+     {
+      "text": "Tarifautonomie = ohne Staat",
+      "cue": "Tarifautonomie"
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Es gibt drei Arten. Der *Entgelttarifvertrag* regelt die *Lohnhöhe* und läuft etwa *ein Jahr*. Der *Rahmenentgelttarifvertrag* regelt die *Lohngruppen* und läuft *mehrere Jahre*. Und der *Manteltarifvertrag* regelt *Arbeitszeit* und *Urlaub* und läuft *drei bis fünf Jahre*.",
+   "v": {
+    "type": "table",
+    "title": "Tarifvertragsarten",
+    "head": [
+     "Art",
+     "regelt",
+     "Laufzeit"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Entgelt",
+       "Lohnhöhe",
+       "ca. 1 Jahr"
+      ],
+      "cue": "Entgelttarifvertrag",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Rahmenentgelt",
+       "Lohngruppen",
+       "mehrere Jahre"
+      ],
+      "cue": "Rahmenentgelttarifvertrag",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Mantel",
+       "Arbeitszeit, Urlaub",
+       "3–5 Jahre"
+      ],
+      "cue": "Manteltarifvertrag",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Für wen gilt der Tarifvertrag? Rechtlich nur für *Gewerkschaftsmitglieder*. Sonst gilt er, wenn du *beitrittst*, wenn dein *Arbeitsvertrag* darauf verweist, oder wenn er für *allgemeinverbindlich* erklärt wurde. Das *Günstigkeitsprinzip* heißt: Es gilt immer das *Günstigere* für den Arbeitnehmer. Und die *Friedenspflicht*: Während der *Laufzeit* darf *nicht gestreikt* werden.",
+   "v": {
+    "type": "points",
+    "title": "Regeln",
+    "label": null,
+    "items": [
+     {
+      "text": "Tarifbindung: Gewerkschaftsmitglieder",
+      "cue": "Gewerkschaftsmitglieder"
+     },
+     {
+      "text": "sonst: beitreten, Arbeitsvertrag, allgemeinverbindlich",
+      "cue": "beitrittst"
+     },
+     {
+      "text": "Günstigkeitsprinzip: das Günstigere gilt",
+      "cue": "Günstigkeitsprinzip"
+     },
+     {
+      "text": "Friedenspflicht: kein Streik während der Laufzeit",
+      "cue": "Friedenspflicht"
+     }
+    ],
+    "note": null
+   },
+   "part": 2
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Wie läuft eine *Tarifrunde* ab? Erst stellt die Gewerkschaft eine *Forderung*. Dann wird *verhandelt*, oft mit *Warnstreiks*. Klappt das nicht, kommt die *Schlichtung* mit einem neutralen Schlichter. Scheitert auch die, gibt es eine *Urabstimmung*: *fünfundsiebzig Prozent* der Mitglieder müssen für den *Streik* stimmen. Streikende bekommen *Streikgeld* von der Gewerkschaft. Der Arbeitgeber kann mit *Aussperrung* antworten, dann gibt es keinen Lohn. Kommt es zur *Einigung*, stimmen die Mitglieder noch einmal ab, dann reichen *fünfundzwanzig Prozent*, und es gibt einen *neuen Tarifvertrag*.",
+   "v": {
+    "type": "case",
+    "title": "Ablauf einer Tarifrunde",
+    "items": [
+     {
+      "text": "Forderung",
+      "cue": "Forderung"
+     },
+     {
+      "text": "Verhandlung (Warnstreik)",
+      "cue": "verhandelt"
+     },
+     {
+      "text": "Schlichtung",
+      "cue": "Schlichtung"
+     },
+     {
+      "text": "Urabstimmung 75 %",
+      "cue": "Urabstimmung"
+     },
+     {
+      "text": "Streik ↔ Aussperrung",
+      "cue": "Streik"
+     },
+     {
+      "text": "Einigung",
+      "cue": "Einigung"
+     },
+     {
+      "text": "Urabstimmung 25 % ➜ neuer TV",
+      "cue": "fünfundzwanzig"
+     }
+    ]
+   },
+   "part": 3
+  },
+  {
+   "topic": 8,
+   "tname": "Tarifvertrag und Arbeitskampf",
+   "text": "Merke: Tarifautonomie heißt ohne Staat. Für den Streik braucht man fünfundsiebzig Prozent, für das Ende des Streiks nur fünfundzwanzig.",
+   "v": {
+    "type": "merke",
+    "text": "Tarifautonomie = ohne Staat · Streik: 75 % dafür · Ende: 25 % reichen"
+   },
+   "part": 3
+  },
+  {
+   "topic": 9,
+   "tname": "Sozialversicherung",
+   "text": "Thema neun: die *Sozialversicherung*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 3
+  },
+  {
+   "topic": 9,
+   "tname": "Sozialversicherung",
+   "text": "Die Sozialversicherung schützt vor den großen Risiken im Leben: *Krankheit*, *Pflege*, *Alter*, *Arbeitslosigkeit* und *Unfall*. Sie funktioniert nach dem *Solidaritätsprinzip*: Jeder zahlt nach seinem Einkommen, und jeder bekommt Hilfe nach seinem Bedarf. Die Starken tragen die Schwachen. Alle *Arbeitnehmer und Azubis* sind *pflichtversichert*. Die Beiträge werden vom *Brutto* berechnet und *fünfzig zu fünfzig* geteilt. Nur die *Unfallversicherung* zahlt der *Arbeitgeber allein*.",
+   "v": {
+    "type": "points",
+    "title": "Sozialversicherung",
+    "label": null,
+    "items": [
+     {
+      "text": "schützt vor Krankheit, Pflege, Alter, Arbeitslosigkeit, Unfall",
+      "cue": "Krankheit"
+     },
+     {
+      "text": "Solidaritätsprinzip",
+      "cue": "Solidaritätsprinzip"
+     },
+     {
+      "text": "Arbeitnehmer & Azubis pflichtversichert",
+      "cue": "pflichtversichert"
+     },
+     {
+      "text": "vom Brutto, 50 / 50",
+      "cue": "fünfzig"
+     },
+     {
+      "text": "Unfall: Arbeitgeber allein",
+      "cue": "Arbeitgeber"
+     }
+    ],
+    "note": null
+   },
+   "part": 3
+  },
+  {
+   "topic": 9,
+   "tname": "Sozialversicherung",
+   "text": "Die fünf Zweige. *Kranken*, Träger ist die Krankenkasse: Arzt, Medikamente und ab der siebten Woche *Krankengeld*. *Pflege*, Träger ist die Pflegekasse: Pflegegeld. *Kinderlose* ab dreiundzwanzig zahlen hier mehr. *Rente*, Träger ist die Deutsche Rentenversicherung: Altersrente, Erwerbsminderungsrente, Hinterbliebenenrente und Reha. Sie funktioniert als *Generationenvertrag*: Die Jungen zahlen heute die Rente der Alten. *Arbeitslosen*, Träger ist die Bundesagentur für Arbeit: *Arbeitslosengeld eins*, sechzig oder mit Kind siebenundsechzig Prozent, Vermittlung und Weiterbildung. Und *Unfall*, Träger ist die Berufsgenossenschaft: *Arbeitsunfall*, der *direkte Wegeunfall*, auch zur Berufsschule, und *Berufskrankheit*. Aber *nicht* in der Freizeit.",
+   "v": {
+    "type": "table",
+    "title": "Die 5 Zweige",
+    "head": [
+     "Zweig",
+     "Träger",
+     "Leistungen"
+    ],
+    "rows": [
+     {
+      "cells": [
+       "Kranken",
+       "Krankenkasse",
+       "Arzt, Medikamente, Krankengeld ab 7. Woche"
+      ],
+      "cue": "Kranken",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Pflege",
+       "Pflegekasse",
+       "Pflegegeld · Kinderlose ab 23 zahlen mehr"
+      ],
+      "cue": "Pflege",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Rente",
+       "Dt. Rentenversicherung",
+       "Alters-, Erwerbsminderungs-, Hinterbliebenenrente, Reha"
+      ],
+      "cue": "Rente",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Arbeitslosen",
+       "Bundesagentur für Arbeit",
+       "ALG I 60 / 67 %, Vermittlung, Weiterbildung"
+      ],
+      "cue": "Arbeitslosen",
+      "hl": false
+     },
+     {
+      "cells": [
+       "Unfall",
+       "Berufsgenossenschaft",
+       "Arbeitsunfall, direkter Wegeunfall, Berufskrankheit"
+      ],
+      "cue": "Unfall",
+      "hl": false
+     }
+    ],
+    "note": null
+   },
+   "part": 3
+  },
+  {
+   "topic": 9,
+   "tname": "Sozialversicherung",
+   "text": "Die gesetzliche Versicherung hat *Grenzen*: Es gibt eine *Rentenlücke*, keine *Berufsunfähigkeitsrente*, keinen Schutz bei *Schäden an anderen* und keinen Schutz bei *Freizeitunfällen*. Darum gibt es *Zusatzversicherungen*: die *Berufsunfähigkeitsversicherung*, die zahlt eine Rente, wenn du deinen Beruf nicht mehr ausüben kannst, egal ob wegen Krankheit oder Unfall. Die *private Altersvorsorge* gegen die Rentenlücke. Und die *Haftpflicht* für Schäden an anderen, die ist die *wichtigste* von allen.",
+   "v": {
+    "type": "compare",
+    "left": {
+     "title": "Grenzen",
+     "items": [
+      "Rentenlücke",
+      "keine BU-Rente",
+      "Schäden an anderen",
+      "Freizeitunfälle"
+     ]
+    },
+    "right": {
+     "title": "Zusatzversicherungen",
+     "items": [
+      "Berufsunfähigkeit (BU)",
+      "private Altersvorsorge",
+      "Haftpflicht – die wichtigste!"
+     ]
+    },
+    "cueRight": "Zusatzversicherungen",
+    "note": null
+   },
+   "part": 3
+  },
+  {
+   "topic": 9,
+   "tname": "Sozialversicherung",
+   "text": "Merke: Fünf Zweige, fünfzig zu fünfzig, nur die Unfallversicherung zahlt der Arbeitgeber allein. Und die wichtigste private Versicherung ist die Haftpflicht.",
+   "v": {
+    "type": "merke",
+    "text": "5 Zweige · 50/50 vom Brutto · Unfall: AG allein · wichtigste Zusatzversicherung: Haftpflicht"
+   },
+   "part": 3
+  },
+  {
+   "topic": 10,
+   "tname": "Lohnabrechnung",
+   "text": "Thema zehn: die *Lohnabrechnung*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 3
+  },
+  {
+   "topic": 10,
+   "tname": "Lohnabrechnung",
+   "text": "Das Grundschema musst du auswendig können: *Brutto* minus *Steuern* minus *Sozialversicherung* gleich *Netto*. Und Netto minus *Sparrate* oder *Vorschuss* gleich *Auszahlung*.",
+   "v": {
+    "type": "formula",
+    "parts": [
+     [
+      "Brutto",
+      "#2563eb",
+      "Brutto"
+     ],
+     [
+      "− Steuern",
+      "#dc2626",
+      "Steuern"
+     ],
+     [
+      "− SV",
+      "#dc2626",
+      "Sozialversicherung"
+     ],
+     [
+      "= Netto",
+      "#16a34a",
+      "Netto"
+     ]
+    ],
+    "note": "Netto − Sparrate / Vorschuss = Auszahlung"
+   },
+   "part": 3
+  },
+  {
+   "topic": 10,
+   "tname": "Lohnabrechnung",
+   "text": "Wie rechnet man das *Brutto*? Stundenlohn *mal Stunden*, plus *Überstundenzuschlag*. Oder bei einer Lohnerhöhung: alter Lohn mal eins Komma null x, also bei drei Prozent mal eins Komma null drei. Die *Kirchensteuer* sind *acht Prozent der Lohnsteuer*, nicht vom Brutto! Die *Sozialversicherung* wird vom Brutto berechnet, und zwar mit dem *halben Satz*, weil der Arbeitgeber die andere Hälfte zahlt. Achtung beim *Kinderlosenzuschlag*: Den halbierst du *nicht*. Also erst den Pflegesatz halbieren, *dann* null Komma sechs Prozent dazu. Und ein *Vorschuss* wird am Ende *abgezogen*.",
+   "v": {
+    "type": "points",
+    "title": "So rechnest du",
+    "label": null,
+    "items": [
+     {
+      "text": "Brutto = Stundenlohn × Stunden (+ Überstundenzuschlag)",
+      "cue": "Brutto"
+     },
+     {
+      "text": "Lohnerhöhung: alter Lohn × 1,0x",
+      "cue": "Lohnerhöhung"
+     },
+     {
+      "text": "Kirchensteuer = 8 % der LOHNSTEUER",
+      "cue": "Kirchensteuer"
+     },
+     {
+      "text": "SV vom Brutto, halber Satz",
+      "cue": "halben"
+     },
+     {
+      "text": "Kinderlosenzuschlag NICHT halbieren: erst halbieren, dann + 0,6 %",
+      "cue": "Kinderlosenzuschlag"
+     },
+     {
+      "text": "Vorschuss wird abgezogen",
+      "cue": "Vorschuss"
+     }
+    ],
+    "note": null
+   },
+   "part": 3
+  },
+  {
+   "topic": 10,
+   "tname": "Lohnabrechnung",
+   "text": "Rechnen wir ein Beispiel mit Lukas. Er ist dreiundzwanzig und hat keine Kinder. Er arbeitet hundertsechzig Stunden für fünfzehn Euro, dazu zehn *Überstunden* mit fünfundzwanzig Prozent Zuschlag. Das ergibt ein *Brutto* von zweitausendfünfhundertsiebenundachtzig Euro fünfzig. Die *Lohnsteuer* laut Tabelle: zweihundertfünfzig Euro. Die *Kirchensteuer*: acht Prozent davon, also zwanzig Euro. Die *Sozialversicherung*, mit Beispielsätzen und Kinderlosenzuschlag: fünfhundertzweiundsechzig Euro achtundsiebzig. Bleibt ein *Netto* von tausendsiebenhundertvierundfünfzig Euro zweiundsiebzig. Er hatte hundert Euro *Vorschuss*, also werden ihm *tausendsechshundertvierundfünfzig Euro zweiundsiebzig* ausgezahlt.",
+   "v": {
+    "type": "ledger",
+    "title": "Lohnabrechnung Lukas (Beispielwerte)",
+    "rows": [
+     {
+      "label": "160 Std. × 15 € + 10 Überstunden × 15 € × 1,25",
+      "amount": 2587.5,
+      "cue": "Überstunden"
+     },
+     {
+      "label": "− Lohnsteuer (laut Tabelle)",
+      "amount": -250,
+      "cue": "Lohnsteuer"
+     },
+     {
+      "label": "− Kirchensteuer (8 % von 250 €)",
+      "amount": -20,
+      "cue": "Kirchensteuer"
+     },
+     {
+      "label": "− Sozialversicherung (AN-Anteil inkl. Kinderlosenzuschlag)",
+      "amount": -562.78,
+      "cue": "Sozialversicherung"
+     },
+     {
+      "label": "= Netto",
+      "amount": null,
+      "cue": "Netto",
+      "total": true
+     },
+     {
+      "label": "− Vorschuss",
+      "amount": -100,
+      "cue": "Vorschuss"
+     },
+     {
+      "label": "= Auszahlung",
+      "amount": null,
+      "cue": "ausgezahlt",
+      "total": true
+     }
+    ],
+    "note": "Steuer- und SV-Sätze stehen in der Prüfung in der Anlage",
+    "cueNote": "Netto"
+   },
+   "part": 3
+  },
+  {
+   "topic": 10,
+   "tname": "Lohnabrechnung",
+   "text": "Merke: Brutto minus Steuern minus Sozialversicherung gleich Netto. Kirchensteuer acht Prozent der Lohnsteuer. Kinderlosenzuschlag nicht halbieren.",
+   "v": {
+    "type": "merke",
+    "text": "Brutto − Steuern − SV = Netto · KiSt = 8 % der LSt · Kinderlosenzuschlag nicht halbieren"
+   },
+   "part": 3
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Thema elf, das letzte in diesem Bereich: die *Steuererklärung*.",
+   "v": {
+    "type": "topic"
+   },
+   "part": 3
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Bei der Steuererklärung *rechnet* das Finanzamt *nach*, ob du übers Jahr zu viel Lohnsteuer gezahlt hast. Oft gibt es *Geld zurück*. Abziehen kannst du *Werbungskosten*, das sind Kosten für den *Beruf*: Fahrt zur Arbeit, *Fachbuch*, *Arbeitskleidung* und der *Gewerkschaftsbeitrag*. Wer weniger hat, bekommt automatisch den *Pauschbetrag* von *zwölfhundertdreißig Euro*. Dann die *Sonderausgaben*: *Kirchensteuer*, *Spenden* und *Vorsorge*, also Beiträge für Rente, Kranken, Berufsunfähigkeit und Haftpflicht. *Nicht abzugsfähig* ist alles für die *Freizeit*: Hobby oder *Sportverein*.",
+   "v": {
+    "type": "points",
+    "title": "Was kann ich abziehen?",
+    "label": null,
+    "items": [
+     {
+      "text": "Werbungskosten = für den Beruf: Fahrt, Fachbuch, Arbeitskleidung, Gewerkschaft",
+      "cue": "Werbungskosten"
+     },
+     {
+      "text": "Pauschbetrag 1.230 €",
+      "cue": "Pauschbetrag"
+     },
+     {
+      "text": "Sonderausgaben = Kirche, Spenden, Vorsorge (Rente, Kranken, BU, Haftpflicht)",
+      "cue": "Sonderausgaben"
+     },
+     {
+      "text": "NICHT: Freizeit, Hobby, Sportverein",
+      "cue": "Freizeit"
+     }
+    ],
+    "note": null
+   },
+   "part": 3
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Die *Fahrtkosten* rechnest du so: *einfache Strecke* mal *Kilometerpauschale* laut Anlage mal *Arbeitstage*. Beispiel: Lukas fährt zwanzig Kilometer, die Pauschale ist zum Beispiel achtunddreißig Cent, und er arbeitet zweihundertzwanzig Tage. Das sind *tausendsechshundertzweiundsiebzig Euro*. Das ist mehr als der Pauschbetrag, also lohnt sich die Steuererklärung.",
+   "v": {
+    "type": "formula",
+    "parts": [
+     [
+      "20 km",
+      "#2563eb",
+      "einfache"
+     ],
+     [
+      "× 0,38 €",
+      "#1f2937",
+      "Kilometerpauschale"
+     ],
+     [
+      "× 220 Tage",
+      "#1f2937",
+      "Arbeitstage"
+     ],
+     [
+      "= 1.672 €",
+      "#16a34a",
+      "tausendsechshundertzweiundsiebzig"
+     ]
+    ],
+    "note": "einfache Strecke × Pauschale (laut Anlage) × Arbeitstage"
+   },
+   "part": 4
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Und noch ein Denkfehler, den viele machen: Werbungskosten senken das *zu versteuernde Einkommen*, *nicht eins zu eins* die Steuer. Hast du tausend Euro Werbungskosten und zahlst zwanzig Prozent Steuer, sparst du ungefähr *zweihundert Euro*, nicht tausend.",
+   "v": {
+    "type": "points",
+    "title": "Achtung Denkfehler",
+    "label": null,
+    "items": [
+     {
+      "text": "Werbungskosten senken das zu versteuernde Einkommen",
+      "cue": "versteuernde"
+     },
+     {
+      "text": "nicht 1 : 1 die Steuer",
+      "cue": "eins"
+     },
+     {
+      "text": "1.000 € Werbungskosten × 20 % ≈ 200 € gespart",
+      "cue": "zweihundert"
+     }
+    ],
+    "note": null
+   },
+   "part": 4
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Merke: Werbungskosten sind für den Beruf, Sonderausgaben sind Kirche, Spenden und Vorsorge. Freizeit zählt nicht.",
+   "v": {
+    "type": "merke",
+    "text": "Werbungskosten = Beruf (mind. 1.230 €) · Sonderausgaben = Kirche, Spenden, Vorsorge · Freizeit zählt nicht"
+   },
+   "part": 4
+  },
+  {
+   "topic": 11,
+   "tname": "Steuererklärung",
+   "text": "Geschafft, das war Kompetenzbereich eins! Hier noch einmal alle *elf Themen* auf einen Blick. Wenn du bei einem Thema unsicher bist, spring einfach zurück, oben siehst du immer, bei welchem Thema du gerade bist. Weiter geht's mit Kompetenzbereich zwei.",
+   "v": {
+    "type": "kb",
+    "outro": true
+   },
+   "part": 4
+  }
+ ]
+}
