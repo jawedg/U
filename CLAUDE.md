@@ -52,3 +52,7 @@ Lokal reicht `npm run render:3d`.
   Schnitt in Szenen per **lokaler Whisper-Erkennung** (sherpa-onnx, Modell von GitHub:
   `sherpa-onnx-whisper-base`, nach `models/` oder `/tmp/models/`), danach `npm run check:wiso` zur Kontrolle.
 - Gemini-Textmodelle (flash) haben nur ~20 Anfragen/Tag – nicht für Massen-Transkription verwenden.
+- `src/wiso_all/` (Komposition `WisoAlle`): WiSo komplett KB I–IV in einem Video (~24 min), Skript aus
+  `scripts/build_wiso_all_script.py` (Szenen mit `sub` = Unterthema in der Kopfzeile). Nutzt `src/wiso/Visuals.tsx`
+  (zusätzlich: grid, pillars, table, flow, stairs, ledger, timeline, triangle, chart, formula2, cycle).
+  Spickzettel: `videos/wiso-komplett-spickzettel.md`.
