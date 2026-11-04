@@ -62,5 +62,6 @@ Lokal reicht `npm run render:3d`.
   Lernzettel des Nutzers: Definition, Stichpunkte, „Was passiert?“, Merke) → `src/lern_kbN/script.json`.
 - **Minimal-Design** (`src/lern/Min.tsx`, `src/lern/LernVideo.tsx`): heller Hintergrund, viel Weißraum, Inter,
   eine Akzentfarbe pro KB, Kopfzeile „KB I · Titel“ + „Thema x/n“, Untertitel ohne Box. Gefällt dem Nutzer.
-- Stimme pro Video EIN Modell (Charon): KB1+KB2 3.1-preview, KB3 2.5-pro-preview, KB4 3.8 (Tageslimits!).
+- Stimme: alle 4 Videos mit gemini-3.8-flash-tts (Charon), Blöcke bis ~800 Wörter. 3.1-preview scheitert an langen
+  Blöcken (keine Audio-Antwort). Fortsetzung KB I–III: `./scripts/run_lern_rest.sh` (Setup: `scripts/setup_cloud.sh`).
 - YouTube/Bing sind in der Cloud-Umgebung gesperrt – für Stil-Vorbilder Bildschirmaufnahme hochladen lassen.
