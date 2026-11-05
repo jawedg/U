@@ -688,230 +688,248 @@ und wie man sich schützt. Schau dir die Quizfragen ruhig nochmal an, die sind g
    {"type": "kb", "outro": True})
 
 # =====================================================================================
-# KB III
+# KB III – im Lehrer-Erklärstil
 # =====================================================================================
 kb(3, "Wirtschaften in der Sozialen Marktwirtschaft",
    ["Preisbildung", "Marktformen", "Vollkommener Markt", "Höchst- und Mindestpreis", "Soziale Marktwirtschaft", "Preisindex (VPI)", "Inflation", "Deflation",
     "BIP (Bruttoinlandsprodukt)", "Konjunktur"])
-sc("""Willkommen zum Kompetenzbereich drei: Wirtschaften in der *Sozialen Marktwirtschaft*. Hier schauen wir auf die Wirtschaft als Ganzes:
-Wie entstehen Preise, was macht der Staat, und wie misst man, ob es der Wirtschaft gut geht. *Zehn Themen*, genau wie auf deinem Lernzettel.""", {"type": "kb"})
+sc("""Willkommen zu Kompetenzbereich drei! Jetzt zoomen wir raus. Bisher ging es um dich als Mitarbeiter und als Kunde, jetzt schauen wir auf die *ganze Wirtschaft*.
+Warum ist der Döner teurer geworden? Warum steigen im Sommer die Preise für Ventilatoren? Und was macht eigentlich der Staat dabei? Das klingt erst mal theoretisch,
+aber du wirst sehen: Du erlebst das alles jeden Tag beim Einkaufen. *Zehn Themen*, genau in der Reihenfolge deines Lernzettels.""", {"type": "kb"})
 
 thema("Preisbildung")
-T("""Thema eins: die *Preisbildung*.""")
-P("""Worum geht es? Auf einem *Markt* treffen *Anbieter*, also Verkäufer, und *Nachfrager*, also Käufer, aufeinander. Dabei bildet sich der *Preis*.
-Das *Angebot*: Je *höher* der Preis, desto *mehr* wollen die Verkäufer verkaufen. Logisch, es lohnt sich mehr. Die *Nachfrage*: Je *höher* der Preis,
-desto *weniger* wollen die Käufer kaufen.""",
+T("""Thema eins: die *Preisbildung*. Wer bestimmt eigentlich, was etwas kostet?""")
+P("""Überall, wo *Verkäufer* und *Käufer* aufeinandertreffen, ist ein *Markt*. Das kann der Wochenmarkt sein, aber auch ein Online-Shop. Die Verkäufer nennt man *Anbieter*,
+die Käufer *Nachfrager*. Und zwischen beiden bildet sich der *Preis*. Jetzt überleg mal selbst: Wenn du Erdbeeren verkaufst und der Preis steigt, willst du dann mehr oder weniger verkaufen?
+Natürlich *mehr*, es lohnt sich ja. Das ist das *Angebot*: Je *höher* der Preis, desto *mehr* wollen die Verkäufer verkaufen. Und als Käufer? Wenn Erdbeeren teurer werden, kaufst du *weniger*.
+Das ist die *Nachfrage*: Je höher der Preis, desto *weniger* wollen die Käufer kaufen.""",
   "Angebot & Nachfrage", [it("Markt: Anbieter + Nachfrager ➜ Preis", "Markt"), it("Angebot: Preis höher ➜ mehr verkaufen", "Angebot"),
                           it("Nachfrage: Preis höher ➜ weniger kaufen", "Nachfrage")])
-RAW("""Der *Gleichgewichtspreis* ist der Preis, bei dem die *Angebotsmenge* gleich der *Nachfragemenge* ist. Hier wird *am meisten verkauft*, und die Menge heißt *Gleichgewichtsmenge*.
-*Grafisch*: Auf der x-Achse ist die *Menge*, auf der y-Achse der *Preis*. Die *Angebotskurve steigt*, die *Nachfragekurve fällt*. Der *Schnittpunkt* ist der Gleichgewichtspreis.""",
+RAW("""Die beiden wollen also genau das Gegenteil. Irgendwo dazwischen gibt es aber einen Preis, bei dem beide gleich viel wollen. Das ist der *Gleichgewichtspreis*:
+Die *Angebotsmenge* ist genauso groß wie die *Nachfragemenge*. Hier wird *am meisten verkauft*, und die Menge heißt *Gleichgewichtsmenge*. *Grafisch* sieht das so aus:
+Auf der x-Achse ist die *Menge*, auf der y-Achse der *Preis*. Die *Angebotskurve steigt*, die *Nachfragekurve fällt*, und dort, wo sie sich kreuzen, im *Schnittpunkt*, liegt der Gleichgewichtspreis.""",
     {"type": "chart", "mode": "basic", "cueEq": "Schnittpunkt", "cueOver": "zzz", "cueUnder": "zzz"})
-TB("""*Tabellarisch* sieht das so aus. Bei *einem Euro* wollen die Verkäufer nur hundert Kilo anbieten, aber die Käufer wollen fünfhundert. Bei *fünf Euro* ist es umgekehrt.
-Bei *drei Euro* ist beides gleich: dreihundert Kilo. Also liegt das *Gleichgewicht bei drei Euro und dreihundert Kilo*.""",
+TB("""In der Prüfung bekommst du oft eine *Tabelle* statt einer Grafik. Dann suchst du einfach die Zeile, in der Angebot und Nachfrage *gleich* sind. Schau mal: Bei *einem Euro* wollen
+die Verkäufer nur hundert Kilo anbieten, die Käufer wollen aber fünfhundert. Bei *fünf Euro* ist es genau andersrum. Und bei *drei Euro* sind es auf beiden Seiten dreihundert Kilo.
+Also liegt das Gleichgewicht bei *drei Euro und dreihundert Kilo*.""",
    "Gleichgewicht aus der Tabelle", ["Preis", "Angebot", "Nachfrage"],
    [(["1 €", "100 kg", "500 kg"], "einem"), (["3 €", "300 kg", "300 kg"], "drei", True), (["5 €", "500 kg", "100 kg"], "fünf")],
    note="Gleichgewicht: 3 € und 300 kg")
-C("""Was, wenn der Preis nicht stimmt? Ist der *Preis zu hoch*, gibt es einen *Angebotsüberhang*: mehr Angebot als Nachfrage, die Ware bleibt liegen, und der Preis *sinkt*.
-Bei fünf Euro: fünfhundert minus hundert gleich *vierhundert Kilo* Angebotsüberhang. Ist der *Preis zu niedrig*, gibt es einen *Nachfrageüberhang*: Die Ware ist knapp,
-und der Preis *steigt*. Bei einem Euro: fünfhundert minus hundert gleich vierhundert Kilo Nachfrageüberhang.""",
+C("""Und was passiert, wenn der Preis *nicht* im Gleichgewicht ist? Ist der Preis *zu hoch*, wollen alle verkaufen, aber kaum einer kaufen. Es gibt einen *Angebotsüberhang*,
+die Ware bleibt liegen, und die Verkäufer müssen den Preis *senken*. Bei fünf Euro: fünfhundert minus hundert gleich *vierhundert Kilo* Angebotsüberhang.
+Ist der Preis *zu niedrig*, wollen alle kaufen, aber kaum einer verkaufen. Es gibt einen *Nachfrageüberhang*, die Ware ist knapp, und der Preis *steigt*.
+Bei einem Euro wieder fünfhundert minus hundert, also vierhundert Kilo Nachfrageüberhang. Der Markt pendelt sich so von selbst zum Gleichgewicht ein.""",
   "Preis zu hoch", ["Angebotsüberhang", "Ware bleibt liegen ➜ Preis sinkt", "5 €: 500 − 100 = 400 kg"],
   "Preis zu niedrig", ["Nachfrageüberhang", "Ware knapp ➜ Preis steigt", "1 €: 500 − 100 = 400 kg"], "niedrig",
   note="Überhang = größere Menge − kleinere Menge")
-TB("""Und wenn sich Angebot oder Nachfrage *ändern*? *Nachfrage steigt*, zum Beispiel *Hitzewelle*, alle wollen *Ventilatoren*: Die Kurve geht nach *rechts*, *Preis und Menge steigen*.
-*Nachfrage sinkt*, zum Beispiel *Eis im Winter*: nach *links*, Preis und Menge *sinken*. *Angebot steigt*, zum Beispiel viele *neue E-Bike-Firmen*: nach rechts, der Preis *sinkt*,
-die Menge *steigt*. *Angebot sinkt*, zum Beispiel *Missernte* beim Kaffee: nach links, der Preis *steigt*, die Menge *sinkt*.""",
-   "Änderungen", ["Was passiert?", "Kurve", "Preis", "Menge"],
+TB("""Und jetzt der Teil, den viele schwierig finden, aber mit Logik geht er ganz leicht: Was passiert, wenn sich etwas *ändert*? Stell dir eine *Hitzewelle* vor. Alle wollen plötzlich *Ventilatoren*.
+Die *Nachfrage steigt*, die Kurve rutscht nach *rechts*, und *Preis und Menge steigen*. Im *Winter* will keiner *Eis*: Die Nachfrage *sinkt*, die Kurve geht nach links, Preis und Menge sinken.
+Jetzt das Angebot: Es gibt viele *neue E-Bike-Firmen*, das *Angebot steigt*, die Kurve geht nach rechts, die Menge steigt, aber der Preis *sinkt*, weil die Firmen sich gegenseitig unterbieten.
+Und bei einer *Missernte* beim Kaffee *sinkt* das Angebot, die Kurve geht nach links, der Preis *steigt*, die Menge sinkt.""",
+   "Wenn sich etwas ändert", ["Was passiert?", "Kurve", "Preis", "Menge"],
    [(["Nachfrage ↑ (Hitzewelle ➜ Ventilatoren)", "rechts", "⬆", "⬆"], "Hitzewelle"), (["Nachfrage ↓ (Winter ➜ Eis)", "links", "⬇", "⬇"], "Winter"),
     (["Angebot ↑ (neue E-Bike-Firmen)", "rechts", "⬇", "⬆"], "E-Bike"), (["Angebot ↓ (Missernte Kaffee)", "links", "⬆", "⬇"], "Missernte")])
-M("""Merke: Überhang gleich größere Menge minus kleinere Menge. Und bei Änderungen erst überlegen: Was verschiebt sich, Angebot oder Nachfrage, und in welche Richtung?""",
-  "Überhang = größere − kleinere Menge · erst fragen: Angebot oder Nachfrage? Rechts oder links?")
+Q("""Frage an dich: Ein Sturm zerstört einen Großteil der Orangenernte. Was passiert mit dem Preis für Orangensaft? … Das *Angebot sinkt*, die Kurve geht nach links, also *steigt der Preis*,
+und es wird weniger verkauft. Der Trick: Frag dich immer zuerst, ob sich *Angebot* oder *Nachfrage* ändert.""",
+  "Sturm zerstört die Orangenernte – was passiert mit dem Preis?", "Angebot sinkt ➜ Kurve nach links ➜ Preis steigt, Menge sinkt", "Angebot")
 
 thema("Marktformen")
-T("""Thema zwei: die *Marktformen*.""")
-P("""Märkte werden nach der *Anzahl der Anbieter* unterschieden, denn je nach Anzahl verhalten sich die Anbieter anders. Das *Polypol*: *viele* Anbieter, viele Nachfrager,
-zum Beispiel *Klamottenläden* oder *Friseure*. Erhöht einer stark die Preise, gehen die Kunden einfach zur Konkurrenz. Darum hat einer *kaum Einfluss* auf den Preis.
-Der Fachbegriff: *Mengenanpasser*.""",
-  "Polypol", [it("viele Anbieter, viele Nachfrager", "viele"), it("z. B. Klamottenläden, Friseure", "Klamottenläden"), it("kaum Einfluss auf den Preis", "Einfluss"),
-              it("Fachbegriff: Mengenanpasser", "Mengenanpasser")])
-P("""Das *Angebotsoligopol*: *wenige* Anbieter, viele Nachfrager, zum Beispiel *Tankstellen*. Sie *beobachten sich genau*. Senkt einer den Preis, ziehen die anderen nach,
-das ist ein *Preiskampf*. Die Gefahr: heimliche *Preisabsprachen*, das nennt man *Kartell*, und das ist *verboten*. Das *Bundeskartellamt* kontrolliert das.
-Das *Angebotsmonopol*: *ein* Anbieter, zum Beispiel die Deutsche Bahn beim *Schienennetz* oder der *Wasserversorger*. Er legt den Preis selbst fest, Fachbegriff *Preisfestsetzer*.
-Aber nicht beliebig hoch: Bei zu hohen Preisen kaufen die Leute weniger oder weichen aus, zum Beispiel aufs *Auto* statt Bahn.""",
+T("""Thema zwei: die *Marktformen*. Hier geht es darum, wie viele Anbieter es gibt, und warum das so wichtig ist.""")
+P("""Märkte unterscheidet man nach der *Anzahl der Anbieter*. Je nachdem, wie viele es gibt, verhalten sie sich nämlich ganz anders. Fangen wir mit dem *Polypol* an: *viele* Anbieter und viele Nachfrager.
+Denk an *Klamottenläden* in der Innenstadt oder *Friseure*. Was passiert, wenn ein Friseur plötzlich doppelt so viel verlangt? Die Kunden gehen einfach zum nächsten. Ein Anbieter hat also *kaum Einfluss*
+auf den Preis, er muss den Marktpreis nehmen und kann nur entscheiden, wie *viel* er anbietet. Deshalb heißt er *Mengenanpasser*.""",
+  "Polypol – viele Anbieter", [it("viele Anbieter, viele Nachfrager", "viele"), it("z. B. Klamottenläden, Friseure", "Klamottenläden"),
+                               it("kaum Einfluss auf den Preis", "Einfluss"), it("Fachbegriff: Mengenanpasser", "Mengenanpasser")])
+P("""Dann das *Angebotsoligopol*: Es gibt nur *wenige* Anbieter. Das beste Beispiel sind *Tankstellen*, Aral, Shell, Esso. Hast du gemerkt, dass die Preise an allen Tankstellen fast gleichzeitig steigen und fallen?
+Die *beobachten sich genau*. Senkt einer den Preis, ziehen die anderen sofort nach, sonst laufen ihnen die Kunden weg. Das ist ein *Preiskampf*. Die Gefahr: Statt sich zu bekämpfen,
+sprechen sie sich heimlich ab. Das nennt man *Kartell*, und das ist *verboten*. Aufpassen tut das *Bundeskartellamt*.
+Und das *Angebotsmonopol*: Es gibt nur *einen* Anbieter, zum Beispiel die Bahn beim *Schienennetz* oder dein *Wasserversorger*. Der kann den Preis selbst festlegen, er ist *Preisfestsetzer*.
+Aber auch er kann nicht beliebig hoch gehen, sonst kaufen die Leute weniger oder weichen aus, zum Beispiel aufs *Auto* statt die Bahn.""",
   "Oligopol & Monopol", [it("Oligopol: wenige (Tankstellen) – beobachten sich, Preiskampf", "Angebotsoligopol"), it("Gefahr: Kartell ➜ verboten (Bundeskartellamt)", "Kartell"),
-                         it("Monopol: einer (Schienennetz, Wasser) – Preisfestsetzer", "Angebotsmonopol"), it("nicht beliebig hoch: Leute weichen aus", "beliebig")])
-TB("""Der *Überblick*: Polypol, viele, *Mengenanpasser*. Oligopol, wenige, *Preiskampf* und Gefahr *Kartell*. Monopol, einer, *Preisfestsetzer*.""",
+                         it("Monopol: einer (Schienennetz, Wasser) – Preisfestsetzer", "Angebotsmonopol"), it("aber nicht beliebig hoch: Leute weichen aus", "Auto")])
+TB("""Hier nochmal der Überblick zum Merken: *Polypol*, viele Anbieter, *Mengenanpasser*. *Oligopol*, wenige Anbieter, *Preiskampf* und die Gefahr eines Kartells. *Monopol*, ein Anbieter, *Preisfestsetzer*.""",
    "Überblick", ["Marktform", "Anbieter", "Verhalten"],
-   [(["Polypol", "viele", "Mengenanpasser"], "Mengenanpasser"), (["Oligopol", "wenige", "Preiskampf, Gefahr Kartell"], "Preiskampf"), (["Monopol", "einer", "Preisfestsetzer"], "Preisfestsetzer")])
+   [(["Polypol", "viele", "Mengenanpasser"], "Polypol"), (["Oligopol", "wenige", "Preiskampf, Gefahr Kartell"], "Oligopol"), (["Monopol", "einer", "Preisfestsetzer"], "Monopol")])
 
 thema("Vollkommener Markt")
 T("""Thema drei: der *vollkommene Markt*.""")
-P("""Der vollkommene Markt ist ein *Modell*, also eine Idee zum Erklären. In echt gibt es ihn *nicht*. Fünf *Bedingungen*: Erstens *homogene Güter*, alle Produkte sind völlig gleich.
-Zweitens *vollständige Markttransparenz*, alle kennen alle Preise und Angebote. Drittens *keine Präferenzen*, also keine Vorlieben: keine *persönlichen*, wie ein netter Verkäufer,
-keine *räumlichen*, wie ein näherer Laden, keine *zeitlichen*, wie eine schnellere Lieferung. Viertens *sofortige Reaktion* aller auf Preisänderungen. Und fünftens ein *Polypol*.""",
-  "Bedingungen", [it("homogene Güter", "homogene"), it("vollständige Markttransparenz", "Markttransparenz"), it("keine Präferenzen (persönlich, räumlich, zeitlich)", "Präferenzen"),
-                  it("sofortige Reaktion", "sofortige"), it("Polypol", "Polypol")])
-X("""Ein Beispiel: Du kaufst beim *Bäcker um die Ecke*, obwohl es zweihundert Meter weiter *billiger* ist, weil er *näher* ist und die Verkäuferin *nett* ist.
-Das sind eine *räumliche* und eine *persönliche* Präferenz, also *kein* vollkommener Markt.""",
-  [it("Bäcker um die Ecke", "Bäcker"), it("200 m weiter billiger", "billiger"), it("näher + nette Verkäuferin", "näher"), it("räumliche & persönliche Präferenz", "räumliche"),
-   it("➜ kein vollkommener Markt", "kein")], title="Beispiel")
-M("""Merke: Gleiche Ware, alle wissen alles, keine Vorlieben, sofortige Reaktion.""", "gleiche Ware · alle wissen alles · keine Vorlieben · sofortige Reaktion")
+P("""Gleich vorweg: Den vollkommenen Markt gibt es in echt *nicht*. Er ist ein *Modell*, also eine gedachte Welt, mit der man Preisbildung erklären kann, so wie in Physik ein reibungsloser Körper.
+Damit ein Markt vollkommen ist, müssen *fünf Bedingungen* erfüllt sein. Erstens *homogene Güter*: Alle Produkte sind völlig gleich, kein Unterschied in der Qualität.
+Zweitens *vollständige Markttransparenz*: Jeder kennt alle Preise und Angebote. Drittens *keine Präferenzen*, also keine Vorlieben: keine *persönlichen*, du kaufst nicht wegen der netten Verkäuferin,
+keine *räumlichen*, nicht weil der Laden näher ist, und keine *zeitlichen*, nicht weil einer schneller liefert. Viertens eine *sofortige Reaktion* aller auf Preisänderungen.
+Und fünftens muss es ein *Polypol* sein, also viele Anbieter und viele Nachfrager.""",
+  "Die 5 Bedingungen", [it("homogene Güter – alles gleich", "homogene"), it("vollständige Markttransparenz – alle wissen alles", "Markttransparenz"),
+                        it("keine Präferenzen (persönlich, räumlich, zeitlich)", "Präferenzen"), it("sofortige Reaktion", "sofortige"), it("Polypol", "Polypol")])
+Q("""Frage: Du kaufst deine Brötchen beim *Bäcker um die Ecke*, obwohl es zweihundert Meter weiter billiger ist, weil der näher ist und die Verkäuferin so nett ist. Vollkommener Markt? …
+*Nein!* Du hast eine *räumliche* und eine *persönliche* Präferenz. Und genau deshalb gibt es den vollkommenen Markt in echt nicht: Wir Menschen haben immer Vorlieben.""",
+  "Bäcker um die Ecke statt billiger 200 m weiter – vollkommener Markt?", "Nein – räumliche (näher) und persönliche (nette Verkäuferin) Präferenz", "Nein")
 
 thema("Höchst- und Mindestpreis")
-T("""Thema vier: *Höchst- und Mindestpreis*.""")
-P("""Normalerweise bestimmt der Markt den Preis. Das hat aber *Nachteile*: Manche Preise sind für Käufer *zu teuer*, zum Beispiel *Mieten in Stuttgart*. Andere sind für Verkäufer
-*zu billig*, zum Beispiel der *Milchpreis* für Bauern. Dann *legt der Staat* für eine Ware einen *Preis fest*.""",
-  "Warum greift der Staat ein?", [it("zu teuer für Käufer (Mieten in Stuttgart)", "teuer"), it("zu billig für Verkäufer (Milchpreis)", "billig"), it("Staat legt Preis fest", "legt")])
-C("""Der *Höchstpreis* ist eine *Decke*. Beispiel: Die Miete darf nicht über einen bestimmten Betrag steigen. Es darf also *nicht teurer* sein als, er schützt die *Käufer*,
-und er liegt *unter* dem Gleichgewichtspreis. Was passiert? Die Miete bleibt billig, viele wollen eine Wohnung, aber Vermieter bauen keine neuen: ein *Nachfrageüberhang*.
-Vorteil: Dinge bleiben bezahlbar. Probleme: *Knappheit*, also lange Wohnungssuche, *Schwarzmarkt*, weniger Produktion und schlechtere Qualität.
-Der *Mindestpreis* ist ein *Boden*. Beispiel: Milch darf nicht billiger sein als ein bestimmter Betrag. Er schützt die *Verkäufer* und liegt *über* dem Gleichgewichtspreis.
-Was passiert? Milch ist teurer, die Leute kaufen weniger, die Bauern produzieren mehr: ein *Angebotsüberhang*. Vorteil: sichere Einnahmen für die Bauern.
-Probleme: Verbraucher zahlen mehr, und der Staat kauft die übrige Milch mit Steuergeld auf, das ist Verschwendung.""",
+T("""Thema vier: *Höchst- und Mindestpreis*. Jetzt greift der Staat in den Markt ein.""")
+P("""Normalerweise regelt der Markt den Preis von selbst, wie wir gerade gelernt haben. Aber das hat *Nachteile*. Manche Preise werden für Käufer *zu teuer*: Denk an die *Mieten in Stuttgart*,
+da können sich normale Leute kaum noch eine Wohnung leisten. Andere Preise werden für Verkäufer *zu billig*: Beim *Milchpreis* können viele Bauern kaum noch überleben.
+In solchen Fällen sagt der Staat: Hier *lege ich den Preis fest*.""",
+  "Warum greift der Staat ein?", [it("zu teuer für Käufer (Mieten in Stuttgart)", "teuer"), it("zu billig für Verkäufer (Milchpreis)", "billig"), it("Staat legt Preis fest", "lege")])
+C("""Der *Höchstpreis* ist wie eine *Decke*: Teurer darf es nicht werden. Beispiel Miete: Der Staat sagt, die Miete darf einen bestimmten Betrag nicht überschreiten. Er schützt die *Käufer*,
+also die Mieter, und damit er überhaupt etwas bewirkt, muss er *unter* dem Gleichgewichtspreis liegen. Was passiert dann? Die Miete bleibt günstig, also wollen viele eine Wohnung.
+Aber für Vermieter lohnt sich das Bauen kaum noch. Ergebnis: ein *Nachfrageüberhang*, also lange Wohnungssuche, und oft ein *Schwarzmarkt*.
+Der *Mindestpreis* ist ein *Boden*: Billiger darf es nicht werden. Beispiel Milch: Er schützt die *Verkäufer*, also die Bauern, und muss *über* dem Gleichgewichtspreis liegen.
+Was passiert? Milch wird teurer, die Leute kaufen weniger, die Bauern produzieren aber mehr, weil es sich lohnt. Ergebnis: ein *Angebotsüberhang*, und der Staat muss die übrige Milch
+mit Steuergeld aufkaufen und lagern. Das ist teuer und verschwenderisch.""",
   "Höchstpreis = DECKE ⬇", ["nicht teurer als … (Miete)", "schützt Käufer", "liegt UNTER dem GG-Preis", "➜ Nachfrageüberhang, Knappheit, Schwarzmarkt"],
   "Mindestpreis = BODEN ⬆", ["nicht billiger als … (Milch)", "schützt Verkäufer", "liegt ÜBER dem GG-Preis", "➜ Angebotsüberhang, Staat kauft auf"], "Mindestpreis")
-TB("""Wann wirkt so ein Preis überhaupt? Sagen wir, der Marktpreis ist *zehn Euro*. Ein Höchstpreis von *acht Euro* wirkt, denn er drückt den Preis runter.
-Ein Höchstpreis von *zwölf Euro* wirkt nicht, der Preis liegt ja eh darunter. Beim Mindestpreis genau umgekehrt: *zwölf Euro* wirkt, acht Euro nicht.""",
+TB("""Und eine typische Prüfungsfrage: *Wann wirkt* so ein Preis überhaupt? Sagen wir, der Marktpreis liegt bei *zehn Euro*. Ein Höchstpreis von *acht Euro* wirkt, denn er drückt den Preis runter.
+Ein Höchstpreis von *zwölf Euro* bringt gar nichts, der Preis liegt doch eh schon darunter. Beim Mindestpreis ist es genau umgekehrt: *zwölf Euro* wirkt, acht Euro nicht.""",
    "Wann wirkt es? (Marktpreis 10 €)", ["", "wirkt ✅", "keine Wirkung ❌"],
-   [(["Höchstpreis", "8 €", "12 €"], "Höchstpreis"), (["Mindestpreis", "12 €", "8 €"], "Mindestpreis")])
-M("""Merke: Die Decke muss runterdrücken, also unter dem Marktpreis liegen. Der Boden muss hochdrücken, also über dem Marktpreis liegen.""",
+   [(["Höchstpreis", "8 €", "12 €"], "acht"), (["Mindestpreis", "12 €", "8 €"], "Mindestpreis")])
+M("""Merk dir das Bild: Die *Decke* muss *runterdrücken*, also *unter* dem Marktpreis liegen. Der *Boden* muss *hochdrücken*, also *über* dem Marktpreis liegen.""",
   "Decke muss runterdrücken ➜ UNTER dem Marktpreis · Boden muss hochdrücken ➜ ÜBER dem Marktpreis")
 
 thema("Soziale Marktwirtschaft")
-T("""Thema fünf: die *Soziale Marktwirtschaft*.""")
-P("""Die Grundidee: Der Markt ist *frei*, Firmen entscheiden selbst, was sie herstellen und zu welchem Preis. Aber der *Staat greift ein*, um für *sozialen Ausgleich*
-zu sorgen und die Schwächeren zu schützen. Der Merksatz: *So viel Markt wie möglich, so viel Staat wie nötig.* Das Wesen besteht aus *zwei Säulen*:
-*Freiheit*, also freie Preisbildung, Wettbewerb, Privateigentum, Vertragsfreiheit und Gewerbefreiheit. Und *sozialer Ausgleich*: soziale Sicherheit,
-soziale Gerechtigkeit, Schutz des Wettbewerbs und Schutz der Umwelt.""",
-  "Grundidee & 2 Säulen", [it("„So viel Markt wie möglich, so viel Staat wie nötig.“", "Markt"), it("Säule 1: Freiheit – Preisbildung, Wettbewerb, Eigentum, Vertrags- & Gewerbefreiheit", "Freiheit"),
-                           it("Säule 2: sozialer Ausgleich – Sicherheit, Gerechtigkeit, Wettbewerbs- & Umweltschutz", "sozialer")])
-C("""Der Unterschied zur *freien* Marktwirtschaft: Dort greift der Staat *kaum* ein. In der *Sozialen* Marktwirtschaft setzt er *Regeln und Grenzen*, zum Beispiel beim Arbeitsschutz.
-So ist es in *Deutschland*.""",
-  "Freie Marktwirtschaft", ["Staat greift kaum ein"], "Soziale Marktwirtschaft", ["Staat setzt Regeln & Grenzen", "z. B. Arbeitsschutz", "so in Deutschland"], "Sozialen")
-TB("""Es gibt *vier Instrumente*. Die *Sozialpolitik*: Schwache schützen, mit Sozialversicherung, Kindergeld und Bürgergeld. Die *Einkommenspolitik*: gerechtere Einkommen,
-mit *Mindestlohn* und *Steuerprogression*. Die *Wettbewerbspolitik*: Konkurrenz sichern, mit *Bundeskartellamt* und Kartellverbot. Und die *Umweltpolitik*: Umwelt schützen,
-mit *CO-zwei-Preis*, Grenzwerten und der Förderung von Wärmepumpen.""",
+T("""Thema fünf: die *Soziale Marktwirtschaft*, unsere Wirtschaftsordnung in Deutschland.""")
+P("""Die Grundidee ist ein Kompromiss. Der Markt ist *frei*: Firmen entscheiden selbst, was sie herstellen und was es kostet. Aber der *Staat greift ein*, wenn es ungerecht wird,
+um für *sozialen Ausgleich* zu sorgen und die Schwächeren zu schützen. Der berühmte Merksatz dazu: *So viel Markt wie möglich, so viel Staat wie nötig.*
+Das Ganze steht auf *zwei Säulen*. Die erste ist *Freiheit*: freie Preisbildung, Wettbewerb, Privateigentum, Vertragsfreiheit und Gewerbefreiheit, also jeder darf ein Geschäft aufmachen.
+Die zweite ist der *soziale Ausgleich*: soziale Sicherheit, soziale Gerechtigkeit, Schutz des Wettbewerbs und Schutz der Umwelt.""",
+  "Grundidee & 2 Säulen", [it("„So viel Markt wie möglich, so viel Staat wie nötig.“", "Merksatz"), it("Säule 1: Freiheit – Preise, Wettbewerb, Eigentum, Vertrags- & Gewerbefreiheit", "Freiheit"),
+                           it("Säule 2: sozialer Ausgleich – Sicherheit, Gerechtigkeit, Wettbewerbs- & Umweltschutz", "Ausgleich")])
+C("""Was ist der Unterschied zur *freien* Marktwirtschaft? Dort greift der Staat *kaum* ein, jeder ist auf sich gestellt. In der *Sozialen* Marktwirtschaft setzt der Staat *Regeln und Grenzen*,
+zum Beispiel den Arbeitsschutz, den du aus Kompetenzbereich eins kennst. So ist es in *Deutschland*.""",
+  "Freie Marktwirtschaft", ["Staat greift kaum ein", "jeder auf sich gestellt"], "Soziale Marktwirtschaft", ["Staat setzt Regeln & Grenzen", "z. B. Arbeitsschutz", "so in Deutschland"], "Sozialen")
+TB("""Mit welchen Werkzeugen sorgt der Staat dafür? Es gibt *vier Instrumente*. Die *Sozialpolitik* schützt Schwache, mit der Sozialversicherung, Kindergeld und Bürgergeld.
+Die *Einkommenspolitik* sorgt für gerechtere Einkommen, zum Beispiel mit dem *Mindestlohn* und der *Steuerprogression*. Die *Wettbewerbspolitik* sichert die Konkurrenz,
+da kennst du schon das *Bundeskartellamt* und das Kartellverbot. Und die *Umweltpolitik* schützt die Umwelt, zum Beispiel mit dem *CO-zwei-Preis*, Grenzwerten und der Förderung von Wärmepumpen.""",
    "Die 4 Instrumente", ["Instrument", "Ziel", "Beispiele"],
    [(["Sozialpolitik", "Schwache schützen", "Sozialversicherung, Kindergeld, Bürgergeld"], "Sozialpolitik"),
     (["Einkommenspolitik", "gerechtere Einkommen", "Mindestlohn, Steuerprogression"], "Einkommenspolitik"),
     (["Wettbewerbspolitik", "Konkurrenz sichern", "Bundeskartellamt, Kartellverbot"], "Wettbewerbspolitik"),
     (["Umweltpolitik", "Umwelt schützen", "CO₂-Preis, Grenzwerte, Wärmepumpen"], "Umweltpolitik")])
-C("""Zwei Begriffe werden oft verwechselt. Das *Solidaritätsprinzip*: Jeder zahlt *Beiträge nach seinem Einkommen*, jeder bekommt Hilfe *nach seinem Bedarf*, das gehört zur Sozialpolitik.
-Die *Steuerprogression*: Wer mehr verdient, zahlt *prozentual mehr Steuern*, das gehört zur Einkommenspolitik.""",
+C("""Zwei Begriffe werden hier gern verwechselt. Das *Solidaritätsprinzip*: Jeder zahlt *Beiträge nach seinem Einkommen* und bekommt Hilfe *nach seinem Bedarf*. Das kennst du von der Krankenkasse,
+das gehört zur *Sozialpolitik*. Die *Steuerprogression*: Wer mehr verdient, zahlt *prozentual mehr Steuern*, nicht nur absolut mehr, sondern einen höheren Prozentsatz.
+Das gehört zur *Einkommenspolitik*.""",
   "Solidaritätsprinzip", ["Beiträge nach Einkommen", "Hilfe nach Bedarf", "➜ Sozialpolitik"], "Steuerprogression", ["mehr verdienen ➜ prozentual mehr Steuern", "➜ Einkommenspolitik"], "Steuerprogression")
-C("""Und die *Wirkung* zweier Instrumente. Der *Mindestlohn*: Eine Stunde Arbeit darf nicht schlechter bezahlt werden als ein festgelegter Betrag. Vorteile: Geringverdiener haben mehr Geld,
-weniger Menschen brauchen Hilfe vom Staat, Schutz vor Lohndumping. Nachteile, merk dir *P S P*: *Preise* steigen, *Stellenabbau*, *Pleite* kleiner Betriebe.
-Und wichtig: Den Mindestlohn zahlt der *Arbeitgeber*, nicht der Staat. Der *CO-zwei-Preis*: Vorteil, die Leute steigen auf Umweltfreundliches um, Fahrrad, Bus, Wärmepumpe.
-Nachteil: *Geringverdiener*, die aufs Auto angewiesen sind, werden hart getroffen.""",
+C("""Und du sollst die *Wirkung* beurteilen können. Nehmen wir den *Mindestlohn*: Eine Stunde Arbeit darf nicht schlechter bezahlt werden als ein festgelegter Betrag.
+Vorteile: Geringverdiener haben mehr Geld, weniger Menschen brauchen Hilfe vom Staat, und es schützt vor Lohndumping. Nachteile, merk dir *P S P*: *Preise* steigen, weil Firmen höhere Kosten haben,
+*Stellenabbau*, und *Pleite* kleiner Betriebe. Und Achtung, Prüfungsfalle: Den Mindestlohn zahlt der *Arbeitgeber*, nicht der Staat!
+Beim *CO-zwei-Preis*: Vorteil, die Leute steigen auf Umweltfreundliches um, Fahrrad, Bus, Wärmepumpe. Nachteil: *Geringverdiener*, die aufs Auto angewiesen sind, trifft es besonders hart.""",
   "Mindestlohn", ["➕ mehr Geld, weniger Staatshilfe, kein Lohndumping", "➖ P–S–P: Preise, Stellenabbau, Pleite", "zahlt der Arbeitgeber!"],
   "CO₂-Preis", ["➕ Umstieg: Fahrrad, Bus, Wärmepumpe", "➖ trifft Geringverdiener mit Auto"], "CO")
 
 thema("Preisindex (VPI)")
-T("""Thema sechs: der *Preisindex*, genauer der *Verbraucherpreisindex*.""")
-X("""Der Staat will wissen: Wie viel *teurer* wird das Leben? Dafür gibt es den Verbraucherpreisindex, ermittelt vom *Statistischen Bundesamt* in *vier Schritten*.
-Erstens den *Warenkorb festlegen*: alles, was ein normaler Haushalt kauft, Lebensmittel, Miete, Strom, Kleidung, Handy, Friseur, etwa *sechshundertfünfzig* Sachen.
-Zweitens *gewichten*: Was viel Geld kostet, zählt mehr. Die *Miete* zählt viel mehr als Brötchen. Drittens *Preise prüfen*: Jeden Monat werden in ganz Deutschland die Preise erfasst.
-Viertens *vergleichen*: mit einem *Basisjahr*, das auf *hundert* gesetzt wird.""",
+T("""Thema sechs: der *Preisindex*, genauer der *Verbraucherpreisindex*, kurz VPI.""")
+X("""Jeder merkt, dass das Leben teurer wird. Aber um *wie viel* genau? Das misst der Staat mit dem Verbraucherpreisindex, und zwar das *Statistische Bundesamt* in *vier Schritten*.
+Erstens: einen *Warenkorb festlegen*. Da kommt alles rein, was ein normaler Haushalt kauft: Lebensmittel, Miete, Strom, Kleidung, Handy, Friseur, etwa *sechshundertfünfzig* Sachen.
+Zweitens: *gewichten*. Was viel Geld kostet, zählt mehr. Die *Miete* zählt viel mehr als Brötchen, weil du dafür viel mehr ausgibst. Drittens: *Preise prüfen*. Jeden Monat werden in ganz
+Deutschland die Preise erfasst. Und viertens: *vergleichen*, und zwar mit einem *Basisjahr*, das auf *hundert* gesetzt wird.""",
   [it("Warenkorb festlegen (ca. 650 Sachen)", "Warenkorb"), it("gewichten (Miete > Brötchen)", "gewichten"), it("Preise prüfen (jeden Monat)", "prüfen"),
    it("vergleichen mit Basisjahr = 100", "vergleichen")], title="So wird der VPI ermittelt")
-F("""Ein Beispiel: Der Warenkorb kostet im Basisjahr *tausend Euro*, das ist Index hundert. Heute kostet er *zwölfhundert Euro*, das ist Index *hundertzwanzig*.
-Das heißt: Das Leben ist *zwanzig Prozent teurer* als im Basisjahr.""",
+F("""Ein Beispiel: Im Basisjahr kostet der Warenkorb *tausend Euro*. Das ist der Index hundert. Heute kostet derselbe Warenkorb *zwölfhundert Euro*, das ist der Index *hundertzwanzig*.
+Und was heißt das? Das Leben ist *zwanzig Prozent teurer* als im Basisjahr.""",
   [["Basisjahr 1.000 € = 100", "#2563eb", "tausend"], ["➜", "#1f2937", "zwölfhundert"], ["heute 1.200 € = 120", "#dc2626", "zwölfhundert"], ["= + 20 %", "#16a34a", "zwanzig"]])
-M("""Merke: Warenkorb, gewichten, Preise prüfen, mit Basisjahr vergleichen.""", "Warenkorb ➜ gewichten ➜ Preise prüfen ➜ mit Basisjahr vergleichen")
+M("""Merke die vier Schritte: *Warenkorb*, *gewichten*, *Preise prüfen*, mit dem *Basisjahr vergleichen*.""", "Warenkorb ➜ gewichten ➜ Preise prüfen ➜ mit Basisjahr vergleichen")
 
 thema("Inflation")
-T("""Thema sieben: die *Inflation*.""")
-P("""Inflation heißt: Die Preise steigen *allgemein* und *über längere Zeit*. Nicht nur ein einzelnes Produkt, sondern fast alles. Bei Inflation verliert das *Geld an Wert*.
-Die *Inflationsrate* sagt, um wie viel Prozent die Preise im Vergleich zum *Vorjahr* gestiegen sind. Bei *drei Prozent* kostet, was letztes Jahr hundert Euro gekostet hat,
-jetzt hundertdrei Euro.""",
+T("""Thema sieben: die *Inflation*. Das Wort hast du bestimmt schon oft in den Nachrichten gehört.""")
+P("""Inflation heißt: Die Preise steigen, und zwar *allgemein*, also fast alles, nicht nur ein Produkt, und *über längere Zeit*. Wird nur Kaffee teurer, ist das keine Inflation.
+Und das Wichtigste: Bei Inflation verliert dein *Geld an Wert*. Wie viel? Das sagt die *Inflationsrate*: Um wie viel Prozent sind die Preise im Vergleich zum *Vorjahr* gestiegen?
+Bei *drei Prozent* kostet das, was letztes Jahr hundert Euro gekostet hat, jetzt hundertdrei Euro.""",
   "Inflation", [it("Preise steigen allgemein & über längere Zeit", "allgemein"), it("Geld verliert an Wert", "Wert"), it("Inflationsrate: % zum Vorjahr", "Inflationsrate"),
                 it("3 %: 100 € ➜ 103 €", "drei")])
-TB("""Die *Ursachen*, merk dir *N K I*. *N* wie *Nachfrageinflation*: Die Leute wollen mehr kaufen, als es gibt, die Ware wird knapp, die Preise steigen. Nach Corona wollten alle reisen,
-Flüge und Hotels wurden teurer. *K* wie *Kosteninflation*: Die Herstellung wird teurer, Löhne, Rohstoffe, Energie, und die Firmen geben das weiter. Gas wird teurer,
-der Bäcker zahlt mehr für den Ofen, das Brot wird teurer. *I* wie *importierte Inflation*: Waren aus dem Ausland werden teurer. Zweitausendzweiundzwanzig wurden Öl und Gas teurer,
-also wurden Tanken und Heizen teurer.""",
+TB("""Woher kommt Inflation? Merk dir *N K I*. *N* wie *Nachfrageinflation*: Die Leute wollen mehr kaufen, als es gibt. Nach Corona wollten plötzlich alle reisen, also wurden Flüge und Hotels teurer.
+*K* wie *Kosteninflation*: Die Herstellung wird teurer, durch höhere Löhne, Rohstoffe oder Energie, und die Firmen geben das an die Kunden weiter. Gas wird teurer, der Bäcker zahlt mehr für seinen Ofen,
+also wird das Brot teurer. Und *I* wie *importierte Inflation*: Waren aus dem *Ausland* werden teurer. Zweitausendzweiundzwanzig wurden Öl und Gas teurer, also auch Tanken und Heizen bei uns.""",
    "Ursachen: N – K – I", ["Ursache", "Erklärung", "Beispiel"],
    [(["N – Nachfrageinflation", "mehr Nachfrage als Ware", "nach Corona: Flüge, Hotels"], "Nachfrageinflation"),
     (["K – Kosteninflation", "Löhne, Rohstoffe, Energie teurer", "Gas ➜ Bäcker ➜ Brot"], "Kosteninflation"),
     (["I – importierte Inflation", "Waren aus dem Ausland teurer", "2022: Öl, Gas ➜ Tanken, Heizen"], "importierte")])
-P("""Folge eins: Die *Kaufkraft sinkt*. Kaufkraft heißt: Wie viel kannst du dir für dein Geld kaufen? Ein *Döner* kostet *fünf Euro*, mit zwanzig Euro bekommst du *vier* Döner.
-Kostet er *zehn Euro*, nur noch *zwei*. Folge zwei: Der *Reallohn* kann sinken. Der *Nominallohn* ist die Zahl auf deiner Lohnabrechnung, der *Reallohn* ist, was du dir davon
-*wirklich kaufen* kannst. Faustregel: Reallohn gleich Lohnerhöhung minus Inflationsrate. Lohn plus *drei* Prozent, Inflation *fünf* Prozent, Reallohn *minus zwei* Prozent, er *sinkt*.
-Lohn plus *sechs*, Inflation *zwei*, Reallohn plus *vier*, er *steigt*.""",
+P("""Was bedeutet das für dich? Folge eins: Die *Kaufkraft sinkt*. Kaufkraft heißt: Wie viel bekommst du für dein Geld? Ein *Döner* kostet *fünf Euro*, dann bekommst du für zwanzig Euro *vier* Döner.
+Kostet er *zehn Euro*, nur noch *zwei*. Dein Geld ist dasselbe, aber du bekommst weniger dafür. Folge zwei: Dein *Reallohn* kann sinken. Der *Nominallohn* ist die Zahl auf deiner Lohnabrechnung.
+Der *Reallohn* ist das, was du dir davon *wirklich kaufen* kannst. Die Faustregel: Reallohn gleich Lohnerhöhung minus Inflationsrate. Bekommst du *drei* Prozent mehr Lohn, aber die Inflation ist *fünf* Prozent,
+dann hast du real *zwei Prozent weniger*. Bekommst du *sechs* Prozent mehr bei *zwei* Prozent Inflation, steigt dein Reallohn um vier Prozent.""",
   "Folgen: Kaufkraft & Reallohn", [it("Kaufkraft sinkt: Döner 5 € ➜ 4 Stück, 10 € ➜ 2 Stück", "Döner"), it("Nominallohn = Zahl auf der Abrechnung", "Nominallohn"),
                                    it("Reallohn = was du wirklich kaufen kannst", "Reallohn"), it("Lohn + 3 %, Inflation 5 % ➜ Reallohn − 2 %", "drei"),
                                    it("Lohn + 6 %, Inflation 2 % ➜ Reallohn + 4 %", "sechs")])
-C("""Folge drei: *Verlierer und Gewinner*. Verlierer sind die *Sparer*, das Geld auf dem Konto ist weniger wert. Die *Arbeitnehmer*, wenn der Lohn nicht mitsteigt.
-Und *Geringverdiener und Rentner*, die fast alles für Miete, Essen und Energie brauchen. Gewinner sind die *Schuldner*: Die Schulden bleiben gleich, aber das Geld ist weniger wert,
-die Schulden werden „leichter“. Und Besitzer von *Sachwerten* wie Haus oder Gold. Und die Gefahr: die *Lohn-Preis-Spirale*. Preise steigen, Arbeitnehmer wollen mehr Lohn,
-Firmen haben höhere Kosten und erhöhen die Preise, Arbeitnehmer wollen wieder mehr Lohn, und so weiter.""",
-  "Verlierer 😟", ["Sparer", "Arbeitnehmer (ohne Lohnplus)", "Geringverdiener & Rentner"], "Gewinner 😊", ["Schuldner", "Sachwert-Besitzer (Haus, Gold)"], "Gewinner",
+C("""Folge drei: Es gibt *Verlierer* und *Gewinner*. Verlierer sind die *Sparer*, das Geld auf dem Konto ist weniger wert. Die *Arbeitnehmer*, wenn ihr Lohn nicht mitsteigt.
+Und *Geringverdiener und Rentner*, die fast ihr ganzes Geld für Miete, Essen und Energie ausgeben müssen. Und wer gewinnt? Die *Schuldner*! Ihre Schulden bleiben gleich hoch,
+aber das Geld ist weniger wert, die Schulden werden also leichter. Und Besitzer von *Sachwerten* wie Haus oder Gold, die behalten ihren Wert. Und dann gibt es noch eine Gefahr,
+die *Lohn-Preis-Spirale*: Die Preise steigen, also wollen die Arbeitnehmer mehr Lohn. Dann haben die Firmen höhere Kosten und erhöhen wieder die Preise, und dann wollen die Arbeitnehmer wieder mehr Lohn.
+Und so dreht sich das immer weiter.""",
+  "Verlierer 😟", ["Sparer", "Arbeitnehmer (ohne Lohnplus)", "Geringverdiener & Rentner"], "Gewinner 😊", ["Schuldner", "Sachwert-Besitzer (Haus, Gold)"], "gewinnt",
   note="Gefahr: Lohn-Preis-Spirale 🌀")
-M("""Merke: Inflation steigt, Kaufkraft sinkt. Und Reallohn gleich Lohnerhöhung minus Inflationsrate.""", "Inflation ⬆ ➜ Kaufkraft ⬇ · Reallohn = Lohnerhöhung − Inflationsrate")
+Q("""Frage: Lukas bekommt *vier Prozent* mehr Lohn, die Inflation liegt bei *sechs Prozent*. Geht es ihm besser? … *Nein*. Vier minus sechs gleich *minus zwei*. Sein Reallohn *sinkt*,
+er kann sich weniger kaufen als vorher, obwohl mehr auf der Abrechnung steht.""",
+  "Lohn + 4 %, Inflation 6 % – geht es Lukas besser?", "Nein: 4 % − 6 % = − 2 % ➜ Reallohn sinkt", "Nein")
 
 thema("Deflation")
-T("""Thema acht: die *Deflation*.""")
-P("""Deflation ist das *Gegenteil* von Inflation: Die Preise *sinken* allgemein und dauerhaft. Klingt gut, ist aber *gefährlich*. Bei Deflation *gewinnt* das Geld an Wert.
-Die *Ursachen*: Die *Nachfrage sinkt*. In einer *Krise* haben die Leute Angst um ihren Job und *sparen*, die Firmen bleiben auf der Ware sitzen und senken die Preise.
-Oder *zu viel Angebot*: Firmen stellen mehr her, als gekauft wird. Achtung: Die *Ursache* ist Angst und Sparen. Dass die Leute auf billigere Preise *warten*, ist schon die *Folge*.""",
+T("""Thema acht: die *Deflation*, das Gegenteil von Inflation.""")
+P("""Bei Deflation *sinken* die Preise, und zwar allgemein und dauerhaft. Jetzt denkst du vielleicht: Super, alles wird billiger! Aber Deflation ist sogar *gefährlich*.
+Erst mal: Das Geld *gewinnt* an Wert. Und woher kommt Deflation? Die *Nachfrage sinkt*. In einer *Krise* haben die Leute Angst um ihren Job und *sparen* lieber, statt etwas zu kaufen.
+Die Firmen bleiben auf ihrer Ware sitzen und müssen die Preise senken. Oder es gibt einfach *zu viel Angebot*, die Firmen stellen mehr her, als gekauft wird.
+Und hier eine Feinheit, die in der Prüfung wichtig ist: Die *Ursache* ist die Angst und das Sparen. Dass die Leute dann auf billigere Preise *warten*, ist schon eine *Folge*.""",
   "Deflation", [it("Preise sinken allgemein & dauerhaft", "sinken"), it("Geld gewinnt an Wert", "gewinnt"), it("Ursache: Nachfrage sinkt (Krise, Angst, Sparen)", "Krise"),
                 it("Ursache: zu viel Angebot", "Angebot"), it("Warten auf billigere Preise = schon die Folge!", "Folge")])
-X("""Die Folgen: Die *Kaufkraft steigt*, Gewinner sind die *Sparer*. Verlierer sind die *Schuldner*, ihre Schulden werden „schwerer“, die *Unternehmen* und die *Arbeitnehmer*.
-Und die Gefahr ist die *Deflationsspirale*: Die Leute *warten* mit dem Kaufen, „das Handy wird noch billiger“. Die Firmen machen *weniger Umsatz*. Sie *entlassen* Mitarbeiter.
-Die Arbeitslosen *kaufen noch weniger*. Und die Preise *sinken weiter*, und alles geht von vorne los, bis zur *Krise*.""",
-  [it("Leute warten mit dem Kaufen", "warten"), it("weniger Umsatz", "Umsatz"), it("Entlassungen", "entlassen"), it("Arbeitslose kaufen noch weniger", "Arbeitslosen"),
+X("""Warum ist das gefährlich? Wegen der *Deflationsspirale*. Stell dir vor, du willst ein neues Handy. Aber du denkst: Nächsten Monat ist es noch billiger, ich *warte*. Das denken alle.
+Also machen die Firmen *weniger Umsatz*. Dann müssen sie Mitarbeiter *entlassen*. Und die Arbeitslosen *kaufen noch weniger*. Also sinken die Preise *weiter*, und alles geht von vorne los,
+immer tiefer, bis zur *Krise*. Wer gewinnt dabei? Die *Sparer*, ihr Geld ist mehr wert. Wer verliert? Die *Schuldner*, deren Schulden werden schwerer, die Unternehmen und die Arbeitnehmer.""",
+  [it("Leute warten mit dem Kaufen", "warte"), it("weniger Umsatz", "Umsatz"), it("Entlassungen", "entlassen"), it("Arbeitslose kaufen noch weniger", "Arbeitslosen"),
    it("Preise sinken weiter ➜ Krise", "weiter")], title="Deflationsspirale 🌀")
-TB("""Der Überblick: Bei *Inflation* steigen die Preise, die Kaufkraft sinkt, Sparer verlieren, Schuldner gewinnen. Bei *Deflation* ist alles genau *umgekehrt*.""",
+TB("""Zum Schluss der Vergleich, den du kennen musst: Bei *Inflation* steigen die Preise, die Kaufkraft sinkt, Sparer verlieren, Schuldner gewinnen. Bei *Deflation* ist alles genau *umgekehrt*.""",
    "Inflation vs. Deflation", ["", "Inflation 🔥", "Deflation ❄️"],
    [(["Preise", "steigen", "sinken"], "Inflation"), (["Kaufkraft", "sinkt", "steigt"], "Kaufkraft"), (["Sparer", "verlieren", "gewinnen"], "Sparer"),
     (["Schuldner", "gewinnen", "verlieren"], "Schuldner")])
 
 thema("BIP (Bruttoinlandsprodukt)")
 T("""Thema neun: das *BIP*, das *Bruttoinlandsprodukt*.""")
-P("""Der Staat will wissen: *Wie stark* ist unsere Wirtschaft? Dafür gibt es das BIP, sozusagen das *Zeugnis der Wirtschaft*. Das BIP ist der *Wert aller Waren und Dienstleistungen*,
-die *in einem Jahr* im *Inland*, also in Deutschland, hergestellt werden. Zum Beispiel ein *Auto aus Stuttgart*, ein *Haarschnitt* oder deine *Arbeit beim Kunden* an einer Anlage.
-Baut eine deutsche Firma in *China* ein Auto, zählt das *nicht*. Der Fachbegriff: *gesamtwirtschaftliche Messgröße*.""",
+P("""Der Staat will wissen: Wie *stark* ist unsere Wirtschaft? Dafür gibt es das BIP, du kannst es dir als das *Zeugnis der Wirtschaft* vorstellen. Das BIP ist der *Wert aller Waren und Dienstleistungen*,
+die *in einem Jahr* im *Inland*, also in Deutschland, hergestellt werden. Dazu zählt ein *Auto aus Stuttgart*, genauso wie ein *Haarschnitt* beim Friseur oder deine *Arbeit beim Kunden*
+an einer Anlage. Aber Achtung: Baut eine deutsche Firma in *China* ein Auto, zählt das *nicht*, das ist ja nicht im Inland. Der Fachbegriff für so eine Kennzahl: *gesamtwirtschaftliche Messgröße*.""",
   "Was ist das BIP?", [it("Wert aller Waren & Dienstleistungen", "Wert"), it("in einem Jahr im Inland", "Inland"), it("Auto aus Stuttgart, Haarschnitt, deine Arbeit beim Kunden", "Stuttgart"),
                        it("deutsche Firma baut in China ➜ zählt NICHT", "China"), it("gesamtwirtschaftliche Messgröße", "gesamtwirtschaftliche")])
-C("""Es gibt das *nominale* und das *reale* BIP, das funktioniert genauso wie Nominallohn und Reallohn. Das *nominale* BIP rechnet mit *heutigen Preisen*, die Inflation steckt drin.
-Beim *realen* BIP ist die *Inflation herausgerechnet*, es zeigt, ob *wirklich mehr* hergestellt wurde. Beispiel: nominal plus fünf Prozent, Inflation drei Prozent, real plus zwei Prozent.
-Das reale BIP ist also *aussagekräftiger*.""",
+C("""Es gibt zwei Varianten, und das funktioniert genauso wie Nominallohn und Reallohn. Das *nominale* BIP rechnet mit den *heutigen Preisen*, da steckt also die Inflation mit drin.
+Beim *realen* BIP ist die *Inflation herausgerechnet*. Das zeigt, ob *wirklich mehr* hergestellt wurde oder ob nur alles teurer geworden ist. Ein Beispiel: Das nominale BIP steigt um fünf Prozent,
+die Inflation liegt bei drei Prozent, dann ist das reale BIP nur um zwei Prozent gewachsen. Deshalb ist das reale BIP *aussagekräftiger*.""",
   "nominales BIP", ["heutige Preise", "Inflation steckt drin"], "reales BIP", ["Inflation herausgerechnet", "zeigt echtes Wachstum", "nominal + 5 %, Inflation 3 % ➜ real + 2 %"], "realen",
   note="Das reale BIP ist aussagekräftiger")
-C("""Ist das BIP ein guter *Wohlstandsindikator*? Das musst du kritisch beurteilen können. Vorteile: *einfach zu messen*, und Jahre und Länder sind *vergleichbar*.
-Kritik: Erstens fehlt *unbezahlte Arbeit*, also Hausarbeit, Kindererziehung, Pflege, Ehrenamt. Zweitens fehlt *Schwarzarbeit*. Drittens werden *Umweltschäden* nicht abgezogen,
-nach einer Katastrophe *steigt* das BIP durch die Reparaturen sogar. Viertens fehlt die *Verteilung*: Landet das Geld nur bei wenigen Reichen? Und fünftens fehlt die *Lebensqualität*,
-also Gesundheit, Freizeit und Zufriedenheit.""",
+C("""Und jetzt die Frage, die du *kritisch beurteilen* sollst: Ist das BIP ein guter *Wohlstandsindikator*? Zeigt es also, wie gut es den Menschen geht? Vorteile: Es ist *einfach zu messen*,
+und man kann Jahre und Länder gut *vergleichen*. Aber es gibt viel *Kritik*. Erstens fehlt *unbezahlte Arbeit*: Hausarbeit, Kindererziehung, Pflege von Angehörigen, Ehrenamt, das zählt alles nicht.
+Zweitens fehlt die *Schwarzarbeit*. Drittens werden *Umweltschäden* nicht abgezogen. Nach einer Flutkatastrophe *steigt* das BIP sogar, weil so viel repariert werden muss.
+Viertens fehlt die *Verteilung*: Vielleicht landet das ganze Geld nur bei wenigen Reichen. Und fünftens fehlt die *Lebensqualität*, also Gesundheit, Freizeit und Zufriedenheit.""",
   "➕ Vorteile", ["einfach zu messen", "Jahre & Länder vergleichbar"],
   "➖ Kritik", ["unbezahlte Arbeit fehlt", "Schwarzarbeit fehlt", "Umweltschäden nicht abgezogen", "Verteilung fehlt", "Lebensqualität fehlt"], "Kritik")
-M("""Der Merksatz: Ein hohes BIP heißt *nicht automatisch*, dass es den Menschen gut geht.""", "Ein hohes BIP heißt nicht automatisch, dass es den Menschen gut geht.")
+M("""Und der Merksatz dazu: Ein hohes BIP heißt *nicht automatisch*, dass es den Menschen gut geht.""", "Ein hohes BIP heißt nicht automatisch, dass es den Menschen gut geht.")
 
 thema("Konjunktur")
 T("""Thema zehn, das letzte: die *Konjunktur*.""")
-RAW("""Die Wirtschaft läuft nicht immer gleich gut. Mal geht es *bergauf*, mal *bergab*, wie *Wellen*. Dieses Auf und Ab heißt Konjunktur. Es gibt *vier Phasen*.
-Der *Aufschwung*: mehr Kauf, mehr Aufträge, Firmen stellen ein, die Arbeitslosigkeit sinkt. Die *Hochkonjunktur*, der Boom: Die Wirtschaft läuft auf Hochtouren, fast alle haben Arbeit,
-die Preise steigen stark. Der *Abschwung*, die Rezession: weniger Kauf, weniger Aufträge, Entlassungen, die Arbeitslosigkeit steigt. Und der *Tiefstand*, die Depression: ganz unten,
-hohe Arbeitslosigkeit, wenig Nachfrage. Im Schulbuch sind die Wellen gleichmäßig, in echt sind die Phasen *unterschiedlich lang und stark*. Manchmal kommt ein plötzlicher Absturz,
-wie *Corona zweitausendzwanzig*.""",
+RAW("""Die Wirtschaft läuft nicht immer gleich gut. Mal geht es *bergauf*, mal *bergab*, so wie *Wellen*. Dieses Auf und Ab nennt man Konjunktur, und es hat *vier Phasen*.
+Im *Aufschwung* kaufen die Leute mehr, die Firmen bekommen mehr Aufträge und stellen ein, die Arbeitslosigkeit sinkt. Dann kommt die *Hochkonjunktur*, der Boom: Die Wirtschaft läuft auf Hochtouren,
+fast alle haben Arbeit, aber die Preise steigen stark. Dann der *Abschwung*, die Rezession: Es wird weniger gekauft, es gibt weniger Aufträge, Entlassungen, die Arbeitslosigkeit steigt.
+Und ganz unten der *Tiefstand*, die Depression: hohe Arbeitslosigkeit und wenig Nachfrage. Danach geht es wieder aufwärts. Im Schulbuch sind die Wellen schön gleichmäßig.
+In echt sind die Phasen *unterschiedlich lang und stark*, und manchmal kommt ein plötzlicher Absturz, wie bei *Corona zweitausendzwanzig*.""",
     {"type": "cycle", "cues": ["Aufschwung", "Hochkonjunktur", "Abschwung", "Tiefstand"],
      "ind": [it("idealtypisch: gleichmäßige Wellen", "Schulbuch"), it("real: unterschiedlich lang & stark (Corona 2020)", "Corona")]})
-TB("""Woran erkennt man die Phase? An den *Konjunkturindikatoren*. Die *Auftragseingänge* sind der *Frühindikator*, sie zeigen die *Zukunft*. Das *BIP* ist der *Präsenzindikator*,
-es zeigt die *Gegenwart*. Und die *Arbeitslosenquote* ist der *Spätindikator*, denn Firmen stellen erst ein, wenn sie *sicher* sind. Im Aufschwung also: Aufträge steigen,
-dann steigt das BIP, und erst dann sinkt die Arbeitslosigkeit.""",
+TB("""Woran erkennt man, in welcher Phase wir gerade sind? An den *Konjunkturindikatoren*, quasi den Messgeräten der Wirtschaft. Die *Auftragseingänge* sind ein *Frühindikator*:
+Bekommen Firmen heute mehr Aufträge, wird morgen mehr produziert. Sie zeigen also die *Zukunft*. Das *BIP* ist der *Präsenzindikator*, es zeigt die *Gegenwart*.
+Und die *Arbeitslosenquote* ist ein *Spätindikator*, denn Firmen stellen erst dann Leute ein, wenn sie *sicher* sind, dass der Aufschwung bleibt. Im Aufschwung ist die Reihenfolge also:
+Erst steigen die Aufträge, dann das BIP, und erst danach sinkt die Arbeitslosigkeit.""",
    "Konjunkturindikatoren", ["Indikator", "Art", "zeigt"],
    [(["Auftragseingänge", "Frühindikator", "Zukunft"], "Auftragseingänge"), (["BIP", "Präsenzindikator", "Gegenwart"], "Präsenzindikator"),
     (["Arbeitslosenquote", "Spätindikator", "Firmen stellen erst ein, wenn sicher"], "Arbeitslosenquote")],
    note="Aufschwung: Aufträge ⬆ ➜ BIP ⬆ ➜ Arbeitslosigkeit ⬇")
-TB("""Was kann der *Staat* tun? Immer das *Gegenteil*: im *Abschwung Gas geben*, im *Boom bremsen*. Mit der *Staatsnachfrage*: Im Abschwung *gibt er mehr aus*,
-für Schulen und Straßen, Firmen bekommen Aufträge und stellen Leute ein. Im Boom gibt er weniger aus. Mit der *Einkommensteuer*: Im Abschwung *senken*, dann haben die Leute mehr Netto,
-kaufen mehr, und die Firmen verkaufen mehr. Im Boom *erhöhen*, dann gibt es weniger Nachfrage, und die Preise steigen nicht so stark.""",
+TB("""Und was kann der *Staat* tun? Ganz einfach: immer das *Gegenteil* von dem, was gerade passiert. Im *Abschwung Gas geben*, im *Boom bremsen*. Zwei Werkzeuge musst du kennen.
+Die *Staatsnachfrage*: Im Abschwung *gibt* der Staat *mehr aus*, er baut Schulen und Straßen. Dann bekommen Firmen Aufträge und stellen Leute ein. Im Boom gibt er weniger aus.
+Und die *Einkommensteuer*: Im Abschwung *senken*, dann haben die Leute mehr Netto, kaufen mehr, und die Firmen verkaufen mehr. Im Boom *erhöhen*, dann sinkt die Nachfrage, und die Preise steigen nicht so stark.""",
    "Was kann der Staat tun?", ["", "Abschwung (Gas geben)", "Boom (bremsen)"],
    [(["Staatsnachfrage", "erhöhen (Schulen, Straßen)", "senken"], "Staatsnachfrage"), (["Einkommensteuer", "senken ➜ mehr Netto", "erhöhen"], "Einkommensteuer")])
-C("""Aber es gibt *Probleme*, merk dir *S Z S*: *Schulden*, der Staat muss oft Kredite aufnehmen. *Zu spät*, bis eine Schule gebaut ist, dauert es lange.
-Und *Sparen*: Die Leute legen die Steuerersparnis zur Seite, dann wirkt es nicht. Und was hat das mit *dir* zu tun? Im *Abschwung* gibt es weniger Aufträge,
-die Übernahme nach der Ausbildung wird unsicherer. Gibt der Staat mehr aus und saniert *Schulen*, braucht es neue *Gebäudetechnik*, das sind Aufträge für deinen Betrieb.
-Und eine *Steuersenkung* heißt *mehr Netto* für dich.""",
+C("""Klingt einfach, hat aber *Probleme*. Merk dir *S Z S*. *Schulden*: Der Staat muss sich das Geld oft leihen. *Zu spät*: Bis eine Schule geplant und gebaut ist, ist der Abschwung vielleicht schon vorbei.
+Und *Sparen*: Die Leute legen die Steuerersparnis zur Seite, statt sie auszugeben, dann verpufft die Wirkung. Und was hat das alles mit *dir* zu tun? Im *Abschwung* gibt es weniger Aufträge,
+die Übernahme nach der Ausbildung wird unsicherer. Gibt der Staat dagegen mehr aus und saniert *Schulen*, braucht es neue *Gebäudetechnik*, das sind direkt Aufträge für deinen Betrieb.
+Und eine *Steuersenkung* heißt für dich ganz einfach *mehr Netto*.""",
   "Probleme: S – Z – S", ["Schulden", "zu spät", "Sparen statt Kaufen"], "Was hat das mit dir zu tun?", ["Abschwung: Übernahme unsicherer", "Schulen saniert ➜ Aufträge Gebäudetechnik", "Steuersenkung ➜ mehr Netto"], "dir")
-sc("""Das war Kompetenzbereich drei mit allen *zehn Themen*. Hier noch einmal der Überblick. Weiter geht's mit dem letzten Bereich, der Selbstständigkeit.""",
+Q("""Letzte Frage: Die Auftragseingänge sinken seit Monaten deutlich. Was erwartest du für die Arbeitslosigkeit? … Die Auftragseingänge sind ein *Frühindikator*. Ein Abschwung kündigt sich an,
+und die Arbeitslosigkeit wird *später steigen*. Und der Staat sollte jetzt Gas geben: mehr ausgeben oder Steuern senken.""",
+  "Auftragseingänge sinken seit Monaten – was passiert mit der Arbeitslosigkeit?", "Frühindikator ➜ Abschwung kommt ➜ Arbeitslosigkeit steigt später · Staat: Gas geben", "Frühindikator")
+sc("""Und das war Kompetenzbereich drei! Du siehst: Die Wirtschaft funktioniert nach Regeln, die du mit ein bisschen Logik selbst herleiten kannst. Wenn du in der Prüfung unsicher bist,
+frag dich immer: Wer will was, und was passiert dann mit dem Preis? Schau dir zum Wiederholen die Merkes und Quizfragen nochmal an.""",
    {"type": "kb", "outro": True})
 
 # =====================================================================================

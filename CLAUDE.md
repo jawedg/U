@@ -64,4 +64,7 @@ Lokal reicht `npm run render:3d`.
   eine Akzentfarbe pro KB, Kopfzeile „KB I · Titel“ + „Thema x/n“, Untertitel ohne Box. Gefällt dem Nutzer.
 - Stimme: alle 4 Videos mit gemini-3.8-flash-tts (Charon), Blöcke bis ~800 Wörter. 3.1-preview scheitert an langen
   Blöcken (keine Audio-Antwort). Fortsetzung KB I–III: `./scripts/run_lern_rest.sh` (Setup: `scripts/setup_cloud.sh`).
+- **Erklärstil (Nutzer-Feedback!):** NICHT Stichpunkte vorlesen. Wie ein Lehrer: Alltagseinstieg, „warum“, Vergleiche,
+  Beispiele mit Lukas, Quizfrage an den Zuschauer (Typ `quiz`), dann Merke. Die PDF gibt nur Struktur/Inhalt vor.
+- Tagesplan Vertonung: Tag 1 KB I + KB IV, Tag 2 KB II + KB III (`./scripts/run_lern_today.sh 2 3`).
 - YouTube/Bing sind in der Cloud-Umgebung gesperrt – für Stil-Vorbilder Bildschirmaufnahme hochladen lassen.
