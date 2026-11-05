@@ -24,7 +24,7 @@
   {
    "topic": 0,
    "tname": "Überblick",
-   "text": "Willkommen zum Kompetenzbereich zwei: Als *Verbraucher* Rechte anwenden. Hier geht es um dich als Kunde: Verträge, Rechte beim Einkaufen, Geld und Schulden. Es sind *siebzehn Themen*, wieder genau wie auf deinem Lernzettel.",
+   "text": "Willkommen zu Kompetenzbereich zwei! Hier geht es um dich als *Verbraucher*, also als Kunde. Jedes Mal, wenn du beim Bäcker ein Brötchen kaufst, einen Handyvertrag abschließt oder online etwas bestellst, passiert rechtlich eine ganze Menge, ohne dass du es merkst. Genau das schauen wir uns an. Es sind *siebzehn Themen*, aber keine Sorge, viele sind kurz, und sie bauen aufeinander auf.",
    "v": {
     "type": "kb"
    },
@@ -42,7 +42,7 @@
   {
    "topic": 1,
    "tname": "Rechtsfähigkeit",
-   "text": "Rechtsfähig heißt: Man kann *Rechte und Pflichten haben*. Zum Beispiel das Recht, etwas zu besitzen, oder die Pflicht, Steuern zu zahlen.",
+   "text": "Die Frage ist ganz einfach: Wer kann überhaupt *Rechte und Pflichten haben*? Zum Beispiel das Recht, etwas zu besitzen, oder die Pflicht, Steuern zu zahlen. Wer das kann, ist rechtsfähig.",
    "v": {
     "type": "def",
     "term": "Rechtsfähigkeit",
@@ -54,7 +54,7 @@
   {
    "topic": 1,
    "tname": "Rechtsfähigkeit",
-   "text": "Wer ist rechtsfähig? *Menschen* sind es von der *Geburt* bis zum *Tod*. Sogar ein Baby kann schon etwas erben. Und *Firmen* wie eine *GmbH* oder ein *Verein* sind rechtsfähig ab ihrer *Eintragung* ins Register.",
+   "text": "Bei *Menschen* ist das klar: von der *Geburt* bis zum *Tod*. Sogar ein Baby ist rechtsfähig, es kann zum Beispiel schon ein Haus *erben*. Selbst kaufen kann es natürlich noch nichts, aber dazu gleich mehr. Und *Firmen*, also zum Beispiel eine *GmbH* oder ein *Verein*, sind rechtsfähig ab ihrer *Eintragung* ins Register. Die nennt man juristische Personen.",
    "v": {
     "type": "compare",
     "left": {
@@ -78,7 +78,7 @@
   {
    "topic": 1,
    "tname": "Rechtsfähigkeit",
-   "text": "Merke: Rechtsfähig heißt Rechte *haben*. Das ist noch nicht dasselbe wie selbst Verträge schließen, das kommt im nächsten Thema.",
+   "text": "Merk dir: Rechtsfähig heißt, Rechte *haben*. Das ist noch nicht dasselbe wie selbst Verträge machen, das ist das nächste Thema.",
    "v": {
     "type": "merke",
     "text": "Rechtsfähig = Rechte HABEN"
@@ -88,7 +88,7 @@
   {
    "topic": 2,
    "tname": "Geschäftsfähigkeit",
-   "text": "Thema zwei: die *Geschäftsfähigkeit*.",
+   "text": "Thema zwei: die *Geschäftsfähigkeit*. Und hier geht es genau darum: Ab wann darf ich selbst einkaufen und Verträge machen?",
    "v": {
     "type": "topic"
    },
@@ -97,7 +97,7 @@
   {
    "topic": 2,
    "tname": "Geschäftsfähigkeit",
-   "text": "Geschäftsfähig heißt: Man kann *selbst gültige Verträge* abschließen.",
+   "text": "Geschäftsfähig ist, wer *selbst gültige Verträge* abschließen kann. Und das hängt vom *Alter* ab, weil man Kinder vor schlechten Geschäften schützen will.",
    "v": {
     "type": "def",
     "term": "Geschäftsfähigkeit",
@@ -109,7 +109,7 @@
   {
    "topic": 2,
    "tname": "Geschäftsfähigkeit",
-   "text": "Es gibt drei Stufen. *Unter sieben* Jahren ist man *geschäftsunfähig*, ein Vertrag ist *nichtig*, also ungültig. Von *sieben bis siebzehn* ist man *beschränkt geschäftsfähig*: Der Vertrag ist *schwebend unwirksam*. Er hängt sozusagen in der Luft und wird erst gültig, wenn die *Eltern zustimmen*. Und ab *achtzehn* ist man *voll geschäftsfähig*.",
+   "text": "Es gibt *drei Stufen*. *Unter sieben* Jahren ist man *geschäftsunfähig*. Kauft ein Sechsjähriger etwas, ist der Vertrag *nichtig*, also gar nicht vorhanden. Von *sieben bis siebzehn* ist man *beschränkt geschäftsfähig*. Der Vertrag ist dann *schwebend unwirksam*. Stell dir vor, er hängt in der Luft: Er wird erst gültig, wenn die *Eltern zustimmen*. Sagen sie Nein, fällt er runter. Und ab *achtzehn* bist du *voll geschäftsfähig*, dann gilt alles, was du unterschreibst.",
    "v": {
     "type": "stairs",
     "title": "Die 3 Stufen",
@@ -136,15 +136,15 @@
   {
    "topic": 2,
    "tname": "Geschäftsfähigkeit",
-   "text": "Es gibt aber *Ausnahmen*, da braucht ein Jugendlicher die Eltern nicht. Erstens der *Taschengeldparagraf*: Er bezahlt *sofort und komplett* mit seinem Taschengeld. Zweitens, wenn er *nur einen rechtlichen Vorteil* hat, zum Beispiel ein *Geschenk*. Und drittens Geschäfte rund um ein *Arbeits- oder Ausbildungsverhältnis*, das die Eltern erlaubt haben.",
+   "text": "Jetzt denkst du vielleicht: Moment, ich habe mit fünfzehn doch auch Döner gekauft, ohne meine Eltern zu fragen! Stimmt, dafür gibt es *Ausnahmen*. Erstens den *Taschengeldparagrafen*: Wenn du *sofort und komplett* mit deinem Taschengeld bezahlst, ist das gültig. Zweitens, wenn du *nur einen rechtlichen Vorteil* hast, zum Beispiel ein *Geschenk*. Und drittens Geschäfte rund um ein *Arbeits- oder Ausbildungsverhältnis*, das die Eltern erlaubt haben, zum Beispiel ein Konto für deine Ausbildungsvergütung.",
    "v": {
     "type": "points",
     "title": "Ausnahmen (gültig ohne Eltern)",
     "label": null,
     "items": [
      {
-      "text": "Taschengeldparagraf: sofort & komplett mit Taschengeld bezahlt",
-      "cue": "Taschengeldparagraf"
+      "text": "Taschengeldparagraf: sofort & komplett bezahlt",
+      "cue": "Taschengeldparagrafen"
      },
      {
       "text": "nur rechtlicher Vorteil (Geschenk)",
@@ -162,38 +162,12 @@
   {
    "topic": 2,
    "tname": "Geschäftsfähigkeit",
-   "text": "Was passiert? Ein *Sechzehnjähriger* kauft ein Handy auf *Raten*. Taschengeldparagraf? Nein, denn *Raten* sind nicht sofort und komplett bezahlt. Also ist der Vertrag *schwebend unwirksam*. Die *Eltern sagen Nein*, und damit ist der Vertrag *ungültig*.",
+   "text": "Jetzt du: Ein *Sechzehnjähriger* kauft ein Handy auf *Raten*, mit seinem Taschengeld. Ist der Vertrag gültig? … Nein, noch nicht. Der Taschengeldparagraf gilt nur, wenn *sofort und komplett* bezahlt wird, und bei Raten ist das nicht so. Also ist der Vertrag *schwebend unwirksam*. Sagen die Eltern Nein, ist er *ungültig*.",
    "v": {
-    "type": "case",
-    "title": "Was passiert?",
-    "items": [
-     {
-      "text": "16-Jähriger kauft auf Raten",
-      "cue": "Sechzehnjähriger"
-     },
-     {
-      "text": "kein Taschengeldparagraf",
-      "cue": "Raten"
-     },
-     {
-      "text": "schwebend unwirksam",
-      "cue": "schwebend"
-     },
-     {
-      "text": "Eltern sagen Nein ➜ ungültig",
-      "cue": "Eltern"
-     }
-    ]
-   },
-   "part": 0
-  },
-  {
-   "topic": 2,
-   "tname": "Geschäftsfähigkeit",
-   "text": "Merke: Unter sieben nichtig, sieben bis siebzehn schwebend unwirksam, ab achtzehn gültig.",
-   "v": {
-    "type": "merke",
-    "text": "unter 7 nichtig · 7–17 schwebend unwirksam · ab 18 gültig"
+    "type": "quiz",
+    "q": "16-Jähriger kauft ein Handy auf Raten. Gültig?",
+    "a": "Nein – Raten ≠ sofort & komplett ➜ schwebend unwirksam ➜ Eltern sagen Nein ➜ ungültig",
+    "cueA": "Nein"
    },
    "part": 0
   },
@@ -209,7 +183,7 @@
   {
    "topic": 3,
    "tname": "Willenserklärung und Rechtsgeschäfte",
-   "text": "Eine *Willenserklärung* ist eine Äußerung, mit der man eine *rechtliche Folge* erreichen will. Das kann *mündlich*, *schriftlich* oder sogar durch *Handeln* passieren. Wenn du an der Kasse wortlos deine Ware aufs Band legst, ist das auch eine Willenserklärung.",
+   "text": "Eine *Willenserklärung* ist einfach gesagt: Du zeigst, dass du etwas *rechtlich* willst. Das kann *mündlich* sein, *schriftlich*, oder sogar nur durch *Handeln*. Wenn du im Supermarkt wortlos die Milch aufs Band legst, ist das auch eine Willenserklärung. Jeder weiß: Du willst die kaufen.",
    "v": {
     "type": "def",
     "term": "Willenserklärung",
@@ -221,7 +195,7 @@
   {
    "topic": 3,
    "tname": "Willenserklärung und Rechtsgeschäfte",
-   "text": "Daraus entstehen *Rechtsgeschäfte*. Beim *einseitigen* Rechtsgeschäft reicht *eine* Willenserklärung, zum Beispiel bei der *Kündigung* oder beim *Testament*. Beim *zweiseitigen* Rechtsgeschäft braucht man *zwei übereinstimmende* Willenserklärungen, das ist ein *Vertrag*, zum Beispiel ein Kauf-, Miet- oder Arbeitsvertrag.",
+   "text": "Aus Willenserklärungen werden *Rechtsgeschäfte*. Manchmal reicht *eine* einzige, das nennt man *einseitig*. Beispiel: Du *kündigst* deinen Handyvertrag. Da muss niemand zustimmen. Oder ein *Testament*. Meistens braucht man aber *zwei*, die zusammenpassen, das ist *zweiseitig*, also ein *Vertrag*. Beim Kaufvertrag sagst du: Ich will kaufen, und der Verkäufer sagt: Ich will verkaufen.",
    "v": {
     "type": "compare",
     "left": {
@@ -239,7 +213,7 @@
       "Kauf, Miete, Arbeit"
      ]
     },
-    "cueRight": "zweiseitigen",
+    "cueRight": "zweiseitig",
     "note": null
    },
    "part": 0
@@ -247,7 +221,7 @@
   {
    "topic": 3,
    "tname": "Willenserklärung und Rechtsgeschäfte",
-   "text": "Merke: Einer reicht gleich einseitig. Zwei nötig gleich Vertrag.",
+   "text": "Merke: Reicht *einer*, ist es *einseitig*. Braucht man *zwei*, ist es ein *Vertrag*.",
    "v": {
     "type": "merke",
     "text": "Einer reicht = einseitig · Zwei nötig = Vertrag"
@@ -257,7 +231,7 @@
   {
    "topic": 4,
    "tname": "Formvorschriften",
-   "text": "Thema vier: *Formvorschriften*.",
+   "text": "Thema vier: *Formvorschriften*. Also: Muss das eigentlich schriftlich sein?",
    "v": {
     "type": "topic"
    },
@@ -266,7 +240,7 @@
   {
    "topic": 4,
    "tname": "Formvorschriften",
-   "text": "Formvorschriften sind Regeln, *in welcher Form* ein Rechtsgeschäft geschlossen werden muss. Der *Grundsatz* ist aber: *formfrei*, also mündlich reicht.",
+   "text": "Formvorschriften sagen, *in welcher Form* ein Rechtsgeschäft gemacht werden muss. Und jetzt die gute Nachricht: Der *Grundsatz* ist *formfrei*. Fast alles kannst du mündlich abschließen, dein Brötchen kaufst du ja auch nicht schriftlich.",
    "v": {
     "type": "def",
     "term": "Formvorschriften",
@@ -278,10 +252,10 @@
   {
    "topic": 4,
    "tname": "Formvorschriften",
-   "text": "Für wichtige Geschäfte gibt es Ausnahmen. Die *Schriftform* mit eigenhändiger Unterschrift, zum Beispiel bei der *Kündigung* eines Arbeitsvertrags, bei der *Bürgschaft*, beim *Verbraucherdarlehen* und beim *Mietvertrag über ein Jahr*. Die *öffentliche Beglaubigung*: Der Notar bestätigt nur die *Unterschrift*, zum Beispiel fürs Handelsregister. Und die *notarielle Beurkundung*: Der Notar beurkundet den *ganzen Vertrag* und berät, zum Beispiel beim *Grundstückskauf* oder einer GmbH-Gründung.",
+   "text": "Bei *wichtigen* Dingen gibt es aber Ausnahmen, und die steigen wie eine Treppe. Die *Schriftform*: Du musst *eigenhändig unterschreiben*. Zum Beispiel bei der *Kündigung* eines Arbeitsvertrags, bei einer *Bürgschaft*, einem *Verbraucherdarlehen* und beim *Mietvertrag über ein Jahr*. Eine Stufe höher die *öffentliche Beglaubigung*: Ein Notar bestätigt, dass die *Unterschrift* wirklich von dir ist, zum Beispiel für das Handelsregister. Und ganz oben die *notarielle Beurkundung*: Der Notar schreibt den *ganzen Vertrag*, liest ihn vor und *berät* dich. Das braucht man beim *Grundstückskauf*.",
    "v": {
     "type": "table",
-    "title": "Formen",
+    "title": "Die Formen",
     "head": [
      "Form",
      "Was?",
@@ -323,7 +297,7 @@
   {
    "topic": 4,
    "tname": "Formvorschriften",
-   "text": "Warum gibt es das? Als *Beweis*, als Schutz vor *übereilten Entscheidungen* und damit man *beraten* wird. Und was passiert, wenn die Form fehlt? Dann ist der Vertrag *nichtig*. Ein Grundstück per Handschlag zu kaufen ist also ungültig.",
+   "text": "Warum macht man das? Erstens als *Beweis*, später kann keiner sagen: Das habe ich nie gesagt. Zweitens als Schutz vor *übereilten Entscheidungen*, ein Haus kauft man nicht spontan. Und drittens, damit man *beraten* wird. Und was passiert, wenn die Form fehlt? Dann ist der Vertrag *nichtig*. Ein Grundstück per Handschlag kaufen geht also nicht.",
    "v": {
     "type": "points",
     "title": "Warum?",
@@ -353,7 +327,7 @@
   {
    "topic": 4,
    "tname": "Formvorschriften",
-   "text": "Merke: Normal formfrei. Wichtig gleich Schrift oder Notar.",
+   "text": "Merke: *Normal* ist *formfrei*. Bei *wichtigen* Sachen *Schrift* oder *Notar*.",
    "v": {
     "type": "merke",
     "text": "normal formfrei · wichtig = Schrift oder Notar · Form fehlt ➜ nichtig"
@@ -363,7 +337,7 @@
   {
    "topic": 5,
    "tname": "Nichtig und anfechtbar",
-   "text": "Thema fünf: *nichtig und anfechtbar*.",
+   "text": "Thema fünf: *nichtig und anfechtbar*. Zwei Wörter, die in der Prüfung oft verwechselt werden.",
    "v": {
     "type": "topic"
    },
@@ -372,7 +346,7 @@
   {
    "topic": 5,
    "tname": "Nichtig und anfechtbar",
-   "text": "Zwei Begriffe, die du sicher unterscheiden musst. *Nichtig* heißt: von *Anfang an ungültig*, der Vertrag hat nie existiert. *Anfechtbar* heißt: Der Vertrag ist erst einmal *gültig*, aber durch eine *Anfechtung* wird er *rückwirkend* ungültig.",
+   "text": "Der Unterschied ist eigentlich schön zu merken. *Nichtig* heißt: Der Vertrag war *von Anfang an* ungültig. Er hat nie existiert. *Anfechtbar* heißt: Der Vertrag ist erst einmal ganz normal *gültig*. Aber einer darf ihn *anfechten*, und dann wird er *rückwirkend* ungültig, also so, als hätte es ihn nie gegeben.",
    "v": {
     "type": "compare",
     "left": {
@@ -396,7 +370,7 @@
   {
    "topic": 5,
    "tname": "Nichtig und anfechtbar",
-   "text": "*Nichtig* ist ein Vertrag bei *Geschäftsunfähigen*, bei einem *Formfehler*, bei einem Verstoß gegen ein *Gesetz* oder gegen die *guten Sitten*, zum Beispiel *Wucher*, und bei *Scherz-* und *Scheingeschäften*. *Anfechtbar* ist er bei einem *Irrtum*, also verschrieben, versprochen oder etwas falsch verstanden, dann muss man *sofort* anfechten. Bei *arglistiger Täuschung* und *widerrechtlicher Drohung* hat man *ein Jahr* Zeit.",
+   "text": "Wann ist ein Vertrag *nichtig*? Bei *Geschäftsunfähigen*, also unter sieben. Bei einem *Formfehler*. Wenn er gegen ein *Gesetz* verstößt, zum Beispiel ein Drogenverkauf, oder gegen die *guten Sitten*, zum Beispiel *Wucher*, also ein völlig überzogener Preis, weil jemand in einer Notlage ist. Und bei *Scherz- und Scheingeschäften*. Wann ist er *anfechtbar*? Bei einem *Irrtum*: Du hast dich *verschrieben*, zum Beispiel hundert statt zehn Euro. Dann musst du *sofort* anfechten. Bei *arglistiger Täuschung*, also wenn dich jemand absichtlich anlügt, und bei *widerrechtlicher Drohung* hast du *ein Jahr* Zeit.",
    "v": {
     "type": "compare",
     "left": {
@@ -416,74 +390,58 @@
       "widerrechtliche Drohung ➜ 1 Jahr"
      ]
     },
-    "cueRight": "Anfechtbar",
+    "cueRight": "anfechtbar",
     "note": null
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 5,
    "tname": "Nichtig und anfechtbar",
-   "text": "Was passiert? Ein Verkäufer *verschweigt* beim Gebrauchtwagen einen *Unfallschaden*. Das ist *Täuschung*. Der Käufer *ficht an*, der Vertrag wird *ungültig*, und beide bekommen ihr *Auto und Geld zurück*.",
+   "text": "Ein Fall für dich: Ein Händler verkauft Lukas einen Gebrauchtwagen und *verschweigt* absichtlich einen *Unfallschaden*. Nichtig oder anfechtbar? … *Anfechtbar*, wegen arglistiger *Täuschung*. Lukas ficht an, der Vertrag wird ungültig, und beide bekommen zurück, was sie gegeben haben: Auto und Geld.",
    "v": {
-    "type": "case",
-    "title": "Was passiert?",
-    "items": [
-     {
-      "text": "Unfallschaden verschwiegen",
-      "cue": "Unfallschaden"
-     },
-     {
-      "text": "Täuschung",
-      "cue": "Täuschung"
-     },
-     {
-      "text": "Käufer ficht an",
-      "cue": "ficht"
-     },
-     {
-      "text": "Vertrag ungültig ➜ Auto & Geld zurück",
-      "cue": "ungültig"
-     }
-    ]
+    "type": "quiz",
+    "q": "Unfallschaden absichtlich verschwiegen – nichtig oder anfechtbar?",
+    "a": "Anfechtbar (arglistige Täuschung, 1 Jahr) ➜ Auto & Geld zurück",
+    "cueA": "Anfechtbar"
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 5,
    "tname": "Nichtig und anfechtbar",
-   "text": "Merke: Nichtig ist sofort tot. Anfechtbar lebt, bis jemand anficht.",
+   "text": "Und das Merke als Bild: *Nichtig* ist *sofort tot*. *Anfechtbar* *lebt*, bis jemand anficht.",
    "v": {
     "type": "merke",
     "text": "Nichtig = sofort tot · Anfechtbar = lebt, bis jemand anficht"
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 6,
    "tname": "Kaufvertrag",
-   "text": "Thema sechs: der *Kaufvertrag*.",
+   "text": "Thema sechs: der *Kaufvertrag*, der Vertrag, den du am häufigsten abschließt.",
    "v": {
     "type": "topic"
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 6,
    "tname": "Kaufvertrag",
-   "text": "Ein Kaufvertrag besteht aus *Antrag* und *Annahme*, also zwei übereinstimmenden Willenserklärungen.",
+   "text": "Ein Kaufvertrag entsteht durch *Antrag* und *Annahme*. Einer macht ein Angebot, der andere sagt Ja. Zwei Willenserklärungen, die zusammenpassen.",
    "v": {
     "type": "def",
     "term": "Kaufvertrag",
     "text": "Antrag + Annahme (zwei übereinstimmende Willenserklärungen)",
     "cue": ""
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 6,
    "tname": "Kaufvertrag",
-   "text": "Jetzt kommt eine Falle: *Werbung*, *Schaufenster*, *Prospekt* und *Online-Shop* sind *kein Antrag*, sondern nur eine *Aufforderung*, ein Angebot zu machen. Der Antrag ist erst deine *Bestellung*. Wer einen Antrag macht, ist daran *gebunden*: unter Anwesenden oder am *Telefon* nur *sofort*, per Brief oder *E-Mail* so lange, wie man *normalerweise* eine Antwort erwartet. Mit „*freibleibend*“ oder „solange Vorrat reicht“ bindet man sich nicht oder nur eingeschränkt. Und kommt die *Annahme zu spät* oder *geändert*, ist das ein *neuer Antrag*.",
+   "text": "Und jetzt eine beliebte Prüfungsfalle: Ist das Preisschild im *Schaufenster* ein Antrag? Nein! *Werbung*, *Schaufenster*, *Prospekt* und auch der *Online-Shop* sind nur eine *Aufforderung*, ein Angebot zu machen. Warum? Stell dir vor, tausend Leute bestellen einen Fernseher, und es gibt nur zehn. Dann müsste der Shop tausend Verträge erfüllen. Deshalb ist erst deine *Bestellung* der Antrag. Wer einen Antrag macht, ist daran *gebunden*: unter Anwesenden oder am *Telefon* nur *sofort*. Per Brief oder *E-Mail* so lange, wie man *normalerweise* eine Antwort erwartet. Mit „*freibleibend*“ oder „solange Vorrat reicht“ bindet man sich nicht oder nur eingeschränkt. Und kommt die Annahme *zu spät* oder *geändert*, ist das wieder ein *neuer Antrag*.",
    "v": {
     "type": "points",
     "title": "Antrag & Bindung",
@@ -494,7 +452,7 @@
       "cue": "Werbung"
      },
      {
-      "text": "Bestellung = Antrag",
+      "text": "erst die Bestellung = Antrag",
       "cue": "Bestellung"
      },
      {
@@ -516,12 +474,12 @@
     ],
     "note": null
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 6,
    "tname": "Kaufvertrag",
-   "text": "Und die *Pflichten*: Der *Verkäufer* muss die Ware *übergeben*, dir das *Eigentum* verschaffen und *mangelfrei* liefern. Der *Käufer* muss *zahlen* und die Ware *abnehmen*.",
+   "text": "Und welche *Pflichten* hat jeder? Der *Verkäufer* muss die Ware *übergeben*, dir das *Eigentum* verschaffen, sie gehört dann also dir, und sie *mangelfrei* liefern. Der *Käufer* muss *zahlen* und die Ware *abnehmen*, er darf sie also nicht einfach im Laden stehen lassen.",
    "v": {
     "type": "compare",
     "left": {
@@ -542,31 +500,31 @@
     "cueRight": "Käufer",
     "note": null
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 6,
    "tname": "Kaufvertrag",
-   "text": "Merke: Werbung ist kein Antrag. Antrag plus Annahme gleich Vertrag.",
+   "text": "Merke: *Werbung* ist *kein Antrag*. Erst *Antrag plus Annahme* gibt einen Vertrag.",
    "v": {
     "type": "merke",
     "text": "Werbung ≠ Antrag · Antrag + Annahme = Vertrag"
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 7,
    "tname": "Besitz und Eigentum",
-   "text": "Thema sieben: *Besitz und Eigentum*.",
+   "text": "Thema sieben: *Besitz und Eigentum*. Im Alltag sagen wir oft beides gleich, juristisch ist das ein großer Unterschied.",
    "v": {
     "type": "topic"
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 7,
    "tname": "Besitz und Eigentum",
-   "text": "*Besitz* ist die *tatsächliche* Herrschaft, also wer die Sache gerade *hat*. *Eigentum* ist die *rechtliche* Herrschaft, also wem sie *gehört*. Leiht sich Lukas die Bohrmaschine vom Kollegen, ist er Besitzer, der Kollege bleibt Eigentümer.",
+   "text": "*Besitz* ist die *tatsächliche* Herrschaft. Also: Wer *hat* die Sache gerade in der Hand? *Eigentum* ist die *rechtliche* Herrschaft: Wem *gehört* sie? Beispiel: Lukas leiht sich die Bohrmaschine vom Kollegen. Lukas ist jetzt *Besitzer*, er hat sie ja. Aber der Kollege bleibt *Eigentümer*, sie gehört ihm.",
    "v": {
     "type": "compare",
     "left": {
@@ -586,12 +544,12 @@
     "cueRight": "Eigentum",
     "note": null
    },
-   "part": 0
+   "part": 1
   },
   {
    "topic": 7,
    "tname": "Besitz und Eigentum",
-   "text": "Wie geht Eigentum über? Durch *Einigung* und *Übergabe*. Beim *Eigentumsvorbehalt* bleibt die Ware *Eigentum des Verkäufers*, bis sie *komplett bezahlt* ist. Das muss aber *vereinbart* werden.",
+   "text": "Wie wird man Eigentümer? Durch *Einigung* und *Übergabe*. Man ist sich einig, dass es jetzt dir gehören soll, und du bekommst die Sache. Es gibt aber einen Sonderfall, den *Eigentumsvorbehalt*. Da bleibt die Ware *Eigentum des Verkäufers*, bis sie *komplett bezahlt* ist. Das ist typisch beim Ratenkauf, und es muss *vereinbart* werden.",
    "v": {
     "type": "points",
     "title": "Eigentumsübertragung",
@@ -617,41 +575,19 @@
   {
    "topic": 7,
    "tname": "Besitz und Eigentum",
-   "text": "Was passiert? *Ratenkauf* mit Eigentumsvorbehalt, der Käufer *zahlt nicht* mehr. Dann darf der Verkäufer die Ware *zurückholen*, sie gehört ja noch ihm.",
+   "text": "Frage: Jemand klaut Lukas' Fahrrad. Wer ist jetzt Besitzer, und wer Eigentümer? … Der *Dieb* ist *Besitzer*, er hat das Fahrrad ja. Aber *Eigentümer* bleibt Lukas. Ein Dieb wird *nie* Eigentümer.",
    "v": {
-    "type": "case",
-    "title": "Was passiert?",
-    "items": [
-     {
-      "text": "Ratenkauf mit Eigentumsvorbehalt",
-      "cue": "Ratenkauf"
-     },
-     {
-      "text": "Käufer zahlt nicht",
-      "cue": "zahlt"
-     },
-     {
-      "text": "Verkäufer holt die Ware zurück",
-      "cue": "zurückholen"
-     }
-    ]
-   },
-   "part": 1
-  },
-  {
-   "topic": 7,
-   "tname": "Besitz und Eigentum",
-   "text": "Merke: Besitz heißt haben, Eigentum heißt gehören. Ein Dieb ist Besitzer, aber nie Eigentümer.",
-   "v": {
-    "type": "merke",
-    "text": "Besitz = haben · Eigentum = gehören · Dieb = Besitzer, nie Eigentümer"
+    "type": "quiz",
+    "q": "Dieb klaut Lukas' Fahrrad – wer ist Besitzer, wer Eigentümer?",
+    "a": "Dieb = Besitzer · Lukas bleibt Eigentümer (Dieb wird nie Eigentümer)",
+    "cueA": "Dieb"
    },
    "part": 1
   },
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Thema acht: die *mangelhafte Lieferung*.",
+   "text": "Thema acht: die *mangelhafte Lieferung*. Das passiert jedem mal: Du bestellst etwas, und es ist kaputt.",
    "v": {
     "type": "topic"
    },
@@ -660,7 +596,7 @@
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Ein Mangel liegt vor, wenn die Ware bei der *Übergabe* nicht so ist wie *vereinbart* oder *üblich*.",
+   "text": "Ein *Mangel* liegt vor, wenn die Ware bei der *Übergabe* nicht so ist wie *vereinbart* oder wie es *üblich* ist. Ein neues Handy mit Kratzer ist also mangelhaft.",
    "v": {
     "type": "def",
     "term": "Mangel",
@@ -672,7 +608,7 @@
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Welche *Mängelarten* gibt es? Der *Qualitätsmangel*, die Ware ist kaputt. Die *Falschlieferung*. Der *Mengenmangel*, es fehlt etwas. Der *Montagemangel*, die *fehlerhafte Montageanleitung* und eine *falsche Werbeaussage*. Nach der *Erkennbarkeit* unterscheidet man *offene*, *versteckte* und *arglistig verschwiegene* Mängel.",
+   "text": "Welche Mängel gibt es? Den *Qualitätsmangel*, die Ware ist kaputt. Die *Falschlieferung*, du bekommst was anderes. Den *Mengenmangel*, es fehlt was. Den *Montagemangel*, der Verkäufer baut es falsch ein, und die *fehlerhafte Montageanleitung*, du baust es wegen einer falschen Anleitung falsch auf. Und die *falsche Werbeaussage*. Außerdem unterscheidet man, wie man sie *erkennt*: *offene* Mängel siehst du sofort, *versteckte* erst später, und *arglistig verschwiegene* hat der Verkäufer absichtlich verheimlicht.",
    "v": {
     "type": "points",
     "title": "Mängelarten",
@@ -699,8 +635,8 @@
       "cue": "Werbeaussage"
      },
      {
-      "text": "Erkennbarkeit: offen, versteckt, arglistig verschwiegen",
-      "cue": "Erkennbarkeit"
+      "text": "offen · versteckt · arglistig verschwiegen",
+      "cue": "erkennt"
      }
     ],
     "note": null
@@ -710,19 +646,19 @@
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Welche *Rechte* hast du? Ganz wichtig ist die Reihenfolge. Erst kommt die *Nacherfüllung*, und du *wählst*: *Nachbesserung*, also Reparatur, oder *Ersatzlieferung*. Erst *danach*, wenn das *fehlgeschlagen* ist, meist nach *zwei Versuchen*, kommen die anderen Rechte: *Rücktritt*, aber nicht bei einem kleinen Mangel, *Minderung*, also weniger zahlen, und *Schadensersatz*, aber nur, wenn der Verkäufer *schuld* ist.",
+   "text": "Und was darfst du dann? Hier ist die *Reihenfolge* entscheidend, und genau die wird in der Prüfung abgefragt. Zuerst kommt *immer* die *Nacherfüllung*. Du darfst *wählen*: *Nachbesserung*, also reparieren, oder *Ersatzlieferung*, also ein neues. Der Verkäufer bekommt also erst mal eine zweite Chance. Erst *danach*, wenn das *fehlgeschlagen* ist, meistens nach *zwei Versuchen*, darfst du mehr: vom Vertrag *zurücktreten*, also Geld zurück, das aber nicht bei einem ganz kleinen Mangel. Oder *Minderung*, du zahlst weniger. Und *Schadensersatz* gibt es zusätzlich, aber nur, wenn der Verkäufer *schuld* ist.",
    "v": {
     "type": "stairs",
-    "title": "Rechte des Käufers",
+    "title": "Rechte des Käufers – in dieser Reihenfolge!",
     "items": [
      {
-      "text": "1. Nacherfüllung: Nachbesserung oder Ersatzlieferung",
+      "text": "1. Nacherfüllung: Reparatur oder Ersatz",
       "cue": "Nacherfüllung",
-      "sub": "Käufer wählt"
+      "sub": "Käufer wählt – Verkäufer bekommt 2. Chance"
      },
      {
       "text": "2. danach (meist nach 2 Versuchen): Rücktritt",
-      "cue": "Rücktritt",
+      "cue": "zurücktreten",
       "sub": "nicht bei kleinem Mangel"
      },
      {
@@ -742,7 +678,7 @@
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Die *Fristen*: Die *Gewährleistung* beträgt *zwei Jahre* ab Übergabe. Bei *gebrauchter* Ware an Verbraucher darf sie auf *ein Jahr* verkürzt werden. Und die *Beweislastumkehr*: Zeigt sich der Mangel im *ersten Jahr*, muss der *Verkäufer* beweisen, dass die Ware in Ordnung war. Danach muss der *Käufer* beweisen.",
+   "text": "Und wie lange hast du Zeit? Die *Gewährleistung* beträgt *zwei Jahre* ab Übergabe. Bei *gebrauchter* Ware darf der Händler sie gegenüber Verbrauchern auf *ein Jahr* verkürzen. Und dann gibt es die *Beweislastumkehr*: Zeigt sich der Mangel im *ersten Jahr*, muss der *Verkäufer* beweisen, dass die Ware in Ordnung war. Das ist gut für dich. Danach musst *du* beweisen, dass der Fehler schon beim Kauf da war.",
    "v": {
     "type": "points",
     "title": "Fristen",
@@ -762,7 +698,7 @@
      },
      {
       "text": "danach der Käufer",
-      "cue": "danach"
+      "cue": "Danach"
      }
     ],
     "note": null
@@ -772,21 +708,23 @@
   {
    "topic": 8,
    "tname": "Mangelhafte Lieferung",
-   "text": "Merke: Erst reparieren oder neu, dann Rücktritt, Minderung, Schadensersatz.",
+   "text": "Frage: Lukas' neue Kaffeemaschine ist nach einer Woche kaputt. Er will sofort sein Geld zurück. Darf er das? … *Nein*, noch nicht. Zuerst kommt die *Nacherfüllung*: Er muss dem Verkäufer die Chance geben, sie zu reparieren oder eine neue zu liefern. Erst wenn das scheitert, darf er zurücktreten.",
    "v": {
-    "type": "merke",
-    "text": "erst Reparatur oder neu ➜ dann Rücktritt, Minderung, Schadensersatz"
+    "type": "quiz",
+    "q": "Kaffeemaschine nach 1 Woche kaputt – sofort Geld zurück?",
+    "a": "Nein – erst Nacherfüllung (Reparatur oder neu), erst dann Rücktritt",
+    "cueA": "Nein"
    },
    "part": 1
   },
   {
    "topic": 9,
    "tname": "Zahlungsverzug",
-   "text": "Thema neun: der *Zahlungsverzug*.",
+   "text": "Thema neun: der *Zahlungsverzug*. Jetzt drehen wir es um: Was passiert, wenn der Käufer nicht zahlt?",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 9,
@@ -798,12 +736,12 @@
     "text": "Der Käufer zahlt nicht rechtzeitig, obwohl die Zahlung fällig ist.",
     "cue": ""
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 9,
    "tname": "Zahlungsverzug",
-   "text": "Wann ist man im Verzug? Durch eine *Mahnung* nach Fälligkeit, eine einzige reicht. *Oder* durch ein *festes Kalenderdatum*, zum Beispiel „zahlbar bis fünfzehnten Mai“, dann ganz ohne Mahnung. *Oder* nach *dreißig Tagen* nach Rechnung, bei Verbrauchern aber nur, wenn das als *Hinweis* auf der Rechnung steht.",
+   "text": "Aber ab wann genau ist man im *Verzug*? Es gibt drei Wege. Erstens: eine *Mahnung* nach der Fälligkeit. Eine einzige reicht schon. Zweitens: ein *festes Kalenderdatum*. Steht auf der Rechnung „zahlbar bis fünfzehnten Mai“, bist du am sechzehnten automatisch im Verzug, ganz ohne Mahnung, denn das Datum mahnt ja quasi für den Verkäufer. Drittens: *dreißig Tage* nach der Rechnung. Bei Verbrauchern aber nur, wenn darauf auf der Rechnung *hingewiesen* wurde.",
    "v": {
     "type": "points",
     "title": "Verzug tritt ein durch …",
@@ -824,12 +762,12 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 9,
    "tname": "Zahlungsverzug",
-   "text": "Was darf der *Verkäufer* dann verlangen? Die *Zahlung* plus *Verzugszinsen*, bei Verbrauchern der *Basiszinssatz plus fünf Prozentpunkte*. Dazu *Schadensersatz*, zum Beispiel die *Mahnkosten*. Und nach einer *Nachfrist* kann er vom Vertrag *zurücktreten*.",
+   "text": "Und was darf der *Verkäufer* dann? Er bekommt natürlich seine *Zahlung*, und dazu *Verzugszinsen*. Bei Verbrauchern sind das *Basiszinssatz plus fünf Prozentpunkte*. Er darf *Schadensersatz* verlangen, zum Beispiel für die *Mahnkosten*. Und wenn du nach einer *Nachfrist* immer noch nicht zahlst, darf er vom Vertrag *zurücktreten* und seine Ware zurückholen.",
    "v": {
     "type": "points",
     "title": "Rechte des Verkäufers",
@@ -850,43 +788,43 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 9,
    "tname": "Zahlungsverzug",
-   "text": "Merke: Fällig plus Mahnung, oder Datum, oder dreißig Tage mit Hinweis, gleich Verzug, und dann gibt es Zinsen.",
+   "text": "Merke: *Fällig* plus *Mahnung*, oder ein festes *Datum*, oder *dreißig Tage* mit Hinweis, das ergibt *Verzug*, und dann kosten Zinsen.",
    "v": {
     "type": "merke",
     "text": "fällig + Mahnung (oder Datum / 30 Tage mit Hinweis) = Verzug ➜ Zinsen"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 10,
    "tname": "Regelmäßige Verjährung",
-   "text": "Thema zehn: die *regelmäßige Verjährung*.",
+   "text": "Thema zehn: die *regelmäßige Verjährung*. Also: Wie lange kann man Geld von dir verlangen?",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 10,
    "tname": "Regelmäßige Verjährung",
-   "text": "Verjährung heißt: Nach Ablauf der Frist kann man eine Forderung *nicht mehr vor Gericht durchsetzen*. Der Schuldner darf die Zahlung *verweigern*.",
+   "text": "Verjährung heißt: Nach Ablauf einer Frist kann man eine Forderung *nicht mehr vor Gericht durchsetzen*. Die Schuld ist nicht weg, aber der Schuldner darf die Zahlung *verweigern*.",
    "v": {
     "type": "def",
     "term": "Verjährung",
     "text": "Nach Ablauf der Frist kann man eine Forderung nicht mehr vor Gericht durchsetzen.",
     "cue": ""
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 10,
    "tname": "Regelmäßige Verjährung",
-   "text": "Die Frist beträgt *drei Jahre*. Sie *beginnt* am *einunddreißigsten Zwölften* des Jahres, in dem die Forderung entstanden ist, und *endet* am einunddreißigsten Zwölften drei Jahre später. Beispiel: Eine Rechnung vom *fünfzehnten März zweitausendsechsundzwanzig*. Die Frist startet am einunddreißigsten Dezember zweitausendsechsundzwanzig und endet am *einunddreißigsten Dezember zweitausendneunundzwanzig*. Und: Wer eine *verjährte Schuld* trotzdem bezahlt, bekommt das Geld *nicht zurück*.",
+   "text": "Die regelmäßige Frist sind *drei Jahre*. Aber, und das ist der Trick, sie *beginnt* nicht am Tag der Rechnung, sondern immer am *einunddreißigsten Zwölften* des Jahres, in dem die Forderung entstanden ist. Ein *Beispiel*: Eine Rechnung vom *fünfzehnten März zweitausendsechsundzwanzig*. Die Frist startet erst am Jahresende, also am einunddreißigsten Dezember zweitausendsechsundzwanzig, und endet drei Jahre später, am *einunddreißigsten Dezember zweitausendneunundzwanzig*. Warum so? Damit Firmen nicht für jede Rechnung ein eigenes Datum im Kopf haben müssen, alle laufen einfach zum Jahresende ab. Und noch was: Wer eine *verjährte Schuld* trotzdem bezahlt, bekommt das Geld *nicht zurück*.",
    "v": {
     "type": "timeline",
     "title": "Regelmäßige Verjährung: 3 Jahre ab Jahresende",
@@ -897,26 +835,26 @@
      "31.12.2029 Ende"
     ]
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 10,
    "tname": "Regelmäßige Verjährung",
-   "text": "Zwei Begriffe, die gut zu wissen sind: Der *Neubeginn*: Die Frist startet *komplett neu*, wenn der Schuldner die Schuld *anerkennt*, zum Beispiel durch eine *Teilzahlung*, eine Zinszahlung oder eine Bitte um Stundung, oder bei einer *Vollstreckung*. Die neuen drei Jahre starten am *Tag danach*, nicht am Jahresende. Die *Hemmung*: Die Frist wird *angehalten*, zum Beispiel bei *Verhandlungen*, einem *Mahnbescheid* oder einer *Klage*. Die Zeit wird *hinten angehängt*.",
+   "text": "Und dann gibt es zwei Begriffe, die gut zu wissen sind. Der *Neubeginn*: Die Uhr wird auf *null* gestellt, die drei Jahre starten *komplett neu*. Das passiert, wenn der Schuldner die Schuld *anerkennt*, zum Beispiel durch eine *Teilzahlung*, oder bei einer *Vollstreckung*. Und die neuen drei Jahre starten am *Tag danach*, nicht am Jahresende. Die *Hemmung*: Die Uhr wird *angehalten*, zum Beispiel während *Verhandlungen*, nach einem *Mahnbescheid* oder einer *Klage*. Danach läuft sie weiter, die Zeit wird *hinten angehängt*.",
    "v": {
     "type": "compare",
     "left": {
-     "title": "Neubeginn",
+     "title": "Neubeginn ⏮",
      "items": [
-      "Frist startet komplett neu",
+      "Uhr auf null – startet komplett neu",
       "Anerkennung (Teilzahlung …), Vollstreckung",
       "ab dem Tag danach"
      ]
     },
     "right": {
-     "title": "Hemmung",
+     "title": "Hemmung ⏸",
      "items": [
-      "Frist wird angehalten",
+      "Uhr angehalten",
       "Verhandlungen, Mahnbescheid, Klage",
       "Zeit wird hinten angehängt"
      ]
@@ -924,34 +862,34 @@
     "cueRight": "Hemmung",
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 10,
    "tname": "Regelmäßige Verjährung",
-   "text": "Merke: Drei Jahre, Start immer am Jahresende. Neubeginn heißt Uhr auf null. Hemmung heißt Uhr angehalten.",
+   "text": "Merke: *Drei Jahre*, Start *immer am Jahresende*. *Neubeginn* heißt Uhr auf *null*. *Hemmung* heißt Uhr *angehalten*.",
    "v": {
     "type": "merke",
     "text": "3 Jahre, Start am Jahresende · Neubeginn = Uhr auf null · Hemmung = Uhr angehalten"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 11,
    "tname": "Verbraucherberatung",
-   "text": "Thema elf: die *Verbraucherberatung*.",
+   "text": "Thema elf: die *Verbraucherberatung*. Wo bekommst du Hilfe, wenn du Ärger mit einem Vertrag hast?",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 11,
    "tname": "Verbraucherberatung",
-   "text": "Verbraucherberatung ist Hilfe für Verbraucher, um sich zu *informieren* und ihre *Rechte durchzusetzen*. Die *Verbraucherzentralen* bieten *persönliche Beratung*. Die *Stiftung Warentest* testet Produkte und veröffentlicht die Hefte *test* und *Finanztest*. Und dann gibt es *Publikationen*: Ratgeber, Broschüren und das Internet.",
+   "text": "Verbraucherberatung hilft dir, dich zu *informieren* und deine *Rechte durchzusetzen*. Die erste Adresse sind die *Verbraucherzentralen*, da bekommst du *persönliche Beratung*, zum Beispiel wenn dich ein Handyanbieter abzocken will. Dann die *Stiftung Warentest*. Die testet Produkte und Finanzangebote und veröffentlicht die Ergebnisse in den Heften *test* und *Finanztest*. Und dann gibt es *Publikationen*, also Ratgeber, Broschüren und Infos im Internet.",
    "v": {
     "type": "points",
-    "title": "Verbraucherberatung",
+    "title": "Wo gibt's Hilfe?",
     "label": null,
     "items": [
      {
@@ -969,43 +907,43 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 11,
    "tname": "Verbraucherberatung",
-   "text": "Merke: Beratung gleich Verbraucherzentrale. Tests gleich Stiftung Warentest.",
+   "text": "Merke: Für *Beratung* gehst du zur *Verbraucherzentrale*. *Tests* macht die *Stiftung Warentest*.",
    "v": {
     "type": "merke",
     "text": "Beratung = Verbraucherzentrale · Tests = Stiftung Warentest"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 12,
    "tname": "Fernabsatz",
-   "text": "Thema zwölf: der *Fernabsatz*.",
+   "text": "Thema zwölf: der *Fernabsatz*. Klingt kompliziert, heißt aber einfach Online-Shopping.",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 12,
    "tname": "Fernabsatz",
-   "text": "Fernabsatz ist ein Vertrag *ohne persönlichen Kontakt*, also im *Internet*, am *Telefon* oder per *Katalog*.",
+   "text": "Fernabsatz ist ein Vertrag *ohne persönlichen Kontakt*, also im *Internet*, am *Telefon* oder per *Katalog*. Du kannst die Ware vorher nicht anfassen, und genau deshalb bekommst du einen besonderen Schutz.",
    "v": {
     "type": "def",
     "term": "Fernabsatz",
     "text": "Vertrag ohne persönlichen Kontakt (Internet, Telefon, Katalog)",
     "cue": ""
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 12,
    "tname": "Fernabsatz",
-   "text": "Hier hast du ein *Widerrufsrecht* von *vierzehn Tagen*, *ohne Grund*. Die Frist beginnt mit dem *Erhalt der Ware* und der *Belehrung*. Fehlt die Belehrung, hast du maximal *zwölf Monate plus vierzehn Tage*. Den Widerruf musst du *eindeutig erklären*, nur zurückschicken reicht nicht. Die *Rücksendekosten* trägt der *Kunde*, wenn er vorher informiert wurde. *Kein* Widerruf gibt es bei *individuell angefertigter* Ware, *Verderblichem* und *entsiegelter* Hygieneware, Software oder CDs.",
+   "text": "Du hast ein *Widerrufsrecht* von *vierzehn Tagen*, und zwar *ohne Grund*. Die Frist beginnt, wenn du die *Ware erhalten* hast und *belehrt* wurdest, also über dein Widerrufsrecht informiert. Hat der Händler das vergessen, verlängert sich die Frist auf bis zu *zwölf Monate plus vierzehn Tage*. Wichtig: Den Widerruf musst du *eindeutig erklären*, zum Beispiel per E-Mail. Nur das Paket zurückschicken reicht nicht. Die *Rücksendekosten* zahlst *du*, wenn das vorher gesagt wurde. Und es gibt *Ausnahmen*: Kein Widerruf bei *individuell angefertigter* Ware, zum Beispiel ein T-Shirt mit deinem Namen, bei *verderblichen* Lebensmitteln und bei *entsiegelter* Hygieneware, Software oder CDs.",
    "v": {
     "type": "points",
     "title": "Widerrufsrecht",
@@ -1017,7 +955,7 @@
      },
      {
       "text": "Beginn: Erhalt der Ware + Belehrung",
-      "cue": "Erhalt"
+      "cue": "erhalten"
      },
      {
       "text": "ohne Belehrung: max. 12 Monate + 14 Tage",
@@ -1038,43 +976,45 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 12,
    "tname": "Fernabsatz",
-   "text": "Merke: Online vierzehn Tage ohne Grund. Im Laden *nicht*, dort gibt es nur Kulanz.",
+   "text": "Frage: Lukas kauft im *Laden* eine Jacke, zu Hause gefällt sie ihm nicht mehr. Hat er vierzehn Tage Widerrufsrecht? … *Nein!* Das Widerrufsrecht gibt es nur beim *Fernabsatz*. Wenn der Laden die Jacke trotzdem zurücknimmt, ist das reine *Kulanz*, also freiwillig.",
    "v": {
-    "type": "merke",
-    "text": "Online = 14 Tage ohne Grund · im Laden NICHT (nur Kulanz)"
+    "type": "quiz",
+    "q": "Jacke im Laden gekauft – 14 Tage Widerrufsrecht?",
+    "a": "Nein – nur beim Fernabsatz. Im Laden: höchstens Kulanz (freiwillig)",
+    "cueA": "Nein"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 13,
    "tname": "AGB",
-   "text": "Thema dreizehn: die *AGB*, die Allgemeinen Geschäftsbedingungen.",
+   "text": "Thema dreizehn: die *AGB*, die *Allgemeinen Geschäftsbedingungen*, also das Kleingedruckte, das du nie liest.",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 13,
    "tname": "AGB",
-   "text": "AGB sind *vorformulierte* Vertragsbedingungen für *viele Verträge*, also das Kleingedruckte.",
+   "text": "AGB sind *vorformulierte* Vertragsbedingungen für *viele Verträge*. Die Firma schreibt sie einmal und nutzt sie für alle Kunden.",
    "v": {
     "type": "def",
     "term": "AGB",
     "text": "Vorformulierte Vertragsbedingungen für viele Verträge.",
     "cue": ""
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 13,
    "tname": "AGB",
-   "text": "Die *Bedeutung*: Die Firma *spart Zeit und Kosten*. Aber der Kunde kann *nicht mitverhandeln* und könnte *benachteiligt* werden, darum schützt ihn das Gesetz. AGB gelten nur bei einem *deutlichen Hinweis*, einer *zumutbaren Kenntnisnahme* und dem *Einverständnis* des Kunden. Die gesetzlichen Regeln: *Überraschende Klauseln* sind *unwirksam*. Die *Gewährleistung* darf bei Verbrauchern *nicht verkürzt* werden. Und ist eine Klausel unwirksam, gilt das *Gesetz*, der *Rest des Vertrags* bleibt gültig.",
+   "text": "Warum gibt es die? Die Firma *spart Zeit und Kosten*, sie muss nicht mit jedem Kunden einzeln verhandeln. Das Problem: Du als Kunde *kannst nicht mitverhandeln*, und die Firma könnte dich *benachteiligen*. Deshalb schützt dich das *Gesetz*. AGB gelten überhaupt nur, wenn es einen *deutlichen Hinweis* gab, du sie *zumutbar lesen* konntest und *einverstanden* warst. Und dann gibt es Regeln: *Überraschende Klauseln*, mit denen niemand rechnet, zum Beispiel ein verstecktes Abo beim Kauf eines Kabels, sind *unwirksam*. Die *Gewährleistung* darf gegenüber Verbrauchern *nicht verkürzt* werden. Und ist eine Klausel unwirksam, gilt dafür einfach das *Gesetz*, der *Rest des Vertrags* bleibt gültig.",
    "v": {
     "type": "points",
     "title": "AGB-Regeln",
@@ -1085,7 +1025,7 @@
       "cue": "spart"
      },
      {
-      "text": "gelten nur: Hinweis, Kenntnisnahme, Einverständnis",
+      "text": "gelten nur: Hinweis, lesen können, einverstanden",
       "cue": "Hinweis"
      },
      {
@@ -1103,34 +1043,34 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 2
   },
   {
    "topic": 13,
    "tname": "AGB",
-   "text": "Merke: AGB dürfen nicht überraschen und keine gesetzlichen Rechte wegnehmen.",
+   "text": "Merke: AGB dürfen *nicht überraschen* und dir *keine gesetzlichen Rechte* wegnehmen.",
    "v": {
     "type": "merke",
     "text": "AGB dürfen nicht überraschen und keine gesetzlichen Rechte wegnehmen"
    },
-   "part": 1
+   "part": 3
   },
   {
    "topic": 14,
    "tname": "Girokonto und Zahlungsverkehr",
-   "text": "Thema vierzehn: *Girokonto und Zahlungsverkehr*.",
+   "text": "Thema vierzehn: *Girokonto und Zahlungsverkehr*. Wie bezahlst du eigentlich, und was ist wann sinnvoll?",
    "v": {
     "type": "topic"
    },
-   "part": 1
+   "part": 3
   },
   {
    "topic": 14,
    "tname": "Girokonto und Zahlungsverkehr",
-   "text": "Das *Girokonto* ist das Konto für den *täglichen Zahlungsverkehr*. Vergleiche die *Konditionen*: *Kontoführungsgebühr*, *Kartenkosten*, *Dispozinsen*, Geldautomaten, *Online-Banking* und ob es eine Filiale gibt.",
+   "text": "Das *Girokonto* ist dein Konto für den *täglichen Zahlungsverkehr*, da kommt dein Lohn drauf, und davon gehen Miete und Handy ab. Banken unterscheiden sich stark, deshalb lohnt es sich, die *Konditionen* zu vergleichen: *Kontoführungsgebühr*, *Kartenkosten*, die *Dispozinsen*, falls du mal ins Minus rutschst, wo es kostenlose Geldautomaten gibt, *Online-Banking* und ob es eine Filiale gibt.",
    "v": {
     "type": "points",
-    "title": "Girokonto – Konditionen",
+    "title": "Girokonto – vergleiche",
     "label": null,
     "items": [
      {
@@ -1152,24 +1092,24 @@
     ],
     "note": null
    },
-   "part": 1
+   "part": 3
   },
   {
    "topic": 14,
    "tname": "Girokonto und Zahlungsverkehr",
-   "text": "Die *Zahlungsformen*: *Bar*: sofort, anonym, gute Kontrolle, aber Diebstahlrisiko. *Überweisung*: als *Dauerauftrag* für gleiche Beträge wie die Miete, die *Lastschrift* für wechselnde Beträge wie Strom, da holt der Empfänger das Geld ab. Die *Girocard*: Das Geld geht *sofort* ab. Die *Kreditkarte*: wird *später* abgebucht, funktioniert weltweit, aber man kann den Überblick verlieren. Und *elektronisch*, also PayPal oder Apple Pay: schnell online, mit *Käuferschutz*.",
+   "text": "Und wie bezahlst du? Jede Form hat ihre Stärke. *Bar*: sofort, anonym, und du behältst gut den Überblick, weil du siehst, wie das Geld weniger wird. Nachteil: Es kann geklaut werden. Die *Überweisung*, und als *Dauerauftrag* perfekt für immer gleiche Beträge wie die Miete. Die *Lastschrift*, da holt sich der Empfänger das Geld selbst, praktisch bei wechselnden Beträgen wie Strom. Die *Girocard*: Das Geld geht *sofort* vom Konto. Die *Kreditkarte*: Es wird erst *später* abgebucht. Sie funktioniert weltweit, aber man verliert schnell den Überblick und rutscht in Schulden. Und *elektronisch*, also PayPal oder Apple Pay: schnell beim Online-Shopping und oft mit *Käuferschutz*.",
    "v": {
     "type": "table",
     "title": "Zahlungsformen",
     "head": [
      "Form",
-     "Vorteil / Nachteil"
+     "Stärke / Schwäche"
     ],
     "rows": [
      {
       "cells": [
        "Bar",
-       "sofort, anonym, Kontrolle / Diebstahlrisiko"
+       "sofort, anonym, Überblick / kann geklaut werden"
       ],
       "cue": "Bar",
       "hl": false
@@ -1185,7 +1125,7 @@
      {
       "cells": [
        "Lastschrift",
-       "Empfänger holt ab, wechselnde Beträge (Strom)"
+       "Empfänger holt ab – wechselnde Beträge (Strom)"
       ],
       "cue": "Lastschrift",
       "hl": false
@@ -1217,31 +1157,31 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 14,
    "tname": "Girokonto und Zahlungsverkehr",
-   "text": "Merke: Die Zahlungsform immer *nach der Situation* begründen.",
+   "text": "Merke: Es gibt keine beste Zahlungsform. In der Prüfung musst du sie immer *nach der Situation* begründen.",
    "v": {
     "type": "merke",
     "text": "Zahlungsform immer nach Situation begründen"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 15,
    "tname": "Geldanlage",
-   "text": "Thema fünfzehn: die *Geldanlage*.",
+   "text": "Thema fünfzehn: die *Geldanlage*. Du hast was gespart, und jetzt soll es mehr werden.",
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 15,
    "tname": "Geldanlage",
-   "text": "Geld anlegen heißt: Geld so anlegen, dass es *mehr* wird. Beurteilt wird das mit dem *magischen Dreieck*. *Liquidität*: Wie schnell komme ich an mein Geld? *Rentabilität*: Wie viel Ertrag bringt es? *Sicherheit*: Wie sicher ist es? Und der *Zielkonflikt*: Nie sind alle drei gleichzeitig maximal. Mehr Rendite heißt mehr Risiko. Das *Termingeld*: feste Zeit, fester Zins, Sicherheit *hoch*, Liquidität *niedrig*, Rentabilität *mittel*. Der *Aktienfonds*: viele Aktien, das Risiko ist gestreut, Rentabilität *hoch*, Sicherheit *niedriger*, Liquidität *hoch*.",
+   "text": "Jede Geldanlage bewertest du mit dem *magischen Dreieck*. Drei Fragen: *Liquidität*: Wie *schnell* komme ich an mein Geld? *Rentabilität*: Wie viel *Ertrag* bringt es? *Sicherheit*: Wie *sicher* ist es? Und warum heißt es *magisch*? Weil du nie alle drei gleichzeitig maximal bekommst, das wäre Zauberei. Das ist der *Zielkonflikt*: mehr Rendite heißt mehr Risiko. Schauen wir zwei Beispiele an. Das *Termingeld*: Du legst Geld für eine feste Zeit zu einem festen Zins an. Sicherheit *hoch*, Liquidität *niedrig*, weil du vor Ende nicht rankommst, Rentabilität *mittel*. Der *Aktienfonds*: Viele Aktien in einem Topf, so ist das Risiko verteilt. Rentabilität *hoch*, Sicherheit *niedriger*, weil Kurse schwanken, Liquidität *hoch*, du kannst jederzeit verkaufen.",
    "v": {
     "type": "triangle",
     "corners": [
@@ -1282,31 +1222,33 @@
      }
     ]
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 15,
    "tname": "Geldanlage",
-   "text": "Merke: Sicher und kurzfristig gleich Termingeld. Langfristig mit Chance und Risiko gleich Aktienfonds.",
+   "text": "Frage: Lukas will in einem Jahr ein Auto kaufen und darf auf keinen Fall Geld verlieren. Termingeld oder Aktienfonds? … *Termingeld*. Kurze Zeit und Sicherheit sind ihm wichtig. Ein Aktienfonds lohnt sich eher langfristig, wenn man Schwankungen aushalten kann.",
    "v": {
-    "type": "merke",
-    "text": "sicher & kurzfristig = Termingeld · langfristig, Chance & Risiko = Aktienfonds"
+    "type": "quiz",
+    "q": "Auto in 1 Jahr, kein Verlust erlaubt – Termingeld oder Aktienfonds?",
+    "a": "Termingeld (sicher, kurzfristig) – Aktienfonds eher langfristig mit Chance & Risiko",
+    "cueA": "Termingeld"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 16,
    "tname": "Verbraucherdarlehen",
-   "text": "Thema sechzehn: das *Verbraucherdarlehen*.",
+   "text": "Thema sechzehn: das *Verbraucherdarlehen*, also ein Kredit für dich als Privatperson.",
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 16,
    "tname": "Verbraucherdarlehen",
-   "text": "Ein Verbraucherdarlehen ist ein *Kredit* von einem Unternehmen, meist einer Bank, an einen *Verbraucher*. Die Bank prüft die *Kreditwürdigkeit*: Einkommen, *Arbeitsvertrag*, die *SCHUFA*, Vermögen und andere Schulden. Der Vertrag muss *schriftlich* sein. *Inhalt*: Nettodarlehensbetrag, *Sollzins*, der *effektive Jahreszins*, mit dem du Angebote vergleichst, Laufzeit, Raten, Gesamtbetrag und ein *Widerrufsrecht* von vierzehn Tagen.",
+   "text": "Ein Verbraucherdarlehen ist ein *Kredit* von einem Unternehmen, meist einer Bank, an einen *Verbraucher*. Bevor die Bank dir Geld gibt, prüft sie deine *Kreditwürdigkeit*. Sie will wissen: Kann der das zurückzahlen? Dafür schaut sie auf dein Einkommen, deinen *Arbeitsvertrag*, die *SCHUFA*, also deine bisherige Zahlungsmoral, dein Vermögen und andere Schulden. Der Vertrag muss *schriftlich* sein und alles Wichtige nennen. Am wichtigsten für dich ist der *effektive Jahreszins*, denn der enthält alle Kosten, damit kannst du Angebote fair vergleichen. Und du hast vierzehn Tage *Widerrufsrecht*.",
    "v": {
     "type": "points",
     "title": "Verbraucherdarlehen",
@@ -1321,7 +1263,7 @@
       "cue": "schriftlich"
      },
      {
-      "text": "effektiver Jahreszins zum Vergleichen",
+      "text": "effektiver Jahreszins = alle Kosten ➜ zum Vergleichen",
       "cue": "effektive"
      },
      {
@@ -1331,15 +1273,15 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 16,
    "tname": "Verbraucherdarlehen",
-   "text": "Die Bank will *Sicherheiten*. Bei der *Sicherungsübereignung* wird die Bank *Eigentümer*, der Kunde bleibt *Besitzer*. Beim Autokredit hat die Bank zum Beispiel den Fahrzeugbrief, aber du fährst das Auto. Bei der *Bürgschaft* haftet eine *andere Person*, das muss schriftlich sein. Und bei der *Lohnabtretung* bekommt die Bank einen Teil deines *Lohns* direkt vom *Arbeitgeber*.",
+   "text": "Und weil die Bank auf Nummer sicher gehen will, verlangt sie *Sicherheiten*. Drei musst du kennen. Die *Sicherungsübereignung*: Die Bank wird *Eigentümer*, du bleibst *Besitzer*. Beim Autokredit hat die Bank zum Beispiel den Fahrzeugbrief, aber du fährst das Auto. Erinnerst du dich an Besitz und Eigentum? Genau das ist es. Die *Bürgschaft*: Eine *andere Person*, zum Beispiel deine Eltern, haftet für dich, wenn du nicht zahlst. Das muss schriftlich sein. Und die *Lohnabtretung*: Zahlst du nicht, holt sich die Bank einen Teil deines *Lohns* direkt beim *Arbeitgeber*.",
    "v": {
     "type": "table",
-    "title": "Sicherheiten",
+    "title": "Kreditsicherheiten",
     "head": [
      "Sicherheit",
      "So funktioniert's"
@@ -1348,7 +1290,7 @@
      {
       "cells": [
        "Sicherungsübereignung",
-       "Bank = Eigentümer, Kunde = Besitzer (Fahrzeugbrief)"
+       "Bank = Eigentümer, du = Besitzer (Fahrzeugbrief)"
       ],
       "cue": "Sicherungsübereignung",
       "hl": false
@@ -1364,7 +1306,7 @@
      {
       "cells": [
        "Lohnabtretung",
-       "Bank bekommt Teil vom Lohn vom Arbeitgeber"
+       "Bank holt Teil vom Lohn beim Arbeitgeber"
       ],
       "cue": "Lohnabtretung",
       "hl": false
@@ -1372,59 +1314,59 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 16,
    "tname": "Verbraucherdarlehen",
-   "text": "Merke: Sicherungsübereignung gleich Bank ist Eigentümer. Bürgschaft gleich ein anderer zahlt. Lohnabtretung gleich vom Lohn.",
+   "text": "Merke: *Sicherungsübereignung*, die Bank ist *Eigentümer*. *Bürgschaft*, ein *anderer* zahlt. *Lohnabtretung*, es geht *vom Lohn*.",
    "v": {
     "type": "merke",
     "text": "Sicherungsübereignung = Bank Eigentümer · Bürgschaft = anderer zahlt · Lohnabtretung = vom Lohn"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Thema siebzehn, das letzte: die *Überschuldung*.",
+   "text": "Thema siebzehn, das letzte: die *Überschuldung*. Kein schönes Thema, aber wichtig, weil es schneller passieren kann, als man denkt.",
    "v": {
     "type": "topic"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Überschuldung heißt: Die Schulden können mit Einkommen und Vermögen *auf Dauer nicht mehr bezahlt* werden.",
+   "text": "Überschuldet ist, wer seine Schulden mit Einkommen und Vermögen *auf Dauer nicht mehr bezahlen* kann. Nicht nur einen Monat knapp, sondern dauerhaft.",
    "v": {
     "type": "def",
     "term": "Überschuldung",
     "text": "Schulden können mit Einkommen und Vermögen auf Dauer nicht mehr bezahlt werden.",
     "cue": ""
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Typische *Ursachen*: *Arbeitslosigkeit*, *Trennung*, *Krankheit*, *Konsum auf Raten*, der *Dispo* und teure *Handyverträge*.",
+   "text": "Wie kommt man da rein? Oft durch Schicksalsschläge wie *Arbeitslosigkeit*, *Trennung* oder *Krankheit*. Aber auch durch eigene Fehler: zu viel *Konsum auf Raten*, ein dauernd genutzter *Dispo* oder mehrere teure *Handyverträge*. Jede Rate wirkt klein, aber zusammen fressen sie das ganze Gehalt auf.",
    "v": {
     "type": "points",
     "title": "Ursachen",
     "label": null,
     "items": [
      {
-      "text": "Arbeitslosigkeit",
+      "text": "Arbeitslosigkeit, Trennung, Krankheit",
       "cue": "Arbeitslosigkeit"
      },
      {
-      "text": "Trennung, Krankheit",
-      "cue": "Trennung"
+      "text": "Konsum auf Raten",
+      "cue": "Konsum"
      },
      {
-      "text": "Konsum auf Raten, Dispo",
-      "cue": "Konsum"
+      "text": "Dispo",
+      "cue": "Dispo"
      },
      {
       "text": "Handyverträge",
@@ -1433,22 +1375,22 @@
     ],
     "note": null
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Die *Lösungen* in drei Stufen: Erstens ein *Haushaltsplan* mit Einnahmen und Ausgaben, das hilft auch vorbeugend. Zweitens die *Schuldnerberatung*, die ist kostenlos und verhandelt mit den Gläubigern. Drittens die *Verbraucherinsolvenz*. Die läuft so ab: zuerst ein *außergerichtlicher Einigungsversuch*, dann der *Antrag* beim Insolvenzgericht, dann die *Wohlverhaltensphase* von *drei Jahren*. Da gibst du den pfändbaren Teil ab, arbeitest oder suchst Arbeit und machst keine neuen Schulden. Und am Ende kommt die *Restschuldbefreiung*.",
+   "text": "Und wie kommt man wieder raus? In drei Stufen. Erstens ein *Haushaltsplan*: Alle Einnahmen und Ausgaben aufschreiben. Das hilft übrigens auch, damit es gar nicht erst so weit kommt. Zweitens die *Schuldnerberatung*. Die ist *kostenlos*, zum Beispiel bei der Caritas oder der Verbraucherzentrale, und verhandelt für dich mit den Gläubigern. Und drittens, wenn gar nichts mehr geht, die *Verbraucherinsolvenz*. Die läuft so: Erst ein *außergerichtlicher Einigungsversuch* mit den Gläubigern. Klappt das nicht, der *Antrag* beim Insolvenzgericht. Dann kommt die *Wohlverhaltensphase*, *drei Jahre* lang. Da gibst du alles ab, was über dem pfändbaren Freibetrag liegt, arbeitest oder suchst Arbeit und machst keine neuen Schulden. Und wenn du das durchhältst, kommt die *Restschuldbefreiung*: Die übrigen Schulden sind weg, und du kannst neu anfangen.",
    "v": {
     "type": "case",
-    "title": "Lösungen & Verbraucherinsolvenz",
+    "title": "Wege aus der Überschuldung",
     "items": [
      {
       "text": "Haushaltsplan",
       "cue": "Haushaltsplan"
      },
      {
-      "text": "Schuldnerberatung",
+      "text": "Schuldnerberatung (kostenlos)",
       "cue": "Schuldnerberatung"
      },
      {
@@ -1464,32 +1406,32 @@
       "cue": "Wohlverhaltensphase"
      },
      {
-      "text": "Restschuldbefreiung",
+      "text": "Restschuldbefreiung ➜ Neustart",
       "cue": "Restschuldbefreiung"
      }
     ]
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Merke: Haushaltsplan, Schuldnerberatung, Insolvenz, und nach drei Jahren ein Neustart.",
+   "text": "Merke den Weg: *Haushaltsplan*, *Schuldnerberatung*, *Insolvenz*, und nach *drei Jahren* ein *Neustart*.",
    "v": {
     "type": "merke",
     "text": "Haushaltsplan ➜ Schuldnerberatung ➜ Insolvenz ➜ nach 3 Jahren Neustart"
    },
-   "part": 2
+   "part": 3
   },
   {
    "topic": 17,
    "tname": "Überschuldung",
-   "text": "Das war Kompetenzbereich zwei mit allen *siebzehn Themen*. Hier siehst du sie noch einmal im Überblick. Weiter geht's mit Kompetenzbereich drei.",
+   "text": "Und das war Kompetenzbereich zwei mit allen siebzehn Themen! Wenn du dir eins merken willst: Fast alles hier dreht sich um Verträge, wann sie gelten, was man bei Problemen darf, und wie man sich schützt. Schau dir die Quizfragen ruhig nochmal an, die sind genau so wie in der Prüfung. Weiter geht's mit Kompetenzbereich drei.",
    "v": {
     "type": "kb",
     "outro": true
    },
-   "part": 2
+   "part": 4
   }
  ]
 }

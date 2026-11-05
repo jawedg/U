@@ -227,6 +227,31 @@ const M: Record<string, React.FC<MinProps>> = {
     </Frame>
   ),
 
+  quiz: ({ v, t, cue, kb }) => {
+    const at = cue(v.cueA) || 999;
+    const shown = t >= at;
+    return (
+      <Frame>
+        <Appear at={0}><Label kb={kb}>Kurze Frage an dich</Label></Appear>
+        <Appear at={0.2}>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 62, color: INK, lineHeight: 1.2, maxWidth: 1500 }}>{v.q}</div>
+        </Appear>
+        <div style={{ marginTop: 50, minHeight: 140 }}>
+          {shown ? (
+            <Appear at={at}>
+              <div style={{ display: "flex", gap: 24, alignItems: "baseline" }}>
+                <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 30, letterSpacing: 4, color: accent(kb) }}>ANTWORT</div>
+                <div style={{ fontFamily: SANS, fontWeight: 650, fontSize: 48, color: INK, lineHeight: 1.3, maxWidth: 1300 }}>{v.a}</div>
+              </div>
+            </Appear>
+          ) : (
+            <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 34, color: MUTED }}>Überleg kurz … 🤔</div>
+          )}
+        </div>
+      </Frame>
+    );
+  },
+
   ledger: ({ v, t, cue, kb }) => {
     let run = 0;
     return (
