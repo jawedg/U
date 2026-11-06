@@ -1,1 +1,13234 @@
-{ "lines": [] }
+{
+ "lines": [
+  {
+   "file": "lern_kb2/line-0-0.wav",
+   "seconds": 19.475,
+   "words": [
+    {
+     "word": "Willkommen",
+     "start": 0.1
+    },
+    {
+     "word": "zu",
+     "start": 0.557
+    },
+    {
+     "word": "Kompetenzbereich",
+     "start": 0.709
+    },
+    {
+     "word": "zwei!",
+     "start": 1.395
+    },
+    {
+     "word": "Hier",
+     "start": 1.813
+    },
+    {
+     "word": "geht",
+     "start": 2.042
+    },
+    {
+     "word": "es",
+     "start": 2.27
+    },
+    {
+     "word": "um",
+     "start": 2.423
+    },
+    {
+     "word": "dich",
+     "start": 2.575
+    },
+    {
+     "word": "als",
+     "start": 2.804
+    },
+    {
+     "word": "*Verbraucher*,",
+     "start": 2.994
+    },
+    {
+     "word": "also",
+     "start": 3.679
+    },
+    {
+     "word": "als",
+     "start": 3.908
+    },
+    {
+     "word": "Kunde.",
+     "start": 4.098
+    },
+    {
+     "word": "Jedes",
+     "start": 4.555
+    },
+    {
+     "word": "Mal,",
+     "start": 4.822
+    },
+    {
+     "word": "wenn",
+     "start": 5.202
+    },
+    {
+     "word": "du",
+     "start": 5.431
+    },
+    {
+     "word": "beim",
+     "start": 5.583
+    },
+    {
+     "word": "Bäcker",
+     "start": 5.812
+    },
+    {
+     "word": "ein",
+     "start": 6.116
+    },
+    {
+     "word": "Brötchen",
+     "start": 6.307
+    },
+    {
+     "word": "kaufst,",
+     "start": 6.687
+    },
+    {
+     "word": "einen",
+     "start": 7.182
+    },
+    {
+     "word": "Handyvertrag",
+     "start": 7.449
+    },
+    {
+     "word": "abschließt",
+     "start": 7.982
+    },
+    {
+     "word": "oder",
+     "start": 8.439
+    },
+    {
+     "word": "online",
+     "start": 8.667
+    },
+    {
+     "word": "etwas",
+     "start": 8.972
+    },
+    {
+     "word": "bestellst,",
+     "start": 9.239
+    },
+    {
+     "word": "passiert",
+     "start": 9.848
+    },
+    {
+     "word": "rechtlich",
+     "start": 10.229
+    },
+    {
+     "word": "eine",
+     "start": 10.647
+    },
+    {
+     "word": "ganze",
+     "start": 10.876
+    },
+    {
+     "word": "Menge,",
+     "start": 11.142
+    },
+    {
+     "word": "ohne",
+     "start": 11.599
+    },
+    {
+     "word": "dass",
+     "start": 11.828
+    },
+    {
+     "word": "du",
+     "start": 12.056
+    },
+    {
+     "word": "es",
+     "start": 12.209
+    },
+    {
+     "word": "merkst.",
+     "start": 12.361
+    },
+    {
+     "word": "Genau",
+     "start": 12.856
+    },
+    {
+     "word": "das",
+     "start": 13.123
+    },
+    {
+     "word": "schauen",
+     "start": 13.313
+    },
+    {
+     "word": "wir",
+     "start": 13.656
+    },
+    {
+     "word": "uns",
+     "start": 13.846
+    },
+    {
+     "word": "an.",
+     "start": 14.036
+    },
+    {
+     "word": "Es",
+     "start": 14.379
+    },
+    {
+     "word": "sind",
+     "start": 14.531
+    },
+    {
+     "word": "*siebzehn",
+     "start": 14.76
+    },
+    {
+     "word": "Themen*,",
+     "start": 15.141
+    },
+    {
+     "word": "aber",
+     "start": 15.636
+    },
+    {
+     "word": "keine",
+     "start": 15.864
+    },
+    {
+     "word": "Sorge,",
+     "start": 16.131
+    },
+    {
+     "word": "viele",
+     "start": 16.588
+    },
+    {
+     "word": "sind",
+     "start": 16.854
+    },
+    {
+     "word": "kurz,",
+     "start": 17.083
+    },
+    {
+     "word": "und",
+     "start": 17.501
+    },
+    {
+     "word": "sie",
+     "start": 17.692
+    },
+    {
+     "word": "bauen",
+     "start": 17.882
+    },
+    {
+     "word": "aufeinander",
+     "start": 18.149
+    },
+    {
+     "word": "auf.",
+     "start": 18.644
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-1.wav",
+   "seconds": 2.064,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "eins:",
+     "start": 0.335
+    },
+    {
+     "word": "die",
+     "start": 0.705
+    },
+    {
+     "word": "*Rechtsfähigkeit*.",
+     "start": 0.874
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-2.wav",
+   "seconds": 9.649,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Frage",
+     "start": 0.283
+    },
+    {
+     "word": "ist",
+     "start": 0.54
+    },
+    {
+     "word": "ganz",
+     "start": 0.724
+    },
+    {
+     "word": "einfach:",
+     "start": 0.944
+    },
+    {
+     "word": "Wer",
+     "start": 1.457
+    },
+    {
+     "word": "kann",
+     "start": 1.641
+    },
+    {
+     "word": "überhaupt",
+     "start": 1.861
+    },
+    {
+     "word": "*Rechte",
+     "start": 2.265
+    },
+    {
+     "word": "und",
+     "start": 2.558
+    },
+    {
+     "word": "Pflichten",
+     "start": 2.742
+    },
+    {
+     "word": "haben*?",
+     "start": 3.145
+    },
+    {
+     "word": "Zum",
+     "start": 3.585
+    },
+    {
+     "word": "Beispiel",
+     "start": 3.769
+    },
+    {
+     "word": "das",
+     "start": 4.136
+    },
+    {
+     "word": "Recht,",
+     "start": 4.319
+    },
+    {
+     "word": "etwas",
+     "start": 4.759
+    },
+    {
+     "word": "zu",
+     "start": 5.016
+    },
+    {
+     "word": "besitzen,",
+     "start": 5.163
+    },
+    {
+     "word": "oder",
+     "start": 5.713
+    },
+    {
+     "word": "die",
+     "start": 5.933
+    },
+    {
+     "word": "Pflicht,",
+     "start": 6.117
+    },
+    {
+     "word": "Steuern",
+     "start": 6.631
+    },
+    {
+     "word": "zu",
+     "start": 6.961
+    },
+    {
+     "word": "zahlen.",
+     "start": 7.107
+    },
+    {
+     "word": "Wer",
+     "start": 7.584
+    },
+    {
+     "word": "das",
+     "start": 7.768
+    },
+    {
+     "word": "kann,",
+     "start": 7.951
+    },
+    {
+     "word": "ist",
+     "start": 8.355
+    },
+    {
+     "word": "rechtsfähig.",
+     "start": 8.538
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-3.wav",
+   "seconds": 18.158,
+   "words": [
+    {
+     "word": "Bei",
+     "start": 0.1
+    },
+    {
+     "word": "*Menschen*",
+     "start": 0.301
+    },
+    {
+     "word": "ist",
+     "start": 0.702
+    },
+    {
+     "word": "das",
+     "start": 0.902
+    },
+    {
+     "word": "klar:",
+     "start": 1.103
+    },
+    {
+     "word": "von",
+     "start": 1.544
+    },
+    {
+     "word": "der",
+     "start": 1.745
+    },
+    {
+     "word": "*Geburt*",
+     "start": 1.945
+    },
+    {
+     "word": "bis",
+     "start": 2.266
+    },
+    {
+     "word": "zum",
+     "start": 2.466
+    },
+    {
+     "word": "*Tod*.",
+     "start": 2.667
+    },
+    {
+     "word": "Sogar",
+     "start": 3.068
+    },
+    {
+     "word": "ein",
+     "start": 3.349
+    },
+    {
+     "word": "Baby",
+     "start": 3.549
+    },
+    {
+     "word": "ist",
+     "start": 3.79
+    },
+    {
+     "word": "rechtsfähig,",
+     "start": 3.991
+    },
+    {
+     "word": "es",
+     "start": 4.713
+    },
+    {
+     "word": "kann",
+     "start": 4.873
+    },
+    {
+     "word": "zum",
+     "start": 5.114
+    },
+    {
+     "word": "Beispiel",
+     "start": 5.314
+    },
+    {
+     "word": "schon",
+     "start": 5.715
+    },
+    {
+     "word": "ein",
+     "start": 5.996
+    },
+    {
+     "word": "Haus",
+     "start": 6.197
+    },
+    {
+     "word": "*erben*.",
+     "start": 6.437
+    },
+    {
+     "word": "Selbst",
+     "start": 6.919
+    },
+    {
+     "word": "kaufen",
+     "start": 7.24
+    },
+    {
+     "word": "kann",
+     "start": 7.56
+    },
+    {
+     "word": "es",
+     "start": 7.801
+    },
+    {
+     "word": "natürlich",
+     "start": 7.962
+    },
+    {
+     "word": "noch",
+     "start": 8.403
+    },
+    {
+     "word": "nichts,",
+     "start": 8.643
+    },
+    {
+     "word": "aber",
+     "start": 9.165
+    },
+    {
+     "word": "dazu",
+     "start": 9.405
+    },
+    {
+     "word": "gleich",
+     "start": 9.646
+    },
+    {
+     "word": "mehr.",
+     "start": 9.967
+    },
+    {
+     "word": "Und",
+     "start": 10.408
+    },
+    {
+     "word": "*Firmen*,",
+     "start": 10.609
+    },
+    {
+     "word": "also",
+     "start": 11.13
+    },
+    {
+     "word": "zum",
+     "start": 11.371
+    },
+    {
+     "word": "Beispiel",
+     "start": 11.571
+    },
+    {
+     "word": "eine",
+     "start": 11.973
+    },
+    {
+     "word": "*GmbH*",
+     "start": 12.213
+    },
+    {
+     "word": "oder",
+     "start": 12.454
+    },
+    {
+     "word": "ein",
+     "start": 12.694
+    },
+    {
+     "word": "*Verein*,",
+     "start": 12.895
+    },
+    {
+     "word": "sind",
+     "start": 13.416
+    },
+    {
+     "word": "rechtsfähig",
+     "start": 13.657
+    },
+    {
+     "word": "ab",
+     "start": 14.179
+    },
+    {
+     "word": "ihrer",
+     "start": 14.339
+    },
+    {
+     "word": "*Eintragung*",
+     "start": 14.62
+    },
+    {
+     "word": "ins",
+     "start": 15.101
+    },
+    {
+     "word": "Register.",
+     "start": 15.302
+    },
+    {
+     "word": "Die",
+     "start": 15.903
+    },
+    {
+     "word": "nennt",
+     "start": 16.104
+    },
+    {
+     "word": "man",
+     "start": 16.385
+    },
+    {
+     "word": "juristische",
+     "start": 16.585
+    },
+    {
+     "word": "Personen.",
+     "start": 17.107
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-4.wav",
+   "seconds": 6.801,
+   "words": [
+    {
+     "word": "Merk",
+     "start": 0.1
+    },
+    {
+     "word": "dir:",
+     "start": 0.326
+    },
+    {
+     "word": "Rechtsfähig",
+     "start": 0.703
+    },
+    {
+     "word": "heißt,",
+     "start": 1.192
+    },
+    {
+     "word": "Rechte",
+     "start": 1.644
+    },
+    {
+     "word": "*haben*.",
+     "start": 1.945
+    },
+    {
+     "word": "Das",
+     "start": 2.397
+    },
+    {
+     "word": "ist",
+     "start": 2.585
+    },
+    {
+     "word": "noch",
+     "start": 2.774
+    },
+    {
+     "word": "nicht",
+     "start": 3.0
+    },
+    {
+     "word": "dasselbe",
+     "start": 3.263
+    },
+    {
+     "word": "wie",
+     "start": 3.64
+    },
+    {
+     "word": "selbst",
+     "start": 3.828
+    },
+    {
+     "word": "Verträge",
+     "start": 4.129
+    },
+    {
+     "word": "machen,",
+     "start": 4.506
+    },
+    {
+     "word": "das",
+     "start": 4.995
+    },
+    {
+     "word": "ist",
+     "start": 5.184
+    },
+    {
+     "word": "das",
+     "start": 5.372
+    },
+    {
+     "word": "nächste",
+     "start": 5.56
+    },
+    {
+     "word": "Thema.",
+     "start": 5.899
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-5.wav",
+   "seconds": 6.913,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "zwei:",
+     "start": 0.385
+    },
+    {
+     "word": "die",
+     "start": 0.834
+    },
+    {
+     "word": "*Geschäftsfähigkeit*.",
+     "start": 1.038
+    },
+    {
+     "word": "Und",
+     "start": 2.058
+    },
+    {
+     "word": "hier",
+     "start": 2.262
+    },
+    {
+     "word": "geht",
+     "start": 2.506
+    },
+    {
+     "word": "es",
+     "start": 2.751
+    },
+    {
+     "word": "genau",
+     "start": 2.914
+    },
+    {
+     "word": "darum:",
+     "start": 3.2
+    },
+    {
+     "word": "Ab",
+     "start": 3.689
+    },
+    {
+     "word": "wann",
+     "start": 3.852
+    },
+    {
+     "word": "darf",
+     "start": 4.097
+    },
+    {
+     "word": "ich",
+     "start": 4.342
+    },
+    {
+     "word": "selbst",
+     "start": 4.546
+    },
+    {
+     "word": "einkaufen",
+     "start": 4.872
+    },
+    {
+     "word": "und",
+     "start": 5.321
+    },
+    {
+     "word": "Verträge",
+     "start": 5.524
+    },
+    {
+     "word": "machen?",
+     "start": 5.932
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-6.wav",
+   "seconds": 7.564,
+   "words": [
+    {
+     "word": "Geschäftsfähig",
+     "start": 0.1
+    },
+    {
+     "word": "ist,",
+     "start": 0.694
+    },
+    {
+     "word": "wer",
+     "start": 1.065
+    },
+    {
+     "word": "*selbst",
+     "start": 1.25
+    },
+    {
+     "word": "gültige",
+     "start": 1.547
+    },
+    {
+     "word": "Verträge*",
+     "start": 1.881
+    },
+    {
+     "word": "abschließen",
+     "start": 2.252
+    },
+    {
+     "word": "kann.",
+     "start": 2.735
+    },
+    {
+     "word": "Und",
+     "start": 3.143
+    },
+    {
+     "word": "das",
+     "start": 3.329
+    },
+    {
+     "word": "hängt",
+     "start": 3.514
+    },
+    {
+     "word": "vom",
+     "start": 3.774
+    },
+    {
+     "word": "*Alter*",
+     "start": 3.96
+    },
+    {
+     "word": "ab,",
+     "start": 4.219
+    },
+    {
+     "word": "weil",
+     "start": 4.553
+    },
+    {
+     "word": "man",
+     "start": 4.776
+    },
+    {
+     "word": "Kinder",
+     "start": 4.962
+    },
+    {
+     "word": "vor",
+     "start": 5.258
+    },
+    {
+     "word": "schlechten",
+     "start": 5.444
+    },
+    {
+     "word": "Geschäften",
+     "start": 5.889
+    },
+    {
+     "word": "schützen",
+     "start": 6.335
+    },
+    {
+     "word": "will.",
+     "start": 6.706
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-7.wav",
+   "seconds": 23.414,
+   "words": [
+    {
+     "word": "Es",
+     "start": 0.1
+    },
+    {
+     "word": "gibt",
+     "start": 0.256
+    },
+    {
+     "word": "*drei",
+     "start": 0.489
+    },
+    {
+     "word": "Stufen*.",
+     "start": 0.722
+    },
+    {
+     "word": "*Unter",
+     "start": 1.228
+    },
+    {
+     "word": "sieben*",
+     "start": 1.5
+    },
+    {
+     "word": "Jahren",
+     "start": 1.811
+    },
+    {
+     "word": "ist",
+     "start": 2.122
+    },
+    {
+     "word": "man",
+     "start": 2.316
+    },
+    {
+     "word": "*geschäftsunfähig*.",
+     "start": 2.511
+    },
+    {
+     "word": "Kauft",
+     "start": 3.405
+    },
+    {
+     "word": "ein",
+     "start": 3.677
+    },
+    {
+     "word": "Sechsjähriger",
+     "start": 3.872
+    },
+    {
+     "word": "etwas,",
+     "start": 4.455
+    },
+    {
+     "word": "ist",
+     "start": 4.922
+    },
+    {
+     "word": "der",
+     "start": 5.116
+    },
+    {
+     "word": "Vertrag",
+     "start": 5.311
+    },
+    {
+     "word": "*nichtig*,",
+     "start": 5.661
+    },
+    {
+     "word": "also",
+     "start": 6.205
+    },
+    {
+     "word": "gar",
+     "start": 6.438
+    },
+    {
+     "word": "nicht",
+     "start": 6.633
+    },
+    {
+     "word": "vorhanden.",
+     "start": 6.905
+    },
+    {
+     "word": "Von",
+     "start": 7.527
+    },
+    {
+     "word": "*sieben",
+     "start": 7.721
+    },
+    {
+     "word": "bis",
+     "start": 8.032
+    },
+    {
+     "word": "siebzehn*",
+     "start": 8.227
+    },
+    {
+     "word": "ist",
+     "start": 8.616
+    },
+    {
+     "word": "man",
+     "start": 8.81
+    },
+    {
+     "word": "*beschränkt",
+     "start": 9.005
+    },
+    {
+     "word": "geschäftsfähig*.",
+     "start": 9.471
+    },
+    {
+     "word": "Der",
+     "start": 10.288
+    },
+    {
+     "word": "Vertrag",
+     "start": 10.482
+    },
+    {
+     "word": "ist",
+     "start": 10.832
+    },
+    {
+     "word": "dann",
+     "start": 11.027
+    },
+    {
+     "word": "*schwebend",
+     "start": 11.26
+    },
+    {
+     "word": "unwirksam*.",
+     "start": 11.688
+    },
+    {
+     "word": "Stell",
+     "start": 12.31
+    },
+    {
+     "word": "dir",
+     "start": 12.582
+    },
+    {
+     "word": "vor,",
+     "start": 12.776
+    },
+    {
+     "word": "er",
+     "start": 13.165
+    },
+    {
+     "word": "hängt",
+     "start": 13.321
+    },
+    {
+     "word": "in",
+     "start": 13.593
+    },
+    {
+     "word": "der",
+     "start": 13.749
+    },
+    {
+     "word": "Luft:",
+     "start": 13.943
+    },
+    {
+     "word": "Er",
+     "start": 14.371
+    },
+    {
+     "word": "wird",
+     "start": 14.526
+    },
+    {
+     "word": "erst",
+     "start": 14.76
+    },
+    {
+     "word": "gültig,",
+     "start": 14.993
+    },
+    {
+     "word": "wenn",
+     "start": 15.498
+    },
+    {
+     "word": "die",
+     "start": 15.732
+    },
+    {
+     "word": "*Eltern",
+     "start": 15.926
+    },
+    {
+     "word": "zustimmen*.",
+     "start": 16.237
+    },
+    {
+     "word": "Sagen",
+     "start": 16.859
+    },
+    {
+     "word": "sie",
+     "start": 17.131
+    },
+    {
+     "word": "Nein,",
+     "start": 17.326
+    },
+    {
+     "word": "fällt",
+     "start": 17.754
+    },
+    {
+     "word": "er",
+     "start": 18.026
+    },
+    {
+     "word": "runter.",
+     "start": 18.181
+    },
+    {
+     "word": "Und",
+     "start": 18.687
+    },
+    {
+     "word": "ab",
+     "start": 18.881
+    },
+    {
+     "word": "*achtzehn*",
+     "start": 19.037
+    },
+    {
+     "word": "bist",
+     "start": 19.426
+    },
+    {
+     "word": "du",
+     "start": 19.659
+    },
+    {
+     "word": "*voll",
+     "start": 19.815
+    },
+    {
+     "word": "geschäftsfähig*,",
+     "start": 20.048
+    },
+    {
+     "word": "dann",
+     "start": 20.864
+    },
+    {
+     "word": "gilt",
+     "start": 21.098
+    },
+    {
+     "word": "alles,",
+     "start": 21.331
+    },
+    {
+     "word": "was",
+     "start": 21.798
+    },
+    {
+     "word": "du",
+     "start": 21.992
+    },
+    {
+     "word": "unterschreibst.",
+     "start": 22.148
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-8.wav",
+   "seconds": 25.39,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "denkst",
+     "start": 0.378
+    },
+    {
+     "word": "du",
+     "start": 0.696
+    },
+    {
+     "word": "vielleicht:",
+     "start": 0.855
+    },
+    {
+     "word": "Moment,",
+     "start": 1.531
+    },
+    {
+     "word": "ich",
+     "start": 2.047
+    },
+    {
+     "word": "habe",
+     "start": 2.246
+    },
+    {
+     "word": "mit",
+     "start": 2.485
+    },
+    {
+     "word": "fünfzehn",
+     "start": 2.683
+    },
+    {
+     "word": "doch",
+     "start": 3.081
+    },
+    {
+     "word": "auch",
+     "start": 3.319
+    },
+    {
+     "word": "Döner",
+     "start": 3.558
+    },
+    {
+     "word": "gekauft,",
+     "start": 3.836
+    },
+    {
+     "word": "ohne",
+     "start": 4.392
+    },
+    {
+     "word": "meine",
+     "start": 4.631
+    },
+    {
+     "word": "Eltern",
+     "start": 4.909
+    },
+    {
+     "word": "zu",
+     "start": 5.227
+    },
+    {
+     "word": "fragen!",
+     "start": 5.386
+    },
+    {
+     "word": "Stimmt,",
+     "start": 5.903
+    },
+    {
+     "word": "dafür",
+     "start": 6.419
+    },
+    {
+     "word": "gibt",
+     "start": 6.697
+    },
+    {
+     "word": "es",
+     "start": 6.936
+    },
+    {
+     "word": "*Ausnahmen*.",
+     "start": 7.095
+    },
+    {
+     "word": "Erstens",
+     "start": 7.731
+    },
+    {
+     "word": "den",
+     "start": 8.089
+    },
+    {
+     "word": "*Taschengeldparagrafen*:",
+     "start": 8.287
+    },
+    {
+     "word": "Wenn",
+     "start": 9.4
+    },
+    {
+     "word": "du",
+     "start": 9.639
+    },
+    {
+     "word": "*sofort",
+     "start": 9.798
+    },
+    {
+     "word": "und",
+     "start": 10.115
+    },
+    {
+     "word": "komplett*",
+     "start": 10.314
+    },
+    {
+     "word": "mit",
+     "start": 10.712
+    },
+    {
+     "word": "deinem",
+     "start": 10.91
+    },
+    {
+     "word": "Taschengeld",
+     "start": 11.228
+    },
+    {
+     "word": "bezahlst,",
+     "start": 11.745
+    },
+    {
+     "word": "ist",
+     "start": 12.341
+    },
+    {
+     "word": "das",
+     "start": 12.54
+    },
+    {
+     "word": "gültig.",
+     "start": 12.739
+    },
+    {
+     "word": "Zweitens,",
+     "start": 13.255
+    },
+    {
+     "word": "wenn",
+     "start": 13.851
+    },
+    {
+     "word": "du",
+     "start": 14.09
+    },
+    {
+     "word": "*nur",
+     "start": 14.249
+    },
+    {
+     "word": "einen",
+     "start": 14.448
+    },
+    {
+     "word": "rechtlichen",
+     "start": 14.726
+    },
+    {
+     "word": "Vorteil*",
+     "start": 15.242
+    },
+    {
+     "word": "hast,",
+     "start": 15.6
+    },
+    {
+     "word": "zum",
+     "start": 16.037
+    },
+    {
+     "word": "Beispiel",
+     "start": 16.236
+    },
+    {
+     "word": "ein",
+     "start": 16.633
+    },
+    {
+     "word": "*Geschenk*.",
+     "start": 16.832
+    },
+    {
+     "word": "Und",
+     "start": 17.428
+    },
+    {
+     "word": "drittens",
+     "start": 17.627
+    },
+    {
+     "word": "Geschäfte",
+     "start": 18.025
+    },
+    {
+     "word": "rund",
+     "start": 18.462
+    },
+    {
+     "word": "um",
+     "start": 18.7
+    },
+    {
+     "word": "ein",
+     "start": 18.859
+    },
+    {
+     "word": "*Arbeits-",
+     "start": 19.058
+    },
+    {
+     "word": "oder",
+     "start": 19.416
+    },
+    {
+     "word": "Ausbildungsverhältnis*,",
+     "start": 19.654
+    },
+    {
+     "word": "das",
+     "start": 20.767
+    },
+    {
+     "word": "die",
+     "start": 20.966
+    },
+    {
+     "word": "Eltern",
+     "start": 21.164
+    },
+    {
+     "word": "erlaubt",
+     "start": 21.482
+    },
+    {
+     "word": "haben,",
+     "start": 21.84
+    },
+    {
+     "word": "zum",
+     "start": 22.317
+    },
+    {
+     "word": "Beispiel",
+     "start": 22.516
+    },
+    {
+     "word": "ein",
+     "start": 22.913
+    },
+    {
+     "word": "Konto",
+     "start": 23.112
+    },
+    {
+     "word": "für",
+     "start": 23.39
+    },
+    {
+     "word": "deine",
+     "start": 23.589
+    },
+    {
+     "word": "Ausbildungsvergütung.",
+     "start": 23.867
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-9.wav",
+   "seconds": 19.168,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "du:",
+     "start": 0.418
+    },
+    {
+     "word": "Ein",
+     "start": 0.827
+    },
+    {
+     "word": "*Sechzehnjähriger*",
+     "start": 1.054
+    },
+    {
+     "word": "kauft",
+     "start": 1.871
+    },
+    {
+     "word": "ein",
+     "start": 2.189
+    },
+    {
+     "word": "Handy",
+     "start": 2.416
+    },
+    {
+     "word": "auf",
+     "start": 2.734
+    },
+    {
+     "word": "*Raten*,",
+     "start": 2.961
+    },
+    {
+     "word": "mit",
+     "start": 3.506
+    },
+    {
+     "word": "seinem",
+     "start": 3.733
+    },
+    {
+     "word": "Taschengeld.",
+     "start": 4.096
+    },
+    {
+     "word": "Ist",
+     "start": 4.913
+    },
+    {
+     "word": "der",
+     "start": 5.14
+    },
+    {
+     "word": "Vertrag",
+     "start": 5.368
+    },
+    {
+     "word": "gültig?",
+     "start": 5.776
+    },
+    {
+     "word": "…",
+     "start": 6.367
+    },
+    {
+     "word": "Nein,",
+     "start": 6.457
+    },
+    {
+     "word": "noch",
+     "start": 6.957
+    },
+    {
+     "word": "nicht.",
+     "start": 7.229
+    },
+    {
+     "word": "Der",
+     "start": 7.774
+    },
+    {
+     "word": "Taschengeldparagraf",
+     "start": 8.001
+    },
+    {
+     "word": "gilt",
+     "start": 8.955
+    },
+    {
+     "word": "nur,",
+     "start": 9.227
+    },
+    {
+     "word": "wenn",
+     "start": 9.681
+    },
+    {
+     "word": "*sofort",
+     "start": 9.954
+    },
+    {
+     "word": "und",
+     "start": 10.317
+    },
+    {
+     "word": "komplett*",
+     "start": 10.544
+    },
+    {
+     "word": "bezahlt",
+     "start": 10.998
+    },
+    {
+     "word": "wird,",
+     "start": 11.407
+    },
+    {
+     "word": "und",
+     "start": 11.906
+    },
+    {
+     "word": "bei",
+     "start": 12.134
+    },
+    {
+     "word": "Raten",
+     "start": 12.361
+    },
+    {
+     "word": "ist",
+     "start": 12.678
+    },
+    {
+     "word": "das",
+     "start": 12.905
+    },
+    {
+     "word": "nicht",
+     "start": 13.133
+    },
+    {
+     "word": "so.",
+     "start": 13.45
+    },
+    {
+     "word": "Also",
+     "start": 13.859
+    },
+    {
+     "word": "ist",
+     "start": 14.132
+    },
+    {
+     "word": "der",
+     "start": 14.359
+    },
+    {
+     "word": "Vertrag",
+     "start": 14.586
+    },
+    {
+     "word": "*schwebend",
+     "start": 14.994
+    },
+    {
+     "word": "unwirksam*.",
+     "start": 15.494
+    },
+    {
+     "word": "Sagen",
+     "start": 16.22
+    },
+    {
+     "word": "die",
+     "start": 16.538
+    },
+    {
+     "word": "Eltern",
+     "start": 16.765
+    },
+    {
+     "word": "Nein,",
+     "start": 17.129
+    },
+    {
+     "word": "ist",
+     "start": 17.628
+    },
+    {
+     "word": "er",
+     "start": 17.855
+    },
+    {
+     "word": "*ungültig*.",
+     "start": 18.037
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-10.wav",
+   "seconds": 3.087,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "drei:",
+     "start": 0.382
+    },
+    {
+     "word": "*Willenserklärung",
+     "start": 0.825
+    },
+    {
+     "word": "und",
+     "start": 1.55
+    },
+    {
+     "word": "Rechtsgeschäfte*.",
+     "start": 1.751
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-11.wav",
+   "seconds": 15.77,
+   "words": [
+    {
+     "word": "Eine",
+     "start": 0.1
+    },
+    {
+     "word": "*Willenserklärung*",
+     "start": 0.352
+    },
+    {
+     "word": "ist",
+     "start": 1.109
+    },
+    {
+     "word": "einfach",
+     "start": 1.319
+    },
+    {
+     "word": "gesagt:",
+     "start": 1.698
+    },
+    {
+     "word": "Du",
+     "start": 2.244
+    },
+    {
+     "word": "zeigst,",
+     "start": 2.412
+    },
+    {
+     "word": "dass",
+     "start": 2.959
+    },
+    {
+     "word": "du",
+     "start": 3.211
+    },
+    {
+     "word": "etwas",
+     "start": 3.379
+    },
+    {
+     "word": "*rechtlich*",
+     "start": 3.674
+    },
+    {
+     "word": "willst.",
+     "start": 4.136
+    },
+    {
+     "word": "Das",
+     "start": 4.683
+    },
+    {
+     "word": "kann",
+     "start": 4.893
+    },
+    {
+     "word": "*mündlich*",
+     "start": 5.145
+    },
+    {
+     "word": "sein,",
+     "start": 5.566
+    },
+    {
+     "word": "*schriftlich*,",
+     "start": 6.028
+    },
+    {
+     "word": "oder",
+     "start": 6.785
+    },
+    {
+     "word": "sogar",
+     "start": 7.037
+    },
+    {
+     "word": "nur",
+     "start": 7.331
+    },
+    {
+     "word": "durch",
+     "start": 7.542
+    },
+    {
+     "word": "*Handeln*.",
+     "start": 7.836
+    },
+    {
+     "word": "Wenn",
+     "start": 8.425
+    },
+    {
+     "word": "du",
+     "start": 8.677
+    },
+    {
+     "word": "im",
+     "start": 8.845
+    },
+    {
+     "word": "Supermarkt",
+     "start": 9.013
+    },
+    {
+     "word": "wortlos",
+     "start": 9.518
+    },
+    {
+     "word": "die",
+     "start": 9.896
+    },
+    {
+     "word": "Milch",
+     "start": 10.106
+    },
+    {
+     "word": "aufs",
+     "start": 10.401
+    },
+    {
+     "word": "Band",
+     "start": 10.653
+    },
+    {
+     "word": "legst,",
+     "start": 10.905
+    },
+    {
+     "word": "ist",
+     "start": 11.41
+    },
+    {
+     "word": "das",
+     "start": 11.62
+    },
+    {
+     "word": "auch",
+     "start": 11.83
+    },
+    {
+     "word": "eine",
+     "start": 12.082
+    },
+    {
+     "word": "Willenserklärung.",
+     "start": 12.335
+    },
+    {
+     "word": "Jeder",
+     "start": 13.302
+    },
+    {
+     "word": "weiß:",
+     "start": 13.596
+    },
+    {
+     "word": "Du",
+     "start": 14.058
+    },
+    {
+     "word": "willst",
+     "start": 14.227
+    },
+    {
+     "word": "die",
+     "start": 14.563
+    },
+    {
+     "word": "kaufen.",
+     "start": 14.773
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-12.wav",
+   "seconds": 21.457,
+   "words": [
+    {
+     "word": "Aus",
+     "start": 0.1
+    },
+    {
+     "word": "Willenserklärungen",
+     "start": 0.317
+    },
+    {
+     "word": "werden",
+     "start": 1.187
+    },
+    {
+     "word": "*Rechtsgeschäfte*.",
+     "start": 1.534
+    },
+    {
+     "word": "Manchmal",
+     "start": 2.491
+    },
+    {
+     "word": "reicht",
+     "start": 2.925
+    },
+    {
+     "word": "*eine*",
+     "start": 3.273
+    },
+    {
+     "word": "einzige,",
+     "start": 3.534
+    },
+    {
+     "word": "das",
+     "start": 4.142
+    },
+    {
+     "word": "nennt",
+     "start": 4.36
+    },
+    {
+     "word": "man",
+     "start": 4.664
+    },
+    {
+     "word": "*einseitig*.",
+     "start": 4.881
+    },
+    {
+     "word": "Beispiel:",
+     "start": 5.577
+    },
+    {
+     "word": "Du",
+     "start": 6.229
+    },
+    {
+     "word": "*kündigst*",
+     "start": 6.403
+    },
+    {
+     "word": "deinen",
+     "start": 6.837
+    },
+    {
+     "word": "Handyvertrag.",
+     "start": 7.185
+    },
+    {
+     "word": "Da",
+     "start": 8.011
+    },
+    {
+     "word": "muss",
+     "start": 8.185
+    },
+    {
+     "word": "niemand",
+     "start": 8.446
+    },
+    {
+     "word": "zustimmen.",
+     "start": 8.837
+    },
+    {
+     "word": "Oder",
+     "start": 9.532
+    },
+    {
+     "word": "ein",
+     "start": 9.793
+    },
+    {
+     "word": "*Testament*.",
+     "start": 10.01
+    },
+    {
+     "word": "Meistens",
+     "start": 10.706
+    },
+    {
+     "word": "braucht",
+     "start": 11.14
+    },
+    {
+     "word": "man",
+     "start": 11.532
+    },
+    {
+     "word": "aber",
+     "start": 11.749
+    },
+    {
+     "word": "*zwei*,",
+     "start": 12.01
+    },
+    {
+     "word": "die",
+     "start": 12.488
+    },
+    {
+     "word": "zusammenpassen,",
+     "start": 12.705
+    },
+    {
+     "word": "das",
+     "start": 13.618
+    },
+    {
+     "word": "ist",
+     "start": 13.835
+    },
+    {
+     "word": "*zweiseitig*,",
+     "start": 14.053
+    },
+    {
+     "word": "also",
+     "start": 14.792
+    },
+    {
+     "word": "ein",
+     "start": 15.052
+    },
+    {
+     "word": "*Vertrag*.",
+     "start": 15.27
+    },
+    {
+     "word": "Beim",
+     "start": 15.878
+    },
+    {
+     "word": "Kaufvertrag",
+     "start": 16.139
+    },
+    {
+     "word": "sagst",
+     "start": 16.704
+    },
+    {
+     "word": "du:",
+     "start": 17.008
+    },
+    {
+     "word": "Ich",
+     "start": 17.4
+    },
+    {
+     "word": "will",
+     "start": 17.617
+    },
+    {
+     "word": "kaufen,",
+     "start": 17.878
+    },
+    {
+     "word": "und",
+     "start": 18.443
+    },
+    {
+     "word": "der",
+     "start": 18.66
+    },
+    {
+     "word": "Verkäufer",
+     "start": 18.877
+    },
+    {
+     "word": "sagt:",
+     "start": 19.356
+    },
+    {
+     "word": "Ich",
+     "start": 19.834
+    },
+    {
+     "word": "will",
+     "start": 20.051
+    },
+    {
+     "word": "verkaufen.",
+     "start": 20.312
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-13.wav",
+   "seconds": 4.721,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "Reicht",
+     "start": 0.555
+    },
+    {
+     "word": "*einer*,",
+     "start": 0.858
+    },
+    {
+     "word": "ist",
+     "start": 1.313
+    },
+    {
+     "word": "es",
+     "start": 1.503
+    },
+    {
+     "word": "*einseitig*.",
+     "start": 1.655
+    },
+    {
+     "word": "Braucht",
+     "start": 2.261
+    },
+    {
+     "word": "man",
+     "start": 2.602
+    },
+    {
+     "word": "*zwei*,",
+     "start": 2.792
+    },
+    {
+     "word": "ist",
+     "start": 3.209
+    },
+    {
+     "word": "es",
+     "start": 3.399
+    },
+    {
+     "word": "ein",
+     "start": 3.55
+    },
+    {
+     "word": "*Vertrag*.",
+     "start": 3.74
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-14.wav",
+   "seconds": 4.298,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "vier:",
+     "start": 0.365
+    },
+    {
+     "word": "*Formvorschriften*.",
+     "start": 0.781
+    },
+    {
+     "word": "Also:",
+     "start": 1.652
+    },
+    {
+     "word": "Muss",
+     "start": 2.068
+    },
+    {
+     "word": "das",
+     "start": 2.296
+    },
+    {
+     "word": "eigentlich",
+     "start": 2.485
+    },
+    {
+     "word": "schriftlich",
+     "start": 2.939
+    },
+    {
+     "word": "sein?",
+     "start": 3.431
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-15.wav",
+   "seconds": 11.515,
+   "words": [
+    {
+     "word": "Formvorschriften",
+     "start": 0.1
+    },
+    {
+     "word": "sagen,",
+     "start": 0.783
+    },
+    {
+     "word": "*in",
+     "start": 1.238
+    },
+    {
+     "word": "welcher",
+     "start": 1.39
+    },
+    {
+     "word": "Form*",
+     "start": 1.731
+    },
+    {
+     "word": "ein",
+     "start": 1.959
+    },
+    {
+     "word": "Rechtsgeschäft",
+     "start": 2.149
+    },
+    {
+     "word": "gemacht",
+     "start": 2.756
+    },
+    {
+     "word": "werden",
+     "start": 3.097
+    },
+    {
+     "word": "muss.",
+     "start": 3.401
+    },
+    {
+     "word": "Und",
+     "start": 3.818
+    },
+    {
+     "word": "jetzt",
+     "start": 4.008
+    },
+    {
+     "word": "die",
+     "start": 4.273
+    },
+    {
+     "word": "gute",
+     "start": 4.463
+    },
+    {
+     "word": "Nachricht:",
+     "start": 4.691
+    },
+    {
+     "word": "Der",
+     "start": 5.298
+    },
+    {
+     "word": "*Grundsatz*",
+     "start": 5.488
+    },
+    {
+     "word": "ist",
+     "start": 5.905
+    },
+    {
+     "word": "*formfrei*.",
+     "start": 6.095
+    },
+    {
+     "word": "Fast",
+     "start": 6.664
+    },
+    {
+     "word": "alles",
+     "start": 6.891
+    },
+    {
+     "word": "kannst",
+     "start": 7.157
+    },
+    {
+     "word": "du",
+     "start": 7.461
+    },
+    {
+     "word": "mündlich",
+     "start": 7.612
+    },
+    {
+     "word": "abschließen,",
+     "start": 7.992
+    },
+    {
+     "word": "dein",
+     "start": 8.675
+    },
+    {
+     "word": "Brötchen",
+     "start": 8.902
+    },
+    {
+     "word": "kaufst",
+     "start": 9.282
+    },
+    {
+     "word": "du",
+     "start": 9.585
+    },
+    {
+     "word": "ja",
+     "start": 9.737
+    },
+    {
+     "word": "auch",
+     "start": 9.889
+    },
+    {
+     "word": "nicht",
+     "start": 10.116
+    },
+    {
+     "word": "schriftlich.",
+     "start": 10.382
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-16.wav",
+   "seconds": 31.987,
+   "words": [
+    {
+     "word": "Bei",
+     "start": 0.1
+    },
+    {
+     "word": "*wichtigen*",
+     "start": 0.321
+    },
+    {
+     "word": "Dingen",
+     "start": 0.808
+    },
+    {
+     "word": "gibt",
+     "start": 1.163
+    },
+    {
+     "word": "es",
+     "start": 1.428
+    },
+    {
+     "word": "aber",
+     "start": 1.605
+    },
+    {
+     "word": "Ausnahmen,",
+     "start": 1.871
+    },
+    {
+     "word": "und",
+     "start": 2.58
+    },
+    {
+     "word": "die",
+     "start": 2.801
+    },
+    {
+     "word": "steigen",
+     "start": 3.022
+    },
+    {
+     "word": "wie",
+     "start": 3.421
+    },
+    {
+     "word": "eine",
+     "start": 3.642
+    },
+    {
+     "word": "Treppe.",
+     "start": 3.908
+    },
+    {
+     "word": "Die",
+     "start": 4.483
+    },
+    {
+     "word": "*Schriftform*:",
+     "start": 4.705
+    },
+    {
+     "word": "Du",
+     "start": 5.502
+    },
+    {
+     "word": "musst",
+     "start": 5.679
+    },
+    {
+     "word": "*eigenhändig",
+     "start": 5.989
+    },
+    {
+     "word": "unterschreiben*.",
+     "start": 6.565
+    },
+    {
+     "word": "Zum",
+     "start": 7.494
+    },
+    {
+     "word": "Beispiel",
+     "start": 7.716
+    },
+    {
+     "word": "bei",
+     "start": 8.159
+    },
+    {
+     "word": "der",
+     "start": 8.38
+    },
+    {
+     "word": "*Kündigung*",
+     "start": 8.601
+    },
+    {
+     "word": "eines",
+     "start": 9.088
+    },
+    {
+     "word": "Arbeitsvertrags,",
+     "start": 9.398
+    },
+    {
+     "word": "bei",
+     "start": 10.372
+    },
+    {
+     "word": "einer",
+     "start": 10.594
+    },
+    {
+     "word": "*Bürgschaft*,",
+     "start": 10.904
+    },
+    {
+     "word": "einem",
+     "start": 11.656
+    },
+    {
+     "word": "*Verbraucherdarlehen*",
+     "start": 11.966
+    },
+    {
+     "word": "und",
+     "start": 12.896
+    },
+    {
+     "word": "beim",
+     "start": 13.118
+    },
+    {
+     "word": "*Mietvertrag",
+     "start": 13.383
+    },
+    {
+     "word": "über",
+     "start": 13.959
+    },
+    {
+     "word": "ein",
+     "start": 14.225
+    },
+    {
+     "word": "Jahr*.",
+     "start": 14.446
+    },
+    {
+     "word": "Eine",
+     "start": 14.933
+    },
+    {
+     "word": "Stufe",
+     "start": 15.199
+    },
+    {
+     "word": "höher",
+     "start": 15.509
+    },
+    {
+     "word": "die",
+     "start": 15.819
+    },
+    {
+     "word": "*öffentliche",
+     "start": 16.04
+    },
+    {
+     "word": "Beglaubigung*:",
+     "start": 16.616
+    },
+    {
+     "word": "Ein",
+     "start": 17.457
+    },
+    {
+     "word": "Notar",
+     "start": 17.678
+    },
+    {
+     "word": "bestätigt,",
+     "start": 17.988
+    },
+    {
+     "word": "dass",
+     "start": 18.697
+    },
+    {
+     "word": "die",
+     "start": 18.962
+    },
+    {
+     "word": "*Unterschrift*",
+     "start": 19.184
+    },
+    {
+     "word": "wirklich",
+     "start": 19.804
+    },
+    {
+     "word": "von",
+     "start": 20.246
+    },
+    {
+     "word": "dir",
+     "start": 20.468
+    },
+    {
+     "word": "ist,",
+     "start": 20.689
+    },
+    {
+     "word": "zum",
+     "start": 21.132
+    },
+    {
+     "word": "Beispiel",
+     "start": 21.353
+    },
+    {
+     "word": "für",
+     "start": 21.796
+    },
+    {
+     "word": "das",
+     "start": 22.017
+    },
+    {
+     "word": "Handelsregister.",
+     "start": 22.239
+    },
+    {
+     "word": "Und",
+     "start": 23.213
+    },
+    {
+     "word": "ganz",
+     "start": 23.434
+    },
+    {
+     "word": "oben",
+     "start": 23.7
+    },
+    {
+     "word": "die",
+     "start": 23.966
+    },
+    {
+     "word": "*notarielle",
+     "start": 24.187
+    },
+    {
+     "word": "Beurkundung*:",
+     "start": 24.718
+    },
+    {
+     "word": "Der",
+     "start": 25.515
+    },
+    {
+     "word": "Notar",
+     "start": 25.737
+    },
+    {
+     "word": "schreibt",
+     "start": 26.047
+    },
+    {
+     "word": "den",
+     "start": 26.489
+    },
+    {
+     "word": "*ganzen",
+     "start": 26.711
+    },
+    {
+     "word": "Vertrag*,",
+     "start": 27.065
+    },
+    {
+     "word": "liest",
+     "start": 27.685
+    },
+    {
+     "word": "ihn",
+     "start": 27.995
+    },
+    {
+     "word": "vor",
+     "start": 28.216
+    },
+    {
+     "word": "und",
+     "start": 28.438
+    },
+    {
+     "word": "*berät*",
+     "start": 28.659
+    },
+    {
+     "word": "dich.",
+     "start": 28.969
+    },
+    {
+     "word": "Das",
+     "start": 29.456
+    },
+    {
+     "word": "braucht",
+     "start": 29.677
+    },
+    {
+     "word": "man",
+     "start": 30.076
+    },
+    {
+     "word": "beim",
+     "start": 30.297
+    },
+    {
+     "word": "*Grundstückskauf*.",
+     "start": 30.563
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-17.wav",
+   "seconds": 18.589,
+   "words": [
+    {
+     "word": "Warum",
+     "start": 0.1
+    },
+    {
+     "word": "macht",
+     "start": 0.387
+    },
+    {
+     "word": "man",
+     "start": 0.674
+    },
+    {
+     "word": "das?",
+     "start": 0.879
+    },
+    {
+     "word": "Erstens",
+     "start": 1.289
+    },
+    {
+     "word": "als",
+     "start": 1.658
+    },
+    {
+     "word": "*Beweis*,",
+     "start": 1.863
+    },
+    {
+     "word": "später",
+     "start": 2.396
+    },
+    {
+     "word": "kann",
+     "start": 2.724
+    },
+    {
+     "word": "keiner",
+     "start": 2.97
+    },
+    {
+     "word": "sagen:",
+     "start": 3.298
+    },
+    {
+     "word": "Das",
+     "start": 3.79
+    },
+    {
+     "word": "habe",
+     "start": 3.995
+    },
+    {
+     "word": "ich",
+     "start": 4.241
+    },
+    {
+     "word": "nie",
+     "start": 4.446
+    },
+    {
+     "word": "gesagt.",
+     "start": 4.651
+    },
+    {
+     "word": "Zweitens",
+     "start": 5.184
+    },
+    {
+     "word": "als",
+     "start": 5.594
+    },
+    {
+     "word": "Schutz",
+     "start": 5.799
+    },
+    {
+     "word": "vor",
+     "start": 6.127
+    },
+    {
+     "word": "*übereilten",
+     "start": 6.332
+    },
+    {
+     "word": "Entscheidungen*,",
+     "start": 6.824
+    },
+    {
+     "word": "ein",
+     "start": 7.685
+    },
+    {
+     "word": "Haus",
+     "start": 7.89
+    },
+    {
+     "word": "kauft",
+     "start": 8.136
+    },
+    {
+     "word": "man",
+     "start": 8.423
+    },
+    {
+     "word": "nicht",
+     "start": 8.628
+    },
+    {
+     "word": "spontan.",
+     "start": 8.915
+    },
+    {
+     "word": "Und",
+     "start": 9.489
+    },
+    {
+     "word": "drittens,",
+     "start": 9.694
+    },
+    {
+     "word": "damit",
+     "start": 10.309
+    },
+    {
+     "word": "man",
+     "start": 10.596
+    },
+    {
+     "word": "*beraten*",
+     "start": 10.801
+    },
+    {
+     "word": "wird.",
+     "start": 11.17
+    },
+    {
+     "word": "Und",
+     "start": 11.621
+    },
+    {
+     "word": "was",
+     "start": 11.826
+    },
+    {
+     "word": "passiert,",
+     "start": 12.031
+    },
+    {
+     "word": "wenn",
+     "start": 12.646
+    },
+    {
+     "word": "die",
+     "start": 12.892
+    },
+    {
+     "word": "Form",
+     "start": 13.097
+    },
+    {
+     "word": "fehlt?",
+     "start": 13.343
+    },
+    {
+     "word": "Dann",
+     "start": 13.835
+    },
+    {
+     "word": "ist",
+     "start": 14.081
+    },
+    {
+     "word": "der",
+     "start": 14.286
+    },
+    {
+     "word": "Vertrag",
+     "start": 14.491
+    },
+    {
+     "word": "*nichtig*.",
+     "start": 14.859
+    },
+    {
+     "word": "Ein",
+     "start": 15.433
+    },
+    {
+     "word": "Grundstück",
+     "start": 15.638
+    },
+    {
+     "word": "per",
+     "start": 16.13
+    },
+    {
+     "word": "Handschlag",
+     "start": 16.335
+    },
+    {
+     "word": "kaufen",
+     "start": 16.827
+    },
+    {
+     "word": "geht",
+     "start": 17.155
+    },
+    {
+     "word": "also",
+     "start": 17.401
+    },
+    {
+     "word": "nicht.",
+     "start": 17.647
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-18.wav",
+   "seconds": 4.816,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "*Normal*",
+     "start": 0.662
+    },
+    {
+     "word": "ist",
+     "start": 1.037
+    },
+    {
+     "word": "*formfrei*.",
+     "start": 1.272
+    },
+    {
+     "word": "Bei",
+     "start": 1.975
+    },
+    {
+     "word": "*wichtigen*",
+     "start": 2.209
+    },
+    {
+     "word": "Sachen",
+     "start": 2.725
+    },
+    {
+     "word": "*Schrift*",
+     "start": 3.1
+    },
+    {
+     "word": "oder",
+     "start": 3.522
+    },
+    {
+     "word": "*Notar*.",
+     "start": 3.803
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-19.wav",
+   "seconds": 5.176,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "fünf:",
+     "start": 0.365
+    },
+    {
+     "word": "*nichtig",
+     "start": 0.783
+    },
+    {
+     "word": "und",
+     "start": 1.124
+    },
+    {
+     "word": "anfechtbar*.",
+     "start": 1.313
+    },
+    {
+     "word": "Zwei",
+     "start": 1.958
+    },
+    {
+     "word": "Wörter,",
+     "start": 2.186
+    },
+    {
+     "word": "die",
+     "start": 2.679
+    },
+    {
+     "word": "in",
+     "start": 2.868
+    },
+    {
+     "word": "der",
+     "start": 3.02
+    },
+    {
+     "word": "Prüfung",
+     "start": 3.21
+    },
+    {
+     "word": "oft",
+     "start": 3.551
+    },
+    {
+     "word": "verwechselt",
+     "start": 3.74
+    },
+    {
+     "word": "werden.",
+     "start": 4.233
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-0-20.wav",
+   "seconds": 16.386,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.1
+    },
+    {
+     "word": "Unterschied",
+     "start": 0.304
+    },
+    {
+     "word": "ist",
+     "start": 0.833
+    },
+    {
+     "word": "eigentlich",
+     "start": 1.036
+    },
+    {
+     "word": "schön",
+     "start": 1.525
+    },
+    {
+     "word": "zu",
+     "start": 1.81
+    },
+    {
+     "word": "merken.",
+     "start": 1.973
+    },
+    {
+     "word": "*Nichtig*",
+     "start": 2.502
+    },
+    {
+     "word": "heißt:",
+     "start": 2.868
+    },
+    {
+     "word": "Der",
+     "start": 3.357
+    },
+    {
+     "word": "Vertrag",
+     "start": 3.56
+    },
+    {
+     "word": "war",
+     "start": 3.927
+    },
+    {
+     "word": "*von",
+     "start": 4.13
+    },
+    {
+     "word": "Anfang",
+     "start": 4.334
+    },
+    {
+     "word": "an*",
+     "start": 4.659
+    },
+    {
+     "word": "ungültig.",
+     "start": 4.822
+    },
+    {
+     "word": "Er",
+     "start": 5.433
+    },
+    {
+     "word": "hat",
+     "start": 5.596
+    },
+    {
+     "word": "nie",
+     "start": 5.799
+    },
+    {
+     "word": "existiert.",
+     "start": 6.003
+    },
+    {
+     "word": "*Anfechtbar*",
+     "start": 6.654
+    },
+    {
+     "word": "heißt:",
+     "start": 7.143
+    },
+    {
+     "word": "Der",
+     "start": 7.631
+    },
+    {
+     "word": "Vertrag",
+     "start": 7.835
+    },
+    {
+     "word": "ist",
+     "start": 8.201
+    },
+    {
+     "word": "erst",
+     "start": 8.405
+    },
+    {
+     "word": "einmal",
+     "start": 8.649
+    },
+    {
+     "word": "ganz",
+     "start": 8.975
+    },
+    {
+     "word": "normal",
+     "start": 9.219
+    },
+    {
+     "word": "*gültig*.",
+     "start": 9.545
+    },
+    {
+     "word": "Aber",
+     "start": 10.074
+    },
+    {
+     "word": "einer",
+     "start": 10.318
+    },
+    {
+     "word": "darf",
+     "start": 10.603
+    },
+    {
+     "word": "ihn",
+     "start": 10.847
+    },
+    {
+     "word": "*anfechten*,",
+     "start": 11.051
+    },
+    {
+     "word": "und",
+     "start": 11.702
+    },
+    {
+     "word": "dann",
+     "start": 11.906
+    },
+    {
+     "word": "wird",
+     "start": 12.15
+    },
+    {
+     "word": "er",
+     "start": 12.394
+    },
+    {
+     "word": "*rückwirkend*",
+     "start": 12.557
+    },
+    {
+     "word": "ungültig,",
+     "start": 13.086
+    },
+    {
+     "word": "also",
+     "start": 13.697
+    },
+    {
+     "word": "so,",
+     "start": 13.941
+    },
+    {
+     "word": "als",
+     "start": 14.308
+    },
+    {
+     "word": "hätte",
+     "start": 14.511
+    },
+    {
+     "word": "es",
+     "start": 14.796
+    },
+    {
+     "word": "ihn",
+     "start": 14.959
+    },
+    {
+     "word": "nie",
+     "start": 15.162
+    },
+    {
+     "word": "gegeben.",
+     "start": 15.366
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-0.wav",
+   "seconds": 34.417,
+   "words": [
+    {
+     "word": "Wann",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.373
+    },
+    {
+     "word": "ein",
+     "start": 0.6
+    },
+    {
+     "word": "Vertrag",
+     "start": 0.827
+    },
+    {
+     "word": "*nichtig*?",
+     "start": 1.236
+    },
+    {
+     "word": "Bei",
+     "start": 1.873
+    },
+    {
+     "word": "*Geschäftsunfähigen*,",
+     "start": 2.1
+    },
+    {
+     "word": "also",
+     "start": 3.237
+    },
+    {
+     "word": "unter",
+     "start": 3.509
+    },
+    {
+     "word": "sieben.",
+     "start": 3.828
+    },
+    {
+     "word": "Bei",
+     "start": 4.419
+    },
+    {
+     "word": "einem",
+     "start": 4.646
+    },
+    {
+     "word": "*Formfehler*.",
+     "start": 4.964
+    },
+    {
+     "word": "Wenn",
+     "start": 5.737
+    },
+    {
+     "word": "er",
+     "start": 6.01
+    },
+    {
+     "word": "gegen",
+     "start": 6.191
+    },
+    {
+     "word": "ein",
+     "start": 6.51
+    },
+    {
+     "word": "*Gesetz*",
+     "start": 6.737
+    },
+    {
+     "word": "verstößt,",
+     "start": 7.101
+    },
+    {
+     "word": "zum",
+     "start": 7.783
+    },
+    {
+     "word": "Beispiel",
+     "start": 8.01
+    },
+    {
+     "word": "ein",
+     "start": 8.464
+    },
+    {
+     "word": "Drogenverkauf,",
+     "start": 8.692
+    },
+    {
+     "word": "oder",
+     "start": 9.601
+    },
+    {
+     "word": "gegen",
+     "start": 9.874
+    },
+    {
+     "word": "die",
+     "start": 10.192
+    },
+    {
+     "word": "*guten",
+     "start": 10.419
+    },
+    {
+     "word": "Sitten*,",
+     "start": 10.737
+    },
+    {
+     "word": "zum",
+     "start": 11.328
+    },
+    {
+     "word": "Beispiel",
+     "start": 11.556
+    },
+    {
+     "word": "*Wucher*,",
+     "start": 12.01
+    },
+    {
+     "word": "also",
+     "start": 12.601
+    },
+    {
+     "word": "ein",
+     "start": 12.874
+    },
+    {
+     "word": "völlig",
+     "start": 13.101
+    },
+    {
+     "word": "überzogener",
+     "start": 13.465
+    },
+    {
+     "word": "Preis,",
+     "start": 14.056
+    },
+    {
+     "word": "weil",
+     "start": 14.601
+    },
+    {
+     "word": "jemand",
+     "start": 14.874
+    },
+    {
+     "word": "in",
+     "start": 15.238
+    },
+    {
+     "word": "einer",
+     "start": 15.42
+    },
+    {
+     "word": "Notlage",
+     "start": 15.738
+    },
+    {
+     "word": "ist.",
+     "start": 16.147
+    },
+    {
+     "word": "Und",
+     "start": 16.602
+    },
+    {
+     "word": "bei",
+     "start": 16.829
+    },
+    {
+     "word": "*Scherz-",
+     "start": 17.056
+    },
+    {
+     "word": "und",
+     "start": 17.42
+    },
+    {
+     "word": "Scheingeschäften*.",
+     "start": 17.647
+    },
+    {
+     "word": "Wann",
+     "start": 18.693
+    },
+    {
+     "word": "ist",
+     "start": 18.965
+    },
+    {
+     "word": "er",
+     "start": 19.193
+    },
+    {
+     "word": "*anfechtbar*?",
+     "start": 19.374
+    },
+    {
+     "word": "Bei",
+     "start": 20.147
+    },
+    {
+     "word": "einem",
+     "start": 20.375
+    },
+    {
+     "word": "*Irrtum*:",
+     "start": 20.693
+    },
+    {
+     "word": "Du",
+     "start": 21.284
+    },
+    {
+     "word": "hast",
+     "start": 21.466
+    },
+    {
+     "word": "dich",
+     "start": 21.738
+    },
+    {
+     "word": "*verschrieben*,",
+     "start": 22.011
+    },
+    {
+     "word": "zum",
+     "start": 22.875
+    },
+    {
+     "word": "Beispiel",
+     "start": 23.102
+    },
+    {
+     "word": "hundert",
+     "start": 23.557
+    },
+    {
+     "word": "statt",
+     "start": 23.966
+    },
+    {
+     "word": "zehn",
+     "start": 24.284
+    },
+    {
+     "word": "Euro.",
+     "start": 24.557
+    },
+    {
+     "word": "Dann",
+     "start": 25.057
+    },
+    {
+     "word": "musst",
+     "start": 25.33
+    },
+    {
+     "word": "du",
+     "start": 25.648
+    },
+    {
+     "word": "*sofort*",
+     "start": 25.83
+    },
+    {
+     "word": "anfechten.",
+     "start": 26.193
+    },
+    {
+     "word": "Bei",
+     "start": 26.921
+    },
+    {
+     "word": "*arglistiger",
+     "start": 27.148
+    },
+    {
+     "word": "Täuschung*,",
+     "start": 27.739
+    },
+    {
+     "word": "also",
+     "start": 28.466
+    },
+    {
+     "word": "wenn",
+     "start": 28.739
+    },
+    {
+     "word": "dich",
+     "start": 29.012
+    },
+    {
+     "word": "jemand",
+     "start": 29.285
+    },
+    {
+     "word": "absichtlich",
+     "start": 29.648
+    },
+    {
+     "word": "anlügt,",
+     "start": 30.239
+    },
+    {
+     "word": "und",
+     "start": 30.83
+    },
+    {
+     "word": "bei",
+     "start": 31.057
+    },
+    {
+     "word": "*widerrechtlicher",
+     "start": 31.285
+    },
+    {
+     "word": "Drohung*",
+     "start": 32.103
+    },
+    {
+     "word": "hast",
+     "start": 32.512
+    },
+    {
+     "word": "du",
+     "start": 32.785
+    },
+    {
+     "word": "*ein",
+     "start": 32.967
+    },
+    {
+     "word": "Jahr*",
+     "start": 33.194
+    },
+    {
+     "word": "Zeit.",
+     "start": 33.467
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-1.wav",
+   "seconds": 16.953,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Fall",
+     "start": 0.32
+    },
+    {
+     "word": "für",
+     "start": 0.585
+    },
+    {
+     "word": "dich:",
+     "start": 0.806
+    },
+    {
+     "word": "Ein",
+     "start": 1.291
+    },
+    {
+     "word": "Händler",
+     "start": 1.511
+    },
+    {
+     "word": "verkauft",
+     "start": 1.908
+    },
+    {
+     "word": "Lukas",
+     "start": 2.349
+    },
+    {
+     "word": "einen",
+     "start": 2.657
+    },
+    {
+     "word": "Gebrauchtwagen",
+     "start": 2.966
+    },
+    {
+     "word": "und",
+     "start": 3.672
+    },
+    {
+     "word": "*verschweigt*",
+     "start": 3.892
+    },
+    {
+     "word": "absichtlich",
+     "start": 4.465
+    },
+    {
+     "word": "einen",
+     "start": 5.039
+    },
+    {
+     "word": "*Unfallschaden*.",
+     "start": 5.347
+    },
+    {
+     "word": "Nichtig",
+     "start": 6.229
+    },
+    {
+     "word": "oder",
+     "start": 6.626
+    },
+    {
+     "word": "anfechtbar?",
+     "start": 6.891
+    },
+    {
+     "word": "…",
+     "start": 7.64
+    },
+    {
+     "word": "*Anfechtbar*,",
+     "start": 7.728
+    },
+    {
+     "word": "wegen",
+     "start": 8.478
+    },
+    {
+     "word": "arglistiger",
+     "start": 8.787
+    },
+    {
+     "word": "*Täuschung*.",
+     "start": 9.36
+    },
+    {
+     "word": "Lukas",
+     "start": 10.065
+    },
+    {
+     "word": "ficht",
+     "start": 10.374
+    },
+    {
+     "word": "an,",
+     "start": 10.683
+    },
+    {
+     "word": "der",
+     "start": 11.08
+    },
+    {
+     "word": "Vertrag",
+     "start": 11.3
+    },
+    {
+     "word": "wird",
+     "start": 11.697
+    },
+    {
+     "word": "ungültig,",
+     "start": 11.961
+    },
+    {
+     "word": "und",
+     "start": 12.623
+    },
+    {
+     "word": "beide",
+     "start": 12.843
+    },
+    {
+     "word": "bekommen",
+     "start": 13.152
+    },
+    {
+     "word": "zurück,",
+     "start": 13.593
+    },
+    {
+     "word": "was",
+     "start": 14.166
+    },
+    {
+     "word": "sie",
+     "start": 14.387
+    },
+    {
+     "word": "gegeben",
+     "start": 14.607
+    },
+    {
+     "word": "haben:",
+     "start": 15.004
+    },
+    {
+     "word": "Auto",
+     "start": 15.533
+    },
+    {
+     "word": "und",
+     "start": 15.798
+    },
+    {
+     "word": "Geld.",
+     "start": 16.018
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-2.wav",
+   "seconds": 5.844,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "das",
+     "start": 0.33
+    },
+    {
+     "word": "Merke",
+     "start": 0.56
+    },
+    {
+     "word": "als",
+     "start": 0.883
+    },
+    {
+     "word": "Bild:",
+     "start": 1.113
+    },
+    {
+     "word": "*Nichtig*",
+     "start": 1.619
+    },
+    {
+     "word": "ist",
+     "start": 2.033
+    },
+    {
+     "word": "*sofort",
+     "start": 2.264
+    },
+    {
+     "word": "tot*.",
+     "start": 2.632
+    },
+    {
+     "word": "*Anfechtbar*",
+     "start": 3.092
+    },
+    {
+     "word": "*lebt*,",
+     "start": 3.645
+    },
+    {
+     "word": "bis",
+     "start": 4.151
+    },
+    {
+     "word": "jemand",
+     "start": 4.381
+    },
+    {
+     "word": "anficht.",
+     "start": 4.749
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-3.wav",
+   "seconds": 4.187,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "sechs:",
+     "start": 0.347
+    },
+    {
+     "word": "der",
+     "start": 0.771
+    },
+    {
+     "word": "*Kaufvertrag*,",
+     "start": 0.947
+    },
+    {
+     "word": "der",
+     "start": 1.583
+    },
+    {
+     "word": "Vertrag,",
+     "start": 1.759
+    },
+    {
+     "word": "den",
+     "start": 2.254
+    },
+    {
+     "word": "du",
+     "start": 2.43
+    },
+    {
+     "word": "am",
+     "start": 2.571
+    },
+    {
+     "word": "häufigsten",
+     "start": 2.713
+    },
+    {
+     "word": "abschließt.",
+     "start": 3.136
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-4.wav",
+   "seconds": 8.932,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Kaufvertrag",
+     "start": 0.333
+    },
+    {
+     "word": "entsteht",
+     "start": 0.938
+    },
+    {
+     "word": "durch",
+     "start": 1.404
+    },
+    {
+     "word": "*Antrag*",
+     "start": 1.73
+    },
+    {
+     "word": "und",
+     "start": 2.102
+    },
+    {
+     "word": "*Annahme*.",
+     "start": 2.335
+    },
+    {
+     "word": "Einer",
+     "start": 2.987
+    },
+    {
+     "word": "macht",
+     "start": 3.313
+    },
+    {
+     "word": "ein",
+     "start": 3.639
+    },
+    {
+     "word": "Angebot,",
+     "start": 3.872
+    },
+    {
+     "word": "der",
+     "start": 4.524
+    },
+    {
+     "word": "andere",
+     "start": 4.757
+    },
+    {
+     "word": "sagt",
+     "start": 5.129
+    },
+    {
+     "word": "Ja.",
+     "start": 5.409
+    },
+    {
+     "word": "Zwei",
+     "start": 5.828
+    },
+    {
+     "word": "Willenserklärungen,",
+     "start": 6.107
+    },
+    {
+     "word": "die",
+     "start": 7.271
+    },
+    {
+     "word": "zusammenpassen.",
+     "start": 7.504
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-5.wav",
+   "seconds": 42.749,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "jetzt",
+     "start": 0.333
+    },
+    {
+     "word": "eine",
+     "start": 0.66
+    },
+    {
+     "word": "beliebte",
+     "start": 0.939
+    },
+    {
+     "word": "Prüfungsfalle:",
+     "start": 1.406
+    },
+    {
+     "word": "Ist",
+     "start": 2.338
+    },
+    {
+     "word": "das",
+     "start": 2.571
+    },
+    {
+     "word": "Preisschild",
+     "start": 2.804
+    },
+    {
+     "word": "im",
+     "start": 3.411
+    },
+    {
+     "word": "*Schaufenster*",
+     "start": 3.597
+    },
+    {
+     "word": "ein",
+     "start": 4.25
+    },
+    {
+     "word": "Antrag?",
+     "start": 4.483
+    },
+    {
+     "word": "Nein!",
+     "start": 5.089
+    },
+    {
+     "word": "*Werbung*,",
+     "start": 5.602
+    },
+    {
+     "word": "*Schaufenster*,",
+     "start": 6.255
+    },
+    {
+     "word": "*Prospekt*",
+     "start": 7.141
+    },
+    {
+     "word": "und",
+     "start": 7.607
+    },
+    {
+     "word": "auch",
+     "start": 7.84
+    },
+    {
+     "word": "der",
+     "start": 8.12
+    },
+    {
+     "word": "*Online-Shop*",
+     "start": 8.353
+    },
+    {
+     "word": "sind",
+     "start": 8.913
+    },
+    {
+     "word": "nur",
+     "start": 9.193
+    },
+    {
+     "word": "eine",
+     "start": 9.426
+    },
+    {
+     "word": "*Aufforderung*,",
+     "start": 9.705
+    },
+    {
+     "word": "ein",
+     "start": 10.591
+    },
+    {
+     "word": "Angebot",
+     "start": 10.825
+    },
+    {
+     "word": "zu",
+     "start": 11.244
+    },
+    {
+     "word": "machen.",
+     "start": 11.431
+    },
+    {
+     "word": "Warum?",
+     "start": 12.037
+    },
+    {
+     "word": "Stell",
+     "start": 12.596
+    },
+    {
+     "word": "dir",
+     "start": 12.923
+    },
+    {
+     "word": "vor,",
+     "start": 13.156
+    },
+    {
+     "word": "tausend",
+     "start": 13.622
+    },
+    {
+     "word": "Leute",
+     "start": 14.042
+    },
+    {
+     "word": "bestellen",
+     "start": 14.368
+    },
+    {
+     "word": "einen",
+     "start": 14.881
+    },
+    {
+     "word": "Fernseher,",
+     "start": 15.208
+    },
+    {
+     "word": "und",
+     "start": 15.954
+    },
+    {
+     "word": "es",
+     "start": 16.187
+    },
+    {
+     "word": "gibt",
+     "start": 16.373
+    },
+    {
+     "word": "nur",
+     "start": 16.653
+    },
+    {
+     "word": "zehn.",
+     "start": 16.886
+    },
+    {
+     "word": "Dann",
+     "start": 17.399
+    },
+    {
+     "word": "müsste",
+     "start": 17.679
+    },
+    {
+     "word": "der",
+     "start": 18.052
+    },
+    {
+     "word": "Shop",
+     "start": 18.285
+    },
+    {
+     "word": "tausend",
+     "start": 18.565
+    },
+    {
+     "word": "Verträge",
+     "start": 18.985
+    },
+    {
+     "word": "erfüllen.",
+     "start": 19.451
+    },
+    {
+     "word": "Deshalb",
+     "start": 20.15
+    },
+    {
+     "word": "ist",
+     "start": 20.57
+    },
+    {
+     "word": "erst",
+     "start": 20.803
+    },
+    {
+     "word": "deine",
+     "start": 21.083
+    },
+    {
+     "word": "*Bestellung*",
+     "start": 21.409
+    },
+    {
+     "word": "der",
+     "start": 21.969
+    },
+    {
+     "word": "Antrag.",
+     "start": 22.202
+    },
+    {
+     "word": "Wer",
+     "start": 22.808
+    },
+    {
+     "word": "einen",
+     "start": 23.041
+    },
+    {
+     "word": "Antrag",
+     "start": 23.368
+    },
+    {
+     "word": "macht,",
+     "start": 23.741
+    },
+    {
+     "word": "ist",
+     "start": 24.3
+    },
+    {
+     "word": "daran",
+     "start": 24.533
+    },
+    {
+     "word": "*gebunden*:",
+     "start": 24.86
+    },
+    {
+     "word": "unter",
+     "start": 25.559
+    },
+    {
+     "word": "Anwesenden",
+     "start": 25.886
+    },
+    {
+     "word": "oder",
+     "start": 26.445
+    },
+    {
+     "word": "am",
+     "start": 26.725
+    },
+    {
+     "word": "*Telefon*",
+     "start": 26.911
+    },
+    {
+     "word": "nur",
+     "start": 27.331
+    },
+    {
+     "word": "*sofort*.",
+     "start": 27.564
+    },
+    {
+     "word": "Per",
+     "start": 28.17
+    },
+    {
+     "word": "Brief",
+     "start": 28.404
+    },
+    {
+     "word": "oder",
+     "start": 28.73
+    },
+    {
+     "word": "*E-Mail*",
+     "start": 29.01
+    },
+    {
+     "word": "so",
+     "start": 29.336
+    },
+    {
+     "word": "lange,",
+     "start": 29.523
+    },
+    {
+     "word": "wie",
+     "start": 30.082
+    },
+    {
+     "word": "man",
+     "start": 30.315
+    },
+    {
+     "word": "*normalerweise*",
+     "start": 30.549
+    },
+    {
+     "word": "eine",
+     "start": 31.248
+    },
+    {
+     "word": "Antwort",
+     "start": 31.528
+    },
+    {
+     "word": "erwartet.",
+     "start": 31.947
+    },
+    {
+     "word": "Mit",
+     "start": 32.647
+    },
+    {
+     "word": "„*freibleibend*“",
+     "start": 32.88
+    },
+    {
+     "word": "oder",
+     "start": 33.533
+    },
+    {
+     "word": "„solange",
+     "start": 33.813
+    },
+    {
+     "word": "Vorrat",
+     "start": 34.232
+    },
+    {
+     "word": "reicht“",
+     "start": 34.605
+    },
+    {
+     "word": "bindet",
+     "start": 34.978
+    },
+    {
+     "word": "man",
+     "start": 35.351
+    },
+    {
+     "word": "sich",
+     "start": 35.584
+    },
+    {
+     "word": "nicht",
+     "start": 35.864
+    },
+    {
+     "word": "oder",
+     "start": 36.191
+    },
+    {
+     "word": "nur",
+     "start": 36.47
+    },
+    {
+     "word": "eingeschränkt.",
+     "start": 36.703
+    },
+    {
+     "word": "Und",
+     "start": 37.636
+    },
+    {
+     "word": "kommt",
+     "start": 37.869
+    },
+    {
+     "word": "die",
+     "start": 38.196
+    },
+    {
+     "word": "Annahme",
+     "start": 38.429
+    },
+    {
+     "word": "*zu",
+     "start": 38.848
+    },
+    {
+     "word": "spät*",
+     "start": 39.035
+    },
+    {
+     "word": "oder",
+     "start": 39.315
+    },
+    {
+     "word": "*geändert*,",
+     "start": 39.594
+    },
+    {
+     "word": "ist",
+     "start": 40.294
+    },
+    {
+     "word": "das",
+     "start": 40.527
+    },
+    {
+     "word": "wieder",
+     "start": 40.76
+    },
+    {
+     "word": "ein",
+     "start": 41.133
+    },
+    {
+     "word": "*neuer",
+     "start": 41.366
+    },
+    {
+     "word": "Antrag*.",
+     "start": 41.693
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-6.wav",
+   "seconds": 15.416,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "welche",
+     "start": 0.328
+    },
+    {
+     "word": "*Pflichten*",
+     "start": 0.693
+    },
+    {
+     "word": "hat",
+     "start": 1.194
+    },
+    {
+     "word": "jeder?",
+     "start": 1.422
+    },
+    {
+     "word": "Der",
+     "start": 1.97
+    },
+    {
+     "word": "*Verkäufer*",
+     "start": 2.198
+    },
+    {
+     "word": "muss",
+     "start": 2.699
+    },
+    {
+     "word": "die",
+     "start": 2.973
+    },
+    {
+     "word": "Ware",
+     "start": 3.201
+    },
+    {
+     "word": "*übergeben*,",
+     "start": 3.475
+    },
+    {
+     "word": "dir",
+     "start": 4.204
+    },
+    {
+     "word": "das",
+     "start": 4.432
+    },
+    {
+     "word": "*Eigentum*",
+     "start": 4.66
+    },
+    {
+     "word": "verschaffen,",
+     "start": 5.116
+    },
+    {
+     "word": "sie",
+     "start": 5.937
+    },
+    {
+     "word": "gehört",
+     "start": 6.165
+    },
+    {
+     "word": "dann",
+     "start": 6.53
+    },
+    {
+     "word": "also",
+     "start": 6.803
+    },
+    {
+     "word": "dir,",
+     "start": 7.077
+    },
+    {
+     "word": "und",
+     "start": 7.533
+    },
+    {
+     "word": "sie",
+     "start": 7.761
+    },
+    {
+     "word": "*mangelfrei*",
+     "start": 7.989
+    },
+    {
+     "word": "liefern.",
+     "start": 8.536
+    },
+    {
+     "word": "Der",
+     "start": 9.175
+    },
+    {
+     "word": "*Käufer*",
+     "start": 9.403
+    },
+    {
+     "word": "muss",
+     "start": 9.768
+    },
+    {
+     "word": "*zahlen*",
+     "start": 10.041
+    },
+    {
+     "word": "und",
+     "start": 10.406
+    },
+    {
+     "word": "die",
+     "start": 10.634
+    },
+    {
+     "word": "Ware",
+     "start": 10.862
+    },
+    {
+     "word": "*abnehmen*,",
+     "start": 11.136
+    },
+    {
+     "word": "er",
+     "start": 11.82
+    },
+    {
+     "word": "darf",
+     "start": 12.002
+    },
+    {
+     "word": "sie",
+     "start": 12.276
+    },
+    {
+     "word": "also",
+     "start": 12.504
+    },
+    {
+     "word": "nicht",
+     "start": 12.777
+    },
+    {
+     "word": "einfach",
+     "start": 13.096
+    },
+    {
+     "word": "im",
+     "start": 13.507
+    },
+    {
+     "word": "Laden",
+     "start": 13.689
+    },
+    {
+     "word": "stehen",
+     "start": 14.009
+    },
+    {
+     "word": "lassen.",
+     "start": 14.373
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-7.wav",
+   "seconds": 5.583,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "*Werbung*",
+     "start": 0.698
+    },
+    {
+     "word": "ist",
+     "start": 1.147
+    },
+    {
+     "word": "*kein",
+     "start": 1.396
+    },
+    {
+     "word": "Antrag*.",
+     "start": 1.695
+    },
+    {
+     "word": "Erst",
+     "start": 2.343
+    },
+    {
+     "word": "*Antrag",
+     "start": 2.642
+    },
+    {
+     "word": "plus",
+     "start": 3.04
+    },
+    {
+     "word": "Annahme*",
+     "start": 3.339
+    },
+    {
+     "word": "gibt",
+     "start": 3.788
+    },
+    {
+     "word": "einen",
+     "start": 4.087
+    },
+    {
+     "word": "Vertrag.",
+     "start": 4.436
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-8.wav",
+   "seconds": 6.716,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "sieben:",
+     "start": 0.386
+    },
+    {
+     "word": "*Besitz",
+     "start": 0.917
+    },
+    {
+     "word": "und",
+     "start": 1.243
+    },
+    {
+     "word": "Eigentum*.",
+     "start": 1.448
+    },
+    {
+     "word": "Im",
+     "start": 2.06
+    },
+    {
+     "word": "Alltag",
+     "start": 2.223
+    },
+    {
+     "word": "sagen",
+     "start": 2.55
+    },
+    {
+     "word": "wir",
+     "start": 2.836
+    },
+    {
+     "word": "oft",
+     "start": 3.04
+    },
+    {
+     "word": "beides",
+     "start": 3.244
+    },
+    {
+     "word": "gleich,",
+     "start": 3.571
+    },
+    {
+     "word": "juristisch",
+     "start": 4.102
+    },
+    {
+     "word": "ist",
+     "start": 4.592
+    },
+    {
+     "word": "das",
+     "start": 4.796
+    },
+    {
+     "word": "ein",
+     "start": 5.0
+    },
+    {
+     "word": "großer",
+     "start": 5.204
+    },
+    {
+     "word": "Unterschied.",
+     "start": 5.531
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-9.wav",
+   "seconds": 16.491,
+   "words": [
+    {
+     "word": "*Besitz*",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.435
+    },
+    {
+     "word": "die",
+     "start": 0.644
+    },
+    {
+     "word": "*tatsächliche*",
+     "start": 0.853
+    },
+    {
+     "word": "Herrschaft.",
+     "start": 1.439
+    },
+    {
+     "word": "Also:",
+     "start": 2.15
+    },
+    {
+     "word": "Wer",
+     "start": 2.61
+    },
+    {
+     "word": "*hat*",
+     "start": 2.82
+    },
+    {
+     "word": "die",
+     "start": 3.029
+    },
+    {
+     "word": "Sache",
+     "start": 3.238
+    },
+    {
+     "word": "gerade",
+     "start": 3.531
+    },
+    {
+     "word": "in",
+     "start": 3.866
+    },
+    {
+     "word": "der",
+     "start": 4.033
+    },
+    {
+     "word": "Hand?",
+     "start": 4.242
+    },
+    {
+     "word": "*Eigentum*",
+     "start": 4.703
+    },
+    {
+     "word": "ist",
+     "start": 5.121
+    },
+    {
+     "word": "die",
+     "start": 5.33
+    },
+    {
+     "word": "*rechtliche*",
+     "start": 5.539
+    },
+    {
+     "word": "Herrschaft:",
+     "start": 6.041
+    },
+    {
+     "word": "Wem",
+     "start": 6.753
+    },
+    {
+     "word": "*gehört*",
+     "start": 6.962
+    },
+    {
+     "word": "sie?",
+     "start": 7.297
+    },
+    {
+     "word": "Beispiel:",
+     "start": 7.715
+    },
+    {
+     "word": "Lukas",
+     "start": 8.343
+    },
+    {
+     "word": "leiht",
+     "start": 8.636
+    },
+    {
+     "word": "sich",
+     "start": 8.928
+    },
+    {
+     "word": "die",
+     "start": 9.179
+    },
+    {
+     "word": "Bohrmaschine",
+     "start": 9.389
+    },
+    {
+     "word": "vom",
+     "start": 9.974
+    },
+    {
+     "word": "Kollegen.",
+     "start": 10.184
+    },
+    {
+     "word": "Lukas",
+     "start": 10.811
+    },
+    {
+     "word": "ist",
+     "start": 11.104
+    },
+    {
+     "word": "jetzt",
+     "start": 11.313
+    },
+    {
+     "word": "*Besitzer*,",
+     "start": 11.606
+    },
+    {
+     "word": "er",
+     "start": 12.234
+    },
+    {
+     "word": "hat",
+     "start": 12.401
+    },
+    {
+     "word": "sie",
+     "start": 12.61
+    },
+    {
+     "word": "ja.",
+     "start": 12.82
+    },
+    {
+     "word": "Aber",
+     "start": 13.196
+    },
+    {
+     "word": "der",
+     "start": 13.447
+    },
+    {
+     "word": "Kollege",
+     "start": 13.656
+    },
+    {
+     "word": "bleibt",
+     "start": 14.033
+    },
+    {
+     "word": "*Eigentümer*,",
+     "start": 14.368
+    },
+    {
+     "word": "sie",
+     "start": 15.079
+    },
+    {
+     "word": "gehört",
+     "start": 15.288
+    },
+    {
+     "word": "ihm.",
+     "start": 15.623
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-10.wav",
+   "seconds": 18.031,
+   "words": [
+    {
+     "word": "Wie",
+     "start": 0.1
+    },
+    {
+     "word": "wird",
+     "start": 0.308
+    },
+    {
+     "word": "man",
+     "start": 0.557
+    },
+    {
+     "word": "Eigentümer?",
+     "start": 0.764
+    },
+    {
+     "word": "Durch",
+     "start": 1.47
+    },
+    {
+     "word": "*Einigung*",
+     "start": 1.761
+    },
+    {
+     "word": "und",
+     "start": 2.176
+    },
+    {
+     "word": "*Übergabe*.",
+     "start": 2.384
+    },
+    {
+     "word": "Man",
+     "start": 3.007
+    },
+    {
+     "word": "ist",
+     "start": 3.214
+    },
+    {
+     "word": "sich",
+     "start": 3.422
+    },
+    {
+     "word": "einig,",
+     "start": 3.671
+    },
+    {
+     "word": "dass",
+     "start": 4.169
+    },
+    {
+     "word": "es",
+     "start": 4.418
+    },
+    {
+     "word": "jetzt",
+     "start": 4.585
+    },
+    {
+     "word": "dir",
+     "start": 4.875
+    },
+    {
+     "word": "gehören",
+     "start": 5.083
+    },
+    {
+     "word": "soll,",
+     "start": 5.457
+    },
+    {
+     "word": "und",
+     "start": 5.913
+    },
+    {
+     "word": "du",
+     "start": 6.121
+    },
+    {
+     "word": "bekommst",
+     "start": 6.287
+    },
+    {
+     "word": "die",
+     "start": 6.702
+    },
+    {
+     "word": "Sache.",
+     "start": 6.91
+    },
+    {
+     "word": "Es",
+     "start": 7.408
+    },
+    {
+     "word": "gibt",
+     "start": 7.574
+    },
+    {
+     "word": "aber",
+     "start": 7.823
+    },
+    {
+     "word": "einen",
+     "start": 8.072
+    },
+    {
+     "word": "Sonderfall,",
+     "start": 8.363
+    },
+    {
+     "word": "den",
+     "start": 9.069
+    },
+    {
+     "word": "*Eigentumsvorbehalt*.",
+     "start": 9.277
+    },
+    {
+     "word": "Da",
+     "start": 10.315
+    },
+    {
+     "word": "bleibt",
+     "start": 10.481
+    },
+    {
+     "word": "die",
+     "start": 10.813
+    },
+    {
+     "word": "Ware",
+     "start": 11.021
+    },
+    {
+     "word": "*Eigentum",
+     "start": 11.27
+    },
+    {
+     "word": "des",
+     "start": 11.685
+    },
+    {
+     "word": "Verkäufers*,",
+     "start": 11.893
+    },
+    {
+     "word": "bis",
+     "start": 12.599
+    },
+    {
+     "word": "sie",
+     "start": 12.806
+    },
+    {
+     "word": "*komplett",
+     "start": 13.014
+    },
+    {
+     "word": "bezahlt*",
+     "start": 13.429
+    },
+    {
+     "word": "ist.",
+     "start": 13.803
+    },
+    {
+     "word": "Das",
+     "start": 14.218
+    },
+    {
+     "word": "ist",
+     "start": 14.426
+    },
+    {
+     "word": "typisch",
+     "start": 14.633
+    },
+    {
+     "word": "beim",
+     "start": 15.007
+    },
+    {
+     "word": "Ratenkauf,",
+     "start": 15.256
+    },
+    {
+     "word": "und",
+     "start": 15.92
+    },
+    {
+     "word": "es",
+     "start": 16.128
+    },
+    {
+     "word": "muss",
+     "start": 16.294
+    },
+    {
+     "word": "*vereinbart*",
+     "start": 16.543
+    },
+    {
+     "word": "werden.",
+     "start": 17.041
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-11.wav",
+   "seconds": 10.981,
+   "words": [
+    {
+     "word": "Frage:",
+     "start": 0.1
+    },
+    {
+     "word": "Jemand",
+     "start": 0.603
+    },
+    {
+     "word": "klaut",
+     "start": 0.938
+    },
+    {
+     "word": "Lukas'",
+     "start": 1.231
+    },
+    {
+     "word": "Fahrrad.",
+     "start": 1.524
+    },
+    {
+     "word": "Wer",
+     "start": 2.111
+    },
+    {
+     "word": "ist",
+     "start": 2.32
+    },
+    {
+     "word": "jetzt",
+     "start": 2.53
+    },
+    {
+     "word": "Besitzer,",
+     "start": 2.823
+    },
+    {
+     "word": "und",
+     "start": 3.451
+    },
+    {
+     "word": "wer",
+     "start": 3.661
+    },
+    {
+     "word": "Eigentümer?",
+     "start": 3.87
+    },
+    {
+     "word": "…",
+     "start": 4.582
+    },
+    {
+     "word": "Der",
+     "start": 4.666
+    },
+    {
+     "word": "*Dieb*",
+     "start": 4.876
+    },
+    {
+     "word": "ist",
+     "start": 5.127
+    },
+    {
+     "word": "*Besitzer*,",
+     "start": 5.336
+    },
+    {
+     "word": "er",
+     "start": 5.965
+    },
+    {
+     "word": "hat",
+     "start": 6.132
+    },
+    {
+     "word": "das",
+     "start": 6.342
+    },
+    {
+     "word": "Fahrrad",
+     "start": 6.551
+    },
+    {
+     "word": "ja.",
+     "start": 6.928
+    },
+    {
+     "word": "Aber",
+     "start": 7.305
+    },
+    {
+     "word": "*Eigentümer*",
+     "start": 7.557
+    },
+    {
+     "word": "bleibt",
+     "start": 8.059
+    },
+    {
+     "word": "Lukas.",
+     "start": 8.394
+    },
+    {
+     "word": "Ein",
+     "start": 8.897
+    },
+    {
+     "word": "Dieb",
+     "start": 9.106
+    },
+    {
+     "word": "wird",
+     "start": 9.358
+    },
+    {
+     "word": "*nie*",
+     "start": 9.609
+    },
+    {
+     "word": "Eigentümer.",
+     "start": 9.819
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-12.wav",
+   "seconds": 5.628,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "acht:",
+     "start": 0.358
+    },
+    {
+     "word": "die",
+     "start": 0.762
+    },
+    {
+     "word": "*mangelhafte",
+     "start": 0.946
+    },
+    {
+     "word": "Lieferung*.",
+     "start": 1.425
+    },
+    {
+     "word": "Das",
+     "start": 2.013
+    },
+    {
+     "word": "passiert",
+     "start": 2.197
+    },
+    {
+     "word": "jedem",
+     "start": 2.565
+    },
+    {
+     "word": "mal:",
+     "start": 2.823
+    },
+    {
+     "word": "Du",
+     "start": 3.191
+    },
+    {
+     "word": "bestellst",
+     "start": 3.338
+    },
+    {
+     "word": "etwas,",
+     "start": 3.743
+    },
+    {
+     "word": "und",
+     "start": 4.184
+    },
+    {
+     "word": "es",
+     "start": 4.368
+    },
+    {
+     "word": "ist",
+     "start": 4.516
+    },
+    {
+     "word": "kaputt.",
+     "start": 4.7
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-13.wav",
+   "seconds": 7.566,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "*Mangel*",
+     "start": 0.281
+    },
+    {
+     "word": "liegt",
+     "start": 0.57
+    },
+    {
+     "word": "vor,",
+     "start": 0.823
+    },
+    {
+     "word": "wenn",
+     "start": 1.185
+    },
+    {
+     "word": "die",
+     "start": 1.402
+    },
+    {
+     "word": "Ware",
+     "start": 1.583
+    },
+    {
+     "word": "bei",
+     "start": 1.8
+    },
+    {
+     "word": "der",
+     "start": 1.981
+    },
+    {
+     "word": "*Übergabe*",
+     "start": 2.161
+    },
+    {
+     "word": "nicht",
+     "start": 2.523
+    },
+    {
+     "word": "so",
+     "start": 2.776
+    },
+    {
+     "word": "ist",
+     "start": 2.921
+    },
+    {
+     "word": "wie",
+     "start": 3.102
+    },
+    {
+     "word": "*vereinbart*",
+     "start": 3.283
+    },
+    {
+     "word": "oder",
+     "start": 3.717
+    },
+    {
+     "word": "wie",
+     "start": 3.934
+    },
+    {
+     "word": "es",
+     "start": 4.114
+    },
+    {
+     "word": "*üblich*",
+     "start": 4.259
+    },
+    {
+     "word": "ist.",
+     "start": 4.548
+    },
+    {
+     "word": "Ein",
+     "start": 4.91
+    },
+    {
+     "word": "neues",
+     "start": 5.091
+    },
+    {
+     "word": "Handy",
+     "start": 5.344
+    },
+    {
+     "word": "mit",
+     "start": 5.597
+    },
+    {
+     "word": "Kratzer",
+     "start": 5.778
+    },
+    {
+     "word": "ist",
+     "start": 6.104
+    },
+    {
+     "word": "also",
+     "start": 6.284
+    },
+    {
+     "word": "mangelhaft.",
+     "start": 6.501
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-14.wav",
+   "seconds": 29.247,
+   "words": [
+    {
+     "word": "Welche",
+     "start": 0.1
+    },
+    {
+     "word": "Mängel",
+     "start": 0.463
+    },
+    {
+     "word": "gibt",
+     "start": 0.825
+    },
+    {
+     "word": "es?",
+     "start": 1.097
+    },
+    {
+     "word": "Den",
+     "start": 1.505
+    },
+    {
+     "word": "*Qualitätsmangel*,",
+     "start": 1.732
+    },
+    {
+     "word": "die",
+     "start": 2.729
+    },
+    {
+     "word": "Ware",
+     "start": 2.956
+    },
+    {
+     "word": "ist",
+     "start": 3.228
+    },
+    {
+     "word": "kaputt.",
+     "start": 3.455
+    },
+    {
+     "word": "Die",
+     "start": 4.044
+    },
+    {
+     "word": "*Falschlieferung*,",
+     "start": 4.271
+    },
+    {
+     "word": "du",
+     "start": 5.268
+    },
+    {
+     "word": "bekommst",
+     "start": 5.449
+    },
+    {
+     "word": "was",
+     "start": 5.903
+    },
+    {
+     "word": "anderes.",
+     "start": 6.13
+    },
+    {
+     "word": "Den",
+     "start": 6.764
+    },
+    {
+     "word": "*Mengenmangel*,",
+     "start": 6.991
+    },
+    {
+     "word": "es",
+     "start": 7.852
+    },
+    {
+     "word": "fehlt",
+     "start": 8.034
+    },
+    {
+     "word": "was.",
+     "start": 8.351
+    },
+    {
+     "word": "Den",
+     "start": 8.804
+    },
+    {
+     "word": "*Montagemangel*,",
+     "start": 9.031
+    },
+    {
+     "word": "der",
+     "start": 9.938
+    },
+    {
+     "word": "Verkäufer",
+     "start": 10.164
+    },
+    {
+     "word": "baut",
+     "start": 10.663
+    },
+    {
+     "word": "es",
+     "start": 10.935
+    },
+    {
+     "word": "falsch",
+     "start": 11.116
+    },
+    {
+     "word": "ein,",
+     "start": 11.479
+    },
+    {
+     "word": "und",
+     "start": 11.932
+    },
+    {
+     "word": "die",
+     "start": 12.159
+    },
+    {
+     "word": "*fehlerhafte",
+     "start": 12.386
+    },
+    {
+     "word": "Montageanleitung*,",
+     "start": 12.975
+    },
+    {
+     "word": "du",
+     "start": 14.018
+    },
+    {
+     "word": "baust",
+     "start": 14.199
+    },
+    {
+     "word": "es",
+     "start": 14.516
+    },
+    {
+     "word": "wegen",
+     "start": 14.698
+    },
+    {
+     "word": "einer",
+     "start": 15.015
+    },
+    {
+     "word": "falschen",
+     "start": 15.332
+    },
+    {
+     "word": "Anleitung",
+     "start": 15.786
+    },
+    {
+     "word": "falsch",
+     "start": 16.284
+    },
+    {
+     "word": "auf.",
+     "start": 16.647
+    },
+    {
+     "word": "Und",
+     "start": 17.1
+    },
+    {
+     "word": "die",
+     "start": 17.327
+    },
+    {
+     "word": "*falsche",
+     "start": 17.554
+    },
+    {
+     "word": "Werbeaussage*.",
+     "start": 17.962
+    },
+    {
+     "word": "Außerdem",
+     "start": 18.823
+    },
+    {
+     "word": "unterscheidet",
+     "start": 19.277
+    },
+    {
+     "word": "man,",
+     "start": 19.957
+    },
+    {
+     "word": "wie",
+     "start": 20.41
+    },
+    {
+     "word": "man",
+     "start": 20.637
+    },
+    {
+     "word": "sie",
+     "start": 20.863
+    },
+    {
+     "word": "*erkennt*:",
+     "start": 21.09
+    },
+    {
+     "word": "*offene*",
+     "start": 21.725
+    },
+    {
+     "word": "Mängel",
+     "start": 22.087
+    },
+    {
+     "word": "siehst",
+     "start": 22.45
+    },
+    {
+     "word": "du",
+     "start": 22.813
+    },
+    {
+     "word": "sofort,",
+     "start": 22.994
+    },
+    {
+     "word": "*versteckte*",
+     "start": 23.583
+    },
+    {
+     "word": "erst",
+     "start": 24.127
+    },
+    {
+     "word": "später,",
+     "start": 24.399
+    },
+    {
+     "word": "und",
+     "start": 24.989
+    },
+    {
+     "word": "*arglistig",
+     "start": 25.215
+    },
+    {
+     "word": "verschwiegene*",
+     "start": 25.714
+    },
+    {
+     "word": "hat",
+     "start": 26.394
+    },
+    {
+     "word": "der",
+     "start": 26.621
+    },
+    {
+     "word": "Verkäufer",
+     "start": 26.847
+    },
+    {
+     "word": "absichtlich",
+     "start": 27.346
+    },
+    {
+     "word": "verheimlicht.",
+     "start": 27.935
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-15.wav",
+   "seconds": 33.801,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "was",
+     "start": 0.319
+    },
+    {
+     "word": "darfst",
+     "start": 0.539
+    },
+    {
+     "word": "du",
+     "start": 0.89
+    },
+    {
+     "word": "dann?",
+     "start": 1.065
+    },
+    {
+     "word": "Hier",
+     "start": 1.548
+    },
+    {
+     "word": "ist",
+     "start": 1.811
+    },
+    {
+     "word": "die",
+     "start": 2.03
+    },
+    {
+     "word": "*Reihenfolge*",
+     "start": 2.249
+    },
+    {
+     "word": "entscheidend,",
+     "start": 2.82
+    },
+    {
+     "word": "und",
+     "start": 3.653
+    },
+    {
+     "word": "genau",
+     "start": 3.873
+    },
+    {
+     "word": "die",
+     "start": 4.18
+    },
+    {
+     "word": "wird",
+     "start": 4.399
+    },
+    {
+     "word": "in",
+     "start": 4.662
+    },
+    {
+     "word": "der",
+     "start": 4.838
+    },
+    {
+     "word": "Prüfung",
+     "start": 5.057
+    },
+    {
+     "word": "abgefragt.",
+     "start": 5.452
+    },
+    {
+     "word": "Zuerst",
+     "start": 6.154
+    },
+    {
+     "word": "kommt",
+     "start": 6.505
+    },
+    {
+     "word": "*immer*",
+     "start": 6.812
+    },
+    {
+     "word": "die",
+     "start": 7.119
+    },
+    {
+     "word": "*Nacherfüllung*.",
+     "start": 7.338
+    },
+    {
+     "word": "Du",
+     "start": 8.215
+    },
+    {
+     "word": "darfst",
+     "start": 8.391
+    },
+    {
+     "word": "*wählen*:",
+     "start": 8.742
+    },
+    {
+     "word": "*Nachbesserung*,",
+     "start": 9.312
+    },
+    {
+     "word": "also",
+     "start": 10.189
+    },
+    {
+     "word": "reparieren,",
+     "start": 10.453
+    },
+    {
+     "word": "oder",
+     "start": 11.198
+    },
+    {
+     "word": "*Ersatzlieferung*,",
+     "start": 11.462
+    },
+    {
+     "word": "also",
+     "start": 12.427
+    },
+    {
+     "word": "ein",
+     "start": 12.69
+    },
+    {
+     "word": "neues.",
+     "start": 12.909
+    },
+    {
+     "word": "Der",
+     "start": 13.436
+    },
+    {
+     "word": "Verkäufer",
+     "start": 13.655
+    },
+    {
+     "word": "bekommt",
+     "start": 14.138
+    },
+    {
+     "word": "also",
+     "start": 14.532
+    },
+    {
+     "word": "erst",
+     "start": 14.796
+    },
+    {
+     "word": "mal",
+     "start": 15.059
+    },
+    {
+     "word": "eine",
+     "start": 15.278
+    },
+    {
+     "word": "zweite",
+     "start": 15.541
+    },
+    {
+     "word": "Chance.",
+     "start": 15.892
+    },
+    {
+     "word": "Erst",
+     "start": 16.462
+    },
+    {
+     "word": "*danach*,",
+     "start": 16.726
+    },
+    {
+     "word": "wenn",
+     "start": 17.296
+    },
+    {
+     "word": "das",
+     "start": 17.559
+    },
+    {
+     "word": "*fehlgeschlagen*",
+     "start": 17.779
+    },
+    {
+     "word": "ist,",
+     "start": 18.48
+    },
+    {
+     "word": "meistens",
+     "start": 18.919
+    },
+    {
+     "word": "nach",
+     "start": 19.358
+    },
+    {
+     "word": "*zwei",
+     "start": 19.621
+    },
+    {
+     "word": "Versuchen*,",
+     "start": 19.884
+    },
+    {
+     "word": "darfst",
+     "start": 20.586
+    },
+    {
+     "word": "du",
+     "start": 20.937
+    },
+    {
+     "word": "mehr:",
+     "start": 21.112
+    },
+    {
+     "word": "vom",
+     "start": 21.595
+    },
+    {
+     "word": "Vertrag",
+     "start": 21.814
+    },
+    {
+     "word": "*zurücktreten*,",
+     "start": 22.209
+    },
+    {
+     "word": "also",
+     "start": 23.043
+    },
+    {
+     "word": "Geld",
+     "start": 23.306
+    },
+    {
+     "word": "zurück,",
+     "start": 23.569
+    },
+    {
+     "word": "das",
+     "start": 24.139
+    },
+    {
+     "word": "aber",
+     "start": 24.359
+    },
+    {
+     "word": "nicht",
+     "start": 24.622
+    },
+    {
+     "word": "bei",
+     "start": 24.929
+    },
+    {
+     "word": "einem",
+     "start": 25.148
+    },
+    {
+     "word": "ganz",
+     "start": 25.455
+    },
+    {
+     "word": "kleinen",
+     "start": 25.718
+    },
+    {
+     "word": "Mangel.",
+     "start": 26.113
+    },
+    {
+     "word": "Oder",
+     "start": 26.684
+    },
+    {
+     "word": "*Minderung*,",
+     "start": 26.947
+    },
+    {
+     "word": "du",
+     "start": 27.649
+    },
+    {
+     "word": "zahlst",
+     "start": 27.824
+    },
+    {
+     "word": "weniger.",
+     "start": 28.175
+    },
+    {
+     "word": "Und",
+     "start": 28.789
+    },
+    {
+     "word": "*Schadensersatz*",
+     "start": 29.009
+    },
+    {
+     "word": "gibt",
+     "start": 29.71
+    },
+    {
+     "word": "es",
+     "start": 29.974
+    },
+    {
+     "word": "zusätzlich,",
+     "start": 30.149
+    },
+    {
+     "word": "aber",
+     "start": 30.895
+    },
+    {
+     "word": "nur,",
+     "start": 31.158
+    },
+    {
+     "word": "wenn",
+     "start": 31.597
+    },
+    {
+     "word": "der",
+     "start": 31.86
+    },
+    {
+     "word": "Verkäufer",
+     "start": 32.079
+    },
+    {
+     "word": "*schuld*",
+     "start": 32.562
+    },
+    {
+     "word": "ist.",
+     "start": 32.913
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-16.wav",
+   "seconds": 21.532,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "wie",
+     "start": 0.311
+    },
+    {
+     "word": "lange",
+     "start": 0.521
+    },
+    {
+     "word": "hast",
+     "start": 0.816
+    },
+    {
+     "word": "du",
+     "start": 1.069
+    },
+    {
+     "word": "Zeit?",
+     "start": 1.238
+    },
+    {
+     "word": "Die",
+     "start": 1.701
+    },
+    {
+     "word": "*Gewährleistung*",
+     "start": 1.912
+    },
+    {
+     "word": "beträgt",
+     "start": 2.586
+    },
+    {
+     "word": "*zwei",
+     "start": 2.965
+    },
+    {
+     "word": "Jahre*",
+     "start": 3.218
+    },
+    {
+     "word": "ab",
+     "start": 3.513
+    },
+    {
+     "word": "Übergabe.",
+     "start": 3.681
+    },
+    {
+     "word": "Bei",
+     "start": 4.313
+    },
+    {
+     "word": "*gebrauchter*",
+     "start": 4.524
+    },
+    {
+     "word": "Ware",
+     "start": 5.072
+    },
+    {
+     "word": "darf",
+     "start": 5.325
+    },
+    {
+     "word": "der",
+     "start": 5.577
+    },
+    {
+     "word": "Händler",
+     "start": 5.788
+    },
+    {
+     "word": "sie",
+     "start": 6.167
+    },
+    {
+     "word": "gegenüber",
+     "start": 6.378
+    },
+    {
+     "word": "Verbrauchern",
+     "start": 6.841
+    },
+    {
+     "word": "auf",
+     "start": 7.431
+    },
+    {
+     "word": "*ein",
+     "start": 7.642
+    },
+    {
+     "word": "Jahr*",
+     "start": 7.852
+    },
+    {
+     "word": "verkürzen.",
+     "start": 8.105
+    },
+    {
+     "word": "Und",
+     "start": 8.779
+    },
+    {
+     "word": "dann",
+     "start": 8.99
+    },
+    {
+     "word": "gibt",
+     "start": 9.243
+    },
+    {
+     "word": "es",
+     "start": 9.496
+    },
+    {
+     "word": "die",
+     "start": 9.664
+    },
+    {
+     "word": "*Beweislastumkehr*:",
+     "start": 9.875
+    },
+    {
+     "word": "Zeigt",
+     "start": 10.844
+    },
+    {
+     "word": "sich",
+     "start": 11.139
+    },
+    {
+     "word": "der",
+     "start": 11.392
+    },
+    {
+     "word": "Mangel",
+     "start": 11.602
+    },
+    {
+     "word": "im",
+     "start": 11.939
+    },
+    {
+     "word": "*ersten",
+     "start": 12.108
+    },
+    {
+     "word": "Jahr*,",
+     "start": 12.445
+    },
+    {
+     "word": "muss",
+     "start": 12.908
+    },
+    {
+     "word": "der",
+     "start": 13.161
+    },
+    {
+     "word": "*Verkäufer*",
+     "start": 13.372
+    },
+    {
+     "word": "beweisen,",
+     "start": 13.835
+    },
+    {
+     "word": "dass",
+     "start": 14.467
+    },
+    {
+     "word": "die",
+     "start": 14.72
+    },
+    {
+     "word": "Ware",
+     "start": 14.931
+    },
+    {
+     "word": "in",
+     "start": 15.184
+    },
+    {
+     "word": "Ordnung",
+     "start": 15.352
+    },
+    {
+     "word": "war.",
+     "start": 15.731
+    },
+    {
+     "word": "Das",
+     "start": 16.153
+    },
+    {
+     "word": "ist",
+     "start": 16.363
+    },
+    {
+     "word": "gut",
+     "start": 16.574
+    },
+    {
+     "word": "für",
+     "start": 16.785
+    },
+    {
+     "word": "dich.",
+     "start": 16.995
+    },
+    {
+     "word": "Danach",
+     "start": 17.459
+    },
+    {
+     "word": "musst",
+     "start": 17.796
+    },
+    {
+     "word": "*du*",
+     "start": 18.091
+    },
+    {
+     "word": "beweisen,",
+     "start": 18.259
+    },
+    {
+     "word": "dass",
+     "start": 18.891
+    },
+    {
+     "word": "der",
+     "start": 19.144
+    },
+    {
+     "word": "Fehler",
+     "start": 19.355
+    },
+    {
+     "word": "schon",
+     "start": 19.692
+    },
+    {
+     "word": "beim",
+     "start": 19.987
+    },
+    {
+     "word": "Kauf",
+     "start": 20.24
+    },
+    {
+     "word": "da",
+     "start": 20.492
+    },
+    {
+     "word": "war.",
+     "start": 20.661
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-1-17.wav",
+   "seconds": 16.796,
+   "words": [
+    {
+     "word": "Frage:",
+     "start": 0.1
+    },
+    {
+     "word": "Lukas'",
+     "start": 0.609
+    },
+    {
+     "word": "neue",
+     "start": 0.906
+    },
+    {
+     "word": "Kaffeemaschine",
+     "start": 1.16
+    },
+    {
+     "word": "ist",
+     "start": 1.839
+    },
+    {
+     "word": "nach",
+     "start": 2.051
+    },
+    {
+     "word": "einer",
+     "start": 2.306
+    },
+    {
+     "word": "Woche",
+     "start": 2.603
+    },
+    {
+     "word": "kaputt.",
+     "start": 2.9
+    },
+    {
+     "word": "Er",
+     "start": 3.451
+    },
+    {
+     "word": "will",
+     "start": 3.621
+    },
+    {
+     "word": "sofort",
+     "start": 3.875
+    },
+    {
+     "word": "sein",
+     "start": 4.215
+    },
+    {
+     "word": "Geld",
+     "start": 4.469
+    },
+    {
+     "word": "zurück.",
+     "start": 4.724
+    },
+    {
+     "word": "Darf",
+     "start": 5.275
+    },
+    {
+     "word": "er",
+     "start": 5.529
+    },
+    {
+     "word": "das?",
+     "start": 5.699
+    },
+    {
+     "word": "…",
+     "start": 6.123
+    },
+    {
+     "word": "*Nein*,",
+     "start": 6.208
+    },
+    {
+     "word": "noch",
+     "start": 6.675
+    },
+    {
+     "word": "nicht.",
+     "start": 6.929
+    },
+    {
+     "word": "Zuerst",
+     "start": 7.438
+    },
+    {
+     "word": "kommt",
+     "start": 7.778
+    },
+    {
+     "word": "die",
+     "start": 8.075
+    },
+    {
+     "word": "*Nacherfüllung*:",
+     "start": 8.287
+    },
+    {
+     "word": "Er",
+     "start": 9.135
+    },
+    {
+     "word": "muss",
+     "start": 9.305
+    },
+    {
+     "word": "dem",
+     "start": 9.559
+    },
+    {
+     "word": "Verkäufer",
+     "start": 9.771
+    },
+    {
+     "word": "die",
+     "start": 10.238
+    },
+    {
+     "word": "Chance",
+     "start": 10.45
+    },
+    {
+     "word": "geben,",
+     "start": 10.789
+    },
+    {
+     "word": "sie",
+     "start": 11.298
+    },
+    {
+     "word": "zu",
+     "start": 11.51
+    },
+    {
+     "word": "reparieren",
+     "start": 11.68
+    },
+    {
+     "word": "oder",
+     "start": 12.189
+    },
+    {
+     "word": "eine",
+     "start": 12.444
+    },
+    {
+     "word": "neue",
+     "start": 12.698
+    },
+    {
+     "word": "zu",
+     "start": 12.953
+    },
+    {
+     "word": "liefern.",
+     "start": 13.122
+    },
+    {
+     "word": "Erst",
+     "start": 13.716
+    },
+    {
+     "word": "wenn",
+     "start": 13.971
+    },
+    {
+     "word": "das",
+     "start": 14.225
+    },
+    {
+     "word": "scheitert,",
+     "start": 14.437
+    },
+    {
+     "word": "darf",
+     "start": 15.116
+    },
+    {
+     "word": "er",
+     "start": 15.37
+    },
+    {
+     "word": "zurücktreten.",
+     "start": 15.54
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-0.wav",
+   "seconds": 6.436,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "neun:",
+     "start": 0.405
+    },
+    {
+     "word": "der",
+     "start": 0.885
+    },
+    {
+     "word": "*Zahlungsverzug*.",
+     "start": 1.103
+    },
+    {
+     "word": "Jetzt",
+     "start": 2.018
+    },
+    {
+     "word": "drehen",
+     "start": 2.324
+    },
+    {
+     "word": "wir",
+     "start": 2.673
+    },
+    {
+     "word": "es",
+     "start": 2.891
+    },
+    {
+     "word": "um:",
+     "start": 3.065
+    },
+    {
+     "word": "Was",
+     "start": 3.457
+    },
+    {
+     "word": "passiert,",
+     "start": 3.675
+    },
+    {
+     "word": "wenn",
+     "start": 4.329
+    },
+    {
+     "word": "der",
+     "start": 4.591
+    },
+    {
+     "word": "Käufer",
+     "start": 4.809
+    },
+    {
+     "word": "nicht",
+     "start": 5.158
+    },
+    {
+     "word": "zahlt?",
+     "start": 5.463
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-1.wav",
+   "seconds": 4.901,
+   "words": [
+    {
+     "word": "Zahlungsverzug",
+     "start": 0.1
+    },
+    {
+     "word": "heißt:",
+     "start": 0.716
+    },
+    {
+     "word": "Der",
+     "start": 1.178
+    },
+    {
+     "word": "Käufer",
+     "start": 1.37
+    },
+    {
+     "word": "zahlt",
+     "start": 1.678
+    },
+    {
+     "word": "*nicht",
+     "start": 1.948
+    },
+    {
+     "word": "rechtzeitig*,",
+     "start": 2.217
+    },
+    {
+     "word": "obwohl",
+     "start": 2.91
+    },
+    {
+     "word": "die",
+     "start": 3.218
+    },
+    {
+     "word": "Zahlung",
+     "start": 3.411
+    },
+    {
+     "word": "*fällig*",
+     "start": 3.757
+    },
+    {
+     "word": "ist.",
+     "start": 4.065
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-2.wav",
+   "seconds": 26.754,
+   "words": [
+    {
+     "word": "Aber",
+     "start": 0.1
+    },
+    {
+     "word": "ab",
+     "start": 0.373
+    },
+    {
+     "word": "wann",
+     "start": 0.555
+    },
+    {
+     "word": "genau",
+     "start": 0.828
+    },
+    {
+     "word": "ist",
+     "start": 1.146
+    },
+    {
+     "word": "man",
+     "start": 1.374
+    },
+    {
+     "word": "im",
+     "start": 1.601
+    },
+    {
+     "word": "*Verzug*?",
+     "start": 1.783
+    },
+    {
+     "word": "Es",
+     "start": 2.375
+    },
+    {
+     "word": "gibt",
+     "start": 2.557
+    },
+    {
+     "word": "drei",
+     "start": 2.83
+    },
+    {
+     "word": "Wege.",
+     "start": 3.103
+    },
+    {
+     "word": "Erstens:",
+     "start": 3.603
+    },
+    {
+     "word": "eine",
+     "start": 4.24
+    },
+    {
+     "word": "*Mahnung*",
+     "start": 4.513
+    },
+    {
+     "word": "nach",
+     "start": 4.922
+    },
+    {
+     "word": "der",
+     "start": 5.195
+    },
+    {
+     "word": "Fälligkeit.",
+     "start": 5.423
+    },
+    {
+     "word": "Eine",
+     "start": 6.196
+    },
+    {
+     "word": "einzige",
+     "start": 6.469
+    },
+    {
+     "word": "reicht",
+     "start": 6.878
+    },
+    {
+     "word": "schon.",
+     "start": 7.242
+    },
+    {
+     "word": "Zweitens:",
+     "start": 7.788
+    },
+    {
+     "word": "ein",
+     "start": 8.471
+    },
+    {
+     "word": "*festes",
+     "start": 8.698
+    },
+    {
+     "word": "Kalenderdatum*.",
+     "start": 9.062
+    },
+    {
+     "word": "Steht",
+     "start": 9.972
+    },
+    {
+     "word": "auf",
+     "start": 10.29
+    },
+    {
+     "word": "der",
+     "start": 10.518
+    },
+    {
+     "word": "Rechnung",
+     "start": 10.745
+    },
+    {
+     "word": "„zahlbar",
+     "start": 11.2
+    },
+    {
+     "word": "bis",
+     "start": 11.61
+    },
+    {
+     "word": "fünfzehnten",
+     "start": 11.837
+    },
+    {
+     "word": "Mai“,",
+     "start": 12.429
+    },
+    {
+     "word": "bist",
+     "start": 12.884
+    },
+    {
+     "word": "du",
+     "start": 13.156
+    },
+    {
+     "word": "am",
+     "start": 13.338
+    },
+    {
+     "word": "sechzehnten",
+     "start": 13.52
+    },
+    {
+     "word": "automatisch",
+     "start": 14.112
+    },
+    {
+     "word": "im",
+     "start": 14.703
+    },
+    {
+     "word": "Verzug,",
+     "start": 14.885
+    },
+    {
+     "word": "ganz",
+     "start": 15.477
+    },
+    {
+     "word": "ohne",
+     "start": 15.75
+    },
+    {
+     "word": "Mahnung,",
+     "start": 16.023
+    },
+    {
+     "word": "denn",
+     "start": 16.659
+    },
+    {
+     "word": "das",
+     "start": 16.932
+    },
+    {
+     "word": "Datum",
+     "start": 17.16
+    },
+    {
+     "word": "mahnt",
+     "start": 17.478
+    },
+    {
+     "word": "ja",
+     "start": 17.797
+    },
+    {
+     "word": "quasi",
+     "start": 17.979
+    },
+    {
+     "word": "für",
+     "start": 18.297
+    },
+    {
+     "word": "den",
+     "start": 18.525
+    },
+    {
+     "word": "Verkäufer.",
+     "start": 18.752
+    },
+    {
+     "word": "Drittens:",
+     "start": 19.48
+    },
+    {
+     "word": "*dreißig",
+     "start": 20.162
+    },
+    {
+     "word": "Tage*",
+     "start": 20.572
+    },
+    {
+     "word": "nach",
+     "start": 20.845
+    },
+    {
+     "word": "der",
+     "start": 21.118
+    },
+    {
+     "word": "Rechnung.",
+     "start": 21.345
+    },
+    {
+     "word": "Bei",
+     "start": 22.028
+    },
+    {
+     "word": "Verbrauchern",
+     "start": 22.255
+    },
+    {
+     "word": "aber",
+     "start": 22.892
+    },
+    {
+     "word": "nur,",
+     "start": 23.165
+    },
+    {
+     "word": "wenn",
+     "start": 23.62
+    },
+    {
+     "word": "darauf",
+     "start": 23.893
+    },
+    {
+     "word": "auf",
+     "start": 24.257
+    },
+    {
+     "word": "der",
+     "start": 24.484
+    },
+    {
+     "word": "Rechnung",
+     "start": 24.712
+    },
+    {
+     "word": "*hingewiesen*",
+     "start": 25.167
+    },
+    {
+     "word": "wurde.",
+     "start": 25.758
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-3.wav",
+   "seconds": 18.931,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "was",
+     "start": 0.316
+    },
+    {
+     "word": "darf",
+     "start": 0.531
+    },
+    {
+     "word": "der",
+     "start": 0.79
+    },
+    {
+     "word": "*Verkäufer*",
+     "start": 1.006
+    },
+    {
+     "word": "dann?",
+     "start": 1.481
+    },
+    {
+     "word": "Er",
+     "start": 1.955
+    },
+    {
+     "word": "bekommt",
+     "start": 2.128
+    },
+    {
+     "word": "natürlich",
+     "start": 2.516
+    },
+    {
+     "word": "seine",
+     "start": 2.991
+    },
+    {
+     "word": "*Zahlung*,",
+     "start": 3.293
+    },
+    {
+     "word": "und",
+     "start": 3.897
+    },
+    {
+     "word": "dazu",
+     "start": 4.113
+    },
+    {
+     "word": "*Verzugszinsen*.",
+     "start": 4.372
+    },
+    {
+     "word": "Bei",
+     "start": 5.235
+    },
+    {
+     "word": "Verbrauchern",
+     "start": 5.45
+    },
+    {
+     "word": "sind",
+     "start": 6.055
+    },
+    {
+     "word": "das",
+     "start": 6.313
+    },
+    {
+     "word": "*Basiszinssatz",
+     "start": 6.529
+    },
+    {
+     "word": "plus",
+     "start": 7.176
+    },
+    {
+     "word": "fünf",
+     "start": 7.435
+    },
+    {
+     "word": "Prozentpunkte*.",
+     "start": 7.694
+    },
+    {
+     "word": "Er",
+     "start": 8.557
+    },
+    {
+     "word": "darf",
+     "start": 8.73
+    },
+    {
+     "word": "*Schadensersatz*",
+     "start": 8.989
+    },
+    {
+     "word": "verlangen,",
+     "start": 9.679
+    },
+    {
+     "word": "zum",
+     "start": 10.369
+    },
+    {
+     "word": "Beispiel",
+     "start": 10.585
+    },
+    {
+     "word": "für",
+     "start": 11.017
+    },
+    {
+     "word": "die",
+     "start": 11.232
+    },
+    {
+     "word": "*Mahnkosten*.",
+     "start": 11.448
+    },
+    {
+     "word": "Und",
+     "start": 12.182
+    },
+    {
+     "word": "wenn",
+     "start": 12.397
+    },
+    {
+     "word": "du",
+     "start": 12.656
+    },
+    {
+     "word": "nach",
+     "start": 12.829
+    },
+    {
+     "word": "einer",
+     "start": 13.088
+    },
+    {
+     "word": "*Nachfrist*",
+     "start": 13.39
+    },
+    {
+     "word": "immer",
+     "start": 13.864
+    },
+    {
+     "word": "noch",
+     "start": 14.166
+    },
+    {
+     "word": "nicht",
+     "start": 14.425
+    },
+    {
+     "word": "zahlst,",
+     "start": 14.727
+    },
+    {
+     "word": "darf",
+     "start": 15.288
+    },
+    {
+     "word": "er",
+     "start": 15.547
+    },
+    {
+     "word": "vom",
+     "start": 15.72
+    },
+    {
+     "word": "Vertrag",
+     "start": 15.936
+    },
+    {
+     "word": "*zurücktreten*",
+     "start": 16.324
+    },
+    {
+     "word": "und",
+     "start": 16.928
+    },
+    {
+     "word": "seine",
+     "start": 17.144
+    },
+    {
+     "word": "Ware",
+     "start": 17.446
+    },
+    {
+     "word": "zurückholen.",
+     "start": 17.705
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-4.wav",
+   "seconds": 8.515,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "*Fällig*",
+     "start": 0.666
+    },
+    {
+     "word": "plus",
+     "start": 1.043
+    },
+    {
+     "word": "*Mahnung*,",
+     "start": 1.325
+    },
+    {
+     "word": "oder",
+     "start": 1.985
+    },
+    {
+     "word": "ein",
+     "start": 2.268
+    },
+    {
+     "word": "festes",
+     "start": 2.504
+    },
+    {
+     "word": "*Datum*,",
+     "start": 2.881
+    },
+    {
+     "word": "oder",
+     "start": 3.446
+    },
+    {
+     "word": "*dreißig",
+     "start": 3.729
+    },
+    {
+     "word": "Tage*",
+     "start": 4.153
+    },
+    {
+     "word": "mit",
+     "start": 4.436
+    },
+    {
+     "word": "Hinweis,",
+     "start": 4.671
+    },
+    {
+     "word": "das",
+     "start": 5.331
+    },
+    {
+     "word": "ergibt",
+     "start": 5.567
+    },
+    {
+     "word": "*Verzug*,",
+     "start": 5.944
+    },
+    {
+     "word": "und",
+     "start": 6.557
+    },
+    {
+     "word": "dann",
+     "start": 6.792
+    },
+    {
+     "word": "kosten",
+     "start": 7.075
+    },
+    {
+     "word": "Zinsen.",
+     "start": 7.452
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-5.wav",
+   "seconds": 5.795,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "zehn:",
+     "start": 0.409
+    },
+    {
+     "word": "die",
+     "start": 0.893
+    },
+    {
+     "word": "*regelmäßige",
+     "start": 1.114
+    },
+    {
+     "word": "Verjährung*.",
+     "start": 1.687
+    },
+    {
+     "word": "Also:",
+     "start": 2.436
+    },
+    {
+     "word": "Wie",
+     "start": 2.921
+    },
+    {
+     "word": "lange",
+     "start": 3.141
+    },
+    {
+     "word": "kann",
+     "start": 3.45
+    },
+    {
+     "word": "man",
+     "start": 3.714
+    },
+    {
+     "word": "Geld",
+     "start": 3.935
+    },
+    {
+     "word": "von",
+     "start": 4.199
+    },
+    {
+     "word": "dir",
+     "start": 4.42
+    },
+    {
+     "word": "verlangen?",
+     "start": 4.64
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-6.wav",
+   "seconds": 8.513,
+   "words": [
+    {
+     "word": "Verjährung",
+     "start": 0.1
+    },
+    {
+     "word": "heißt:",
+     "start": 0.536
+    },
+    {
+     "word": "Nach",
+     "start": 0.973
+    },
+    {
+     "word": "Ablauf",
+     "start": 1.191
+    },
+    {
+     "word": "einer",
+     "start": 1.482
+    },
+    {
+     "word": "Frist",
+     "start": 1.736
+    },
+    {
+     "word": "kann",
+     "start": 1.991
+    },
+    {
+     "word": "man",
+     "start": 2.209
+    },
+    {
+     "word": "eine",
+     "start": 2.391
+    },
+    {
+     "word": "Forderung",
+     "start": 2.609
+    },
+    {
+     "word": "*nicht",
+     "start": 3.009
+    },
+    {
+     "word": "mehr",
+     "start": 3.263
+    },
+    {
+     "word": "vor",
+     "start": 3.482
+    },
+    {
+     "word": "Gericht",
+     "start": 3.663
+    },
+    {
+     "word": "durchsetzen*.",
+     "start": 3.991
+    },
+    {
+     "word": "Die",
+     "start": 4.645
+    },
+    {
+     "word": "Schuld",
+     "start": 4.827
+    },
+    {
+     "word": "ist",
+     "start": 5.118
+    },
+    {
+     "word": "nicht",
+     "start": 5.3
+    },
+    {
+     "word": "weg,",
+     "start": 5.554
+    },
+    {
+     "word": "aber",
+     "start": 5.918
+    },
+    {
+     "word": "der",
+     "start": 6.136
+    },
+    {
+     "word": "Schuldner",
+     "start": 6.318
+    },
+    {
+     "word": "darf",
+     "start": 6.718
+    },
+    {
+     "word": "die",
+     "start": 6.936
+    },
+    {
+     "word": "Zahlung",
+     "start": 7.118
+    },
+    {
+     "word": "*verweigern*.",
+     "start": 7.445
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-7.wav",
+   "seconds": 38.054,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "regelmäßige",
+     "start": 0.322
+    },
+    {
+     "word": "Frist",
+     "start": 0.898
+    },
+    {
+     "word": "sind",
+     "start": 1.208
+    },
+    {
+     "word": "*drei",
+     "start": 1.474
+    },
+    {
+     "word": "Jahre*.",
+     "start": 1.74
+    },
+    {
+     "word": "Aber,",
+     "start": 2.272
+    },
+    {
+     "word": "und",
+     "start": 2.76
+    },
+    {
+     "word": "das",
+     "start": 2.982
+    },
+    {
+     "word": "ist",
+     "start": 3.203
+    },
+    {
+     "word": "der",
+     "start": 3.425
+    },
+    {
+     "word": "Trick,",
+     "start": 3.646
+    },
+    {
+     "word": "sie",
+     "start": 4.178
+    },
+    {
+     "word": "*beginnt*",
+     "start": 4.4
+    },
+    {
+     "word": "nicht",
+     "start": 4.799
+    },
+    {
+     "word": "am",
+     "start": 5.109
+    },
+    {
+     "word": "Tag",
+     "start": 5.287
+    },
+    {
+     "word": "der",
+     "start": 5.508
+    },
+    {
+     "word": "Rechnung,",
+     "start": 5.73
+    },
+    {
+     "word": "sondern",
+     "start": 6.395
+    },
+    {
+     "word": "immer",
+     "start": 6.794
+    },
+    {
+     "word": "am",
+     "start": 7.104
+    },
+    {
+     "word": "*einunddreißigsten",
+     "start": 7.282
+    },
+    {
+     "word": "Zwölften*",
+     "start": 8.124
+    },
+    {
+     "word": "des",
+     "start": 8.567
+    },
+    {
+     "word": "Jahres,",
+     "start": 8.789
+    },
+    {
+     "word": "in",
+     "start": 9.365
+    },
+    {
+     "word": "dem",
+     "start": 9.542
+    },
+    {
+     "word": "die",
+     "start": 9.764
+    },
+    {
+     "word": "Forderung",
+     "start": 9.986
+    },
+    {
+     "word": "entstanden",
+     "start": 10.473
+    },
+    {
+     "word": "ist.",
+     "start": 11.005
+    },
+    {
+     "word": "Ein",
+     "start": 11.449
+    },
+    {
+     "word": "*Beispiel*:",
+     "start": 11.67
+    },
+    {
+     "word": "Eine",
+     "start": 12.335
+    },
+    {
+     "word": "Rechnung",
+     "start": 12.601
+    },
+    {
+     "word": "vom",
+     "start": 13.045
+    },
+    {
+     "word": "*fünfzehnten",
+     "start": 13.266
+    },
+    {
+     "word": "März",
+     "start": 13.843
+    },
+    {
+     "word": "zweitausendsechsundzwanzig*.",
+     "start": 14.109
+    },
+    {
+     "word": "Die",
+     "start": 15.572
+    },
+    {
+     "word": "Frist",
+     "start": 15.793
+    },
+    {
+     "word": "startet",
+     "start": 16.103
+    },
+    {
+     "word": "erst",
+     "start": 16.502
+    },
+    {
+     "word": "am",
+     "start": 16.768
+    },
+    {
+     "word": "Jahresende,",
+     "start": 16.946
+    },
+    {
+     "word": "also",
+     "start": 17.699
+    },
+    {
+     "word": "am",
+     "start": 17.965
+    },
+    {
+     "word": "einunddreißigsten",
+     "start": 18.143
+    },
+    {
+     "word": "Dezember",
+     "start": 18.985
+    },
+    {
+     "word": "zweitausendsechsundzwanzig,",
+     "start": 19.428
+    },
+    {
+     "word": "und",
+     "start": 20.891
+    },
+    {
+     "word": "endet",
+     "start": 21.113
+    },
+    {
+     "word": "drei",
+     "start": 21.423
+    },
+    {
+     "word": "Jahre",
+     "start": 21.689
+    },
+    {
+     "word": "später,",
+     "start": 21.999
+    },
+    {
+     "word": "am",
+     "start": 22.576
+    },
+    {
+     "word": "*einunddreißigsten",
+     "start": 22.753
+    },
+    {
+     "word": "Dezember",
+     "start": 23.595
+    },
+    {
+     "word": "zweitausendneunundzwanzig*.",
+     "start": 24.039
+    },
+    {
+     "word": "Warum",
+     "start": 25.457
+    },
+    {
+     "word": "so?",
+     "start": 25.768
+    },
+    {
+     "word": "Damit",
+     "start": 26.167
+    },
+    {
+     "word": "Firmen",
+     "start": 26.477
+    },
+    {
+     "word": "nicht",
+     "start": 26.832
+    },
+    {
+     "word": "für",
+     "start": 27.142
+    },
+    {
+     "word": "jede",
+     "start": 27.364
+    },
+    {
+     "word": "Rechnung",
+     "start": 27.63
+    },
+    {
+     "word": "ein",
+     "start": 28.073
+    },
+    {
+     "word": "eigenes",
+     "start": 28.294
+    },
+    {
+     "word": "Datum",
+     "start": 28.693
+    },
+    {
+     "word": "im",
+     "start": 29.004
+    },
+    {
+     "word": "Kopf",
+     "start": 29.181
+    },
+    {
+     "word": "haben",
+     "start": 29.447
+    },
+    {
+     "word": "müssen,",
+     "start": 29.757
+    },
+    {
+     "word": "alle",
+     "start": 30.334
+    },
+    {
+     "word": "laufen",
+     "start": 30.6
+    },
+    {
+     "word": "einfach",
+     "start": 30.954
+    },
+    {
+     "word": "zum",
+     "start": 31.353
+    },
+    {
+     "word": "Jahresende",
+     "start": 31.575
+    },
+    {
+     "word": "ab.",
+     "start": 32.107
+    },
+    {
+     "word": "Und",
+     "start": 32.506
+    },
+    {
+     "word": "noch",
+     "start": 32.728
+    },
+    {
+     "word": "was:",
+     "start": 32.994
+    },
+    {
+     "word": "Wer",
+     "start": 33.437
+    },
+    {
+     "word": "eine",
+     "start": 33.659
+    },
+    {
+     "word": "*verjährte",
+     "start": 33.925
+    },
+    {
+     "word": "Schuld*",
+     "start": 34.412
+    },
+    {
+     "word": "trotzdem",
+     "start": 34.767
+    },
+    {
+     "word": "bezahlt,",
+     "start": 35.21
+    },
+    {
+     "word": "bekommt",
+     "start": 35.831
+    },
+    {
+     "word": "das",
+     "start": 36.23
+    },
+    {
+     "word": "Geld",
+     "start": 36.451
+    },
+    {
+     "word": "*nicht",
+     "start": 36.717
+    },
+    {
+     "word": "zurück*.",
+     "start": 37.028
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-8.wav",
+   "seconds": 30.132,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "dann",
+     "start": 0.327
+    },
+    {
+     "word": "gibt",
+     "start": 0.6
+    },
+    {
+     "word": "es",
+     "start": 0.872
+    },
+    {
+     "word": "zwei",
+     "start": 1.054
+    },
+    {
+     "word": "Begriffe,",
+     "start": 1.327
+    },
+    {
+     "word": "die",
+     "start": 2.009
+    },
+    {
+     "word": "gut",
+     "start": 2.236
+    },
+    {
+     "word": "zu",
+     "start": 2.463
+    },
+    {
+     "word": "wissen",
+     "start": 2.645
+    },
+    {
+     "word": "sind.",
+     "start": 3.008
+    },
+    {
+     "word": "Der",
+     "start": 3.508
+    },
+    {
+     "word": "*Neubeginn*:",
+     "start": 3.735
+    },
+    {
+     "word": "Die",
+     "start": 4.462
+    },
+    {
+     "word": "Uhr",
+     "start": 4.69
+    },
+    {
+     "word": "wird",
+     "start": 4.917
+    },
+    {
+     "word": "auf",
+     "start": 5.189
+    },
+    {
+     "word": "*null*",
+     "start": 5.417
+    },
+    {
+     "word": "gestellt,",
+     "start": 5.689
+    },
+    {
+     "word": "die",
+     "start": 6.371
+    },
+    {
+     "word": "drei",
+     "start": 6.598
+    },
+    {
+     "word": "Jahre",
+     "start": 6.871
+    },
+    {
+     "word": "starten",
+     "start": 7.189
+    },
+    {
+     "word": "*komplett",
+     "start": 7.598
+    },
+    {
+     "word": "neu*.",
+     "start": 8.052
+    },
+    {
+     "word": "Das",
+     "start": 8.507
+    },
+    {
+     "word": "passiert,",
+     "start": 8.734
+    },
+    {
+     "word": "wenn",
+     "start": 9.415
+    },
+    {
+     "word": "der",
+     "start": 9.688
+    },
+    {
+     "word": "Schuldner",
+     "start": 9.915
+    },
+    {
+     "word": "die",
+     "start": 10.415
+    },
+    {
+     "word": "Schuld",
+     "start": 10.642
+    },
+    {
+     "word": "*anerkennt*,",
+     "start": 11.006
+    },
+    {
+     "word": "zum",
+     "start": 11.733
+    },
+    {
+     "word": "Beispiel",
+     "start": 11.96
+    },
+    {
+     "word": "durch",
+     "start": 12.415
+    },
+    {
+     "word": "eine",
+     "start": 12.733
+    },
+    {
+     "word": "*Teilzahlung*,",
+     "start": 13.005
+    },
+    {
+     "word": "oder",
+     "start": 13.823
+    },
+    {
+     "word": "bei",
+     "start": 14.096
+    },
+    {
+     "word": "einer",
+     "start": 14.323
+    },
+    {
+     "word": "*Vollstreckung*.",
+     "start": 14.641
+    },
+    {
+     "word": "Und",
+     "start": 15.55
+    },
+    {
+     "word": "die",
+     "start": 15.777
+    },
+    {
+     "word": "neuen",
+     "start": 16.004
+    },
+    {
+     "word": "drei",
+     "start": 16.322
+    },
+    {
+     "word": "Jahre",
+     "start": 16.595
+    },
+    {
+     "word": "starten",
+     "start": 16.913
+    },
+    {
+     "word": "am",
+     "start": 17.322
+    },
+    {
+     "word": "*Tag",
+     "start": 17.504
+    },
+    {
+     "word": "danach*,",
+     "start": 17.731
+    },
+    {
+     "word": "nicht",
+     "start": 18.322
+    },
+    {
+     "word": "am",
+     "start": 18.64
+    },
+    {
+     "word": "Jahresende.",
+     "start": 18.822
+    },
+    {
+     "word": "Die",
+     "start": 19.594
+    },
+    {
+     "word": "*Hemmung*:",
+     "start": 19.821
+    },
+    {
+     "word": "Die",
+     "start": 20.458
+    },
+    {
+     "word": "Uhr",
+     "start": 20.685
+    },
+    {
+     "word": "wird",
+     "start": 20.912
+    },
+    {
+     "word": "*angehalten*,",
+     "start": 21.185
+    },
+    {
+     "word": "zum",
+     "start": 21.957
+    },
+    {
+     "word": "Beispiel",
+     "start": 22.184
+    },
+    {
+     "word": "während",
+     "start": 22.639
+    },
+    {
+     "word": "*Verhandlungen*,",
+     "start": 23.048
+    },
+    {
+     "word": "nach",
+     "start": 23.957
+    },
+    {
+     "word": "einem",
+     "start": 24.229
+    },
+    {
+     "word": "*Mahnbescheid*",
+     "start": 24.547
+    },
+    {
+     "word": "oder",
+     "start": 25.183
+    },
+    {
+     "word": "einer",
+     "start": 25.456
+    },
+    {
+     "word": "*Klage*.",
+     "start": 25.774
+    },
+    {
+     "word": "Danach",
+     "start": 26.319
+    },
+    {
+     "word": "läuft",
+     "start": 26.683
+    },
+    {
+     "word": "sie",
+     "start": 27.001
+    },
+    {
+     "word": "weiter,",
+     "start": 27.228
+    },
+    {
+     "word": "die",
+     "start": 27.819
+    },
+    {
+     "word": "Zeit",
+     "start": 28.046
+    },
+    {
+     "word": "wird",
+     "start": 28.319
+    },
+    {
+     "word": "*hinten",
+     "start": 28.592
+    },
+    {
+     "word": "angehängt*.",
+     "start": 28.955
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-9.wav",
+   "seconds": 8.525,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "*Drei",
+     "start": 0.774
+    },
+    {
+     "word": "Jahre*,",
+     "start": 1.111
+    },
+    {
+     "word": "Start",
+     "start": 1.785
+    },
+    {
+     "word": "*immer",
+     "start": 2.178
+    },
+    {
+     "word": "am",
+     "start": 2.571
+    },
+    {
+     "word": "Jahresende*.",
+     "start": 2.796
+    },
+    {
+     "word": "*Neubeginn*",
+     "start": 3.75
+    },
+    {
+     "word": "heißt",
+     "start": 4.368
+    },
+    {
+     "word": "Uhr",
+     "start": 4.761
+    },
+    {
+     "word": "auf",
+     "start": 5.042
+    },
+    {
+     "word": "*null*.",
+     "start": 5.323
+    },
+    {
+     "word": "*Hemmung*",
+     "start": 5.94
+    },
+    {
+     "word": "heißt",
+     "start": 6.446
+    },
+    {
+     "word": "Uhr",
+     "start": 6.839
+    },
+    {
+     "word": "*angehalten*.",
+     "start": 7.12
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-10.wav",
+   "seconds": 6.47,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "elf:",
+     "start": 0.426
+    },
+    {
+     "word": "die",
+     "start": 0.893
+    },
+    {
+     "word": "*Verbraucherberatung*.",
+     "start": 1.126
+    },
+    {
+     "word": "Wo",
+     "start": 2.338
+    },
+    {
+     "word": "bekommst",
+     "start": 2.524
+    },
+    {
+     "word": "du",
+     "start": 2.99
+    },
+    {
+     "word": "Hilfe,",
+     "start": 3.177
+    },
+    {
+     "word": "wenn",
+     "start": 3.736
+    },
+    {
+     "word": "du",
+     "start": 4.016
+    },
+    {
+     "word": "Ärger",
+     "start": 4.202
+    },
+    {
+     "word": "mit",
+     "start": 4.529
+    },
+    {
+     "word": "einem",
+     "start": 4.762
+    },
+    {
+     "word": "Vertrag",
+     "start": 5.088
+    },
+    {
+     "word": "hast?",
+     "start": 5.508
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-11.wav",
+   "seconds": 26.041,
+   "words": [
+    {
+     "word": "Verbraucherberatung",
+     "start": 0.1
+    },
+    {
+     "word": "hilft",
+     "start": 1.086
+    },
+    {
+     "word": "dir,",
+     "start": 1.414
+    },
+    {
+     "word": "dich",
+     "start": 1.884
+    },
+    {
+     "word": "zu",
+     "start": 2.166
+    },
+    {
+     "word": "*informieren*",
+     "start": 2.353
+    },
+    {
+     "word": "und",
+     "start": 2.964
+    },
+    {
+     "word": "deine",
+     "start": 3.198
+    },
+    {
+     "word": "*Rechte",
+     "start": 3.527
+    },
+    {
+     "word": "durchzusetzen*.",
+     "start": 3.903
+    },
+    {
+     "word": "Die",
+     "start": 4.841
+    },
+    {
+     "word": "erste",
+     "start": 5.076
+    },
+    {
+     "word": "Adresse",
+     "start": 5.405
+    },
+    {
+     "word": "sind",
+     "start": 5.827
+    },
+    {
+     "word": "die",
+     "start": 6.109
+    },
+    {
+     "word": "*Verbraucherzentralen*,",
+     "start": 6.344
+    },
+    {
+     "word": "da",
+     "start": 7.611
+    },
+    {
+     "word": "bekommst",
+     "start": 7.799
+    },
+    {
+     "word": "du",
+     "start": 8.268
+    },
+    {
+     "word": "*persönliche",
+     "start": 8.456
+    },
+    {
+     "word": "Beratung*,",
+     "start": 9.067
+    },
+    {
+     "word": "zum",
+     "start": 9.771
+    },
+    {
+     "word": "Beispiel",
+     "start": 10.005
+    },
+    {
+     "word": "wenn",
+     "start": 10.475
+    },
+    {
+     "word": "dich",
+     "start": 10.757
+    },
+    {
+     "word": "ein",
+     "start": 11.038
+    },
+    {
+     "word": "Handyanbieter",
+     "start": 11.273
+    },
+    {
+     "word": "abzocken",
+     "start": 11.977
+    },
+    {
+     "word": "will.",
+     "start": 12.447
+    },
+    {
+     "word": "Dann",
+     "start": 12.963
+    },
+    {
+     "word": "die",
+     "start": 13.245
+    },
+    {
+     "word": "*Stiftung",
+     "start": 13.479
+    },
+    {
+     "word": "Warentest*.",
+     "start": 13.949
+    },
+    {
+     "word": "Die",
+     "start": 14.7
+    },
+    {
+     "word": "testet",
+     "start": 14.935
+    },
+    {
+     "word": "Produkte",
+     "start": 15.31
+    },
+    {
+     "word": "und",
+     "start": 15.78
+    },
+    {
+     "word": "Finanzangebote",
+     "start": 16.014
+    },
+    {
+     "word": "und",
+     "start": 16.766
+    },
+    {
+     "word": "veröffentlicht",
+     "start": 17.0
+    },
+    {
+     "word": "die",
+     "start": 17.751
+    },
+    {
+     "word": "Ergebnisse",
+     "start": 17.986
+    },
+    {
+     "word": "in",
+     "start": 18.549
+    },
+    {
+     "word": "den",
+     "start": 18.737
+    },
+    {
+     "word": "Heften",
+     "start": 18.972
+    },
+    {
+     "word": "*test*",
+     "start": 19.348
+    },
+    {
+     "word": "und",
+     "start": 19.629
+    },
+    {
+     "word": "*Finanztest*.",
+     "start": 19.864
+    },
+    {
+     "word": "Und",
+     "start": 20.662
+    },
+    {
+     "word": "dann",
+     "start": 20.897
+    },
+    {
+     "word": "gibt",
+     "start": 21.178
+    },
+    {
+     "word": "es",
+     "start": 21.46
+    },
+    {
+     "word": "*Publikationen*,",
+     "start": 21.648
+    },
+    {
+     "word": "also",
+     "start": 22.587
+    },
+    {
+     "word": "Ratgeber,",
+     "start": 22.868
+    },
+    {
+     "word": "Broschüren",
+     "start": 23.573
+    },
+    {
+     "word": "und",
+     "start": 24.136
+    },
+    {
+     "word": "Infos",
+     "start": 24.371
+    },
+    {
+     "word": "im",
+     "start": 24.699
+    },
+    {
+     "word": "Internet.",
+     "start": 24.887
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-12.wav",
+   "seconds": 5.948,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "Für",
+     "start": 0.668
+    },
+    {
+     "word": "*Beratung*",
+     "start": 0.905
+    },
+    {
+     "word": "gehst",
+     "start": 1.378
+    },
+    {
+     "word": "du",
+     "start": 1.71
+    },
+    {
+     "word": "zur",
+     "start": 1.899
+    },
+    {
+     "word": "*Verbraucherzentrale*.",
+     "start": 2.136
+    },
+    {
+     "word": "*Tests*",
+     "start": 3.367
+    },
+    {
+     "word": "macht",
+     "start": 3.699
+    },
+    {
+     "word": "die",
+     "start": 4.03
+    },
+    {
+     "word": "*Stiftung",
+     "start": 4.267
+    },
+    {
+     "word": "Warentest*.",
+     "start": 4.74
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-13.wav",
+   "seconds": 5.565,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "zwölf:",
+     "start": 0.419
+    },
+    {
+     "word": "der",
+     "start": 0.966
+    },
+    {
+     "word": "*Fernabsatz*.",
+     "start": 1.194
+    },
+    {
+     "word": "Klingt",
+     "start": 1.969
+    },
+    {
+     "word": "kompliziert,",
+     "start": 2.334
+    },
+    {
+     "word": "heißt",
+     "start": 3.154
+    },
+    {
+     "word": "aber",
+     "start": 3.474
+    },
+    {
+     "word": "einfach",
+     "start": 3.747
+    },
+    {
+     "word": "Online-Shopping.",
+     "start": 4.157
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-14.wav",
+   "seconds": 11.536,
+   "words": [
+    {
+     "word": "Fernabsatz",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.632
+    },
+    {
+     "word": "ein",
+     "start": 0.853
+    },
+    {
+     "word": "Vertrag",
+     "start": 1.075
+    },
+    {
+     "word": "*ohne",
+     "start": 1.473
+    },
+    {
+     "word": "persönlichen",
+     "start": 1.739
+    },
+    {
+     "word": "Kontakt*,",
+     "start": 2.359
+    },
+    {
+     "word": "also",
+     "start": 2.979
+    },
+    {
+     "word": "im",
+     "start": 3.245
+    },
+    {
+     "word": "*Internet*,",
+     "start": 3.422
+    },
+    {
+     "word": "am",
+     "start": 4.087
+    },
+    {
+     "word": "*Telefon*",
+     "start": 4.264
+    },
+    {
+     "word": "oder",
+     "start": 4.663
+    },
+    {
+     "word": "per",
+     "start": 4.929
+    },
+    {
+     "word": "*Katalog*.",
+     "start": 5.15
+    },
+    {
+     "word": "Du",
+     "start": 5.77
+    },
+    {
+     "word": "kannst",
+     "start": 5.947
+    },
+    {
+     "word": "die",
+     "start": 6.302
+    },
+    {
+     "word": "Ware",
+     "start": 6.523
+    },
+    {
+     "word": "vorher",
+     "start": 6.789
+    },
+    {
+     "word": "nicht",
+     "start": 7.143
+    },
+    {
+     "word": "anfassen,",
+     "start": 7.454
+    },
+    {
+     "word": "und",
+     "start": 8.118
+    },
+    {
+     "word": "genau",
+     "start": 8.34
+    },
+    {
+     "word": "deshalb",
+     "start": 8.65
+    },
+    {
+     "word": "bekommst",
+     "start": 9.048
+    },
+    {
+     "word": "du",
+     "start": 9.491
+    },
+    {
+     "word": "einen",
+     "start": 9.668
+    },
+    {
+     "word": "besonderen",
+     "start": 9.979
+    },
+    {
+     "word": "Schutz.",
+     "start": 10.51
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-15.wav",
+   "seconds": 36.866,
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.1
+    },
+    {
+     "word": "hast",
+     "start": 0.275
+    },
+    {
+     "word": "ein",
+     "start": 0.537
+    },
+    {
+     "word": "*Widerrufsrecht*",
+     "start": 0.756
+    },
+    {
+     "word": "von",
+     "start": 1.455
+    },
+    {
+     "word": "*vierzehn",
+     "start": 1.673
+    },
+    {
+     "word": "Tagen*,",
+     "start": 2.11
+    },
+    {
+     "word": "und",
+     "start": 2.635
+    },
+    {
+     "word": "zwar",
+     "start": 2.853
+    },
+    {
+     "word": "*ohne",
+     "start": 3.115
+    },
+    {
+     "word": "Grund*.",
+     "start": 3.378
+    },
+    {
+     "word": "Die",
+     "start": 3.902
+    },
+    {
+     "word": "Frist",
+     "start": 4.121
+    },
+    {
+     "word": "beginnt,",
+     "start": 4.426
+    },
+    {
+     "word": "wenn",
+     "start": 5.038
+    },
+    {
+     "word": "du",
+     "start": 5.3
+    },
+    {
+     "word": "die",
+     "start": 5.475
+    },
+    {
+     "word": "*Ware",
+     "start": 5.694
+    },
+    {
+     "word": "erhalten*",
+     "start": 5.956
+    },
+    {
+     "word": "hast",
+     "start": 6.393
+    },
+    {
+     "word": "und",
+     "start": 6.655
+    },
+    {
+     "word": "*belehrt*",
+     "start": 6.874
+    },
+    {
+     "word": "wurdest,",
+     "start": 7.267
+    },
+    {
+     "word": "also",
+     "start": 7.879
+    },
+    {
+     "word": "über",
+     "start": 8.141
+    },
+    {
+     "word": "dein",
+     "start": 8.403
+    },
+    {
+     "word": "Widerrufsrecht",
+     "start": 8.666
+    },
+    {
+     "word": "informiert.",
+     "start": 9.365
+    },
+    {
+     "word": "Hat",
+     "start": 10.108
+    },
+    {
+     "word": "der",
+     "start": 10.326
+    },
+    {
+     "word": "Händler",
+     "start": 10.545
+    },
+    {
+     "word": "das",
+     "start": 10.938
+    },
+    {
+     "word": "vergessen,",
+     "start": 11.157
+    },
+    {
+     "word": "verlängert",
+     "start": 11.856
+    },
+    {
+     "word": "sich",
+     "start": 12.38
+    },
+    {
+     "word": "die",
+     "start": 12.642
+    },
+    {
+     "word": "Frist",
+     "start": 12.861
+    },
+    {
+     "word": "auf",
+     "start": 13.167
+    },
+    {
+     "word": "bis",
+     "start": 13.385
+    },
+    {
+     "word": "zu",
+     "start": 13.604
+    },
+    {
+     "word": "*zwölf",
+     "start": 13.779
+    },
+    {
+     "word": "Monate",
+     "start": 14.085
+    },
+    {
+     "word": "plus",
+     "start": 14.434
+    },
+    {
+     "word": "vierzehn",
+     "start": 14.696
+    },
+    {
+     "word": "Tage*.",
+     "start": 15.133
+    },
+    {
+     "word": "Wichtig:",
+     "start": 15.614
+    },
+    {
+     "word": "Den",
+     "start": 16.226
+    },
+    {
+     "word": "Widerruf",
+     "start": 16.444
+    },
+    {
+     "word": "musst",
+     "start": 16.881
+    },
+    {
+     "word": "du",
+     "start": 17.187
+    },
+    {
+     "word": "*eindeutig",
+     "start": 17.362
+    },
+    {
+     "word": "erklären*,",
+     "start": 17.843
+    },
+    {
+     "word": "zum",
+     "start": 18.498
+    },
+    {
+     "word": "Beispiel",
+     "start": 18.717
+    },
+    {
+     "word": "per",
+     "start": 19.154
+    },
+    {
+     "word": "E-Mail.",
+     "start": 19.372
+    },
+    {
+     "word": "Nur",
+     "start": 19.897
+    },
+    {
+     "word": "das",
+     "start": 20.115
+    },
+    {
+     "word": "Paket",
+     "start": 20.334
+    },
+    {
+     "word": "zurückschicken",
+     "start": 20.64
+    },
+    {
+     "word": "reicht",
+     "start": 21.339
+    },
+    {
+     "word": "nicht.",
+     "start": 21.689
+    },
+    {
+     "word": "Die",
+     "start": 22.213
+    },
+    {
+     "word": "*Rücksendekosten*",
+     "start": 22.432
+    },
+    {
+     "word": "zahlst",
+     "start": 23.174
+    },
+    {
+     "word": "*du*,",
+     "start": 23.524
+    },
+    {
+     "word": "wenn",
+     "start": 23.917
+    },
+    {
+     "word": "das",
+     "start": 24.18
+    },
+    {
+     "word": "vorher",
+     "start": 24.398
+    },
+    {
+     "word": "gesagt",
+     "start": 24.748
+    },
+    {
+     "word": "wurde.",
+     "start": 25.097
+    },
+    {
+     "word": "Und",
+     "start": 25.622
+    },
+    {
+     "word": "es",
+     "start": 25.84
+    },
+    {
+     "word": "gibt",
+     "start": 26.015
+    },
+    {
+     "word": "*Ausnahmen*:",
+     "start": 26.277
+    },
+    {
+     "word": "Kein",
+     "start": 26.976
+    },
+    {
+     "word": "Widerruf",
+     "start": 27.239
+    },
+    {
+     "word": "bei",
+     "start": 27.676
+    },
+    {
+     "word": "*individuell",
+     "start": 27.894
+    },
+    {
+     "word": "angefertigter*",
+     "start": 28.462
+    },
+    {
+     "word": "Ware,",
+     "start": 29.118
+    },
+    {
+     "word": "zum",
+     "start": 29.599
+    },
+    {
+     "word": "Beispiel",
+     "start": 29.817
+    },
+    {
+     "word": "ein",
+     "start": 30.254
+    },
+    {
+     "word": "T-Shirt",
+     "start": 30.473
+    },
+    {
+     "word": "mit",
+     "start": 30.822
+    },
+    {
+     "word": "deinem",
+     "start": 31.041
+    },
+    {
+     "word": "Namen,",
+     "start": 31.39
+    },
+    {
+     "word": "bei",
+     "start": 31.915
+    },
+    {
+     "word": "*verderblichen*",
+     "start": 32.133
+    },
+    {
+     "word": "Lebensmitteln",
+     "start": 32.789
+    },
+    {
+     "word": "und",
+     "start": 33.444
+    },
+    {
+     "word": "bei",
+     "start": 33.663
+    },
+    {
+     "word": "*entsiegelter*",
+     "start": 33.881
+    },
+    {
+     "word": "Hygieneware,",
+     "start": 34.493
+    },
+    {
+     "word": "Software",
+     "start": 35.28
+    },
+    {
+     "word": "oder",
+     "start": 35.717
+    },
+    {
+     "word": "CDs.",
+     "start": 35.979
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-16.wav",
+   "seconds": 13.172,
+   "words": [
+    {
+     "word": "Frage:",
+     "start": 0.1
+    },
+    {
+     "word": "Lukas",
+     "start": 0.563
+    },
+    {
+     "word": "kauft",
+     "start": 0.833
+    },
+    {
+     "word": "im",
+     "start": 1.104
+    },
+    {
+     "word": "*Laden*",
+     "start": 1.258
+    },
+    {
+     "word": "eine",
+     "start": 1.528
+    },
+    {
+     "word": "Jacke,",
+     "start": 1.76
+    },
+    {
+     "word": "zu",
+     "start": 2.223
+    },
+    {
+     "word": "Hause",
+     "start": 2.377
+    },
+    {
+     "word": "gefällt",
+     "start": 2.648
+    },
+    {
+     "word": "sie",
+     "start": 2.995
+    },
+    {
+     "word": "ihm",
+     "start": 3.188
+    },
+    {
+     "word": "nicht",
+     "start": 3.381
+    },
+    {
+     "word": "mehr.",
+     "start": 3.651
+    },
+    {
+     "word": "Hat",
+     "start": 4.076
+    },
+    {
+     "word": "er",
+     "start": 4.269
+    },
+    {
+     "word": "vierzehn",
+     "start": 4.423
+    },
+    {
+     "word": "Tage",
+     "start": 4.809
+    },
+    {
+     "word": "Widerrufsrecht?",
+     "start": 5.041
+    },
+    {
+     "word": "…",
+     "start": 5.851
+    },
+    {
+     "word": "*Nein!*",
+     "start": 5.929
+    },
+    {
+     "word": "Das",
+     "start": 6.16
+    },
+    {
+     "word": "Widerrufsrecht",
+     "start": 6.353
+    },
+    {
+     "word": "gibt",
+     "start": 6.971
+    },
+    {
+     "word": "es",
+     "start": 7.202
+    },
+    {
+     "word": "nur",
+     "start": 7.357
+    },
+    {
+     "word": "beim",
+     "start": 7.55
+    },
+    {
+     "word": "*Fernabsatz*.",
+     "start": 7.781
+    },
+    {
+     "word": "Wenn",
+     "start": 8.438
+    },
+    {
+     "word": "der",
+     "start": 8.669
+    },
+    {
+     "word": "Laden",
+     "start": 8.862
+    },
+    {
+     "word": "die",
+     "start": 9.132
+    },
+    {
+     "word": "Jacke",
+     "start": 9.325
+    },
+    {
+     "word": "trotzdem",
+     "start": 9.596
+    },
+    {
+     "word": "zurücknimmt,",
+     "start": 9.982
+    },
+    {
+     "word": "ist",
+     "start": 10.676
+    },
+    {
+     "word": "das",
+     "start": 10.869
+    },
+    {
+     "word": "reine",
+     "start": 11.062
+    },
+    {
+     "word": "*Kulanz*,",
+     "start": 11.333
+    },
+    {
+     "word": "also",
+     "start": 11.834
+    },
+    {
+     "word": "freiwillig.",
+     "start": 12.066
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-17.wav",
+   "seconds": 6.136,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "dreizehn:",
+     "start": 0.379
+    },
+    {
+     "word": "die",
+     "start": 0.978
+    },
+    {
+     "word": "*AGB*,",
+     "start": 1.177
+    },
+    {
+     "word": "die",
+     "start": 1.576
+    },
+    {
+     "word": "*Allgemeinen",
+     "start": 1.776
+    },
+    {
+     "word": "Geschäftsbedingungen*,",
+     "start": 2.295
+    },
+    {
+     "word": "also",
+     "start": 3.372
+    },
+    {
+     "word": "das",
+     "start": 3.611
+    },
+    {
+     "word": "Kleingedruckte,",
+     "start": 3.811
+    },
+    {
+     "word": "das",
+     "start": 4.649
+    },
+    {
+     "word": "du",
+     "start": 4.848
+    },
+    {
+     "word": "nie",
+     "start": 5.008
+    },
+    {
+     "word": "liest.",
+     "start": 5.208
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-18.wav",
+   "seconds": 6.764,
+   "words": [
+    {
+     "word": "AGB",
+     "start": 0.1
+    },
+    {
+     "word": "sind",
+     "start": 0.306
+    },
+    {
+     "word": "*vorformulierte*",
+     "start": 0.553
+    },
+    {
+     "word": "Vertragsbedingungen",
+     "start": 1.211
+    },
+    {
+     "word": "für",
+     "start": 2.075
+    },
+    {
+     "word": "*viele",
+     "start": 2.281
+    },
+    {
+     "word": "Verträge*.",
+     "start": 2.569
+    },
+    {
+     "word": "Die",
+     "start": 3.186
+    },
+    {
+     "word": "Firma",
+     "start": 3.392
+    },
+    {
+     "word": "schreibt",
+     "start": 3.68
+    },
+    {
+     "word": "sie",
+     "start": 4.092
+    },
+    {
+     "word": "einmal",
+     "start": 4.297
+    },
+    {
+     "word": "und",
+     "start": 4.626
+    },
+    {
+     "word": "nutzt",
+     "start": 4.832
+    },
+    {
+     "word": "sie",
+     "start": 5.12
+    },
+    {
+     "word": "für",
+     "start": 5.326
+    },
+    {
+     "word": "alle",
+     "start": 5.532
+    },
+    {
+     "word": "Kunden.",
+     "start": 5.779
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-2-19.wav",
+   "seconds": 37.065,
+   "words": [
+    {
+     "word": "Warum",
+     "start": 0.1
+    },
+    {
+     "word": "gibt",
+     "start": 0.401
+    },
+    {
+     "word": "es",
+     "start": 0.659
+    },
+    {
+     "word": "die?",
+     "start": 0.831
+    },
+    {
+     "word": "Die",
+     "start": 1.261
+    },
+    {
+     "word": "Firma",
+     "start": 1.476
+    },
+    {
+     "word": "*spart",
+     "start": 1.777
+    },
+    {
+     "word": "Zeit",
+     "start": 2.078
+    },
+    {
+     "word": "und",
+     "start": 2.336
+    },
+    {
+     "word": "Kosten*,",
+     "start": 2.552
+    },
+    {
+     "word": "sie",
+     "start": 3.111
+    },
+    {
+     "word": "muss",
+     "start": 3.326
+    },
+    {
+     "word": "nicht",
+     "start": 3.584
+    },
+    {
+     "word": "mit",
+     "start": 3.885
+    },
+    {
+     "word": "jedem",
+     "start": 4.1
+    },
+    {
+     "word": "Kunden",
+     "start": 4.401
+    },
+    {
+     "word": "einzeln",
+     "start": 4.745
+    },
+    {
+     "word": "verhandeln.",
+     "start": 5.132
+    },
+    {
+     "word": "Das",
+     "start": 5.863
+    },
+    {
+     "word": "Problem:",
+     "start": 6.078
+    },
+    {
+     "word": "Du",
+     "start": 6.68
+    },
+    {
+     "word": "als",
+     "start": 6.853
+    },
+    {
+     "word": "Kunde",
+     "start": 7.068
+    },
+    {
+     "word": "*kannst",
+     "start": 7.369
+    },
+    {
+     "word": "nicht",
+     "start": 7.713
+    },
+    {
+     "word": "mitverhandeln*,",
+     "start": 8.014
+    },
+    {
+     "word": "und",
+     "start": 8.874
+    },
+    {
+     "word": "die",
+     "start": 9.089
+    },
+    {
+     "word": "Firma",
+     "start": 9.304
+    },
+    {
+     "word": "könnte",
+     "start": 9.605
+    },
+    {
+     "word": "dich",
+     "start": 9.949
+    },
+    {
+     "word": "*benachteiligen*.",
+     "start": 10.207
+    },
+    {
+     "word": "Deshalb",
+     "start": 11.11
+    },
+    {
+     "word": "schützt",
+     "start": 11.498
+    },
+    {
+     "word": "dich",
+     "start": 11.885
+    },
+    {
+     "word": "das",
+     "start": 12.143
+    },
+    {
+     "word": "*Gesetz*.",
+     "start": 12.358
+    },
+    {
+     "word": "AGB",
+     "start": 12.917
+    },
+    {
+     "word": "gelten",
+     "start": 13.132
+    },
+    {
+     "word": "überhaupt",
+     "start": 13.476
+    },
+    {
+     "word": "nur,",
+     "start": 13.949
+    },
+    {
+     "word": "wenn",
+     "start": 14.379
+    },
+    {
+     "word": "es",
+     "start": 14.637
+    },
+    {
+     "word": "einen",
+     "start": 14.809
+    },
+    {
+     "word": "*deutlichen",
+     "start": 15.11
+    },
+    {
+     "word": "Hinweis*",
+     "start": 15.626
+    },
+    {
+     "word": "gab,",
+     "start": 16.014
+    },
+    {
+     "word": "du",
+     "start": 16.444
+    },
+    {
+     "word": "sie",
+     "start": 16.616
+    },
+    {
+     "word": "*zumutbar",
+     "start": 16.831
+    },
+    {
+     "word": "lesen*",
+     "start": 17.261
+    },
+    {
+     "word": "konntest",
+     "start": 17.562
+    },
+    {
+     "word": "und",
+     "start": 17.992
+    },
+    {
+     "word": "*einverstanden*",
+     "start": 18.207
+    },
+    {
+     "word": "warst.",
+     "start": 18.852
+    },
+    {
+     "word": "Und",
+     "start": 19.368
+    },
+    {
+     "word": "dann",
+     "start": 19.583
+    },
+    {
+     "word": "gibt",
+     "start": 19.841
+    },
+    {
+     "word": "es",
+     "start": 20.099
+    },
+    {
+     "word": "Regeln:",
+     "start": 20.271
+    },
+    {
+     "word": "*Überraschende",
+     "start": 20.831
+    },
+    {
+     "word": "Klauseln*,",
+     "start": 21.476
+    },
+    {
+     "word": "mit",
+     "start": 22.121
+    },
+    {
+     "word": "denen",
+     "start": 22.336
+    },
+    {
+     "word": "niemand",
+     "start": 22.637
+    },
+    {
+     "word": "rechnet,",
+     "start": 23.024
+    },
+    {
+     "word": "zum",
+     "start": 23.626
+    },
+    {
+     "word": "Beispiel",
+     "start": 23.841
+    },
+    {
+     "word": "ein",
+     "start": 24.271
+    },
+    {
+     "word": "verstecktes",
+     "start": 24.486
+    },
+    {
+     "word": "Abo",
+     "start": 25.046
+    },
+    {
+     "word": "beim",
+     "start": 25.261
+    },
+    {
+     "word": "Kauf",
+     "start": 25.519
+    },
+    {
+     "word": "eines",
+     "start": 25.777
+    },
+    {
+     "word": "Kabels,",
+     "start": 26.078
+    },
+    {
+     "word": "sind",
+     "start": 26.637
+    },
+    {
+     "word": "*unwirksam*.",
+     "start": 26.895
+    },
+    {
+     "word": "Die",
+     "start": 27.583
+    },
+    {
+     "word": "*Gewährleistung*",
+     "start": 27.798
+    },
+    {
+     "word": "darf",
+     "start": 28.486
+    },
+    {
+     "word": "gegenüber",
+     "start": 28.744
+    },
+    {
+     "word": "Verbrauchern",
+     "start": 29.217
+    },
+    {
+     "word": "*nicht",
+     "start": 29.82
+    },
+    {
+     "word": "verkürzt*",
+     "start": 30.121
+    },
+    {
+     "word": "werden.",
+     "start": 30.551
+    },
+    {
+     "word": "Und",
+     "start": 31.11
+    },
+    {
+     "word": "ist",
+     "start": 31.325
+    },
+    {
+     "word": "eine",
+     "start": 31.54
+    },
+    {
+     "word": "Klausel",
+     "start": 31.798
+    },
+    {
+     "word": "unwirksam,",
+     "start": 32.185
+    },
+    {
+     "word": "gilt",
+     "start": 32.873
+    },
+    {
+     "word": "dafür",
+     "start": 33.131
+    },
+    {
+     "word": "einfach",
+     "start": 33.432
+    },
+    {
+     "word": "das",
+     "start": 33.82
+    },
+    {
+     "word": "*Gesetz*,",
+     "start": 34.035
+    },
+    {
+     "word": "der",
+     "start": 34.594
+    },
+    {
+     "word": "*Rest",
+     "start": 34.809
+    },
+    {
+     "word": "des",
+     "start": 35.067
+    },
+    {
+     "word": "Vertrags*",
+     "start": 35.282
+    },
+    {
+     "word": "bleibt",
+     "start": 35.712
+    },
+    {
+     "word": "gültig.",
+     "start": 36.056
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-0.wav",
+   "seconds": 5.0,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "AGB",
+     "start": 0.634
+    },
+    {
+     "word": "dürfen",
+     "start": 0.857
+    },
+    {
+     "word": "*nicht",
+     "start": 1.213
+    },
+    {
+     "word": "überraschen*",
+     "start": 1.524
+    },
+    {
+     "word": "und",
+     "start": 2.103
+    },
+    {
+     "word": "dir",
+     "start": 2.325
+    },
+    {
+     "word": "*keine",
+     "start": 2.548
+    },
+    {
+     "word": "gesetzlichen",
+     "start": 2.859
+    },
+    {
+     "word": "Rechte*",
+     "start": 3.482
+    },
+    {
+     "word": "wegnehmen.",
+     "start": 3.838
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-1.wav",
+   "seconds": 7.087,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "vierzehn:",
+     "start": 0.447
+    },
+    {
+     "word": "*Girokonto",
+     "start": 1.19
+    },
+    {
+     "word": "und",
+     "start": 1.734
+    },
+    {
+     "word": "Zahlungsverkehr*.",
+     "start": 1.982
+    },
+    {
+     "word": "Wie",
+     "start": 3.072
+    },
+    {
+     "word": "bezahlst",
+     "start": 3.319
+    },
+    {
+     "word": "du",
+     "start": 3.814
+    },
+    {
+     "word": "eigentlich,",
+     "start": 4.012
+    },
+    {
+     "word": "und",
+     "start": 4.854
+    },
+    {
+     "word": "was",
+     "start": 5.102
+    },
+    {
+     "word": "ist",
+     "start": 5.35
+    },
+    {
+     "word": "wann",
+     "start": 5.597
+    },
+    {
+     "word": "sinnvoll?",
+     "start": 5.894
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-2.wav",
+   "seconds": 21.665,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "*Girokonto*",
+     "start": 0.319
+    },
+    {
+     "word": "ist",
+     "start": 0.801
+    },
+    {
+     "word": "dein",
+     "start": 1.02
+    },
+    {
+     "word": "Konto",
+     "start": 1.283
+    },
+    {
+     "word": "für",
+     "start": 1.589
+    },
+    {
+     "word": "den",
+     "start": 1.808
+    },
+    {
+     "word": "*täglichen",
+     "start": 2.028
+    },
+    {
+     "word": "Zahlungsverkehr*,",
+     "start": 2.509
+    },
+    {
+     "word": "da",
+     "start": 3.473
+    },
+    {
+     "word": "kommt",
+     "start": 3.648
+    },
+    {
+     "word": "dein",
+     "start": 3.955
+    },
+    {
+     "word": "Lohn",
+     "start": 4.218
+    },
+    {
+     "word": "drauf,",
+     "start": 4.481
+    },
+    {
+     "word": "und",
+     "start": 5.006
+    },
+    {
+     "word": "davon",
+     "start": 5.225
+    },
+    {
+     "word": "gehen",
+     "start": 5.532
+    },
+    {
+     "word": "Miete",
+     "start": 5.839
+    },
+    {
+     "word": "und",
+     "start": 6.145
+    },
+    {
+     "word": "Handy",
+     "start": 6.364
+    },
+    {
+     "word": "ab.",
+     "start": 6.671
+    },
+    {
+     "word": "Banken",
+     "start": 7.065
+    },
+    {
+     "word": "unterscheiden",
+     "start": 7.416
+    },
+    {
+     "word": "sich",
+     "start": 8.073
+    },
+    {
+     "word": "stark,",
+     "start": 8.336
+    },
+    {
+     "word": "deshalb",
+     "start": 8.861
+    },
+    {
+     "word": "lohnt",
+     "start": 9.256
+    },
+    {
+     "word": "es",
+     "start": 9.562
+    },
+    {
+     "word": "sich,",
+     "start": 9.738
+    },
+    {
+     "word": "die",
+     "start": 10.219
+    },
+    {
+     "word": "*Konditionen*",
+     "start": 10.438
+    },
+    {
+     "word": "zu",
+     "start": 11.008
+    },
+    {
+     "word": "vergleichen:",
+     "start": 11.183
+    },
+    {
+     "word": "*Kontoführungsgebühr*,",
+     "start": 11.972
+    },
+    {
+     "word": "*Kartenkosten*,",
+     "start": 13.111
+    },
+    {
+     "word": "die",
+     "start": 13.943
+    },
+    {
+     "word": "*Dispozinsen*,",
+     "start": 14.162
+    },
+    {
+     "word": "falls",
+     "start": 14.951
+    },
+    {
+     "word": "du",
+     "start": 15.257
+    },
+    {
+     "word": "mal",
+     "start": 15.432
+    },
+    {
+     "word": "ins",
+     "start": 15.651
+    },
+    {
+     "word": "Minus",
+     "start": 15.871
+    },
+    {
+     "word": "rutschst,",
+     "start": 16.177
+    },
+    {
+     "word": "wo",
+     "start": 16.834
+    },
+    {
+     "word": "es",
+     "start": 17.009
+    },
+    {
+     "word": "kostenlose",
+     "start": 17.185
+    },
+    {
+     "word": "Geldautomaten",
+     "start": 17.71
+    },
+    {
+     "word": "gibt,",
+     "start": 18.368
+    },
+    {
+     "word": "*Online-Banking*",
+     "start": 18.849
+    },
+    {
+     "word": "und",
+     "start": 19.506
+    },
+    {
+     "word": "ob",
+     "start": 19.726
+    },
+    {
+     "word": "es",
+     "start": 19.901
+    },
+    {
+     "word": "eine",
+     "start": 20.076
+    },
+    {
+     "word": "Filiale",
+     "start": 20.339
+    },
+    {
+     "word": "gibt.",
+     "start": 20.733
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-3.wav",
+   "seconds": 38.899,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "wie",
+     "start": 0.323
+    },
+    {
+     "word": "bezahlst",
+     "start": 0.546
+    },
+    {
+     "word": "du?",
+     "start": 0.993
+    },
+    {
+     "word": "Jede",
+     "start": 1.395
+    },
+    {
+     "word": "Form",
+     "start": 1.663
+    },
+    {
+     "word": "hat",
+     "start": 1.93
+    },
+    {
+     "word": "ihre",
+     "start": 2.154
+    },
+    {
+     "word": "Stärke.",
+     "start": 2.421
+    },
+    {
+     "word": "*Bar*:",
+     "start": 3.002
+    },
+    {
+     "word": "sofort,",
+     "start": 3.448
+    },
+    {
+     "word": "anonym,",
+     "start": 4.029
+    },
+    {
+     "word": "und",
+     "start": 4.609
+    },
+    {
+     "word": "du",
+     "start": 4.832
+    },
+    {
+     "word": "behältst",
+     "start": 5.011
+    },
+    {
+     "word": "gut",
+     "start": 5.457
+    },
+    {
+     "word": "den",
+     "start": 5.68
+    },
+    {
+     "word": "Überblick,",
+     "start": 5.904
+    },
+    {
+     "word": "weil",
+     "start": 6.618
+    },
+    {
+     "word": "du",
+     "start": 6.886
+    },
+    {
+     "word": "siehst,",
+     "start": 7.064
+    },
+    {
+     "word": "wie",
+     "start": 7.645
+    },
+    {
+     "word": "das",
+     "start": 7.868
+    },
+    {
+     "word": "Geld",
+     "start": 8.091
+    },
+    {
+     "word": "weniger",
+     "start": 8.359
+    },
+    {
+     "word": "wird.",
+     "start": 8.761
+    },
+    {
+     "word": "Nachteil:",
+     "start": 9.252
+    },
+    {
+     "word": "Es",
+     "start": 9.922
+    },
+    {
+     "word": "kann",
+     "start": 10.1
+    },
+    {
+     "word": "geklaut",
+     "start": 10.368
+    },
+    {
+     "word": "werden.",
+     "start": 10.77
+    },
+    {
+     "word": "Die",
+     "start": 11.35
+    },
+    {
+     "word": "*Überweisung*,",
+     "start": 11.573
+    },
+    {
+     "word": "und",
+     "start": 12.377
+    },
+    {
+     "word": "als",
+     "start": 12.6
+    },
+    {
+     "word": "*Dauerauftrag*",
+     "start": 12.823
+    },
+    {
+     "word": "perfekt",
+     "start": 13.448
+    },
+    {
+     "word": "für",
+     "start": 13.85
+    },
+    {
+     "word": "immer",
+     "start": 14.073
+    },
+    {
+     "word": "gleiche",
+     "start": 14.386
+    },
+    {
+     "word": "Beträge",
+     "start": 14.788
+    },
+    {
+     "word": "wie",
+     "start": 15.189
+    },
+    {
+     "word": "die",
+     "start": 15.413
+    },
+    {
+     "word": "Miete.",
+     "start": 15.636
+    },
+    {
+     "word": "Die",
+     "start": 16.172
+    },
+    {
+     "word": "*Lastschrift*,",
+     "start": 16.395
+    },
+    {
+     "word": "da",
+     "start": 17.198
+    },
+    {
+     "word": "holt",
+     "start": 17.377
+    },
+    {
+     "word": "sich",
+     "start": 17.645
+    },
+    {
+     "word": "der",
+     "start": 17.913
+    },
+    {
+     "word": "Empfänger",
+     "start": 18.136
+    },
+    {
+     "word": "das",
+     "start": 18.627
+    },
+    {
+     "word": "Geld",
+     "start": 18.85
+    },
+    {
+     "word": "selbst,",
+     "start": 19.118
+    },
+    {
+     "word": "praktisch",
+     "start": 19.698
+    },
+    {
+     "word": "bei",
+     "start": 20.189
+    },
+    {
+     "word": "wechselnden",
+     "start": 20.413
+    },
+    {
+     "word": "Beträgen",
+     "start": 20.993
+    },
+    {
+     "word": "wie",
+     "start": 21.439
+    },
+    {
+     "word": "Strom.",
+     "start": 21.663
+    },
+    {
+     "word": "Die",
+     "start": 22.198
+    },
+    {
+     "word": "*Girocard*:",
+     "start": 22.422
+    },
+    {
+     "word": "Das",
+     "start": 23.091
+    },
+    {
+     "word": "Geld",
+     "start": 23.314
+    },
+    {
+     "word": "geht",
+     "start": 23.582
+    },
+    {
+     "word": "*sofort*",
+     "start": 23.85
+    },
+    {
+     "word": "vom",
+     "start": 24.207
+    },
+    {
+     "word": "Konto.",
+     "start": 24.431
+    },
+    {
+     "word": "Die",
+     "start": 24.966
+    },
+    {
+     "word": "*Kreditkarte*:",
+     "start": 25.19
+    },
+    {
+     "word": "Es",
+     "start": 25.993
+    },
+    {
+     "word": "wird",
+     "start": 26.172
+    },
+    {
+     "word": "erst",
+     "start": 26.44
+    },
+    {
+     "word": "*später*",
+     "start": 26.707
+    },
+    {
+     "word": "abgebucht.",
+     "start": 27.065
+    },
+    {
+     "word": "Sie",
+     "start": 27.779
+    },
+    {
+     "word": "funktioniert",
+     "start": 28.002
+    },
+    {
+     "word": "weltweit,",
+     "start": 28.627
+    },
+    {
+     "word": "aber",
+     "start": 29.297
+    },
+    {
+     "word": "man",
+     "start": 29.565
+    },
+    {
+     "word": "verliert",
+     "start": 29.788
+    },
+    {
+     "word": "schnell",
+     "start": 30.234
+    },
+    {
+     "word": "den",
+     "start": 30.636
+    },
+    {
+     "word": "Überblick",
+     "start": 30.859
+    },
+    {
+     "word": "und",
+     "start": 31.35
+    },
+    {
+     "word": "rutscht",
+     "start": 31.573
+    },
+    {
+     "word": "in",
+     "start": 31.975
+    },
+    {
+     "word": "Schulden.",
+     "start": 32.154
+    },
+    {
+     "word": "Und",
+     "start": 32.823
+    },
+    {
+     "word": "*elektronisch*,",
+     "start": 33.047
+    },
+    {
+     "word": "also",
+     "start": 33.895
+    },
+    {
+     "word": "PayPal",
+     "start": 34.163
+    },
+    {
+     "word": "oder",
+     "start": 34.52
+    },
+    {
+     "word": "Apple",
+     "start": 34.788
+    },
+    {
+     "word": "Pay:",
+     "start": 35.1
+    },
+    {
+     "word": "schnell",
+     "start": 35.547
+    },
+    {
+     "word": "beim",
+     "start": 35.949
+    },
+    {
+     "word": "Online-Shopping",
+     "start": 36.216
+    },
+    {
+     "word": "und",
+     "start": 36.931
+    },
+    {
+     "word": "oft",
+     "start": 37.154
+    },
+    {
+     "word": "mit",
+     "start": 37.377
+    },
+    {
+     "word": "*Käuferschutz*.",
+     "start": 37.6
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-4.wav",
+   "seconds": 5.604,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "Es",
+     "start": 0.553
+    },
+    {
+     "word": "gibt",
+     "start": 0.703
+    },
+    {
+     "word": "keine",
+     "start": 0.93
+    },
+    {
+     "word": "beste",
+     "start": 1.194
+    },
+    {
+     "word": "Zahlungsform.",
+     "start": 1.458
+    },
+    {
+     "word": "In",
+     "start": 2.174
+    },
+    {
+     "word": "der",
+     "start": 2.325
+    },
+    {
+     "word": "Prüfung",
+     "start": 2.514
+    },
+    {
+     "word": "musst",
+     "start": 2.853
+    },
+    {
+     "word": "du",
+     "start": 3.117
+    },
+    {
+     "word": "sie",
+     "start": 3.268
+    },
+    {
+     "word": "immer",
+     "start": 3.456
+    },
+    {
+     "word": "*nach",
+     "start": 3.72
+    },
+    {
+     "word": "der",
+     "start": 3.947
+    },
+    {
+     "word": "Situation*",
+     "start": 4.135
+    },
+    {
+     "word": "begründen.",
+     "start": 4.55
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-5.wav",
+   "seconds": 5.49,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "fünfzehn:",
+     "start": 0.403
+    },
+    {
+     "word": "die",
+     "start": 1.053
+    },
+    {
+     "word": "*Geldanlage*.",
+     "start": 1.27
+    },
+    {
+     "word": "Du",
+     "start": 2.007
+    },
+    {
+     "word": "hast",
+     "start": 2.18
+    },
+    {
+     "word": "was",
+     "start": 2.44
+    },
+    {
+     "word": "gespart,",
+     "start": 2.657
+    },
+    {
+     "word": "und",
+     "start": 3.263
+    },
+    {
+     "word": "jetzt",
+     "start": 3.48
+    },
+    {
+     "word": "soll",
+     "start": 3.783
+    },
+    {
+     "word": "es",
+     "start": 4.043
+    },
+    {
+     "word": "mehr",
+     "start": 4.217
+    },
+    {
+     "word": "werden.",
+     "start": 4.477
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-6.wav",
+   "seconds": 45.899,
+   "words": [
+    {
+     "word": "Jede",
+     "start": 0.1
+    },
+    {
+     "word": "Geldanlage",
+     "start": 0.386
+    },
+    {
+     "word": "bewertest",
+     "start": 0.958
+    },
+    {
+     "word": "du",
+     "start": 1.483
+    },
+    {
+     "word": "mit",
+     "start": 1.674
+    },
+    {
+     "word": "dem",
+     "start": 1.912
+    },
+    {
+     "word": "*magischen",
+     "start": 2.15
+    },
+    {
+     "word": "Dreieck*.",
+     "start": 2.675
+    },
+    {
+     "word": "Drei",
+     "start": 3.343
+    },
+    {
+     "word": "Fragen:",
+     "start": 3.629
+    },
+    {
+     "word": "*Liquidität*:",
+     "start": 4.249
+    },
+    {
+     "word": "Wie",
+     "start": 5.059
+    },
+    {
+     "word": "*schnell*",
+     "start": 5.298
+    },
+    {
+     "word": "komme",
+     "start": 5.727
+    },
+    {
+     "word": "ich",
+     "start": 6.061
+    },
+    {
+     "word": "an",
+     "start": 6.299
+    },
+    {
+     "word": "mein",
+     "start": 6.49
+    },
+    {
+     "word": "Geld?",
+     "start": 6.776
+    },
+    {
+     "word": "*Rentabilität*:",
+     "start": 7.301
+    },
+    {
+     "word": "Wie",
+     "start": 8.207
+    },
+    {
+     "word": "viel",
+     "start": 8.445
+    },
+    {
+     "word": "*Ertrag*",
+     "start": 8.731
+    },
+    {
+     "word": "bringt",
+     "start": 9.113
+    },
+    {
+     "word": "es?",
+     "start": 9.494
+    },
+    {
+     "word": "*Sicherheit*:",
+     "start": 9.923
+    },
+    {
+     "word": "Wie",
+     "start": 10.734
+    },
+    {
+     "word": "*sicher*",
+     "start": 10.972
+    },
+    {
+     "word": "ist",
+     "start": 11.354
+    },
+    {
+     "word": "es?",
+     "start": 11.592
+    },
+    {
+     "word": "Und",
+     "start": 12.021
+    },
+    {
+     "word": "warum",
+     "start": 12.26
+    },
+    {
+     "word": "heißt",
+     "start": 12.594
+    },
+    {
+     "word": "es",
+     "start": 12.928
+    },
+    {
+     "word": "*magisch*?",
+     "start": 13.118
+    },
+    {
+     "word": "Weil",
+     "start": 13.786
+    },
+    {
+     "word": "du",
+     "start": 14.072
+    },
+    {
+     "word": "nie",
+     "start": 14.263
+    },
+    {
+     "word": "alle",
+     "start": 14.501
+    },
+    {
+     "word": "drei",
+     "start": 14.787
+    },
+    {
+     "word": "gleichzeitig",
+     "start": 15.073
+    },
+    {
+     "word": "maximal",
+     "start": 15.741
+    },
+    {
+     "word": "bekommst,",
+     "start": 16.17
+    },
+    {
+     "word": "das",
+     "start": 16.885
+    },
+    {
+     "word": "wäre",
+     "start": 17.124
+    },
+    {
+     "word": "Zauberei.",
+     "start": 17.41
+    },
+    {
+     "word": "Das",
+     "start": 18.125
+    },
+    {
+     "word": "ist",
+     "start": 18.364
+    },
+    {
+     "word": "der",
+     "start": 18.602
+    },
+    {
+     "word": "*Zielkonflikt*:",
+     "start": 18.841
+    },
+    {
+     "word": "mehr",
+     "start": 19.747
+    },
+    {
+     "word": "Rendite",
+     "start": 20.033
+    },
+    {
+     "word": "heißt",
+     "start": 20.462
+    },
+    {
+     "word": "mehr",
+     "start": 20.796
+    },
+    {
+     "word": "Risiko.",
+     "start": 21.082
+    },
+    {
+     "word": "Schauen",
+     "start": 21.702
+    },
+    {
+     "word": "wir",
+     "start": 22.131
+    },
+    {
+     "word": "zwei",
+     "start": 22.369
+    },
+    {
+     "word": "Beispiele",
+     "start": 22.655
+    },
+    {
+     "word": "an.",
+     "start": 23.18
+    },
+    {
+     "word": "Das",
+     "start": 23.609
+    },
+    {
+     "word": "*Termingeld*:",
+     "start": 23.848
+    },
+    {
+     "word": "Du",
+     "start": 24.658
+    },
+    {
+     "word": "legst",
+     "start": 24.849
+    },
+    {
+     "word": "Geld",
+     "start": 25.183
+    },
+    {
+     "word": "für",
+     "start": 25.469
+    },
+    {
+     "word": "eine",
+     "start": 25.707
+    },
+    {
+     "word": "feste",
+     "start": 25.993
+    },
+    {
+     "word": "Zeit",
+     "start": 26.327
+    },
+    {
+     "word": "zu",
+     "start": 26.613
+    },
+    {
+     "word": "einem",
+     "start": 26.804
+    },
+    {
+     "word": "festen",
+     "start": 27.138
+    },
+    {
+     "word": "Zins",
+     "start": 27.519
+    },
+    {
+     "word": "an.",
+     "start": 27.806
+    },
+    {
+     "word": "Sicherheit",
+     "start": 28.235
+    },
+    {
+     "word": "*hoch*,",
+     "start": 28.807
+    },
+    {
+     "word": "Liquidität",
+     "start": 29.331
+    },
+    {
+     "word": "*niedrig*,",
+     "start": 29.904
+    },
+    {
+     "word": "weil",
+     "start": 30.571
+    },
+    {
+     "word": "du",
+     "start": 30.857
+    },
+    {
+     "word": "vor",
+     "start": 31.048
+    },
+    {
+     "word": "Ende",
+     "start": 31.287
+    },
+    {
+     "word": "nicht",
+     "start": 31.573
+    },
+    {
+     "word": "rankommst,",
+     "start": 31.907
+    },
+    {
+     "word": "Rentabilität",
+     "start": 32.669
+    },
+    {
+     "word": "*mittel*.",
+     "start": 33.337
+    },
+    {
+     "word": "Der",
+     "start": 33.957
+    },
+    {
+     "word": "*Aktienfonds*:",
+     "start": 34.195
+    },
+    {
+     "word": "Viele",
+     "start": 35.054
+    },
+    {
+     "word": "Aktien",
+     "start": 35.388
+    },
+    {
+     "word": "in",
+     "start": 35.769
+    },
+    {
+     "word": "einem",
+     "start": 35.96
+    },
+    {
+     "word": "Topf,",
+     "start": 36.294
+    },
+    {
+     "word": "so",
+     "start": 36.818
+    },
+    {
+     "word": "ist",
+     "start": 37.009
+    },
+    {
+     "word": "das",
+     "start": 37.247
+    },
+    {
+     "word": "Risiko",
+     "start": 37.486
+    },
+    {
+     "word": "verteilt.",
+     "start": 37.867
+    },
+    {
+     "word": "Rentabilität",
+     "start": 38.583
+    },
+    {
+     "word": "*hoch*,",
+     "start": 39.25
+    },
+    {
+     "word": "Sicherheit",
+     "start": 39.775
+    },
+    {
+     "word": "*niedriger*,",
+     "start": 40.347
+    },
+    {
+     "word": "weil",
+     "start": 41.11
+    },
+    {
+     "word": "Kurse",
+     "start": 41.396
+    },
+    {
+     "word": "schwanken,",
+     "start": 41.73
+    },
+    {
+     "word": "Liquidität",
+     "start": 42.493
+    },
+    {
+     "word": "*hoch*,",
+     "start": 43.065
+    },
+    {
+     "word": "du",
+     "start": 43.59
+    },
+    {
+     "word": "kannst",
+     "start": 43.78
+    },
+    {
+     "word": "jederzeit",
+     "start": 44.162
+    },
+    {
+     "word": "verkaufen.",
+     "start": 44.686
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-7.wav",
+   "seconds": 16.35,
+   "words": [
+    {
+     "word": "Frage:",
+     "start": 0.1
+    },
+    {
+     "word": "Lukas",
+     "start": 0.683
+    },
+    {
+     "word": "will",
+     "start": 1.024
+    },
+    {
+     "word": "in",
+     "start": 1.315
+    },
+    {
+     "word": "einem",
+     "start": 1.51
+    },
+    {
+     "word": "Jahr",
+     "start": 1.85
+    },
+    {
+     "word": "ein",
+     "start": 2.142
+    },
+    {
+     "word": "Auto",
+     "start": 2.385
+    },
+    {
+     "word": "kaufen",
+     "start": 2.677
+    },
+    {
+     "word": "und",
+     "start": 3.066
+    },
+    {
+     "word": "darf",
+     "start": 3.309
+    },
+    {
+     "word": "auf",
+     "start": 3.6
+    },
+    {
+     "word": "keinen",
+     "start": 3.843
+    },
+    {
+     "word": "Fall",
+     "start": 4.232
+    },
+    {
+     "word": "Geld",
+     "start": 4.524
+    },
+    {
+     "word": "verlieren.",
+     "start": 4.816
+    },
+    {
+     "word": "Termingeld",
+     "start": 5.594
+    },
+    {
+     "word": "oder",
+     "start": 6.177
+    },
+    {
+     "word": "Aktienfonds?",
+     "start": 6.469
+    },
+    {
+     "word": "…",
+     "start": 7.344
+    },
+    {
+     "word": "*Termingeld*.",
+     "start": 7.441
+    },
+    {
+     "word": "Kurze",
+     "start": 8.267
+    },
+    {
+     "word": "Zeit",
+     "start": 8.608
+    },
+    {
+     "word": "und",
+     "start": 8.899
+    },
+    {
+     "word": "Sicherheit",
+     "start": 9.143
+    },
+    {
+     "word": "sind",
+     "start": 9.726
+    },
+    {
+     "word": "ihm",
+     "start": 10.018
+    },
+    {
+     "word": "wichtig.",
+     "start": 10.261
+    },
+    {
+     "word": "Ein",
+     "start": 10.941
+    },
+    {
+     "word": "Aktienfonds",
+     "start": 11.184
+    },
+    {
+     "word": "lohnt",
+     "start": 11.816
+    },
+    {
+     "word": "sich",
+     "start": 12.157
+    },
+    {
+     "word": "eher",
+     "start": 12.448
+    },
+    {
+     "word": "langfristig,",
+     "start": 12.74
+    },
+    {
+     "word": "wenn",
+     "start": 13.615
+    },
+    {
+     "word": "man",
+     "start": 13.907
+    },
+    {
+     "word": "Schwankungen",
+     "start": 14.15
+    },
+    {
+     "word": "aushalten",
+     "start": 14.831
+    },
+    {
+     "word": "kann.",
+     "start": 15.365
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-8.wav",
+   "seconds": 5.728,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "sechzehn:",
+     "start": 0.439
+    },
+    {
+     "word": "das",
+     "start": 1.165
+    },
+    {
+     "word": "*Verbraucherdarlehen*,",
+     "start": 1.407
+    },
+    {
+     "word": "also",
+     "start": 2.665
+    },
+    {
+     "word": "ein",
+     "start": 2.955
+    },
+    {
+     "word": "Kredit",
+     "start": 3.197
+    },
+    {
+     "word": "für",
+     "start": 3.585
+    },
+    {
+     "word": "dich",
+     "start": 3.826
+    },
+    {
+     "word": "als",
+     "start": 4.117
+    },
+    {
+     "word": "Privatperson.",
+     "start": 4.359
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-9.wav",
+   "seconds": 31.179,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Verbraucherdarlehen",
+     "start": 0.308
+    },
+    {
+     "word": "ist",
+     "start": 1.183
+    },
+    {
+     "word": "ein",
+     "start": 1.392
+    },
+    {
+     "word": "*Kredit*",
+     "start": 1.6
+    },
+    {
+     "word": "von",
+     "start": 1.934
+    },
+    {
+     "word": "einem",
+     "start": 2.142
+    },
+    {
+     "word": "Unternehmen,",
+     "start": 2.434
+    },
+    {
+     "word": "meist",
+     "start": 3.184
+    },
+    {
+     "word": "einer",
+     "start": 3.475
+    },
+    {
+     "word": "Bank,",
+     "start": 3.767
+    },
+    {
+     "word": "an",
+     "start": 4.225
+    },
+    {
+     "word": "einen",
+     "start": 4.392
+    },
+    {
+     "word": "*Verbraucher*.",
+     "start": 4.684
+    },
+    {
+     "word": "Bevor",
+     "start": 5.434
+    },
+    {
+     "word": "die",
+     "start": 5.726
+    },
+    {
+     "word": "Bank",
+     "start": 5.934
+    },
+    {
+     "word": "dir",
+     "start": 6.184
+    },
+    {
+     "word": "Geld",
+     "start": 6.392
+    },
+    {
+     "word": "gibt,",
+     "start": 6.642
+    },
+    {
+     "word": "prüft",
+     "start": 7.101
+    },
+    {
+     "word": "sie",
+     "start": 7.393
+    },
+    {
+     "word": "deine",
+     "start": 7.601
+    },
+    {
+     "word": "*Kreditwürdigkeit*.",
+     "start": 7.893
+    },
+    {
+     "word": "Sie",
+     "start": 8.851
+    },
+    {
+     "word": "will",
+     "start": 9.059
+    },
+    {
+     "word": "wissen:",
+     "start": 9.309
+    },
+    {
+     "word": "Kann",
+     "start": 9.851
+    },
+    {
+     "word": "der",
+     "start": 10.101
+    },
+    {
+     "word": "das",
+     "start": 10.31
+    },
+    {
+     "word": "zurückzahlen?",
+     "start": 10.518
+    },
+    {
+     "word": "Dafür",
+     "start": 11.31
+    },
+    {
+     "word": "schaut",
+     "start": 11.601
+    },
+    {
+     "word": "sie",
+     "start": 11.935
+    },
+    {
+     "word": "auf",
+     "start": 12.143
+    },
+    {
+     "word": "dein",
+     "start": 12.351
+    },
+    {
+     "word": "Einkommen,",
+     "start": 12.601
+    },
+    {
+     "word": "deinen",
+     "start": 13.268
+    },
+    {
+     "word": "*Arbeitsvertrag*,",
+     "start": 13.602
+    },
+    {
+     "word": "die",
+     "start": 14.477
+    },
+    {
+     "word": "*SCHUFA*,",
+     "start": 14.685
+    },
+    {
+     "word": "also",
+     "start": 15.227
+    },
+    {
+     "word": "deine",
+     "start": 15.477
+    },
+    {
+     "word": "bisherige",
+     "start": 15.768
+    },
+    {
+     "word": "Zahlungsmoral,",
+     "start": 16.227
+    },
+    {
+     "word": "dein",
+     "start": 17.06
+    },
+    {
+     "word": "Vermögen",
+     "start": 17.31
+    },
+    {
+     "word": "und",
+     "start": 17.727
+    },
+    {
+     "word": "andere",
+     "start": 17.935
+    },
+    {
+     "word": "Schulden.",
+     "start": 18.269
+    },
+    {
+     "word": "Der",
+     "start": 18.894
+    },
+    {
+     "word": "Vertrag",
+     "start": 19.102
+    },
+    {
+     "word": "muss",
+     "start": 19.477
+    },
+    {
+     "word": "*schriftlich*",
+     "start": 19.727
+    },
+    {
+     "word": "sein",
+     "start": 20.269
+    },
+    {
+     "word": "und",
+     "start": 20.519
+    },
+    {
+     "word": "alles",
+     "start": 20.727
+    },
+    {
+     "word": "Wichtige",
+     "start": 21.019
+    },
+    {
+     "word": "nennen.",
+     "start": 21.436
+    },
+    {
+     "word": "Am",
+     "start": 21.978
+    },
+    {
+     "word": "wichtigsten",
+     "start": 22.144
+    },
+    {
+     "word": "für",
+     "start": 22.686
+    },
+    {
+     "word": "dich",
+     "start": 22.894
+    },
+    {
+     "word": "ist",
+     "start": 23.144
+    },
+    {
+     "word": "der",
+     "start": 23.353
+    },
+    {
+     "word": "*effektive",
+     "start": 23.561
+    },
+    {
+     "word": "Jahreszins*,",
+     "start": 24.019
+    },
+    {
+     "word": "denn",
+     "start": 24.728
+    },
+    {
+     "word": "der",
+     "start": 24.978
+    },
+    {
+     "word": "enthält",
+     "start": 25.186
+    },
+    {
+     "word": "alle",
+     "start": 25.561
+    },
+    {
+     "word": "Kosten,",
+     "start": 25.811
+    },
+    {
+     "word": "damit",
+     "start": 26.353
+    },
+    {
+     "word": "kannst",
+     "start": 26.645
+    },
+    {
+     "word": "du",
+     "start": 26.978
+    },
+    {
+     "word": "Angebote",
+     "start": 27.145
+    },
+    {
+     "word": "fair",
+     "start": 27.562
+    },
+    {
+     "word": "vergleichen.",
+     "start": 27.812
+    },
+    {
+     "word": "Und",
+     "start": 28.562
+    },
+    {
+     "word": "du",
+     "start": 28.77
+    },
+    {
+     "word": "hast",
+     "start": 28.937
+    },
+    {
+     "word": "vierzehn",
+     "start": 29.187
+    },
+    {
+     "word": "Tage",
+     "start": 29.603
+    },
+    {
+     "word": "*Widerrufsrecht*.",
+     "start": 29.853
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-10.wav",
+   "seconds": 29.32,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "weil",
+     "start": 0.301
+    },
+    {
+     "word": "die",
+     "start": 0.541
+    },
+    {
+     "word": "Bank",
+     "start": 0.742
+    },
+    {
+     "word": "auf",
+     "start": 0.983
+    },
+    {
+     "word": "Nummer",
+     "start": 1.183
+    },
+    {
+     "word": "sicher",
+     "start": 1.504
+    },
+    {
+     "word": "gehen",
+     "start": 1.825
+    },
+    {
+     "word": "will,",
+     "start": 2.106
+    },
+    {
+     "word": "verlangt",
+     "start": 2.548
+    },
+    {
+     "word": "sie",
+     "start": 2.949
+    },
+    {
+     "word": "*Sicherheiten*.",
+     "start": 3.15
+    },
+    {
+     "word": "Drei",
+     "start": 3.912
+    },
+    {
+     "word": "musst",
+     "start": 4.153
+    },
+    {
+     "word": "du",
+     "start": 4.434
+    },
+    {
+     "word": "kennen.",
+     "start": 4.594
+    },
+    {
+     "word": "Die",
+     "start": 5.116
+    },
+    {
+     "word": "*Sicherungsübereignung*:",
+     "start": 5.316
+    },
+    {
+     "word": "Die",
+     "start": 6.44
+    },
+    {
+     "word": "Bank",
+     "start": 6.64
+    },
+    {
+     "word": "wird",
+     "start": 6.881
+    },
+    {
+     "word": "*Eigentümer*,",
+     "start": 7.122
+    },
+    {
+     "word": "du",
+     "start": 7.804
+    },
+    {
+     "word": "bleibst",
+     "start": 7.965
+    },
+    {
+     "word": "*Besitzer*.",
+     "start": 8.326
+    },
+    {
+     "word": "Beim",
+     "start": 8.928
+    },
+    {
+     "word": "Autokredit",
+     "start": 9.168
+    },
+    {
+     "word": "hat",
+     "start": 9.65
+    },
+    {
+     "word": "die",
+     "start": 9.85
+    },
+    {
+     "word": "Bank",
+     "start": 10.051
+    },
+    {
+     "word": "zum",
+     "start": 10.292
+    },
+    {
+     "word": "Beispiel",
+     "start": 10.492
+    },
+    {
+     "word": "den",
+     "start": 10.894
+    },
+    {
+     "word": "Fahrzeugbrief,",
+     "start": 11.094
+    },
+    {
+     "word": "aber",
+     "start": 11.897
+    },
+    {
+     "word": "du",
+     "start": 12.138
+    },
+    {
+     "word": "fährst",
+     "start": 12.298
+    },
+    {
+     "word": "das",
+     "start": 12.619
+    },
+    {
+     "word": "Auto.",
+     "start": 12.82
+    },
+    {
+     "word": "Erinnerst",
+     "start": 13.261
+    },
+    {
+     "word": "du",
+     "start": 13.702
+    },
+    {
+     "word": "dich",
+     "start": 13.863
+    },
+    {
+     "word": "an",
+     "start": 14.104
+    },
+    {
+     "word": "Besitz",
+     "start": 14.264
+    },
+    {
+     "word": "und",
+     "start": 14.585
+    },
+    {
+     "word": "Eigentum?",
+     "start": 14.786
+    },
+    {
+     "word": "Genau",
+     "start": 15.388
+    },
+    {
+     "word": "das",
+     "start": 15.669
+    },
+    {
+     "word": "ist",
+     "start": 15.869
+    },
+    {
+     "word": "es.",
+     "start": 16.07
+    },
+    {
+     "word": "Die",
+     "start": 16.431
+    },
+    {
+     "word": "*Bürgschaft*:",
+     "start": 16.632
+    },
+    {
+     "word": "Eine",
+     "start": 17.314
+    },
+    {
+     "word": "*andere",
+     "start": 17.554
+    },
+    {
+     "word": "Person*,",
+     "start": 17.875
+    },
+    {
+     "word": "zum",
+     "start": 18.397
+    },
+    {
+     "word": "Beispiel",
+     "start": 18.598
+    },
+    {
+     "word": "deine",
+     "start": 18.999
+    },
+    {
+     "word": "Eltern,",
+     "start": 19.28
+    },
+    {
+     "word": "haftet",
+     "start": 19.801
+    },
+    {
+     "word": "für",
+     "start": 20.122
+    },
+    {
+     "word": "dich,",
+     "start": 20.323
+    },
+    {
+     "word": "wenn",
+     "start": 20.764
+    },
+    {
+     "word": "du",
+     "start": 21.005
+    },
+    {
+     "word": "nicht",
+     "start": 21.166
+    },
+    {
+     "word": "zahlst.",
+     "start": 21.447
+    },
+    {
+     "word": "Das",
+     "start": 21.968
+    },
+    {
+     "word": "muss",
+     "start": 22.169
+    },
+    {
+     "word": "schriftlich",
+     "start": 22.41
+    },
+    {
+     "word": "sein.",
+     "start": 22.931
+    },
+    {
+     "word": "Und",
+     "start": 23.373
+    },
+    {
+     "word": "die",
+     "start": 23.573
+    },
+    {
+     "word": "*Lohnabtretung*:",
+     "start": 23.774
+    },
+    {
+     "word": "Zahlst",
+     "start": 24.576
+    },
+    {
+     "word": "du",
+     "start": 24.897
+    },
+    {
+     "word": "nicht,",
+     "start": 25.058
+    },
+    {
+     "word": "holt",
+     "start": 25.539
+    },
+    {
+     "word": "sich",
+     "start": 25.78
+    },
+    {
+     "word": "die",
+     "start": 26.021
+    },
+    {
+     "word": "Bank",
+     "start": 26.222
+    },
+    {
+     "word": "einen",
+     "start": 26.462
+    },
+    {
+     "word": "Teil",
+     "start": 26.743
+    },
+    {
+     "word": "deines",
+     "start": 26.984
+    },
+    {
+     "word": "*Lohns*",
+     "start": 27.305
+    },
+    {
+     "word": "direkt",
+     "start": 27.586
+    },
+    {
+     "word": "beim",
+     "start": 27.907
+    },
+    {
+     "word": "*Arbeitgeber*.",
+     "start": 28.148
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-11.wav",
+   "seconds": 7.875,
+   "words": [
+    {
+     "word": "Merke:",
+     "start": 0.1
+    },
+    {
+     "word": "*Sicherungsübereignung*,",
+     "start": 0.643
+    },
+    {
+     "word": "die",
+     "start": 1.909
+    },
+    {
+     "word": "Bank",
+     "start": 2.135
+    },
+    {
+     "word": "ist",
+     "start": 2.406
+    },
+    {
+     "word": "*Eigentümer*.",
+     "start": 2.632
+    },
+    {
+     "word": "*Bürgschaft*,",
+     "start": 3.401
+    },
+    {
+     "word": "ein",
+     "start": 4.169
+    },
+    {
+     "word": "*anderer*",
+     "start": 4.395
+    },
+    {
+     "word": "zahlt.",
+     "start": 4.802
+    },
+    {
+     "word": "*Lohnabtretung*,",
+     "start": 5.345
+    },
+    {
+     "word": "es",
+     "start": 6.249
+    },
+    {
+     "word": "geht",
+     "start": 6.43
+    },
+    {
+     "word": "*vom",
+     "start": 6.701
+    },
+    {
+     "word": "Lohn*.",
+     "start": 6.927
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-12.wav",
+   "seconds": 7.8,
+   "words": [
+    {
+     "word": "Thema",
+     "start": 0.1
+    },
+    {
+     "word": "siebzehn,",
+     "start": 0.387
+    },
+    {
+     "word": "das",
+     "start": 1.001
+    },
+    {
+     "word": "letzte:",
+     "start": 1.206
+    },
+    {
+     "word": "die",
+     "start": 1.738
+    },
+    {
+     "word": "*Überschuldung*.",
+     "start": 1.943
+    },
+    {
+     "word": "Kein",
+     "start": 2.762
+    },
+    {
+     "word": "schönes",
+     "start": 3.008
+    },
+    {
+     "word": "Thema,",
+     "start": 3.377
+    },
+    {
+     "word": "aber",
+     "start": 3.868
+    },
+    {
+     "word": "wichtig,",
+     "start": 4.114
+    },
+    {
+     "word": "weil",
+     "start": 4.687
+    },
+    {
+     "word": "es",
+     "start": 4.933
+    },
+    {
+     "word": "schneller",
+     "start": 5.097
+    },
+    {
+     "word": "passieren",
+     "start": 5.548
+    },
+    {
+     "word": "kann,",
+     "start": 5.998
+    },
+    {
+     "word": "als",
+     "start": 6.449
+    },
+    {
+     "word": "man",
+     "start": 6.653
+    },
+    {
+     "word": "denkt.",
+     "start": 6.858
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-13.wav",
+   "seconds": 7.819,
+   "words": [
+    {
+     "word": "Überschuldet",
+     "start": 0.1
+    },
+    {
+     "word": "ist,",
+     "start": 0.647
+    },
+    {
+     "word": "wer",
+     "start": 1.038
+    },
+    {
+     "word": "seine",
+     "start": 1.233
+    },
+    {
+     "word": "Schulden",
+     "start": 1.507
+    },
+    {
+     "word": "mit",
+     "start": 1.898
+    },
+    {
+     "word": "Einkommen",
+     "start": 2.093
+    },
+    {
+     "word": "und",
+     "start": 2.523
+    },
+    {
+     "word": "Vermögen",
+     "start": 2.718
+    },
+    {
+     "word": "*auf",
+     "start": 3.109
+    },
+    {
+     "word": "Dauer",
+     "start": 3.304
+    },
+    {
+     "word": "nicht",
+     "start": 3.578
+    },
+    {
+     "word": "mehr",
+     "start": 3.852
+    },
+    {
+     "word": "bezahlen*",
+     "start": 4.086
+    },
+    {
+     "word": "kann.",
+     "start": 4.477
+    },
+    {
+     "word": "Nicht",
+     "start": 4.907
+    },
+    {
+     "word": "nur",
+     "start": 5.18
+    },
+    {
+     "word": "einen",
+     "start": 5.376
+    },
+    {
+     "word": "Monat",
+     "start": 5.649
+    },
+    {
+     "word": "knapp,",
+     "start": 5.923
+    },
+    {
+     "word": "sondern",
+     "start": 6.392
+    },
+    {
+     "word": "dauerhaft.",
+     "start": 6.743
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-14.wav",
+   "seconds": 15.828,
+   "words": [
+    {
+     "word": "Wie",
+     "start": 0.1
+    },
+    {
+     "word": "kommt",
+     "start": 0.31
+    },
+    {
+     "word": "man",
+     "start": 0.605
+    },
+    {
+     "word": "da",
+     "start": 0.816
+    },
+    {
+     "word": "rein?",
+     "start": 0.984
+    },
+    {
+     "word": "Oft",
+     "start": 1.447
+    },
+    {
+     "word": "durch",
+     "start": 1.657
+    },
+    {
+     "word": "Schicksalsschläge",
+     "start": 1.952
+    },
+    {
+     "word": "wie",
+     "start": 2.752
+    },
+    {
+     "word": "*Arbeitslosigkeit*,",
+     "start": 2.962
+    },
+    {
+     "word": "*Trennung*",
+     "start": 3.93
+    },
+    {
+     "word": "oder",
+     "start": 4.351
+    },
+    {
+     "word": "*Krankheit*.",
+     "start": 4.604
+    },
+    {
+     "word": "Aber",
+     "start": 5.277
+    },
+    {
+     "word": "auch",
+     "start": 5.529
+    },
+    {
+     "word": "durch",
+     "start": 5.782
+    },
+    {
+     "word": "eigene",
+     "start": 6.077
+    },
+    {
+     "word": "Fehler:",
+     "start": 6.413
+    },
+    {
+     "word": "zu",
+     "start": 6.961
+    },
+    {
+     "word": "viel",
+     "start": 7.129
+    },
+    {
+     "word": "*Konsum",
+     "start": 7.381
+    },
+    {
+     "word": "auf",
+     "start": 7.718
+    },
+    {
+     "word": "Raten*,",
+     "start": 7.929
+    },
+    {
+     "word": "ein",
+     "start": 8.434
+    },
+    {
+     "word": "dauernd",
+     "start": 8.644
+    },
+    {
+     "word": "genutzter",
+     "start": 9.023
+    },
+    {
+     "word": "*Dispo*",
+     "start": 9.486
+    },
+    {
+     "word": "oder",
+     "start": 9.78
+    },
+    {
+     "word": "mehrere",
+     "start": 10.033
+    },
+    {
+     "word": "teure",
+     "start": 10.412
+    },
+    {
+     "word": "*Handyverträge*.",
+     "start": 10.706
+    },
+    {
+     "word": "Jede",
+     "start": 11.548
+    },
+    {
+     "word": "Rate",
+     "start": 11.801
+    },
+    {
+     "word": "wirkt",
+     "start": 12.053
+    },
+    {
+     "word": "klein,",
+     "start": 12.348
+    },
+    {
+     "word": "aber",
+     "start": 12.853
+    },
+    {
+     "word": "zusammen",
+     "start": 13.106
+    },
+    {
+     "word": "fressen",
+     "start": 13.526
+    },
+    {
+     "word": "sie",
+     "start": 13.905
+    },
+    {
+     "word": "das",
+     "start": 14.116
+    },
+    {
+     "word": "ganze",
+     "start": 14.326
+    },
+    {
+     "word": "Gehalt",
+     "start": 14.621
+    },
+    {
+     "word": "auf.",
+     "start": 14.957
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-15.wav",
+   "seconds": 41.699,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "wie",
+     "start": 0.295
+    },
+    {
+     "word": "kommt",
+     "start": 0.49
+    },
+    {
+     "word": "man",
+     "start": 0.763
+    },
+    {
+     "word": "wieder",
+     "start": 0.958
+    },
+    {
+     "word": "raus?",
+     "start": 1.27
+    },
+    {
+     "word": "In",
+     "start": 1.699
+    },
+    {
+     "word": "drei",
+     "start": 1.855
+    },
+    {
+     "word": "Stufen.",
+     "start": 2.089
+    },
+    {
+     "word": "Erstens",
+     "start": 2.596
+    },
+    {
+     "word": "ein",
+     "start": 2.947
+    },
+    {
+     "word": "*Haushaltsplan*:",
+     "start": 3.142
+    },
+    {
+     "word": "Alle",
+     "start": 3.922
+    },
+    {
+     "word": "Einnahmen",
+     "start": 4.156
+    },
+    {
+     "word": "und",
+     "start": 4.585
+    },
+    {
+     "word": "Ausgaben",
+     "start": 4.78
+    },
+    {
+     "word": "aufschreiben.",
+     "start": 5.171
+    },
+    {
+     "word": "Das",
+     "start": 5.912
+    },
+    {
+     "word": "hilft",
+     "start": 6.107
+    },
+    {
+     "word": "übrigens",
+     "start": 6.38
+    },
+    {
+     "word": "auch,",
+     "start": 6.77
+    },
+    {
+     "word": "damit",
+     "start": 7.199
+    },
+    {
+     "word": "es",
+     "start": 7.472
+    },
+    {
+     "word": "gar",
+     "start": 7.628
+    },
+    {
+     "word": "nicht",
+     "start": 7.823
+    },
+    {
+     "word": "erst",
+     "start": 8.096
+    },
+    {
+     "word": "so",
+     "start": 8.33
+    },
+    {
+     "word": "weit",
+     "start": 8.486
+    },
+    {
+     "word": "kommt.",
+     "start": 8.72
+    },
+    {
+     "word": "Zweitens",
+     "start": 9.188
+    },
+    {
+     "word": "die",
+     "start": 9.578
+    },
+    {
+     "word": "*Schuldnerberatung*.",
+     "start": 9.773
+    },
+    {
+     "word": "Die",
+     "start": 10.709
+    },
+    {
+     "word": "ist",
+     "start": 10.904
+    },
+    {
+     "word": "*kostenlos*,",
+     "start": 11.099
+    },
+    {
+     "word": "zum",
+     "start": 11.723
+    },
+    {
+     "word": "Beispiel",
+     "start": 11.918
+    },
+    {
+     "word": "bei",
+     "start": 12.308
+    },
+    {
+     "word": "der",
+     "start": 12.503
+    },
+    {
+     "word": "Caritas",
+     "start": 12.698
+    },
+    {
+     "word": "oder",
+     "start": 13.049
+    },
+    {
+     "word": "der",
+     "start": 13.283
+    },
+    {
+     "word": "Verbraucherzentrale,",
+     "start": 13.478
+    },
+    {
+     "word": "und",
+     "start": 14.492
+    },
+    {
+     "word": "verhandelt",
+     "start": 14.687
+    },
+    {
+     "word": "für",
+     "start": 15.156
+    },
+    {
+     "word": "dich",
+     "start": 15.351
+    },
+    {
+     "word": "mit",
+     "start": 15.585
+    },
+    {
+     "word": "den",
+     "start": 15.78
+    },
+    {
+     "word": "Gläubigern.",
+     "start": 15.975
+    },
+    {
+     "word": "Und",
+     "start": 16.638
+    },
+    {
+     "word": "drittens,",
+     "start": 16.833
+    },
+    {
+     "word": "wenn",
+     "start": 17.418
+    },
+    {
+     "word": "gar",
+     "start": 17.652
+    },
+    {
+     "word": "nichts",
+     "start": 17.847
+    },
+    {
+     "word": "mehr",
+     "start": 18.159
+    },
+    {
+     "word": "geht,",
+     "start": 18.393
+    },
+    {
+     "word": "die",
+     "start": 18.822
+    },
+    {
+     "word": "*Verbraucherinsolvenz*.",
+     "start": 19.017
+    },
+    {
+     "word": "Die",
+     "start": 20.07
+    },
+    {
+     "word": "läuft",
+     "start": 20.265
+    },
+    {
+     "word": "so:",
+     "start": 20.538
+    },
+    {
+     "word": "Erst",
+     "start": 20.889
+    },
+    {
+     "word": "ein",
+     "start": 21.123
+    },
+    {
+     "word": "*außergerichtlicher",
+     "start": 21.318
+    },
+    {
+     "word": "Einigungsversuch*",
+     "start": 22.098
+    },
+    {
+     "word": "mit",
+     "start": 22.8
+    },
+    {
+     "word": "den",
+     "start": 22.995
+    },
+    {
+     "word": "Gläubigern.",
+     "start": 23.19
+    },
+    {
+     "word": "Klappt",
+     "start": 23.853
+    },
+    {
+     "word": "das",
+     "start": 24.165
+    },
+    {
+     "word": "nicht,",
+     "start": 24.36
+    },
+    {
+     "word": "der",
+     "start": 24.829
+    },
+    {
+     "word": "*Antrag*",
+     "start": 25.024
+    },
+    {
+     "word": "beim",
+     "start": 25.336
+    },
+    {
+     "word": "Insolvenzgericht.",
+     "start": 25.57
+    },
+    {
+     "word": "Dann",
+     "start": 26.467
+    },
+    {
+     "word": "kommt",
+     "start": 26.701
+    },
+    {
+     "word": "die",
+     "start": 26.974
+    },
+    {
+     "word": "*Wohlverhaltensphase*,",
+     "start": 27.169
+    },
+    {
+     "word": "*drei",
+     "start": 28.183
+    },
+    {
+     "word": "Jahre*",
+     "start": 28.417
+    },
+    {
+     "word": "lang.",
+     "start": 28.69
+    },
+    {
+     "word": "Da",
+     "start": 29.119
+    },
+    {
+     "word": "gibst",
+     "start": 29.275
+    },
+    {
+     "word": "du",
+     "start": 29.548
+    },
+    {
+     "word": "alles",
+     "start": 29.704
+    },
+    {
+     "word": "ab,",
+     "start": 29.977
+    },
+    {
+     "word": "was",
+     "start": 30.328
+    },
+    {
+     "word": "über",
+     "start": 30.523
+    },
+    {
+     "word": "dem",
+     "start": 30.757
+    },
+    {
+     "word": "pfändbaren",
+     "start": 30.952
+    },
+    {
+     "word": "Freibetrag",
+     "start": 31.42
+    },
+    {
+     "word": "liegt,",
+     "start": 31.888
+    },
+    {
+     "word": "arbeitest",
+     "start": 32.356
+    },
+    {
+     "word": "oder",
+     "start": 32.785
+    },
+    {
+     "word": "suchst",
+     "start": 33.019
+    },
+    {
+     "word": "Arbeit",
+     "start": 33.331
+    },
+    {
+     "word": "und",
+     "start": 33.643
+    },
+    {
+     "word": "machst",
+     "start": 33.838
+    },
+    {
+     "word": "keine",
+     "start": 34.15
+    },
+    {
+     "word": "neuen",
+     "start": 34.424
+    },
+    {
+     "word": "Schulden.",
+     "start": 34.697
+    },
+    {
+     "word": "Und",
+     "start": 35.282
+    },
+    {
+     "word": "wenn",
+     "start": 35.477
+    },
+    {
+     "word": "du",
+     "start": 35.711
+    },
+    {
+     "word": "das",
+     "start": 35.867
+    },
+    {
+     "word": "durchhältst,",
+     "start": 36.062
+    },
+    {
+     "word": "kommt",
+     "start": 36.764
+    },
+    {
+     "word": "die",
+     "start": 37.037
+    },
+    {
+     "word": "*Restschuldbefreiung*:",
+     "start": 37.232
+    },
+    {
+     "word": "Die",
+     "start": 38.246
+    },
+    {
+     "word": "übrigen",
+     "start": 38.441
+    },
+    {
+     "word": "Schulden",
+     "start": 38.792
+    },
+    {
+     "word": "sind",
+     "start": 39.182
+    },
+    {
+     "word": "weg,",
+     "start": 39.416
+    },
+    {
+     "word": "und",
+     "start": 39.806
+    },
+    {
+     "word": "du",
+     "start": 40.001
+    },
+    {
+     "word": "kannst",
+     "start": 40.157
+    },
+    {
+     "word": "neu",
+     "start": 40.469
+    },
+    {
+     "word": "anfangen.",
+     "start": 40.664
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-3-16.wav",
+   "seconds": 6.05,
+   "words": [
+    {
+     "word": "Merke",
+     "start": 0.1
+    },
+    {
+     "word": "den",
+     "start": 0.403
+    },
+    {
+     "word": "Weg:",
+     "start": 0.62
+    },
+    {
+     "word": "*Haushaltsplan*,",
+     "start": 1.053
+    },
+    {
+     "word": "*Schuldnerberatung*,",
+     "start": 1.919
+    },
+    {
+     "word": "*Insolvenz*,",
+     "start": 2.959
+    },
+    {
+     "word": "und",
+     "start": 3.652
+    },
+    {
+     "word": "nach",
+     "start": 3.868
+    },
+    {
+     "word": "*drei",
+     "start": 4.128
+    },
+    {
+     "word": "Jahren*",
+     "start": 4.388
+    },
+    {
+     "word": "ein",
+     "start": 4.734
+    },
+    {
+     "word": "*Neustart*.",
+     "start": 4.951
+    }
+   ]
+  },
+  {
+   "file": "lern_kb2/line-4-0.wav",
+   "seconds": 20.738,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "das",
+     "start": 0.343
+    },
+    {
+     "word": "war",
+     "start": 0.585
+    },
+    {
+     "word": "Kompetenzbereich",
+     "start": 0.828
+    },
+    {
+     "word": "zwei",
+     "start": 1.701
+    },
+    {
+     "word": "mit",
+     "start": 1.993
+    },
+    {
+     "word": "allen",
+     "start": 2.235
+    },
+    {
+     "word": "siebzehn",
+     "start": 2.575
+    },
+    {
+     "word": "Themen!",
+     "start": 3.06
+    },
+    {
+     "word": "Wenn",
+     "start": 3.691
+    },
+    {
+     "word": "du",
+     "start": 3.982
+    },
+    {
+     "word": "dir",
+     "start": 4.177
+    },
+    {
+     "word": "eins",
+     "start": 4.419
+    },
+    {
+     "word": "merken",
+     "start": 4.71
+    },
+    {
+     "word": "willst:",
+     "start": 5.099
+    },
+    {
+     "word": "Fast",
+     "start": 5.729
+    },
+    {
+     "word": "alles",
+     "start": 6.021
+    },
+    {
+     "word": "hier",
+     "start": 6.36
+    },
+    {
+     "word": "dreht",
+     "start": 6.652
+    },
+    {
+     "word": "sich",
+     "start": 6.991
+    },
+    {
+     "word": "um",
+     "start": 7.282
+    },
+    {
+     "word": "Verträge,",
+     "start": 7.477
+    },
+    {
+     "word": "wann",
+     "start": 8.205
+    },
+    {
+     "word": "sie",
+     "start": 8.496
+    },
+    {
+     "word": "gelten,",
+     "start": 8.738
+    },
+    {
+     "word": "was",
+     "start": 9.369
+    },
+    {
+     "word": "man",
+     "start": 9.612
+    },
+    {
+     "word": "bei",
+     "start": 9.855
+    },
+    {
+     "word": "Problemen",
+     "start": 10.097
+    },
+    {
+     "word": "darf,",
+     "start": 10.631
+    },
+    {
+     "word": "und",
+     "start": 11.165
+    },
+    {
+     "word": "wie",
+     "start": 11.407
+    },
+    {
+     "word": "man",
+     "start": 11.65
+    },
+    {
+     "word": "sich",
+     "start": 11.893
+    },
+    {
+     "word": "schützt.",
+     "start": 12.184
+    },
+    {
+     "word": "Schau",
+     "start": 12.863
+    },
+    {
+     "word": "dir",
+     "start": 13.203
+    },
+    {
+     "word": "die",
+     "start": 13.446
+    },
+    {
+     "word": "Quizfragen",
+     "start": 13.688
+    },
+    {
+     "word": "ruhig",
+     "start": 14.271
+    },
+    {
+     "word": "nochmal",
+     "start": 14.61
+    },
+    {
+     "word": "an,",
+     "start": 15.047
+    },
+    {
+     "word": "die",
+     "start": 15.484
+    },
+    {
+     "word": "sind",
+     "start": 15.727
+    },
+    {
+     "word": "genau",
+     "start": 16.018
+    },
+    {
+     "word": "so",
+     "start": 16.358
+    },
+    {
+     "word": "wie",
+     "start": 16.552
+    },
+    {
+     "word": "in",
+     "start": 16.794
+    },
+    {
+     "word": "der",
+     "start": 16.988
+    },
+    {
+     "word": "Prüfung.",
+     "start": 17.231
+    },
+    {
+     "word": "Weiter",
+     "start": 17.91
+    },
+    {
+     "word": "geht's",
+     "start": 18.299
+    },
+    {
+     "word": "mit",
+     "start": 18.638
+    },
+    {
+     "word": "Kompetenzbereich",
+     "start": 18.881
+    },
+    {
+     "word": "drei.",
+     "start": 19.755
+    }
+   ]
+  }
+ ]
+}
