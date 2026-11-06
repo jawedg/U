@@ -42,6 +42,7 @@ const Frame: React.FC<{ children: React.ReactNode; center?: boolean }> = ({ chil
 );
 
 const ROMAN = ["", "I", "II", "III", "IV"];
+export const kbLabel = (kb: number) => (kb === 5 ? "GK" : `KB ${ROMAN[kb]}`);
 
 const M: Record<string, React.FC<MinProps>> = {
   kb: ({ v, kb, topics, t }) => {
@@ -50,7 +51,7 @@ const M: Record<string, React.FC<MinProps>> = {
       <div style={{ height: "100%", display: "flex", alignItems: "center", padding: "0 160px", gap: 110 }}>
         <div style={{ width: 620 }}>
           <Appear at={0}>
-            <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 230, color: accent(kb), lineHeight: 0.9, letterSpacing: -6 }}>KB {ROMAN[kb]}</div>
+            <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 230, color: accent(kb), lineHeight: 0.9, letterSpacing: -6 }}>{kbLabel(kb)}</div>
           </Appear>
           <Appear at={0.3}>
             <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 54, color: INK, lineHeight: 1.15, marginTop: 30 }}>{v.outro ? "Geschafft! ✓" : ""}</div>

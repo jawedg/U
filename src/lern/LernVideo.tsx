@@ -8,8 +8,10 @@ import t1 from "../lern_kb1/timing.json";
 import t2 from "../lern_kb2/timing.json";
 import t3 from "../lern_kb3/timing.json";
 import t4 from "../lern_kb4/timing.json";
+import s5 from "../lern_gk/script.json";
+import t5 from "../lern_gk/timing.json";
 import { collectCues } from "../wiso/Visuals";
-import { BG, INK, LINE, MUTED, MinVisual, SANS, accent } from "./Min";
+import { BG, INK, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
 
 type Word = { word: string; start: number };
 type Line = { file: string; seconds: number; words: Word[] };
@@ -22,8 +24,8 @@ const DATA: Record<number, { s: Script; t: Line[] }> = {
   2: { s: s2 as Script, t: (t2 as { lines: Line[] }).lines },
   3: { s: s3 as Script, t: (t3 as { lines: Line[] }).lines },
   4: { s: s4 as Script, t: (t4 as { lines: Line[] }).lines },
+  5: { s: s5 as Script, t: (t5 as { lines: Line[] }).lines },
 };
-const ROMAN = ["", "I", "II", "III", "IV"];
 
 const info = (kb: number, i: number): Line => {
   const { s, t } = DATA[kb];
@@ -47,7 +49,7 @@ const Header: React.FC<{ kb: number; sc: Scene; topics: string[]; title: string;
     <div style={{ position: "absolute", top: 0, left: 0, height: 5, width: `${p * 100}%`, background: accent(kb) }} />
     <div style={{ position: "absolute", top: 40, left: 60, display: "flex", alignItems: "center", gap: 16, fontFamily: SANS }}>
       <div style={{ width: 14, height: 14, background: accent(kb) }} />
-      <div style={{ fontWeight: 900, fontSize: 26, color: accent(kb), letterSpacing: 2 }}>KB {ROMAN[kb]}</div>
+      <div style={{ fontWeight: 900, fontSize: 26, color: accent(kb), letterSpacing: 2 }}>{kbLabel(kb)}</div>
       <div style={{ fontWeight: 500, fontSize: 26, color: MUTED }}>{title}</div>
     </div>
     {sc.topic > 0 ? (

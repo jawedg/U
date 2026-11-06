@@ -74,6 +74,15 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
       />
     ))}
+    <Composition
+      id="LernGK"
+      component={LernVideo}
+      defaultProps={{ kb: 5 }}
+      durationInFrames={lernFrames(5)}
+      fps={LFPS}
+      width={1920}
+      height={1080}
+    />
     </>
   );
 };

@@ -14,3 +14,4 @@ out/stimmproben/*.wav
 public/wiso/line-*.wav
 public/wiso_all/line-*.wav
 public/lern_kb*/line-*.wav
+public/lern_gk/line-*.wav
