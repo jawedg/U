@@ -73,4 +73,9 @@ Lokal reicht `npm run render:3d`.
 - Komposition `LernGK` (EIGENES Design auf Nutzerwunsch: dunkel Nachtblau + Mint, Themen-Leiste links mit Fortschritt,
   große Themennummern, Inter Display + JetBrains Mono; Farben per CSS-Variablen in `LernVideo.tsx` GK_VARS, kb = 5), Skript aus `scripts/build_gk_script.py`
   (folgt exakt `WiSo_Lernzettel_Gemeinschaftskunde.pdf`: 9 Themen + Prüfungstipps, Lehrer-Erklärstil) → `src/lern_gk/script.json`.
-- ~5400 Wörter / 7 TTS-Blöcke (~36 min). Erzeugen + Rendern: `./scripts/run_gk.sh` → `out/lern-gk-klein.mp4`.
+- ~5400 Wörter / 7 TTS-Blöcke (~36 min). Erzeugen + Rendern: `./scripts/run_gk.sh` → `out/lern-gk-lege-klein.mp4` + `out/lern-gk-dunkel-klein.mp4`.
+- Nutzer-Feedback: statisches Design wirkt „wie PowerPoint“ → mehr Bewegung. Zwei Varianten:
+  - `LernGK` (dunkel, `src/lern/MinGK.tsx`): gefederte Einblendungen, Fokus auf gerade gesprochenem Punkt, bewegter Hintergrund.
+  - `LernGK2` **Legetechnik** (`src/lern/LegeVideo.tsx`, Symbole `src/lern/LegeIcons.tsx`): Papier-Hintergrund, Strichzeichnungen
+    als Papier-Ausschnitte, Handschrift (Caveat), gezeichnete Hand schiebt Teile rein, Papier-Schiebegeräusch (`public/lege/`).
+    Symbol-Zuordnung per Stichwort + `ICON_FOR_TEXT` (exakte Texte).

@@ -7,6 +7,7 @@ import { Video2D, video2dFrames } from "./athan2d/Video2D";
 import { WisoVideo, wisoFrames, WFPS } from "./wiso/WisoVideo";
 import { AllVideo, allFrames, AFPS } from "./wiso_all/AllVideo";
 import { LernVideo, lernFrames, LFPS } from "./lern/LernVideo";
+import { LegeVideo } from "./lern/LegeVideo";
 
 export const FPS = 30;
 
@@ -83,6 +84,7 @@ export const RemotionRoot: React.FC = () => {
       width={1920}
       height={1080}
     />
+    <Composition id="LernGK2" component={LegeVideo} durationInFrames={lernFrames(5)} fps={LFPS} width={1920} height={1080} />
     </>
   );
 };

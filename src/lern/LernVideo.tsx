@@ -13,13 +13,13 @@ import t5 from "../lern_gk/timing.json";
 import { collectCues } from "../wiso/Visuals";
 import { BG, HEAD, INK, LABEL, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
 
-type Word = { word: string; start: number };
-type Line = { file: string; seconds: number; words: Word[] };
-type Scene = { topic: number; tname: string; text: string; part: number; v: any };
-type Script = { kb: number; title: string; topics: string[]; sentences: Scene[] };
+export type Word = { word: string; start: number };
+export type Line = { file: string; seconds: number; words: Word[] };
+export type Scene = { topic: number; tname: string; text: string; part: number; v: any };
+export type Script = { kb: number; title: string; topics: string[]; sentences: Scene[] };
 
 export const LFPS = 25;
-const DATA: Record<number, { s: Script; t: Line[] }> = {
+export const DATA: Record<number, { s: Script; t: Line[] }> = {
   1: { s: s1 as Script, t: (t1 as { lines: Line[] }).lines },
   2: { s: s2 as Script, t: (t2 as { lines: Line[] }).lines },
   3: { s: s3 as Script, t: (t3 as { lines: Line[] }).lines },
@@ -27,17 +27,17 @@ const DATA: Record<number, { s: Script; t: Line[] }> = {
   5: { s: s5 as Script, t: (t5 as { lines: Line[] }).lines },
 };
 
-const info = (kb: number, i: number): Line => {
+export const info = (kb: number, i: number): Line => {
   const { s, t } = DATA[kb];
   if (t.length === s.sentences.length) return t[i];
   const ws = s.sentences[i].text.split(/\s+/);
   return { file: "", seconds: ws.length * 0.38 + 0.6, words: ws.map((w, k) => ({ word: w, start: 0.2 + k * 0.38 })) };
 };
-const lead = (sc: Scene) => (sc.v.type === "topic" ? 10 : 0);
-const durF = (kb: number, i: number) => Math.ceil(info(kb, i).seconds * LFPS) + lead(DATA[kb].s.sentences[i]);
+export const lead = (sc: Scene) => (sc.v.type === "topic" ? 10 : 0);
+export const durF = (kb: number, i: number) => Math.ceil(info(kb, i).seconds * LFPS) + lead(DATA[kb].s.sentences[i]);
 export const lernFrames = (kb: number) => DATA[kb].s.sentences.reduce((a, _, i) => a + durF(kb, i), 0);
 
-const cueFn = (words: Word[]) => (c?: string) => {
+export const cueFn = (words: Word[]) => (c?: string) => {
   if (!c) return 0;
   const n = c.toLowerCase();
   const f = words.find((w) => w.word.replace(/[*„“"(),.:!?]/g, "").toLowerCase().startsWith(n));
