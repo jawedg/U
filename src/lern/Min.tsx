@@ -2,21 +2,24 @@
 import React from "react";
 import { Appear, Visual, TOPIC, useAppear } from "../wiso/Visuals";
 
-export const BG = "#f8f8f6";
-export const INK = "#111827";
-export const MUTED = "#6b7280";
-export const LINE = "#e5e7eb";
+export const BG = "var(--bg, #f8f8f6)";
+export const INK = "var(--ink, #111827)";
+export const MUTED = "var(--muted, #6b7280)";
+export const LINE = "var(--line, #e5e7eb)";
 export const SANS = "Inter, sans-serif";
-export const accent = (kb: number) => TOPIC[kb];
+export const HEAD = "var(--head, Inter, sans-serif)";
+export const LABEL = "var(--label, Inter, sans-serif)";
+export const GK_ACCENT = "#2dd4bf";
+export const accent = (kb: number) => (kb === 5 ? GK_ACCENT : TOPIC[kb]);
 
 type Item = { text: string; cue: string; sub?: string };
 export type MinProps = { v: any; t: number; D: number; cue: (c?: string) => number; kb: number; topics: string[]; topicNo: number };
 
 const Label: React.FC<{ kb: number; children: React.ReactNode }> = ({ kb, children }) => (
-  <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 26, letterSpacing: 6, color: accent(kb), textTransform: "uppercase", marginBottom: 14 }}>{children}</div>
+  <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 26, letterSpacing: 6, color: accent(kb), textTransform: "uppercase", marginBottom: 14 }}>{children}</div>
 );
 const H: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 64 }) => (
-  <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: size, color: INK, lineHeight: 1.1, letterSpacing: -1, marginBottom: 34 }}>{children}</div>
+  <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: size, color: INK, lineHeight: 1.1, letterSpacing: -1, marginBottom: 34 }}>{children}</div>
 );
 const Note: React.FC<{ text?: string; at: number; kb: number }> = ({ text, at, kb }) =>
   text ? (
@@ -36,7 +39,7 @@ const Bullet: React.FC<{ item: Item; at: number; kb: number; size?: number }> = 
 );
 
 const Frame: React.FC<{ children: React.ReactNode; center?: boolean }> = ({ children, center }) => (
-  <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: center ? "center" : "flex-start", padding: "0 180px", textAlign: center ? "center" : "left" }}>
+  <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: center ? "center" : "flex-start", padding: "0 var(--padx, 180px)", textAlign: center ? "center" : "left" }}>
     {children}
   </div>
 );
@@ -46,6 +49,22 @@ export const kbLabel = (kb: number) => (kb === 5 ? "GK" : `KB ${ROMAN[kb]}`);
 
 const M: Record<string, React.FC<MinProps>> = {
   kb: ({ v, kb, topics, t }) => {
+    if (kb === 5)
+      return (
+        <Frame>
+          <Appear at={0}><Label kb={kb}>{v.outro ? "Alle Themen durch" : "WiSo-Abschlussprüfung"}</Label></Appear>
+          <Appear at={0.15}>
+            <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 150, color: INK, lineHeight: 0.95, letterSpacing: -5 }}>{v.outro ? "Geschafft." : "Gemeinschafts­kunde"}</div>
+          </Appear>
+          <Appear at={0.5}>
+            <div style={{ display: "flex", gap: 18, marginTop: 50 }}>
+              {[`${topics.length - 1} Themen`, "Erklärt wie im Unterricht", "Prüfungstipps"].map((x, i) => (
+                <div key={i} style={{ fontFamily: LABEL, fontSize: 24, color: i === 0 ? accent(kb) : MUTED, border: `2px solid ${i === 0 ? accent(kb) : LINE}`, borderRadius: 40, padding: "10px 24px" }}>{x}</div>
+              ))}
+            </div>
+          </Appear>
+        </Frame>
+      );
     const two = topics.length > 9;
     return (
       <div style={{ height: "100%", display: "flex", alignItems: "center", padding: "0 160px", gap: 110 }}>
@@ -73,6 +92,18 @@ const M: Record<string, React.FC<MinProps>> = {
 
   topic: ({ kb, topics, topicNo, t }) => {
     const w = useAppear(0.3);
+    if (kb === 5)
+      return (
+        <Frame>
+          <Appear at={0}>
+            <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 190, color: accent(kb), lineHeight: 1, letterSpacing: -8 }}>{String(topicNo).padStart(2, "0")}</div>
+          </Appear>
+          <div style={{ width: 1100 * w, height: 2, background: LINE, margin: "26px 0 34px" }} />
+          <Appear at={0.15}>
+            <div style={{ fontFamily: HEAD, fontWeight: 850, fontSize: 96, color: INK, lineHeight: 1.04, letterSpacing: -3, maxWidth: 1200 }}>{topics[topicNo - 1]}</div>
+          </Appear>
+        </Frame>
+      );
     return (
       <Frame>
         <Appear at={0}>

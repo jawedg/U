@@ -11,7 +11,7 @@ import t4 from "../lern_kb4/timing.json";
 import s5 from "../lern_gk/script.json";
 import t5 from "../lern_gk/timing.json";
 import { collectCues } from "../wiso/Visuals";
-import { BG, INK, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
+import { BG, HEAD, INK, LABEL, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
 
 type Word = { word: string; start: number };
 type Line = { file: string; seconds: number; words: Word[] };
@@ -62,7 +62,45 @@ const Header: React.FC<{ kb: number; sc: Scene; topics: string[]; title: string;
   </AbsoluteFill>
 );
 
-const Subtitle: React.FC<{ words: Word[]; kb: number }> = ({ words, kb }) => {
+
+// ---------- Gemeinschaftskunde: dunkles Minimal-Design mit Themen-Leiste links ----------
+const SIDEW = 420;
+const GK_VARS = {
+  "--bg": "#0d1219", "--ink": "#eef2f6", "--muted": "#8492a6", "--line": "#243142",
+  "--head": "'Inter Display', Inter, sans-serif", "--label": "'JetBrains Mono', monospace", "--padx": "120px",
+} as React.CSSProperties;
+
+const GKSidebar: React.FC<{ kb: number; sc: Scene; topics: string[]; p: number; outro: boolean }> = ({ kb, sc, topics, p, outro }) => (
+  <div style={{ position: "absolute", left: 0, top: 0, width: SIDEW, height: 1080, background: "#111924", borderRight: `1px solid ${LINE}`, padding: "56px 0 0 0", boxSizing: "border-box" }}>
+    <div style={{ padding: "0 44px", display: "flex", alignItems: "baseline", gap: 16 }}>
+      <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 54, color: accent(kb), letterSpacing: -2 }}>GK</div>
+      <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: MUTED }}>Gemeinschaftskunde</div>
+    </div>
+    <div style={{ marginTop: 48 }}>
+      {topics.map((x, i) => {
+        const n = i + 1;
+        const cur = sc.topic === n;
+        const done = outro || (sc.topic > n);
+        return (
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 18, padding: "13px 44px", borderLeft: `5px solid ${cur ? accent(kb) : "transparent"}`, background: cur ? `${accent(kb)}14` : "transparent" }}>
+            <div style={{ fontFamily: LABEL, fontSize: 20, fontWeight: 700, color: cur || done ? accent(kb) : MUTED, width: 34 }}>{done ? "✓" : String(n).padStart(2, "0")}</div>
+            <div style={{ fontFamily: SANS, fontSize: 23, lineHeight: 1.2, fontWeight: cur ? 800 : 500, color: cur ? INK : MUTED, opacity: cur || done ? 1 : 0.6 }}>{x}</div>
+          </div>
+        );
+      })}
+    </div>
+    <div style={{ position: "absolute", left: 44, right: 44, bottom: 56 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontFamily: LABEL, fontSize: 18, color: MUTED, marginBottom: 12 }}>
+        <span>Fortschritt</span><span style={{ color: INK }}>{Math.round(p * 100)} %</span>
+      </div>
+      <div style={{ height: 6, background: LINE, borderRadius: 3 }}>
+        <div style={{ height: 6, width: `${p * 100}%`, background: accent(kb), borderRadius: 3 }} />
+      </div>
+    </div>
+  </div>
+);
+
+const Subtitle: React.FC<{ words: Word[]; kb: number; maxW?: number }> = ({ words, kb, maxW = 1600 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -75,7 +113,7 @@ const Subtitle: React.FC<{ words: Word[]; kb: number }> = ({ words, kb }) => {
   const cur = sents.filter((x) => x.length).reduce((acc, x) => (t >= x[0].start - 0.1 ? x : acc), sents[0]);
   return (
     <AbsoluteFill style={{ top: 920, height: 140, alignItems: "center", justifyContent: "center" }}>
-      <div style={{ maxWidth: 1600, textAlign: "center", fontFamily: SANS, fontWeight: 550, fontSize: 36, lineHeight: 1.35 }}>
+      <div style={{ maxWidth: maxW, textAlign: "center", fontFamily: SANS, fontWeight: 550, fontSize: 36, lineHeight: 1.35 }}>
         {cur.map((w, i) => {
           const key = w.word.includes("*");
           return (
@@ -96,6 +134,25 @@ const SceneView: React.FC<{ kb: number; i: number; dur: number; start: number; t
   const sc = s.sentences[i];
   const ln = info(kb, i);
   const enter = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" });
+  if (kb === 5) {
+    const p = (start + frame) / total;
+    return (
+      <AbsoluteFill>
+        <GKSidebar kb={kb} sc={sc} topics={s.topics} p={p} outro={sc.topic === 0 && i > 0} />
+        <div style={{ position: "absolute", left: SIDEW, top: 0, width: 1920 - SIDEW, height: 1080 }}>
+          {sc.topic > 0 ? (
+            <div style={{ position: "absolute", top: 52, left: 120, fontFamily: LABEL, fontSize: 20, letterSpacing: 3, color: MUTED, textTransform: "uppercase" }}>
+              <span style={{ color: accent(kb) }}>Thema {String(sc.topic).padStart(2, "0")}</span> · {sc.tname}
+            </div>
+          ) : null}
+          <AbsoluteFill style={{ top: 110, height: 800, opacity: enter }}>
+            <MinVisual v={sc.v} t={frame / fps} D={dur / fps} cue={cueFn(ln.words)} kb={kb} topics={s.topics} topicNo={sc.topic} />
+          </AbsoluteFill>
+          <Subtitle words={ln.words} kb={kb} maxW={1300} />
+        </div>
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill>
       <Header kb={kb} sc={sc} topics={s.topics} title={s.title} p={(start + frame) / total} />
@@ -113,7 +170,7 @@ export const LernVideo: React.FC<{ kb: number }> = ({ kb }) => {
   const { s } = DATA[kb];
   let from = 0;
   return (
-    <AbsoluteFill style={{ backgroundColor: BG }}>
+    <AbsoluteFill style={{ ...(kb === 5 ? GK_VARS : {}), backgroundColor: BG }}>
       {s.sentences.map((sc, i) => {
         const ln = info(kb, i);
         const dur = durF(kb, i);
