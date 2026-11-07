@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import s1 from "../lern_kb1/script.json";
 import s2 from "../lern_kb2/script.json";
 import s3 from "../lern_kb3/script.json";
@@ -70,19 +70,30 @@ const GK_VARS = {
   "--head": "'Inter Display', Inter, sans-serif", "--label": "'JetBrains Mono', monospace", "--padx": "120px",
 } as React.CSSProperties;
 
+const ROWH = 66;
+const GKHighlight: React.FC<{ kb: number; idx: number; animate: boolean }> = ({ kb, idx, animate }) => {
+  const f = useCurrentFrame();
+  const p = animate ? spring({ frame: f - 4, fps: 25, config: { damping: 16, stiffness: 120 } }) : 1;
+  const y = (idx - 1 + p) * ROWH;
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: Math.max(0, y), height: ROWH, background: `${accent(kb)}18`, borderLeft: `5px solid ${accent(kb)}` }} />
+  );
+};
+
 const GKSidebar: React.FC<{ kb: number; sc: Scene; topics: string[]; p: number; outro: boolean }> = ({ kb, sc, topics, p, outro }) => (
   <div style={{ position: "absolute", left: 0, top: 0, width: SIDEW, height: 1080, background: "#111924", borderRight: `1px solid ${LINE}`, padding: "56px 0 0 0", boxSizing: "border-box" }}>
     <div style={{ padding: "0 44px", display: "flex", alignItems: "baseline", gap: 16 }}>
       <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 54, color: accent(kb), letterSpacing: -2 }}>GK</div>
       <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: MUTED }}>Gemeinschaftskunde</div>
     </div>
-    <div style={{ marginTop: 48 }}>
+    <div style={{ marginTop: 48, position: "relative" }}>
+      {sc.topic > 0 ? <GKHighlight kb={kb} idx={sc.topic - 1} animate={sc.v.type === "topic"} /> : null}
       {topics.map((x, i) => {
         const n = i + 1;
         const cur = sc.topic === n;
         const done = outro || (sc.topic > n);
         return (
-          <div key={i} style={{ display: "flex", alignItems: "center", gap: 18, padding: "13px 44px", borderLeft: `5px solid ${cur ? accent(kb) : "transparent"}`, background: cur ? `${accent(kb)}14` : "transparent" }}>
+          <div key={i} style={{ position: "relative", display: "flex", alignItems: "center", gap: 18, height: ROWH, padding: "0 44px" }}>
             <div style={{ fontFamily: LABEL, fontSize: 20, fontWeight: 700, color: cur || done ? accent(kb) : MUTED, width: 34 }}>{done ? "✓" : String(n).padStart(2, "0")}</div>
             <div style={{ fontFamily: SANS, fontSize: 23, lineHeight: 1.2, fontWeight: cur ? 800 : 500, color: cur ? INK : MUTED, opacity: cur || done ? 1 : 0.6 }}>{x}</div>
           </div>
@@ -99,6 +110,20 @@ const GKSidebar: React.FC<{ kb: number; sc: Scene; topics: string[]; p: number; 
     </div>
   </div>
 );
+
+// bewegter Hintergrund: langsam wandernde Lichtflecken + feines Punktraster
+const GKBackdrop: React.FC = () => {
+  const f = useCurrentFrame();
+  const t = f / 25;
+  const b1x = 70 + 12 * Math.sin(t * 0.13), b1y = 30 + 14 * Math.cos(t * 0.11);
+  const b2x = 35 + 15 * Math.cos(t * 0.09), b2y = 80 + 10 * Math.sin(t * 0.15);
+  return (
+    <AbsoluteFill style={{ left: SIDEW, width: 1920 - SIDEW }}>
+      <AbsoluteFill style={{ background: `radial-gradient(700px 520px at ${b1x}% ${b1y}%, rgba(45,212,191,0.10), transparent 70%), radial-gradient(800px 600px at ${b2x}% ${b2y}%, rgba(59,130,246,0.09), transparent 70%)` }} />
+      <AbsoluteFill style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px)", backgroundSize: "40px 40px", backgroundPosition: `${(t * 6) % 40}px ${(t * 3) % 40}px` }} />
+    </AbsoluteFill>
+  );
+};
 
 const Subtitle: React.FC<{ words: Word[]; kb: number; maxW?: number }> = ({ words, kb, maxW = 1600 }) => {
   const frame = useCurrentFrame();
@@ -145,7 +170,7 @@ const SceneView: React.FC<{ kb: number; i: number; dur: number; start: number; t
               <span style={{ color: accent(kb) }}>Thema {String(sc.topic).padStart(2, "0")}</span> · {sc.tname}
             </div>
           ) : null}
-          <AbsoluteFill style={{ top: 110, height: 800, opacity: enter }}>
+          <AbsoluteFill style={{ top: 110, height: 800, opacity: enter, transform: `translateY(${(1 - enter) * 24}px) scale(${1 + (frame / Math.max(1, dur)) * 0.025})`, transformOrigin: "30% 50%" }}>
             <MinVisual v={sc.v} t={frame / fps} D={dur / fps} cue={cueFn(ln.words)} kb={kb} topics={s.topics} topicNo={sc.topic} />
           </AbsoluteFill>
           <Subtitle words={ln.words} kb={kb} maxW={1300} />
@@ -171,6 +196,7 @@ export const LernVideo: React.FC<{ kb: number }> = ({ kb }) => {
   let from = 0;
   return (
     <AbsoluteFill style={{ ...(kb === 5 ? GK_VARS : {}), backgroundColor: BG }}>
+      {kb === 5 ? <GKBackdrop /> : null}
       {s.sentences.map((sc, i) => {
         const ln = info(kb, i);
         const dur = durF(kb, i);

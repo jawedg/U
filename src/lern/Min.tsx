@@ -1,6 +1,7 @@
 // Minimalistisches Lern-Design: viel Weißraum, klare Typo, eine Akzentfarbe pro KB.
 import React from "react";
 import { Appear, Visual, TOPIC, useAppear } from "../wiso/Visuals";
+import { GK_MOTION } from "./MinGK";
 
 export const BG = "var(--bg, #f8f8f6)";
 export const INK = "var(--ink, #111827)";
@@ -12,16 +13,16 @@ export const LABEL = "var(--label, Inter, sans-serif)";
 export const GK_ACCENT = "#2dd4bf";
 export const accent = (kb: number) => (kb === 5 ? GK_ACCENT : TOPIC[kb]);
 
-type Item = { text: string; cue: string; sub?: string };
+export type Item = { text: string; cue: string; sub?: string };
 export type MinProps = { v: any; t: number; D: number; cue: (c?: string) => number; kb: number; topics: string[]; topicNo: number };
 
-const Label: React.FC<{ kb: number; children: React.ReactNode }> = ({ kb, children }) => (
+export const Label: React.FC<{ kb: number; children: React.ReactNode }> = ({ kb, children }) => (
   <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 26, letterSpacing: 6, color: accent(kb), textTransform: "uppercase", marginBottom: 14 }}>{children}</div>
 );
-const H: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 64 }) => (
+export const H: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 64 }) => (
   <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: size, color: INK, lineHeight: 1.1, letterSpacing: -1, marginBottom: 34 }}>{children}</div>
 );
-const Note: React.FC<{ text?: string; at: number; kb: number }> = ({ text, at, kb }) =>
+export const Note: React.FC<{ text?: string; at: number; kb: number }> = ({ text, at, kb }) =>
   text ? (
     <Appear at={at} style={{ marginTop: 34 }}>
       <div style={{ display: "inline-block", fontFamily: SANS, fontWeight: 650, fontSize: 32, color: INK, borderLeft: `6px solid ${accent(kb)}`, padding: "6px 0 6px 22px" }}>{text}</div>
@@ -38,7 +39,7 @@ const Bullet: React.FC<{ item: Item; at: number; kb: number; size?: number }> = 
   </Appear>
 );
 
-const Frame: React.FC<{ children: React.ReactNode; center?: boolean }> = ({ children, center }) => (
+export const Frame: React.FC<{ children: React.ReactNode; center?: boolean }> = ({ children, center }) => (
   <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: center ? "center" : "flex-start", padding: "0 var(--padx, 180px)", textAlign: center ? "center" : "left" }}>
     {children}
   </div>
@@ -313,6 +314,8 @@ const M: Record<string, React.FC<MinProps>> = {
 };
 
 export const MinVisual: React.FC<MinProps> = (p) => {
+  const G = p.kb === 5 ? GK_MOTION[p.v.type] : undefined;
+  if (G) return <G {...p} />;
   const C = M[p.v.type];
   if (C) return <C {...p} />;
   // Grafiken (Kurve, Konjunktur, Dreieck, Stufen, Zeitstrahl, Rechnung) aus dem bestehenden Baukasten
