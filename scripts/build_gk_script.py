@@ -592,13 +592,26 @@ sc("""Das war's! Du hast jetzt *alle neun Themen* von Gemeinschaftskunde und die
 
 # =====================================================================================
 MAX_WORDS = 800  # gemini-3.8 schafft ~800 Wörter pro Anfrage
+# Blöcke 0–4 kamen mit gemini-3.8; der Rest (Tageslimit erreicht) in kleineren Blöcken für gemini-3.1-preview
+SMALL_FROM, SMALL_WORDS = 5, 350
 part, words = 0, 0
 for s in S:
     w = len(s["text"].split())
-    if words and words + w > MAX_WORDS:
+    if words and words + w > (MAX_WORDS if part < SMALL_FROM else SMALL_WORDS):
         part, words = part + 1, 0
     s["part"] = part
     words += w
+# gemini-2.5 überspringt in Block 6 immer den Rechtsstaat-Absatz → eigener Block (Szene „Und was ist ein Rechtsstaat?“)
+iR = next(k for k, x in enumerate(S) if x["text"].startswith("Und was ist ein *Rechtsstaat*"))
+p6 = S[iR]["part"]
+for k, x in enumerate(S):
+    if x["part"] == p6 and k == iR:
+        x["part"] = p6 + 1
+    elif x["part"] == p6 and k > iR:
+        x["part"] = p6 + 2
+    elif x["part"] > p6:
+        x["part"] += 2
+part += 2
 d = {"kb": 5, "label": "GK", "title": "Gemeinschaftskunde", "topics": TOPICS, "sentences": S}
 out = ROOT / "src" / "lern_gk" / "script.json"
 out.parent.mkdir(parents=True, exist_ok=True)
