@@ -79,3 +79,11 @@ Lokal reicht `npm run render:3d`.
   - `LernGK2` **Legetechnik** (`src/lern/LegeVideo.tsx`, Symbole `src/lern/LegeIcons.tsx`): Papier-Hintergrund, Strichzeichnungen
     als Papier-Ausschnitte, Handschrift (Caveat), gezeichnete Hand schiebt Teile rein, Papier-Schiebegeräusch (`public/lege/`).
     Symbol-Zuordnung per Stichwort + `ICON_FOR_TEXT` (exakte Texte).
+
+## Berufstheorie-Rechenvideos (z. B. Füllstandsmessung)
+- `LernFuellstand` (kb = 6, Label „BT“, gleiches dunkles Bewegungs-Design wie `LernGK`), Skript `scripts/build_fs_script.py`
+  → `src/lern_fs/`. Nutzerwunsch: echte Prüfungsaufgabe Schritt für Schritt lösen (Bild, Schaubild, Rechnung), dann eigenes
+  Beispiel im Prüfungsstil. Technik-Grafiken in `src/lern/Tech.tsx`: `tank` (Behälter + Ultraschall, Füllstand animiert),
+  `graph` (Schaubild mit Punkten, Gerade, Steigungsdreieck, Ablesen), `scales` (Volt ↔ Digitalwert), `calc` (Rechenweg tippt sich).
+- Zahlen im Sprechtext als Ziffern schreiben (Gemini liest sie richtig, Untertitel zeigen Ziffern). Cue-Wörter: Satzzeichen
+  werden entfernt („1,5“ → „15“), daher Wort-Cues verwenden. Videos für den Nutzer ≤ ~60 MB halten (größere lassen sich in der App nicht speichern).

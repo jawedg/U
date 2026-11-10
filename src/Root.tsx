@@ -84,6 +84,7 @@ export const RemotionRoot: React.FC = () => {
       width={1920}
       height={1080}
     />
+    <Composition id="LernFuellstand" component={LernVideo} defaultProps={{ kb: 6 }} durationInFrames={lernFrames(6)} fps={LFPS} width={1920} height={1080} />
     <Composition id="LernGK2" component={LegeVideo} durationInFrames={lernFrames(5)} fps={LFPS} width={1920} height={1080} />
     </>
   );

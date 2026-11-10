@@ -1,0 +1,4934 @@
+{
+ "lines": [
+  {
+   "file": "lern_fs/line-0-0.wav",
+   "seconds": 27.001,
+   "words": [
+    {
+     "word": "Hallo!",
+     "start": 0.1
+    },
+    {
+     "word": "Heute",
+     "start": 0.609
+    },
+    {
+     "word": "rechnen",
+     "start": 0.905
+    },
+    {
+     "word": "wir",
+     "start": 1.287
+    },
+    {
+     "word": "zusammen",
+     "start": 1.499
+    },
+    {
+     "word": "eine",
+     "start": 1.923
+    },
+    {
+     "word": "typische",
+     "start": 2.177
+    },
+    {
+     "word": "Prüfungsaufgabe",
+     "start": 2.601
+    },
+    {
+     "word": "aus",
+     "start": 3.322
+    },
+    {
+     "word": "Berufstheorie:",
+     "start": 3.534
+    },
+    {
+     "word": "die",
+     "start": 4.381
+    },
+    {
+     "word": "*Füllstandsmessung*",
+     "start": 4.593
+    },
+    {
+     "word": "mit",
+     "start": 5.399
+    },
+    {
+     "word": "einem",
+     "start": 5.611
+    },
+    {
+     "word": "*Ultraschallsensor*.",
+     "start": 5.907
+    },
+    {
+     "word": "Genau",
+     "start": 6.925
+    },
+    {
+     "word": "so",
+     "start": 7.221
+    },
+    {
+     "word": "eine",
+     "start": 7.391
+    },
+    {
+     "word": "Aufgabe",
+     "start": 7.645
+    },
+    {
+     "word": "kam",
+     "start": 8.027
+    },
+    {
+     "word": "in",
+     "start": 8.239
+    },
+    {
+     "word": "einer",
+     "start": 8.408
+    },
+    {
+     "word": "echten",
+     "start": 8.705
+    },
+    {
+     "word": "Abschlussprüfung",
+     "start": 9.044
+    },
+    {
+     "word": "dran.",
+     "start": 9.807
+    },
+    {
+     "word": "Wir",
+     "start": 10.273
+    },
+    {
+     "word": "machen",
+     "start": 10.485
+    },
+    {
+     "word": "das",
+     "start": 10.824
+    },
+    {
+     "word": "in",
+     "start": 11.036
+    },
+    {
+     "word": "zwei",
+     "start": 11.206
+    },
+    {
+     "word": "Durchgängen.",
+     "start": 11.46
+    },
+    {
+     "word": "Zuerst",
+     "start": 12.223
+    },
+    {
+     "word": "lösen",
+     "start": 12.562
+    },
+    {
+     "word": "wir",
+     "start": 12.859
+    },
+    {
+     "word": "die",
+     "start": 13.071
+    },
+    {
+     "word": "Prüfungsaufgabe",
+     "start": 13.283
+    },
+    {
+     "word": "*Schritt",
+     "start": 14.004
+    },
+    {
+     "word": "für",
+     "start": 14.385
+    },
+    {
+     "word": "Schritt*,",
+     "start": 14.597
+    },
+    {
+     "word": "mit",
+     "start": 15.191
+    },
+    {
+     "word": "Bild,",
+     "start": 15.402
+    },
+    {
+     "word": "Schaubild",
+     "start": 15.869
+    },
+    {
+     "word": "und",
+     "start": 16.335
+    },
+    {
+     "word": "Rechnung.",
+     "start": 16.547
+    },
+    {
+     "word": "Danach",
+     "start": 17.183
+    },
+    {
+     "word": "rechnen",
+     "start": 17.522
+    },
+    {
+     "word": "wir",
+     "start": 17.903
+    },
+    {
+     "word": "ein",
+     "start": 18.115
+    },
+    {
+     "word": "*eigenes",
+     "start": 18.327
+    },
+    {
+     "word": "Beispiel*,",
+     "start": 18.709
+    },
+    {
+     "word": "das",
+     "start": 19.345
+    },
+    {
+     "word": "genauso",
+     "start": 19.557
+    },
+    {
+     "word": "aufgebaut",
+     "start": 19.938
+    },
+    {
+     "word": "ist.",
+     "start": 20.404
+    },
+    {
+     "word": "So",
+     "start": 20.828
+    },
+    {
+     "word": "siehst",
+     "start": 20.998
+    },
+    {
+     "word": "du,",
+     "start": 21.337
+    },
+    {
+     "word": "dass",
+     "start": 21.718
+    },
+    {
+     "word": "das",
+     "start": 21.973
+    },
+    {
+     "word": "Rezept",
+     "start": 22.185
+    },
+    {
+     "word": "immer",
+     "start": 22.524
+    },
+    {
+     "word": "gleich",
+     "start": 22.821
+    },
+    {
+     "word": "funktioniert.",
+     "start": 23.16
+    },
+    {
+     "word": "Nimm",
+     "start": 23.965
+    },
+    {
+     "word": "dir",
+     "start": 24.219
+    },
+    {
+     "word": "ruhig",
+     "start": 24.431
+    },
+    {
+     "word": "Stift",
+     "start": 24.728
+    },
+    {
+     "word": "und",
+     "start": 25.025
+    },
+    {
+     "word": "Papier",
+     "start": 25.237
+    },
+    {
+     "word": "und",
+     "start": 25.576
+    },
+    {
+     "word": "rechne",
+     "start": 25.788
+    },
+    {
+     "word": "mit.",
+     "start": 26.127
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-1.wav",
+   "seconds": 2.107,
+   "words": [
+    {
+     "word": "Schritt",
+     "start": 0.1
+    },
+    {
+     "word": "eins:",
+     "start": 0.38
+    },
+    {
+     "word": "*Die",
+     "start": 0.723
+    },
+    {
+     "word": "Aufgabe",
+     "start": 0.879
+    },
+    {
+     "word": "verstehen*.",
+     "start": 1.159
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-2.wav",
+   "seconds": 19.172,
+   "words": [
+    {
+     "word": "Schau",
+     "start": 0.1
+    },
+    {
+     "word": "dir",
+     "start": 0.39
+    },
+    {
+     "word": "das",
+     "start": 0.598
+    },
+    {
+     "word": "Bild",
+     "start": 0.805
+    },
+    {
+     "word": "an.",
+     "start": 1.054
+    },
+    {
+     "word": "*Oben*",
+     "start": 1.427
+    },
+    {
+     "word": "auf",
+     "start": 1.676
+    },
+    {
+     "word": "dem",
+     "start": 1.883
+    },
+    {
+     "word": "Behälter",
+     "start": 2.091
+    },
+    {
+     "word": "sitzt",
+     "start": 2.506
+    },
+    {
+     "word": "ein",
+     "start": 2.796
+    },
+    {
+     "word": "Ultraschallsensor.",
+     "start": 3.003
+    },
+    {
+     "word": "Der",
+     "start": 3.999
+    },
+    {
+     "word": "schickt",
+     "start": 4.206
+    },
+    {
+     "word": "einen",
+     "start": 4.579
+    },
+    {
+     "word": "Schallimpuls",
+     "start": 4.87
+    },
+    {
+     "word": "nach",
+     "start": 5.45
+    },
+    {
+     "word": "unten.",
+     "start": 5.699
+    },
+    {
+     "word": "Der",
+     "start": 6.197
+    },
+    {
+     "word": "Schall",
+     "start": 6.404
+    },
+    {
+     "word": "*prallt*",
+     "start": 6.736
+    },
+    {
+     "word": "an",
+     "start": 7.068
+    },
+    {
+     "word": "der",
+     "start": 7.234
+    },
+    {
+     "word": "Oberfläche",
+     "start": 7.441
+    },
+    {
+     "word": "der",
+     "start": 7.939
+    },
+    {
+     "word": "Flüssigkeit",
+     "start": 8.146
+    },
+    {
+     "word": "ab",
+     "start": 8.685
+    },
+    {
+     "word": "und",
+     "start": 8.851
+    },
+    {
+     "word": "kommt",
+     "start": 9.059
+    },
+    {
+     "word": "als",
+     "start": 9.349
+    },
+    {
+     "word": "*Echo*",
+     "start": 9.556
+    },
+    {
+     "word": "zurück.",
+     "start": 9.805
+    },
+    {
+     "word": "Aus",
+     "start": 10.344
+    },
+    {
+     "word": "der",
+     "start": 10.552
+    },
+    {
+     "word": "Laufzeit",
+     "start": 10.759
+    },
+    {
+     "word": "weiß",
+     "start": 11.174
+    },
+    {
+     "word": "der",
+     "start": 11.423
+    },
+    {
+     "word": "Sensor,",
+     "start": 11.63
+    },
+    {
+     "word": "wie",
+     "start": 12.169
+    },
+    {
+     "word": "weit",
+     "start": 12.377
+    },
+    {
+     "word": "die",
+     "start": 12.625
+    },
+    {
+     "word": "Oberfläche",
+     "start": 12.833
+    },
+    {
+     "word": "weg",
+     "start": 13.33
+    },
+    {
+     "word": "ist.",
+     "start": 13.538
+    },
+    {
+     "word": "Ganz",
+     "start": 13.953
+    },
+    {
+     "word": "wichtig:",
+     "start": 14.201
+    },
+    {
+     "word": "Der",
+     "start": 14.782
+    },
+    {
+     "word": "Sensor",
+     "start": 14.989
+    },
+    {
+     "word": "*misst*",
+     "start": 15.321
+    },
+    {
+     "word": "also",
+     "start": 15.612
+    },
+    {
+     "word": "den",
+     "start": 15.86
+    },
+    {
+     "word": "*Abstand*",
+     "start": 16.068
+    },
+    {
+     "word": "von",
+     "start": 16.441
+    },
+    {
+     "word": "oben,",
+     "start": 16.648
+    },
+    {
+     "word": "nicht",
+     "start": 17.105
+    },
+    {
+     "word": "die",
+     "start": 17.395
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 17.602
+    },
+    {
+     "word": "von",
+     "start": 18.017
+    },
+    {
+     "word": "unten.",
+     "start": 18.224
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-3.wav",
+   "seconds": 11.873,
+   "words": [
+    {
+     "word": "Direkt",
+     "start": 0.1
+    },
+    {
+     "word": "unter",
+     "start": 0.408
+    },
+    {
+     "word": "dem",
+     "start": 0.678
+    },
+    {
+     "word": "Sensor",
+     "start": 0.87
+    },
+    {
+     "word": "gibt",
+     "start": 1.178
+    },
+    {
+     "word": "es",
+     "start": 1.41
+    },
+    {
+     "word": "eine",
+     "start": 1.564
+    },
+    {
+     "word": "*Blindzone*.",
+     "start": 1.795
+    },
+    {
+     "word": "Das",
+     "start": 2.411
+    },
+    {
+     "word": "ist",
+     "start": 2.603
+    },
+    {
+     "word": "der",
+     "start": 2.796
+    },
+    {
+     "word": "Bereich,",
+     "start": 2.989
+    },
+    {
+     "word": "in",
+     "start": 3.528
+    },
+    {
+     "word": "dem",
+     "start": 3.682
+    },
+    {
+     "word": "der",
+     "start": 3.874
+    },
+    {
+     "word": "Sensor",
+     "start": 4.067
+    },
+    {
+     "word": "das",
+     "start": 4.375
+    },
+    {
+     "word": "Echo",
+     "start": 4.568
+    },
+    {
+     "word": "*nicht",
+     "start": 4.799
+    },
+    {
+     "word": "erkennen*",
+     "start": 5.068
+    },
+    {
+     "word": "kann.",
+     "start": 5.454
+    },
+    {
+     "word": "Deshalb",
+     "start": 5.877
+    },
+    {
+     "word": "fängt",
+     "start": 6.224
+    },
+    {
+     "word": "der",
+     "start": 6.494
+    },
+    {
+     "word": "*Messbereich*",
+     "start": 6.686
+    },
+    {
+     "word": "erst",
+     "start": 7.187
+    },
+    {
+     "word": "unter",
+     "start": 7.418
+    },
+    {
+     "word": "der",
+     "start": 7.687
+    },
+    {
+     "word": "Blindzone",
+     "start": 7.88
+    },
+    {
+     "word": "an.",
+     "start": 8.304
+    },
+    {
+     "word": "In",
+     "start": 8.65
+    },
+    {
+     "word": "unserer",
+     "start": 8.804
+    },
+    {
+     "word": "Aufgabe",
+     "start": 9.151
+    },
+    {
+     "word": "ist",
+     "start": 9.498
+    },
+    {
+     "word": "der",
+     "start": 9.69
+    },
+    {
+     "word": "Messbereich",
+     "start": 9.883
+    },
+    {
+     "word": "20",
+     "start": 10.384
+    },
+    {
+     "word": "Zentimeter",
+     "start": 10.538
+    },
+    {
+     "word": "groß.",
+     "start": 11.0
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-4.wav",
+   "seconds": 22.964,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.354
+    },
+    {
+     "word": "gegeben?",
+     "start": 0.607
+    },
+    {
+     "word": "Der",
+     "start": 1.317
+    },
+    {
+     "word": "Sensor",
+     "start": 1.571
+    },
+    {
+     "word": "hängt",
+     "start": 1.976
+    },
+    {
+     "word": "an",
+     "start": 2.331
+    },
+    {
+     "word": "einer",
+     "start": 2.534
+    },
+    {
+     "word": "*Analogeingabe*",
+     "start": 2.889
+    },
+    {
+     "word": "von",
+     "start": 3.65
+    },
+    {
+     "word": "0",
+     "start": 3.903
+    },
+    {
+     "word": "bis",
+     "start": 4.055
+    },
+    {
+     "word": "10",
+     "start": 4.309
+    },
+    {
+     "word": "Volt.",
+     "start": 4.512
+    },
+    {
+     "word": "Am",
+     "start": 5.07
+    },
+    {
+     "word": "*Anfang*",
+     "start": 5.272
+    },
+    {
+     "word": "des",
+     "start": 5.678
+    },
+    {
+     "word": "Messbereichs,",
+     "start": 5.932
+    },
+    {
+     "word": "also",
+     "start": 6.895
+    },
+    {
+     "word": "bei",
+     "start": 7.199
+    },
+    {
+     "word": "0",
+     "start": 7.453
+    },
+    {
+     "word": "Zentimeter",
+     "start": 7.605
+    },
+    {
+     "word": "Abstand",
+     "start": 8.214
+    },
+    {
+     "word": "direkt",
+     "start": 8.67
+    },
+    {
+     "word": "unter",
+     "start": 9.076
+    },
+    {
+     "word": "der",
+     "start": 9.431
+    },
+    {
+     "word": "Blindzone,",
+     "start": 9.684
+    },
+    {
+     "word": "liefert",
+     "start": 10.496
+    },
+    {
+     "word": "er",
+     "start": 10.952
+    },
+    {
+     "word": "1,5",
+     "start": 11.155
+    },
+    {
+     "word": "Volt.",
+     "start": 11.358
+    },
+    {
+     "word": "Am",
+     "start": 11.916
+    },
+    {
+     "word": "*Ende*,",
+     "start": 12.118
+    },
+    {
+     "word": "bei",
+     "start": 12.676
+    },
+    {
+     "word": "20",
+     "start": 12.93
+    },
+    {
+     "word": "Zentimeter",
+     "start": 13.133
+    },
+    {
+     "word": "Abstand,",
+     "start": 13.741
+    },
+    {
+     "word": "liefert",
+     "start": 14.451
+    },
+    {
+     "word": "er",
+     "start": 14.907
+    },
+    {
+     "word": "8",
+     "start": 15.11
+    },
+    {
+     "word": "Volt.",
+     "start": 15.262
+    },
+    {
+     "word": "*Außerdem*",
+     "start": 15.82
+    },
+    {
+     "word": "wissen",
+     "start": 16.327
+    },
+    {
+     "word": "wir:",
+     "start": 16.733
+    },
+    {
+     "word": "0",
+     "start": 17.24
+    },
+    {
+     "word": "Volt",
+     "start": 17.392
+    },
+    {
+     "word": "entspricht",
+     "start": 17.697
+    },
+    {
+     "word": "dem",
+     "start": 18.305
+    },
+    {
+     "word": "Digitalwert",
+     "start": 18.559
+    },
+    {
+     "word": "0,",
+     "start": 19.218
+    },
+    {
+     "word": "und",
+     "start": 19.624
+    },
+    {
+     "word": "10",
+     "start": 19.877
+    },
+    {
+     "word": "Volt",
+     "start": 20.08
+    },
+    {
+     "word": "entspricht",
+     "start": 20.384
+    },
+    {
+     "word": "dem",
+     "start": 20.993
+    },
+    {
+     "word": "Digitalwert",
+     "start": 21.246
+    },
+    {
+     "word": "27648.",
+     "start": 21.906
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-5.wav",
+   "seconds": 5.867,
+   "words": [
+    {
+     "word": "Schritt",
+     "start": 0.1
+    },
+    {
+     "word": "zwei:",
+     "start": 0.435
+    },
+    {
+     "word": "*Abstand*",
+     "start": 0.844
+    },
+    {
+     "word": "und",
+     "start": 1.178
+    },
+    {
+     "word": "*Füllhöhe*",
+     "start": 1.364
+    },
+    {
+     "word": "richtig",
+     "start": 1.736
+    },
+    {
+     "word": "zuordnen.",
+     "start": 2.071
+    },
+    {
+     "word": "Das",
+     "start": 2.629
+    },
+    {
+     "word": "ist",
+     "start": 2.815
+    },
+    {
+     "word": "die",
+     "start": 3.0
+    },
+    {
+     "word": "Stelle,",
+     "start": 3.186
+    },
+    {
+     "word": "an",
+     "start": 3.67
+    },
+    {
+     "word": "der",
+     "start": 3.819
+    },
+    {
+     "word": "die",
+     "start": 4.004
+    },
+    {
+     "word": "meisten",
+     "start": 4.19
+    },
+    {
+     "word": "Fehler",
+     "start": 4.525
+    },
+    {
+     "word": "passieren.",
+     "start": 4.822
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-6.wav",
+   "seconds": 14.5,
+   "words": [
+    {
+     "word": "Überleg",
+     "start": 0.1
+    },
+    {
+     "word": "mal:",
+     "start": 0.467
+    },
+    {
+     "word": "Wann",
+     "start": 0.875
+    },
+    {
+     "word": "ist",
+     "start": 1.12
+    },
+    {
+     "word": "der",
+     "start": 1.324
+    },
+    {
+     "word": "Abstand",
+     "start": 1.528
+    },
+    {
+     "word": "klein?",
+     "start": 1.895
+    },
+    {
+     "word": "Wenn",
+     "start": 2.384
+    },
+    {
+     "word": "die",
+     "start": 2.629
+    },
+    {
+     "word": "Oberfläche",
+     "start": 2.833
+    },
+    {
+     "word": "nah",
+     "start": 3.322
+    },
+    {
+     "word": "am",
+     "start": 3.526
+    },
+    {
+     "word": "Sensor",
+     "start": 3.689
+    },
+    {
+     "word": "ist,",
+     "start": 4.016
+    },
+    {
+     "word": "also",
+     "start": 4.424
+    },
+    {
+     "word": "wenn",
+     "start": 4.668
+    },
+    {
+     "word": "der",
+     "start": 4.913
+    },
+    {
+     "word": "Behälter",
+     "start": 5.117
+    },
+    {
+     "word": "*voll*",
+     "start": 5.525
+    },
+    {
+     "word": "ist.",
+     "start": 5.77
+    },
+    {
+     "word": "Und",
+     "start": 6.177
+    },
+    {
+     "word": "wann",
+     "start": 6.381
+    },
+    {
+     "word": "ist",
+     "start": 6.626
+    },
+    {
+     "word": "der",
+     "start": 6.83
+    },
+    {
+     "word": "Abstand",
+     "start": 7.034
+    },
+    {
+     "word": "groß?",
+     "start": 7.401
+    },
+    {
+     "word": "Wenn",
+     "start": 7.85
+    },
+    {
+     "word": "der",
+     "start": 8.094
+    },
+    {
+     "word": "Behälter",
+     "start": 8.298
+    },
+    {
+     "word": "*leer*",
+     "start": 8.706
+    },
+    {
+     "word": "ist",
+     "start": 8.951
+    },
+    {
+     "word": "und",
+     "start": 9.155
+    },
+    {
+     "word": "der",
+     "start": 9.359
+    },
+    {
+     "word": "Schall",
+     "start": 9.563
+    },
+    {
+     "word": "bis",
+     "start": 9.889
+    },
+    {
+     "word": "ganz",
+     "start": 10.093
+    },
+    {
+     "word": "nach",
+     "start": 10.338
+    },
+    {
+     "word": "unten",
+     "start": 10.583
+    },
+    {
+     "word": "muss.",
+     "start": 10.868
+    },
+    {
+     "word": "Abstand",
+     "start": 11.317
+    },
+    {
+     "word": "und",
+     "start": 11.684
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 11.888
+    },
+    {
+     "word": "laufen",
+     "start": 12.296
+    },
+    {
+     "word": "also",
+     "start": 12.622
+    },
+    {
+     "word": "genau",
+     "start": 12.867
+    },
+    {
+     "word": "*entgegengesetzt*.",
+     "start": 13.152
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-7.wav",
+   "seconds": 17.853,
+   "words": [
+    {
+     "word": "Daraus",
+     "start": 0.1
+    },
+    {
+     "word": "machen",
+     "start": 0.519
+    },
+    {
+     "word": "wir",
+     "start": 0.939
+    },
+    {
+     "word": "eine",
+     "start": 1.201
+    },
+    {
+     "word": "kleine",
+     "start": 1.516
+    },
+    {
+     "word": "Tabelle.",
+     "start": 1.935
+    },
+    {
+     "word": "Behälter",
+     "start": 2.669
+    },
+    {
+     "word": "*voll*:",
+     "start": 3.194
+    },
+    {
+     "word": "Abstand",
+     "start": 3.77
+    },
+    {
+     "word": "0",
+     "start": 4.242
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 4.4
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 5.291
+    },
+    {
+     "word": "20",
+     "start": 5.815
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 6.025
+    },
+    {
+     "word": "Spannung",
+     "start": 6.917
+    },
+    {
+     "word": "1,5",
+     "start": 7.441
+    },
+    {
+     "word": "Volt.",
+     "start": 7.651
+    },
+    {
+     "word": "Behälter",
+     "start": 8.227
+    },
+    {
+     "word": "*leer*:",
+     "start": 8.752
+    },
+    {
+     "word": "Abstand",
+     "start": 9.329
+    },
+    {
+     "word": "20",
+     "start": 9.8
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 10.01
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 10.902
+    },
+    {
+     "word": "0",
+     "start": 11.426
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 11.583
+    },
+    {
+     "word": "Spannung",
+     "start": 12.475
+    },
+    {
+     "word": "8",
+     "start": 12.999
+    },
+    {
+     "word": "Volt.",
+     "start": 13.156
+    },
+    {
+     "word": "*Merk*",
+     "start": 13.733
+    },
+    {
+     "word": "dir:",
+     "start": 14.048
+    },
+    {
+     "word": "Voller",
+     "start": 14.572
+    },
+    {
+     "word": "Behälter",
+     "start": 14.991
+    },
+    {
+     "word": "heißt",
+     "start": 15.516
+    },
+    {
+     "word": "hier",
+     "start": 15.883
+    },
+    {
+     "word": "kleine",
+     "start": 16.197
+    },
+    {
+     "word": "Spannung.",
+     "start": 16.617
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-8.wav",
+   "seconds": 19.647,
+   "words": [
+    {
+     "word": "Kurze",
+     "start": 0.1
+    },
+    {
+     "word": "Frage",
+     "start": 0.438
+    },
+    {
+     "word": "an",
+     "start": 0.775
+    },
+    {
+     "word": "dich:",
+     "start": 0.968
+    },
+    {
+     "word": "Der",
+     "start": 1.499
+    },
+    {
+     "word": "Behälter",
+     "start": 1.74
+    },
+    {
+     "word": "ist",
+     "start": 2.222
+    },
+    {
+     "word": "halb",
+     "start": 2.463
+    },
+    {
+     "word": "voll,",
+     "start": 2.752
+    },
+    {
+     "word": "also",
+     "start": 3.283
+    },
+    {
+     "word": "10",
+     "start": 3.572
+    },
+    {
+     "word": "Zentimeter",
+     "start": 3.765
+    },
+    {
+     "word": "Füllhöhe.",
+     "start": 4.344
+    },
+    {
+     "word": "Ist",
+     "start": 5.067
+    },
+    {
+     "word": "die",
+     "start": 5.308
+    },
+    {
+     "word": "Spannung",
+     "start": 5.549
+    },
+    {
+     "word": "dann",
+     "start": 6.032
+    },
+    {
+     "word": "größer",
+     "start": 6.321
+    },
+    {
+     "word": "oder",
+     "start": 6.707
+    },
+    {
+     "word": "kleiner",
+     "start": 6.996
+    },
+    {
+     "word": "als",
+     "start": 7.43
+    },
+    {
+     "word": "8",
+     "start": 7.671
+    },
+    {
+     "word": "Volt?",
+     "start": 7.816
+    },
+    {
+     "word": "Überleg",
+     "start": 8.346
+    },
+    {
+     "word": "kurz",
+     "start": 8.78
+    },
+    {
+     "word": "…",
+     "start": 9.07
+    },
+    {
+     "word": "*Richtig*:",
+     "start": 9.166
+    },
+    {
+     "word": "kleiner.",
+     "start": 9.841
+    },
+    {
+     "word": "Je",
+     "start": 10.517
+    },
+    {
+     "word": "voller",
+     "start": 10.709
+    },
+    {
+     "word": "der",
+     "start": 11.095
+    },
+    {
+     "word": "Behälter,",
+     "start": 11.336
+    },
+    {
+     "word": "desto",
+     "start": 12.06
+    },
+    {
+     "word": "kleiner",
+     "start": 12.397
+    },
+    {
+     "word": "die",
+     "start": 12.831
+    },
+    {
+     "word": "Spannung.",
+     "start": 13.072
+    },
+    {
+     "word": "Bei",
+     "start": 13.796
+    },
+    {
+     "word": "halb",
+     "start": 14.037
+    },
+    {
+     "word": "voll",
+     "start": 14.326
+    },
+    {
+     "word": "liegt",
+     "start": 14.616
+    },
+    {
+     "word": "sie",
+     "start": 14.953
+    },
+    {
+     "word": "genau",
+     "start": 15.194
+    },
+    {
+     "word": "in",
+     "start": 15.532
+    },
+    {
+     "word": "der",
+     "start": 15.725
+    },
+    {
+     "word": "Mitte",
+     "start": 15.966
+    },
+    {
+     "word": "zwischen",
+     "start": 16.304
+    },
+    {
+     "word": "1,5",
+     "start": 16.786
+    },
+    {
+     "word": "und",
+     "start": 16.979
+    },
+    {
+     "word": "8",
+     "start": 17.22
+    },
+    {
+     "word": "Volt,",
+     "start": 17.364
+    },
+    {
+     "word": "also",
+     "start": 17.895
+    },
+    {
+     "word": "bei",
+     "start": 18.184
+    },
+    {
+     "word": "4,75",
+     "start": 18.425
+    },
+    {
+     "word": "Volt.",
+     "start": 18.667
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-9.wav",
+   "seconds": 4.061,
+   "words": [
+    {
+     "word": "Schritt",
+     "start": 0.1
+    },
+    {
+     "word": "drei:",
+     "start": 0.459
+    },
+    {
+     "word": "das",
+     "start": 0.898
+    },
+    {
+     "word": "*Schaubild*.",
+     "start": 1.097
+    },
+    {
+     "word": "Das",
+     "start": 1.736
+    },
+    {
+     "word": "ist",
+     "start": 1.935
+    },
+    {
+     "word": "Aufgabe",
+     "start": 2.135
+    },
+    {
+     "word": "2",
+     "start": 2.494
+    },
+    {
+     "word": "Punkt",
+     "start": 2.613
+    },
+    {
+     "word": "4",
+     "start": 2.892
+    },
+    {
+     "word": "Punkt",
+     "start": 3.012
+    },
+    {
+     "word": "1.",
+     "start": 3.291
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-10.wav",
+   "seconds": 26.494,
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.1
+    },
+    {
+     "word": "zeichnen",
+     "start": 0.334
+    },
+    {
+     "word": "ein",
+     "start": 0.802
+    },
+    {
+     "word": "Koordinatensystem.",
+     "start": 1.037
+    },
+    {
+     "word": "Nach",
+     "start": 2.161
+    },
+    {
+     "word": "rechts",
+     "start": 2.442
+    },
+    {
+     "word": "kommt",
+     "start": 2.816
+    },
+    {
+     "word": "die",
+     "start": 3.144
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 3.378
+    },
+    {
+     "word": "in",
+     "start": 3.846
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 4.034
+    },
+    {
+     "word": "von",
+     "start": 4.83
+    },
+    {
+     "word": "0",
+     "start": 5.064
+    },
+    {
+     "word": "bis",
+     "start": 5.204
+    },
+    {
+     "word": "20.",
+     "start": 5.439
+    },
+    {
+     "word": "Nach",
+     "start": 5.86
+    },
+    {
+     "word": "oben",
+     "start": 6.141
+    },
+    {
+     "word": "kommt",
+     "start": 6.422
+    },
+    {
+     "word": "die",
+     "start": 6.75
+    },
+    {
+     "word": "Spannung",
+     "start": 6.984
+    },
+    {
+     "word": "in",
+     "start": 7.452
+    },
+    {
+     "word": "Volt,",
+     "start": 7.64
+    },
+    {
+     "word": "von",
+     "start": 8.155
+    },
+    {
+     "word": "0",
+     "start": 8.389
+    },
+    {
+     "word": "bis",
+     "start": 8.529
+    },
+    {
+     "word": "10.",
+     "start": 8.764
+    },
+    {
+     "word": "Jetzt",
+     "start": 9.185
+    },
+    {
+     "word": "setzen",
+     "start": 9.513
+    },
+    {
+     "word": "wir",
+     "start": 9.887
+    },
+    {
+     "word": "unsere",
+     "start": 10.122
+    },
+    {
+     "word": "zwei",
+     "start": 10.496
+    },
+    {
+     "word": "Punkte",
+     "start": 10.777
+    },
+    {
+     "word": "aus",
+     "start": 11.152
+    },
+    {
+     "word": "der",
+     "start": 11.386
+    },
+    {
+     "word": "Tabelle",
+     "start": 11.62
+    },
+    {
+     "word": "ein.",
+     "start": 12.042
+    },
+    {
+     "word": "*Erster*",
+     "start": 12.51
+    },
+    {
+     "word": "Punkt:",
+     "start": 12.885
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 13.447
+    },
+    {
+     "word": "0",
+     "start": 13.915
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 14.055
+    },
+    {
+     "word": "Spannung",
+     "start": 14.851
+    },
+    {
+     "word": "8",
+     "start": 15.32
+    },
+    {
+     "word": "Volt.",
+     "start": 15.46
+    },
+    {
+     "word": "*Zweiter*",
+     "start": 15.975
+    },
+    {
+     "word": "Punkt:",
+     "start": 16.397
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 16.959
+    },
+    {
+     "word": "20",
+     "start": 17.427
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 17.614
+    },
+    {
+     "word": "Spannung",
+     "start": 18.411
+    },
+    {
+     "word": "1,5",
+     "start": 18.879
+    },
+    {
+     "word": "Volt.",
+     "start": 19.066
+    },
+    {
+     "word": "Und",
+     "start": 19.581
+    },
+    {
+     "word": "jetzt",
+     "start": 19.815
+    },
+    {
+     "word": "*verbinden*",
+     "start": 20.143
+    },
+    {
+     "word": "wir",
+     "start": 20.658
+    },
+    {
+     "word": "die",
+     "start": 20.893
+    },
+    {
+     "word": "beiden",
+     "start": 21.127
+    },
+    {
+     "word": "Punkte",
+     "start": 21.501
+    },
+    {
+     "word": "mit",
+     "start": 21.876
+    },
+    {
+     "word": "einer",
+     "start": 22.11
+    },
+    {
+     "word": "Geraden.",
+     "start": 22.438
+    },
+    {
+     "word": "Fertig",
+     "start": 23.094
+    },
+    {
+     "word": "ist",
+     "start": 23.468
+    },
+    {
+     "word": "das",
+     "start": 23.702
+    },
+    {
+     "word": "Schaubild:",
+     "start": 23.937
+    },
+    {
+     "word": "eine",
+     "start": 24.686
+    },
+    {
+     "word": "*fallende",
+     "start": 24.967
+    },
+    {
+     "word": "Gerade*.",
+     "start": 25.435
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-11.wav",
+   "seconds": 32.848,
+   "words": [
+    {
+     "word": "Warum",
+     "start": 0.1
+    },
+    {
+     "word": "eine",
+     "start": 0.499
+    },
+    {
+     "word": "Gerade?",
+     "start": 0.841
+    },
+    {
+     "word": "Weil",
+     "start": 1.581
+    },
+    {
+     "word": "der",
+     "start": 1.923
+    },
+    {
+     "word": "Sensor",
+     "start": 2.208
+    },
+    {
+     "word": "*linear*",
+     "start": 2.663
+    },
+    {
+     "word": "arbeitet:",
+     "start": 3.119
+    },
+    {
+     "word": "Jeder",
+     "start": 3.974
+    },
+    {
+     "word": "Zentimeter",
+     "start": 4.372
+    },
+    {
+     "word": "verändert",
+     "start": 5.056
+    },
+    {
+     "word": "die",
+     "start": 5.682
+    },
+    {
+     "word": "Spannung",
+     "start": 5.967
+    },
+    {
+     "word": "um",
+     "start": 6.537
+    },
+    {
+     "word": "gleich",
+     "start": 6.765
+    },
+    {
+     "word": "viel.",
+     "start": 7.22
+    },
+    {
+     "word": "Wie",
+     "start": 7.847
+    },
+    {
+     "word": "viel",
+     "start": 8.132
+    },
+    {
+     "word": "genau?",
+     "start": 8.474
+    },
+    {
+     "word": "Die",
+     "start": 9.157
+    },
+    {
+     "word": "Spannung",
+     "start": 9.442
+    },
+    {
+     "word": "*fällt*",
+     "start": 10.012
+    },
+    {
+     "word": "um",
+     "start": 10.41
+    },
+    {
+     "word": "8",
+     "start": 10.638
+    },
+    {
+     "word": "minus",
+     "start": 10.809
+    },
+    {
+     "word": "1,5,",
+     "start": 11.208
+    },
+    {
+     "word": "also",
+     "start": 11.721
+    },
+    {
+     "word": "um",
+     "start": 12.062
+    },
+    {
+     "word": "6,5",
+     "start": 12.29
+    },
+    {
+     "word": "Volt,",
+     "start": 12.518
+    },
+    {
+     "word": "auf",
+     "start": 13.145
+    },
+    {
+     "word": "20",
+     "start": 13.43
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 13.657
+    },
+    {
+     "word": "6,5",
+     "start": 14.626
+    },
+    {
+     "word": "geteilt",
+     "start": 14.854
+    },
+    {
+     "word": "durch",
+     "start": 15.366
+    },
+    {
+     "word": "20",
+     "start": 15.765
+    },
+    {
+     "word": "ergibt",
+     "start": 15.993
+    },
+    {
+     "word": "0,325",
+     "start": 16.449
+    },
+    {
+     "word": "Volt",
+     "start": 16.79
+    },
+    {
+     "word": "pro",
+     "start": 17.132
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 17.417
+    },
+    {
+     "word": "Die",
+     "start": 18.385
+    },
+    {
+     "word": "Steigung",
+     "start": 18.67
+    },
+    {
+     "word": "ist",
+     "start": 19.24
+    },
+    {
+     "word": "also",
+     "start": 19.525
+    },
+    {
+     "word": "minus",
+     "start": 19.866
+    },
+    {
+     "word": "0,325",
+     "start": 20.265
+    },
+    {
+     "word": "Volt",
+     "start": 20.607
+    },
+    {
+     "word": "pro",
+     "start": 20.949
+    },
+    {
+     "word": "Zentimeter,",
+     "start": 21.234
+    },
+    {
+     "word": "minus,",
+     "start": 22.202
+    },
+    {
+     "word": "weil",
+     "start": 22.886
+    },
+    {
+     "word": "die",
+     "start": 23.227
+    },
+    {
+     "word": "Gerade",
+     "start": 23.512
+    },
+    {
+     "word": "fällt.",
+     "start": 23.968
+    },
+    {
+     "word": "Damit",
+     "start": 24.651
+    },
+    {
+     "word": "können",
+     "start": 25.05
+    },
+    {
+     "word": "wir",
+     "start": 25.506
+    },
+    {
+     "word": "sogar",
+     "start": 25.791
+    },
+    {
+     "word": "eine",
+     "start": 26.189
+    },
+    {
+     "word": "*Formel*",
+     "start": 26.531
+    },
+    {
+     "word": "aufschreiben:",
+     "start": 26.987
+    },
+    {
+     "word": "U",
+     "start": 28.069
+    },
+    {
+     "word": "gleich",
+     "start": 28.24
+    },
+    {
+     "word": "8",
+     "start": 28.696
+    },
+    {
+     "word": "Volt",
+     "start": 28.867
+    },
+    {
+     "word": "minus",
+     "start": 29.208
+    },
+    {
+     "word": "0,325",
+     "start": 29.607
+    },
+    {
+     "word": "Volt",
+     "start": 29.949
+    },
+    {
+     "word": "pro",
+     "start": 30.291
+    },
+    {
+     "word": "Zentimeter",
+     "start": 30.576
+    },
+    {
+     "word": "mal",
+     "start": 31.259
+    },
+    {
+     "word": "Füllhöhe.",
+     "start": 31.544
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-12.wav",
+   "seconds": 10.877,
+   "words": [
+    {
+     "word": "Machen",
+     "start": 0.1
+    },
+    {
+     "word": "wir",
+     "start": 0.589
+    },
+    {
+     "word": "die",
+     "start": 0.894
+    },
+    {
+     "word": "*Probe*",
+     "start": 1.2
+    },
+    {
+     "word": "mit",
+     "start": 1.628
+    },
+    {
+     "word": "20",
+     "start": 1.933
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 2.178
+    },
+    {
+     "word": "0,325",
+     "start": 3.216
+    },
+    {
+     "word": "*mal*",
+     "start": 3.583
+    },
+    {
+     "word": "20",
+     "start": 3.889
+    },
+    {
+     "word": "sind",
+     "start": 4.133
+    },
+    {
+     "word": "6,5.",
+     "start": 4.5
+    },
+    {
+     "word": "Und",
+     "start": 5.05
+    },
+    {
+     "word": "8",
+     "start": 5.355
+    },
+    {
+     "word": "minus",
+     "start": 5.538
+    },
+    {
+     "word": "6,5",
+     "start": 5.966
+    },
+    {
+     "word": "sind",
+     "start": 6.211
+    },
+    {
+     "word": "1,5",
+     "start": 6.577
+    },
+    {
+     "word": "Volt.",
+     "start": 6.822
+    },
+    {
+     "word": "*Passt*",
+     "start": 7.494
+    },
+    {
+     "word": "genau",
+     "start": 7.922
+    },
+    {
+     "word": "zu",
+     "start": 8.349
+    },
+    {
+     "word": "unserem",
+     "start": 8.594
+    },
+    {
+     "word": "zweiten",
+     "start": 9.144
+    },
+    {
+     "word": "Punkt.",
+     "start": 9.694
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-13.wav",
+   "seconds": 4.115,
+   "words": [
+    {
+     "word": "Schritt",
+     "start": 0.1
+    },
+    {
+     "word": "vier:",
+     "start": 0.453
+    },
+    {
+     "word": "die",
+     "start": 0.884
+    },
+    {
+     "word": "*Digitalwerte*.",
+     "start": 1.079
+    },
+    {
+     "word": "Das",
+     "start": 1.824
+    },
+    {
+     "word": "ist",
+     "start": 2.02
+    },
+    {
+     "word": "Aufgabe",
+     "start": 2.215
+    },
+    {
+     "word": "2",
+     "start": 2.568
+    },
+    {
+     "word": "Punkt",
+     "start": 2.686
+    },
+    {
+     "word": "4",
+     "start": 2.96
+    },
+    {
+     "word": "Punkt",
+     "start": 3.077
+    },
+    {
+     "word": "2.",
+     "start": 3.352
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-14.wav",
+   "seconds": 21.083,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Analogbaugruppe",
+     "start": 0.379
+    },
+    {
+     "word": "wandelt",
+     "start": 1.328
+    },
+    {
+     "word": "die",
+     "start": 1.83
+    },
+    {
+     "word": "Spannung",
+     "start": 2.109
+    },
+    {
+     "word": "in",
+     "start": 2.667
+    },
+    {
+     "word": "eine",
+     "start": 2.89
+    },
+    {
+     "word": "*Zahl*",
+     "start": 3.225
+    },
+    {
+     "word": "um.",
+     "start": 3.559
+    },
+    {
+     "word": "0",
+     "start": 4.062
+    },
+    {
+     "word": "Volt",
+     "start": 4.229
+    },
+    {
+     "word": "wird",
+     "start": 4.564
+    },
+    {
+     "word": "zur",
+     "start": 4.899
+    },
+    {
+     "word": "0,",
+     "start": 5.178
+    },
+    {
+     "word": "und",
+     "start": 5.624
+    },
+    {
+     "word": "10",
+     "start": 5.903
+    },
+    {
+     "word": "Volt",
+     "start": 6.126
+    },
+    {
+     "word": "wird",
+     "start": 6.461
+    },
+    {
+     "word": "zu",
+     "start": 6.796
+    },
+    {
+     "word": "27648.",
+     "start": 7.019
+    },
+    {
+     "word": "Dazwischen",
+     "start": 7.688
+    },
+    {
+     "word": "ist",
+     "start": 8.358
+    },
+    {
+     "word": "es",
+     "start": 8.637
+    },
+    {
+     "word": "wieder",
+     "start": 8.86
+    },
+    {
+     "word": "*linear*.",
+     "start": 9.307
+    },
+    {
+     "word": "Stell",
+     "start": 10.032
+    },
+    {
+     "word": "dir",
+     "start": 10.423
+    },
+    {
+     "word": "zwei",
+     "start": 10.701
+    },
+    {
+     "word": "Lineale",
+     "start": 11.036
+    },
+    {
+     "word": "übereinander",
+     "start": 11.538
+    },
+    {
+     "word": "vor:",
+     "start": 12.32
+    },
+    {
+     "word": "oben",
+     "start": 12.878
+    },
+    {
+     "word": "Volt,",
+     "start": 13.212
+    },
+    {
+     "word": "unten",
+     "start": 13.826
+    },
+    {
+     "word": "Digitalwerte.",
+     "start": 14.217
+    },
+    {
+     "word": "Was",
+     "start": 15.277
+    },
+    {
+     "word": "oben",
+     "start": 15.556
+    },
+    {
+     "word": "bei",
+     "start": 15.891
+    },
+    {
+     "word": "5",
+     "start": 16.17
+    },
+    {
+     "word": "Volt",
+     "start": 16.337
+    },
+    {
+     "word": "steht,",
+     "start": 16.672
+    },
+    {
+     "word": "steht",
+     "start": 17.341
+    },
+    {
+     "word": "unten",
+     "start": 17.732
+    },
+    {
+     "word": "genau",
+     "start": 18.123
+    },
+    {
+     "word": "in",
+     "start": 18.513
+    },
+    {
+     "word": "der",
+     "start": 18.736
+    },
+    {
+     "word": "*Mitte*,",
+     "start": 19.015
+    },
+    {
+     "word": "bei",
+     "start": 19.685
+    },
+    {
+     "word": "13824.",
+     "start": 19.964
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-15.wav",
+   "seconds": 12.738,
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.1
+    },
+    {
+     "word": "rechnen",
+     "start": 0.397
+    },
+    {
+     "word": "mit",
+     "start": 0.932
+    },
+    {
+     "word": "dem",
+     "start": 1.23
+    },
+    {
+     "word": "*Dreisatz*.",
+     "start": 1.527
+    },
+    {
+     "word": "10",
+     "start": 2.419
+    },
+    {
+     "word": "Volt",
+     "start": 2.656
+    },
+    {
+     "word": "entsprechen",
+     "start": 3.013
+    },
+    {
+     "word": "27648.",
+     "start": 3.786
+    },
+    {
+     "word": "Für",
+     "start": 4.5
+    },
+    {
+     "word": "1",
+     "start": 4.797
+    },
+    {
+     "word": "Volt",
+     "start": 4.975
+    },
+    {
+     "word": "teilen",
+     "start": 5.332
+    },
+    {
+     "word": "wir",
+     "start": 5.808
+    },
+    {
+     "word": "*durch*",
+     "start": 6.105
+    },
+    {
+     "word": "10.",
+     "start": 6.521
+    },
+    {
+     "word": "Das",
+     "start": 7.056
+    },
+    {
+     "word": "*ergibt*",
+     "start": 7.353
+    },
+    {
+     "word": "2764,8",
+     "start": 7.829
+    },
+    {
+     "word": "pro",
+     "start": 8.245
+    },
+    {
+     "word": "Volt.",
+     "start": 8.542
+    },
+    {
+     "word": "Diese",
+     "start": 9.196
+    },
+    {
+     "word": "Zahl",
+     "start": 9.613
+    },
+    {
+     "word": "brauchst",
+     "start": 9.969
+    },
+    {
+     "word": "du",
+     "start": 10.564
+    },
+    {
+     "word": "gleich",
+     "start": 10.802
+    },
+    {
+     "word": "für",
+     "start": 11.277
+    },
+    {
+     "word": "alles.",
+     "start": 11.575
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-16.wav",
+   "seconds": 23.015,
+   "words": [
+    {
+     "word": "Behälter",
+     "start": 0.1
+    },
+    {
+     "word": "*leer*:",
+     "start": 0.885
+    },
+    {
+     "word": "Da",
+     "start": 1.75
+    },
+    {
+     "word": "liegen",
+     "start": 2.064
+    },
+    {
+     "word": "8",
+     "start": 2.692
+    },
+    {
+     "word": "Volt",
+     "start": 2.928
+    },
+    {
+     "word": "an.",
+     "start": 3.399
+    },
+    {
+     "word": "8",
+     "start": 4.106
+    },
+    {
+     "word": "mal",
+     "start": 4.342
+    },
+    {
+     "word": "2764,8",
+     "start": 4.734
+    },
+    {
+     "word": "ergibt",
+     "start": 5.284
+    },
+    {
+     "word": "22118,4.",
+     "start": 5.913
+    },
+    {
+     "word": "Ein",
+     "start": 6.934
+    },
+    {
+     "word": "Digitalwert",
+     "start": 7.326
+    },
+    {
+     "word": "ist",
+     "start": 8.348
+    },
+    {
+     "word": "immer",
+     "start": 8.74
+    },
+    {
+     "word": "eine",
+     "start": 9.29
+    },
+    {
+     "word": "ganze",
+     "start": 9.761
+    },
+    {
+     "word": "Zahl,",
+     "start": 10.311
+    },
+    {
+     "word": "also",
+     "start": 11.175
+    },
+    {
+     "word": "*runden*",
+     "start": 11.647
+    },
+    {
+     "word": "wir:",
+     "start": 12.275
+    },
+    {
+     "word": "22118.",
+     "start": 13.061
+    },
+    {
+     "word": "Behälter",
+     "start": 14.003
+    },
+    {
+     "word": "*voll*:",
+     "start": 14.789
+    },
+    {
+     "word": "Da",
+     "start": 15.653
+    },
+    {
+     "word": "liegen",
+     "start": 15.967
+    },
+    {
+     "word": "1,5",
+     "start": 16.595
+    },
+    {
+     "word": "Volt",
+     "start": 16.909
+    },
+    {
+     "word": "an.",
+     "start": 17.381
+    },
+    {
+     "word": "1,5",
+     "start": 18.088
+    },
+    {
+     "word": "mal",
+     "start": 18.402
+    },
+    {
+     "word": "2764,8",
+     "start": 18.795
+    },
+    {
+     "word": "ergibt",
+     "start": 19.344
+    },
+    {
+     "word": "4147,2,",
+     "start": 19.973
+    },
+    {
+     "word": "*gerundet*",
+     "start": 20.915
+    },
+    {
+     "word": "4147.",
+     "start": 21.701
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-17.wav",
+   "seconds": 14.869,
+   "words": [
+    {
+     "word": "Hier",
+     "start": 0.1
+    },
+    {
+     "word": "siehst",
+     "start": 0.381
+    },
+    {
+     "word": "du",
+     "start": 0.755
+    },
+    {
+     "word": "beides",
+     "start": 0.942
+    },
+    {
+     "word": "noch",
+     "start": 1.317
+    },
+    {
+     "word": "mal",
+     "start": 1.597
+    },
+    {
+     "word": "auf",
+     "start": 1.831
+    },
+    {
+     "word": "den",
+     "start": 2.065
+    },
+    {
+     "word": "Linealen.",
+     "start": 2.299
+    },
+    {
+     "word": "*Leer*",
+     "start": 3.001
+    },
+    {
+     "word": "liegt",
+     "start": 3.282
+    },
+    {
+     "word": "rechts",
+     "start": 3.61
+    },
+    {
+     "word": "bei",
+     "start": 3.984
+    },
+    {
+     "word": "22118,",
+     "start": 4.218
+    },
+    {
+     "word": "*voll*",
+     "start": 4.779
+    },
+    {
+     "word": "liegt",
+     "start": 5.06
+    },
+    {
+     "word": "links",
+     "start": 5.388
+    },
+    {
+     "word": "bei",
+     "start": 5.715
+    },
+    {
+     "word": "4147.",
+     "start": 5.949
+    },
+    {
+     "word": "Das",
+     "start": 6.464
+    },
+    {
+     "word": "ist",
+     "start": 6.698
+    },
+    {
+     "word": "die",
+     "start": 6.932
+    },
+    {
+     "word": "*Lösung*",
+     "start": 7.166
+    },
+    {
+     "word": "von",
+     "start": 7.54
+    },
+    {
+     "word": "Aufgabe",
+     "start": 7.774
+    },
+    {
+     "word": "2",
+     "start": 8.195
+    },
+    {
+     "word": "Punkt",
+     "start": 8.336
+    },
+    {
+     "word": "4",
+     "start": 8.663
+    },
+    {
+     "word": "Punkt",
+     "start": 8.804
+    },
+    {
+     "word": "2.",
+     "start": 9.131
+    },
+    {
+     "word": "Und",
+     "start": 9.506
+    },
+    {
+     "word": "auch",
+     "start": 9.74
+    },
+    {
+     "word": "hier",
+     "start": 10.02
+    },
+    {
+     "word": "gilt:",
+     "start": 10.301
+    },
+    {
+     "word": "Voll",
+     "start": 10.816
+    },
+    {
+     "word": "ist",
+     "start": 11.097
+    },
+    {
+     "word": "die",
+     "start": 11.331
+    },
+    {
+     "word": "kleinere",
+     "start": 11.565
+    },
+    {
+     "word": "Zahl,",
+     "start": 12.033
+    },
+    {
+     "word": "weil",
+     "start": 12.547
+    },
+    {
+     "word": "die",
+     "start": 12.828
+    },
+    {
+     "word": "Spannung",
+     "start": 13.062
+    },
+    {
+     "word": "kleiner",
+     "start": 13.53
+    },
+    {
+     "word": "ist.",
+     "start": 13.951
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-18.wav",
+   "seconds": 13.698,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "Rezept",
+     "start": 0.299
+    },
+    {
+     "word": "für",
+     "start": 0.618
+    },
+    {
+     "word": "solche",
+     "start": 0.817
+    },
+    {
+     "word": "Aufgaben,",
+     "start": 1.136
+    },
+    {
+     "word": "in",
+     "start": 1.734
+    },
+    {
+     "word": "drei",
+     "start": 1.893
+    },
+    {
+     "word": "Schritten.",
+     "start": 2.132
+    },
+    {
+     "word": "Erstens:",
+     "start": 2.769
+    },
+    {
+     "word": "Klären,",
+     "start": 3.327
+    },
+    {
+     "word": "welche",
+     "start": 3.845
+    },
+    {
+     "word": "Spannung",
+     "start": 4.164
+    },
+    {
+     "word": "zu",
+     "start": 4.562
+    },
+    {
+     "word": "leer",
+     "start": 4.722
+    },
+    {
+     "word": "und",
+     "start": 4.961
+    },
+    {
+     "word": "welche",
+     "start": 5.16
+    },
+    {
+     "word": "zu",
+     "start": 5.479
+    },
+    {
+     "word": "voll",
+     "start": 5.638
+    },
+    {
+     "word": "gehört.",
+     "start": 5.877
+    },
+    {
+     "word": "Zweitens:",
+     "start": 6.395
+    },
+    {
+     "word": "den",
+     "start": 6.993
+    },
+    {
+     "word": "Digitalwert",
+     "start": 7.192
+    },
+    {
+     "word": "pro",
+     "start": 7.71
+    },
+    {
+     "word": "Volt",
+     "start": 7.909
+    },
+    {
+     "word": "ausrechnen.",
+     "start": 8.148
+    },
+    {
+     "word": "Drittens:",
+     "start": 8.825
+    },
+    {
+     "word": "Spannung",
+     "start": 9.423
+    },
+    {
+     "word": "mal",
+     "start": 9.821
+    },
+    {
+     "word": "Digitalwert",
+     "start": 10.021
+    },
+    {
+     "word": "pro",
+     "start": 10.539
+    },
+    {
+     "word": "Volt,",
+     "start": 10.738
+    },
+    {
+     "word": "und",
+     "start": 11.176
+    },
+    {
+     "word": "am",
+     "start": 11.375
+    },
+    {
+     "word": "Ende",
+     "start": 11.535
+    },
+    {
+     "word": "auf",
+     "start": 11.774
+    },
+    {
+     "word": "eine",
+     "start": 11.973
+    },
+    {
+     "word": "ganze",
+     "start": 12.212
+    },
+    {
+     "word": "Zahl",
+     "start": 12.491
+    },
+    {
+     "word": "runden.",
+     "start": 12.73
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-0-19.wav",
+   "seconds": 5.609,
+   "words": [
+    {
+     "word": "Schritt",
+     "start": 0.1
+    },
+    {
+     "word": "fünf:",
+     "start": 0.402
+    },
+    {
+     "word": "ein",
+     "start": 0.77
+    },
+    {
+     "word": "*eigenes",
+     "start": 0.938
+    },
+    {
+     "word": "Beispiel*.",
+     "start": 1.239
+    },
+    {
+     "word": "Ich",
+     "start": 1.742
+    },
+    {
+     "word": "habe",
+     "start": 1.909
+    },
+    {
+     "word": "dir",
+     "start": 2.11
+    },
+    {
+     "word": "eine",
+     "start": 2.278
+    },
+    {
+     "word": "Aufgabe",
+     "start": 2.479
+    },
+    {
+     "word": "gebaut,",
+     "start": 2.78
+    },
+    {
+     "word": "die",
+     "start": 3.216
+    },
+    {
+     "word": "genauso",
+     "start": 3.383
+    },
+    {
+     "word": "aufgebaut",
+     "start": 3.685
+    },
+    {
+     "word": "ist",
+     "start": 4.053
+    },
+    {
+     "word": "wie",
+     "start": 4.221
+    },
+    {
+     "word": "in",
+     "start": 4.388
+    },
+    {
+     "word": "der",
+     "start": 4.522
+    },
+    {
+     "word": "Prüfung.",
+     "start": 4.69
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-0.wav",
+   "seconds": 36.416,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Aufgabe:",
+     "start": 0.36
+    },
+    {
+     "word": "Ein",
+     "start": 1.089
+    },
+    {
+     "word": "Wassertank",
+     "start": 1.349
+    },
+    {
+     "word": "hat",
+     "start": 1.974
+    },
+    {
+     "word": "einen",
+     "start": 2.234
+    },
+    {
+     "word": "Messbereich",
+     "start": 2.599
+    },
+    {
+     "word": "von",
+     "start": 3.275
+    },
+    {
+     "word": "100",
+     "start": 3.536
+    },
+    {
+     "word": "Zentimetern.",
+     "start": 3.796
+    },
+    {
+     "word": "Oben",
+     "start": 4.733
+    },
+    {
+     "word": "sitzt",
+     "start": 5.045
+    },
+    {
+     "word": "wieder",
+     "start": 5.41
+    },
+    {
+     "word": "ein",
+     "start": 5.826
+    },
+    {
+     "word": "Ultraschallsensor",
+     "start": 6.086
+    },
+    {
+     "word": "an",
+     "start": 7.075
+    },
+    {
+     "word": "einer",
+     "start": 7.284
+    },
+    {
+     "word": "*Analogeingabe*",
+     "start": 7.648
+    },
+    {
+     "word": "von",
+     "start": 8.429
+    },
+    {
+     "word": "0",
+     "start": 8.689
+    },
+    {
+     "word": "bis",
+     "start": 8.845
+    },
+    {
+     "word": "10",
+     "start": 9.106
+    },
+    {
+     "word": "Volt,",
+     "start": 9.314
+    },
+    {
+     "word": "also",
+     "start": 9.886
+    },
+    {
+     "word": "0",
+     "start": 10.199
+    },
+    {
+     "word": "bis",
+     "start": 10.355
+    },
+    {
+     "word": "27648.",
+     "start": 10.615
+    },
+    {
+     "word": "Direkt",
+     "start": 11.24
+    },
+    {
+     "word": "unter",
+     "start": 11.656
+    },
+    {
+     "word": "der",
+     "start": 12.021
+    },
+    {
+     "word": "*Blindzone*,",
+     "start": 12.281
+    },
+    {
+     "word": "also",
+     "start": 13.114
+    },
+    {
+     "word": "bei",
+     "start": 13.426
+    },
+    {
+     "word": "0",
+     "start": 13.686
+    },
+    {
+     "word": "Zentimeter",
+     "start": 13.843
+    },
+    {
+     "word": "Abstand,",
+     "start": 14.467
+    },
+    {
+     "word": "liefert",
+     "start": 15.196
+    },
+    {
+     "word": "er",
+     "start": 15.664
+    },
+    {
+     "word": "2,5",
+     "start": 15.873
+    },
+    {
+     "word": "Volt.",
+     "start": 16.081
+    },
+    {
+     "word": "Am",
+     "start": 16.654
+    },
+    {
+     "word": "*Ende*",
+     "start": 16.862
+    },
+    {
+     "word": "des",
+     "start": 17.174
+    },
+    {
+     "word": "Messbereichs,",
+     "start": 17.434
+    },
+    {
+     "word": "bei",
+     "start": 18.423
+    },
+    {
+     "word": "100",
+     "start": 18.684
+    },
+    {
+     "word": "Zentimeter",
+     "start": 18.944
+    },
+    {
+     "word": "Abstand,",
+     "start": 19.569
+    },
+    {
+     "word": "liefert",
+     "start": 20.297
+    },
+    {
+     "word": "er",
+     "start": 20.766
+    },
+    {
+     "word": "7,5",
+     "start": 20.974
+    },
+    {
+     "word": "Volt.",
+     "start": 21.182
+    },
+    {
+     "word": "Gesucht",
+     "start": 21.755
+    },
+    {
+     "word": "sind",
+     "start": 22.223
+    },
+    {
+     "word": "drei",
+     "start": 22.536
+    },
+    {
+     "word": "Dinge.",
+     "start": 22.848
+    },
+    {
+     "word": "*Erstens*:",
+     "start": 23.473
+    },
+    {
+     "word": "die",
+     "start": 24.201
+    },
+    {
+     "word": "Digitalwerte",
+     "start": 24.462
+    },
+    {
+     "word": "für",
+     "start": 25.191
+    },
+    {
+     "word": "leer",
+     "start": 25.451
+    },
+    {
+     "word": "und",
+     "start": 25.763
+    },
+    {
+     "word": "voll.",
+     "start": 26.023
+    },
+    {
+     "word": "*Zweitens*:",
+     "start": 26.596
+    },
+    {
+     "word": "Spannung",
+     "start": 27.377
+    },
+    {
+     "word": "und",
+     "start": 27.897
+    },
+    {
+     "word": "Digitalwert",
+     "start": 28.158
+    },
+    {
+     "word": "bei",
+     "start": 28.834
+    },
+    {
+     "word": "30",
+     "start": 29.095
+    },
+    {
+     "word": "Zentimeter",
+     "start": 29.303
+    },
+    {
+     "word": "Füllhöhe.",
+     "start": 29.928
+    },
+    {
+     "word": "Und",
+     "start": 30.708
+    },
+    {
+     "word": "*drittens*:",
+     "start": 30.969
+    },
+    {
+     "word": "die",
+     "start": 31.749
+    },
+    {
+     "word": "Füllhöhe,",
+     "start": 32.01
+    },
+    {
+     "word": "wenn",
+     "start": 32.791
+    },
+    {
+     "word": "die",
+     "start": 33.103
+    },
+    {
+     "word": "Steuerung",
+     "start": 33.363
+    },
+    {
+     "word": "den",
+     "start": 33.936
+    },
+    {
+     "word": "Digitalwert",
+     "start": 34.196
+    },
+    {
+     "word": "13824",
+     "start": 34.873
+    },
+    {
+     "word": "anzeigt.",
+     "start": 35.237
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-1.wav",
+   "seconds": 10.62,
+   "words": [
+    {
+     "word": "Erster",
+     "start": 0.1
+    },
+    {
+     "word": "Schritt,",
+     "start": 0.47
+    },
+    {
+     "word": "wie",
+     "start": 1.116
+    },
+    {
+     "word": "vorhin:",
+     "start": 1.347
+    },
+    {
+     "word": "zuordnen.",
+     "start": 1.948
+    },
+    {
+     "word": "*Voll*",
+     "start": 2.641
+    },
+    {
+     "word": "heißt",
+     "start": 2.918
+    },
+    {
+     "word": "kleiner",
+     "start": 3.241
+    },
+    {
+     "word": "Abstand,",
+     "start": 3.657
+    },
+    {
+     "word": "also",
+     "start": 4.304
+    },
+    {
+     "word": "2,5",
+     "start": 4.581
+    },
+    {
+     "word": "Volt.",
+     "start": 4.766
+    },
+    {
+     "word": "*Leer*",
+     "start": 5.274
+    },
+    {
+     "word": "heißt",
+     "start": 5.551
+    },
+    {
+     "word": "großer",
+     "start": 5.874
+    },
+    {
+     "word": "Abstand,",
+     "start": 6.244
+    },
+    {
+     "word": "also",
+     "start": 6.89
+    },
+    {
+     "word": "7,5",
+     "start": 7.168
+    },
+    {
+     "word": "Volt.",
+     "start": 7.352
+    },
+    {
+     "word": "*Gleiches*",
+     "start": 7.861
+    },
+    {
+     "word": "Prinzip,",
+     "start": 8.322
+    },
+    {
+     "word": "nur",
+     "start": 8.969
+    },
+    {
+     "word": "andere",
+     "start": 9.2
+    },
+    {
+     "word": "Zahlen.",
+     "start": 9.57
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-2.wav",
+   "seconds": 19.09,
+   "words": [
+    {
+     "word": "Teil",
+     "start": 0.1
+    },
+    {
+     "word": "a.",
+     "start": 0.569
+    },
+    {
+     "word": "*Pro*",
+     "start": 1.195
+    },
+    {
+     "word": "Volt",
+     "start": 1.586
+    },
+    {
+     "word": "sind",
+     "start": 2.056
+    },
+    {
+     "word": "es",
+     "start": 2.525
+    },
+    {
+     "word": "wieder",
+     "start": 2.838
+    },
+    {
+     "word": "2764,8,",
+     "start": 3.464
+    },
+    {
+     "word": "denn",
+     "start": 4.403
+    },
+    {
+     "word": "die",
+     "start": 4.872
+    },
+    {
+     "word": "Baugruppe",
+     "start": 5.263
+    },
+    {
+     "word": "ist",
+     "start": 6.124
+    },
+    {
+     "word": "dieselbe.",
+     "start": 6.515
+    },
+    {
+     "word": "*Leer*:",
+     "start": 7.688
+    },
+    {
+     "word": "7,5",
+     "start": 8.549
+    },
+    {
+     "word": "mal",
+     "start": 8.862
+    },
+    {
+     "word": "2764,8",
+     "start": 9.253
+    },
+    {
+     "word": "ergibt",
+     "start": 9.8
+    },
+    {
+     "word": "20736.",
+     "start": 10.426
+    },
+    {
+     "word": "*Voll*:",
+     "start": 11.365
+    },
+    {
+     "word": "2,5",
+     "start": 12.225
+    },
+    {
+     "word": "mal",
+     "start": 12.538
+    },
+    {
+     "word": "2764,8",
+     "start": 12.929
+    },
+    {
+     "word": "ergibt",
+     "start": 13.477
+    },
+    {
+     "word": "6912.",
+     "start": 14.103
+    },
+    {
+     "word": "Diesmal",
+     "start": 14.963
+    },
+    {
+     "word": "sind",
+     "start": 15.667
+    },
+    {
+     "word": "es",
+     "start": 16.137
+    },
+    {
+     "word": "sogar",
+     "start": 16.45
+    },
+    {
+     "word": "glatte",
+     "start": 16.997
+    },
+    {
+     "word": "Zahlen.",
+     "start": 17.623
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-3.wav",
+   "seconds": 16.825,
+   "words": [
+    {
+     "word": "Teil",
+     "start": 0.1
+    },
+    {
+     "word": "b.",
+     "start": 0.407
+    },
+    {
+     "word": "Dafür",
+     "start": 0.817
+    },
+    {
+     "word": "zeichnen",
+     "start": 1.175
+    },
+    {
+     "word": "wir",
+     "start": 1.687
+    },
+    {
+     "word": "wieder",
+     "start": 1.942
+    },
+    {
+     "word": "die",
+     "start": 2.352
+    },
+    {
+     "word": "Gerade",
+     "start": 2.608
+    },
+    {
+     "word": "durch",
+     "start": 3.017
+    },
+    {
+     "word": "unsere",
+     "start": 3.376
+    },
+    {
+     "word": "zwei",
+     "start": 3.785
+    },
+    {
+     "word": "*Punkte*:",
+     "start": 4.092
+    },
+    {
+     "word": "0",
+     "start": 4.757
+    },
+    {
+     "word": "Zentimeter",
+     "start": 4.911
+    },
+    {
+     "word": "bei",
+     "start": 5.525
+    },
+    {
+     "word": "7,5",
+     "start": 5.781
+    },
+    {
+     "word": "Volt",
+     "start": 5.986
+    },
+    {
+     "word": "und",
+     "start": 6.293
+    },
+    {
+     "word": "100",
+     "start": 6.549
+    },
+    {
+     "word": "Zentimeter",
+     "start": 6.805
+    },
+    {
+     "word": "bei",
+     "start": 7.419
+    },
+    {
+     "word": "2,5",
+     "start": 7.675
+    },
+    {
+     "word": "Volt.",
+     "start": 7.879
+    },
+    {
+     "word": "Die",
+     "start": 8.442
+    },
+    {
+     "word": "Spannung",
+     "start": 8.698
+    },
+    {
+     "word": "*fällt*",
+     "start": 9.21
+    },
+    {
+     "word": "um",
+     "start": 9.568
+    },
+    {
+     "word": "5",
+     "start": 9.773
+    },
+    {
+     "word": "Volt",
+     "start": 9.927
+    },
+    {
+     "word": "auf",
+     "start": 10.234
+    },
+    {
+     "word": "100",
+     "start": 10.49
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 10.745
+    },
+    {
+     "word": "Das",
+     "start": 11.616
+    },
+    {
+     "word": "sind",
+     "start": 11.871
+    },
+    {
+     "word": "0,05",
+     "start": 12.178
+    },
+    {
+     "word": "Volt",
+     "start": 12.434
+    },
+    {
+     "word": "pro",
+     "start": 12.741
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 12.997
+    },
+    {
+     "word": "Jetzt",
+     "start": 13.867
+    },
+    {
+     "word": "*lesen*",
+     "start": 14.226
+    },
+    {
+     "word": "wir",
+     "start": 14.584
+    },
+    {
+     "word": "bei",
+     "start": 14.84
+    },
+    {
+     "word": "30",
+     "start": 15.096
+    },
+    {
+     "word": "Zentimeter",
+     "start": 15.3
+    },
+    {
+     "word": "ab.",
+     "start": 15.915
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-4.wav",
+   "seconds": 18.25,
+   "words": [
+    {
+     "word": "Bei",
+     "start": 0.1
+    },
+    {
+     "word": "30",
+     "start": 0.481
+    },
+    {
+     "word": "Zentimeter",
+     "start": 0.787
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 1.702
+    },
+    {
+     "word": "ist",
+     "start": 2.465
+    },
+    {
+     "word": "die",
+     "start": 2.847
+    },
+    {
+     "word": "Spannung",
+     "start": 3.228
+    },
+    {
+     "word": "um",
+     "start": 3.991
+    },
+    {
+     "word": "30",
+     "start": 4.296
+    },
+    {
+     "word": "mal",
+     "start": 4.601
+    },
+    {
+     "word": "0,05,",
+     "start": 4.983
+    },
+    {
+     "word": "also",
+     "start": 5.746
+    },
+    {
+     "word": "um",
+     "start": 6.203
+    },
+    {
+     "word": "1,5",
+     "start": 6.509
+    },
+    {
+     "word": "Volt",
+     "start": 6.814
+    },
+    {
+     "word": "*gefallen*.",
+     "start": 7.271
+    },
+    {
+     "word": "7,5",
+     "start": 8.416
+    },
+    {
+     "word": "*minus*",
+     "start": 8.721
+    },
+    {
+     "word": "1,5",
+     "start": 9.255
+    },
+    {
+     "word": "ergibt",
+     "start": 9.56
+    },
+    {
+     "word": "6",
+     "start": 10.171
+    },
+    {
+     "word": "Volt.",
+     "start": 10.399
+    },
+    {
+     "word": "Und",
+     "start": 11.239
+    },
+    {
+     "word": "der",
+     "start": 11.62
+    },
+    {
+     "word": "*Digitalwert*:",
+     "start": 12.002
+    },
+    {
+     "word": "6",
+     "start": 13.375
+    },
+    {
+     "word": "mal",
+     "start": 13.604
+    },
+    {
+     "word": "2764,8",
+     "start": 13.985
+    },
+    {
+     "word": "ergibt",
+     "start": 14.519
+    },
+    {
+     "word": "16588,8,",
+     "start": 15.129
+    },
+    {
+     "word": "*gerundet*",
+     "start": 16.121
+    },
+    {
+     "word": "16589.",
+     "start": 16.884
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-5.wav",
+   "seconds": 25.155,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "jetzt",
+     "start": 0.41
+    },
+    {
+     "word": "Teil",
+     "start": 0.844
+    },
+    {
+     "word": "c.",
+     "start": 1.216
+    },
+    {
+     "word": "Versuch",
+     "start": 1.711
+    },
+    {
+     "word": "es",
+     "start": 2.269
+    },
+    {
+     "word": "erst",
+     "start": 2.517
+    },
+    {
+     "word": "selbst:",
+     "start": 2.889
+    },
+    {
+     "word": "Die",
+     "start": 3.695
+    },
+    {
+     "word": "Steuerung",
+     "start": 4.004
+    },
+    {
+     "word": "zeigt",
+     "start": 4.686
+    },
+    {
+     "word": "13824.",
+     "start": 5.12
+    },
+    {
+     "word": "Welche",
+     "start": 5.864
+    },
+    {
+     "word": "Füllhöhe",
+     "start": 6.36
+    },
+    {
+     "word": "ist",
+     "start": 6.979
+    },
+    {
+     "word": "das?",
+     "start": 7.289
+    },
+    {
+     "word": "Überleg",
+     "start": 7.909
+    },
+    {
+     "word": "kurz",
+     "start": 8.467
+    },
+    {
+     "word": "…",
+     "start": 8.839
+    },
+    {
+     "word": "Die",
+     "start": 8.963
+    },
+    {
+     "word": "*Lösung*:",
+     "start": 9.272
+    },
+    {
+     "word": "13824",
+     "start": 10.078
+    },
+    {
+     "word": "ist",
+     "start": 10.512
+    },
+    {
+     "word": "genau",
+     "start": 10.822
+    },
+    {
+     "word": "die",
+     "start": 11.256
+    },
+    {
+     "word": "Hälfte",
+     "start": 11.566
+    },
+    {
+     "word": "von",
+     "start": 12.061
+    },
+    {
+     "word": "27648,",
+     "start": 12.371
+    },
+    {
+     "word": "also",
+     "start": 13.115
+    },
+    {
+     "word": "liegen",
+     "start": 13.487
+    },
+    {
+     "word": "5",
+     "start": 13.983
+    },
+    {
+     "word": "Volt",
+     "start": 14.169
+    },
+    {
+     "word": "an.",
+     "start": 14.54
+    },
+    {
+     "word": "Von",
+     "start": 15.098
+    },
+    {
+     "word": "7,5",
+     "start": 15.408
+    },
+    {
+     "word": "Volt",
+     "start": 15.656
+    },
+    {
+     "word": "runter",
+     "start": 16.028
+    },
+    {
+     "word": "auf",
+     "start": 16.524
+    },
+    {
+     "word": "5",
+     "start": 16.834
+    },
+    {
+     "word": "Volt",
+     "start": 17.019
+    },
+    {
+     "word": "sind",
+     "start": 17.391
+    },
+    {
+     "word": "es",
+     "start": 17.763
+    },
+    {
+     "word": "2,5",
+     "start": 18.011
+    },
+    {
+     "word": "Volt.",
+     "start": 18.259
+    },
+    {
+     "word": "2,5",
+     "start": 18.941
+    },
+    {
+     "word": "geteilt",
+     "start": 19.189
+    },
+    {
+     "word": "durch",
+     "start": 19.746
+    },
+    {
+     "word": "0,05",
+     "start": 20.18
+    },
+    {
+     "word": "ergibt",
+     "start": 20.49
+    },
+    {
+     "word": "50",
+     "start": 20.986
+    },
+    {
+     "word": "Zentimeter.",
+     "start": 21.234
+    },
+    {
+     "word": "Der",
+     "start": 22.287
+    },
+    {
+     "word": "Tank",
+     "start": 22.597
+    },
+    {
+     "word": "ist",
+     "start": 22.969
+    },
+    {
+     "word": "also",
+     "start": 23.279
+    },
+    {
+     "word": "halb",
+     "start": 23.651
+    },
+    {
+     "word": "voll.",
+     "start": 24.023
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-6.wav",
+   "seconds": 6.581,
+   "words": [
+    {
+     "word": "Im",
+     "start": 0.1
+    },
+    {
+     "word": "Bild",
+     "start": 0.272
+    },
+    {
+     "word": "siehst",
+     "start": 0.531
+    },
+    {
+     "word": "du",
+     "start": 0.875
+    },
+    {
+     "word": "es:",
+     "start": 1.048
+    },
+    {
+     "word": "Der",
+     "start": 1.436
+    },
+    {
+     "word": "Tank",
+     "start": 1.651
+    },
+    {
+     "word": "ist",
+     "start": 1.909
+    },
+    {
+     "word": "*halb*",
+     "start": 2.125
+    },
+    {
+     "word": "voll,",
+     "start": 2.383
+    },
+    {
+     "word": "der",
+     "start": 2.857
+    },
+    {
+     "word": "Sensor",
+     "start": 3.073
+    },
+    {
+     "word": "liefert",
+     "start": 3.417
+    },
+    {
+     "word": "5",
+     "start": 3.805
+    },
+    {
+     "word": "Volt,",
+     "start": 3.934
+    },
+    {
+     "word": "und",
+     "start": 4.408
+    },
+    {
+     "word": "die",
+     "start": 4.623
+    },
+    {
+     "word": "Steuerung",
+     "start": 4.839
+    },
+    {
+     "word": "zeigt",
+     "start": 5.313
+    },
+    {
+     "word": "13824.",
+     "start": 5.614
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-7.wav",
+   "seconds": 1.498,
+   "words": [
+    {
+     "word": "Zum",
+     "start": 0.1
+    },
+    {
+     "word": "Schluss",
+     "start": 0.216
+    },
+    {
+     "word": "die",
+     "start": 0.424
+    },
+    {
+     "word": "*Zusammenfassung*.",
+     "start": 0.539
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-8.wav",
+   "seconds": 26.227,
+   "words": [
+    {
+     "word": "Fassen",
+     "start": 0.1
+    },
+    {
+     "word": "wir",
+     "start": 0.581
+    },
+    {
+     "word": "zusammen.",
+     "start": 0.882
+    },
+    {
+     "word": "*Erstens*:",
+     "start": 1.784
+    },
+    {
+     "word": "Ein",
+     "start": 2.626
+    },
+    {
+     "word": "Ultraschallsensor",
+     "start": 2.926
+    },
+    {
+     "word": "misst",
+     "start": 4.069
+    },
+    {
+     "word": "den",
+     "start": 4.49
+    },
+    {
+     "word": "Abstand",
+     "start": 4.791
+    },
+    {
+     "word": "von",
+     "start": 5.332
+    },
+    {
+     "word": "oben.",
+     "start": 5.632
+    },
+    {
+     "word": "Kleiner",
+     "start": 6.294
+    },
+    {
+     "word": "Abstand",
+     "start": 6.835
+    },
+    {
+     "word": "heißt",
+     "start": 7.376
+    },
+    {
+     "word": "voller",
+     "start": 7.797
+    },
+    {
+     "word": "Behälter.",
+     "start": 8.278
+    },
+    {
+     "word": "*Zweitens*:",
+     "start": 9.18
+    },
+    {
+     "word": "Im",
+     "start": 10.082
+    },
+    {
+     "word": "Schaubild",
+     "start": 10.323
+    },
+    {
+     "word": "entsteht",
+     "start": 10.984
+    },
+    {
+     "word": "eine",
+     "start": 11.586
+    },
+    {
+     "word": "Gerade",
+     "start": 11.947
+    },
+    {
+     "word": "durch",
+     "start": 12.428
+    },
+    {
+     "word": "die",
+     "start": 12.849
+    },
+    {
+     "word": "zwei",
+     "start": 13.149
+    },
+    {
+     "word": "bekannten",
+     "start": 13.51
+    },
+    {
+     "word": "Punkte.",
+     "start": 14.172
+    },
+    {
+     "word": "*Drittens*:",
+     "start": 14.953
+    },
+    {
+     "word": "Bei",
+     "start": 15.855
+    },
+    {
+     "word": "0",
+     "start": 16.156
+    },
+    {
+     "word": "bis",
+     "start": 16.336
+    },
+    {
+     "word": "10",
+     "start": 16.637
+    },
+    {
+     "word": "Volt",
+     "start": 16.878
+    },
+    {
+     "word": "und",
+     "start": 17.238
+    },
+    {
+     "word": "27648",
+     "start": 17.539
+    },
+    {
+     "word": "sind",
+     "start": 17.96
+    },
+    {
+     "word": "es",
+     "start": 18.321
+    },
+    {
+     "word": "immer",
+     "start": 18.561
+    },
+    {
+     "word": "2764,8",
+     "start": 18.982
+    },
+    {
+     "word": "pro",
+     "start": 19.403
+    },
+    {
+     "word": "Volt.",
+     "start": 19.704
+    },
+    {
+     "word": "Und",
+     "start": 20.365
+    },
+    {
+     "word": "*viertens*:",
+     "start": 20.666
+    },
+    {
+     "word": "Spannung",
+     "start": 21.568
+    },
+    {
+     "word": "mal",
+     "start": 22.169
+    },
+    {
+     "word": "2764,8,",
+     "start": 22.47
+    },
+    {
+     "word": "dann",
+     "start": 23.192
+    },
+    {
+     "word": "auf",
+     "start": 23.553
+    },
+    {
+     "word": "eine",
+     "start": 23.853
+    },
+    {
+     "word": "ganze",
+     "start": 24.214
+    },
+    {
+     "word": "Zahl",
+     "start": 24.635
+    },
+    {
+     "word": "runden.",
+     "start": 24.996
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-9.wav",
+   "seconds": 10.342,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "ein",
+     "start": 0.301
+    },
+    {
+     "word": "Prüfungstipp:",
+     "start": 0.501
+    },
+    {
+     "word": "Schreib",
+     "start": 1.264
+    },
+    {
+     "word": "immer",
+     "start": 1.625
+    },
+    {
+     "word": "die",
+     "start": 1.906
+    },
+    {
+     "word": "Formel,",
+     "start": 2.107
+    },
+    {
+     "word": "die",
+     "start": 2.628
+    },
+    {
+     "word": "Rechnung",
+     "start": 2.829
+    },
+    {
+     "word": "und",
+     "start": 3.23
+    },
+    {
+     "word": "das",
+     "start": 3.431
+    },
+    {
+     "word": "Ergebnis",
+     "start": 3.631
+    },
+    {
+     "word": "mit",
+     "start": 4.033
+    },
+    {
+     "word": "Einheit",
+     "start": 4.233
+    },
+    {
+     "word": "hin.",
+     "start": 4.595
+    },
+    {
+     "word": "Auch",
+     "start": 4.996
+    },
+    {
+     "word": "wenn",
+     "start": 5.237
+    },
+    {
+     "word": "du",
+     "start": 5.478
+    },
+    {
+     "word": "dich",
+     "start": 5.638
+    },
+    {
+     "word": "mal",
+     "start": 5.879
+    },
+    {
+     "word": "verrechnest,",
+     "start": 6.079
+    },
+    {
+     "word": "gibt",
+     "start": 6.802
+    },
+    {
+     "word": "es",
+     "start": 7.043
+    },
+    {
+     "word": "für",
+     "start": 7.203
+    },
+    {
+     "word": "einen",
+     "start": 7.404
+    },
+    {
+     "word": "richtigen",
+     "start": 7.685
+    },
+    {
+     "word": "Rechenweg",
+     "start": 8.126
+    },
+    {
+     "word": "meistens",
+     "start": 8.568
+    },
+    {
+     "word": "noch",
+     "start": 8.969
+    },
+    {
+     "word": "Teilpunkte.",
+     "start": 9.21
+    }
+   ]
+  },
+  {
+   "file": "lern_fs/line-1-10.wav",
+   "seconds": 5.558,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "war's!",
+     "start": 0.285
+    },
+    {
+     "word": "Jetzt",
+     "start": 0.694
+    },
+    {
+     "word": "kannst",
+     "start": 0.953
+    },
+    {
+     "word": "du",
+     "start": 1.25
+    },
+    {
+     "word": "solche",
+     "start": 1.398
+    },
+    {
+     "word": "Füllstandsaufgaben",
+     "start": 1.695
+    },
+    {
+     "word": "Schritt",
+     "start": 2.437
+    },
+    {
+     "word": "für",
+     "start": 2.771
+    },
+    {
+     "word": "Schritt",
+     "start": 2.956
+    },
+    {
+     "word": "lösen.",
+     "start": 3.29
+    },
+    {
+     "word": "Viel",
+     "start": 3.735
+    },
+    {
+     "word": "Erfolg",
+     "start": 3.958
+    },
+    {
+     "word": "in",
+     "start": 4.255
+    },
+    {
+     "word": "der",
+     "start": 4.403
+    },
+    {
+     "word": "Prüfung!",
+     "start": 4.589
+    }
+   ]
+  }
+ ]
+}

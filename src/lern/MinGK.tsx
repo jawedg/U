@@ -6,13 +6,13 @@ import type { Item, MinProps } from "./Min";
 import { Frame, HEAD, INK, LABEL, LINE, MUTED, SANS, accent } from "./Min";
 
 const FPS = 25;
-const sp = (t: number, at: number, damping = 13, stiffness = 150) =>
+export const sp = (t: number, at: number, damping = 13, stiffness = 150) =>
   at > 900 ? 0 : spring({ frame: Math.round((t - at) * FPS), fps: FPS, config: { damping, stiffness } });
-const ramp = (t: number, a: number, b: number) => interpolate(t, [a, b], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-const focus = (t: number, at: number, next: number) => ramp(t, at, at + 0.3) * (1 - ramp(t, next, next + 0.3));
+export const ramp = (t: number, a: number, b: number) => interpolate(t, [a, b], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+export const focus = (t: number, at: number, next: number) => ramp(t, at, at + 0.3) * (1 - ramp(t, next, next + 0.3));
 
 // Wörter nacheinander einblenden
-const Words: React.FC<{ text: string; t: number; at: number; step?: number; style?: React.CSSProperties; color?: (w: string, i: number) => string | undefined }> = ({
+export const Words: React.FC<{ text: string; t: number; at: number; step?: number; style?: React.CSSProperties; color?: (w: string, i: number) => string | undefined }> = ({
   text, t, at, step = 0.07, style, color,
 }) => (
   <div style={style}>
@@ -27,7 +27,7 @@ const Words: React.FC<{ text: string; t: number; at: number; step?: number; styl
   </div>
 );
 
-const Kicker: React.FC<{ kb: number; t: number; at?: number; children: React.ReactNode }> = ({ kb, t, at = 0, children }) => {
+export const Kicker: React.FC<{ kb: number; t: number; at?: number; children: React.ReactNode }> = ({ kb, t, at = 0, children }) => {
   const p = sp(t, at);
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18, opacity: p }}>
@@ -37,12 +37,12 @@ const Kicker: React.FC<{ kb: number; t: number; at?: number; children: React.Rea
   );
 };
 
-const Title: React.FC<{ text: string; t: number; size?: number }> = ({ text, t, size = 64 }) => (
+export const Title: React.FC<{ text: string; t: number; size?: number }> = ({ text, t, size = 64 }) => (
   <Words text={text} t={t} at={0} step={0.06} style={{ fontFamily: HEAD, fontWeight: 800, fontSize: size, color: INK, lineHeight: 1.1, letterSpacing: -1, marginBottom: 30 }} />
 );
 
 // Listenpunkt mit Fokus-Hervorhebung
-const FItem: React.FC<{ item: Item; t: number; at: number; next: number; kb: number; size: number; num?: number; indent?: number }> = ({ item, t, at, next, kb, size, num, indent = 0 }) => {
+export const FItem: React.FC<{ item: Item; t: number; at: number; next: number; kb: number; size: number; num?: number; indent?: number }> = ({ item, t, at, next, kb, size, num, indent = 0 }) => {
   const p = sp(t, at);
   const f = focus(t, at, next);
   const past = ramp(t, next, next + 0.3);
@@ -67,9 +67,9 @@ const FItem: React.FC<{ item: Item; t: number; at: number; next: number; kb: num
   );
 };
 
-const nextOf = (cs: number[], i: number) => (i + 1 < cs.length && cs[i + 1] > 0 ? cs[i + 1] : 999);
+export const nextOf = (cs: number[], i: number) => (i + 1 < cs.length && cs[i + 1] > 0 ? cs[i + 1] : 999);
 
-const GNote: React.FC<{ text?: string; t: number; at: number; kb: number }> = ({ text, t, at, kb }) => {
+export const GNote: React.FC<{ text?: string; t: number; at: number; kb: number }> = ({ text, t, at, kb }) => {
   if (!text) return null;
   const p = sp(t, at);
   return (
@@ -240,7 +240,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
     const head = v.head as string[];
     const rows = v.rows as any[];
     const cs = rows.map((r) => cue(r.cue));
-    const cols = head.length === 3 ? "1fr 1fr 1.3fr" : "1fr 1.3fr";
+    const cols = head.length === 4 ? "1fr 1fr 1fr 1fr" : head.length === 3 ? "1fr 1fr 1.3fr" : "1fr 1.3fr";
     return (
       <Frame>
         <Title text={v.title} t={t} size={56} />

@@ -10,6 +10,8 @@ import t3 from "../lern_kb3/timing.json";
 import t4 from "../lern_kb4/timing.json";
 import s5 from "../lern_gk/script.json";
 import t5 from "../lern_gk/timing.json";
+import s6 from "../lern_fs/script.json";
+import t6 from "../lern_fs/timing.json";
 import { collectCues } from "../wiso/Visuals";
 import { BG, HEAD, INK, LABEL, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
 
@@ -25,6 +27,7 @@ export const DATA: Record<number, { s: Script; t: Line[] }> = {
   3: { s: s3 as Script, t: (t3 as { lines: Line[] }).lines },
   4: { s: s4 as Script, t: (t4 as { lines: Line[] }).lines },
   5: { s: s5 as Script, t: (t5 as { lines: Line[] }).lines },
+  6: { s: s6 as Script, t: (t6 as { lines: Line[] }).lines },
 };
 
 export const info = (kb: number, i: number): Line => {
@@ -83,8 +86,8 @@ const GKHighlight: React.FC<{ kb: number; idx: number; animate: boolean }> = ({ 
 const GKSidebar: React.FC<{ kb: number; sc: Scene; topics: string[]; p: number; outro: boolean }> = ({ kb, sc, topics, p, outro }) => (
   <div style={{ position: "absolute", left: 0, top: 0, width: SIDEW, height: 1080, background: "#111924", borderRight: `1px solid ${LINE}`, padding: "56px 0 0 0", boxSizing: "border-box" }}>
     <div style={{ padding: "0 44px", display: "flex", alignItems: "baseline", gap: 16 }}>
-      <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 54, color: accent(kb), letterSpacing: -2 }}>GK</div>
-      <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: MUTED }}>Gemeinschaftskunde</div>
+      <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 54, color: accent(kb), letterSpacing: -2 }}>{kbLabel(kb)}</div>
+      <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: MUTED }}>{DATA[kb].s.title}</div>
     </div>
     <div style={{ marginTop: 48, position: "relative" }}>
       {sc.topic > 0 ? <GKHighlight kb={kb} idx={sc.topic - 1} animate={sc.v.type === "topic"} /> : null}
@@ -159,7 +162,7 @@ const SceneView: React.FC<{ kb: number; i: number; dur: number; start: number; t
   const sc = s.sentences[i];
   const ln = info(kb, i);
   const enter = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" });
-  if (kb === 5) {
+  if (kb >= 5) {
     const p = (start + frame) / total;
     return (
       <AbsoluteFill>
@@ -195,8 +198,8 @@ export const LernVideo: React.FC<{ kb: number }> = ({ kb }) => {
   const { s } = DATA[kb];
   let from = 0;
   return (
-    <AbsoluteFill style={{ ...(kb === 5 ? GK_VARS : {}), backgroundColor: BG }}>
-      {kb === 5 ? <GKBackdrop /> : null}
+    <AbsoluteFill style={{ ...(kb >= 5 ? GK_VARS : {}), backgroundColor: BG }}>
+      {kb >= 5 ? <GKBackdrop /> : null}
       {s.sentences.map((sc, i) => {
         const ln = info(kb, i);
         const dur = durF(kb, i);

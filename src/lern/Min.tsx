@@ -2,6 +2,7 @@
 import React from "react";
 import { Appear, Visual, TOPIC, useAppear } from "../wiso/Visuals";
 import { GK_MOTION } from "./MinGK";
+import { TECH } from "./Tech";
 
 export const BG = "var(--bg, #f8f8f6)";
 export const INK = "var(--ink, #111827)";
@@ -11,7 +12,7 @@ export const SANS = "Inter, sans-serif";
 export const HEAD = "var(--head, Inter, sans-serif)";
 export const LABEL = "var(--label, Inter, sans-serif)";
 export const GK_ACCENT = "#2dd4bf";
-export const accent = (kb: number) => (kb === 5 ? GK_ACCENT : TOPIC[kb]);
+export const accent = (kb: number) => (kb >= 5 ? GK_ACCENT : TOPIC[kb]);
 
 export type Item = { text: string; cue: string; sub?: string };
 export type MinProps = { v: any; t: number; D: number; cue: (c?: string) => number; kb: number; topics: string[]; topicNo: number };
@@ -46,20 +47,20 @@ export const Frame: React.FC<{ children: React.ReactNode; center?: boolean }> = 
 );
 
 const ROMAN = ["", "I", "II", "III", "IV"];
-export const kbLabel = (kb: number) => (kb === 5 ? "GK" : `KB ${ROMAN[kb]}`);
+export const kbLabel = (kb: number) => (kb === 5 ? "GK" : kb === 6 ? "BT" : `KB ${ROMAN[kb]}`);
 
 const M: Record<string, React.FC<MinProps>> = {
   kb: ({ v, kb, topics, t }) => {
-    if (kb === 5)
+    if (kb >= 5)
       return (
         <Frame>
-          <Appear at={0}><Label kb={kb}>{v.outro ? "Alle Themen durch" : "WiSo-Abschlussprüfung"}</Label></Appear>
+          <Appear at={0}><Label kb={kb}>{v.outro ? "Alle Themen durch" : v.kicker ?? "WiSo-Abschlussprüfung"}</Label></Appear>
           <Appear at={0.15}>
-            <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 150, color: INK, lineHeight: 0.95, letterSpacing: -5 }}>{v.outro ? "Geschafft." : "Gemeinschafts­kunde"}</div>
+            <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 150, color: INK, lineHeight: 0.95, letterSpacing: -5 }}>{v.outro ? "Geschafft." : v.hero ?? "Gemeinschafts­kunde"}</div>
           </Appear>
           <Appear at={0.5}>
             <div style={{ display: "flex", gap: 18, marginTop: 50 }}>
-              {[`${topics.length - 1} Themen`, "Erklärt wie im Unterricht", "Prüfungstipps"].map((x, i) => (
+              {((v.chips as string[] | undefined) ?? [`${topics.length - 1} Themen`, "Erklärt wie im Unterricht", "Prüfungstipps"]).map((x, i) => (
                 <div key={i} style={{ fontFamily: LABEL, fontSize: 24, color: i === 0 ? accent(kb) : MUTED, border: `2px solid ${i === 0 ? accent(kb) : LINE}`, borderRadius: 40, padding: "10px 24px" }}>{x}</div>
               ))}
             </div>
@@ -93,7 +94,7 @@ const M: Record<string, React.FC<MinProps>> = {
 
   topic: ({ kb, topics, topicNo, t }) => {
     const w = useAppear(0.3);
-    if (kb === 5)
+    if (kb >= 5)
       return (
         <Frame>
           <Appear at={0}>
@@ -314,7 +315,7 @@ const M: Record<string, React.FC<MinProps>> = {
 };
 
 export const MinVisual: React.FC<MinProps> = (p) => {
-  const G = p.kb === 5 ? GK_MOTION[p.v.type] : undefined;
+  const G = p.kb >= 5 ? TECH[p.v.type] ?? GK_MOTION[p.v.type] : undefined;
   if (G) return <G {...p} />;
   const C = M[p.v.type];
   if (C) return <C {...p} />;
