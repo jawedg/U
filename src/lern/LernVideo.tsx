@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import s1 from "../lern_kb1/script.json";
 import s2 from "../lern_kb2/script.json";
 import s3 from "../lern_kb3/script.json";
@@ -128,6 +128,56 @@ const GKBackdrop: React.FC = () => {
   );
 };
 
+// ---------- Tafel-Design (kb 6): volles Bild, Kreide-Handschrift, Kreide-Effekt ----------
+const BOARD_VARS = {
+  "--bg": "#22352c", "--ink": "#f3f1e7", "--muted": "rgba(243,241,231,0.58)", "--line": "rgba(243,241,231,0.22)",
+  "--head": "Caveat, cursive", "--label": "Caveat, cursive", "--padx": "170px", "--kfs": "40px", "--kls": "1px", "--kcase": "none", "--sans": "Caveat, cursive", "--fscale": "1.32",
+} as React.CSSProperties;
+const BoardBackdrop: React.FC = () => (
+  <AbsoluteFill>
+    <Img src={staticFile("board/board.jpg")} style={{ width: 1920, height: 1080 }} />
+    <AbsoluteFill style={{ boxShadow: "inset 0 0 0 14px #5b4632, inset 0 0 0 18px #3d2f22, inset 0 0 60px rgba(0,0,0,0.5)" }} />
+    <svg width={0} height={0} style={{ position: "absolute" }}>
+      <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={2} seed={4} result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale={3} xChannelSelector="R" yChannelSelector="G" result="d" />
+        <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves={1} seed={9} result="g" />
+        <feColorMatrix in="g" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.0 1.55" result="ga" />
+        <feComposite in="d" in2="ga" operator="in" />
+      </filter>
+    </svg>
+  </AbsoluteFill>
+);
+const BoardScene: React.FC<{ kb: number; i: number; dur: number; start: number; total: number }> = ({ kb, i, dur, start, total }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const { s } = DATA[kb];
+  const sc = s.sentences[i];
+  const ln = info(kb, i);
+  const w = interpolate(frame, [0, 12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const p = (start + frame) / total;
+  return (
+    <AbsoluteFill>
+      <div style={{ position: "absolute", left: 70, top: 34, fontFamily: "Caveat, cursive", fontSize: 40, fontWeight: 600, color: MUTED, filter: "url(#chalk)" }}>
+        {s.title}{sc.topic > 0 ? <span> · <span style={{ color: accent(kb) }}>{sc.tname}</span></span> : null}
+      </div>
+      {sc.topic > 0 ? (
+        <div style={{ position: "absolute", right: 70, top: 40, display: "flex", alignItems: "center", gap: 18, fontFamily: "Caveat, cursive", fontSize: 36, color: MUTED }}>
+          <span>Schritt {sc.topic}/{s.topics.length}</span>
+          <svg width={220} height={16} style={{ filter: "url(#chalk)" }}>
+            <path d="M4 9 L216 8" stroke="rgba(243,241,231,0.25)" strokeWidth={5} strokeLinecap="round" />
+            <path d={`M4 9 L${4 + 212 * p} 8`} stroke={accent(kb)} strokeWidth={6} strokeLinecap="round" />
+          </svg>
+        </div>
+      ) : null}
+      <AbsoluteFill style={{ top: 100, height: 820, clipPath: `inset(-40px ${(1 - w) * 100}% -40px -40px)`, filter: "url(#chalk)" }}>
+        <MinVisual v={sc.v} t={frame / fps} D={dur / fps} cue={cueFn(ln.words)} kb={kb} topics={s.topics} topicNo={sc.topic} />
+      </AbsoluteFill>
+      <Subtitle words={ln.words} kb={kb} maxW={1600} />
+    </AbsoluteFill>
+  );
+};
+
 const Subtitle: React.FC<{ words: Word[]; kb: number; maxW?: number }> = ({ words, kb, maxW = 1600 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -162,6 +212,7 @@ const SceneView: React.FC<{ kb: number; i: number; dur: number; start: number; t
   const sc = s.sentences[i];
   const ln = info(kb, i);
   const enter = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: "clamp" });
+  if (kb === 6) return <BoardScene kb={kb} i={i} dur={dur} start={start} total={total} />;
   if (kb >= 5) {
     const p = (start + frame) / total;
     return (
@@ -198,8 +249,8 @@ export const LernVideo: React.FC<{ kb: number }> = ({ kb }) => {
   const { s } = DATA[kb];
   let from = 0;
   return (
-    <AbsoluteFill style={{ ...(kb >= 5 ? GK_VARS : {}), backgroundColor: BG }}>
-      {kb >= 5 ? <GKBackdrop /> : null}
+    <AbsoluteFill style={{ ...(kb === 6 ? BOARD_VARS : kb >= 5 ? GK_VARS : {}), backgroundColor: BG }}>
+      {kb === 6 ? <BoardBackdrop /> : kb >= 5 ? <GKBackdrop /> : null}
       {s.sentences.map((sc, i) => {
         const ln = info(kb, i);
         const dur = durF(kb, i);

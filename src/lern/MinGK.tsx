@@ -3,7 +3,7 @@
 import React from "react";
 import { interpolate, spring } from "remotion";
 import type { Item, MinProps } from "./Min";
-import { Frame, HEAD, INK, LABEL, LINE, MUTED, SANS, accent } from "./Min";
+import { Frame, HEAD, INK, LABEL, LINE, MUTED, SANS, accent , BGC, monoF, withA , BODY, fsz } from "./Min";
 
 const FPS = 25;
 export const sp = (t: number, at: number, damping = 13, stiffness = 150) =>
@@ -32,7 +32,7 @@ export const Kicker: React.FC<{ kb: number; t: number; at?: number; children: Re
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18, opacity: p }}>
       <div style={{ width: 36 * p, height: 3, background: accent(kb) }} />
-      <div style={{ fontFamily: LABEL, fontWeight: 700, fontSize: 24, letterSpacing: 5, color: accent(kb), textTransform: "uppercase" }}>{children}</div>
+      <div style={{ fontFamily: LABEL, fontWeight: 700, fontSize: "var(--kfs, 24px)", letterSpacing: "var(--kls, 5px)", color: accent(kb), textTransform: "var(--kcase, uppercase)" as any }}>{children}</div>
     </div>
   );
 };
@@ -51,7 +51,7 @@ export const FItem: React.FC<{ item: Item; t: number; at: number; next: number; 
       style={{
         display: "flex", alignItems: "center", gap: 22, margin: "7px 0", marginLeft: indent, padding: "10px 22px 10px 18px", borderRadius: 14,
         opacity: p * (1 - past * 0.45), transform: `translateX(${(1 - p) * -90}px) scale(${1 + f * 0.015})`, transformOrigin: "left center",
-        background: `rgba(45,212,191,${0.1 * f})`, boxShadow: f > 0.01 ? `inset 5px 0 0 ${accent(kb)}` : "none",
+        background: withA(accent(kb), 0.1 * f), boxShadow: f > 0.01 ? `inset 5px 0 0 ${accent(kb)}` : "none",
       }}
     >
       {num !== undefined ? (
@@ -60,7 +60,7 @@ export const FItem: React.FC<{ item: Item; t: number; at: number; next: number; 
         <div style={{ width: 12, height: 12, borderRadius: 3, background: accent(kb), flexShrink: 0, transform: `scale(${0.6 + p * 0.4 + f * 0.4}) rotate(${(1 - p) * 90}deg)` }} />
       )}
       <div>
-        <div style={{ fontFamily: SANS, fontWeight: 600 + Math.round(f * 1.5) * 100, fontSize: size, color: INK, lineHeight: 1.25 }}>{item.text}</div>
+        <div style={{ fontFamily: BODY, fontWeight: 600 + Math.round(f * 1.5) * 100, fontSize: fsz(size), color: INK, lineHeight: 1.25 }}>{item.text}</div>
         {item.sub ? <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: size * 0.7, color: MUTED }}>{item.sub}</div> : null}
       </div>
     </div>
@@ -74,7 +74,7 @@ export const GNote: React.FC<{ text?: string; t: number; at: number; kb: number 
   const p = sp(t, at);
   return (
     <div style={{ marginTop: 26, opacity: p, transform: `translateY(${(1 - p) * 30}px)` }}>
-      <div style={{ display: "inline-flex", gap: 16, alignItems: "center", fontFamily: SANS, fontWeight: 650, fontSize: 31, color: INK, background: "rgba(255,255,255,0.04)", border: `1px solid ${LINE}`, borderRadius: 14, padding: "14px 24px" }}>
+      <div style={{ display: "inline-flex", gap: 16, alignItems: "center", fontFamily: BODY, fontWeight: 650, fontSize: fsz(31), color: INK, background: "rgba(255,255,255,0.04)", border: `1px solid ${LINE}`, borderRadius: 14, padding: "14px 24px" }}>
         <span style={{ color: accent(kb), fontFamily: LABEL, fontWeight: 800 }}>→</span>
         {text}
       </div>
@@ -88,7 +88,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
     const w = ramp(t, 0.2, 0.9);
     return (
       <Frame>
-        <div style={{ overflow: "hidden", height: 200 }}>
+        <div style={{ overflow: "hidden", height: 250 }}>
           <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 190, color: accent(kb), lineHeight: 1, letterSpacing: -8, transform: `translateY(${(1 - p) * 200}px)` }}>
             {String(topicNo).padStart(2, "0")}
           </div>
@@ -132,7 +132,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
     return (
       <Frame>
         {v.sub ? <Kicker kb={kb} t={t}>{v.sub}</Kicker> : null}
-        <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 150, color: accent(kb), letterSpacing: -3, lineHeight: 1, transform: `scale(${0.5 + 0.5 * p})`, transformOrigin: "left center", opacity: Math.min(1, p * 1.5), textShadow: `0 0 ${30 + glow * 30}px rgba(45,212,191,0.35)` }}>
+        <div style={{ fontFamily: HEAD, fontWeight: 900, fontSize: 150, color: accent(kb), letterSpacing: -3, lineHeight: 1, transform: `scale(${0.5 + 0.5 * p})`, transformOrigin: "left center", opacity: Math.min(1, p * 1.5), textShadow: `0 0 ${30 + glow * 30}px ${withA(accent(kb), 0.35)}` }}>
           {v.big}
         </div>
         <div style={{ marginTop: 26 }}>
@@ -149,7 +149,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
         <Kicker kb={kb} t={t}>Definition</Kicker>
         <Words text={v.term} t={t} at={0.1} style={{ fontFamily: HEAD, fontWeight: 850, fontSize: 84, color: INK, lineHeight: 1.05, letterSpacing: -2 }} />
         <div style={{ width: 220 * u, height: 6, borderRadius: 3, background: accent(kb), margin: "16px 0 34px" }} />
-        <Words text={v.text} t={t} at={0.6} step={0.045} style={{ fontFamily: SANS, fontWeight: 500, fontSize: 46, lineHeight: 1.38, color: INK, maxWidth: 1240 }} />
+        <Words text={v.text} t={t} at={0.6} step={0.045} style={{ fontFamily: BODY, fontWeight: 500, fontSize: fsz(46), lineHeight: 1.38, color: INK, maxWidth: 1240 }} />
       </Frame>
     );
   },
@@ -163,7 +163,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
           <div style={{ width: 16, height: 16, borderRadius: 8, background: accent(kb), boxShadow: `0 0 ${8 + pulse * 14}px ${accent(kb)}` }} />
           <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 26, letterSpacing: 6, color: accent(kb) }}>MERKE</div>
         </div>
-        <div style={{ position: "relative", padding: "38px 46px", background: "rgba(45,212,191,0.07)", borderRadius: 18, maxWidth: 1280 }}>
+        <div style={{ position: "relative", padding: "38px 46px", background: withA(accent(kb), 0.07), borderRadius: 18, maxWidth: 1280 }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: 10, height: `${h * 100}%`, background: accent(kb), borderRadius: 5 }} />
           <Words text={v.text} t={t} at={0.35} step={0.05} style={{ fontFamily: HEAD, fontWeight: 750, fontSize: 50, lineHeight: 1.3, color: INK }} />
         </div>
@@ -185,19 +185,19 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
         <div style={{ marginTop: 50, minHeight: 150, display: "flex", alignItems: "center", gap: 34 }}>
           <svg width={110} height={110} viewBox="0 0 110 110" style={{ flexShrink: 0 }}>
             <circle cx={55} cy={55} r={r} fill="none" stroke={LINE} strokeWidth={8} />
-            <circle cx={55} cy={55} r={r} fill={shown ? "rgba(45,212,191,0.15)" : "none"} stroke={accent(kb)} strokeWidth={8} strokeLinecap="round"
+            <circle cx={55} cy={55} r={r} fill={shown ? withA(accent(kb), 0.15) : "none"} stroke={accent(kb)} strokeWidth={8} strokeLinecap="round"
               strokeDasharray={C} strokeDashoffset={C * (1 - prog)} transform="rotate(-90 55 55)" />
             {shown ? <path d="M36 56 L50 70 L76 42" fill="none" stroke={accent(kb)} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={70} strokeDashoffset={70 * (1 - pa)} /> : (
-              <text x={55} y={68} textAnchor="middle" fontFamily="JetBrains Mono" fontWeight={800} fontSize={36} fill={MUTED}>?</text>
+              <text x={55} y={68} textAnchor="middle" fontFamily={monoF(kb)} fontWeight={800} fontSize={36} fill={MUTED}>?</text>
             )}
           </svg>
           {shown ? (
             <div style={{ opacity: pa, transform: `translateX(${(1 - pa) * 60}px)` }}>
               <div style={{ fontFamily: LABEL, fontWeight: 800, fontSize: 24, letterSpacing: 5, color: accent(kb), marginBottom: 8 }}>ANTWORT</div>
-              <div style={{ fontFamily: SANS, fontWeight: 650, fontSize: 44, color: INK, lineHeight: 1.3, maxWidth: 1050 }}>{v.a}</div>
+              <div style={{ fontFamily: BODY, fontWeight: 650, fontSize: fsz(44), color: INK, lineHeight: 1.3, maxWidth: 1050 }}>{v.a}</div>
             </div>
           ) : (
-            <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 34, color: MUTED, opacity: 0.6 + 0.4 * Math.sin(t * 4) }}>Überleg kurz …</div>
+            <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: fsz(34), color: MUTED, opacity: 0.6 + 0.4 * Math.sin(t * 4) }}>Überleg kurz …</div>
           )}
         </div>
       </Frame>
@@ -223,11 +223,11 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
                     <div style={{ width: `${lineW * 100}%`, height: 3, background: accent(kb) }} />
                   </div>
                 ) : null}
-                <div style={{ width: 80, height: 80, borderRadius: 40, border: `4px solid ${accent(kb)}`, background: f > 0.05 ? accent(kb) : "#0d1219", color: f > 0.5 ? "#0d1219" : accent(kb),
-                  display: "flex", alignItems: "center", justifyContent: "center", fontFamily: LABEL, fontWeight: 800, fontSize: 34, transform: `scale(${p * (1 + f * 0.12)})`, position: "relative", boxShadow: f > 0.05 ? `0 0 ${30 * f}px rgba(45,212,191,0.5)` : "none" }}>
+                <div style={{ width: 80, height: 80, borderRadius: 40, border: `4px solid ${accent(kb)}`, background: f > 0.05 ? accent(kb) : BGC(kb), color: f > 0.5 ? BGC(kb) : accent(kb),
+                  display: "flex", alignItems: "center", justifyContent: "center", fontFamily: LABEL, fontWeight: 800, fontSize: 34, transform: `scale(${p * (1 + f * 0.12)})`, position: "relative", boxShadow: f > 0.05 ? `0 0 ${30 * f}px ${withA(accent(kb), 0.5)}` : "none" }}>
                   {i + 1}
                 </div>
-                <div style={{ marginTop: 26, fontFamily: SANS, fontWeight: 650, fontSize: n > 3 ? 32 : 36, color: INK, lineHeight: 1.3, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, paddingRight: 10 }}>{it.text}</div>
+                <div style={{ marginTop: 26, fontFamily: BODY, fontWeight: 650, fontSize: fsz(n > 3 ? 32 : 36), color: INK, lineHeight: 1.3, opacity: p, transform: `translateY(${(1 - p) * 30}px)`, paddingRight: 10 }}>{it.text}</div>
               </div>
             );
           })}
@@ -252,8 +252,8 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
             const p = sp(t, cs[i]);
             const f = focus(t, cs[i], nextOf(cs, i));
             return (r.cells as string[]).map((c, k) => (
-              <div key={`${i}-${k}`} style={{ fontFamily: SANS, fontWeight: k === 0 ? 750 : 500, fontSize: 32, color: k === 0 && f > 0.3 ? accent(kb) : INK, padding: "16px 18px", borderBottom: `1px solid ${LINE}`,
-                opacity: p * (1 - ramp(t, nextOf(cs, i), nextOf(cs, i) + 0.3) * 0.35), transform: `translateX(${(1 - p) * (80 + k * 40)}px)`, background: `rgba(45,212,191,${0.09 * f})` }}>{c}</div>
+              <div key={`${i}-${k}`} style={{ fontFamily: BODY, fontWeight: k === 0 ? 750 : 500, fontSize: fsz(32), color: k === 0 && f > 0.3 ? accent(kb) : INK, padding: "16px 18px", borderBottom: `1px solid ${LINE}`,
+                opacity: p * (1 - ramp(t, nextOf(cs, i), nextOf(cs, i) + 0.3) * 0.35), transform: `translateX(${(1 - p) * (80 + k * 40)}px)`, background: withA(accent(kb), 0.09 * f) }}>{c}</div>
             ));
           })}
         </div>
@@ -272,7 +272,7 @@ export const GK_MOTION: Record<string, React.FC<MinProps>> = {
           {s.items.map((x: string, i: number) => {
             const q = sp(t, at + 0.25 + i * 0.18);
             return (
-              <div key={i} style={{ fontFamily: SANS, fontWeight: 550, fontSize: s.items.length > 3 ? 31 : 35, color: INK, padding: "12px 0", borderTop: `1px solid ${LINE}`, opacity: q, transform: `translateY(${(1 - q) * 20}px)` }}>{x}</div>
+              <div key={i} style={{ fontFamily: BODY, fontWeight: 550, fontSize: fsz(s.items.length > 3 ? 31 : 35), color: INK, padding: "12px 0", borderTop: `1px solid ${LINE}`, opacity: q, transform: `translateY(${(1 - q) * 20}px)` }}>{x}</div>
             );
           })}
         </div>

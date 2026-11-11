@@ -81,7 +81,9 @@ Lokal reicht `npm run render:3d`.
     Symbol-Zuordnung per Stichwort + `ICON_FOR_TEXT` (exakte Texte).
 
 ## Berufstheorie-Rechenvideos (z. B. Füllstandsmessung)
-- `LernFuellstand` (kb = 6, Label „BT“, gleiches dunkles Bewegungs-Design wie `LernGK`), Skript `scripts/build_fs_script.py`
+- `LernFuellstand` (kb = 6, Label „BT“) im **Tafel-Design** (Nutzer: Seitenleiste nervt, will volles Bild): grüne Schultafel
+  (`public/board/board.jpg`), Kreide-Handschrift (Caveat, `--sans`/`--fscale`), Kreide-Filter `#chalk`, Farben gelb/rosa/hellblau
+  (`accent`/`accent2`/`water` in `Min.tsx`), Kopfzeile oben statt Seitenleiste (`BoardScene` in `LernVideo.tsx`), Skript `scripts/build_fs_script.py`
   → `src/lern_fs/`. Nutzerwunsch: echte Prüfungsaufgabe Schritt für Schritt lösen (Bild, Schaubild, Rechnung), dann eigenes
   Beispiel im Prüfungsstil. Technik-Grafiken in `src/lern/Tech.tsx`: `tank` (Behälter + Ultraschall, Füllstand animiert),
   `graph` (Schaubild mit Punkten, Gerade, Steigungsdreieck, Ablesen), `scales` (Volt ↔ Digitalwert), `calc` (Rechenweg tippt sich).

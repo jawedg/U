@@ -9,10 +9,20 @@ export const INK = "var(--ink, #111827)";
 export const MUTED = "var(--muted, #6b7280)";
 export const LINE = "var(--line, #e5e7eb)";
 export const SANS = "Inter, sans-serif";
+// Fließtext: im Tafel-Design Kreide-Handschrift (per CSS-Variable), Größe per --fscale
+export const BODY = "var(--sans, Inter, sans-serif)";
+export const fsz = (n: number) => `calc(${n}px * var(--fscale, 1))`;
+export const fz = (kb: number) => (kb === 6 ? 1.3 : 1);
 export const HEAD = "var(--head, Inter, sans-serif)";
 export const LABEL = "var(--label, Inter, sans-serif)";
 export const GK_ACCENT = "#2dd4bf";
-export const accent = (kb: number) => (kb >= 5 ? GK_ACCENT : TOPIC[kb]);
+export const accent = (kb: number) => (kb === 6 ? "#f6dd6b" : kb >= 5 ? GK_ACCENT : TOPIC[kb]);
+// zweite Akzentfarbe (Abstand, Steigung …) und Wasserfarbe; Tafel-Design (kb 6) in Kreidefarben
+export const accent2 = (kb: number) => (kb === 6 ? "#f4a3a8" : "#fbbf24");
+export const water = (kb: number) => (kb === 6 ? "#8fd0f5" : accent(kb));
+export const withA = (hex: string, a: number) => hex + Math.round(Math.max(0, Math.min(1, a)) * 255).toString(16).padStart(2, "0");
+export const monoF = (kb: number) => (kb === 6 ? "Caveat, cursive" : "'JetBrains Mono', monospace");
+export const BGC = (kb: number) => (kb === 6 ? "#22352c" : "#0d1219");
 
 export type Item = { text: string; cue: string; sub?: string };
 export type MinProps = { v: any; t: number; D: number; cue: (c?: string) => number; kb: number; topics: string[]; topicNo: number };
