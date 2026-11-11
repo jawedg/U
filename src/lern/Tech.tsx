@@ -44,7 +44,7 @@ const Tank: React.FC<MinProps> = ({ v, t, cue, kb }) => {
         <rect x={tx + tw / 2 - 34} y={top - 52} width={68} height={52} rx={8} fill="rgba(0,0,0,0.25)" stroke={INK} strokeWidth={3} />
         <text x={tx + tw / 2} y={top - 62} textAnchor="middle" fontFamily={SANS} fontSize={24 * fz(kb)} fill={MUTED}>Sensor</text>
         {/* Behälter */}
-        <rect x={tx} y={top} width={tw} height={bot - top} rx={10} fill="rgba(255,255,255,0.03)" stroke={INK} strokeWidth={4} />
+        <rect x={tx} y={top} width={tw} height={bot - top} rx={10} fill="rgba(255,255,255,0.03)" stroke={INK} strokeWidth={4} strokeDasharray={2 * (tw + bot - top)} strokeDashoffset={2 * (tw + bot - top) * (1 - ramp(t, 0, 0.9))} />
         {/* Flüssigkeit */}
         <path d={`M${tx + 4} ${surf + wave} Q${tx + tw / 2} ${surf - wave * 2} ${tx + tw - 4} ${surf + wave} L${tx + tw - 4} ${bot - 4} L${tx + 4} ${bot - 4} Z`} fill={withA(water(kb), 0.3)} stroke={water(kb)} strokeWidth={3} />
         {/* Blindzonen */}
@@ -245,7 +245,13 @@ const Calc: React.FC<MinProps> = ({ v, t, cue, kb }) => {
               boxShadow: res ? `0 0 ${24 * p}px ${withA(accent(kb), 0.25)}` : "none", whiteSpace: "pre",
             }}>
               {ln.t.slice(0, typed)}
-              {typed < ln.t.length ? <span style={{ color: accent(kb) }}>▍</span> : null}
+              {typed < ln.t.length ? (
+                kb === 6 ? (
+                  <span style={{ display: "inline-block", width: 0, position: "relative" }}>
+                    <span style={{ position: "absolute", left: 4, top: -34 + Math.sin(t * 40) * 3, width: 70, height: 16, borderRadius: 4, background: "linear-gradient(90deg,#fffdf2,#e9e5d6)", boxShadow: "2px 3px 4px rgba(0,0,0,0.4)", transform: "rotate(-38deg)", transformOrigin: "left center" }} />
+                  </span>
+                ) : <span style={{ color: accent(kb) }}>▍</span>
+              ) : null}
             </div>
           </div>
         );

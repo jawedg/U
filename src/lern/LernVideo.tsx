@@ -136,6 +136,7 @@ const BOARD_VARS = {
 const BoardBackdrop: React.FC = () => (
   <AbsoluteFill>
     <Img src={staticFile("board/board.jpg")} style={{ width: 1920, height: 1080 }} />
+    <ChalkDust />
     <AbsoluteFill style={{ boxShadow: "inset 0 0 0 14px #5b4632, inset 0 0 0 18px #3d2f22, inset 0 0 60px rgba(0,0,0,0.5)" }} />
     <svg width={0} height={0} style={{ position: "absolute" }}>
       <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
@@ -148,13 +149,41 @@ const BoardBackdrop: React.FC = () => (
     </svg>
   </AbsoluteFill>
 );
+const ChalkDust: React.FC = () => {
+  const f = useCurrentFrame();
+  return (
+    <AbsoluteFill>
+      {Array.from({ length: 34 }, (_, k) => {
+        const r = (n: number) => { const x = Math.sin(k * 91.7 + n * 13.3) * 43758.5; return x - Math.floor(x); };
+        const sp = 0.15 + r(1) * 0.35;
+        const x = (r(2) * 1920 + Math.sin(f / 60 + k) * 30 + f * sp * 0.6) % 1920;
+        const y = (r(3) * 1080 + f * sp) % 1080;
+        const o = 0.12 + 0.18 * (0.5 + 0.5 * Math.sin(f / 25 + k));
+        return <div key={k} style={{ position: "absolute", left: x, top: y, width: 2 + r(4) * 3, height: 2 + r(4) * 3, borderRadius: 3, background: "#f3f1e7", opacity: o }} />;
+      })}
+    </AbsoluteFill>
+  );
+};
+// Tafelschwamm wischt beim Szenenwechsel über die Tafel
+const Eraser: React.FC<{ w: number }> = ({ w }) =>
+  w > 0 && w < 1 ? (
+    <>
+      <div style={{ position: "absolute", left: 0, top: 120, width: w * 1920, height: 780, background: `linear-gradient(90deg, transparent, rgba(243,241,231,${0.05 * (1 - w)}) 70%, rgba(243,241,231,${0.12 * (1 - w)}))` }} />
+      <div style={{ position: "absolute", left: w * 1920 - 70, top: 260 + Math.sin(w * 9) * 120, width: 140, height: 300, transform: `rotate(${8 + Math.sin(w * 7) * 6}deg)`, filter: "drop-shadow(6px 10px 10px rgba(0,0,0,0.45))" }}>
+        <div style={{ height: "62%", borderRadius: "12px 12px 4px 4px", background: "linear-gradient(90deg,#8a6a48,#a5825c 50%,#7a5a3c)" }} />
+        <div style={{ height: "38%", borderRadius: "4px 4px 8px 8px", background: "repeating-linear-gradient(0deg,#4a4a4a 0 6px,#3a3a3a 6px 12px)" }} />
+      </div>
+    </>
+  ) : null;
+
 const BoardScene: React.FC<{ kb: number; i: number; dur: number; start: number; total: number }> = ({ kb, i, dur, start, total }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { s } = DATA[kb];
   const sc = s.sentences[i];
   const ln = info(kb, i);
-  const w = interpolate(frame, [0, 12], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const w = interpolate(frame, [0, 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const cam = frame / Math.max(1, dur);
   const p = (start + frame) / total;
   return (
     <AbsoluteFill>
@@ -170,9 +199,10 @@ const BoardScene: React.FC<{ kb: number; i: number; dur: number; start: number; 
           </svg>
         </div>
       ) : null}
-      <AbsoluteFill style={{ top: 100, height: 820, clipPath: `inset(-40px ${(1 - w) * 100}% -40px -40px)`, filter: "url(#chalk)" }}>
+      <AbsoluteFill style={{ top: 100, height: 820, clipPath: `inset(-40px ${(1 - w) * 100}% -40px -40px)`, filter: "url(#chalk)", transform: `scale(${1 + cam * 0.035}) translateX(${Math.sin(cam * Math.PI) * -12}px)`, transformOrigin: "45% 50%" }}>
         <MinVisual v={sc.v} t={frame / fps} D={dur / fps} cue={cueFn(ln.words)} kb={kb} topics={s.topics} topicNo={sc.topic} />
       </AbsoluteFill>
+      <Eraser w={w} />
       <Subtitle words={ln.words} kb={kb} maxW={1600} />
     </AbsoluteFill>
   );
