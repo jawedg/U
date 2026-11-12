@@ -99,3 +99,10 @@ Lokal reicht `npm run render:3d`.
   Werkstatt-Look (hell, Orange), gezeichnetes Gestell `src/pruef/Gestell.tsx` (Messpunkte `PT`, Hervorhebung `BOX`), Szenentypen:
   title, phase, board (Kamera, Zustände LEDs/Schütze), talk (Sprechblase mit Wort-Hervorhebung, Diagramme flanke/verriegelung/typenschild),
   measure (Installationstester + Prüfspitzen), protocol (füllt sich über alle Szenen), change, docs, tip, check.
+
+## Mess-Video POV 3D (Fluke 1664 FC)
+- Komposition `MessPOV` (kb = 8, `src/mess/`, 1920×1080, 25 fps, ~5:28): nur Messteil + Protokoll aus Ich-Sicht (Charon),
+  Skript `scripts/build_mess_script.py` (Szenen-`v`: `cam`, `pr` = Prüfspitzen rot/grün/blau, `fl` = Fluke-Zustand, `st` = Anlagenzustand).
+- 3D mit `@remotion/three` (`MessVideo.tsx`): Gestell-Textur `public/mess/gestell.png` (aus Komposition `GestellTex` gerendert),
+  Fluke als SVG-Overlay (`Fluke.tsx`: Drehschalter, F1–F4 rechts, TEST links, Bedienung nach Users Manual).
+- Rendern mit `--gl=swangle` dauert ohne GPU ~1,5 h (≈ 75 Bilder/min). Danach 2-Pass ~1200 kbit/s → ≤ 60 MB.
