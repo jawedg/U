@@ -89,3 +89,13 @@ Lokal reicht `npm run render:3d`.
   `graph` (Schaubild mit Punkten, Gerade, Steigungsdreieck, Ablesen), `scales` (Volt ↔ Digitalwert), `calc` (Rechenweg tippt sich).
 - Zahlen im Sprechtext als Ziffern schreiben (Gemini liest sie richtig, Untertitel zeigen Ziffern). Cue-Wörter: Satzzeichen
   werden entfernt („1,5“ → „15“), daher Wort-Cues verwenden. Videos für den Nutzer ≤ ~60 MB halten (größere lassen sich in der App nicht speichern).
+
+## Praktische Prüfung AP T2 – Prüfungssimulation
+- Nutzer: Elektroniker/-in für Betriebstechnik, praktische Prüfung Ende Januar (IHK, Gestell + Änderungsauftrag), SPS = Siemens S7.
+  Unterlagen Winter 2026/27: Blechbearbeitungsmaschine (Haspel M1 mit Wendeschützen Q1/Q2, Ventil M2, F3 RCBO B16/10 mA für Steckdose X5,
+  F4 Motorschutz 3,25 A, X1: 1=L1 3=L2 5=L3 7=N 9=PE). Prüfprotokoll-Auszug VDE 0100-600: Besichtigung, R-PE, R-ISO (X1-Paare), RCD U_B + t_A, Drehfeld, Erprobung.
+- Komposition `PruefSim` (kb = 7, `src/pruef/`), Skript `scripts/build_pruef_script.py`: Ich-Perspektive (Charon) + Prüfer (Orus).
+  Szenen haben `who`/`voice`; alle Prüfer-Sätze in einem TTS-Block (`voice_gemini.py` ordnet Blöcke wieder der Szenenreihenfolge zu).
+  Werkstatt-Look (hell, Orange), gezeichnetes Gestell `src/pruef/Gestell.tsx` (Messpunkte `PT`, Hervorhebung `BOX`), Szenentypen:
+  title, phase, board (Kamera, Zustände LEDs/Schütze), talk (Sprechblase mit Wort-Hervorhebung, Diagramme flanke/verriegelung/typenschild),
+  measure (Installationstester + Prüfspitzen), protocol (füllt sich über alle Szenen), change, docs, tip, check.
