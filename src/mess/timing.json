@@ -1,0 +1,3316 @@
+{
+ "lines": [
+  {
+   "file": "mess/line-0.wav",
+   "seconds": 20.376,
+   "words": [
+    {
+     "word": "POV:",
+     "start": 0.1
+    },
+    {
+     "word": "Ich",
+     "start": 0.601
+    },
+    {
+     "word": "bin",
+     "start": 0.851
+    },
+    {
+     "word": "du,",
+     "start": 1.101
+    },
+    {
+     "word": "am",
+     "start": 1.552
+    },
+    {
+     "word": "Prüfungstag.",
+     "start": 1.752
+    },
+    {
+     "word": "Die",
+     "start": 2.653
+    },
+    {
+     "word": "Anlage",
+     "start": 2.904
+    },
+    {
+     "word": "ist",
+     "start": 3.304
+    },
+    {
+     "word": "fertig,",
+     "start": 3.554
+    },
+    {
+     "word": "und",
+     "start": 4.205
+    },
+    {
+     "word": "der",
+     "start": 4.456
+    },
+    {
+     "word": "Prüfer",
+     "start": 4.706
+    },
+    {
+     "word": "sagt:",
+     "start": 5.106
+    },
+    {
+     "word": "Zeigen",
+     "start": 5.657
+    },
+    {
+     "word": "Sie",
+     "start": 6.058
+    },
+    {
+     "word": "mir",
+     "start": 6.308
+    },
+    {
+     "word": "bitte",
+     "start": 6.558
+    },
+    {
+     "word": "die",
+     "start": 6.909
+    },
+    {
+     "word": "Prüfung",
+     "start": 7.159
+    },
+    {
+     "word": "nach",
+     "start": 7.61
+    },
+    {
+     "word": "VDE",
+     "start": 7.91
+    },
+    {
+     "word": "0100-600.",
+     "start": 8.16
+    },
+    {
+     "word": "Ich",
+     "start": 8.861
+    },
+    {
+     "word": "messe",
+     "start": 9.112
+    },
+    {
+     "word": "mit",
+     "start": 9.462
+    },
+    {
+     "word": "dem",
+     "start": 9.712
+    },
+    {
+     "word": "*Fluke",
+     "start": 9.963
+    },
+    {
+     "word": "1664",
+     "start": 10.313
+    },
+    {
+     "word": "FC*.",
+     "start": 10.614
+    },
+    {
+     "word": "Ich",
+     "start": 11.064
+    },
+    {
+     "word": "zeige",
+     "start": 11.314
+    },
+    {
+     "word": "dir",
+     "start": 11.665
+    },
+    {
+     "word": "genau,",
+     "start": 11.915
+    },
+    {
+     "word": "wo",
+     "start": 12.516
+    },
+    {
+     "word": "der",
+     "start": 12.716
+    },
+    {
+     "word": "*Drehschalter*",
+     "start": 12.967
+    },
+    {
+     "word": "steht,",
+     "start": 13.667
+    },
+    {
+     "word": "welche",
+     "start": 14.268
+    },
+    {
+     "word": "*Taste*",
+     "start": 14.669
+    },
+    {
+     "word": "ich",
+     "start": 15.019
+    },
+    {
+     "word": "drücke",
+     "start": 15.27
+    },
+    {
+     "word": "und",
+     "start": 15.67
+    },
+    {
+     "word": "wo",
+     "start": 15.92
+    },
+    {
+     "word": "die",
+     "start": 16.121
+    },
+    {
+     "word": "*Messspitzen*",
+     "start": 16.371
+    },
+    {
+     "word": "hinkommen.",
+     "start": 17.022
+    },
+    {
+     "word": "Die",
+     "start": 17.823
+    },
+    {
+     "word": "Messwerte",
+     "start": 18.073
+    },
+    {
+     "word": "sind",
+     "start": 18.624
+    },
+    {
+     "word": "Beispielwerte.",
+     "start": 18.924
+    }
+   ]
+  },
+  {
+   "file": "mess/line-1.wav",
+   "seconds": 29.522,
+   "words": [
+    {
+     "word": "Kurz",
+     "start": 0.1
+    },
+    {
+     "word": "zum",
+     "start": 0.385
+    },
+    {
+     "word": "Gerät.",
+     "start": 0.623
+    },
+    {
+     "word": "Unten",
+     "start": 1.194
+    },
+    {
+     "word": "ist",
+     "start": 1.527
+    },
+    {
+     "word": "der",
+     "start": 1.765
+    },
+    {
+     "word": "*Drehschalter*.",
+     "start": 2.003
+    },
+    {
+     "word": "Für",
+     "start": 2.907
+    },
+    {
+     "word": "uns",
+     "start": 3.145
+    },
+    {
+     "word": "wichtig",
+     "start": 3.383
+    },
+    {
+     "word": "sind",
+     "start": 3.811
+    },
+    {
+     "word": "*RLO*",
+     "start": 4.096
+    },
+    {
+     "word": "für",
+     "start": 4.334
+    },
+    {
+     "word": "den",
+     "start": 4.572
+    },
+    {
+     "word": "Schutzleiter,",
+     "start": 4.81
+    },
+    {
+     "word": "*RISO*",
+     "start": 5.714
+    },
+    {
+     "word": "für",
+     "start": 5.999
+    },
+    {
+     "word": "die",
+     "start": 6.237
+    },
+    {
+     "word": "Isolation,",
+     "start": 6.475
+    },
+    {
+     "word": "das",
+     "start": 7.236
+    },
+    {
+     "word": "*Drehfeld*-Symbol",
+     "start": 7.474
+    },
+    {
+     "word": "und",
+     "start": 8.235
+    },
+    {
+     "word": "*Delta*",
+     "start": 8.473
+    },
+    {
+     "word": "T",
+     "start": 8.806
+    },
+    {
+     "word": "für",
+     "start": 8.949
+    },
+    {
+     "word": "die",
+     "start": 9.187
+    },
+    {
+     "word": "Auslösezeit",
+     "start": 9.424
+    },
+    {
+     "word": "vom",
+     "start": 10.043
+    },
+    {
+     "word": "FI.",
+     "start": 10.281
+    },
+    {
+     "word": "Rechts",
+     "start": 10.709
+    },
+    {
+     "word": "neben",
+     "start": 11.089
+    },
+    {
+     "word": "dem",
+     "start": 11.422
+    },
+    {
+     "word": "Display",
+     "start": 11.66
+    },
+    {
+     "word": "liegen",
+     "start": 12.089
+    },
+    {
+     "word": "die",
+     "start": 12.469
+    },
+    {
+     "word": "vier",
+     "start": 12.707
+    },
+    {
+     "word": "Tasten",
+     "start": 12.992
+    },
+    {
+     "word": "*F1*",
+     "start": 13.373
+    },
+    {
+     "word": "bis",
+     "start": 13.563
+    },
+    {
+     "word": "F4.",
+     "start": 13.801
+    },
+    {
+     "word": "Was",
+     "start": 14.229
+    },
+    {
+     "word": "sie",
+     "start": 14.467
+    },
+    {
+     "word": "tun,",
+     "start": 14.705
+    },
+    {
+     "word": "hängt",
+     "start": 15.181
+    },
+    {
+     "word": "von",
+     "start": 15.514
+    },
+    {
+     "word": "der",
+     "start": 15.752
+    },
+    {
+     "word": "Messart",
+     "start": 15.99
+    },
+    {
+     "word": "ab.",
+     "start": 16.418
+    },
+    {
+     "word": "Links",
+     "start": 16.846
+    },
+    {
+     "word": "ist",
+     "start": 17.179
+    },
+    {
+     "word": "die",
+     "start": 17.417
+    },
+    {
+     "word": "große",
+     "start": 17.655
+    },
+    {
+     "word": "*TEST*-Taste",
+     "start": 17.988
+    },
+    {
+     "word": "mit",
+     "start": 18.511
+    },
+    {
+     "word": "dem",
+     "start": 18.749
+    },
+    {
+     "word": "*Touchpad*.",
+     "start": 18.987
+    },
+    {
+     "word": "Das",
+     "start": 19.7
+    },
+    {
+     "word": "berühre",
+     "start": 19.938
+    },
+    {
+     "word": "ich",
+     "start": 20.366
+    },
+    {
+     "word": "immer,",
+     "start": 20.604
+    },
+    {
+     "word": "bevor",
+     "start": 21.175
+    },
+    {
+     "word": "ich",
+     "start": 21.508
+    },
+    {
+     "word": "TEST",
+     "start": 21.746
+    },
+    {
+     "word": "drücke.",
+     "start": 22.031
+    },
+    {
+     "word": "Leuchtet",
+     "start": 22.65
+    },
+    {
+     "word": "darüber",
+     "start": 23.126
+    },
+    {
+     "word": "das",
+     "start": 23.554
+    },
+    {
+     "word": "*Warndreieck*,",
+     "start": 23.792
+    },
+    {
+     "word": "liegt",
+     "start": 24.648
+    },
+    {
+     "word": "am",
+     "start": 24.981
+    },
+    {
+     "word": "Schutzleiter",
+     "start": 25.171
+    },
+    {
+     "word": "eine",
+     "start": 25.837
+    },
+    {
+     "word": "gefährliche",
+     "start": 26.123
+    },
+    {
+     "word": "Spannung,",
+     "start": 26.741
+    },
+    {
+     "word": "und",
+     "start": 27.455
+    },
+    {
+     "word": "ich",
+     "start": 27.693
+    },
+    {
+     "word": "höre",
+     "start": 27.93
+    },
+    {
+     "word": "sofort",
+     "start": 28.216
+    },
+    {
+     "word": "auf.",
+     "start": 28.597
+    }
+   ]
+  },
+  {
+   "file": "mess/line-2.wav",
+   "seconds": 9.159,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Messleitungen:",
+     "start": 0.334
+    },
+    {
+     "word": "*rot*",
+     "start": 1.27
+    },
+    {
+     "word": "ist",
+     "start": 1.504
+    },
+    {
+     "word": "L,",
+     "start": 1.737
+    },
+    {
+     "word": "*grün*",
+     "start": 2.112
+    },
+    {
+     "word": "ist",
+     "start": 2.392
+    },
+    {
+     "word": "PE",
+     "start": 2.626
+    },
+    {
+     "word": "und",
+     "start": 2.814
+    },
+    {
+     "word": "*blau*",
+     "start": 3.047
+    },
+    {
+     "word": "ist",
+     "start": 3.328
+    },
+    {
+     "word": "N.",
+     "start": 3.562
+    },
+    {
+     "word": "Dazu",
+     "start": 3.936
+    },
+    {
+     "word": "kommen",
+     "start": 4.217
+    },
+    {
+     "word": "das",
+     "start": 4.591
+    },
+    {
+     "word": "*Netzkabel*",
+     "start": 4.825
+    },
+    {
+     "word": "mit",
+     "start": 5.34
+    },
+    {
+     "word": "Schukostecker",
+     "start": 5.574
+    },
+    {
+     "word": "und",
+     "start": 6.276
+    },
+    {
+     "word": "der",
+     "start": 6.51
+    },
+    {
+     "word": "*Zero*-Adapter",
+     "start": 6.744
+    },
+    {
+     "word": "für",
+     "start": 7.352
+    },
+    {
+     "word": "den",
+     "start": 7.586
+    },
+    {
+     "word": "Nullabgleich.",
+     "start": 7.82
+    }
+   ]
+  },
+  {
+   "file": "mess/line-3.wav",
+   "seconds": 8.528,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Anlage",
+     "start": 0.301
+    },
+    {
+     "word": "ist",
+     "start": 0.624
+    },
+    {
+     "word": "*freigeschaltet*:",
+     "start": 0.825
+    },
+    {
+     "word": "Der",
+     "start": 1.671
+    },
+    {
+     "word": "CEE-Stecker",
+     "start": 1.873
+    },
+    {
+     "word": "ist",
+     "start": 2.356
+    },
+    {
+     "word": "gezogen",
+     "start": 2.558
+    },
+    {
+     "word": "und",
+     "start": 2.921
+    },
+    {
+     "word": "liegt",
+     "start": 3.122
+    },
+    {
+     "word": "bei",
+     "start": 3.404
+    },
+    {
+     "word": "mir,",
+     "start": 3.606
+    },
+    {
+     "word": "die",
+     "start": 4.009
+    },
+    {
+     "word": "Spannungsfreiheit",
+     "start": 4.21
+    },
+    {
+     "word": "habe",
+     "start": 4.976
+    },
+    {
+     "word": "ich",
+     "start": 5.217
+    },
+    {
+     "word": "festgestellt.",
+     "start": 5.419
+    },
+    {
+     "word": "Ich",
+     "start": 6.184
+    },
+    {
+     "word": "stelle",
+     "start": 6.386
+    },
+    {
+     "word": "den",
+     "start": 6.708
+    },
+    {
+     "word": "*Drehschalter*",
+     "start": 6.91
+    },
+    {
+     "word": "auf",
+     "start": 7.474
+    },
+    {
+     "word": "RLO.",
+     "start": 7.675
+    }
+   ]
+  },
+  {
+   "file": "mess/line-4.wav",
+   "seconds": 18.129,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.445
+    },
+    {
+     "word": "Einstellungen.",
+     "start": 0.691
+    },
+    {
+     "word": "Mit",
+     "start": 1.676
+    },
+    {
+     "word": "*F1*",
+     "start": 1.922
+    },
+    {
+     "word": "wähle",
+     "start": 2.119
+    },
+    {
+     "word": "ich",
+     "start": 2.464
+    },
+    {
+     "word": "das",
+     "start": 2.71
+    },
+    {
+     "word": "Messleitungspaar",
+     "start": 2.956
+    },
+    {
+     "word": "L-PE,",
+     "start": 3.842
+    },
+    {
+     "word": "also",
+     "start": 4.335
+    },
+    {
+     "word": "rot",
+     "start": 4.63
+    },
+    {
+     "word": "und",
+     "start": 4.876
+    },
+    {
+     "word": "grün.",
+     "start": 5.123
+    },
+    {
+     "word": "Mit",
+     "start": 5.664
+    },
+    {
+     "word": "*F4*",
+     "start": 5.911
+    },
+    {
+     "word": "stelle",
+     "start": 6.108
+    },
+    {
+     "word": "ich",
+     "start": 6.501
+    },
+    {
+     "word": "den",
+     "start": 6.748
+    },
+    {
+     "word": "Prüfstrom",
+     "start": 6.994
+    },
+    {
+     "word": "auf",
+     "start": 7.536
+    },
+    {
+     "word": "*250*",
+     "start": 7.782
+    },
+    {
+     "word": "Milliampere,",
+     "start": 8.028
+    },
+    {
+     "word": "denn",
+     "start": 8.914
+    },
+    {
+     "word": "die",
+     "start": 9.21
+    },
+    {
+     "word": "Norm",
+     "start": 9.456
+    },
+    {
+     "word": "verlangt",
+     "start": 9.751
+    },
+    {
+     "word": "mindestens",
+     "start": 10.244
+    },
+    {
+     "word": "200.",
+     "start": 10.835
+    },
+    {
+     "word": "Mit",
+     "start": 11.327
+    },
+    {
+     "word": "*F3*",
+     "start": 11.573
+    },
+    {
+     "word": "wähle",
+     "start": 11.77
+    },
+    {
+     "word": "ich",
+     "start": 12.115
+    },
+    {
+     "word": "die",
+     "start": 12.361
+    },
+    {
+     "word": "Polarität",
+     "start": 12.607
+    },
+    {
+     "word": "*plus-minus*:",
+     "start": 13.149
+    },
+    {
+     "word": "Das",
+     "start": 13.937
+    },
+    {
+     "word": "Gerät",
+     "start": 14.183
+    },
+    {
+     "word": "misst",
+     "start": 14.528
+    },
+    {
+     "word": "in",
+     "start": 14.873
+    },
+    {
+     "word": "beide",
+     "start": 15.07
+    },
+    {
+     "word": "Richtungen",
+     "start": 15.414
+    },
+    {
+     "word": "und",
+     "start": 16.005
+    },
+    {
+     "word": "zeigt",
+     "start": 16.251
+    },
+    {
+     "word": "den",
+     "start": 16.596
+    },
+    {
+     "word": "Mittelwert.",
+     "start": 16.842
+    }
+   ]
+  },
+  {
+   "file": "mess/line-5.wav",
+   "seconds": 11.771,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.1
+    },
+    {
+     "word": "der",
+     "start": 0.351
+    },
+    {
+     "word": "*Nullabgleich*.",
+     "start": 0.561
+    },
+    {
+     "word": "Ich",
+     "start": 1.356
+    },
+    {
+     "word": "stecke",
+     "start": 1.565
+    },
+    {
+     "word": "rot",
+     "start": 1.9
+    },
+    {
+     "word": "und",
+     "start": 2.11
+    },
+    {
+     "word": "grün",
+     "start": 2.319
+    },
+    {
+     "word": "in",
+     "start": 2.57
+    },
+    {
+     "word": "den",
+     "start": 2.738
+    },
+    {
+     "word": "Zero-Adapter",
+     "start": 2.947
+    },
+    {
+     "word": "und",
+     "start": 3.492
+    },
+    {
+     "word": "halte",
+     "start": 3.701
+    },
+    {
+     "word": "*F2*",
+     "start": 3.994
+    },
+    {
+     "word": "zwei",
+     "start": 4.161
+    },
+    {
+     "word": "bis",
+     "start": 4.413
+    },
+    {
+     "word": "sechs",
+     "start": 4.622
+    },
+    {
+     "word": "Sekunden",
+     "start": 4.915
+    },
+    {
+     "word": "gedrückt,",
+     "start": 5.334
+    },
+    {
+     "word": "bis",
+     "start": 5.962
+    },
+    {
+     "word": "das",
+     "start": 6.171
+    },
+    {
+     "word": "*Zero*-Symbol",
+     "start": 6.381
+    },
+    {
+     "word": "erscheint",
+     "start": 6.883
+    },
+    {
+     "word": "und",
+     "start": 7.344
+    },
+    {
+     "word": "das",
+     "start": 7.553
+    },
+    {
+     "word": "Gerät",
+     "start": 7.762
+    },
+    {
+     "word": "*piept*.",
+     "start": 8.055
+    },
+    {
+     "word": "Jetzt",
+     "start": 8.558
+    },
+    {
+     "word": "wird",
+     "start": 8.851
+    },
+    {
+     "word": "der",
+     "start": 9.102
+    },
+    {
+     "word": "Widerstand",
+     "start": 9.312
+    },
+    {
+     "word": "der",
+     "start": 9.814
+    },
+    {
+     "word": "Messleitungen",
+     "start": 10.023
+    },
+    {
+     "word": "abgezogen.",
+     "start": 10.651
+    }
+   ]
+  },
+  {
+   "file": "mess/line-6.wav",
+   "seconds": 13.308,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "*grüne*",
+     "start": 0.329
+    },
+    {
+     "word": "Leitung",
+     "start": 0.649
+    },
+    {
+     "word": "klemme",
+     "start": 1.06
+    },
+    {
+     "word": "ich",
+     "start": 1.426
+    },
+    {
+     "word": "mit",
+     "start": 1.655
+    },
+    {
+     "word": "der",
+     "start": 1.883
+    },
+    {
+     "word": "Krokodilklemme",
+     "start": 2.112
+    },
+    {
+     "word": "an",
+     "start": 2.844
+    },
+    {
+     "word": "den",
+     "start": 3.027
+    },
+    {
+     "word": "PE-Kontakt",
+     "start": 3.255
+    },
+    {
+     "word": "vom",
+     "start": 3.758
+    },
+    {
+     "word": "CEE-Stecker.",
+     "start": 3.987
+    },
+    {
+     "word": "Mit",
+     "start": 4.764
+    },
+    {
+     "word": "der",
+     "start": 4.993
+    },
+    {
+     "word": "*roten*",
+     "start": 5.221
+    },
+    {
+     "word": "Spitze",
+     "start": 5.542
+    },
+    {
+     "word": "gehe",
+     "start": 5.907
+    },
+    {
+     "word": "ich",
+     "start": 6.182
+    },
+    {
+     "word": "an",
+     "start": 6.41
+    },
+    {
+     "word": "den",
+     "start": 6.593
+    },
+    {
+     "word": "PE-Bolzen",
+     "start": 6.822
+    },
+    {
+     "word": "der",
+     "start": 7.279
+    },
+    {
+     "word": "*Montageplatte*.",
+     "start": 7.508
+    },
+    {
+     "word": "Touchpad",
+     "start": 8.422
+    },
+    {
+     "word": "berühren,",
+     "start": 8.88
+    },
+    {
+     "word": "*TEST*",
+     "start": 9.565
+    },
+    {
+     "word": "gedrückt",
+     "start": 9.84
+    },
+    {
+     "word": "halten,",
+     "start": 10.297
+    },
+    {
+     "word": "bis",
+     "start": 10.892
+    },
+    {
+     "word": "der",
+     "start": 11.12
+    },
+    {
+     "word": "Wert",
+     "start": 11.349
+    },
+    {
+     "word": "steht:",
+     "start": 11.623
+    },
+    {
+     "word": "0,08",
+     "start": 12.172
+    },
+    {
+     "word": "*Ohm*.",
+     "start": 12.401
+    }
+   ]
+  },
+  {
+   "file": "mess/line-7.wav",
+   "seconds": 16.129,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.44
+    },
+    {
+     "word": "rote",
+     "start": 0.723
+    },
+    {
+     "word": "Spitze",
+     "start": 1.063
+    },
+    {
+     "word": "an",
+     "start": 1.516
+    },
+    {
+     "word": "den",
+     "start": 1.743
+    },
+    {
+     "word": "*Schutzkontakt*",
+     "start": 2.026
+    },
+    {
+     "word": "der",
+     "start": 2.876
+    },
+    {
+     "word": "Steckdose:",
+     "start": 3.159
+    },
+    {
+     "word": "0,14",
+     "start": 4.065
+    },
+    {
+     "word": "Ohm.",
+     "start": 4.349
+    },
+    {
+     "word": "An",
+     "start": 4.915
+    },
+    {
+     "word": "*X1*",
+     "start": 5.142
+    },
+    {
+     "word": "Klemme",
+     "start": 5.368
+    },
+    {
+     "word": "16,",
+     "start": 5.822
+    },
+    {
+     "word": "den",
+     "start": 6.331
+    },
+    {
+     "word": "PE",
+     "start": 6.615
+    },
+    {
+     "word": "vom",
+     "start": 6.841
+    },
+    {
+     "word": "*Motor*:",
+     "start": 7.125
+    },
+    {
+     "word": "0,21",
+     "start": 7.804
+    },
+    {
+     "word": "Ohm.",
+     "start": 8.088
+    },
+    {
+     "word": "*Und*",
+     "start": 8.654
+    },
+    {
+     "word": "an",
+     "start": 8.937
+    },
+    {
+     "word": "den",
+     "start": 9.164
+    },
+    {
+     "word": "PE",
+     "start": 9.447
+    },
+    {
+     "word": "der",
+     "start": 9.674
+    },
+    {
+     "word": "*Bedieneinheit*:",
+     "start": 9.957
+    },
+    {
+     "word": "0,11",
+     "start": 11.09
+    },
+    {
+     "word": "Ohm.",
+     "start": 11.373
+    },
+    {
+     "word": "Alle",
+     "start": 11.94
+    },
+    {
+     "word": "Werte",
+     "start": 12.28
+    },
+    {
+     "word": "sind",
+     "start": 12.676
+    },
+    {
+     "word": "*niedrig*",
+     "start": 13.016
+    },
+    {
+     "word": "und",
+     "start": 13.526
+    },
+    {
+     "word": "passen",
+     "start": 13.809
+    },
+    {
+     "word": "zur",
+     "start": 14.262
+    },
+    {
+     "word": "Leitungslänge.",
+     "start": 14.546
+    }
+   ]
+  },
+  {
+   "file": "mess/line-8.wav",
+   "seconds": 4.226,
+   "words": [
+    {
+     "word": "Ins",
+     "start": 0.1
+    },
+    {
+     "word": "Protokoll",
+     "start": 0.33
+    },
+    {
+     "word": "schreibe",
+     "start": 0.835
+    },
+    {
+     "word": "ich",
+     "start": 1.295
+    },
+    {
+     "word": "den",
+     "start": 1.524
+    },
+    {
+     "word": "*größten*",
+     "start": 1.754
+    },
+    {
+     "word": "Wert:",
+     "start": 2.168
+    },
+    {
+     "word": "0,21",
+     "start": 2.673
+    },
+    {
+     "word": "Ohm,",
+     "start": 2.903
+    },
+    {
+     "word": "OK.",
+     "start": 3.362
+    }
+   ]
+  },
+  {
+   "file": "mess/line-9.wav",
+   "seconds": 12.459,
+   "words": [
+    {
+     "word": "Vor",
+     "start": 0.1
+    },
+    {
+     "word": "der",
+     "start": 0.324
+    },
+    {
+     "word": "Isolationsmessung",
+     "start": 0.548
+    },
+    {
+     "word": "*klemme*",
+     "start": 1.398
+    },
+    {
+     "word": "ich",
+     "start": 1.757
+    },
+    {
+     "word": "das",
+     "start": 1.98
+    },
+    {
+     "word": "Netzteil",
+     "start": 2.204
+    },
+    {
+     "word": "T1",
+     "start": 2.652
+    },
+    {
+     "word": "ab,",
+     "start": 2.831
+    },
+    {
+     "word": "damit",
+     "start": 3.234
+    },
+    {
+     "word": "die",
+     "start": 3.547
+    },
+    {
+     "word": "500",
+     "start": 3.771
+    },
+    {
+     "word": "Volt",
+     "start": 3.995
+    },
+    {
+     "word": "die",
+     "start": 4.264
+    },
+    {
+     "word": "Elektronik",
+     "start": 4.488
+    },
+    {
+     "word": "nicht",
+     "start": 5.025
+    },
+    {
+     "word": "beschädigen.",
+     "start": 5.338
+    },
+    {
+     "word": "F1,",
+     "start": 6.144
+    },
+    {
+     "word": "F3",
+     "start": 6.547
+    },
+    {
+     "word": "und",
+     "start": 6.726
+    },
+    {
+     "word": "den",
+     "start": 6.95
+    },
+    {
+     "word": "Motorschutzschalter",
+     "start": 7.174
+    },
+    {
+     "word": "F4",
+     "start": 8.114
+    },
+    {
+     "word": "schalte",
+     "start": 8.293
+    },
+    {
+     "word": "ich",
+     "start": 8.696
+    },
+    {
+     "word": "*ein*,",
+     "start": 8.92
+    },
+    {
+     "word": "damit",
+     "start": 9.368
+    },
+    {
+     "word": "die",
+     "start": 9.681
+    },
+    {
+     "word": "Leitungen",
+     "start": 9.905
+    },
+    {
+     "word": "dahinter",
+     "start": 10.397
+    },
+    {
+     "word": "mitgemessen",
+     "start": 10.845
+    },
+    {
+     "word": "werden.",
+     "start": 11.427
+    }
+   ]
+  },
+  {
+   "file": "mess/line-10.wav",
+   "seconds": 12.744,
+   "words": [
+    {
+     "word": "Drehschalter",
+     "start": 0.1
+    },
+    {
+     "word": "auf",
+     "start": 0.803
+    },
+    {
+     "word": "*RISO*.",
+     "start": 1.053
+    },
+    {
+     "word": "Mit",
+     "start": 1.605
+    },
+    {
+     "word": "*F1*",
+     "start": 1.856
+    },
+    {
+     "word": "wieder",
+     "start": 2.057
+    },
+    {
+     "word": "das",
+     "start": 2.459
+    },
+    {
+     "word": "Paar",
+     "start": 2.709
+    },
+    {
+     "word": "rot",
+     "start": 3.011
+    },
+    {
+     "word": "und",
+     "start": 3.261
+    },
+    {
+     "word": "grün.",
+     "start": 3.512
+    },
+    {
+     "word": "Mit",
+     "start": 4.064
+    },
+    {
+     "word": "*F4*",
+     "start": 4.315
+    },
+    {
+     "word": "stelle",
+     "start": 4.516
+    },
+    {
+     "word": "ich",
+     "start": 4.917
+    },
+    {
+     "word": "die",
+     "start": 5.168
+    },
+    {
+     "word": "Prüfspannung",
+     "start": 5.419
+    },
+    {
+     "word": "auf",
+     "start": 6.122
+    },
+    {
+     "word": "*500*",
+     "start": 6.373
+    },
+    {
+     "word": "Volt.",
+     "start": 6.624
+    },
+    {
+     "word": "Den",
+     "start": 7.176
+    },
+    {
+     "word": "*Pretest*",
+     "start": 7.427
+    },
+    {
+     "word": "mit",
+     "start": 7.878
+    },
+    {
+     "word": "F3",
+     "start": 8.129
+    },
+    {
+     "word": "lasse",
+     "start": 8.33
+    },
+    {
+     "word": "ich",
+     "start": 8.681
+    },
+    {
+     "word": "aus,",
+     "start": 8.932
+    },
+    {
+     "word": "weil",
+     "start": 9.434
+    },
+    {
+     "word": "ich",
+     "start": 9.735
+    },
+    {
+     "word": "einzelne",
+     "start": 9.986
+    },
+    {
+     "word": "Klemmen",
+     "start": 10.488
+    },
+    {
+     "word": "gegeneinander",
+     "start": 10.939
+    },
+    {
+     "word": "messe.",
+     "start": 11.692
+    }
+   ]
+  },
+  {
+   "file": "mess/line-11.wav",
+   "seconds": 18.408,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "messe",
+     "start": 0.477
+    },
+    {
+     "word": "ich",
+     "start": 0.853
+    },
+    {
+     "word": "an",
+     "start": 1.122
+    },
+    {
+     "word": "X1,",
+     "start": 1.337
+    },
+    {
+     "word": "genau",
+     "start": 1.821
+    },
+    {
+     "word": "die",
+     "start": 2.198
+    },
+    {
+     "word": "Paare",
+     "start": 2.467
+    },
+    {
+     "word": "aus",
+     "start": 2.843
+    },
+    {
+     "word": "dem",
+     "start": 3.112
+    },
+    {
+     "word": "Protokoll.",
+     "start": 3.381
+    },
+    {
+     "word": "Rot",
+     "start": 4.242
+    },
+    {
+     "word": "an",
+     "start": 4.511
+    },
+    {
+     "word": "*L1*,",
+     "start": 4.726
+    },
+    {
+     "word": "grün",
+     "start": 5.21
+    },
+    {
+     "word": "an",
+     "start": 5.533
+    },
+    {
+     "word": "*L2*.",
+     "start": 5.748
+    },
+    {
+     "word": "Touchpad,",
+     "start": 6.232
+    },
+    {
+     "word": "*TEST*",
+     "start": 7.039
+    },
+    {
+     "word": "gedrückt",
+     "start": 7.361
+    },
+    {
+     "word": "halten,",
+     "start": 7.899
+    },
+    {
+     "word": "bis",
+     "start": 8.598
+    },
+    {
+     "word": "es",
+     "start": 8.867
+    },
+    {
+     "word": "piept.",
+     "start": 9.083
+    },
+    {
+     "word": "Oben",
+     "start": 9.728
+    },
+    {
+     "word": "steht",
+     "start": 10.051
+    },
+    {
+     "word": "der",
+     "start": 10.427
+    },
+    {
+     "word": "Widerstand:",
+     "start": 10.696
+    },
+    {
+     "word": "620",
+     "start": 11.611
+    },
+    {
+     "word": "*Megaohm*.",
+     "start": 11.88
+    },
+    {
+     "word": "Unten",
+     "start": 12.633
+    },
+    {
+     "word": "die",
+     "start": 13.009
+    },
+    {
+     "word": "echte",
+     "start": 13.278
+    },
+    {
+     "word": "*Prüfspannung*:",
+     "start": 13.655
+    },
+    {
+     "word": "527",
+     "start": 14.676
+    },
+    {
+     "word": "Volt.",
+     "start": 14.945
+    },
+    {
+     "word": "Die",
+     "start": 15.537
+    },
+    {
+     "word": "muss",
+     "start": 15.806
+    },
+    {
+     "word": "mindestens",
+     "start": 16.129
+    },
+    {
+     "word": "500",
+     "start": 16.774
+    },
+    {
+     "word": "Volt",
+     "start": 17.043
+    },
+    {
+     "word": "sein.",
+     "start": 17.366
+    }
+   ]
+  },
+  {
+   "file": "mess/line-12.wav",
+   "seconds": 18.224,
+   "words": [
+    {
+     "word": "So",
+     "start": 0.1
+    },
+    {
+     "word": "mache",
+     "start": 0.339
+    },
+    {
+     "word": "ich",
+     "start": 0.757
+    },
+    {
+     "word": "*weiter*:",
+     "start": 1.055
+    },
+    {
+     "word": "L1",
+     "start": 1.832
+    },
+    {
+     "word": "gegen",
+     "start": 2.07
+    },
+    {
+     "word": "L3,",
+     "start": 2.488
+    },
+    {
+     "word": "L1",
+     "start": 3.026
+    },
+    {
+     "word": "gegen",
+     "start": 3.265
+    },
+    {
+     "word": "N,",
+     "start": 3.682
+    },
+    {
+     "word": "L1",
+     "start": 4.16
+    },
+    {
+     "word": "gegen",
+     "start": 4.399
+    },
+    {
+     "word": "PE,",
+     "start": 4.817
+    },
+    {
+     "word": "dann",
+     "start": 5.354
+    },
+    {
+     "word": "L2",
+     "start": 5.713
+    },
+    {
+     "word": "gegen",
+     "start": 5.951
+    },
+    {
+     "word": "L3,",
+     "start": 6.369
+    },
+    {
+     "word": "L2",
+     "start": 6.907
+    },
+    {
+     "word": "gegen",
+     "start": 7.146
+    },
+    {
+     "word": "N,",
+     "start": 7.564
+    },
+    {
+     "word": "L2",
+     "start": 8.041
+    },
+    {
+     "word": "gegen",
+     "start": 8.28
+    },
+    {
+     "word": "PE,",
+     "start": 8.698
+    },
+    {
+     "word": "L3",
+     "start": 9.235
+    },
+    {
+     "word": "gegen",
+     "start": 9.474
+    },
+    {
+     "word": "N,",
+     "start": 9.892
+    },
+    {
+     "word": "L3",
+     "start": 10.37
+    },
+    {
+     "word": "gegen",
+     "start": 10.609
+    },
+    {
+     "word": "PE",
+     "start": 11.027
+    },
+    {
+     "word": "und",
+     "start": 11.265
+    },
+    {
+     "word": "zum",
+     "start": 11.564
+    },
+    {
+     "word": "*Schluss*",
+     "start": 11.863
+    },
+    {
+     "word": "N",
+     "start": 12.4
+    },
+    {
+     "word": "gegen",
+     "start": 12.579
+    },
+    {
+     "word": "PE.",
+     "start": 12.997
+    },
+    {
+     "word": "Alle",
+     "start": 13.534
+    },
+    {
+     "word": "Werte",
+     "start": 13.893
+    },
+    {
+     "word": "liegen",
+     "start": 14.311
+    },
+    {
+     "word": "weit",
+     "start": 14.788
+    },
+    {
+     "word": "über",
+     "start": 15.146
+    },
+    {
+     "word": "dem",
+     "start": 15.505
+    },
+    {
+     "word": "*Grenzwert*",
+     "start": 15.803
+    },
+    {
+     "word": "von",
+     "start": 16.46
+    },
+    {
+     "word": "1",
+     "start": 16.759
+    },
+    {
+     "word": "Megaohm.",
+     "start": 16.938
+    }
+   ]
+  },
+  {
+   "file": "mess/line-13.wav",
+   "seconds": 4.333,
+   "words": [
+    {
+     "word": "Alle",
+     "start": 0.1
+    },
+    {
+     "word": "Werte",
+     "start": 0.318
+    },
+    {
+     "word": "trage",
+     "start": 0.573
+    },
+    {
+     "word": "ich",
+     "start": 0.828
+    },
+    {
+     "word": "in",
+     "start": 1.009
+    },
+    {
+     "word": "die",
+     "start": 1.155
+    },
+    {
+     "word": "*Tabelle*",
+     "start": 1.337
+    },
+    {
+     "word": "ein.",
+     "start": 1.664
+    },
+    {
+     "word": "Dann",
+     "start": 2.028
+    },
+    {
+     "word": "klemme",
+     "start": 2.246
+    },
+    {
+     "word": "ich",
+     "start": 2.537
+    },
+    {
+     "word": "das",
+     "start": 2.719
+    },
+    {
+     "word": "Netzteil",
+     "start": 2.901
+    },
+    {
+     "word": "*wieder*",
+     "start": 3.265
+    },
+    {
+     "word": "an.",
+     "start": 3.556
+    }
+   ]
+  },
+  {
+   "file": "mess/line-14.wav",
+   "seconds": 8.153,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Messungen",
+     "start": 0.302
+    },
+    {
+     "word": "ohne",
+     "start": 0.747
+    },
+    {
+     "word": "Spannung",
+     "start": 0.99
+    },
+    {
+     "word": "sind",
+     "start": 1.394
+    },
+    {
+     "word": "in",
+     "start": 1.637
+    },
+    {
+     "word": "Ordnung.",
+     "start": 1.798
+    },
+    {
+     "word": "Ich",
+     "start": 2.365
+    },
+    {
+     "word": "frage",
+     "start": 2.567
+    },
+    {
+     "word": "den",
+     "start": 2.85
+    },
+    {
+     "word": "Prüfer,",
+     "start": 3.052
+    },
+    {
+     "word": "ob",
+     "start": 3.578
+    },
+    {
+     "word": "ich",
+     "start": 3.74
+    },
+    {
+     "word": "einschalten",
+     "start": 3.942
+    },
+    {
+     "word": "darf,",
+     "start": 4.468
+    },
+    {
+     "word": "und",
+     "start": 4.912
+    },
+    {
+     "word": "erst",
+     "start": 5.115
+    },
+    {
+     "word": "nach",
+     "start": 5.357
+    },
+    {
+     "word": "seinem",
+     "start": 5.6
+    },
+    {
+     "word": "*Ja*",
+     "start": 5.923
+    },
+    {
+     "word": "stecke",
+     "start": 6.085
+    },
+    {
+     "word": "ich",
+     "start": 6.409
+    },
+    {
+     "word": "den",
+     "start": 6.611
+    },
+    {
+     "word": "CEE-Stecker",
+     "start": 6.813
+    },
+    {
+     "word": "ein.",
+     "start": 7.298
+    }
+   ]
+  },
+  {
+   "file": "mess/line-15.wav",
+   "seconds": 18.21,
+   "words": [
+    {
+     "word": "Drehschalter",
+     "start": 0.1
+    },
+    {
+     "word": "auf",
+     "start": 0.882
+    },
+    {
+     "word": "das",
+     "start": 1.162
+    },
+    {
+     "word": "*Drehfeld*-Symbol.",
+     "start": 1.441
+    },
+    {
+     "word": "Jetzt",
+     "start": 2.615
+    },
+    {
+     "word": "brauche",
+     "start": 3.006
+    },
+    {
+     "word": "ich",
+     "start": 3.509
+    },
+    {
+     "word": "alle",
+     "start": 3.788
+    },
+    {
+     "word": "drei",
+     "start": 4.124
+    },
+    {
+     "word": "Leitungen:",
+     "start": 4.459
+    },
+    {
+     "word": "*rot*",
+     "start": 5.353
+    },
+    {
+     "word": "an",
+     "start": 5.633
+    },
+    {
+     "word": "L1,",
+     "start": 5.856
+    },
+    {
+     "word": "*grün*",
+     "start": 6.359
+    },
+    {
+     "word": "an",
+     "start": 6.694
+    },
+    {
+     "word": "L2",
+     "start": 6.918
+    },
+    {
+     "word": "und",
+     "start": 7.141
+    },
+    {
+     "word": "*blau*",
+     "start": 7.421
+    },
+    {
+     "word": "an",
+     "start": 7.756
+    },
+    {
+     "word": "L3,",
+     "start": 7.98
+    },
+    {
+     "word": "also",
+     "start": 8.483
+    },
+    {
+     "word": "X1",
+     "start": 8.818
+    },
+    {
+     "word": "Klemme",
+     "start": 9.042
+    },
+    {
+     "word": "1,",
+     "start": 9.489
+    },
+    {
+     "word": "3",
+     "start": 9.936
+    },
+    {
+     "word": "und",
+     "start": 10.103
+    },
+    {
+     "word": "5.",
+     "start": 10.383
+    },
+    {
+     "word": "Das",
+     "start": 10.83
+    },
+    {
+     "word": "Display",
+     "start": 11.109
+    },
+    {
+     "word": "zeigt",
+     "start": 11.612
+    },
+    {
+     "word": "*123*.",
+     "start": 12.003
+    },
+    {
+     "word": "Das",
+     "start": 12.562
+    },
+    {
+     "word": "heißt",
+     "start": 12.842
+    },
+    {
+     "word": "*Rechtsdrehfeld*.",
+     "start": 13.233
+    },
+    {
+     "word": "Würde",
+     "start": 14.406
+    },
+    {
+     "word": "321",
+     "start": 14.798
+    },
+    {
+     "word": "stehen,",
+     "start": 15.077
+    },
+    {
+     "word": "wäre",
+     "start": 15.804
+    },
+    {
+     "word": "es",
+     "start": 16.139
+    },
+    {
+     "word": "ein",
+     "start": 16.362
+    },
+    {
+     "word": "Linksdrehfeld.",
+     "start": 16.642
+    }
+   ]
+  },
+  {
+   "file": "mess/line-16.wav",
+   "seconds": 2.775,
+   "words": [
+    {
+     "word": "Im",
+     "start": 0.1
+    },
+    {
+     "word": "Protokoll:",
+     "start": 0.271
+    },
+    {
+     "word": "*Drehfeld*",
+     "start": 0.956
+    },
+    {
+     "word": "rechts,",
+     "start": 1.384
+    },
+    {
+     "word": "OK.",
+     "start": 1.94
+    }
+   ]
+  },
+  {
+   "file": "mess/line-17.wav",
+   "seconds": 17.749,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.476
+    },
+    {
+     "word": "*Auslösezeit*",
+     "start": 0.745
+    },
+    {
+     "word": "vom",
+     "start": 1.444
+    },
+    {
+     "word": "FI/LS",
+     "start": 1.712
+    },
+    {
+     "word": "F3.",
+     "start": 2.035
+    },
+    {
+     "word": "Drehschalter",
+     "start": 2.519
+    },
+    {
+     "word": "auf",
+     "start": 3.271
+    },
+    {
+     "word": "*Delta*",
+     "start": 3.54
+    },
+    {
+     "word": "T.",
+     "start": 3.916
+    },
+    {
+     "word": "Mit",
+     "start": 4.346
+    },
+    {
+     "word": "*F4*",
+     "start": 4.615
+    },
+    {
+     "word": "den",
+     "start": 4.83
+    },
+    {
+     "word": "Bemessungsfehlerstrom:",
+     "start": 5.098
+    },
+    {
+     "word": "*10*",
+     "start": 6.603
+    },
+    {
+     "word": "Milliampere.",
+     "start": 6.818
+    },
+    {
+     "word": "Mit",
+     "start": 7.786
+    },
+    {
+     "word": "*F2*",
+     "start": 8.054
+    },
+    {
+     "word": "den",
+     "start": 8.269
+    },
+    {
+     "word": "Faktor",
+     "start": 8.538
+    },
+    {
+     "word": "*mal*",
+     "start": 8.968
+    },
+    {
+     "word": "1.",
+     "start": 9.237
+    },
+    {
+     "word": "Mit",
+     "start": 9.667
+    },
+    {
+     "word": "*F3*",
+     "start": 9.936
+    },
+    {
+     "word": "die",
+     "start": 10.151
+    },
+    {
+     "word": "Kurvenform",
+     "start": 10.419
+    },
+    {
+     "word": "passend",
+     "start": 11.064
+    },
+    {
+     "word": "zum",
+     "start": 11.548
+    },
+    {
+     "word": "FI-Typ,",
+     "start": 11.817
+    },
+    {
+     "word": "der",
+     "start": 12.462
+    },
+    {
+     "word": "auf",
+     "start": 12.73
+    },
+    {
+     "word": "dem",
+     "start": 12.999
+    },
+    {
+     "word": "Gerät",
+     "start": 13.268
+    },
+    {
+     "word": "aufgedruckt",
+     "start": 13.644
+    },
+    {
+     "word": "ist.",
+     "start": 14.343
+    },
+    {
+     "word": "Und",
+     "start": 14.88
+    },
+    {
+     "word": "mit",
+     "start": 15.149
+    },
+    {
+     "word": "*F1*",
+     "start": 15.418
+    },
+    {
+     "word": "die",
+     "start": 15.633
+    },
+    {
+     "word": "Phasenlage",
+     "start": 15.901
+    },
+    {
+     "word": "*0*",
+     "start": 16.546
+    },
+    {
+     "word": "Grad.",
+     "start": 16.708
+    }
+   ]
+  },
+  {
+   "file": "mess/line-18.wav",
+   "seconds": 16.617,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.1
+    },
+    {
+     "word": "stecke",
+     "start": 0.361
+    },
+    {
+     "word": "den",
+     "start": 0.778
+    },
+    {
+     "word": "Schukostecker",
+     "start": 1.039
+    },
+    {
+     "word": "vom",
+     "start": 1.821
+    },
+    {
+     "word": "*Netzkabel*",
+     "start": 2.082
+    },
+    {
+     "word": "des",
+     "start": 2.656
+    },
+    {
+     "word": "Fluke",
+     "start": 2.917
+    },
+    {
+     "word": "in",
+     "start": 3.282
+    },
+    {
+     "word": "die",
+     "start": 3.491
+    },
+    {
+     "word": "Steckdose",
+     "start": 3.752
+    },
+    {
+     "word": "X5.",
+     "start": 4.325
+    },
+    {
+     "word": "Touchpad",
+     "start": 4.795
+    },
+    {
+     "word": "berühren,",
+     "start": 5.316
+    },
+    {
+     "word": "*TEST*",
+     "start": 6.099
+    },
+    {
+     "word": "drücken",
+     "start": 6.412
+    },
+    {
+     "word": "und",
+     "start": 6.881
+    },
+    {
+     "word": "loslassen.",
+     "start": 7.142
+    },
+    {
+     "word": "Der",
+     "start": 7.977
+    },
+    {
+     "word": "FI/LS",
+     "start": 8.238
+    },
+    {
+     "word": "*löst*",
+     "start": 8.551
+    },
+    {
+     "word": "aus.",
+     "start": 8.864
+    },
+    {
+     "word": "Oben",
+     "start": 9.385
+    },
+    {
+     "word": "steht",
+     "start": 9.698
+    },
+    {
+     "word": "die",
+     "start": 10.063
+    },
+    {
+     "word": "Auslösezeit:",
+     "start": 10.324
+    },
+    {
+     "word": "18",
+     "start": 11.263
+    },
+    {
+     "word": "*Millisekunden*.",
+     "start": 11.472
+    },
+    {
+     "word": "Unten",
+     "start": 12.515
+    },
+    {
+     "word": "steht",
+     "start": 12.88
+    },
+    {
+     "word": "U",
+     "start": 13.246
+    },
+    {
+     "word": "F,",
+     "start": 13.402
+    },
+    {
+     "word": "die",
+     "start": 13.819
+    },
+    {
+     "word": "*Berührungsspannung*:",
+     "start": 14.08
+    },
+    {
+     "word": "0,3",
+     "start": 15.384
+    },
+    {
+     "word": "Volt.",
+     "start": 15.593
+    }
+   ]
+  },
+  {
+   "file": "mess/line-19.wav",
+   "seconds": 17.633,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.1
+    },
+    {
+     "word": "schalte",
+     "start": 0.362
+    },
+    {
+     "word": "den",
+     "start": 0.834
+    },
+    {
+     "word": "FI/LS",
+     "start": 1.096
+    },
+    {
+     "word": "*wieder*",
+     "start": 1.41
+    },
+    {
+     "word": "ein,",
+     "start": 1.829
+    },
+    {
+     "word": "stelle",
+     "start": 2.353
+    },
+    {
+     "word": "mit",
+     "start": 2.773
+    },
+    {
+     "word": "F1",
+     "start": 3.035
+    },
+    {
+     "word": "auf",
+     "start": 3.244
+    },
+    {
+     "word": "*180*",
+     "start": 3.506
+    },
+    {
+     "word": "Grad",
+     "start": 3.768
+    },
+    {
+     "word": "und",
+     "start": 4.083
+    },
+    {
+     "word": "*messe*",
+     "start": 4.345
+    },
+    {
+     "word": "noch",
+     "start": 4.711
+    },
+    {
+     "word": "einmal:",
+     "start": 5.026
+    },
+    {
+     "word": "21",
+     "start": 5.707
+    },
+    {
+     "word": "Millisekunden.",
+     "start": 5.917
+    },
+    {
+     "word": "Grenzwert",
+     "start": 6.965
+    },
+    {
+     "word": "für",
+     "start": 7.541
+    },
+    {
+     "word": "die",
+     "start": 7.803
+    },
+    {
+     "word": "*Auslösezeit*",
+     "start": 8.065
+    },
+    {
+     "word": "sind",
+     "start": 8.747
+    },
+    {
+     "word": "300",
+     "start": 9.061
+    },
+    {
+     "word": "Millisekunden,",
+     "start": 9.323
+    },
+    {
+     "word": "für",
+     "start": 10.371
+    },
+    {
+     "word": "die",
+     "start": 10.633
+    },
+    {
+     "word": "*Berührungsspannung*",
+     "start": 10.895
+    },
+    {
+     "word": "50",
+     "start": 11.943
+    },
+    {
+     "word": "Volt.",
+     "start": 12.153
+    },
+    {
+     "word": "Beides",
+     "start": 12.729
+    },
+    {
+     "word": "passt,",
+     "start": 13.148
+    },
+    {
+     "word": "das",
+     "start": 13.777
+    },
+    {
+     "word": "Gerät",
+     "start": 14.039
+    },
+    {
+     "word": "zeigt",
+     "start": 14.406
+    },
+    {
+     "word": "zusätzlich",
+     "start": 14.773
+    },
+    {
+     "word": "ein",
+     "start": 15.402
+    },
+    {
+     "word": "*Häkchen*",
+     "start": 15.664
+    },
+    {
+     "word": "am",
+     "start": 16.135
+    },
+    {
+     "word": "RCD-Symbol.",
+     "start": 16.345
+    }
+   ]
+  },
+  {
+   "file": "mess/line-20.wav",
+   "seconds": 5.828,
+   "words": [
+    {
+     "word": "Ins",
+     "start": 0.1
+    },
+    {
+     "word": "Protokoll:",
+     "start": 0.349
+    },
+    {
+     "word": "*Berührungsspannung*",
+     "start": 1.146
+    },
+    {
+     "word": "OK",
+     "start": 2.142
+    },
+    {
+     "word": "und",
+     "start": 2.341
+    },
+    {
+     "word": "die",
+     "start": 2.59
+    },
+    {
+     "word": "längere",
+     "start": 2.839
+    },
+    {
+     "word": "Auslösezeit,",
+     "start": 3.287
+    },
+    {
+     "word": "*21*",
+     "start": 4.183
+    },
+    {
+     "word": "Millisekunden.",
+     "start": 4.382
+    }
+   ]
+  },
+  {
+   "file": "mess/line-21.wav",
+   "seconds": 5.269,
+   "words": [
+    {
+     "word": "Zum",
+     "start": 0.1
+    },
+    {
+     "word": "Schluss",
+     "start": 0.295
+    },
+    {
+     "word": "drücke",
+     "start": 0.646
+    },
+    {
+     "word": "ich",
+     "start": 0.958
+    },
+    {
+     "word": "die",
+     "start": 1.153
+    },
+    {
+     "word": "*Prüftaste*",
+     "start": 1.348
+    },
+    {
+     "word": "am",
+     "start": 1.777
+    },
+    {
+     "word": "FI/LS:",
+     "start": 1.933
+    },
+    {
+     "word": "Er",
+     "start": 2.362
+    },
+    {
+     "word": "*löst*",
+     "start": 2.518
+    },
+    {
+     "word": "aus.",
+     "start": 2.752
+    },
+    {
+     "word": "Dann",
+     "start": 3.142
+    },
+    {
+     "word": "schalte",
+     "start": 3.376
+    },
+    {
+     "word": "ich",
+     "start": 3.727
+    },
+    {
+     "word": "ihn",
+     "start": 3.922
+    },
+    {
+     "word": "*wieder*",
+     "start": 4.117
+    },
+    {
+     "word": "ein.",
+     "start": 4.429
+    }
+   ]
+  },
+  {
+   "file": "mess/line-22.wav",
+   "seconds": 6.132,
+   "words": [
+    {
+     "word": "Funktion",
+     "start": 0.1
+    },
+    {
+     "word": "der",
+     "start": 0.547
+    },
+    {
+     "word": "Anlage",
+     "start": 0.77
+    },
+    {
+     "word": "testen,",
+     "start": 1.127
+    },
+    {
+     "word": "im",
+     "start": 1.708
+    },
+    {
+     "word": "Protokoll",
+     "start": 1.886
+    },
+    {
+     "word": "alles",
+     "start": 2.377
+    },
+    {
+     "word": "*ankreuzen*,",
+     "start": 2.69
+    },
+    {
+     "word": "*mängelfrei*,",
+     "start": 3.405
+    },
+    {
+     "word": "unterschreiben.",
+     "start": 4.164
+    },
+    {
+     "word": "Fertig.",
+     "start": 5.102
+    }
+   ]
+  },
+  {
+   "file": "mess/line-23.wav",
+   "seconds": 31.718,
+   "words": [
+    {
+     "word": "Hier",
+     "start": 0.1
+    },
+    {
+     "word": "noch",
+     "start": 0.495
+    },
+    {
+     "word": "mal",
+     "start": 0.891
+    },
+    {
+     "word": "alle",
+     "start": 1.22
+    },
+    {
+     "word": "*Einstellungen*",
+     "start": 1.616
+    },
+    {
+     "word": "auf",
+     "start": 2.604
+    },
+    {
+     "word": "einen",
+     "start": 2.933
+    },
+    {
+     "word": "Blick.",
+     "start": 3.395
+    },
+    {
+     "word": "*RLO*:",
+     "start": 4.185
+    },
+    {
+     "word": "F1",
+     "start": 4.844
+    },
+    {
+     "word": "rot-grün,",
+     "start": 5.108
+    },
+    {
+     "word": "F4",
+     "start": 6.03
+    },
+    {
+     "word": "250",
+     "start": 6.294
+    },
+    {
+     "word": "Milliampere,",
+     "start": 6.623
+    },
+    {
+     "word": "F3",
+     "start": 7.81
+    },
+    {
+     "word": "plus-minus,",
+     "start": 8.073
+    },
+    {
+     "word": "F2",
+     "start": 9.127
+    },
+    {
+     "word": "Nullabgleich.",
+     "start": 9.391
+    },
+    {
+     "word": "*RISO*:",
+     "start": 10.643
+    },
+    {
+     "word": "F4",
+     "start": 11.368
+    },
+    {
+     "word": "500",
+     "start": 11.631
+    },
+    {
+     "word": "Volt,",
+     "start": 11.961
+    },
+    {
+     "word": "TEST",
+     "start": 12.686
+    },
+    {
+     "word": "halten",
+     "start": 13.081
+    },
+    {
+     "word": "bis",
+     "start": 13.608
+    },
+    {
+     "word": "zum",
+     "start": 13.938
+    },
+    {
+     "word": "Piep.",
+     "start": 14.267
+    },
+    {
+     "word": "*Drehfeld*:",
+     "start": 14.992
+    },
+    {
+     "word": "rot",
+     "start": 15.98
+    },
+    {
+     "word": "L1,",
+     "start": 16.31
+    },
+    {
+     "word": "grün",
+     "start": 16.903
+    },
+    {
+     "word": "L2,",
+     "start": 17.298
+    },
+    {
+     "word": "blau",
+     "start": 17.891
+    },
+    {
+     "word": "L3,",
+     "start": 18.287
+    },
+    {
+     "word": "123",
+     "start": 18.88
+    },
+    {
+     "word": "heißt",
+     "start": 19.209
+    },
+    {
+     "word": "rechts.",
+     "start": 19.67
+    },
+    {
+     "word": "*Delta*",
+     "start": 20.527
+    },
+    {
+     "word": "T:",
+     "start": 20.988
+    },
+    {
+     "word": "F4",
+     "start": 21.516
+    },
+    {
+     "word": "10",
+     "start": 21.779
+    },
+    {
+     "word": "Milliampere,",
+     "start": 22.043
+    },
+    {
+     "word": "F2",
+     "start": 23.229
+    },
+    {
+     "word": "mal",
+     "start": 23.492
+    },
+    {
+     "word": "1,",
+     "start": 23.822
+    },
+    {
+     "word": "F3",
+     "start": 24.349
+    },
+    {
+     "word": "FI-Typ,",
+     "start": 24.613
+    },
+    {
+     "word": "F1",
+     "start": 25.403
+    },
+    {
+     "word": "0",
+     "start": 25.667
+    },
+    {
+     "word": "und",
+     "start": 25.865
+    },
+    {
+     "word": "180",
+     "start": 26.194
+    },
+    {
+     "word": "Grad.",
+     "start": 26.523
+    },
+    {
+     "word": "Mach",
+     "start": 27.248
+    },
+    {
+     "word": "dir",
+     "start": 27.644
+    },
+    {
+     "word": "einen",
+     "start": 27.973
+    },
+    {
+     "word": "*Screenshot*",
+     "start": 28.434
+    },
+    {
+     "word": "davon.",
+     "start": 29.225
+    },
+    {
+     "word": "Viel",
+     "start": 30.016
+    },
+    {
+     "word": "Erfolg!",
+     "start": 30.411
+    }
+   ]
+  }
+ ]
+}

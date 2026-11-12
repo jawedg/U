@@ -107,13 +107,13 @@ const Probe: React.FC<{ from: [number, number]; to: [number, number]; color: str
 // ------------------------------------------------------------------ Protokoll
 const BES = ["Schaltungsunterlagen komplett", "Betriebsmittel", "Leitungsanschlüsse", "Leitungswahl und Verlegung", "PE- und N-Leiter", "Schutz gegen direktes Berühren", "Überstromschutzeinrichtungen", "Keine erkennbaren Mängel"];
 const ISO = [["X1:1", "X1:3"], ["X1:1", "X1:5"], ["X1:1", "X1:7"], ["X1:1", "X1:9"], ["X1:3", "X1:5"], ["X1:3", "X1:7"], ["X1:3", "X1:9"], ["X1:5", "X1:7"], ["X1:5", "X1:9"], ["X1:7", "X1:9"]];
-type Fill = { key: string; val: string; at: number };
+export type Fill = { key: string; val: string; at: number };
 const Box: React.FC<{ on: number }> = ({ on }) => (
   <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 26, height: 26, border: `2px solid ${INK}`, marginRight: 6, verticalAlign: "middle", background: "#fff" }}>
     <span style={{ fontFamily: HAND, fontWeight: 700, fontSize: 34, color: BLUE, opacity: on, transform: `scale(${0.4 + 0.6 * on}) translateY(-3px)` }}>✗</span>
   </span>
 );
-const Protocol: React.FC<{ fills: Fill[]; t: number }> = ({ fills, t }) => {
+export const Protocol: React.FC<{ fills: Fill[]; t: number; isoVals?: string[] }> = ({ fills, t, isoVals }) => {
   const get = (k: string) => fills.find((f) => f.key === k);
   const prog = (k: string, delay = 0) => {
     const f = get(k);
@@ -148,7 +148,7 @@ const Protocol: React.FC<{ fills: Fill[]; t: number }> = ({ fills, t }) => {
           {ISO.map(([a, b], i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", borderBottom: `1px solid ${LINE}`, padding: "2px 0" }}>
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 18, width: 160, color: INK }}>-{a} / -{b}</div>
-              <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 28, color: BLUE, opacity: iso ? ramp(t, iso.at + i * 0.18, iso.at + i * 0.18 + 0.3) : 0 }}>{iso?.val}</div>
+              <div style={{ fontFamily: HAND, fontWeight: 700, fontSize: 28, color: BLUE, opacity: iso ? ramp(t, iso.at + i * 0.18, iso.at + i * 0.18 + 0.3) : 0 }}>{isoVals?.[i] ?? iso?.val}</div>
             </div>
           ))}
         </div>
@@ -191,7 +191,7 @@ const Avatar: React.FC<{ who: string; size?: number }> = ({ who, size = 86 }) =>
   </div>
 );
 
-const SpokenWords: React.FC<{ words: Word[]; t: number; size: number; color: string; key2: string }> = ({ words, t, size, color, key2 }) => (
+export const SpokenWords: React.FC<{ words: Word[]; t: number; size: number; color: string; key2: string }> = ({ words, t, size, color, key2 }) => (
   <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: size, lineHeight: 1.38 }}>
     {words.map((w, i) => {
       const k = w.word.includes("*");
@@ -325,7 +325,7 @@ const Phases: React.FC<{ cur: number; topics: string[] }> = ({ cur, topics }) =>
   </div>
 );
 
-const Sub: React.FC<{ words: Word[]; t: number }> = ({ words, t }) => {
+export const Sub: React.FC<{ words: Word[]; t: number }> = ({ words, t }) => {
   if (!words.length || t < words[0].start - 0.1) return null;
   const sents: Word[][] = [[]];
   words.forEach((w) => {

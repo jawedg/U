@@ -14,6 +14,8 @@ import s6 from "../lern_fs/script.json";
 import t6 from "../lern_fs/timing.json";
 import s7 from "../pruef/script.json";
 import t7 from "../pruef/timing.json";
+import s8 from "../mess/script.json";
+import t8 from "../mess/timing.json";
 import { collectCues } from "../wiso/Visuals";
 import { BG, HEAD, INK, LABEL, LINE, MUTED, MinVisual, SANS, accent, kbLabel } from "./Min";
 
@@ -31,6 +33,7 @@ export const DATA: Record<number, { s: Script; t: Line[] }> = {
   5: { s: s5 as Script, t: (t5 as { lines: Line[] }).lines },
   6: { s: s6 as Script, t: (t6 as { lines: Line[] }).lines },
   7: { s: s7 as unknown as Script, t: (t7 as { lines: Line[] }).lines },
+  8: { s: s8 as unknown as Script, t: (t8 as { lines: Line[] }).lines },
 };
 
 export const info = (kb: number, i: number): Line => {
