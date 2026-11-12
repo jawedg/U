@@ -1,0 +1,1190 @@
+{
+ "kb": 7,
+ "label": "AP2",
+ "title": "Prüfungssimulation",
+ "topics": [
+  "Fertigmeldung",
+  "Fachgespräch",
+  "Besichtigen",
+  "Messen ohne Spannung",
+  "Messen mit Spannung",
+  "Erprobung & Übergabe"
+ ],
+ "sentences": [
+  {
+   "topic": 0,
+   "tname": "Start",
+   "text": "Stell dir vor: Es ist Prüfungstag, Abschlussprüfung Teil 2. Meine Anlage, die *Blechbearbeitungsmaschine*, steht fertig auf dem Gestell, und meine *Änderung* ist eingebaut. In diesem Video bin ich du. Ich zeige dir, wie es jetzt weitergeht: die *Fertigmeldung*, das *Fachgespräch*, die *Prüfung nach VDE 0100-600* mit allen Messungen und am Ende die *Übergabe*. Eins vorweg: Die Änderung in diesem Video habe ich mir ausgedacht. Deine echte Änderung erfährst du erst am Prüfungstag. Die Messwerte sind Beispielwerte.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "title"
+   },
+   "part": 1
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Phase eins: die *Fertigmeldung*.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "phase"
+   },
+   "part": 1
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Das ist mein Gestell. Unten kommt die Einspeisung über den *CEE-Stecker* an die Klemmleiste *X1*. Oben links sitzt der *FI/LS* F3 für die Steckdose, daneben die Sicherungen F1 und F2 und das *24-Volt-Netzteil*. Rechts davon der *Motorschutzschalter* F4 und die *Wendeschütze* Q1 und Q2 für den Haspelmotor. In der Mitte meine *S7*, daneben die *Simulationsplatine*, und rechts die *Bedieneinheit* mit S1 bis S4 und den Meldeleuchten.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "board",
+    "hl": [
+     [
+      "CEE-Stecker",
+      "CEE",
+      "X1"
+     ],
+     [
+      "FI/LS",
+      "F3",
+      "X5"
+     ],
+     [
+      "24-Volt-Netzteil",
+      "F1",
+      "F2",
+      "T1"
+     ],
+     [
+      "Motorschutzschalter",
+      "F4"
+     ],
+     [
+      "Wendeschütze",
+      "Q1",
+      "Q2"
+     ],
+     [
+      "S7",
+      "SPS"
+     ],
+     [
+      "Simulationsplatine",
+      "X10"
+     ],
+     [
+      "Bedieneinheit",
+      "BED"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Meine Änderung war: Nach *3 Entleerungen* ist der Container voll. Dann soll die Meldeleuchte P2 *blinken*, ein neuer Vorgang mit S4 ist *gesperrt*, und mit dem Taster S2 setze ich den Zähler wieder *zurück*. Dafür habe ich im Programm einen *Zähler* und einen Taktmerker ergänzt und die Pläne und die Zuordnungsliste *handschriftlich* nachgetragen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "change",
+    "items": [
+     {
+      "text": "Nach 3 Entleerungen: Container voll",
+      "cue": "Entleerungen"
+     },
+     {
+      "text": "P2 blinkt (1 Hz)",
+      "cue": "blinken"
+     },
+     {
+      "text": "Start mit S4 gesperrt",
+      "cue": "gesperrt"
+     },
+     {
+      "text": "S2 setzt den Zähler zurück",
+      "cue": "zurück"
+     },
+     {
+      "text": "Programm: Zähler CTU + Taktmerker",
+      "cue": "Zähler"
+     },
+     {
+      "text": "Pläne + Zuordnungsliste nachgetragen",
+      "cue": "handschriftlich"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Entschuldigung, ich bin fertig. Die Änderung ist eingebaut, getestet und in den Unterlagen nachgetragen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk"
+   },
+   "part": 1
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Gut. Dann legen Sie mir bitte Ihre Unterlagen hin: die geänderten Pläne, die Zuordnungsliste, den Programmausdruck und Ihr Prüfprotokoll. Ich schaue mir das und die Anlage kurz an.",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 1,
+   "tname": "Fertigmeldung",
+   "text": "Jetzt bereitet sich der Prüfer vor. Er vergleicht meine *Pläne* mit der Anlage, schaut auf die *Verdrahtung*, die *Aderfarben* und die *Beschriftung* und prüft, ob die Änderung im *Programm* und in der *Zuordnungsliste* auftaucht. Mein Tipp: Melde dich erst fertig, wenn deine Unterlagen wirklich zur Änderung passen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "docs",
+    "items": [
+     {
+      "text": "Pläne ↔ Anlage",
+      "cue": "Pläne"
+     },
+     {
+      "text": "Verdrahtung",
+      "cue": "Verdrahtung"
+     },
+     {
+      "text": "Aderfarben",
+      "cue": "Aderfarben"
+     },
+     {
+      "text": "Beschriftung",
+      "cue": "Beschriftung"
+     },
+     {
+      "text": "Änderung im Programm",
+      "cue": "Programm"
+     },
+     {
+      "text": "Zuordnungsliste ergänzt",
+      "cue": "Zuordnungsliste"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Phase zwei: das *Fachgespräch*. Es dauert höchstens 20 Minuten. Der Prüfer will sehen, dass ich verstehe, was ich gebaut habe.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "phase"
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Erklären Sie mir bitte kurz, was Sie geändert haben und wie Sie das im Programm umgesetzt haben.",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Ich habe einen *Vorwärtszähler* eingefügt. Immer wenn die Klappe nach dem Entleeren wieder schließt, also wenn *B10* kommt, zählt er um eins hoch. Bei *3* wird der Ausgang des Zählers gesetzt. Damit sperre ich den Start mit *S4*, und P2 blinkt über den *Taktmerker*. Mit *S2* setze ich den Zähler zurück.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "focus": [
+     [
+      "Vorwärtszähler",
+      "SPS"
+     ],
+     [
+      "B10",
+      "X10"
+     ],
+     [
+      "S4",
+      "BED"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Der Sensor B10 meldet ja die ganze Zeit, solange die Klappe zu ist. Warum zählt Ihr Zähler dann nicht ständig weiter?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Weil der Zählereingang auf die *positive Flanke* reagiert. Er zählt nur in dem Moment, in dem das Signal von 0 auf 1 wechselt, also einmal pro Schließvorgang. Danach kann das Signal anstehen, so lange es will.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "diagram": "flanke"
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Wie haben Sie verhindert, dass die Schütze Q1 und Q2 gleichzeitig anziehen?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "*Doppelt*. Im Programm sind Rechts- und Linkslauf gegenseitig verriegelt. Und zusätzlich in der *Hardware*: Der Öffner von Q2 liegt vor der Spule von Q1, und der Öffner von Q1 vor der Spule von Q2. Würden beide gleichzeitig anziehen, gäbe es einen *Kurzschluss* zwischen zwei Außenleitern.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "diagram": "verriegelung",
+    "focus": [
+     [
+      "Doppelt",
+      "Q1",
+      "Q2"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Auf welchen Wert haben Sie den Motorschutzschalter eingestellt, und warum?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Auf *3,25 Ampere*. Das ist der Bemessungsstrom vom *Leistungsschild*, 400 Volt im Dreieck. Höher eingestellt würde der Motor bei Überlast nicht geschützt, niedriger würde der Schalter schon im normalen Betrieb auslösen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "focus": [
+     [
+      "Ampere",
+      "F4"
+     ]
+    ],
+    "diagram": "typenschild"
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Warum hat die Steckdose einen FI/LS-Schalter mit 10 Milliampere?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Steckdosen bis 32 Ampere, die auch von Laien benutzt werden können, brauchen einen *zusätzlichen Schutz* durch eine Fehlerstrom-Schutzeinrichtung mit höchstens *30 Milliampere*. Hier sind laut Vorgabe sogar 10 Milliampere vorgesehen. Der *FI-Teil* schützt Personen bei einem Fehlerstrom, und der *LS-Teil* mit B16 schützt die Leitung bei Überlast und Kurzschluss.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "focus": [
+     [
+      "zusätzlichen",
+      "F3",
+      "X5"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Was passiert, wenn bei Ihnen die Ader zum Schalter S1 abfällt?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "S1 ist ein *Schließer*. Fällt die Ader ab, kommt kein Signal an der S7 an, die Anlage geht aus und lässt sich nicht einschalten. Das ist der *sichere Zustand*. Gefährlich wäre ein AUS-Befehl mit Schließer. Deshalb nimmt man für AUS und Not-Halt immer *Öffner*, die sind drahtbruchsicher.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "focus": [
+     [
+      "Schließer",
+      "BED"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Gut. Bevor Sie die Anlage einschalten: Was prüfen Sie, und in welcher Reihenfolge?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Zuerst *besichtigen*. Dann die Messungen *ohne Spannung*: Durchgängigkeit des Schutzleiters und Isolationswiderstand. Erst wenn das in Ordnung ist, schalte ich mit Ihrer Erlaubnis ein und messe *mit Spannung*: Fehlerstrom-Schutzeinrichtung und Drehfeld. Zum Schluss kommt die *Erprobung*, also der Funktionstest.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk",
+    "steps": [
+     {
+      "text": "Besichtigen",
+      "cue": "besichtigen"
+     },
+     {
+      "text": "Messen ohne Spannung",
+      "cue": "ohne"
+     },
+     {
+      "text": "Messen mit Spannung",
+      "cue": "mit"
+     },
+     {
+      "text": "Erprobung",
+      "cue": "Erprobung"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 2,
+   "tname": "Fachgespräch",
+   "text": "Gut, dann zeigen Sie mir das bitte.",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 3,
+   "tname": "Besichtigen",
+   "text": "Phase drei: *Besichtigen*. Ich gehe das Protokoll Punkt für Punkt durch und sage dabei laut, was ich prüfe.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "phase"
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Besichtigen",
+   "text": "*Schaltungsunterlagen*: komplett und mit der Änderung ergänzt. *Betriebsmittel*: richtig ausgewählt, nicht beschädigt und gekennzeichnet. *Leitungsanschlüsse*: alles fest, sauber abisoliert, mit Aderendhülsen. *Leitungswahl*: schwarz 1,5 Quadratmillimeter im Hauptstromkreis, dunkelblau 0,75 für die 24 Volt, *grün-gelb* für den Schutzleiter und hellblau für den Neutralleiter. *Schutz* gegen direktes Berühren: alle Abdeckungen drauf, alles fingersicher. Und die *Überstromschutzeinrichtungen*: F1 mit 6 Ampere, F3 B16, und F4 auf 3,25 Ampere eingestellt.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "check",
+    "title": "Besichtigung",
+    "items": [
+     {
+      "text": "Schaltungsunterlagen komplett + ergänzt",
+      "cue": "Schaltungsunterlagen"
+     },
+     {
+      "text": "Betriebsmittel: Auswahl, keine Schäden, gekennzeichnet",
+      "cue": "Betriebsmittel"
+     },
+     {
+      "text": "Leitungsanschlüsse: fest, abisoliert, Aderendhülsen",
+      "cue": "Leitungsanschlüsse"
+     },
+     {
+      "text": "Leitungswahl: 1,5 mm² sw · 0,75 mm² dbl (24 V)",
+      "cue": "Leitungswahl"
+     },
+     {
+      "text": "PE grün-gelb · N hellblau",
+      "cue": "grün-gelb"
+     },
+     {
+      "text": "Schutz gegen direktes Berühren: fingersicher",
+      "cue": "Schutz"
+     },
+     {
+      "text": "Überstromschutz: F1 6 A · F3 B16 · F4 3,25 A",
+      "cue": "Überstromschutzeinrichtungen"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 3,
+   "tname": "Besichtigen",
+   "text": "Alles in *Ordnung*, also mache ich im Protokoll bei der Besichtigung überall mein Kreuz bei OK.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "protocol",
+    "fill": [
+     [
+      "Ordnung",
+      "bes",
+      "all"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Phase vier: *Messen ohne Spannung*. Bevor ich messe, sorge ich dafür, dass die Anlage wirklich spannungsfrei ist.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "phase"
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Ich ziehe den *CEE-Stecker*. Damit ist *freigeschaltet*. Den Stecker lege ich so hin, dass ihn niemand wieder einstecken kann, das ist gegen *Wiedereinschalten* gesichert. Und dann stelle ich mit dem zweipoligen Spannungsprüfer die *Spannungsfreiheit* fest. Vorher teste ich den Spannungsprüfer an einer bekannten Spannung.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "tip",
+    "title": "Sicherheitsregeln",
+    "items": [
+     {
+      "text": "Freischalten: CEE-Stecker ziehen",
+      "cue": "freigeschaltet"
+     },
+     {
+      "text": "Gegen Wiedereinschalten sichern",
+      "cue": "Wiedereinschalten"
+     },
+     {
+      "text": "Spannungsfreiheit feststellen (2-polig)",
+      "cue": "Spannungsfreiheit"
+     },
+     {
+      "text": "Spannungsprüfer vorher testen",
+      "cue": "Vorher"
+     }
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Erste Messung: *Durchgängigkeit des Schutzleiters*. Am Messgerät stelle ich *R-Low* ein. Zuerst mache ich den *Nullabgleich*, damit der Widerstand der Messleitungen nicht mitgemessen wird. Dann messe ich vom *PE-Kontakt* des CEE-Steckers zu allen Punkten, die mit dem Schutzleiter verbunden sein müssen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "R LOW",
+    "cam": [
+     330,
+     520,
+     1.6
+    ],
+    "vals": [
+     [
+      "Nullabgleich",
+      "0,00 Ω"
+     ]
+    ],
+    "probes": [
+     [
+      "Nullabgleich",
+      "NULL",
+      "NULL"
+     ],
+     [
+      "PE-Kontakt",
+      "CEEPE",
+      "PLATTE"
+     ]
+    ]
+   },
+   "part": 1
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Zur *Montageplatte*: 0,08 Ohm. Zum Schutzkontakt der *Steckdose*: 0,14 Ohm. Zum *Motor* über X1: 0,21 Ohm. Und zur *Bedieneinheit*: 0,11 Ohm. Einen festen Grenzwert gibt es in der Norm dafür nicht. Der Wert muss *niedrig* sein und zur Leitungslänge passen, und das tut er. Ins Protokoll schreibe ich den größten Wert.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "R LOW",
+    "cam": [
+     420,
+     390,
+     1.0
+    ],
+    "probes": [
+     [
+      "Montageplatte",
+      "CEEPE",
+      "PLATTE"
+     ],
+     [
+      "Steckdose",
+      "CEEPE",
+      "X5PE"
+     ],
+     [
+      "Motor",
+      "CEEPE",
+      "M1PE"
+     ],
+     [
+      "Bedieneinheit",
+      "CEEPE",
+      "BEDPE"
+     ]
+    ],
+    "vals": [
+     [
+      "Montageplatte",
+      "0,08 Ω"
+     ],
+     [
+      "Steckdose",
+      "0,14 Ω"
+     ],
+     [
+      "Motor",
+      "0,21 Ω"
+     ],
+     [
+      "Bedieneinheit",
+      "0,11 Ω"
+     ]
+    ],
+    "limit": "niedrig + plausibel",
+    "ok": "niedrig"
+   },
+   "part": 2
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "In das Protokoll kommt: Durchgängigkeit des Schutzleiters, *gemessener* Wert 0,21 Ohm, OK.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "protocol",
+    "fill": [
+     [
+      "gemessener",
+      "pe",
+      "0,21 Ω"
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Zweite Messung: der *Isolationswiderstand*. Vorher muss ich die Anlage vorbereiten. Ich *klemme* das Netzteil T1 ab, denn Elektronik kann die 500 Volt Messspannung nicht ab und würde das Ergebnis verfälschen. Dann schalte ich F1, F3 und den Motorschutzschalter F4 *ein*, damit auch die Leitungen hinter den Schutzeinrichtungen mitgemessen werden.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "tip",
+    "title": "Vorbereitung Isolationsmessung",
+    "items": [
+     {
+      "text": "Netzteil T1 abklemmen (Elektronik!)",
+      "cue": "klemme"
+     },
+     {
+      "text": "F1, F3, F4 einschalten",
+      "cue": "ein"
+     },
+     {
+      "text": "Messspannung 500 V DC",
+      "cue": "Messspannung"
+     },
+     {
+      "text": "Grenzwert: mindestens 1 MΩ",
+      "cue": "Netzteil"
+     }
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Warum schalten Sie die Sicherungen und den Motorschutzschalter vor der Isolationsmessung ein?",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Damit die Leitungen *hinter* den Schutzeinrichtungen auch geprüft werden. Wären sie aus, würde ich nur bis zur Sicherung messen und einen Fehler dahinter nicht finden.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk"
+   },
+   "part": 2
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Jetzt messe ich mit *500 Volt* Gleichspannung an der Klemmleiste X1, genau die Kombinationen aus dem Protokoll. X1 Klemme 1 ist L1, 3 ist L2, 5 ist L3, 7 ist der Neutralleiter und 9 ist PE. Also zuerst *L1 gegen L2*, dann L1 gegen L3, danach L1 gegen N, anschließend L1 gegen PE, und so weiter, bis zuletzt *N gegen PE*. Überall zeigt das Gerät *größer 500 Megaohm*. Der Grenzwert ist mindestens 1 Megaohm. Alles in Ordnung.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "R ISO 500 V",
+    "cam": [
+     200,
+     520,
+     1.8
+    ],
+    "probes": [
+     [
+      "zuerst",
+      "X1:1",
+      "X1:3"
+     ],
+     [
+      "dann",
+      "X1:1",
+      "X1:5"
+     ],
+     [
+      "danach",
+      "X1:1",
+      "X1:7"
+     ],
+     [
+      "anschließend",
+      "X1:1",
+      "X1:9"
+     ],
+     [
+      "weiter",
+      "X1:3",
+      "X1:5"
+     ],
+     [
+      "zuletzt",
+      "X1:7",
+      "X1:9"
+     ]
+    ],
+    "vals": [
+     [
+      "zeigt",
+      "> 500 MΩ"
+     ]
+    ],
+    "limit": "≥ 1 MΩ",
+    "ok": "Grenzwert"
+   },
+   "part": 2
+  },
+  {
+   "topic": 4,
+   "tname": "Messen ohne Spannung",
+   "text": "Für den *24-Volt-Kreis* gilt übrigens: Messspannung 250 Volt, Grenzwert 0,5 Megaohm. Die Werte trage ich in die *Tabelle* im Protokoll ein.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "protocol",
+    "fill": [
+     [
+      "Tabelle",
+      "iso",
+      "> 500 MΩ"
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Phase fünf: *Messen mit Spannung*. Ich klemme das Netzteil wieder an und kontrolliere den Anschluss.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "phase"
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Die Messungen ohne Spannung sind in Ordnung. Darf ich die Anlage jetzt einschalten?",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk"
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Ja, schalten Sie ein.",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Ich stecke den CEE-Stecker ein und messe zuerst das *Drehfeld* an L1, L2 und L3. Das Gerät zeigt *Rechtsdrehfeld*. Damit dreht der Motor mit Q1 auch wirklich rechts herum.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "DREHFELD",
+    "cam": [
+     200,
+     520,
+     1.8
+    ],
+    "probes": [
+     [
+      "Drehfeld",
+      "X1:1",
+      "X1:3"
+     ]
+    ],
+    "vals": [
+     [
+      "Rechtsdrehfeld",
+      "rechts ↻"
+     ]
+    ],
+    "limit": "Rechtsdrehfeld",
+    "ok": "Rechtsdrehfeld"
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Jetzt die *Fehlerstrom-Schutzeinrichtung*, also der FI/LS F3 an der Steckdose. Am Gerät stelle ich *10 Milliampere* ein, Typ A, und stecke den Prüfadapter in die Steckdose. Zuerst misst das Gerät die *Berührungsspannung*: 0,3 Volt. Erlaubt sind höchstens *50 Volt*.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "RCD 10 mA",
+    "cam": [
+     520,
+     160,
+     1.9
+    ],
+    "probes": [
+     [
+      "Steckdose",
+      "X5",
+      "X5"
+     ]
+    ],
+    "vals": [
+     [
+      "Berührungsspannung",
+      "U_B 0,3 V"
+     ]
+    ],
+    "limit": "U_B ≤ 50 V",
+    "ok": "Volt"
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Dann die *Auslösezeit* mit dem vollen Bemessungsfehlerstrom: Der FI/LS löst nach *18 Millisekunden* aus. Erlaubt sind höchstens 300 Millisekunden. Auch das passt.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "measure",
+    "mode": "RCD 10 mA",
+    "cam": [
+     520,
+     160,
+     1.9
+    ],
+    "probes": [
+     [
+      "Auslösezeit",
+      "X5",
+      "X5"
+     ]
+    ],
+    "vals": [
+     [
+      "Millisekunden",
+      "t_A 18 ms"
+     ]
+    ],
+    "limit": "t_A ≤ 300 ms",
+    "ok": "passt",
+    "trip": "Millisekunden"
+   },
+   "part": 2
+  },
+  {
+   "topic": 5,
+   "tname": "Messen mit Spannung",
+   "text": "Ins Protokoll: *Berührungsspannung* OK, Auslösezeit *18* Millisekunden OK, *Drehfeld* rechts OK.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "protocol",
+    "fill": [
+     [
+      "Berührungsspannung",
+      "rcd",
+      "ok"
+     ],
+     [
+      "18",
+      "ta",
+      "18 ms"
+     ],
+     [
+      "Drehfeld",
+      "dreh",
+      "ok"
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Phase sechs: die *Erprobung*. Zuerst drücke ich am FI/LS die *Prüftaste*: Er löst aus. Ich schalte ihn wieder ein.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "board",
+    "cam": [
+     140,
+     150,
+     2.2
+    ],
+    "hl": [
+     [
+      "Prüftaste",
+      "F3"
+     ]
+    ],
+    "states": [
+     [
+      0,
+      {}
+     ],
+     [
+      "löst",
+      {
+       "F3trip": 1
+      }
+     ],
+     [
+      "wieder",
+      {}
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Dann teste ich die *Funktion*, so wie in der Beschreibung. S1 an: P1 leuchtet. Mit *S3* tippe ich den Motor im Rechtslauf, die Haspel wickelt auf, und *B13* meldet Material. Ich drücke *S4*: Die Klappe geht auf, und sobald *B11* meldet, läuft der Motor links. Ist kein Material mehr da, geht alles *aus*, und die Klappe schließt.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "board",
+    "cam": [
+     610,
+     330,
+     1.25
+    ],
+    "hl": [
+     [
+      "Funktion",
+      "BED",
+      "X10"
+     ]
+    ],
+    "states": [
+     [
+      0,
+      {}
+     ],
+     [
+      "an",
+      {
+       "P1": 1
+      }
+     ],
+     [
+      "S3",
+      {
+       "P1": 1,
+       "P11": 1,
+       "Q1": 1
+      }
+     ],
+     [
+      "B13",
+      {
+       "P1": 1,
+       "P11": 1,
+       "Q1": 1,
+       "B13": 1
+      }
+     ],
+     [
+      "S4",
+      {
+       "P1": 1,
+       "B13": 1,
+       "P12": 1
+      }
+     ],
+     [
+      "B11",
+      {
+       "P1": 1,
+       "B13": 1,
+       "P12": 1,
+       "B11": 1,
+       "P10": 1,
+       "Q2": 1
+      }
+     ],
+     [
+      "aus",
+      {
+       "P1": 1,
+       "B10": 1
+      }
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Jetzt meine *Änderung*: Nach der dritten Entleerung *blinkt* P2, und S4 bewirkt nichts mehr. Mit *S2* setze ich zurück, P2 geht aus. Und zum Schluss löse ich noch den Motorschutzschalter mit der *Prüftaste* aus: Motor und Ventil sind aus, P2 leuchtet. Wieder einschalten, mit S2 *quittieren*, fertig.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "board",
+    "cam": [
+     610,
+     330,
+     1.25
+    ],
+    "hl": [
+     [
+      "Änderung",
+      "BED"
+     ]
+    ],
+    "states": [
+     [
+      0,
+      {
+       "P1": 1
+      }
+     ],
+     [
+      "blinkt",
+      {
+       "P1": 1,
+       "P2": "blink"
+      }
+     ],
+     [
+      "S2",
+      {
+       "P1": 1
+      }
+     ],
+     [
+      "Prüftaste",
+      {
+       "P1": 1,
+       "P2": 1,
+       "F4trip": 1
+      }
+     ],
+     [
+      "quittieren",
+      {
+       "P1": 1
+      }
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Alles funktioniert. Im Protokoll kreuze ich bei der Erprobung *Funktion* der Anlage und Funktion *RCD* an, setze das Kreuz bei *mängelfrei* und unterschreibe.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "protocol",
+    "fill": [
+     [
+      "Funktion",
+      "funk",
+      "ok"
+     ],
+     [
+      "RCD",
+      "rcdt",
+      "ok"
+     ],
+     [
+      "mängelfrei",
+      "frei",
+      "ok"
+     ]
+    ]
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Die Anlage ist geprüft und funktioniert. Hier ist mein ausgefülltes Prüfprotokoll mit den Unterlagen.",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "talk"
+   },
+   "part": 2
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Danke. Dann schalten Sie die Anlage bitte aus und räumen Ihren Arbeitsplatz auf.",
+   "who": "pruefer",
+   "voice": "Orus",
+   "v": {
+    "type": "talk"
+   },
+   "part": 0
+  },
+  {
+   "topic": 6,
+   "tname": "Erprobung & Übergabe",
+   "text": "Und das war's. Zum Merken die *Reihenfolge*: Erst besichtigen. Dann *ohne Spannung* messen, Schutzleiter und Isolation. Dann mit *Erlaubnis* einschalten und mit Spannung messen, Drehfeld und RCD. Dann die *Erprobung*. Und alles sauber ins *Protokoll*. Sag beim Messen immer laut, was du gerade machst und warum. Dann sieht der Prüfer, dass du weißt, was du tust. Viel Erfolg bei deiner Prüfung!",
+   "who": "ich",
+   "voice": "Charon",
+   "v": {
+    "type": "tip",
+    "title": "Reihenfolge merken",
+    "items": [
+     {
+      "text": "1. Besichtigen",
+      "cue": "Reihenfolge"
+     },
+     {
+      "text": "2. Ohne Spannung: R-PE, R-ISO",
+      "cue": "ohne"
+     },
+     {
+      "text": "3. Mit Erlaubnis einschalten",
+      "cue": "Erlaubnis"
+     },
+     {
+      "text": "4. Mit Spannung: Drehfeld, RCD",
+      "cue": "Drehfeld"
+     },
+     {
+      "text": "5. Erprobung",
+      "cue": "Erprobung"
+     },
+     {
+      "text": "6. Protokoll + laut erklären",
+      "cue": "Protokoll"
+     }
+    ]
+   },
+   "part": 2
+  }
+ ]
+}

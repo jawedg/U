@@ -1,0 +1,6392 @@
+{
+ "lines": [
+  {
+   "file": "pruef/line-1-0.wav",
+   "seconds": 30.161,
+   "words": [
+    {
+     "word": "Stell",
+     "start": 0.1
+    },
+    {
+     "word": "dir",
+     "start": 0.42
+    },
+    {
+     "word": "vor:",
+     "start": 0.648
+    },
+    {
+     "word": "Es",
+     "start": 1.105
+    },
+    {
+     "word": "ist",
+     "start": 1.288
+    },
+    {
+     "word": "Prüfungstag,",
+     "start": 1.517
+    },
+    {
+     "word": "Abschlussprüfung",
+     "start": 2.339
+    },
+    {
+     "word": "Teil",
+     "start": 3.162
+    },
+    {
+     "word": "2.",
+     "start": 3.436
+    },
+    {
+     "word": "Meine",
+     "start": 3.801
+    },
+    {
+     "word": "Anlage,",
+     "start": 4.121
+    },
+    {
+     "word": "die",
+     "start": 4.715
+    },
+    {
+     "word": "*Blechbearbeitungsmaschine*,",
+     "start": 4.944
+    },
+    {
+     "word": "steht",
+     "start": 6.406
+    },
+    {
+     "word": "fertig",
+     "start": 6.726
+    },
+    {
+     "word": "auf",
+     "start": 7.092
+    },
+    {
+     "word": "dem",
+     "start": 7.32
+    },
+    {
+     "word": "Gestell,",
+     "start": 7.549
+    },
+    {
+     "word": "und",
+     "start": 8.188
+    },
+    {
+     "word": "meine",
+     "start": 8.417
+    },
+    {
+     "word": "*Änderung*",
+     "start": 8.737
+    },
+    {
+     "word": "ist",
+     "start": 9.194
+    },
+    {
+     "word": "eingebaut.",
+     "start": 9.422
+    },
+    {
+     "word": "In",
+     "start": 10.153
+    },
+    {
+     "word": "diesem",
+     "start": 10.336
+    },
+    {
+     "word": "Video",
+     "start": 10.702
+    },
+    {
+     "word": "bin",
+     "start": 11.022
+    },
+    {
+     "word": "ich",
+     "start": 11.25
+    },
+    {
+     "word": "du.",
+     "start": 11.478
+    },
+    {
+     "word": "Ich",
+     "start": 11.89
+    },
+    {
+     "word": "zeige",
+     "start": 12.118
+    },
+    {
+     "word": "dir,",
+     "start": 12.438
+    },
+    {
+     "word": "wie",
+     "start": 12.895
+    },
+    {
+     "word": "es",
+     "start": 13.124
+    },
+    {
+     "word": "jetzt",
+     "start": 13.306
+    },
+    {
+     "word": "weitergeht:",
+     "start": 13.626
+    },
+    {
+     "word": "die",
+     "start": 14.403
+    },
+    {
+     "word": "*Fertigmeldung*,",
+     "start": 14.632
+    },
+    {
+     "word": "das",
+     "start": 15.545
+    },
+    {
+     "word": "*Fachgespräch*,",
+     "start": 15.774
+    },
+    {
+     "word": "die",
+     "start": 16.642
+    },
+    {
+     "word": "*Prüfung",
+     "start": 16.871
+    },
+    {
+     "word": "nach",
+     "start": 17.282
+    },
+    {
+     "word": "VDE",
+     "start": 17.556
+    },
+    {
+     "word": "0100-600*",
+     "start": 17.785
+    },
+    {
+     "word": "mit",
+     "start": 18.196
+    },
+    {
+     "word": "allen",
+     "start": 18.424
+    },
+    {
+     "word": "Messungen",
+     "start": 18.744
+    },
+    {
+     "word": "und",
+     "start": 19.247
+    },
+    {
+     "word": "am",
+     "start": 19.475
+    },
+    {
+     "word": "Ende",
+     "start": 19.658
+    },
+    {
+     "word": "die",
+     "start": 19.932
+    },
+    {
+     "word": "*Übergabe*.",
+     "start": 20.161
+    },
+    {
+     "word": "Eins",
+     "start": 20.846
+    },
+    {
+     "word": "vorweg:",
+     "start": 21.12
+    },
+    {
+     "word": "Die",
+     "start": 21.715
+    },
+    {
+     "word": "Änderung",
+     "start": 21.943
+    },
+    {
+     "word": "in",
+     "start": 22.4
+    },
+    {
+     "word": "diesem",
+     "start": 22.583
+    },
+    {
+     "word": "Video",
+     "start": 22.948
+    },
+    {
+     "word": "habe",
+     "start": 23.268
+    },
+    {
+     "word": "ich",
+     "start": 23.542
+    },
+    {
+     "word": "mir",
+     "start": 23.771
+    },
+    {
+     "word": "ausgedacht.",
+     "start": 23.999
+    },
+    {
+     "word": "Deine",
+     "start": 24.776
+    },
+    {
+     "word": "echte",
+     "start": 25.096
+    },
+    {
+     "word": "Änderung",
+     "start": 25.416
+    },
+    {
+     "word": "erfährst",
+     "start": 25.873
+    },
+    {
+     "word": "du",
+     "start": 26.33
+    },
+    {
+     "word": "erst",
+     "start": 26.513
+    },
+    {
+     "word": "am",
+     "start": 26.787
+    },
+    {
+     "word": "Prüfungstag.",
+     "start": 26.97
+    },
+    {
+     "word": "Die",
+     "start": 27.792
+    },
+    {
+     "word": "Messwerte",
+     "start": 28.021
+    },
+    {
+     "word": "sind",
+     "start": 28.523
+    },
+    {
+     "word": "Beispielwerte.",
+     "start": 28.798
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-1.wav",
+   "seconds": 2.075,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "eins:",
+     "start": 0.348
+    },
+    {
+     "word": "die",
+     "start": 0.738
+    },
+    {
+     "word": "*Fertigmeldung*.",
+     "start": 0.916
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-2.wav",
+   "seconds": 27.766,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.367
+    },
+    {
+     "word": "mein",
+     "start": 0.634
+    },
+    {
+     "word": "Gestell.",
+     "start": 0.954
+    },
+    {
+     "word": "Unten",
+     "start": 1.701
+    },
+    {
+     "word": "kommt",
+     "start": 2.075
+    },
+    {
+     "word": "die",
+     "start": 2.448
+    },
+    {
+     "word": "Einspeisung",
+     "start": 2.715
+    },
+    {
+     "word": "über",
+     "start": 3.409
+    },
+    {
+     "word": "den",
+     "start": 3.729
+    },
+    {
+     "word": "*CEE-Stecker*",
+     "start": 3.996
+    },
+    {
+     "word": "an",
+     "start": 4.636
+    },
+    {
+     "word": "die",
+     "start": 4.85
+    },
+    {
+     "word": "Klemmleiste",
+     "start": 5.116
+    },
+    {
+     "word": "*X1*.",
+     "start": 5.81
+    },
+    {
+     "word": "Oben",
+     "start": 6.29
+    },
+    {
+     "word": "links",
+     "start": 6.611
+    },
+    {
+     "word": "sitzt",
+     "start": 6.984
+    },
+    {
+     "word": "der",
+     "start": 7.358
+    },
+    {
+     "word": "*FI/LS*",
+     "start": 7.625
+    },
+    {
+     "word": "F3",
+     "start": 7.945
+    },
+    {
+     "word": "für",
+     "start": 8.158
+    },
+    {
+     "word": "die",
+     "start": 8.425
+    },
+    {
+     "word": "Steckdose,",
+     "start": 8.692
+    },
+    {
+     "word": "daneben",
+     "start": 9.546
+    },
+    {
+     "word": "die",
+     "start": 10.026
+    },
+    {
+     "word": "Sicherungen",
+     "start": 10.293
+    },
+    {
+     "word": "F1",
+     "start": 10.987
+    },
+    {
+     "word": "und",
+     "start": 11.2
+    },
+    {
+     "word": "F2",
+     "start": 11.467
+    },
+    {
+     "word": "und",
+     "start": 11.68
+    },
+    {
+     "word": "das",
+     "start": 11.947
+    },
+    {
+     "word": "*24-Volt-Netzteil*.",
+     "start": 12.214
+    },
+    {
+     "word": "Rechts",
+     "start": 13.335
+    },
+    {
+     "word": "davon",
+     "start": 13.762
+    },
+    {
+     "word": "der",
+     "start": 14.135
+    },
+    {
+     "word": "*Motorschutzschalter*",
+     "start": 14.402
+    },
+    {
+     "word": "F4",
+     "start": 15.523
+    },
+    {
+     "word": "und",
+     "start": 15.736
+    },
+    {
+     "word": "die",
+     "start": 16.003
+    },
+    {
+     "word": "*Wendeschütze*",
+     "start": 16.27
+    },
+    {
+     "word": "Q1",
+     "start": 17.017
+    },
+    {
+     "word": "und",
+     "start": 17.23
+    },
+    {
+     "word": "Q2",
+     "start": 17.497
+    },
+    {
+     "word": "für",
+     "start": 17.711
+    },
+    {
+     "word": "den",
+     "start": 17.977
+    },
+    {
+     "word": "Haspelmotor.",
+     "start": 18.244
+    },
+    {
+     "word": "In",
+     "start": 19.205
+    },
+    {
+     "word": "der",
+     "start": 19.418
+    },
+    {
+     "word": "Mitte",
+     "start": 19.685
+    },
+    {
+     "word": "meine",
+     "start": 20.059
+    },
+    {
+     "word": "*S7*,",
+     "start": 20.432
+    },
+    {
+     "word": "daneben",
+     "start": 20.913
+    },
+    {
+     "word": "die",
+     "start": 21.393
+    },
+    {
+     "word": "*Simulationsplatine*,",
+     "start": 21.66
+    },
+    {
+     "word": "und",
+     "start": 22.994
+    },
+    {
+     "word": "rechts",
+     "start": 23.261
+    },
+    {
+     "word": "die",
+     "start": 23.688
+    },
+    {
+     "word": "*Bedieneinheit*",
+     "start": 23.954
+    },
+    {
+     "word": "mit",
+     "start": 24.755
+    },
+    {
+     "word": "S1",
+     "start": 25.022
+    },
+    {
+     "word": "bis",
+     "start": 25.235
+    },
+    {
+     "word": "S4",
+     "start": 25.502
+    },
+    {
+     "word": "und",
+     "start": 25.715
+    },
+    {
+     "word": "den",
+     "start": 25.982
+    },
+    {
+     "word": "Meldeleuchten.",
+     "start": 26.249
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-3.wav",
+   "seconds": 18.3,
+   "words": [
+    {
+     "word": "Meine",
+     "start": 0.1
+    },
+    {
+     "word": "Änderung",
+     "start": 0.4
+    },
+    {
+     "word": "war:",
+     "start": 0.829
+    },
+    {
+     "word": "Nach",
+     "start": 1.258
+    },
+    {
+     "word": "*3",
+     "start": 1.515
+    },
+    {
+     "word": "Entleerungen*",
+     "start": 1.643
+    },
+    {
+     "word": "ist",
+     "start": 2.244
+    },
+    {
+     "word": "der",
+     "start": 2.458
+    },
+    {
+     "word": "Container",
+     "start": 2.672
+    },
+    {
+     "word": "voll.",
+     "start": 3.144
+    },
+    {
+     "word": "Dann",
+     "start": 3.616
+    },
+    {
+     "word": "soll",
+     "start": 3.873
+    },
+    {
+     "word": "die",
+     "start": 4.13
+    },
+    {
+     "word": "Meldeleuchte",
+     "start": 4.344
+    },
+    {
+     "word": "P2",
+     "start": 4.945
+    },
+    {
+     "word": "*blinken*,",
+     "start": 5.116
+    },
+    {
+     "word": "ein",
+     "start": 5.716
+    },
+    {
+     "word": "neuer",
+     "start": 5.931
+    },
+    {
+     "word": "Vorgang",
+     "start": 6.231
+    },
+    {
+     "word": "mit",
+     "start": 6.617
+    },
+    {
+     "word": "S4",
+     "start": 6.831
+    },
+    {
+     "word": "ist",
+     "start": 7.003
+    },
+    {
+     "word": "*gesperrt*,",
+     "start": 7.217
+    },
+    {
+     "word": "und",
+     "start": 7.86
+    },
+    {
+     "word": "mit",
+     "start": 8.074
+    },
+    {
+     "word": "dem",
+     "start": 8.289
+    },
+    {
+     "word": "Taster",
+     "start": 8.503
+    },
+    {
+     "word": "S2",
+     "start": 8.846
+    },
+    {
+     "word": "setze",
+     "start": 9.018
+    },
+    {
+     "word": "ich",
+     "start": 9.318
+    },
+    {
+     "word": "den",
+     "start": 9.532
+    },
+    {
+     "word": "Zähler",
+     "start": 9.746
+    },
+    {
+     "word": "wieder",
+     "start": 10.089
+    },
+    {
+     "word": "*zurück*.",
+     "start": 10.432
+    },
+    {
+     "word": "Dafür",
+     "start": 10.99
+    },
+    {
+     "word": "habe",
+     "start": 11.29
+    },
+    {
+     "word": "ich",
+     "start": 11.547
+    },
+    {
+     "word": "im",
+     "start": 11.762
+    },
+    {
+     "word": "Programm",
+     "start": 11.933
+    },
+    {
+     "word": "einen",
+     "start": 12.362
+    },
+    {
+     "word": "*Zähler*",
+     "start": 12.662
+    },
+    {
+     "word": "und",
+     "start": 13.005
+    },
+    {
+     "word": "einen",
+     "start": 13.219
+    },
+    {
+     "word": "Taktmerker",
+     "start": 13.519
+    },
+    {
+     "word": "ergänzt",
+     "start": 14.034
+    },
+    {
+     "word": "und",
+     "start": 14.42
+    },
+    {
+     "word": "die",
+     "start": 14.634
+    },
+    {
+     "word": "Pläne",
+     "start": 14.848
+    },
+    {
+     "word": "und",
+     "start": 15.149
+    },
+    {
+     "word": "die",
+     "start": 15.363
+    },
+    {
+     "word": "Zuordnungsliste",
+     "start": 15.577
+    },
+    {
+     "word": "*handschriftlich*",
+     "start": 16.306
+    },
+    {
+     "word": "nachgetragen.",
+     "start": 17.035
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-4.wav",
+   "seconds": 6.058,
+   "words": [
+    {
+     "word": "Entschuldigung,",
+     "start": 0.1
+    },
+    {
+     "word": "ich",
+     "start": 0.957
+    },
+    {
+     "word": "bin",
+     "start": 1.161
+    },
+    {
+     "word": "fertig.",
+     "start": 1.365
+    },
+    {
+     "word": "Die",
+     "start": 1.895
+    },
+    {
+     "word": "Änderung",
+     "start": 2.099
+    },
+    {
+     "word": "ist",
+     "start": 2.507
+    },
+    {
+     "word": "eingebaut,",
+     "start": 2.711
+    },
+    {
+     "word": "getestet",
+     "start": 3.364
+    },
+    {
+     "word": "und",
+     "start": 3.772
+    },
+    {
+     "word": "in",
+     "start": 3.976
+    },
+    {
+     "word": "den",
+     "start": 4.139
+    },
+    {
+     "word": "Unterlagen",
+     "start": 4.343
+    },
+    {
+     "word": "nachgetragen.",
+     "start": 4.833
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-0.wav",
+   "seconds": 11.671,
+   "words": [
+    {
+     "word": "Gut.",
+     "start": 0.1
+    },
+    {
+     "word": "Dann",
+     "start": 0.577
+    },
+    {
+     "word": "legen",
+     "start": 0.864
+    },
+    {
+     "word": "Sie",
+     "start": 1.198
+    },
+    {
+     "word": "mir",
+     "start": 1.436
+    },
+    {
+     "word": "bitte",
+     "start": 1.675
+    },
+    {
+     "word": "Ihre",
+     "start": 2.009
+    },
+    {
+     "word": "Unterlagen",
+     "start": 2.296
+    },
+    {
+     "word": "hin:",
+     "start": 2.868
+    },
+    {
+     "word": "die",
+     "start": 3.346
+    },
+    {
+     "word": "geänderten",
+     "start": 3.584
+    },
+    {
+     "word": "Pläne,",
+     "start": 4.157
+    },
+    {
+     "word": "die",
+     "start": 4.73
+    },
+    {
+     "word": "Zuordnungsliste,",
+     "start": 4.969
+    },
+    {
+     "word": "den",
+     "start": 6.019
+    },
+    {
+     "word": "Programmausdruck",
+     "start": 6.257
+    },
+    {
+     "word": "und",
+     "start": 7.116
+    },
+    {
+     "word": "Ihr",
+     "start": 7.355
+    },
+    {
+     "word": "Prüfprotokoll.",
+     "start": 7.594
+    },
+    {
+     "word": "Ich",
+     "start": 8.548
+    },
+    {
+     "word": "schaue",
+     "start": 8.787
+    },
+    {
+     "word": "mir",
+     "start": 9.169
+    },
+    {
+     "word": "das",
+     "start": 9.408
+    },
+    {
+     "word": "und",
+     "start": 9.646
+    },
+    {
+     "word": "die",
+     "start": 9.885
+    },
+    {
+     "word": "Anlage",
+     "start": 10.124
+    },
+    {
+     "word": "kurz",
+     "start": 10.505
+    },
+    {
+     "word": "an.",
+     "start": 10.792
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-5.wav",
+   "seconds": 14.874,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "bereitet",
+     "start": 0.36
+    },
+    {
+     "word": "sich",
+     "start": 0.733
+    },
+    {
+     "word": "der",
+     "start": 0.956
+    },
+    {
+     "word": "Prüfer",
+     "start": 1.142
+    },
+    {
+     "word": "vor.",
+     "start": 1.439
+    },
+    {
+     "word": "Er",
+     "start": 1.811
+    },
+    {
+     "word": "vergleicht",
+     "start": 1.96
+    },
+    {
+     "word": "meine",
+     "start": 2.407
+    },
+    {
+     "word": "*Pläne*",
+     "start": 2.667
+    },
+    {
+     "word": "mit",
+     "start": 2.928
+    },
+    {
+     "word": "der",
+     "start": 3.114
+    },
+    {
+     "word": "Anlage,",
+     "start": 3.3
+    },
+    {
+     "word": "schaut",
+     "start": 3.783
+    },
+    {
+     "word": "auf",
+     "start": 4.081
+    },
+    {
+     "word": "die",
+     "start": 4.267
+    },
+    {
+     "word": "*Verdrahtung*,",
+     "start": 4.453
+    },
+    {
+     "word": "die",
+     "start": 5.123
+    },
+    {
+     "word": "*Aderfarben*",
+     "start": 5.309
+    },
+    {
+     "word": "und",
+     "start": 5.755
+    },
+    {
+     "word": "die",
+     "start": 5.941
+    },
+    {
+     "word": "*Beschriftung*",
+     "start": 6.127
+    },
+    {
+     "word": "und",
+     "start": 6.648
+    },
+    {
+     "word": "prüft,",
+     "start": 6.834
+    },
+    {
+     "word": "ob",
+     "start": 7.281
+    },
+    {
+     "word": "die",
+     "start": 7.43
+    },
+    {
+     "word": "Änderung",
+     "start": 7.616
+    },
+    {
+     "word": "im",
+     "start": 7.988
+    },
+    {
+     "word": "*Programm*",
+     "start": 8.137
+    },
+    {
+     "word": "und",
+     "start": 8.509
+    },
+    {
+     "word": "in",
+     "start": 8.695
+    },
+    {
+     "word": "der",
+     "start": 8.843
+    },
+    {
+     "word": "*Zuordnungsliste*",
+     "start": 9.029
+    },
+    {
+     "word": "auftaucht.",
+     "start": 9.662
+    },
+    {
+     "word": "Mein",
+     "start": 10.257
+    },
+    {
+     "word": "Tipp:",
+     "start": 10.48
+    },
+    {
+     "word": "Melde",
+     "start": 10.89
+    },
+    {
+     "word": "dich",
+     "start": 11.15
+    },
+    {
+     "word": "erst",
+     "start": 11.373
+    },
+    {
+     "word": "fertig,",
+     "start": 11.597
+    },
+    {
+     "word": "wenn",
+     "start": 12.08
+    },
+    {
+     "word": "deine",
+     "start": 12.304
+    },
+    {
+     "word": "Unterlagen",
+     "start": 12.564
+    },
+    {
+     "word": "wirklich",
+     "start": 13.011
+    },
+    {
+     "word": "zur",
+     "start": 13.383
+    },
+    {
+     "word": "Änderung",
+     "start": 13.569
+    },
+    {
+     "word": "passen.",
+     "start": 13.941
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-6.wav",
+   "seconds": 7.072,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "zwei:",
+     "start": 0.37
+    },
+    {
+     "word": "das",
+     "start": 0.795
+    },
+    {
+     "word": "*Fachgespräch*.",
+     "start": 0.988
+    },
+    {
+     "word": "Es",
+     "start": 1.721
+    },
+    {
+     "word": "dauert",
+     "start": 1.875
+    },
+    {
+     "word": "höchstens",
+     "start": 2.184
+    },
+    {
+     "word": "20",
+     "start": 2.608
+    },
+    {
+     "word": "Minuten.",
+     "start": 2.763
+    },
+    {
+     "word": "Der",
+     "start": 3.303
+    },
+    {
+     "word": "Prüfer",
+     "start": 3.496
+    },
+    {
+     "word": "will",
+     "start": 3.805
+    },
+    {
+     "word": "sehen,",
+     "start": 4.036
+    },
+    {
+     "word": "dass",
+     "start": 4.499
+    },
+    {
+     "word": "ich",
+     "start": 4.731
+    },
+    {
+     "word": "verstehe,",
+     "start": 4.924
+    },
+    {
+     "word": "was",
+     "start": 5.503
+    },
+    {
+     "word": "ich",
+     "start": 5.696
+    },
+    {
+     "word": "gebaut",
+     "start": 5.889
+    },
+    {
+     "word": "habe.",
+     "start": 6.197
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-1.wav",
+   "seconds": 5.383,
+   "words": [
+    {
+     "word": "Erklären",
+     "start": 0.1
+    },
+    {
+     "word": "Sie",
+     "start": 0.496
+    },
+    {
+     "word": "mir",
+     "start": 0.694
+    },
+    {
+     "word": "bitte",
+     "start": 0.892
+    },
+    {
+     "word": "kurz,",
+     "start": 1.17
+    },
+    {
+     "word": "was",
+     "start": 1.605
+    },
+    {
+     "word": "Sie",
+     "start": 1.803
+    },
+    {
+     "word": "geändert",
+     "start": 2.001
+    },
+    {
+     "word": "haben",
+     "start": 2.398
+    },
+    {
+     "word": "und",
+     "start": 2.675
+    },
+    {
+     "word": "wie",
+     "start": 2.873
+    },
+    {
+     "word": "Sie",
+     "start": 3.071
+    },
+    {
+     "word": "das",
+     "start": 3.269
+    },
+    {
+     "word": "im",
+     "start": 3.467
+    },
+    {
+     "word": "Programm",
+     "start": 3.626
+    },
+    {
+     "word": "umgesetzt",
+     "start": 4.022
+    },
+    {
+     "word": "haben.",
+     "start": 4.457
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-7.wav",
+   "seconds": 17.03,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.1
+    },
+    {
+     "word": "habe",
+     "start": 0.319
+    },
+    {
+     "word": "einen",
+     "start": 0.582
+    },
+    {
+     "word": "*Vorwärtszähler*",
+     "start": 0.889
+    },
+    {
+     "word": "eingefügt.",
+     "start": 1.59
+    },
+    {
+     "word": "Immer",
+     "start": 2.292
+    },
+    {
+     "word": "wenn",
+     "start": 2.598
+    },
+    {
+     "word": "die",
+     "start": 2.861
+    },
+    {
+     "word": "Klappe",
+     "start": 3.08
+    },
+    {
+     "word": "nach",
+     "start": 3.431
+    },
+    {
+     "word": "dem",
+     "start": 3.694
+    },
+    {
+     "word": "Entleeren",
+     "start": 3.913
+    },
+    {
+     "word": "wieder",
+     "start": 4.395
+    },
+    {
+     "word": "schließt,",
+     "start": 4.746
+    },
+    {
+     "word": "also",
+     "start": 5.403
+    },
+    {
+     "word": "wenn",
+     "start": 5.666
+    },
+    {
+     "word": "*B10*",
+     "start": 5.929
+    },
+    {
+     "word": "kommt,",
+     "start": 6.149
+    },
+    {
+     "word": "zählt",
+     "start": 6.675
+    },
+    {
+     "word": "er",
+     "start": 6.981
+    },
+    {
+     "word": "um",
+     "start": 7.157
+    },
+    {
+     "word": "eins",
+     "start": 7.332
+    },
+    {
+     "word": "hoch.",
+     "start": 7.595
+    },
+    {
+     "word": "Bei",
+     "start": 8.077
+    },
+    {
+     "word": "*3*",
+     "start": 8.296
+    },
+    {
+     "word": "wird",
+     "start": 8.428
+    },
+    {
+     "word": "der",
+     "start": 8.691
+    },
+    {
+     "word": "Ausgang",
+     "start": 8.91
+    },
+    {
+     "word": "des",
+     "start": 9.304
+    },
+    {
+     "word": "Zählers",
+     "start": 9.523
+    },
+    {
+     "word": "gesetzt.",
+     "start": 9.918
+    },
+    {
+     "word": "Damit",
+     "start": 10.532
+    },
+    {
+     "word": "sperre",
+     "start": 10.838
+    },
+    {
+     "word": "ich",
+     "start": 11.189
+    },
+    {
+     "word": "den",
+     "start": 11.408
+    },
+    {
+     "word": "Start",
+     "start": 11.627
+    },
+    {
+     "word": "mit",
+     "start": 11.934
+    },
+    {
+     "word": "*S4*,",
+     "start": 12.153
+    },
+    {
+     "word": "und",
+     "start": 12.548
+    },
+    {
+     "word": "P2",
+     "start": 12.767
+    },
+    {
+     "word": "blinkt",
+     "start": 12.942
+    },
+    {
+     "word": "über",
+     "start": 13.293
+    },
+    {
+     "word": "den",
+     "start": 13.556
+    },
+    {
+     "word": "*Taktmerker*.",
+     "start": 13.775
+    },
+    {
+     "word": "Mit",
+     "start": 14.52
+    },
+    {
+     "word": "*S2*",
+     "start": 14.739
+    },
+    {
+     "word": "setze",
+     "start": 14.915
+    },
+    {
+     "word": "ich",
+     "start": 15.221
+    },
+    {
+     "word": "den",
+     "start": 15.441
+    },
+    {
+     "word": "Zähler",
+     "start": 15.66
+    },
+    {
+     "word": "zurück.",
+     "start": 16.01
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-2.wav",
+   "seconds": 7.013,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.1
+    },
+    {
+     "word": "Sensor",
+     "start": 0.314
+    },
+    {
+     "word": "B10",
+     "start": 0.656
+    },
+    {
+     "word": "meldet",
+     "start": 0.87
+    },
+    {
+     "word": "ja",
+     "start": 1.213
+    },
+    {
+     "word": "die",
+     "start": 1.384
+    },
+    {
+     "word": "ganze",
+     "start": 1.598
+    },
+    {
+     "word": "Zeit,",
+     "start": 1.898
+    },
+    {
+     "word": "solange",
+     "start": 2.368
+    },
+    {
+     "word": "die",
+     "start": 2.754
+    },
+    {
+     "word": "Klappe",
+     "start": 2.968
+    },
+    {
+     "word": "zu",
+     "start": 3.31
+    },
+    {
+     "word": "ist.",
+     "start": 3.481
+    },
+    {
+     "word": "Warum",
+     "start": 3.909
+    },
+    {
+     "word": "zählt",
+     "start": 4.209
+    },
+    {
+     "word": "Ihr",
+     "start": 4.508
+    },
+    {
+     "word": "Zähler",
+     "start": 4.722
+    },
+    {
+     "word": "dann",
+     "start": 5.065
+    },
+    {
+     "word": "nicht",
+     "start": 5.321
+    },
+    {
+     "word": "ständig",
+     "start": 5.621
+    },
+    {
+     "word": "weiter?",
+     "start": 6.006
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-8.wav",
+   "seconds": 11.998,
+   "words": [
+    {
+     "word": "Weil",
+     "start": 0.1
+    },
+    {
+     "word": "der",
+     "start": 0.356
+    },
+    {
+     "word": "Zählereingang",
+     "start": 0.57
+    },
+    {
+     "word": "auf",
+     "start": 1.211
+    },
+    {
+     "word": "die",
+     "start": 1.424
+    },
+    {
+     "word": "*positive",
+     "start": 1.638
+    },
+    {
+     "word": "Flanke*",
+     "start": 2.065
+    },
+    {
+     "word": "reagiert.",
+     "start": 2.407
+    },
+    {
+     "word": "Er",
+     "start": 3.047
+    },
+    {
+     "word": "zählt",
+     "start": 3.218
+    },
+    {
+     "word": "nur",
+     "start": 3.517
+    },
+    {
+     "word": "in",
+     "start": 3.731
+    },
+    {
+     "word": "dem",
+     "start": 3.902
+    },
+    {
+     "word": "Moment,",
+     "start": 4.115
+    },
+    {
+     "word": "in",
+     "start": 4.67
+    },
+    {
+     "word": "dem",
+     "start": 4.841
+    },
+    {
+     "word": "das",
+     "start": 5.055
+    },
+    {
+     "word": "Signal",
+     "start": 5.268
+    },
+    {
+     "word": "von",
+     "start": 5.61
+    },
+    {
+     "word": "0",
+     "start": 5.824
+    },
+    {
+     "word": "auf",
+     "start": 5.952
+    },
+    {
+     "word": "1",
+     "start": 6.165
+    },
+    {
+     "word": "wechselt,",
+     "start": 6.294
+    },
+    {
+     "word": "also",
+     "start": 6.934
+    },
+    {
+     "word": "einmal",
+     "start": 7.191
+    },
+    {
+     "word": "pro",
+     "start": 7.532
+    },
+    {
+     "word": "Schließvorgang.",
+     "start": 7.746
+    },
+    {
+     "word": "Danach",
+     "start": 8.643
+    },
+    {
+     "word": "kann",
+     "start": 8.985
+    },
+    {
+     "word": "das",
+     "start": 9.241
+    },
+    {
+     "word": "Signal",
+     "start": 9.454
+    },
+    {
+     "word": "anstehen,",
+     "start": 9.796
+    },
+    {
+     "word": "so",
+     "start": 10.437
+    },
+    {
+     "word": "lange",
+     "start": 10.608
+    },
+    {
+     "word": "es",
+     "start": 10.907
+    },
+    {
+     "word": "will.",
+     "start": 11.078
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-3.wav",
+   "seconds": 4.955,
+   "words": [
+    {
+     "word": "Wie",
+     "start": 0.1
+    },
+    {
+     "word": "haben",
+     "start": 0.329
+    },
+    {
+     "word": "Sie",
+     "start": 0.651
+    },
+    {
+     "word": "verhindert,",
+     "start": 0.88
+    },
+    {
+     "word": "dass",
+     "start": 1.66
+    },
+    {
+     "word": "die",
+     "start": 1.936
+    },
+    {
+     "word": "Schütze",
+     "start": 2.165
+    },
+    {
+     "word": "Q1",
+     "start": 2.578
+    },
+    {
+     "word": "und",
+     "start": 2.762
+    },
+    {
+     "word": "Q2",
+     "start": 2.991
+    },
+    {
+     "word": "gleichzeitig",
+     "start": 3.175
+    },
+    {
+     "word": "anziehen?",
+     "start": 3.817
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-9.wav",
+   "seconds": 16.925,
+   "words": [
+    {
+     "word": "*Doppelt*.",
+     "start": 0.1
+    },
+    {
+     "word": "Im",
+     "start": 0.744
+    },
+    {
+     "word": "Programm",
+     "start": 0.928
+    },
+    {
+     "word": "sind",
+     "start": 1.388
+    },
+    {
+     "word": "Rechts-",
+     "start": 1.664
+    },
+    {
+     "word": "und",
+     "start": 2.032
+    },
+    {
+     "word": "Linkslauf",
+     "start": 2.262
+    },
+    {
+     "word": "gegenseitig",
+     "start": 2.768
+    },
+    {
+     "word": "verriegelt.",
+     "start": 3.366
+    },
+    {
+     "word": "Und",
+     "start": 4.148
+    },
+    {
+     "word": "zusätzlich",
+     "start": 4.378
+    },
+    {
+     "word": "in",
+     "start": 4.93
+    },
+    {
+     "word": "der",
+     "start": 5.114
+    },
+    {
+     "word": "*Hardware*:",
+     "start": 5.344
+    },
+    {
+     "word": "Der",
+     "start": 6.034
+    },
+    {
+     "word": "Öffner",
+     "start": 6.264
+    },
+    {
+     "word": "von",
+     "start": 6.632
+    },
+    {
+     "word": "Q2",
+     "start": 6.862
+    },
+    {
+     "word": "liegt",
+     "start": 7.046
+    },
+    {
+     "word": "vor",
+     "start": 7.368
+    },
+    {
+     "word": "der",
+     "start": 7.598
+    },
+    {
+     "word": "Spule",
+     "start": 7.828
+    },
+    {
+     "word": "von",
+     "start": 8.15
+    },
+    {
+     "word": "Q1,",
+     "start": 8.38
+    },
+    {
+     "word": "und",
+     "start": 8.794
+    },
+    {
+     "word": "der",
+     "start": 9.024
+    },
+    {
+     "word": "Öffner",
+     "start": 9.254
+    },
+    {
+     "word": "von",
+     "start": 9.622
+    },
+    {
+     "word": "Q1",
+     "start": 9.852
+    },
+    {
+     "word": "vor",
+     "start": 10.036
+    },
+    {
+     "word": "der",
+     "start": 10.266
+    },
+    {
+     "word": "Spule",
+     "start": 10.496
+    },
+    {
+     "word": "von",
+     "start": 10.818
+    },
+    {
+     "word": "Q2.",
+     "start": 11.048
+    },
+    {
+     "word": "Würden",
+     "start": 11.462
+    },
+    {
+     "word": "beide",
+     "start": 11.83
+    },
+    {
+     "word": "gleichzeitig",
+     "start": 12.152
+    },
+    {
+     "word": "anziehen,",
+     "start": 12.796
+    },
+    {
+     "word": "gäbe",
+     "start": 13.486
+    },
+    {
+     "word": "es",
+     "start": 13.762
+    },
+    {
+     "word": "einen",
+     "start": 13.946
+    },
+    {
+     "word": "*Kurzschluss*",
+     "start": 14.268
+    },
+    {
+     "word": "zwischen",
+     "start": 14.866
+    },
+    {
+     "word": "zwei",
+     "start": 15.325
+    },
+    {
+     "word": "Außenleitern.",
+     "start": 15.601
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-4.wav",
+   "seconds": 3.825,
+   "words": [
+    {
+     "word": "Auf",
+     "start": 0.1
+    },
+    {
+     "word": "welchen",
+     "start": 0.276
+    },
+    {
+     "word": "Wert",
+     "start": 0.593
+    },
+    {
+     "word": "haben",
+     "start": 0.804
+    },
+    {
+     "word": "Sie",
+     "start": 1.051
+    },
+    {
+     "word": "den",
+     "start": 1.227
+    },
+    {
+     "word": "Motorschutzschalter",
+     "start": 1.403
+    },
+    {
+     "word": "eingestellt,",
+     "start": 2.142
+    },
+    {
+     "word": "und",
+     "start": 2.776
+    },
+    {
+     "word": "warum?",
+     "start": 2.952
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-10.wav",
+   "seconds": 13.068,
+   "words": [
+    {
+     "word": "Auf",
+     "start": 0.1
+    },
+    {
+     "word": "*3,25",
+     "start": 0.335
+    },
+    {
+     "word": "Ampere*.",
+     "start": 0.571
+    },
+    {
+     "word": "Das",
+     "start": 1.182
+    },
+    {
+     "word": "ist",
+     "start": 1.418
+    },
+    {
+     "word": "der",
+     "start": 1.653
+    },
+    {
+     "word": "Bemessungsstrom",
+     "start": 1.888
+    },
+    {
+     "word": "vom",
+     "start": 2.688
+    },
+    {
+     "word": "*Leistungsschild*,",
+     "start": 2.924
+    },
+    {
+     "word": "400",
+     "start": 3.959
+    },
+    {
+     "word": "Volt",
+     "start": 4.194
+    },
+    {
+     "word": "im",
+     "start": 4.477
+    },
+    {
+     "word": "Dreieck.",
+     "start": 4.665
+    },
+    {
+     "word": "Höher",
+     "start": 5.324
+    },
+    {
+     "word": "eingestellt",
+     "start": 5.653
+    },
+    {
+     "word": "würde",
+     "start": 6.265
+    },
+    {
+     "word": "der",
+     "start": 6.594
+    },
+    {
+     "word": "Motor",
+     "start": 6.83
+    },
+    {
+     "word": "bei",
+     "start": 7.159
+    },
+    {
+     "word": "Überlast",
+     "start": 7.394
+    },
+    {
+     "word": "nicht",
+     "start": 7.865
+    },
+    {
+     "word": "geschützt,",
+     "start": 8.194
+    },
+    {
+     "word": "niedriger",
+     "start": 8.947
+    },
+    {
+     "word": "würde",
+     "start": 9.465
+    },
+    {
+     "word": "der",
+     "start": 9.794
+    },
+    {
+     "word": "Schalter",
+     "start": 10.03
+    },
+    {
+     "word": "schon",
+     "start": 10.5
+    },
+    {
+     "word": "im",
+     "start": 10.83
+    },
+    {
+     "word": "normalen",
+     "start": 11.018
+    },
+    {
+     "word": "Betrieb",
+     "start": 11.488
+    },
+    {
+     "word": "auslösen.",
+     "start": 11.912
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-5.wav",
+   "seconds": 4.262,
+   "words": [
+    {
+     "word": "Warum",
+     "start": 0.1
+    },
+    {
+     "word": "hat",
+     "start": 0.442
+    },
+    {
+     "word": "die",
+     "start": 0.686
+    },
+    {
+     "word": "Steckdose",
+     "start": 0.93
+    },
+    {
+     "word": "einen",
+     "start": 1.468
+    },
+    {
+     "word": "FI/LS-Schalter",
+     "start": 1.81
+    },
+    {
+     "word": "mit",
+     "start": 2.493
+    },
+    {
+     "word": "10",
+     "start": 2.738
+    },
+    {
+     "word": "Milliampere?",
+     "start": 2.933
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-11.wav",
+   "seconds": 20.502,
+   "words": [
+    {
+     "word": "Steckdosen",
+     "start": 0.1
+    },
+    {
+     "word": "bis",
+     "start": 0.662
+    },
+    {
+     "word": "32",
+     "start": 0.896
+    },
+    {
+     "word": "Ampere,",
+     "start": 1.084
+    },
+    {
+     "word": "die",
+     "start": 1.692
+    },
+    {
+     "word": "auch",
+     "start": 1.927
+    },
+    {
+     "word": "von",
+     "start": 2.208
+    },
+    {
+     "word": "Laien",
+     "start": 2.442
+    },
+    {
+     "word": "benutzt",
+     "start": 2.77
+    },
+    {
+     "word": "werden",
+     "start": 3.191
+    },
+    {
+     "word": "können,",
+     "start": 3.566
+    },
+    {
+     "word": "brauchen",
+     "start": 4.175
+    },
+    {
+     "word": "einen",
+     "start": 4.643
+    },
+    {
+     "word": "*zusätzlichen",
+     "start": 4.971
+    },
+    {
+     "word": "Schutz*",
+     "start": 5.627
+    },
+    {
+     "word": "durch",
+     "start": 6.001
+    },
+    {
+     "word": "eine",
+     "start": 6.329
+    },
+    {
+     "word": "Fehlerstrom-Schutzeinrichtung",
+     "start": 6.61
+    },
+    {
+     "word": "mit",
+     "start": 8.015
+    },
+    {
+     "word": "höchstens",
+     "start": 8.249
+    },
+    {
+     "word": "*30",
+     "start": 8.765
+    },
+    {
+     "word": "Milliampere*.",
+     "start": 8.952
+    },
+    {
+     "word": "Hier",
+     "start": 9.795
+    },
+    {
+     "word": "sind",
+     "start": 10.076
+    },
+    {
+     "word": "laut",
+     "start": 10.357
+    },
+    {
+     "word": "Vorgabe",
+     "start": 10.638
+    },
+    {
+     "word": "sogar",
+     "start": 11.06
+    },
+    {
+     "word": "10",
+     "start": 11.387
+    },
+    {
+     "word": "Milliampere",
+     "start": 11.575
+    },
+    {
+     "word": "vorgesehen.",
+     "start": 12.184
+    },
+    {
+     "word": "Der",
+     "start": 12.98
+    },
+    {
+     "word": "*FI-Teil*",
+     "start": 13.214
+    },
+    {
+     "word": "schützt",
+     "start": 13.589
+    },
+    {
+     "word": "Personen",
+     "start": 14.01
+    },
+    {
+     "word": "bei",
+     "start": 14.478
+    },
+    {
+     "word": "einem",
+     "start": 14.713
+    },
+    {
+     "word": "Fehlerstrom,",
+     "start": 15.041
+    },
+    {
+     "word": "und",
+     "start": 15.884
+    },
+    {
+     "word": "der",
+     "start": 16.118
+    },
+    {
+     "word": "*LS-Teil*",
+     "start": 16.352
+    },
+    {
+     "word": "mit",
+     "start": 16.727
+    },
+    {
+     "word": "B16",
+     "start": 16.961
+    },
+    {
+     "word": "schützt",
+     "start": 17.195
+    },
+    {
+     "word": "die",
+     "start": 17.616
+    },
+    {
+     "word": "Leitung",
+     "start": 17.851
+    },
+    {
+     "word": "bei",
+     "start": 18.272
+    },
+    {
+     "word": "Überlast",
+     "start": 18.506
+    },
+    {
+     "word": "und",
+     "start": 18.975
+    },
+    {
+     "word": "Kurzschluss.",
+     "start": 19.209
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-6.wav",
+   "seconds": 4.234,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "passiert,",
+     "start": 0.325
+    },
+    {
+     "word": "wenn",
+     "start": 0.998
+    },
+    {
+     "word": "bei",
+     "start": 1.268
+    },
+    {
+     "word": "Ihnen",
+     "start": 1.493
+    },
+    {
+     "word": "die",
+     "start": 1.807
+    },
+    {
+     "word": "Ader",
+     "start": 2.032
+    },
+    {
+     "word": "zum",
+     "start": 2.301
+    },
+    {
+     "word": "Schalter",
+     "start": 2.526
+    },
+    {
+     "word": "S1",
+     "start": 2.975
+    },
+    {
+     "word": "abfällt?",
+     "start": 3.155
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-12.wav",
+   "seconds": 16.345,
+   "words": [
+    {
+     "word": "S1",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.276
+    },
+    {
+     "word": "ein",
+     "start": 0.496
+    },
+    {
+     "word": "*Schließer*.",
+     "start": 0.716
+    },
+    {
+     "word": "Fällt",
+     "start": 1.42
+    },
+    {
+     "word": "die",
+     "start": 1.728
+    },
+    {
+     "word": "Ader",
+     "start": 1.948
+    },
+    {
+     "word": "ab,",
+     "start": 2.212
+    },
+    {
+     "word": "kommt",
+     "start": 2.608
+    },
+    {
+     "word": "kein",
+     "start": 2.916
+    },
+    {
+     "word": "Signal",
+     "start": 3.18
+    },
+    {
+     "word": "an",
+     "start": 3.532
+    },
+    {
+     "word": "der",
+     "start": 3.708
+    },
+    {
+     "word": "S7",
+     "start": 3.928
+    },
+    {
+     "word": "an,",
+     "start": 4.104
+    },
+    {
+     "word": "die",
+     "start": 4.5
+    },
+    {
+     "word": "Anlage",
+     "start": 4.72
+    },
+    {
+     "word": "geht",
+     "start": 5.072
+    },
+    {
+     "word": "aus",
+     "start": 5.336
+    },
+    {
+     "word": "und",
+     "start": 5.556
+    },
+    {
+     "word": "lässt",
+     "start": 5.776
+    },
+    {
+     "word": "sich",
+     "start": 6.084
+    },
+    {
+     "word": "nicht",
+     "start": 6.348
+    },
+    {
+     "word": "einschalten.",
+     "start": 6.656
+    },
+    {
+     "word": "Das",
+     "start": 7.448
+    },
+    {
+     "word": "ist",
+     "start": 7.668
+    },
+    {
+     "word": "der",
+     "start": 7.888
+    },
+    {
+     "word": "*sichere",
+     "start": 8.108
+    },
+    {
+     "word": "Zustand*.",
+     "start": 8.504
+    },
+    {
+     "word": "Gefährlich",
+     "start": 9.12
+    },
+    {
+     "word": "wäre",
+     "start": 9.648
+    },
+    {
+     "word": "ein",
+     "start": 9.912
+    },
+    {
+     "word": "AUS-Befehl",
+     "start": 10.132
+    },
+    {
+     "word": "mit",
+     "start": 10.616
+    },
+    {
+     "word": "Schließer.",
+     "start": 10.836
+    },
+    {
+     "word": "Deshalb",
+     "start": 11.54
+    },
+    {
+     "word": "nimmt",
+     "start": 11.936
+    },
+    {
+     "word": "man",
+     "start": 12.243
+    },
+    {
+     "word": "für",
+     "start": 12.463
+    },
+    {
+     "word": "AUS",
+     "start": 12.683
+    },
+    {
+     "word": "und",
+     "start": 12.903
+    },
+    {
+     "word": "Not-Halt",
+     "start": 13.123
+    },
+    {
+     "word": "immer",
+     "start": 13.519
+    },
+    {
+     "word": "*Öffner*,",
+     "start": 13.827
+    },
+    {
+     "word": "die",
+     "start": 14.399
+    },
+    {
+     "word": "sind",
+     "start": 14.619
+    },
+    {
+     "word": "drahtbruchsicher.",
+     "start": 14.883
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-7.wav",
+   "seconds": 5.037,
+   "words": [
+    {
+     "word": "Gut.",
+     "start": 0.1
+    },
+    {
+     "word": "Bevor",
+     "start": 0.501
+    },
+    {
+     "word": "Sie",
+     "start": 0.781
+    },
+    {
+     "word": "die",
+     "start": 0.981
+    },
+    {
+     "word": "Anlage",
+     "start": 1.182
+    },
+    {
+     "word": "einschalten:",
+     "start": 1.502
+    },
+    {
+     "word": "Was",
+     "start": 2.223
+    },
+    {
+     "word": "prüfen",
+     "start": 2.424
+    },
+    {
+     "word": "Sie,",
+     "start": 2.744
+    },
+    {
+     "word": "und",
+     "start": 3.145
+    },
+    {
+     "word": "in",
+     "start": 3.345
+    },
+    {
+     "word": "welcher",
+     "start": 3.505
+    },
+    {
+     "word": "Reihenfolge?",
+     "start": 3.866
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-13.wav",
+   "seconds": 17.896,
+   "words": [
+    {
+     "word": "Zuerst",
+     "start": 0.1
+    },
+    {
+     "word": "*besichtigen*.",
+     "start": 0.47
+    },
+    {
+     "word": "Dann",
+     "start": 1.303
+    },
+    {
+     "word": "die",
+     "start": 1.58
+    },
+    {
+     "word": "Messungen",
+     "start": 1.812
+    },
+    {
+     "word": "*ohne",
+     "start": 2.32
+    },
+    {
+     "word": "Spannung*:",
+     "start": 2.598
+    },
+    {
+     "word": "Durchgängigkeit",
+     "start": 3.292
+    },
+    {
+     "word": "des",
+     "start": 4.078
+    },
+    {
+     "word": "Schutzleiters",
+     "start": 4.309
+    },
+    {
+     "word": "und",
+     "start": 5.003
+    },
+    {
+     "word": "Isolationswiderstand.",
+     "start": 5.235
+    },
+    {
+     "word": "Erst",
+     "start": 6.483
+    },
+    {
+     "word": "wenn",
+     "start": 6.761
+    },
+    {
+     "word": "das",
+     "start": 7.039
+    },
+    {
+     "word": "in",
+     "start": 7.27
+    },
+    {
+     "word": "Ordnung",
+     "start": 7.455
+    },
+    {
+     "word": "ist,",
+     "start": 7.871
+    },
+    {
+     "word": "schalte",
+     "start": 8.334
+    },
+    {
+     "word": "ich",
+     "start": 8.75
+    },
+    {
+     "word": "mit",
+     "start": 8.981
+    },
+    {
+     "word": "Ihrer",
+     "start": 9.213
+    },
+    {
+     "word": "Erlaubnis",
+     "start": 9.536
+    },
+    {
+     "word": "ein",
+     "start": 10.045
+    },
+    {
+     "word": "und",
+     "start": 10.276
+    },
+    {
+     "word": "messe",
+     "start": 10.508
+    },
+    {
+     "word": "*mit",
+     "start": 10.832
+    },
+    {
+     "word": "Spannung*:",
+     "start": 11.063
+    },
+    {
+     "word": "Fehlerstrom-Schutzeinrichtung",
+     "start": 11.757
+    },
+    {
+     "word": "und",
+     "start": 13.144
+    },
+    {
+     "word": "Drehfeld.",
+     "start": 13.376
+    },
+    {
+     "word": "Zum",
+     "start": 14.07
+    },
+    {
+     "word": "Schluss",
+     "start": 14.301
+    },
+    {
+     "word": "kommt",
+     "start": 14.717
+    },
+    {
+     "word": "die",
+     "start": 15.041
+    },
+    {
+     "word": "*Erprobung*,",
+     "start": 15.272
+    },
+    {
+     "word": "also",
+     "start": 16.012
+    },
+    {
+     "word": "der",
+     "start": 16.29
+    },
+    {
+     "word": "Funktionstest.",
+     "start": 16.521
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-8.wav",
+   "seconds": 2.222,
+   "words": [
+    {
+     "word": "Gut,",
+     "start": 0.1
+    },
+    {
+     "word": "dann",
+     "start": 0.428
+    },
+    {
+     "word": "zeigen",
+     "start": 0.624
+    },
+    {
+     "word": "Sie",
+     "start": 0.887
+    },
+    {
+     "word": "mir",
+     "start": 1.051
+    },
+    {
+     "word": "das",
+     "start": 1.214
+    },
+    {
+     "word": "bitte.",
+     "start": 1.378
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-14.wav",
+   "seconds": 5.784,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "drei:",
+     "start": 0.362
+    },
+    {
+     "word": "*Besichtigen*.",
+     "start": 0.773
+    },
+    {
+     "word": "Ich",
+     "start": 1.446
+    },
+    {
+     "word": "gehe",
+     "start": 1.633
+    },
+    {
+     "word": "das",
+     "start": 1.857
+    },
+    {
+     "word": "Protokoll",
+     "start": 2.044
+    },
+    {
+     "word": "Punkt",
+     "start": 2.455
+    },
+    {
+     "word": "für",
+     "start": 2.717
+    },
+    {
+     "word": "Punkt",
+     "start": 2.904
+    },
+    {
+     "word": "durch",
+     "start": 3.166
+    },
+    {
+     "word": "und",
+     "start": 3.427
+    },
+    {
+     "word": "sage",
+     "start": 3.614
+    },
+    {
+     "word": "dabei",
+     "start": 3.839
+    },
+    {
+     "word": "laut,",
+     "start": 4.1
+    },
+    {
+     "word": "was",
+     "start": 4.511
+    },
+    {
+     "word": "ich",
+     "start": 4.698
+    },
+    {
+     "word": "prüfe.",
+     "start": 4.885
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-15.wav",
+   "seconds": 39.669,
+   "words": [
+    {
+     "word": "*Schaltungsunterlagen*:",
+     "start": 0.1
+    },
+    {
+     "word": "komplett",
+     "start": 1.642
+    },
+    {
+     "word": "und",
+     "start": 2.213
+    },
+    {
+     "word": "mit",
+     "start": 2.499
+    },
+    {
+     "word": "der",
+     "start": 2.784
+    },
+    {
+     "word": "Änderung",
+     "start": 3.07
+    },
+    {
+     "word": "ergänzt.",
+     "start": 3.641
+    },
+    {
+     "word": "*Betriebsmittel*:",
+     "start": 4.44
+    },
+    {
+     "word": "richtig",
+     "start": 5.639
+    },
+    {
+     "word": "ausgewählt,",
+     "start": 6.153
+    },
+    {
+     "word": "nicht",
+     "start": 7.124
+    },
+    {
+     "word": "beschädigt",
+     "start": 7.524
+    },
+    {
+     "word": "und",
+     "start": 8.209
+    },
+    {
+     "word": "gekennzeichnet.",
+     "start": 8.495
+    },
+    {
+     "word": "*Leitungsanschlüsse*:",
+     "start": 9.694
+    },
+    {
+     "word": "alles",
+     "start": 11.122
+    },
+    {
+     "word": "fest,",
+     "start": 11.521
+    },
+    {
+     "word": "sauber",
+     "start": 12.15
+    },
+    {
+     "word": "abisoliert,",
+     "start": 12.607
+    },
+    {
+     "word": "mit",
+     "start": 13.577
+    },
+    {
+     "word": "Aderendhülsen.",
+     "start": 13.863
+    },
+    {
+     "word": "*Leitungswahl*:",
+     "start": 15.005
+    },
+    {
+     "word": "schwarz",
+     "start": 16.09
+    },
+    {
+     "word": "1,5",
+     "start": 16.604
+    },
+    {
+     "word": "Quadratmillimeter",
+     "start": 16.832
+    },
+    {
+     "word": "im",
+     "start": 17.917
+    },
+    {
+     "word": "Hauptstromkreis,",
+     "start": 18.146
+    },
+    {
+     "word": "dunkelblau",
+     "start": 19.402
+    },
+    {
+     "word": "0,75",
+     "start": 20.088
+    },
+    {
+     "word": "für",
+     "start": 20.373
+    },
+    {
+     "word": "die",
+     "start": 20.659
+    },
+    {
+     "word": "24",
+     "start": 20.944
+    },
+    {
+     "word": "Volt,",
+     "start": 21.173
+    },
+    {
+     "word": "*grün-gelb*",
+     "start": 21.801
+    },
+    {
+     "word": "für",
+     "start": 22.372
+    },
+    {
+     "word": "den",
+     "start": 22.657
+    },
+    {
+     "word": "Schutzleiter",
+     "start": 22.943
+    },
+    {
+     "word": "und",
+     "start": 23.742
+    },
+    {
+     "word": "hellblau",
+     "start": 24.028
+    },
+    {
+     "word": "für",
+     "start": 24.599
+    },
+    {
+     "word": "den",
+     "start": 24.885
+    },
+    {
+     "word": "Neutralleiter.",
+     "start": 25.17
+    },
+    {
+     "word": "*Schutz*",
+     "start": 26.312
+    },
+    {
+     "word": "gegen",
+     "start": 26.769
+    },
+    {
+     "word": "direktes",
+     "start": 27.169
+    },
+    {
+     "word": "Berühren:",
+     "start": 27.74
+    },
+    {
+     "word": "alle",
+     "start": 28.597
+    },
+    {
+     "word": "Abdeckungen",
+     "start": 28.939
+    },
+    {
+     "word": "drauf,",
+     "start": 29.682
+    },
+    {
+     "word": "alles",
+     "start": 30.367
+    },
+    {
+     "word": "fingersicher.",
+     "start": 30.767
+    },
+    {
+     "word": "Und",
+     "start": 31.852
+    },
+    {
+     "word": "die",
+     "start": 32.137
+    },
+    {
+     "word": "*Überstromschutzeinrichtungen*:",
+     "start": 32.423
+    },
+    {
+     "word": "F1",
+     "start": 34.422
+    },
+    {
+     "word": "mit",
+     "start": 34.65
+    },
+    {
+     "word": "6",
+     "start": 34.935
+    },
+    {
+     "word": "Ampere,",
+     "start": 35.107
+    },
+    {
+     "word": "F3",
+     "start": 35.849
+    },
+    {
+     "word": "B16,",
+     "start": 36.078
+    },
+    {
+     "word": "und",
+     "start": 36.649
+    },
+    {
+     "word": "F4",
+     "start": 36.934
+    },
+    {
+     "word": "auf",
+     "start": 37.163
+    },
+    {
+     "word": "3,25",
+     "start": 37.448
+    },
+    {
+     "word": "Ampere",
+     "start": 37.734
+    },
+    {
+     "word": "eingestellt.",
+     "start": 38.191
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-16.wav",
+   "seconds": 4.848,
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.1
+    },
+    {
+     "word": "in",
+     "start": 0.355
+    },
+    {
+     "word": "*Ordnung*,",
+     "start": 0.501
+    },
+    {
+     "word": "also",
+     "start": 1.011
+    },
+    {
+     "word": "mache",
+     "start": 1.229
+    },
+    {
+     "word": "ich",
+     "start": 1.484
+    },
+    {
+     "word": "im",
+     "start": 1.666
+    },
+    {
+     "word": "Protokoll",
+     "start": 1.812
+    },
+    {
+     "word": "bei",
+     "start": 2.213
+    },
+    {
+     "word": "der",
+     "start": 2.395
+    },
+    {
+     "word": "Besichtigung",
+     "start": 2.577
+    },
+    {
+     "word": "überall",
+     "start": 3.087
+    },
+    {
+     "word": "mein",
+     "start": 3.415
+    },
+    {
+     "word": "Kreuz",
+     "start": 3.633
+    },
+    {
+     "word": "bei",
+     "start": 3.888
+    },
+    {
+     "word": "OK.",
+     "start": 4.07
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-17.wav",
+   "seconds": 6.404,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "vier:",
+     "start": 0.375
+    },
+    {
+     "word": "*Messen",
+     "start": 0.807
+    },
+    {
+     "word": "ohne",
+     "start": 1.122
+    },
+    {
+     "word": "Spannung*.",
+     "start": 1.357
+    },
+    {
+     "word": "Bevor",
+     "start": 1.947
+    },
+    {
+     "word": "ich",
+     "start": 2.222
+    },
+    {
+     "word": "messe,",
+     "start": 2.418
+    },
+    {
+     "word": "sorge",
+     "start": 2.89
+    },
+    {
+     "word": "ich",
+     "start": 3.165
+    },
+    {
+     "word": "dafür,",
+     "start": 3.361
+    },
+    {
+     "word": "dass",
+     "start": 3.833
+    },
+    {
+     "word": "die",
+     "start": 4.068
+    },
+    {
+     "word": "Anlage",
+     "start": 4.265
+    },
+    {
+     "word": "wirklich",
+     "start": 4.579
+    },
+    {
+     "word": "spannungsfrei",
+     "start": 4.972
+    },
+    {
+     "word": "ist.",
+     "start": 5.561
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-18.wav",
+   "seconds": 15.726,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.1
+    },
+    {
+     "word": "ziehe",
+     "start": 0.296
+    },
+    {
+     "word": "den",
+     "start": 0.571
+    },
+    {
+     "word": "*CEE-Stecker*.",
+     "start": 0.767
+    },
+    {
+     "word": "Damit",
+     "start": 1.433
+    },
+    {
+     "word": "ist",
+     "start": 1.708
+    },
+    {
+     "word": "*freigeschaltet*.",
+     "start": 1.904
+    },
+    {
+     "word": "Den",
+     "start": 2.727
+    },
+    {
+     "word": "Stecker",
+     "start": 2.923
+    },
+    {
+     "word": "lege",
+     "start": 3.276
+    },
+    {
+     "word": "ich",
+     "start": 3.512
+    },
+    {
+     "word": "so",
+     "start": 3.708
+    },
+    {
+     "word": "hin,",
+     "start": 3.865
+    },
+    {
+     "word": "dass",
+     "start": 4.257
+    },
+    {
+     "word": "ihn",
+     "start": 4.492
+    },
+    {
+     "word": "niemand",
+     "start": 4.688
+    },
+    {
+     "word": "wieder",
+     "start": 5.041
+    },
+    {
+     "word": "einstecken",
+     "start": 5.355
+    },
+    {
+     "word": "kann,",
+     "start": 5.825
+    },
+    {
+     "word": "das",
+     "start": 6.257
+    },
+    {
+     "word": "ist",
+     "start": 6.453
+    },
+    {
+     "word": "gegen",
+     "start": 6.649
+    },
+    {
+     "word": "*Wiedereinschalten*",
+     "start": 6.923
+    },
+    {
+     "word": "gesichert.",
+     "start": 7.668
+    },
+    {
+     "word": "Und",
+     "start": 8.296
+    },
+    {
+     "word": "dann",
+     "start": 8.492
+    },
+    {
+     "word": "stelle",
+     "start": 8.727
+    },
+    {
+     "word": "ich",
+     "start": 9.041
+    },
+    {
+     "word": "mit",
+     "start": 9.237
+    },
+    {
+     "word": "dem",
+     "start": 9.433
+    },
+    {
+     "word": "zweipoligen",
+     "start": 9.629
+    },
+    {
+     "word": "Spannungsprüfer",
+     "start": 10.139
+    },
+    {
+     "word": "die",
+     "start": 10.805
+    },
+    {
+     "word": "*Spannungsfreiheit*",
+     "start": 11.001
+    },
+    {
+     "word": "fest.",
+     "start": 11.747
+    },
+    {
+     "word": "Vorher",
+     "start": 12.178
+    },
+    {
+     "word": "teste",
+     "start": 12.492
+    },
+    {
+     "word": "ich",
+     "start": 12.766
+    },
+    {
+     "word": "den",
+     "start": 12.962
+    },
+    {
+     "word": "Spannungsprüfer",
+     "start": 13.158
+    },
+    {
+     "word": "an",
+     "start": 13.825
+    },
+    {
+     "word": "einer",
+     "start": 13.982
+    },
+    {
+     "word": "bekannten",
+     "start": 14.256
+    },
+    {
+     "word": "Spannung.",
+     "start": 14.688
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-1-19.wav",
+   "seconds": 16.631,
+   "words": [
+    {
+     "word": "Erste",
+     "start": 0.1
+    },
+    {
+     "word": "Messung:",
+     "start": 0.411
+    },
+    {
+     "word": "*Durchgängigkeit",
+     "start": 1.033
+    },
+    {
+     "word": "des",
+     "start": 1.788
+    },
+    {
+     "word": "Schutzleiters*.",
+     "start": 2.01
+    },
+    {
+     "word": "Am",
+     "start": 2.899
+    },
+    {
+     "word": "Messgerät",
+     "start": 3.076
+    },
+    {
+     "word": "stelle",
+     "start": 3.565
+    },
+    {
+     "word": "ich",
+     "start": 3.92
+    },
+    {
+     "word": "*R-Low*",
+     "start": 4.142
+    },
+    {
+     "word": "ein.",
+     "start": 4.409
+    },
+    {
+     "word": "Zuerst",
+     "start": 4.853
+    },
+    {
+     "word": "mache",
+     "start": 5.209
+    },
+    {
+     "word": "ich",
+     "start": 5.52
+    },
+    {
+     "word": "den",
+     "start": 5.742
+    },
+    {
+     "word": "*Nullabgleich*,",
+     "start": 5.964
+    },
+    {
+     "word": "damit",
+     "start": 6.808
+    },
+    {
+     "word": "der",
+     "start": 7.119
+    },
+    {
+     "word": "Widerstand",
+     "start": 7.341
+    },
+    {
+     "word": "der",
+     "start": 7.874
+    },
+    {
+     "word": "Messleitungen",
+     "start": 8.096
+    },
+    {
+     "word": "nicht",
+     "start": 8.762
+    },
+    {
+     "word": "mitgemessen",
+     "start": 9.073
+    },
+    {
+     "word": "wird.",
+     "start": 9.651
+    },
+    {
+     "word": "Dann",
+     "start": 10.14
+    },
+    {
+     "word": "messe",
+     "start": 10.406
+    },
+    {
+     "word": "ich",
+     "start": 10.717
+    },
+    {
+     "word": "vom",
+     "start": 10.939
+    },
+    {
+     "word": "*PE-Kontakt*",
+     "start": 11.161
+    },
+    {
+     "word": "des",
+     "start": 11.65
+    },
+    {
+     "word": "CEE-Steckers",
+     "start": 11.872
+    },
+    {
+     "word": "zu",
+     "start": 12.45
+    },
+    {
+     "word": "allen",
+     "start": 12.627
+    },
+    {
+     "word": "Punkten,",
+     "start": 12.938
+    },
+    {
+     "word": "die",
+     "start": 13.56
+    },
+    {
+     "word": "mit",
+     "start": 13.782
+    },
+    {
+     "word": "dem",
+     "start": 14.004
+    },
+    {
+     "word": "Schutzleiter",
+     "start": 14.227
+    },
+    {
+     "word": "verbunden",
+     "start": 14.848
+    },
+    {
+     "word": "sein",
+     "start": 15.337
+    },
+    {
+     "word": "müssen.",
+     "start": 15.604
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-0.wav",
+   "seconds": 22.036,
+   "words": [
+    {
+     "word": "Zur",
+     "start": 0.1
+    },
+    {
+     "word": "*Montageplatte*:",
+     "start": 0.367
+    },
+    {
+     "word": "0,08",
+     "start": 1.433
+    },
+    {
+     "word": "Ohm.",
+     "start": 1.699
+    },
+    {
+     "word": "Zum",
+     "start": 2.233
+    },
+    {
+     "word": "Schutzkontakt",
+     "start": 2.499
+    },
+    {
+     "word": "der",
+     "start": 3.299
+    },
+    {
+     "word": "*Steckdose*:",
+     "start": 3.565
+    },
+    {
+     "word": "0,14",
+     "start": 4.418
+    },
+    {
+     "word": "Ohm.",
+     "start": 4.685
+    },
+    {
+     "word": "Zum",
+     "start": 5.218
+    },
+    {
+     "word": "*Motor*",
+     "start": 5.485
+    },
+    {
+     "word": "über",
+     "start": 5.858
+    },
+    {
+     "word": "X1:",
+     "start": 6.178
+    },
+    {
+     "word": "0,21",
+     "start": 6.658
+    },
+    {
+     "word": "Ohm.",
+     "start": 6.924
+    },
+    {
+     "word": "Und",
+     "start": 7.457
+    },
+    {
+     "word": "zur",
+     "start": 7.724
+    },
+    {
+     "word": "*Bedieneinheit*:",
+     "start": 7.991
+    },
+    {
+     "word": "0,11",
+     "start": 9.057
+    },
+    {
+     "word": "Ohm.",
+     "start": 9.323
+    },
+    {
+     "word": "Einen",
+     "start": 9.857
+    },
+    {
+     "word": "festen",
+     "start": 10.23
+    },
+    {
+     "word": "Grenzwert",
+     "start": 10.656
+    },
+    {
+     "word": "gibt",
+     "start": 11.243
+    },
+    {
+     "word": "es",
+     "start": 11.563
+    },
+    {
+     "word": "in",
+     "start": 11.776
+    },
+    {
+     "word": "der",
+     "start": 11.989
+    },
+    {
+     "word": "Norm",
+     "start": 12.256
+    },
+    {
+     "word": "dafür",
+     "start": 12.576
+    },
+    {
+     "word": "nicht.",
+     "start": 12.949
+    },
+    {
+     "word": "Der",
+     "start": 13.589
+    },
+    {
+     "word": "Wert",
+     "start": 13.855
+    },
+    {
+     "word": "muss",
+     "start": 14.175
+    },
+    {
+     "word": "*niedrig*",
+     "start": 14.495
+    },
+    {
+     "word": "sein",
+     "start": 14.975
+    },
+    {
+     "word": "und",
+     "start": 15.295
+    },
+    {
+     "word": "zur",
+     "start": 15.561
+    },
+    {
+     "word": "Leitungslänge",
+     "start": 15.828
+    },
+    {
+     "word": "passen,",
+     "start": 16.627
+    },
+    {
+     "word": "und",
+     "start": 17.321
+    },
+    {
+     "word": "das",
+     "start": 17.587
+    },
+    {
+     "word": "tut",
+     "start": 17.854
+    },
+    {
+     "word": "er.",
+     "start": 18.12
+    },
+    {
+     "word": "Ins",
+     "start": 18.6
+    },
+    {
+     "word": "Protokoll",
+     "start": 18.867
+    },
+    {
+     "word": "schreibe",
+     "start": 19.453
+    },
+    {
+     "word": "ich",
+     "start": 19.986
+    },
+    {
+     "word": "den",
+     "start": 20.253
+    },
+    {
+     "word": "größten",
+     "start": 20.519
+    },
+    {
+     "word": "Wert.",
+     "start": 20.999
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-1.wav",
+   "seconds": 5.778,
+   "words": [
+    {
+     "word": "In",
+     "start": 0.1
+    },
+    {
+     "word": "das",
+     "start": 0.28
+    },
+    {
+     "word": "Protokoll",
+     "start": 0.506
+    },
+    {
+     "word": "kommt:",
+     "start": 1.001
+    },
+    {
+     "word": "Durchgängigkeit",
+     "start": 1.542
+    },
+    {
+     "word": "des",
+     "start": 2.308
+    },
+    {
+     "word": "Schutzleiters,",
+     "start": 2.534
+    },
+    {
+     "word": "*gemessener*",
+     "start": 3.435
+    },
+    {
+     "word": "Wert",
+     "start": 3.976
+    },
+    {
+     "word": "0,21",
+     "start": 4.247
+    },
+    {
+     "word": "Ohm,",
+     "start": 4.472
+    },
+    {
+     "word": "OK.",
+     "start": 4.923
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-2.wav",
+   "seconds": 20.479,
+   "words": [
+    {
+     "word": "Zweite",
+     "start": 0.1
+    },
+    {
+     "word": "Messung:",
+     "start": 0.478
+    },
+    {
+     "word": "der",
+     "start": 1.139
+    },
+    {
+     "word": "*Isolationswiderstand*.",
+     "start": 1.375
+    },
+    {
+     "word": "Vorher",
+     "start": 2.65
+    },
+    {
+     "word": "muss",
+     "start": 3.028
+    },
+    {
+     "word": "ich",
+     "start": 3.311
+    },
+    {
+     "word": "die",
+     "start": 3.547
+    },
+    {
+     "word": "Anlage",
+     "start": 3.784
+    },
+    {
+     "word": "vorbereiten.",
+     "start": 4.161
+    },
+    {
+     "word": "Ich",
+     "start": 5.011
+    },
+    {
+     "word": "*klemme*",
+     "start": 5.248
+    },
+    {
+     "word": "das",
+     "start": 5.625
+    },
+    {
+     "word": "Netzteil",
+     "start": 5.861
+    },
+    {
+     "word": "T1",
+     "start": 6.334
+    },
+    {
+     "word": "ab,",
+     "start": 6.523
+    },
+    {
+     "word": "denn",
+     "start": 6.948
+    },
+    {
+     "word": "Elektronik",
+     "start": 7.231
+    },
+    {
+     "word": "kann",
+     "start": 7.798
+    },
+    {
+     "word": "die",
+     "start": 8.081
+    },
+    {
+     "word": "500",
+     "start": 8.317
+    },
+    {
+     "word": "Volt",
+     "start": 8.553
+    },
+    {
+     "word": "Messspannung",
+     "start": 8.837
+    },
+    {
+     "word": "nicht",
+     "start": 9.498
+    },
+    {
+     "word": "ab",
+     "start": 9.828
+    },
+    {
+     "word": "und",
+     "start": 10.017
+    },
+    {
+     "word": "würde",
+     "start": 10.253
+    },
+    {
+     "word": "das",
+     "start": 10.584
+    },
+    {
+     "word": "Ergebnis",
+     "start": 10.82
+    },
+    {
+     "word": "verfälschen.",
+     "start": 11.292
+    },
+    {
+     "word": "Dann",
+     "start": 12.142
+    },
+    {
+     "word": "schalte",
+     "start": 12.426
+    },
+    {
+     "word": "ich",
+     "start": 12.851
+    },
+    {
+     "word": "F1,",
+     "start": 13.087
+    },
+    {
+     "word": "F3",
+     "start": 13.512
+    },
+    {
+     "word": "und",
+     "start": 13.701
+    },
+    {
+     "word": "den",
+     "start": 13.937
+    },
+    {
+     "word": "Motorschutzschalter",
+     "start": 14.173
+    },
+    {
+     "word": "F4",
+     "start": 15.165
+    },
+    {
+     "word": "*ein*,",
+     "start": 15.354
+    },
+    {
+     "word": "damit",
+     "start": 15.826
+    },
+    {
+     "word": "auch",
+     "start": 16.156
+    },
+    {
+     "word": "die",
+     "start": 16.44
+    },
+    {
+     "word": "Leitungen",
+     "start": 16.676
+    },
+    {
+     "word": "hinter",
+     "start": 17.195
+    },
+    {
+     "word": "den",
+     "start": 17.573
+    },
+    {
+     "word": "Schutzeinrichtungen",
+     "start": 17.809
+    },
+    {
+     "word": "mitgemessen",
+     "start": 18.801
+    },
+    {
+     "word": "werden.",
+     "start": 19.415
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-9.wav",
+   "seconds": 5.233,
+   "words": [
+    {
+     "word": "Warum",
+     "start": 0.1
+    },
+    {
+     "word": "schalten",
+     "start": 0.398
+    },
+    {
+     "word": "Sie",
+     "start": 0.824
+    },
+    {
+     "word": "die",
+     "start": 1.037
+    },
+    {
+     "word": "Sicherungen",
+     "start": 1.249
+    },
+    {
+     "word": "und",
+     "start": 1.803
+    },
+    {
+     "word": "den",
+     "start": 2.016
+    },
+    {
+     "word": "Motorschutzschalter",
+     "start": 2.229
+    },
+    {
+     "word": "vor",
+     "start": 3.123
+    },
+    {
+     "word": "der",
+     "start": 3.335
+    },
+    {
+     "word": "Isolationsmessung",
+     "start": 3.548
+    },
+    {
+     "word": "ein?",
+     "start": 4.357
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-3.wav",
+   "seconds": 8.569,
+   "words": [
+    {
+     "word": "Damit",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.377
+    },
+    {
+     "word": "Leitungen",
+     "start": 0.574
+    },
+    {
+     "word": "*hinter*",
+     "start": 1.009
+    },
+    {
+     "word": "den",
+     "start": 1.325
+    },
+    {
+     "word": "Schutzeinrichtungen",
+     "start": 1.522
+    },
+    {
+     "word": "auch",
+     "start": 2.352
+    },
+    {
+     "word": "geprüft",
+     "start": 2.589
+    },
+    {
+     "word": "werden.",
+     "start": 2.944
+    },
+    {
+     "word": "Wären",
+     "start": 3.458
+    },
+    {
+     "word": "sie",
+     "start": 3.734
+    },
+    {
+     "word": "aus,",
+     "start": 3.932
+    },
+    {
+     "word": "würde",
+     "start": 4.327
+    },
+    {
+     "word": "ich",
+     "start": 4.603
+    },
+    {
+     "word": "nur",
+     "start": 4.801
+    },
+    {
+     "word": "bis",
+     "start": 4.998
+    },
+    {
+     "word": "zur",
+     "start": 5.196
+    },
+    {
+     "word": "Sicherung",
+     "start": 5.393
+    },
+    {
+     "word": "messen",
+     "start": 5.828
+    },
+    {
+     "word": "und",
+     "start": 6.144
+    },
+    {
+     "word": "einen",
+     "start": 6.341
+    },
+    {
+     "word": "Fehler",
+     "start": 6.618
+    },
+    {
+     "word": "dahinter",
+     "start": 6.934
+    },
+    {
+     "word": "nicht",
+     "start": 7.329
+    },
+    {
+     "word": "finden.",
+     "start": 7.606
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-4.wav",
+   "seconds": 31.368,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "messe",
+     "start": 0.489
+    },
+    {
+     "word": "ich",
+     "start": 0.879
+    },
+    {
+     "word": "mit",
+     "start": 1.157
+    },
+    {
+     "word": "*500",
+     "start": 1.435
+    },
+    {
+     "word": "Volt*",
+     "start": 1.713
+    },
+    {
+     "word": "Gleichspannung",
+     "start": 2.047
+    },
+    {
+     "word": "an",
+     "start": 2.937
+    },
+    {
+     "word": "der",
+     "start": 3.16
+    },
+    {
+     "word": "Klemmleiste",
+     "start": 3.438
+    },
+    {
+     "word": "X1,",
+     "start": 4.161
+    },
+    {
+     "word": "genau",
+     "start": 4.662
+    },
+    {
+     "word": "die",
+     "start": 5.051
+    },
+    {
+     "word": "Kombinationen",
+     "start": 5.329
+    },
+    {
+     "word": "aus",
+     "start": 6.163
+    },
+    {
+     "word": "dem",
+     "start": 6.442
+    },
+    {
+     "word": "Protokoll.",
+     "start": 6.72
+    },
+    {
+     "word": "X1",
+     "start": 7.61
+    },
+    {
+     "word": "Klemme",
+     "start": 7.832
+    },
+    {
+     "word": "1",
+     "start": 8.277
+    },
+    {
+     "word": "ist",
+     "start": 8.444
+    },
+    {
+     "word": "L1,",
+     "start": 8.722
+    },
+    {
+     "word": "3",
+     "start": 9.223
+    },
+    {
+     "word": "ist",
+     "start": 9.39
+    },
+    {
+     "word": "L2,",
+     "start": 9.668
+    },
+    {
+     "word": "5",
+     "start": 10.169
+    },
+    {
+     "word": "ist",
+     "start": 10.336
+    },
+    {
+     "word": "L3,",
+     "start": 10.614
+    },
+    {
+     "word": "7",
+     "start": 11.114
+    },
+    {
+     "word": "ist",
+     "start": 11.281
+    },
+    {
+     "word": "der",
+     "start": 11.559
+    },
+    {
+     "word": "Neutralleiter",
+     "start": 11.838
+    },
+    {
+     "word": "und",
+     "start": 12.672
+    },
+    {
+     "word": "9",
+     "start": 12.95
+    },
+    {
+     "word": "ist",
+     "start": 13.117
+    },
+    {
+     "word": "PE.",
+     "start": 13.395
+    },
+    {
+     "word": "Also",
+     "start": 13.896
+    },
+    {
+     "word": "zuerst",
+     "start": 14.23
+    },
+    {
+     "word": "*L1",
+     "start": 14.675
+    },
+    {
+     "word": "gegen",
+     "start": 14.897
+    },
+    {
+     "word": "L2*,",
+     "start": 15.286
+    },
+    {
+     "word": "dann",
+     "start": 15.787
+    },
+    {
+     "word": "L1",
+     "start": 16.121
+    },
+    {
+     "word": "gegen",
+     "start": 16.343
+    },
+    {
+     "word": "L3,",
+     "start": 16.733
+    },
+    {
+     "word": "danach",
+     "start": 17.233
+    },
+    {
+     "word": "L1",
+     "start": 17.678
+    },
+    {
+     "word": "gegen",
+     "start": 17.901
+    },
+    {
+     "word": "N,",
+     "start": 18.29
+    },
+    {
+     "word": "anschließend",
+     "start": 18.735
+    },
+    {
+     "word": "L1",
+     "start": 19.514
+    },
+    {
+     "word": "gegen",
+     "start": 19.737
+    },
+    {
+     "word": "PE,",
+     "start": 20.126
+    },
+    {
+     "word": "und",
+     "start": 20.627
+    },
+    {
+     "word": "so",
+     "start": 20.905
+    },
+    {
+     "word": "weiter,",
+     "start": 21.127
+    },
+    {
+     "word": "bis",
+     "start": 21.851
+    },
+    {
+     "word": "zuletzt",
+     "start": 22.129
+    },
+    {
+     "word": "*N",
+     "start": 22.629
+    },
+    {
+     "word": "gegen",
+     "start": 22.796
+    },
+    {
+     "word": "PE*.",
+     "start": 23.186
+    },
+    {
+     "word": "Überall",
+     "start": 23.686
+    },
+    {
+     "word": "zeigt",
+     "start": 24.187
+    },
+    {
+     "word": "das",
+     "start": 24.576
+    },
+    {
+     "word": "Gerät",
+     "start": 24.855
+    },
+    {
+     "word": "*größer",
+     "start": 25.244
+    },
+    {
+     "word": "500",
+     "start": 25.689
+    },
+    {
+     "word": "Megaohm*.",
+     "start": 25.967
+    },
+    {
+     "word": "Der",
+     "start": 26.746
+    },
+    {
+     "word": "Grenzwert",
+     "start": 27.024
+    },
+    {
+     "word": "ist",
+     "start": 27.636
+    },
+    {
+     "word": "mindestens",
+     "start": 27.914
+    },
+    {
+     "word": "1",
+     "start": 28.582
+    },
+    {
+     "word": "Megaohm.",
+     "start": 28.749
+    },
+    {
+     "word": "Alles",
+     "start": 29.527
+    },
+    {
+     "word": "in",
+     "start": 29.917
+    },
+    {
+     "word": "Ordnung.",
+     "start": 30.139
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-5.wav",
+   "seconds": 8.7,
+   "words": [
+    {
+     "word": "Für",
+     "start": 0.1
+    },
+    {
+     "word": "den",
+     "start": 0.34
+    },
+    {
+     "word": "*24-Volt-Kreis*",
+     "start": 0.579
+    },
+    {
+     "word": "gilt",
+     "start": 1.203
+    },
+    {
+     "word": "übrigens:",
+     "start": 1.49
+    },
+    {
+     "word": "Messspannung",
+     "start": 2.209
+    },
+    {
+     "word": "250",
+     "start": 2.88
+    },
+    {
+     "word": "Volt,",
+     "start": 3.12
+    },
+    {
+     "word": "Grenzwert",
+     "start": 3.648
+    },
+    {
+     "word": "0,5",
+     "start": 4.175
+    },
+    {
+     "word": "Megaohm.",
+     "start": 4.367
+    },
+    {
+     "word": "Die",
+     "start": 5.038
+    },
+    {
+     "word": "Werte",
+     "start": 5.277
+    },
+    {
+     "word": "trage",
+     "start": 5.613
+    },
+    {
+     "word": "ich",
+     "start": 5.949
+    },
+    {
+     "word": "in",
+     "start": 6.188
+    },
+    {
+     "word": "die",
+     "start": 6.38
+    },
+    {
+     "word": "*Tabelle*",
+     "start": 6.62
+    },
+    {
+     "word": "im",
+     "start": 7.051
+    },
+    {
+     "word": "Protokoll",
+     "start": 7.243
+    },
+    {
+     "word": "ein.",
+     "start": 7.77
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-6.wav",
+   "seconds": 6.082,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "fünf:",
+     "start": 0.407
+    },
+    {
+     "word": "*Messen",
+     "start": 0.89
+    },
+    {
+     "word": "mit",
+     "start": 1.242
+    },
+    {
+     "word": "Spannung*.",
+     "start": 1.461
+    },
+    {
+     "word": "Ich",
+     "start": 2.12
+    },
+    {
+     "word": "klemme",
+     "start": 2.339
+    },
+    {
+     "word": "das",
+     "start": 2.69
+    },
+    {
+     "word": "Netzteil",
+     "start": 2.91
+    },
+    {
+     "word": "wieder",
+     "start": 3.349
+    },
+    {
+     "word": "an",
+     "start": 3.7
+    },
+    {
+     "word": "und",
+     "start": 3.876
+    },
+    {
+     "word": "kontrolliere",
+     "start": 4.095
+    },
+    {
+     "word": "den",
+     "start": 4.71
+    },
+    {
+     "word": "Anschluss.",
+     "start": 4.93
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-7.wav",
+   "seconds": 4.567,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Messungen",
+     "start": 0.291
+    },
+    {
+     "word": "ohne",
+     "start": 0.712
+    },
+    {
+     "word": "Spannung",
+     "start": 0.942
+    },
+    {
+     "word": "sind",
+     "start": 1.324
+    },
+    {
+     "word": "in",
+     "start": 1.554
+    },
+    {
+     "word": "Ordnung.",
+     "start": 1.707
+    },
+    {
+     "word": "Darf",
+     "start": 2.242
+    },
+    {
+     "word": "ich",
+     "start": 2.472
+    },
+    {
+     "word": "die",
+     "start": 2.663
+    },
+    {
+     "word": "Anlage",
+     "start": 2.854
+    },
+    {
+     "word": "jetzt",
+     "start": 3.16
+    },
+    {
+     "word": "einschalten?",
+     "start": 3.428
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-10.wav",
+   "seconds": 1.29,
+   "words": [
+    {
+     "word": "Ja,",
+     "start": 0.1
+    },
+    {
+     "word": "schalten",
+     "start": 0.296
+    },
+    {
+     "word": "Sie",
+     "start": 0.513
+    },
+    {
+     "word": "ein.",
+     "start": 0.622
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-8.wav",
+   "seconds": 10.249,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.1
+    },
+    {
+     "word": "stecke",
+     "start": 0.329
+    },
+    {
+     "word": "den",
+     "start": 0.695
+    },
+    {
+     "word": "CEE-Stecker",
+     "start": 0.924
+    },
+    {
+     "word": "ein",
+     "start": 1.473
+    },
+    {
+     "word": "und",
+     "start": 1.701
+    },
+    {
+     "word": "messe",
+     "start": 1.93
+    },
+    {
+     "word": "zuerst",
+     "start": 2.25
+    },
+    {
+     "word": "das",
+     "start": 2.616
+    },
+    {
+     "word": "*Drehfeld*",
+     "start": 2.845
+    },
+    {
+     "word": "an",
+     "start": 3.303
+    },
+    {
+     "word": "L1,",
+     "start": 3.486
+    },
+    {
+     "word": "L2",
+     "start": 3.897
+    },
+    {
+     "word": "und",
+     "start": 4.08
+    },
+    {
+     "word": "L3.",
+     "start": 4.309
+    },
+    {
+     "word": "Das",
+     "start": 4.721
+    },
+    {
+     "word": "Gerät",
+     "start": 4.95
+    },
+    {
+     "word": "zeigt",
+     "start": 5.27
+    },
+    {
+     "word": "*Rechtsdrehfeld*.",
+     "start": 5.59
+    },
+    {
+     "word": "Damit",
+     "start": 6.551
+    },
+    {
+     "word": "dreht",
+     "start": 6.871
+    },
+    {
+     "word": "der",
+     "start": 7.191
+    },
+    {
+     "word": "Motor",
+     "start": 7.42
+    },
+    {
+     "word": "mit",
+     "start": 7.74
+    },
+    {
+     "word": "Q1",
+     "start": 7.969
+    },
+    {
+     "word": "auch",
+     "start": 8.152
+    },
+    {
+     "word": "wirklich",
+     "start": 8.427
+    },
+    {
+     "word": "rechts",
+     "start": 8.884
+    },
+    {
+     "word": "herum.",
+     "start": 9.25
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-9.wav",
+   "seconds": 16.844,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.45
+    },
+    {
+     "word": "*Fehlerstrom-Schutzeinrichtung*,",
+     "start": 0.7
+    },
+    {
+     "word": "also",
+     "start": 2.449
+    },
+    {
+     "word": "der",
+     "start": 2.749
+    },
+    {
+     "word": "FI/LS",
+     "start": 2.999
+    },
+    {
+     "word": "F3",
+     "start": 3.299
+    },
+    {
+     "word": "an",
+     "start": 3.499
+    },
+    {
+     "word": "der",
+     "start": 3.699
+    },
+    {
+     "word": "Steckdose.",
+     "start": 3.949
+    },
+    {
+     "word": "Am",
+     "start": 4.748
+    },
+    {
+     "word": "Gerät",
+     "start": 4.948
+    },
+    {
+     "word": "stelle",
+     "start": 5.298
+    },
+    {
+     "word": "ich",
+     "start": 5.698
+    },
+    {
+     "word": "*10",
+     "start": 5.948
+    },
+    {
+     "word": "Milliampere*",
+     "start": 6.148
+    },
+    {
+     "word": "ein,",
+     "start": 6.798
+    },
+    {
+     "word": "Typ",
+     "start": 7.298
+    },
+    {
+     "word": "A,",
+     "start": 7.547
+    },
+    {
+     "word": "und",
+     "start": 7.947
+    },
+    {
+     "word": "stecke",
+     "start": 8.197
+    },
+    {
+     "word": "den",
+     "start": 8.597
+    },
+    {
+     "word": "Prüfadapter",
+     "start": 8.847
+    },
+    {
+     "word": "in",
+     "start": 9.497
+    },
+    {
+     "word": "die",
+     "start": 9.697
+    },
+    {
+     "word": "Steckdose.",
+     "start": 9.947
+    },
+    {
+     "word": "Zuerst",
+     "start": 10.746
+    },
+    {
+     "word": "misst",
+     "start": 11.146
+    },
+    {
+     "word": "das",
+     "start": 11.496
+    },
+    {
+     "word": "Gerät",
+     "start": 11.746
+    },
+    {
+     "word": "die",
+     "start": 12.096
+    },
+    {
+     "word": "*Berührungsspannung*:",
+     "start": 12.346
+    },
+    {
+     "word": "0,3",
+     "start": 13.595
+    },
+    {
+     "word": "Volt.",
+     "start": 13.795
+    },
+    {
+     "word": "Erlaubt",
+     "start": 14.345
+    },
+    {
+     "word": "sind",
+     "start": 14.795
+    },
+    {
+     "word": "höchstens",
+     "start": 15.095
+    },
+    {
+     "word": "*50",
+     "start": 15.645
+    },
+    {
+     "word": "Volt*.",
+     "start": 15.845
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-10.wav",
+   "seconds": 11.242,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.1
+    },
+    {
+     "word": "die",
+     "start": 0.427
+    },
+    {
+     "word": "*Auslösezeit*",
+     "start": 0.7
+    },
+    {
+     "word": "mit",
+     "start": 1.409
+    },
+    {
+     "word": "dem",
+     "start": 1.682
+    },
+    {
+     "word": "vollen",
+     "start": 1.955
+    },
+    {
+     "word": "Bemessungsfehlerstrom:",
+     "start": 2.391
+    },
+    {
+     "word": "Der",
+     "start": 3.919
+    },
+    {
+     "word": "FI/LS",
+     "start": 4.191
+    },
+    {
+     "word": "löst",
+     "start": 4.519
+    },
+    {
+     "word": "nach",
+     "start": 4.846
+    },
+    {
+     "word": "*18",
+     "start": 5.173
+    },
+    {
+     "word": "Millisekunden*",
+     "start": 5.391
+    },
+    {
+     "word": "aus.",
+     "start": 6.21
+    },
+    {
+     "word": "Erlaubt",
+     "start": 6.755
+    },
+    {
+     "word": "sind",
+     "start": 7.246
+    },
+    {
+     "word": "höchstens",
+     "start": 7.573
+    },
+    {
+     "word": "300",
+     "start": 8.173
+    },
+    {
+     "word": "Millisekunden.",
+     "start": 8.446
+    },
+    {
+     "word": "Auch",
+     "start": 9.537
+    },
+    {
+     "word": "das",
+     "start": 9.865
+    },
+    {
+     "word": "passt.",
+     "start": 10.137
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-11.wav",
+   "seconds": 6.396,
+   "words": [
+    {
+     "word": "Ins",
+     "start": 0.1
+    },
+    {
+     "word": "Protokoll:",
+     "start": 0.348
+    },
+    {
+     "word": "*Berührungsspannung*",
+     "start": 1.14
+    },
+    {
+     "word": "OK,",
+     "start": 2.131
+    },
+    {
+     "word": "Auslösezeit",
+     "start": 2.577
+    },
+    {
+     "word": "*18*",
+     "start": 3.221
+    },
+    {
+     "word": "Millisekunden",
+     "start": 3.42
+    },
+    {
+     "word": "OK,",
+     "start": 4.163
+    },
+    {
+     "word": "*Drehfeld*",
+     "start": 4.609
+    },
+    {
+     "word": "rechts",
+     "start": 5.104
+    },
+    {
+     "word": "OK.",
+     "start": 5.5
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-12.wav",
+   "seconds": 8.088,
+   "words": [
+    {
+     "word": "Phase",
+     "start": 0.1
+    },
+    {
+     "word": "sechs:",
+     "start": 0.454
+    },
+    {
+     "word": "die",
+     "start": 1.061
+    },
+    {
+     "word": "*Erprobung*.",
+     "start": 1.314
+    },
+    {
+     "word": "Zuerst",
+     "start": 2.124
+    },
+    {
+     "word": "drücke",
+     "start": 2.528
+    },
+    {
+     "word": "ich",
+     "start": 2.933
+    },
+    {
+     "word": "am",
+     "start": 3.186
+    },
+    {
+     "word": "FI/LS",
+     "start": 3.389
+    },
+    {
+     "word": "die",
+     "start": 3.692
+    },
+    {
+     "word": "*Prüftaste*:",
+     "start": 3.945
+    },
+    {
+     "word": "Er",
+     "start": 4.755
+    },
+    {
+     "word": "löst",
+     "start": 4.957
+    },
+    {
+     "word": "aus.",
+     "start": 5.261
+    },
+    {
+     "word": "Ich",
+     "start": 5.766
+    },
+    {
+     "word": "schalte",
+     "start": 6.019
+    },
+    {
+     "word": "ihn",
+     "start": 6.475
+    },
+    {
+     "word": "wieder",
+     "start": 6.728
+    },
+    {
+     "word": "ein.",
+     "start": 7.133
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-13.wav",
+   "seconds": 20.573,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.1
+    },
+    {
+     "word": "teste",
+     "start": 0.379
+    },
+    {
+     "word": "ich",
+     "start": 0.704
+    },
+    {
+     "word": "die",
+     "start": 0.936
+    },
+    {
+     "word": "*Funktion*,",
+     "start": 1.169
+    },
+    {
+     "word": "so",
+     "start": 1.865
+    },
+    {
+     "word": "wie",
+     "start": 2.051
+    },
+    {
+     "word": "in",
+     "start": 2.284
+    },
+    {
+     "word": "der",
+     "start": 2.469
+    },
+    {
+     "word": "Beschreibung.",
+     "start": 2.702
+    },
+    {
+     "word": "S1",
+     "start": 3.584
+    },
+    {
+     "word": "an:",
+     "start": 3.77
+    },
+    {
+     "word": "P1",
+     "start": 4.188
+    },
+    {
+     "word": "leuchtet.",
+     "start": 4.374
+    },
+    {
+     "word": "Mit",
+     "start": 5.071
+    },
+    {
+     "word": "*S3*",
+     "start": 5.303
+    },
+    {
+     "word": "tippe",
+     "start": 5.489
+    },
+    {
+     "word": "ich",
+     "start": 5.814
+    },
+    {
+     "word": "den",
+     "start": 6.047
+    },
+    {
+     "word": "Motor",
+     "start": 6.279
+    },
+    {
+     "word": "im",
+     "start": 6.604
+    },
+    {
+     "word": "Rechtslauf,",
+     "start": 6.79
+    },
+    {
+     "word": "die",
+     "start": 7.58
+    },
+    {
+     "word": "Haspel",
+     "start": 7.812
+    },
+    {
+     "word": "wickelt",
+     "start": 8.184
+    },
+    {
+     "word": "auf,",
+     "start": 8.602
+    },
+    {
+     "word": "und",
+     "start": 9.066
+    },
+    {
+     "word": "*B13*",
+     "start": 9.299
+    },
+    {
+     "word": "meldet",
+     "start": 9.531
+    },
+    {
+     "word": "Material.",
+     "start": 9.903
+    },
+    {
+     "word": "Ich",
+     "start": 10.599
+    },
+    {
+     "word": "drücke",
+     "start": 10.832
+    },
+    {
+     "word": "*S4*:",
+     "start": 11.203
+    },
+    {
+     "word": "Die",
+     "start": 11.622
+    },
+    {
+     "word": "Klappe",
+     "start": 11.854
+    },
+    {
+     "word": "geht",
+     "start": 12.225
+    },
+    {
+     "word": "auf,",
+     "start": 12.504
+    },
+    {
+     "word": "und",
+     "start": 12.969
+    },
+    {
+     "word": "sobald",
+     "start": 13.201
+    },
+    {
+     "word": "*B11*",
+     "start": 13.573
+    },
+    {
+     "word": "meldet,",
+     "start": 13.805
+    },
+    {
+     "word": "läuft",
+     "start": 14.409
+    },
+    {
+     "word": "der",
+     "start": 14.734
+    },
+    {
+     "word": "Motor",
+     "start": 14.967
+    },
+    {
+     "word": "links.",
+     "start": 15.292
+    },
+    {
+     "word": "Ist",
+     "start": 15.849
+    },
+    {
+     "word": "kein",
+     "start": 16.082
+    },
+    {
+     "word": "Material",
+     "start": 16.36
+    },
+    {
+     "word": "mehr",
+     "start": 16.825
+    },
+    {
+     "word": "da,",
+     "start": 17.104
+    },
+    {
+     "word": "geht",
+     "start": 17.522
+    },
+    {
+     "word": "alles",
+     "start": 17.8
+    },
+    {
+     "word": "*aus*,",
+     "start": 18.126
+    },
+    {
+     "word": "und",
+     "start": 18.59
+    },
+    {
+     "word": "die",
+     "start": 18.823
+    },
+    {
+     "word": "Klappe",
+     "start": 19.055
+    },
+    {
+     "word": "schließt.",
+     "start": 19.426
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-14.wav",
+   "seconds": 19.557,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.1
+    },
+    {
+     "word": "meine",
+     "start": 0.448
+    },
+    {
+     "word": "*Änderung*:",
+     "start": 0.797
+    },
+    {
+     "word": "Nach",
+     "start": 1.543
+    },
+    {
+     "word": "der",
+     "start": 1.841
+    },
+    {
+     "word": "dritten",
+     "start": 2.09
+    },
+    {
+     "word": "Entleerung",
+     "start": 2.538
+    },
+    {
+     "word": "*blinkt*",
+     "start": 3.135
+    },
+    {
+     "word": "P2,",
+     "start": 3.533
+    },
+    {
+     "word": "und",
+     "start": 3.981
+    },
+    {
+     "word": "S4",
+     "start": 4.23
+    },
+    {
+     "word": "bewirkt",
+     "start": 4.429
+    },
+    {
+     "word": "nichts",
+     "start": 4.877
+    },
+    {
+     "word": "mehr.",
+     "start": 5.275
+    },
+    {
+     "word": "Mit",
+     "start": 5.822
+    },
+    {
+     "word": "*S2*",
+     "start": 6.071
+    },
+    {
+     "word": "setze",
+     "start": 6.27
+    },
+    {
+     "word": "ich",
+     "start": 6.618
+    },
+    {
+     "word": "zurück,",
+     "start": 6.867
+    },
+    {
+     "word": "P2",
+     "start": 7.514
+    },
+    {
+     "word": "geht",
+     "start": 7.713
+    },
+    {
+     "word": "aus.",
+     "start": 8.011
+    },
+    {
+     "word": "Und",
+     "start": 8.509
+    },
+    {
+     "word": "zum",
+     "start": 8.758
+    },
+    {
+     "word": "Schluss",
+     "start": 9.006
+    },
+    {
+     "word": "löse",
+     "start": 9.454
+    },
+    {
+     "word": "ich",
+     "start": 9.753
+    },
+    {
+     "word": "noch",
+     "start": 10.002
+    },
+    {
+     "word": "den",
+     "start": 10.3
+    },
+    {
+     "word": "Motorschutzschalter",
+     "start": 10.549
+    },
+    {
+     "word": "mit",
+     "start": 11.594
+    },
+    {
+     "word": "der",
+     "start": 11.843
+    },
+    {
+     "word": "*Prüftaste*",
+     "start": 12.091
+    },
+    {
+     "word": "aus:",
+     "start": 12.639
+    },
+    {
+     "word": "Motor",
+     "start": 13.136
+    },
+    {
+     "word": "und",
+     "start": 13.485
+    },
+    {
+     "word": "Ventil",
+     "start": 13.733
+    },
+    {
+     "word": "sind",
+     "start": 14.131
+    },
+    {
+     "word": "aus,",
+     "start": 14.43
+    },
+    {
+     "word": "P2",
+     "start": 14.927
+    },
+    {
+     "word": "leuchtet.",
+     "start": 15.126
+    },
+    {
+     "word": "Wieder",
+     "start": 15.873
+    },
+    {
+     "word": "einschalten,",
+     "start": 16.271
+    },
+    {
+     "word": "mit",
+     "start": 17.166
+    },
+    {
+     "word": "S2",
+     "start": 17.415
+    },
+    {
+     "word": "*quittieren*,",
+     "start": 17.614
+    },
+    {
+     "word": "fertig.",
+     "start": 18.46
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-15.wav",
+   "seconds": 9.501,
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.1
+    },
+    {
+     "word": "funktioniert.",
+     "start": 0.433
+    },
+    {
+     "word": "Im",
+     "start": 1.338
+    },
+    {
+     "word": "Protokoll",
+     "start": 1.528
+    },
+    {
+     "word": "kreuze",
+     "start": 2.052
+    },
+    {
+     "word": "ich",
+     "start": 2.433
+    },
+    {
+     "word": "bei",
+     "start": 2.671
+    },
+    {
+     "word": "der",
+     "start": 2.909
+    },
+    {
+     "word": "Erprobung",
+     "start": 3.147
+    },
+    {
+     "word": "*Funktion*",
+     "start": 3.671
+    },
+    {
+     "word": "der",
+     "start": 4.147
+    },
+    {
+     "word": "Anlage",
+     "start": 4.385
+    },
+    {
+     "word": "und",
+     "start": 4.766
+    },
+    {
+     "word": "Funktion",
+     "start": 5.004
+    },
+    {
+     "word": "*RCD*",
+     "start": 5.48
+    },
+    {
+     "word": "an,",
+     "start": 5.718
+    },
+    {
+     "word": "setze",
+     "start": 6.147
+    },
+    {
+     "word": "das",
+     "start": 6.48
+    },
+    {
+     "word": "Kreuz",
+     "start": 6.718
+    },
+    {
+     "word": "bei",
+     "start": 7.051
+    },
+    {
+     "word": "*mängelfrei*",
+     "start": 7.289
+    },
+    {
+     "word": "und",
+     "start": 7.861
+    },
+    {
+     "word": "unterschreibe.",
+     "start": 8.099
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-16.wav",
+   "seconds": 4.727,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Anlage",
+     "start": 0.268
+    },
+    {
+     "word": "ist",
+     "start": 0.538
+    },
+    {
+     "word": "geprüft",
+     "start": 0.706
+    },
+    {
+     "word": "und",
+     "start": 1.009
+    },
+    {
+     "word": "funktioniert.",
+     "start": 1.178
+    },
+    {
+     "word": "Hier",
+     "start": 1.818
+    },
+    {
+     "word": "ist",
+     "start": 2.02
+    },
+    {
+     "word": "mein",
+     "start": 2.188
+    },
+    {
+     "word": "ausgefülltes",
+     "start": 2.39
+    },
+    {
+     "word": "Prüfprotokoll",
+     "start": 2.862
+    },
+    {
+     "word": "mit",
+     "start": 3.367
+    },
+    {
+     "word": "den",
+     "start": 3.536
+    },
+    {
+     "word": "Unterlagen.",
+     "start": 3.704
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-0-11.wav",
+   "seconds": 4.783,
+   "words": [
+    {
+     "word": "Danke.",
+     "start": 0.1
+    },
+    {
+     "word": "Dann",
+     "start": 0.598
+    },
+    {
+     "word": "schalten",
+     "start": 0.847
+    },
+    {
+     "word": "Sie",
+     "start": 1.262
+    },
+    {
+     "word": "die",
+     "start": 1.469
+    },
+    {
+     "word": "Anlage",
+     "start": 1.677
+    },
+    {
+     "word": "bitte",
+     "start": 2.009
+    },
+    {
+     "word": "aus",
+     "start": 2.299
+    },
+    {
+     "word": "und",
+     "start": 2.507
+    },
+    {
+     "word": "räumen",
+     "start": 2.714
+    },
+    {
+     "word": "Ihren",
+     "start": 3.046
+    },
+    {
+     "word": "Arbeitsplatz",
+     "start": 3.337
+    },
+    {
+     "word": "auf.",
+     "start": 3.918
+    }
+   ]
+  },
+  {
+   "file": "pruef/line-2-17.wav",
+   "seconds": 23.073,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "das",
+     "start": 0.323
+    },
+    {
+     "word": "war's.",
+     "start": 0.546
+    },
+    {
+     "word": "Zum",
+     "start": 1.037
+    },
+    {
+     "word": "Merken",
+     "start": 1.26
+    },
+    {
+     "word": "die",
+     "start": 1.616
+    },
+    {
+     "word": "*Reihenfolge*:",
+     "start": 1.839
+    },
+    {
+     "word": "Erst",
+     "start": 2.642
+    },
+    {
+     "word": "besichtigen.",
+     "start": 2.91
+    },
+    {
+     "word": "Dann",
+     "start": 3.713
+    },
+    {
+     "word": "*ohne",
+     "start": 3.98
+    },
+    {
+     "word": "Spannung*",
+     "start": 4.248
+    },
+    {
+     "word": "messen,",
+     "start": 4.694
+    },
+    {
+     "word": "Schutzleiter",
+     "start": 5.274
+    },
+    {
+     "word": "und",
+     "start": 5.898
+    },
+    {
+     "word": "Isolation.",
+     "start": 6.121
+    },
+    {
+     "word": "Dann",
+     "start": 6.835
+    },
+    {
+     "word": "mit",
+     "start": 7.102
+    },
+    {
+     "word": "*Erlaubnis*",
+     "start": 7.325
+    },
+    {
+     "word": "einschalten",
+     "start": 7.816
+    },
+    {
+     "word": "und",
+     "start": 8.395
+    },
+    {
+     "word": "mit",
+     "start": 8.618
+    },
+    {
+     "word": "Spannung",
+     "start": 8.841
+    },
+    {
+     "word": "messen,",
+     "start": 9.287
+    },
+    {
+     "word": "Drehfeld",
+     "start": 9.867
+    },
+    {
+     "word": "und",
+     "start": 10.313
+    },
+    {
+     "word": "RCD.",
+     "start": 10.536
+    },
+    {
+     "word": "Dann",
+     "start": 10.982
+    },
+    {
+     "word": "die",
+     "start": 11.25
+    },
+    {
+     "word": "*Erprobung*.",
+     "start": 11.473
+    },
+    {
+     "word": "Und",
+     "start": 12.186
+    },
+    {
+     "word": "alles",
+     "start": 12.409
+    },
+    {
+     "word": "sauber",
+     "start": 12.722
+    },
+    {
+     "word": "ins",
+     "start": 13.078
+    },
+    {
+     "word": "*Protokoll*.",
+     "start": 13.301
+    },
+    {
+     "word": "Sag",
+     "start": 14.015
+    },
+    {
+     "word": "beim",
+     "start": 14.238
+    },
+    {
+     "word": "Messen",
+     "start": 14.506
+    },
+    {
+     "word": "immer",
+     "start": 14.862
+    },
+    {
+     "word": "laut,",
+     "start": 15.175
+    },
+    {
+     "word": "was",
+     "start": 15.665
+    },
+    {
+     "word": "du",
+     "start": 15.888
+    },
+    {
+     "word": "gerade",
+     "start": 16.067
+    },
+    {
+     "word": "machst",
+     "start": 16.423
+    },
+    {
+     "word": "und",
+     "start": 16.78
+    },
+    {
+     "word": "warum.",
+     "start": 17.003
+    },
+    {
+     "word": "Dann",
+     "start": 17.538
+    },
+    {
+     "word": "sieht",
+     "start": 17.806
+    },
+    {
+     "word": "der",
+     "start": 18.118
+    },
+    {
+     "word": "Prüfer,",
+     "start": 18.341
+    },
+    {
+     "word": "dass",
+     "start": 18.921
+    },
+    {
+     "word": "du",
+     "start": 19.189
+    },
+    {
+     "word": "weißt,",
+     "start": 19.367
+    },
+    {
+     "word": "was",
+     "start": 19.902
+    },
+    {
+     "word": "du",
+     "start": 20.125
+    },
+    {
+     "word": "tust.",
+     "start": 20.304
+    },
+    {
+     "word": "Viel",
+     "start": 20.794
+    },
+    {
+     "word": "Erfolg",
+     "start": 21.062
+    },
+    {
+     "word": "bei",
+     "start": 21.418
+    },
+    {
+     "word": "deiner",
+     "start": 21.641
+    },
+    {
+     "word": "Prüfung!",
+     "start": 21.998
+    }
+   ]
+  }
+ ]
+}

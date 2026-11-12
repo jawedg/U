@@ -8,6 +8,7 @@ import { WisoVideo, wisoFrames, WFPS } from "./wiso/WisoVideo";
 import { AllVideo, allFrames, AFPS } from "./wiso_all/AllVideo";
 import { LernVideo, lernFrames, LFPS } from "./lern/LernVideo";
 import { LegeVideo } from "./lern/LegeVideo";
+import { PruefVideo } from "./pruef/PruefVideo";
 
 export const FPS = 30;
 
@@ -85,6 +86,7 @@ export const RemotionRoot: React.FC = () => {
       height={1080}
     />
     <Composition id="LernFuellstand" component={LernVideo} defaultProps={{ kb: 6 }} durationInFrames={lernFrames(6)} fps={LFPS} width={1920} height={1080} />
+    <Composition id="PruefSim" component={PruefVideo} durationInFrames={lernFrames(7)} fps={LFPS} width={1920} height={1080} />
     <Composition id="LernGK2" component={LegeVideo} durationInFrames={lernFrames(5)} fps={LFPS} width={1920} height={1080} />
     </>
   );

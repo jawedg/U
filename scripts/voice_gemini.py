@@ -448,7 +448,7 @@ def main() -> None:
         f = full_path(v, part)
         if a.neu or not f.exists():
             block = [s for s in voiced if s.get("part", 0) == part]
-            print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}), Block {part} …")
+            print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}), Block {part} ({len(block)} Szenen) …")
             save_audio(f, tts("\n\n".join(spoken(s) for s in block), v))
         return f
 
@@ -457,17 +457,21 @@ def main() -> None:
             print(f"🎧 {narrate(v).relative_to(ROOT)}")
         return
 
-    all_files: list[Path] = []
+    # Blöcke dürfen über das Video verteilt sein (z. B. alle Sätze des Prüfers in einem Block) und eine eigene
+    # Stimme haben ("voice" in der Szene). Die Stücke werden danach wieder der Szenen-Reihenfolge zugeordnet.
+    fmap: dict[int, Path] = {}
     for part in parts:
-        block = [s for s in voiced if s.get("part", 0) == part]
-        all_files += split(narrate(a.voice, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "")
-    files = iter(all_files)
+        idxs = [i for i, s in enumerate(scenes) if s.get("text") and s.get("part", 0) == part]
+        block = [scenes[i] for i in idxs]
+        v = block[0].get("voice", a.voice)
+        fs = split(narrate(v, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "")
+        fmap.update(zip(idxs, fs))
     lines = []
     for i, s in enumerate(scenes):
         if not s.get("text"):
             lines.append({"file": "", "seconds": float(script.get("athanSeconds", 10)), "words": []})
             continue
-        f = next(files)
+        f = fmap[i]
         dur = clean(f)
         lines.append({"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3),
                       "words": word_times(s["text"], dur)})
