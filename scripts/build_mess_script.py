@@ -108,7 +108,7 @@ sc("""Alle Werte trage ich in die *Tabelle* ein. Dann klemme ich das Netzteil *w
 # ------------------------------------------------------------------ 4 Drehfeld
 phase("Drehfeld")
 sc("""Die Messungen ohne Spannung sind in Ordnung. Ich frage den Prüfer, ob ich einschalten darf, und erst nach seinem *Ja* stecke ich den
-CEE-Stecker ein.""", {"type": "pov", "cam": [[0, "CEE", 0.6, -8, 15]], "fl": [[0, {"pose": HOLD, "note": ""}], ["Ja", {"note": "Erst nach dem OK vom Prüfer einschalten!"}]]})
+CEE-Stecker ein.""", {"type": "pov", "cam": [[0, "CEE", 0.6, -8, 15]], "st": [["Ja", {"cee": 1}]], "fl": [[0, {"pose": HOLD, "note": ""}], ["Ja", {"note": "Erst nach dem OK vom Prüfer einschalten!"}]]})
 sc("""Drehschalter auf das *Drehfeld*-Symbol. Jetzt brauche ich alle drei Leitungen: *rot* an L1, *grün* an L2 und *blau* an L3, also X1
 Klemme 1, 3 und 5. Das Display zeigt *123*. Das heißt *Rechtsdrehfeld*. Würde 321 stehen, wäre es ein Linksdrehfeld.""",
    {"type": "pov", "cam": [[0, "X1:3", 0.5, 0, 10]], "pr": [["rot", "X1:1", None, None], ["grün", "X1:1", "X1:3", None], ["blau", "X1:1", "X1:3", "X1:5"]],

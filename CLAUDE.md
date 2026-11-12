@@ -101,8 +101,13 @@ Lokal reicht `npm run render:3d`.
   measure (Installationstester + Prüfspitzen), protocol (füllt sich über alle Szenen), change, docs, tip, check.
 
 ## Mess-Video POV 3D (Fluke 1664 FC)
-- Komposition `MessPOV` (kb = 8, `src/mess/`, 1920×1080, 25 fps, ~5:28): nur Messteil + Protokoll aus Ich-Sicht (Charon),
-  Skript `scripts/build_mess_script.py` (Szenen-`v`: `cam`, `pr` = Prüfspitzen rot/grün/blau, `fl` = Fluke-Zustand, `st` = Anlagenzustand).
-- 3D mit `@remotion/three` (`MessVideo.tsx`): Gestell-Textur `public/mess/gestell.png` (aus Komposition `GestellTex` gerendert),
-  Fluke als SVG-Overlay (`Fluke.tsx`: Drehschalter, F1–F4 rechts, TEST links, Bedienung nach Users Manual).
-- Rendern mit `--gl=swangle` dauert ohne GPU ~1,5 h (≈ 75 Bilder/min). Danach 2-Pass ~1200 kbit/s → ≤ 60 MB.
+- Komposition `MessPOV` (kb = 8, `src/mess/`, 1920×1080, 25 fps, ~5:39): nur Messteil + Protokoll aus Ich-Sicht (Charon),
+  Skript `scripts/build_mess_script.py` (Szenen-`v`: `cam`, `pr` = Prüfspitzen rot/grün/blau, `fl` = Fluke-Zustand, `st` = Anlagenzustand
+  T1off/F3trip/plug/cee).
+- **Realistische Version** (Nutzer: „sieht nicht echt aus“): alles echtes 3D in `src/mess/scene/` – `Gestell3D.tsx` (Lochblech, Hutschienen,
+  Kanäle mit Kammfingern, LS/FI-LS, Schütze, Netzteil, Motorschutz, Steckdose, S7-1200, X10-Platine, Reihenklemmen mit Schrauben + Markierern,
+  Adern, Bedieneinheit, CEE-Stecker, Alu-Rahmen), `Probe3D.tsx` (Prüfspitzen mit Fingerschutz, Krokodilklemme, Handschuh-Hände + Ärmel,
+  Messleitungen zu den Buchsen), `Fluke3D.tsx` (3D-Gerät, 7-Segment-LCD per Canvas, Drehknopf, Tasten), `tex.ts` (prozedurale Texturen).
+  Prüfspitzen fächern nach Lage auf (keine Durchdringung). Licht: RoomEnvironment + Schatten + N8AO (`@react-three/postprocessing@3.0.4`).
+- Rendern: `--props='{"fx":"ao","dpr":0.75}' --timeout=300000` (dpr = 3D-Auflösung; Kosten sind pixelgebunden, ~1,3 s/Bild → ~3 h).
+  Länger als 2 h → mit `setsid nohup` starten (Skript-Vorlage: render + 2-Pass 1250 kbit/s → ≤ 60 MB).
