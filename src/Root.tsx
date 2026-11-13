@@ -13,6 +13,7 @@ import { MessVideo, messFrames } from "./mess/MessVideo";
 import { GestellTex, TEX_SCALE } from "./mess/GestellTex";
 import { WhatIfVideo, whatifFrames } from "./whatif/WhatIf";
 import { FPS as WFPS2 } from "./whatif/timeline";
+import { AnimeVideo, animeFrames } from "./anime/Anime";
 
 export const FPS = 30;
 
@@ -90,6 +91,7 @@ export const RemotionRoot: React.FC = () => {
       height={1080}
     />
     <Composition id="LernFuellstand" component={LernVideo} defaultProps={{ kb: 6 }} durationInFrames={lernFrames(6)} fps={LFPS} width={1920} height={1080} />
+    <Composition id="AnimeFolge1" component={AnimeVideo} durationInFrames={animeFrames()} fps={30} width={1080} height={1920} />
     <Composition id="WasWaere" component={WhatIfVideo} durationInFrames={whatifFrames()} fps={WFPS2} width={1080} height={1920} />
     <Composition id="MessPOV" component={MessVideo} durationInFrames={messFrames()} fps={LFPS} width={1920} height={1080} />
     <Composition id="GestellTex" component={GestellTex} durationInFrames={1} fps={LFPS} width={960 * TEX_SCALE} height={760 * TEX_SCALE} />

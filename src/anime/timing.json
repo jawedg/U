@@ -1,0 +1,320 @@
+{
+ "lines": [
+  {
+   "file": "anime/line-0.wav",
+   "seconds": 1.501,
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.1
+    },
+    {
+     "word": "hat",
+     "start": 0.231
+    },
+    {
+     "word": "nie",
+     "start": 0.395
+    },
+    {
+     "word": "*verloren*.",
+     "start": 0.559
+    }
+   ]
+  },
+  {
+   "file": "anime/line-1.wav",
+   "seconds": 4.335,
+   "words": [
+    {
+     "word": "Nicht",
+     "start": 0.1
+    },
+    {
+     "word": "beim",
+     "start": 0.435
+    },
+    {
+     "word": "Schach.",
+     "start": 0.723
+    },
+    {
+     "word": "Nicht",
+     "start": 1.346
+    },
+    {
+     "word": "in",
+     "start": 1.681
+    },
+    {
+     "word": "Diskussionen.",
+     "start": 1.873
+    },
+    {
+     "word": "Nicht",
+     "start": 2.783
+    },
+    {
+     "word": "im",
+     "start": 3.119
+    },
+    {
+     "word": "*Leben*.",
+     "start": 3.31
+    }
+   ]
+  },
+  {
+   "file": "anime/line-2.wav",
+   "seconds": 4.768,
+   "words": [
+    {
+     "word": "21",
+     "start": 0.1
+    },
+    {
+     "word": "Jahre",
+     "start": 0.341
+    },
+    {
+     "word": "alt.",
+     "start": 0.763
+    },
+    {
+     "word": "Ruhig.",
+     "start": 1.365
+    },
+    {
+     "word": "Und",
+     "start": 2.089
+    },
+    {
+     "word": "immer",
+     "start": 2.39
+    },
+    {
+     "word": "einen",
+     "start": 2.812
+    },
+    {
+     "word": "*Zug*",
+     "start": 3.234
+    },
+    {
+     "word": "voraus.",
+     "start": 3.535
+    }
+   ]
+  },
+  {
+   "file": "anime/line-3.wav",
+   "seconds": 3.376,
+   "words": [
+    {
+     "word": "Bis",
+     "start": 0.1
+    },
+    {
+     "word": "um",
+     "start": 0.352
+    },
+    {
+     "word": "3",
+     "start": 0.554
+    },
+    {
+     "word": "Uhr",
+     "start": 0.706
+    },
+    {
+     "word": "17",
+     "start": 0.958
+    },
+    {
+     "word": "nachts",
+     "start": 1.16
+    },
+    {
+     "word": "eine",
+     "start": 1.563
+    },
+    {
+     "word": "*Nachricht*",
+     "start": 1.866
+    },
+    {
+     "word": "kam.",
+     "start": 2.421
+    }
+   ]
+  },
+  {
+   "file": "anime/line-4.wav",
+   "seconds": 3.58,
+   "words": [
+    {
+     "word": "Kein",
+     "start": 0.1
+    },
+    {
+     "word": "Absender.",
+     "start": 0.393
+    },
+    {
+     "word": "Keine",
+     "start": 1.126
+    },
+    {
+     "word": "Nummer.",
+     "start": 1.468
+    },
+    {
+     "word": "Nur",
+     "start": 2.104
+    },
+    {
+     "word": "ein",
+     "start": 2.348
+    },
+    {
+     "word": "*Foto*.",
+     "start": 2.592
+    }
+   ]
+  },
+  {
+   "file": "anime/line-5.wav",
+   "seconds": 4.013,
+   "words": [
+    {
+     "word": "Aufgenommen",
+     "start": 0.1
+    },
+    {
+     "word": "vor",
+     "start": 0.752
+    },
+    {
+     "word": "*2",
+     "start": 1.003
+    },
+    {
+     "word": "Minuten*.",
+     "start": 1.154
+    },
+    {
+     "word": "In",
+     "start": 1.856
+    },
+    {
+     "word": "seinem",
+     "start": 2.057
+    },
+    {
+     "word": "eigenen",
+     "start": 2.459
+    },
+    {
+     "word": "*Zimmer*.",
+     "start": 2.91
+    }
+   ]
+  },
+  {
+   "file": "anime/line-6.wav",
+   "seconds": 3.328,
+   "words": [
+    {
+     "word": "Zum",
+     "start": 0.1
+    },
+    {
+     "word": "ersten",
+     "start": 0.285
+    },
+    {
+     "word": "Mal",
+     "start": 0.582
+    },
+    {
+     "word": "in",
+     "start": 0.767
+    },
+    {
+     "word": "seinem",
+     "start": 0.915
+    },
+    {
+     "word": "Leben",
+     "start": 1.211
+    },
+    {
+     "word": "war",
+     "start": 1.471
+    },
+    {
+     "word": "jemand",
+     "start": 1.656
+    },
+    {
+     "word": "*schneller*",
+     "start": 1.952
+    },
+    {
+     "word": "als",
+     "start": 2.36
+    },
+    {
+     "word": "er.",
+     "start": 2.545
+    }
+   ]
+  },
+  {
+   "file": "anime/line-7.wav",
+   "seconds": 2.94,
+   "words": [
+    {
+     "word": "Wer",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.287
+    },
+    {
+     "word": "der",
+     "start": 0.473
+    },
+    {
+     "word": "*Spieler*,",
+     "start": 0.66
+    },
+    {
+     "word": "und",
+     "start": 1.183
+    },
+    {
+     "word": "was",
+     "start": 1.37
+    },
+    {
+     "word": "will",
+     "start": 1.556
+    },
+    {
+     "word": "er",
+     "start": 1.78
+    },
+    {
+     "word": "von",
+     "start": 1.93
+    },
+    {
+     "word": "ihm?",
+     "start": 2.117
+    }
+   ]
+  }
+ ]
+}

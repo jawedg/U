@@ -1,0 +1,14 @@
+{
+ "title": "Kapitel 1 – Die Nachricht",
+ "fps": 30,
+ "sentences": [
+  {"shot": "body", "delay": 1.6, "pad": 0.8, "text": "Er hat nie *verloren*."},
+  {"shot": "face", "delay": 0.2, "pad": 0.5, "text": "Nicht beim Schach. Nicht in Diskussionen. Nicht im *Leben*."},
+  {"shot": "sit", "delay": 0.2, "pad": 0.5, "text": "21 Jahre alt. Ruhig. Und immer einen *Zug* voraus."},
+  {"shot": "phone1", "delay": 0.3, "pad": 1.2, "text": "Bis um 3 Uhr 17 nachts eine *Nachricht* kam."},
+  {"shot": "phone2", "delay": 0.2, "pad": 1.0, "text": "Kein Absender. Keine Nummer. Nur ein *Foto*."},
+  {"shot": "side", "delay": 0.3, "pad": 0.8, "text": "Aufgenommen vor *2 Minuten*. In seinem eigenen *Zimmer*."},
+  {"shot": "face2", "delay": 0.3, "pad": 1.0, "text": "Zum ersten Mal in seinem Leben war jemand *schneller* als er."},
+  {"shot": "end", "delay": 0.4, "pad": 3.0, "text": "Wer ist der *Spieler*, und was will er von ihm?"}
+ ]
+}
