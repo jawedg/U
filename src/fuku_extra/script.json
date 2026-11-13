@@ -1,0 +1,17 @@
+{
+ "title": "Fukushima – Zusatzsätze (Einstieg + Schluss)",
+ "sentences": [
+  {
+   "id": "cold",
+   "text": "15 Uhr 37. Alles ist tot. Und niemand weiß, wie heiß der Reaktor gerade wird."
+  },
+  {
+   "id": "bat",
+   "text": "Und später holen Arbeiter sogar Batterien aus ihren eigenen Autos. Nur damit die Anzeigen wieder etwas zeigen."
+  }
+ ],
+ "sources": [
+  "IAEA (2015): Arbeiter sammelten Batterien aus Fahrzeugen, um Messinstrumente im Kontrollraum Block 1/2 wieder zu versorgen",
+  "TEPCO Fukushima Nuclear Accident Analysis Report (2012): Stromausfall Block 1 um ca. 15:37 Uhr"
+ ]
+}

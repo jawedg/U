@@ -1,0 +1,144 @@
+{
+ "lines": [
+  {
+   "file": "fuku_extra/line-0.wav",
+   "seconds": 6.495,
+   "words": [
+    {
+     "word": "15",
+     "start": 0.1
+    },
+    {
+     "word": "Uhr",
+     "start": 0.318
+    },
+    {
+     "word": "37.",
+     "start": 0.591
+    },
+    {
+     "word": "Alles",
+     "start": 1.082
+    },
+    {
+     "word": "ist",
+     "start": 1.464
+    },
+    {
+     "word": "tot.",
+     "start": 1.736
+    },
+    {
+     "word": "Und",
+     "start": 2.282
+    },
+    {
+     "word": "niemand",
+     "start": 2.554
+    },
+    {
+     "word": "weiß,",
+     "start": 3.045
+    },
+    {
+     "word": "wie",
+     "start": 3.645
+    },
+    {
+     "word": "heiß",
+     "start": 3.918
+    },
+    {
+     "word": "der",
+     "start": 4.245
+    },
+    {
+     "word": "Reaktor",
+     "start": 4.518
+    },
+    {
+     "word": "gerade",
+     "start": 5.009
+    },
+    {
+     "word": "wird.",
+     "start": 5.445
+    }
+   ]
+  },
+  {
+   "file": "fuku_extra/line-1.wav",
+   "seconds": 6.248,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "später",
+     "start": 0.309
+    },
+    {
+     "word": "holen",
+     "start": 0.645
+    },
+    {
+     "word": "Arbeiter",
+     "start": 0.938
+    },
+    {
+     "word": "sogar",
+     "start": 1.357
+    },
+    {
+     "word": "Batterien",
+     "start": 1.65
+    },
+    {
+     "word": "aus",
+     "start": 2.111
+    },
+    {
+     "word": "ihren",
+     "start": 2.32
+    },
+    {
+     "word": "eigenen",
+     "start": 2.614
+    },
+    {
+     "word": "Autos.",
+     "start": 2.991
+    },
+    {
+     "word": "Nur",
+     "start": 3.494
+    },
+    {
+     "word": "damit",
+     "start": 3.703
+    },
+    {
+     "word": "die",
+     "start": 3.996
+    },
+    {
+     "word": "Anzeigen",
+     "start": 4.206
+    },
+    {
+     "word": "wieder",
+     "start": 4.625
+    },
+    {
+     "word": "etwas",
+     "start": 4.96
+    },
+    {
+     "word": "zeigen.",
+     "start": 5.253
+    }
+   ]
+  }
+ ]
+}
