@@ -1,0 +1,18 @@
+{
+ "title": "Blindflug im Reaktor – Fukushima, 11. März 2011",
+ "sentences": [
+  {"id": "n1", "part": 0, "voice": "Charon", "text": "11. März 2011, 14 Uhr 46. Ein Erdbeben der Stärke 9 erschüttert Japan. Das stärkste Beben, das dort je gemessen wurde."},
+  {"id": "k1a", "part": 1, "voice": "Fenrir", "text": "Notabschaltung! Alle Steuerstäbe sind eingefahren! Die Reaktoren sind aus!"},
+  {"id": "n2", "part": 0, "voice": "Charon", "text": "Die Reaktoren sind abgeschaltet. Aber sie sind noch extrem heiß und müssen weiter gekühlt werden. Dann kommt die Warnung: Tsunami. Die Schutzmauer ist knapp 6 Meter hoch. Die Welle wird mehr als doppelt so hoch."},
+  {"id": "k1b", "part": 1, "voice": "Fenrir", "text": "Was ist passiert?! Warum sind alle Anzeigen tot?!"},
+  {"id": "k2a", "part": 2, "voice": "Orus", "text": "Die Welle hat die Notstrom-Generatoren überflutet! Wir haben keinen Strom mehr!"},
+  {"id": "n3", "part": 0, "voice": "Charon", "text": "Ohne Strom fallen die Kühlpumpen aus. Und niemand im Raum weiß mehr, wie heiß der Reaktor ist, oder ob die Brennstäbe noch unter Wasser sind."},
+  {"id": "k1c", "part": 1, "voice": "Fenrir", "text": "Wir fliegen komplett blind."},
+  {"id": "n4", "part": 0, "voice": "Charon", "text": "Um eine Kernschmelze zu verhindern, müssen Arbeiter jetzt im Dunkeln in das Reaktorgebäude. Dorthin, wo die Strahlung steigt."}
+ ],
+ "sources": [
+  "IAEA: The Fukushima Daiichi Accident, Report by the Director General (2015)",
+  "NAIIC: Official Report of the Fukushima Nuclear Accident Independent Investigation Commission (2012)",
+  "TEPCO: Fukushima Nuclear Accident Analysis Report (2012) – Beben 14:46, Tsunami ~15:27/15:35, Stromausfall Block 1 ~15:37"
+ ]
+}

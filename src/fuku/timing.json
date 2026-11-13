@@ -1,0 +1,576 @@
+{
+ "lines": [
+  {
+   "file": "fuku/line-0-0.wav",
+   "seconds": 9.791,
+   "words": [
+    {
+     "word": "11.",
+     "start": 0.1
+    },
+    {
+     "word": "März",
+     "start": 0.607
+    },
+    {
+     "word": "2011,",
+     "start": 0.945
+    },
+    {
+     "word": "14",
+     "start": 1.565
+    },
+    {
+     "word": "Uhr",
+     "start": 1.79
+    },
+    {
+     "word": "46.",
+     "start": 2.072
+    },
+    {
+     "word": "Ein",
+     "start": 2.579
+    },
+    {
+     "word": "Erdbeben",
+     "start": 2.861
+    },
+    {
+     "word": "der",
+     "start": 3.424
+    },
+    {
+     "word": "Stärke",
+     "start": 3.706
+    },
+    {
+     "word": "9",
+     "start": 4.157
+    },
+    {
+     "word": "erschüttert",
+     "start": 4.326
+    },
+    {
+     "word": "Japan.",
+     "start": 5.058
+    },
+    {
+     "word": "Das",
+     "start": 5.734
+    },
+    {
+     "word": "stärkste",
+     "start": 6.016
+    },
+    {
+     "word": "Beben,",
+     "start": 6.58
+    },
+    {
+     "word": "das",
+     "start": 7.256
+    },
+    {
+     "word": "dort",
+     "start": 7.538
+    },
+    {
+     "word": "je",
+     "start": 7.876
+    },
+    {
+     "word": "gemessen",
+     "start": 8.101
+    },
+    {
+     "word": "wurde.",
+     "start": 8.664
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-1-0.wav",
+   "seconds": 4.54,
+   "words": [
+    {
+     "word": "Notabschaltung!",
+     "start": 0.1
+    },
+    {
+     "word": "Alle",
+     "start": 0.973
+    },
+    {
+     "word": "Steuerstäbe",
+     "start": 1.222
+    },
+    {
+     "word": "sind",
+     "start": 1.763
+    },
+    {
+     "word": "eingefahren!",
+     "start": 2.012
+    },
+    {
+     "word": "Die",
+     "start": 2.76
+    },
+    {
+     "word": "Reaktoren",
+     "start": 2.968
+    },
+    {
+     "word": "sind",
+     "start": 3.425
+    },
+    {
+     "word": "aus!",
+     "start": 3.674
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-0-1.wav",
+   "seconds": 12.816,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Reaktoren",
+     "start": 0.326
+    },
+    {
+     "word": "sind",
+     "start": 0.824
+    },
+    {
+     "word": "abgeschaltet.",
+     "start": 1.096
+    },
+    {
+     "word": "Aber",
+     "start": 1.956
+    },
+    {
+     "word": "sie",
+     "start": 2.227
+    },
+    {
+     "word": "sind",
+     "start": 2.454
+    },
+    {
+     "word": "noch",
+     "start": 2.725
+    },
+    {
+     "word": "extrem",
+     "start": 2.997
+    },
+    {
+     "word": "heiß",
+     "start": 3.359
+    },
+    {
+     "word": "und",
+     "start": 3.631
+    },
+    {
+     "word": "müssen",
+     "start": 3.857
+    },
+    {
+     "word": "weiter",
+     "start": 4.219
+    },
+    {
+     "word": "gekühlt",
+     "start": 4.581
+    },
+    {
+     "word": "werden.",
+     "start": 4.988
+    },
+    {
+     "word": "Dann",
+     "start": 5.577
+    },
+    {
+     "word": "kommt",
+     "start": 5.848
+    },
+    {
+     "word": "die",
+     "start": 6.165
+    },
+    {
+     "word": "Warnung:",
+     "start": 6.392
+    },
+    {
+     "word": "Tsunami.",
+     "start": 7.025
+    },
+    {
+     "word": "Die",
+     "start": 7.659
+    },
+    {
+     "word": "Schutzmauer",
+     "start": 7.885
+    },
+    {
+     "word": "ist",
+     "start": 8.474
+    },
+    {
+     "word": "knapp",
+     "start": 8.7
+    },
+    {
+     "word": "6",
+     "start": 9.017
+    },
+    {
+     "word": "Meter",
+     "start": 9.153
+    },
+    {
+     "word": "hoch.",
+     "start": 9.47
+    },
+    {
+     "word": "Die",
+     "start": 9.967
+    },
+    {
+     "word": "Welle",
+     "start": 10.194
+    },
+    {
+     "word": "wird",
+     "start": 10.511
+    },
+    {
+     "word": "mehr",
+     "start": 10.782
+    },
+    {
+     "word": "als",
+     "start": 11.054
+    },
+    {
+     "word": "doppelt",
+     "start": 11.28
+    },
+    {
+     "word": "so",
+     "start": 11.687
+    },
+    {
+     "word": "hoch.",
+     "start": 11.869
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-1-1.wav",
+   "seconds": 3.046,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.295
+    },
+    {
+     "word": "passiert?!",
+     "start": 0.49
+    },
+    {
+     "word": "Warum",
+     "start": 1.075
+    },
+    {
+     "word": "sind",
+     "start": 1.348
+    },
+    {
+     "word": "alle",
+     "start": 1.582
+    },
+    {
+     "word": "Anzeigen",
+     "start": 1.816
+    },
+    {
+     "word": "tot?!",
+     "start": 2.206
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-2-0.wav",
+   "seconds": 4.267,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.1
+    },
+    {
+     "word": "Welle",
+     "start": 0.29
+    },
+    {
+     "word": "hat",
+     "start": 0.555
+    },
+    {
+     "word": "die",
+     "start": 0.745
+    },
+    {
+     "word": "Notstrom-Generatoren",
+     "start": 0.934
+    },
+    {
+     "word": "überflutet!",
+     "start": 1.731
+    },
+    {
+     "word": "Wir",
+     "start": 2.376
+    },
+    {
+     "word": "haben",
+     "start": 2.566
+    },
+    {
+     "word": "keinen",
+     "start": 2.831
+    },
+    {
+     "word": "Strom",
+     "start": 3.135
+    },
+    {
+     "word": "mehr!",
+     "start": 3.4
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-0-2.wav",
+   "seconds": 7.513,
+   "words": [
+    {
+     "word": "Ohne",
+     "start": 0.1
+    },
+    {
+     "word": "Strom",
+     "start": 0.328
+    },
+    {
+     "word": "fallen",
+     "start": 0.595
+    },
+    {
+     "word": "die",
+     "start": 0.899
+    },
+    {
+     "word": "Kühlpumpen",
+     "start": 1.089
+    },
+    {
+     "word": "aus.",
+     "start": 1.546
+    },
+    {
+     "word": "Und",
+     "start": 1.926
+    },
+    {
+     "word": "niemand",
+     "start": 2.117
+    },
+    {
+     "word": "im",
+     "start": 2.459
+    },
+    {
+     "word": "Raum",
+     "start": 2.611
+    },
+    {
+     "word": "weiß",
+     "start": 2.839
+    },
+    {
+     "word": "mehr,",
+     "start": 3.068
+    },
+    {
+     "word": "wie",
+     "start": 3.486
+    },
+    {
+     "word": "heiß",
+     "start": 3.677
+    },
+    {
+     "word": "der",
+     "start": 3.905
+    },
+    {
+     "word": "Reaktor",
+     "start": 4.095
+    },
+    {
+     "word": "ist,",
+     "start": 4.437
+    },
+    {
+     "word": "oder",
+     "start": 4.818
+    },
+    {
+     "word": "ob",
+     "start": 5.046
+    },
+    {
+     "word": "die",
+     "start": 5.198
+    },
+    {
+     "word": "Brennstäbe",
+     "start": 5.389
+    },
+    {
+     "word": "noch",
+     "start": 5.845
+    },
+    {
+     "word": "unter",
+     "start": 6.074
+    },
+    {
+     "word": "Wasser",
+     "start": 6.34
+    },
+    {
+     "word": "sind.",
+     "start": 6.644
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-1-2.wav",
+   "seconds": 1.894,
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.1
+    },
+    {
+     "word": "fliegen",
+     "start": 0.287
+    },
+    {
+     "word": "komplett",
+     "start": 0.623
+    },
+    {
+     "word": "blind.",
+     "start": 0.996
+    }
+   ]
+  },
+  {
+   "file": "fuku/line-0-3.wav",
+   "seconds": 7.118,
+   "words": [
+    {
+     "word": "Um",
+     "start": 0.1
+    },
+    {
+     "word": "eine",
+     "start": 0.264
+    },
+    {
+     "word": "Kernschmelze",
+     "start": 0.51
+    },
+    {
+     "word": "zu",
+     "start": 1.085
+    },
+    {
+     "word": "verhindern,",
+     "start": 1.249
+    },
+    {
+     "word": "müssen",
+     "start": 1.947
+    },
+    {
+     "word": "Arbeiter",
+     "start": 2.276
+    },
+    {
+     "word": "jetzt",
+     "start": 2.686
+    },
+    {
+     "word": "im",
+     "start": 2.973
+    },
+    {
+     "word": "Dunkeln",
+     "start": 3.138
+    },
+    {
+     "word": "in",
+     "start": 3.507
+    },
+    {
+     "word": "das",
+     "start": 3.671
+    },
+    {
+     "word": "Reaktorgebäude.",
+     "start": 3.877
+    },
+    {
+     "word": "Dorthin,",
+     "start": 4.739
+    },
+    {
+     "word": "wo",
+     "start": 5.313
+    },
+    {
+     "word": "die",
+     "start": 5.477
+    },
+    {
+     "word": "Strahlung",
+     "start": 5.683
+    },
+    {
+     "word": "steigt.",
+     "start": 6.134
+    }
+   ]
+  }
+ ]
+}
