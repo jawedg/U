@@ -1,0 +1,116 @@
+{
+ "lines": [
+  {
+   "file": "pov3d/line-0-0.wav",
+   "seconds": 7.897,
+   "words": [
+    {
+     "word": "Achtung,",
+     "start": 0.1
+    },
+    {
+     "word": "eine",
+     "start": 0.862
+    },
+    {
+     "word": "wichtige",
+     "start": 1.189
+    },
+    {
+     "word": "Durchsage.",
+     "start": 1.733
+    },
+    {
+     "word": "Bitte",
+     "start": 2.604
+    },
+    {
+     "word": "führen",
+     "start": 2.985
+    },
+    {
+     "word": "Sie",
+     "start": 3.42
+    },
+    {
+     "word": "sofort",
+     "start": 3.692
+    },
+    {
+     "word": "Plan",
+     "start": 4.128
+    },
+    {
+     "word": "Rot",
+     "start": 4.454
+    },
+    {
+     "word": "durch.",
+     "start": 4.726
+    },
+    {
+     "word": "Ich",
+     "start": 5.379
+    },
+    {
+     "word": "wiederhole:",
+     "start": 5.651
+    },
+    {
+     "word": "Plan",
+     "start": 6.577
+    },
+    {
+     "word": "Rot.",
+     "start": 6.903
+    }
+   ]
+  },
+  {
+   "file": "pov3d/line-1-0.wav",
+   "seconds": 4.26,
+   "words": [
+    {
+     "word": "Alle",
+     "start": 0.1
+    },
+    {
+     "word": "weg",
+     "start": 0.393
+    },
+    {
+     "word": "von",
+     "start": 0.637
+    },
+    {
+     "word": "der",
+     "start": 0.881
+    },
+    {
+     "word": "Tür!",
+     "start": 1.125
+    },
+    {
+     "word": "Runter,",
+     "start": 1.613
+    },
+    {
+     "word": "und",
+     "start": 2.248
+    },
+    {
+     "word": "Handys",
+     "start": 2.492
+    },
+    {
+     "word": "auf",
+     "start": 2.882
+    },
+    {
+     "word": "lautlos!",
+     "start": 3.127
+    }
+   ]
+  }
+ ]
+}
