@@ -256,7 +256,7 @@ def person(name, x, y, seated=True, hood=None, hair=None, skin=None, teacher=Fal
     neck = bpy.data.objects.new(name + "_neck", None)
     sc.collection.objects.link(neck)
     neck.parent = root
-    neck.location = (0, 0, base + 0.62)
+    neck.location = (0, 0, base + 0.59)
     cyl("neckc", (0, 0, 0.04), 0.05, 0.1, skinm, parent=neck)
     ball("head", (0, 0.01, 0.17), (0.1, 0.115, 0.125), skinm, parent=neck)
     ball("hair", (0, -0.015, 0.21), (0.108, 0.12, 0.11), hair, parent=neck)
@@ -264,12 +264,77 @@ def person(name, x, y, seated=True, hood=None, hair=None, skin=None, teacher=Fal
         ball("ear", (s * 0.1, 0.0, 0.16), (0.015, 0.03, 0.035), skinm, parent=neck, seg=12)
     if teacher:
         ball("bun", (0, -0.1, 0.26), (0.06, 0.06, 0.06), hair, parent=neck)
-    return root, neck
+    fc = face(neck, skinm, hair)
+    return root, neck, fc
+
+
+EYEW = mat("eyew", (0.95, 0.94, 0.92), 0.3)
+PUPIL = mat("pupil", (0.05, 0.035, 0.03), 0.2)
+MOUTH = mat("mouth", (0.25, 0.05, 0.05), 0.6)
+BROW = mat("brow", (0.08, 0.06, 0.05), 0.7)
+
+
+def face(neck, skinm, hair):
+    """Comic-Gesicht auf der Kopfkugel; Teile werden für Mimik animiert."""
+    fc = {"eyes": [], "pupils": [], "brows": [], "lids": []}
+    for s in (-1, 1):
+        e = ball("eye", (s * 0.037, 0.106, 0.183), (0.021, 0.012, 0.016), EYEW, parent=neck, seg=16)
+        p = ball("pupil", (s * 0.037, 0.117, 0.182), (0.0105, 0.004, 0.0105), PUPIL, parent=neck, seg=12)
+        br = box("brow", (s * 0.04, 0.113, 0.212), (0.036, 0.008, 0.008), BROW, parent=neck)
+        fc["eyes"].append(e)
+        fc["pupils"].append(p)
+        fc["brows"].append((br, s))
+    ball("nose", (0, 0.124, 0.162), (0.011, 0.014, 0.016), skinm, parent=neck, seg=12)
+    fc["mouth"] = ball("mouth", (0, 0.113, 0.128), (0.024, 0.006, 0.004), MOUTH, parent=neck, seg=16)
+    fc["keys"] = []
+    return fc
+
+
+def set_expr(fc, f, brow=0.0, tilt=0.0, eye=1.0, mouth=0.0, lx=0.0, lz=0.0, only_eye=False):
+    for e in fc["eyes"]:
+        e.scale = (0.021, 0.012, 0.016 * eye)
+        e.keyframe_insert("scale", frame=f)
+    for k, p in enumerate(fc["pupils"]):
+        sx = -1 if k == 0 else 1
+        p.scale = (0.0105, 0.004, 0.0105 * min(1.0, eye * 1.1))
+        p.keyframe_insert("scale", frame=f)
+        if not only_eye:
+            p.location = (sx * 0.037 + lx, 0.117, 0.182 + lz)
+            p.keyframe_insert("location", frame=f)
+    if only_eye:
+        return
+    for br, sx in fc["brows"]:
+        br.location = (sx * 0.04, 0.113, 0.212 + 0.014 * brow)
+        br.rotation_euler = (0, sx * 0.35 * tilt, 0)
+        br.keyframe_insert("location", frame=f)
+        br.keyframe_insert("rotation_euler", frame=f)
+    m = fc["mouth"]
+    m.scale = (0.024 - 0.008 * mouth, 0.007, 0.004 + 0.028 * mouth)
+    m.keyframe_insert("scale", frame=f)
+
+
+def expr_track(fc, keys, blinks=True, seed=0):
+    """keys: [(sekunde, dict)] – setzt Mimik + automatisches Blinzeln dazwischen."""
+    for t, kw in keys:
+        set_expr(fc, T(t), **kw)
+    if not blinks:
+        return
+    r = random.Random(seed)
+    tb = r.uniform(0.5, 2.5)
+    while tb < 17.3:
+        if all(abs(tb - t) > 0.35 for t, _ in keys):
+            prev = [kw for t, kw in keys if t <= tb]
+            e = (prev[-1] if prev else {}).get("eye", 1.0)
+            set_expr(fc, T(tb - 0.09), eye=e, only_eye=True)
+            set_expr(fc, T(tb), eye=0.08, only_eye=True)
+            set_expr(fc, T(tb + 0.11), eye=e, only_eye=True)
+        tb += r.uniform(2.2, 4.5)
 
 
 COLS = (-2.6, 0.0, 2.6)
 ROWS = (1.5, 0.1, -1.3, -2.7)
 students = []
+NEIGHBOR = None
 for y in ROWS:
     for x in COLS:
         own = abs(x - 2.6) < 0.01 and abs(y + 1.3) < 0.01
@@ -280,15 +345,18 @@ for y in ROWS:
                 continue  # mein Platz
             chair(x + sx, y - 0.45)
             if random.random() < 0.8 or (own and sx < 0):
-                r, n = person(f"s{len(students)}", x + sx, y - 0.45)
-                students.append((r, n))
+                r, n, fc = person(f"s{len(students)}", x + sx, y - 0.45)
+                if own and sx < 0:
+                    NEIGHBOR = (r, n, fc)
+                else:
+                    students.append((r, n, fc))
 # eigener Tisch: Arbeitsblatt + Stift + Handy liegt
 box("sheet", (2.9, -1.33, 0.758), (0.21, 0.29, 0.002), M["paper"], rot=(0, 0, 0.08))
 cyl("pen", (2.75, -1.25, 0.762), 0.005, 0.15, mat("penm", (0.1, 0.3, 0.8), 0.4), rot=(math.pi / 2, 0, 0.6))
 # Lehrertisch + Lehrerin
 box("tdesk", (-2.4, 2.9, 0.75), (1.6, 0.75, 0.04), M["wood"], bevel=0.01)
 box("tdeskb", (-2.4, 3.25, 0.4), (1.55, 0.04, 0.7), M["wood"])
-teacher, tneck = person("teacher", 1.2, 3.35, seated=False, hood=(0.55, 0.2, 0.25), hair=(0.3, 0.18, 0.1), skin=M["skin"], teacher=True)
+teacher, tneck, tface = person("teacher", 1.2, 3.35, seated=False, hood=(0.55, 0.2, 0.25), hair=(0.3, 0.18, 0.1), skin=M["skin"], teacher=True)
 teacher.rotation_euler = (0, 0, math.pi)  # schaut zur Klasse (−y)
 
 # ---------- Kamera (Ich-Perspektive) + Hand mit Handy ----------
@@ -339,8 +407,10 @@ P0 = Vector((2.92, -1.78, 1.17))
 CROUCH = Vector((2.98, -1.95, 0.72))
 cam_pose(T(0), P0, 24, -8)
 cam_pose(T(1.6), P0 + Vector((0, 0, 0.005)), 22, -7)
-cam_pose(T(3.3), P0, 14, -2)
-cam_pose(T(4.6), P0 + Vector((0.02, 0, 0.01)), -18, 2)
+cam_pose(T(2.4), P0, 30, -4)
+cam_pose(T(2.9), P0 + Vector((-0.02, 0, 0)), 80, -3)
+cam_pose(T(3.8), P0 + Vector((-0.02, 0, 0)), 82, -2)
+cam_pose(T(4.8), P0 + Vector((0.02, 0, 0.01)), -18, 2)
 cam_pose(T(6.5), P0, -22, 0)
 cam_pose(T(8.2), P0, -16, -3)
 cam_pose(T(9.6), P0 + Vector((0, 0, 0.03)), -8, -2)
@@ -381,7 +451,11 @@ rig.location = (0.03, -0.075, -0.3)
 rig.keyframe_insert("location", frame=T(14.2))
 
 # Mitschüler drehen die Köpfe zur Durchsage (rechts vorne), dann zur Tür
-for i, (r, n) in enumerate(students):
+for i, (r, n, fc) in enumerate(students):
+    d0 = random.uniform(0, 0.5)
+    expr_track(fc, [(0, {}), (2.2 + d0, {}), (2.7 + d0, {"brow": 1, "eye": 1.3, "mouth": 0.35}),
+                    (6.0, {"brow": 0.6, "tilt": 0.6, "eye": 1.15, "mouth": 0.1}),
+                    (10.1 + d0, {"brow": 0.9, "tilt": 1, "eye": 1.3, "mouth": 0.3})], seed=i)
     d = random.uniform(0, 0.6)
     n.rotation_euler = (0, 0, 0)
     n.keyframe_insert("rotation_euler", frame=T(3.0 + d))
@@ -392,6 +466,37 @@ for i, (r, n) in enumerate(students):
     r.keyframe_insert("location", frame=T(9.8 + d))
     r.location.z = -0.35
     r.keyframe_insert("location", frame=T(11.0 + d))
+nr, nn, nf = NEIGHBOR
+for t, by in ((0, 0), (2.3, 0), (2.8, -40), (3.9, -40), (4.5, -20), (9.6, -20)):
+    nr.rotation_euler = (0, 0, math.radians(by))
+    nr.keyframe_insert("rotation_euler", frame=T(t))
+for t, yaw, pitch in ((0, 0, 0), (2.3, 0, 0), (2.75, -45, -4), (3.9, -45, -4), (4.5, -38, 6), (9.6, -38, 6)):
+    nn.rotation_euler = (math.radians(pitch), 0, math.radians(yaw))
+    nn.keyframe_insert("rotation_euler", frame=T(t))
+expr_track(nf, [(0, {}), (2.4, {}), (2.8, {"brow": 1.1, "tilt": 0.9, "eye": 1.4, "mouth": 0.55, "lx": 0.0}),
+                (3.8, {"brow": 1.0, "tilt": 1.0, "eye": 1.35, "mouth": 0.4}), (4.6, {"brow": 0.8, "tilt": 0.8, "eye": 1.2, "mouth": 0.2}),
+                (10.2, {"brow": 1.0, "tilt": 1, "eye": 1.3, "mouth": 0.35})], seed=99)
+nr.keyframe_insert("location", frame=T(10.0))
+nr.location.z = -0.35
+nr.keyframe_insert("location", frame=T(11.0))
+# Lehrerin: Mimik + Lippen passend zur Stimme (9,5 s)
+expr_track(tface, [(0, {}), (2.3, {}), (2.8, {"brow": -0.4, "tilt": -0.6, "eye": 1.1}), (8.9, {"brow": 0.3, "tilt": 0.8, "eye": 1.2})], seed=7)
+try:
+    import wave as _w, numpy as _np
+    with _w.open(os.path.join(HERE, "..", "..", "public", "pov3d", "line-1-0.wav")) as wf:
+        sr = wf.getframerate()
+        a = _np.frombuffer(wf.readframes(wf.getnframes()), dtype=_np.int16).astype(float)
+        if wf.getnchannels() > 1:
+            a = a[:: wf.getnchannels()]
+    step = int(sr / 12)
+    rms = _np.array([_np.sqrt(_np.mean(a[i:i + step] ** 2)) for i in range(0, len(a) - step, step)])
+    rms = _np.clip(rms / (rms.max() * 0.7), 0, 1)
+    for k, v in enumerate(rms):
+        m = tface["mouth"]
+        m.scale = (0.022 - 0.004 * v, 0.006, 0.004 + 0.016 * v)
+        m.keyframe_insert("scale", frame=T(9.5 + k / 12))
+except Exception as ex:
+    print("Lippen:", ex)
 # Lehrerin: geht zur Tür, schließt ab, dreht sich zur Klasse
 path = [(0, (1.2, 3.35)), (4.4, (1.2, 3.35)), (5.6, (2.6, 3.1)), (6.8, (3.85, 2.25)), (8.4, (3.85, 2.25)), (9.6, (3.2, 0.9))]
 for t, (x, y) in path:
