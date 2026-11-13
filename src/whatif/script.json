@@ -1,0 +1,90 @@
+{
+ "title": "Was wäre, wenn du auf einem See einbrichst?",
+ "sentences": [
+  {
+   "shot": "walk",
+   "hud": [
+    96,
+    "AUF DEM EIS"
+   ],
+   "text": "Was wäre, wenn du auf einem zugefrorenen *See* einbrichst?",
+   "delay": 0.35,
+   "pad": 1.0
+  },
+  {
+   "shot": "crack",
+   "hud": [
+    112,
+    "DAS EIS KNACKT"
+   ],
+   "text": "Ein *Knacken*. Dann gibt das Eis nach.",
+   "delay": 0.1,
+   "pad": 1.4
+  },
+  {
+   "shot": "under",
+   "hud": [
+    138,
+    "KÄLTESCHOCK"
+   ],
+   "text": "Das Wasser hat fast *0 Grad*. Die Kälte presst dir die Luft aus der Lunge.",
+   "delay": 0.5,
+   "pad": 0.6
+  },
+  {
+   "shot": "surface",
+   "hud": [
+    151,
+    "KÄLTESCHOCK"
+   ],
+   "text": "Nicht panisch atmen. Nach etwa *1 Minute* wird dein Atem ruhiger.",
+   "delay": 0.2,
+   "pad": 0.6
+  },
+  {
+   "shot": "turn",
+   "hud": [
+    146,
+    "ZURÜCK ZUM UFER"
+   ],
+   "text": "Dreh dich *um*. Wo du hergekommen bist, hat dich das Eis getragen.",
+   "delay": 0.2,
+   "pad": 0.7
+  },
+  {
+   "shot": "arms",
+   "hud": [
+    158,
+    "RAUSZIEHEN"
+   ],
+   "text": "Arme flach aufs Eis. Und dann mit den Beinen *kicken*.",
+   "delay": 0.15,
+   "pad": 0.8
+  },
+  {
+   "shot": "roll",
+   "hud": [
+    149,
+    "WEG VOM LOCH"
+   ],
+   "text": "Nicht aufstehen. *Rollen*, bis das Eis dich wieder trägt.",
+   "delay": 0.15,
+   "pad": 0.8
+  },
+  {
+   "shot": "end",
+   "hud": [
+    132,
+    "IN SICHERHEIT"
+   ],
+   "text": "Würdest du um Hilfe *rufen*, oder sofort selbst rausklettern?",
+   "delay": 0.4,
+   "pad": 3.2
+  }
+ ],
+ "sources": [
+  "1-10-1-Regel (Kälteschock ~1 min, ~10 min Bewegung, ~1 h bis Bewusstlosigkeit): Prof. Gordon Giesbrecht, University of Manitoba",
+  "DLRG: Verhalten beim Einbruch ins Eis (zur Einbruchstelle zurück, flach machen, robben/rollen)"
+ ],
+ "fps": 30
+}

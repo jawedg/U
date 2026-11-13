@@ -1,0 +1,380 @@
+{
+ "lines": [
+  {
+   "file": "whatif/line-0.wav",
+   "seconds": 3.309,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "wäre,",
+     "start": 0.286
+    },
+    {
+     "word": "wenn",
+     "start": 0.697
+    },
+    {
+     "word": "du",
+     "start": 0.92
+    },
+    {
+     "word": "auf",
+     "start": 1.07
+    },
+    {
+     "word": "einem",
+     "start": 1.256
+    },
+    {
+     "word": "zugefrorenen",
+     "start": 1.517
+    },
+    {
+     "word": "*See*",
+     "start": 2.039
+    },
+    {
+     "word": "einbrichst?",
+     "start": 2.226
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-1.wav",
+   "seconds": 2.655,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "*Knacken*.",
+     "start": 0.302
+    },
+    {
+     "word": "Dann",
+     "start": 0.869
+    },
+    {
+     "word": "gibt",
+     "start": 1.112
+    },
+    {
+     "word": "das",
+     "start": 1.355
+    },
+    {
+     "word": "Eis",
+     "start": 1.557
+    },
+    {
+     "word": "nach.",
+     "start": 1.759
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-2.wav",
+   "seconds": 3.702,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "Wasser",
+     "start": 0.264
+    },
+    {
+     "word": "hat",
+     "start": 0.527
+    },
+    {
+     "word": "fast",
+     "start": 0.691
+    },
+    {
+     "word": "*0",
+     "start": 0.888
+    },
+    {
+     "word": "Grad*.",
+     "start": 0.986
+    },
+    {
+     "word": "Die",
+     "start": 1.348
+    },
+    {
+     "word": "Kälte",
+     "start": 1.512
+    },
+    {
+     "word": "presst",
+     "start": 1.742
+    },
+    {
+     "word": "dir",
+     "start": 2.004
+    },
+    {
+     "word": "die",
+     "start": 2.168
+    },
+    {
+     "word": "Luft",
+     "start": 2.333
+    },
+    {
+     "word": "aus",
+     "start": 2.53
+    },
+    {
+     "word": "der",
+     "start": 2.694
+    },
+    {
+     "word": "Lunge.",
+     "start": 2.858
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-3.wav",
+   "seconds": 3.565,
+   "words": [
+    {
+     "word": "Nicht",
+     "start": 0.1
+    },
+    {
+     "word": "panisch",
+     "start": 0.354
+    },
+    {
+     "word": "atmen.",
+     "start": 0.681
+    },
+    {
+     "word": "Nach",
+     "start": 1.117
+    },
+    {
+     "word": "etwa",
+     "start": 1.335
+    },
+    {
+     "word": "*1",
+     "start": 1.553
+    },
+    {
+     "word": "Minute*",
+     "start": 1.662
+    },
+    {
+     "word": "wird",
+     "start": 1.953
+    },
+    {
+     "word": "dein",
+     "start": 2.171
+    },
+    {
+     "word": "Atem",
+     "start": 2.389
+    },
+    {
+     "word": "ruhiger.",
+     "start": 2.607
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-4.wav",
+   "seconds": 3.779,
+   "words": [
+    {
+     "word": "Dreh",
+     "start": 0.1
+    },
+    {
+     "word": "dich",
+     "start": 0.318
+    },
+    {
+     "word": "*um*.",
+     "start": 0.535
+    },
+    {
+     "word": "Wo",
+     "start": 0.862
+    },
+    {
+     "word": "du",
+     "start": 1.007
+    },
+    {
+     "word": "hergekommen",
+     "start": 1.152
+    },
+    {
+     "word": "bist,",
+     "start": 1.624
+    },
+    {
+     "word": "hat",
+     "start": 2.023
+    },
+    {
+     "word": "dich",
+     "start": 2.204
+    },
+    {
+     "word": "das",
+     "start": 2.422
+    },
+    {
+     "word": "Eis",
+     "start": 2.604
+    },
+    {
+     "word": "getragen.",
+     "start": 2.785
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-5.wav",
+   "seconds": 3.461,
+   "words": [
+    {
+     "word": "Arme",
+     "start": 0.1
+    },
+    {
+     "word": "flach",
+     "start": 0.346
+    },
+    {
+     "word": "aufs",
+     "start": 0.633
+    },
+    {
+     "word": "Eis.",
+     "start": 0.879
+    },
+    {
+     "word": "Und",
+     "start": 1.289
+    },
+    {
+     "word": "dann",
+     "start": 1.494
+    },
+    {
+     "word": "mit",
+     "start": 1.74
+    },
+    {
+     "word": "den",
+     "start": 1.945
+    },
+    {
+     "word": "Beinen",
+     "start": 2.15
+    },
+    {
+     "word": "*kicken*.",
+     "start": 2.478
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-6.wav",
+   "seconds": 2.808,
+   "words": [
+    {
+     "word": "Nicht",
+     "start": 0.1
+    },
+    {
+     "word": "aufstehen.",
+     "start": 0.305
+    },
+    {
+     "word": "*Rollen*,",
+     "start": 0.774
+    },
+    {
+     "word": "bis",
+     "start": 1.156
+    },
+    {
+     "word": "das",
+     "start": 1.302
+    },
+    {
+     "word": "Eis",
+     "start": 1.449
+    },
+    {
+     "word": "dich",
+     "start": 1.596
+    },
+    {
+     "word": "wieder",
+     "start": 1.772
+    },
+    {
+     "word": "trägt.",
+     "start": 2.006
+    }
+   ]
+  },
+  {
+   "file": "whatif/line-7.wav",
+   "seconds": 2.951,
+   "words": [
+    {
+     "word": "Würdest",
+     "start": 0.1
+    },
+    {
+     "word": "du",
+     "start": 0.381
+    },
+    {
+     "word": "um",
+     "start": 0.505
+    },
+    {
+     "word": "Hilfe",
+     "start": 0.63
+    },
+    {
+     "word": "*rufen*,",
+     "start": 0.848
+    },
+    {
+     "word": "oder",
+     "start": 1.223
+    },
+    {
+     "word": "sofort",
+     "start": 1.41
+    },
+    {
+     "word": "selbst",
+     "start": 1.659
+    },
+    {
+     "word": "rausklettern?",
+     "start": 1.909
+    }
+   ]
+  }
+ ]
+}
