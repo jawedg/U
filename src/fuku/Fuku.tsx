@@ -16,7 +16,7 @@ const SANS = "Inter, 'DejaVu Sans', sans-serif";
 const END = 59.4;
 const AT: Record<string, number> = { n1: 1.0, k1a: 10.8, n2: 15.6, k1b: 32.4, k2a: 35.8, n3: 41.2, k1c: 48.9, n4: 51.4 };
 const WHO: Record<string, string> = { k1: "KOLLEGE", k2: "SCHICHTLEITER" };
-const HOT = /^(9|Japan|Steuerstäbe|Tsunami|6|doppelt|tot|Strom|Kühlpumpen|blind|Kernschmelze|Strahlung|Notstrom-Generatoren|überflutet|heiß)/;
+const HOT = /^(9|Japan|Batterien|Autos|Alles|Steuerstäbe|Tsunami|6|doppelt|tot|Strom|Kühlpumpen|blind|Kernschmelze|Strahlung|Notstrom-Generatoren|überflutet|heiß)/;
 const LINES = (script as any).sentences.map((s: any, i: number) => ({ ...s, at: AT[s.id], l: (timing as any).lines[i] }));
 
 const Caption: React.FC<{ t: number; lines?: any[] }> = ({ t, lines = LINES }) => {
