@@ -265,16 +265,18 @@ lamps = []
 for x in (-2.6, -0.9, 0.9, 2.6):
     for y in (-2.0, -0.4, 1.2):
         box(f"lp{x}{y}", (x, y, RZ - 0.015), (1.2, 0.3, 0.03), PANEL)
+for x in (-1.75, 1.75):
+    for y in (-1.2, 0.9):
         bpy.ops.object.light_add(type="AREA", location=(x, y, RZ - 0.05))
         l = bpy.context.object
         l.data.shape = "RECTANGLE"
-        l.data.size, l.data.size_y = 1.2, 0.3
-        l.data.energy = 32
+        l.data.size, l.data.size_y = 3.0, 1.6
+        l.data.energy = 96
         l.data.color = (0.92, 0.97, 1.0)
         lamps.append(l)
 for l in lamps:
     l.data.keyframe_insert("energy", frame=1)
-    for t, v in ((2.0, 32), (2.08, 9), (2.16, 32), (5.1, 32), (5.15, 14), (5.22, 32), (IMPACT, 32), (IMPACT + 0.12, 5), (IMPACT + 0.2, 32), (BLACK - 0.04, 32), (BLACK, 0)):
+    for t, v in ((2.0, 96), (2.08, 27), (2.16, 96), (5.1, 96), (5.15, 42), (5.22, 96), (IMPACT, 96), (IMPACT + 0.12, 15), (IMPACT + 0.2, 96), (BLACK - 0.04, 96), (BLACK, 0)):
         l.data.energy = v
         l.data.keyframe_insert("energy", frame=T(t))
 for t, v in ((1, 2.2), (2.0, 2.2), (2.08, 0.6), (2.16, 2.2), (5.1, 2.2), (5.15, 1), (5.22, 2.2), (IMPACT, 2.2), (IMPACT + 0.12, 0.3), (IMPACT + 0.2, 2.2), (BLACK - 0.04, 2.2), (BLACK, 0)):
@@ -305,20 +307,28 @@ DUST = simple("dust", (1, 1, 1), 0.9)
 bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=1, radius=0.003)
 dmesh = bpy.context.object
 dmesh.data.materials.append(DUST)
-dust_objs = []
+import bmesh as _bm
+bm = _bm.new()
+src = dmesh.data
 for k in range(260):
-    o = dmesh.copy()
-    sc.collection.objects.link(o)
-    o.location = (random.uniform(-2.5, 3.5), random.uniform(-1.5, 1.6), random.uniform(0.6, 2.4))
-    o.hide_render = True
-    o.keyframe_insert("hide_render", frame=1)
-    o.hide_render = False
-    o.keyframe_insert("hide_render", frame=T(BLACK))
-    for f in (1, T(END)):
-        o.location.z += random.uniform(-0.15, 0.15) if f > 1 else 0
-        o.location.x += random.uniform(-0.2, 0.2) if f > 1 else 0
-        o.keyframe_insert("location", frame=f)
+    off = Vector((random.uniform(-2.5, 3.5), random.uniform(-1.5, 1.6), random.uniform(0.6, 2.4)))
+    vmap = [bm.verts.new(v.co + off) for v in src.vertices]
+    for poly in src.polygons:
+        bm.faces.new([vmap[i] for i in poly.vertices])
+dm = bpy.data.meshes.new("dust")
+bm.to_mesh(dm)
+bm.free()
+dust = bpy.data.objects.new("dust", dm)
+sc.collection.objects.link(dust)
+dm.materials.append(DUST)
 bpy.data.objects.remove(dmesh, do_unlink=True)
+dust.hide_render = True
+dust.keyframe_insert("hide_render", frame=1)
+dust.hide_render = False
+dust.keyframe_insert("hide_render", frame=T(BLACK))
+dust.keyframe_insert("location", frame=1)
+dust.location = (0.15, 0, 0.12)
+dust.keyframe_insert("location", frame=T(END))
 
 # ---------- Menschen ----------
 ME = P.make_person("me", gender=1.0, age=0.45, skin="young_asian_male", race=("asian", 1.0), hair="short01",
@@ -571,11 +581,18 @@ for i, s in enumerate(SCR["sentences"]):
     if who:
         lipsync(who, os.path.join(HERE, "..", "..", "public", TIM["lines"][i]["file"]), LINE_AT[s["id"]])
 
+# ---------- Leistung: Glättung nur auf Körpern der Kollegen ----------
+keep = {K1["h"].name, K2["h"].name}
+for o in bpy.data.objects:
+    for m in getattr(o, "modifiers", []):
+        if m.type == "SUBSURF":
+            m.render_levels = 1 if o.name in keep else 0
+            m.levels = 0
 # ---------- Render ----------
 sc.frame_start, sc.frame_end = 1, T(END)
 sc.render.fps = FPS
 sc.render.engine = "BLENDER_EEVEE"
-sc.eevee.taa_render_samples = 10
+sc.eevee.taa_render_samples = 8
 try:
     sc.view_settings.view_transform = "AgX"
     sc.view_settings.look = "AgX - Medium High Contrast"
