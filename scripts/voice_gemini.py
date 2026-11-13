@@ -31,11 +31,34 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL = os.environ.get("GEMINI_TTS_MODEL", "gemini-3.8-flash-tts")
+# Ist das Tageslimit erreicht, wird automatisch das nächste Modell genommen (eigenes Limit, gleiche Stimme).
+FALLBACKS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview"]
 PAUSE = 0.3  # Sekunden Pause nach jeder Szene
 ALIGN = False  # Schnittpunkte per Gemini-Transkription bestimmen (genauer bei langen Blöcken)
 
 
 def tts(text: str, voice: str) -> bytes:
+    global MODEL
+    while True:
+        try:
+            return _tts(text, voice)
+        except DayLimit:
+            rest = [m for m in FALLBACKS if m != MODEL and m not in _used]
+            _used.add(MODEL)
+            if not rest:
+                sys.exit("❌ Tageslimit bei allen Gemini-Stimmenmodellen erreicht. Morgen wieder.")
+            print(f"   ⚠️  Tageslimit für {MODEL} erreicht – wechsle auf {rest[0]}")
+            MODEL = rest[0]
+
+
+class DayLimit(Exception):
+    pass
+
+
+_used: set[str] = set()
+
+
+def _tts(text: str, voice: str) -> bytes:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         sys.exit("❌ GEMINI_API_KEY fehlt (https://aistudio.google.com/apikey)")
@@ -60,8 +83,7 @@ def tts(text: str, voice: str) -> bytes:
         except urllib.error.HTTPError as e:
             msg = e.read().decode(errors="ignore")
             if "per day" in msg or "PerDay" in msg:
-                sys.exit(f"❌ Tageslimit für {MODEL} erreicht. Morgen wieder oder anderes Modell "
-                         "(GEMINI_TTS_MODEL=gemini-3.1-flash-tts-preview).")
+                raise DayLimit()
             if e.code in (429, 500, 503) and attempt < 4:
                 wait = 20 * (attempt + 1)
                 print(f"   … Limit/Fehler {e.code}, warte {wait}s")
