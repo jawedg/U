@@ -4,6 +4,8 @@
 - Sprache: Deutsch, einfach erklären.
 - **Stimme: Google Gemini TTS, Stimme „Charon“** (`npm run voice:3d` bzw. `python3 scripts/voice_gemini.py --voice Charon`).
   - Piper/edge-tts gefallen dem Nutzer NICHT (zu roboterhaft).
+  - Chatterbox (Open Source) will der Nutzer auch NICHT. Reserve bei Gemini-Tageslimit: Ausweichmodell oder
+    Google Cloud TTS „Chirp 3 HD“ (Stimme de-DE-Chirp3-HD-Charon, Freimenge + 10 $/Monat Guthaben aus Google AI Pro).
 - **Stil: 2D-Strichzeichnung („von früher“)** wie `src/athan2d/` – helle Linien auf dunklem Grund, Gold-Akzente,
   Papier-Körnung, Ort-Label + arabischer Text oben, Satz-Untertitel unten (gesprochene Wörter hell, Schlüsselwörter gold).
   3D (`src/train`, `src/athan`) gefällt dem Nutzer NICHT mehr (zu holprig).
