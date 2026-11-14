@@ -133,12 +133,14 @@ def curve_line(name, pts, depth, mat, closed=False):
     cu.bevel_resolution = 3
     sp = cu.splines.new("NURBS")
     sp.points.add(len(pts) - 1)
+    ctr = sum((Vector(p) for p in pts), Vector()) / len(pts)
     for i, p in enumerate(pts):
-        sp.points[i].co = (*p, 1)
+        sp.points[i].co = (*(Vector(p) - ctr), 1)
     sp.use_endpoint_u = True
     sp.order_u = 3
     sp.use_cyclic_u = closed
     o = link(bpy.data.objects.new(name, cu))
+    o.location = ctr
     o.data.materials.append(mat)
     return o
 
@@ -155,8 +157,10 @@ def bone_parent(o, arm, bone):
 
 # ---------------------------------------------------------------------------
 def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(0.13, 0.17, 0.31), shirt=(0.93, 0.93, 0.9),
-                pants=(0.33, 0.35, 0.4), shoes=(0.95, 0.95, 0.95), iris=(0.36, 0.22, 0.12), height=1.72, hair_style="block"):
+                pants=(0.33, 0.35, 0.4), shoes=(0.95, 0.95, 0.95), iris=(0.36, 0.22, 0.12), height=1.72, hair_style="block",
+                build=1.0, lower="pants", socks=(0.15, 0.17, 0.25), cap=(0.2, 0.25, 0.4), glasses=False, zipper=True):
     S = height / 1.72
+    W = build
     INK = flat_mat("ink", (0.04, 0.035, 0.05))
     m_skin = ink_mat(name + "_skin", skin, shade=0.8, tint=(1.0, 0.8, 0.78))
     m_hair = ink_mat(name + "_hair", hair, shade=0.6, tint=(1.0, 1.0, 1.15))
@@ -269,7 +273,8 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
     for vt in bm.verts:
         x, y, z = vt.co
         vt.co = Vector((x * 0.126, y * 0.138 + 0.006, z * 0.135 + 0.03 * max(0, z) ** 1.5))
-    kill = [vt for vt in bm.verts if (vt.co.z < 0.03 and vt.co.y < -0.06) or vt.co.z < -0.05 or (vt.co.z < 0.0 and vt.co.y < 0.02 and abs(vt.co.x) > 0.06)]
+    kill = [vt for vt in bm.verts if (vt.co.z < 0.03 and vt.co.y < -0.06) or (vt.co.z < -0.12 and vt.co.y < 0.03) or vt.co.z < -0.62
+            or (vt.co.z < 0.0 and vt.co.y < 0.0 and abs(vt.co.x) > 0.06)]
     bmesh.ops.delete(bm, geom=kill, context="VERTS")
     hair_o = mesh_from_bm(name + "_hair", bm, m_hair, subsurf=1)
     sol = hair_o.modifiers.new("dick", "SOLIDIFY")
@@ -277,19 +282,49 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
     sol.offset = 1.0
     hair_o.location = v(0, 0, 1.56)
     part(hair_o, "head")
-    for k, (hx, hz, rot) in enumerate(((-0.06, 0.618, -0.4), (-0.02, 0.63, -0.1), (0.025, 0.632, 0.15), (0.065, 0.62, 0.45))):
+    tufts = ((-0.06, 0.618, -0.4), (-0.02, 0.63, -0.1), (0.025, 0.632, 0.15), (0.065, 0.62, 0.45)) if hair_style in ("block", "long") else ()
+    for k, (hx, hz, rot) in enumerate(tufts):
         tuft = ellipsoid(f"{name}_tuft{k}", v(hx, -0.1, 1.0 + hz), (0.036 * S, 0.03 * S, 0.03 * S), m_hair, seg=20, rings=12)
         tuft.rotation_euler = (math.radians(-20), math.radians(rot * 30), 0)
         part(tuft, "head")
 
+    # Haarstile: "block" (Tolle + Strähnen), "short" (kurz, ohne Tolle), "long" (lang bis Schulter, Pony),
+    # "bun" (Dutt, ältere Frau), "cap" (Mütze mit Schirm)
+    if hair_style == "long":
+        back = ellipsoid(name + "_hairback", v(0, 0.04, 1.43), (0.125 * S, 0.075 * S, 0.17 * S), m_hair, seg=28, rings=16)
+        part(back, "head")
+        for k, hx in enumerate((-0.105, 0.105)):
+            side = ellipsoid(f"{name}_hairside{k}", v(hx, -0.01, 1.47), (0.03 * S, 0.06 * S, 0.12 * S), m_hair, seg=20, rings=12)
+            part(side, "head")
+    if hair_style == "bun":
+        bun = ellipsoid(name + "_bun", v(0, 0.09, 1.66), (0.06 * S, 0.055 * S, 0.055 * S), m_hair, seg=24, rings=14)
+        part(bun, "head")
+    if hair_style == "cap":
+        m_cap = ink_mat(name + "_cap", cap, shade=0.6)
+        crown = ellipsoid(name + "_capc", v(0, 0.005, 1.63), (0.13 * S, 0.142 * S, 0.075 * S), m_cap, seg=32, rings=16)
+        part(crown, "head")
+        brim = ellipsoid(name + "_capb", v(0, -0.15, 1.625), (0.1 * S, 0.07 * S, 0.008 * S), m_cap, seg=32, rings=8)
+        part(brim, "head")
+        band = loft(name + "_capband", [(1.6, 0.128, 0.14, 0, 0.004), (1.625, 0.13, 0.142, 0, 0.004)], flat_mat("capband", (0.9, 0.85, 0.3)), seg=32, cap=False)
+        band.scale = (S, S, S)
+        part(band, "head")
+    if glasses:
+        for s_, x in (("L", 1), ("R", -1)):
+            ring = curve_line(f"{name}_gl{s_}", [tuple(v(x * 0.042 + 0.03 * math.cos(a), -0.128, 1.54 + 0.026 * math.sin(a))) for a in [i * math.pi / 6 for i in range(12)]], 0.0022 * S, INK, closed=True)
+            part(ring, "head")
+        part(curve_line(name + "_glb", [tuple(v(-0.012, -0.13, 1.545)), tuple(v(0, -0.133, 1.548)), tuple(v(0.012, -0.13, 1.545))], 0.002 * S, INK), "head")
+    if hair_style in ("cap", "bun", "short"):
+        tops, spikes = (), ()
+    else:
+        tops = ((0.0, -0.035, 1.672, 0.075, 0.075, 0.036, -15, 0), (-0.05, -0.02, 1.662, 0.055, 0.065, 0.034, -10, 20), (0.05, -0.02, 1.662, 0.055, 0.065, 0.034, -10, -20),
+                (-0.1, -0.03, 1.6, 0.03, 0.05, 0.05, 0, 25), (0.1, -0.03, 1.6, 0.03, 0.05, 0.05, 0, -25))
+        spikes = ((-0.085, 1.6, -30, 0.05), (-0.045, 1.615, -12, 0.045), (0.0, 1.62, 6, 0.05), (0.05, 1.615, 18, 0.045), (0.088, 1.6, 32, 0.05))
     # Volumen oben (Tolle) + Strähnen-Spitzen an Seiten und Stirn
-    for k, (hx, hy, hz, rx, ry, rz, ax, ay) in enumerate((
-            (0.0, -0.035, 1.672, 0.075, 0.075, 0.036, -15, 0), (-0.05, -0.02, 1.662, 0.055, 0.065, 0.034, -10, 20), (0.05, -0.02, 1.662, 0.055, 0.065, 0.034, -10, -20),
-            (-0.1, -0.03, 1.6, 0.03, 0.05, 0.05, 0, 25), (0.1, -0.03, 1.6, 0.03, 0.05, 0.05, 0, -25))):
+    for k, (hx, hy, hz, rx, ry, rz, ax, ay) in enumerate(tops):
         o = ellipsoid(f"{name}_vol{k}", v(hx, hy, hz), (rx * S, ry * S, rz * S), m_hair, seg=24, rings=14)
         o.rotation_euler = (math.radians(ax), math.radians(ay), 0)
         part(o, "head")
-    for k, (hx, hz, ang, ln) in enumerate(((-0.085, 1.6, -30, 0.05), (-0.045, 1.615, -12, 0.045), (0.0, 1.62, 6, 0.05), (0.05, 1.615, 18, 0.045), (0.088, 1.6, 32, 0.05))):
+    for k, (hx, hz, ang, ln) in enumerate(spikes):
         bm = bmesh.new()
         bmesh.ops.create_cone(bm, cap_ends=True, segments=12, radius1=0.022 * S, radius2=0.0, depth=ln * S)
         o = mesh_from_bm(f"{name}_spike{k}", bm, m_hair)
@@ -300,28 +335,38 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
     # ---------- Rumpf / Jacke ----------
     torso = loft(name + "_jacket", [(0.9, 0.155, 0.1, 0, 0.0), (1.02, 0.15, 0.098, 0, 0), (1.15, 0.165, 0.105, 0, 0), (1.27, 0.178, 0.108, 0, 0),
                                      (1.33, 0.16, 0.098, 0, 0.005), (1.37, 0.08, 0.06, 0, 0.01)], m_jacket, seg=28)
-    torso.scale = (S, S, S)
+    torso.scale = (S * W, S * W, S)
     part(torso, "chest")
     collar = loft(name + "_collar", [(1.34, 0.072, 0.062, 0, 0.006), (1.395, 0.066, 0.057, 0, 0.008)], m_jacket, seg=24, cap=False)
     collar.scale = (S, S, S)
     sol = collar.modifiers.new("d", "SOLIDIFY")
     sol.thickness = 0.01
     part(collar, "chest")
-    zip_ = curve_line(name + "_zip", [tuple(v(0, -0.1 - 0.012 * math.sin(math.pi * (z - 0.9) / 0.4), z)) for z in (0.9, 1.0, 1.1, 1.2, 1.27)], 0.0022 * S, INK)
-    part(zip_, "chest")
+    zip_ = None if not zipper else curve_line(name + "_zip", [tuple(v(0, -0.1 - 0.012 * math.sin(math.pi * (z - 0.9) / 0.4), z)) for z in (0.9, 1.0, 1.1, 1.2, 1.27)], 0.0022 * S, INK)
+    if zip_:
+        part(zip_, "chest")
     pelvis = loft(name + "_pelvis", [(0.76, 0.1, 0.07, 0, 0), (0.8, 0.15, 0.092, 0, 0), (0.95, 0.155, 0.098, 0, 0)], m_pants, seg=24)
-    pelvis.scale = (S, S, S)
+    pelvis.scale = (S * W, S * W, S)
     part(pelvis, "hips")
+
+    if lower == "skirt":
+        m_legs_up = m_skin
+        m_legs_low = ink_mat(name + "_socks", socks, shade=0.6)
+        skirt = loft(name + "_skirt", [(0.6, 0.235, 0.17, 0, 0), (0.75, 0.2, 0.135, 0, 0), (0.92, 0.152, 0.097, 0, 0)], m_pants, seg=32)
+        skirt.scale = (S * W, S * W, S)
+        part(skirt, "hips")
+    else:
+        m_legs_up = m_legs_low = m_pants
 
     # ---------- Arme + Hände ----------
     for s, x in (("L", 1), ("R", -1)):
         sh = v(x * 0.19, 0, 1.3)
         el = v(x * 0.235, 0.01, 1.05)
         wr = v(x * 0.25, -0.02, 0.85)
-        part(ellipsoid(f"{name}_shoulder{s}", sh - v(x * 0.022, 0, 0.018), (0.046 * S, 0.05 * S, 0.046 * S), m_jacket), f"upperarm.{s}")
-        part(limb(f"{name}_uarm{s}", sh, el, 0.058 * S, 0.048 * S, m_jacket), f"upperarm.{s}")
-        part(ellipsoid(f"{name}_elbow{s}", el, (0.048 * S, 0.048 * S, 0.048 * S), m_jacket), f"forearm.{s}")
-        part(limb(f"{name}_farm{s}", el, wr + v(0, 0, 0.01), 0.047 * S, 0.044 * S, m_jacket), f"forearm.{s}")
+        part(ellipsoid(f"{name}_shoulder{s}", sh - v(x * 0.03, 0, 0.022), (0.044 * S * W, 0.048 * S * W, 0.044 * S), m_jacket), f"upperarm.{s}")
+        part(limb(f"{name}_uarm{s}", sh - v(x * 0.01, 0, 0.01), el, 0.052 * S * W, 0.047 * S * W, m_jacket), f"upperarm.{s}")
+        part(ellipsoid(f"{name}_elbow{s}", el, (0.047 * S * W, 0.047 * S * W, 0.047 * S), m_jacket), f"forearm.{s}")
+        part(limb(f"{name}_farm{s}", el, wr + v(0, 0, 0.01), 0.046 * S * W, 0.043 * S * W, m_jacket), f"forearm.{s}")
         part(limb(f"{name}_cuff{s}", wr + v(0, 0, 0.03), wr - v(0, 0, 0.0), 0.046 * S, 0.046 * S, m_jacket, subsurf=0), f"forearm.{s}")
         # Hand: Handfläche + 4 Finger + Daumen (leicht gekrümmt)
         H = 1.3
@@ -346,14 +391,15 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
         hp = v(x * 0.082, 0, 0.93)
         kn = v(x * 0.095, 0, 0.5)
         an = v(x * 0.095, 0.02, 0.1)
-        part(limb(f"{name}_thigh{s}", hp, kn, 0.088 * S, 0.068 * S, m_pants), f"thigh.{s}")
-        part(ellipsoid(f"{name}_knee{s}", kn, (0.067 * S, 0.067 * S, 0.067 * S), m_pants), f"shin.{s}")
-        part(limb(f"{name}_shin{s}", kn, an + v(0, 0, 0.02), 0.065 * S, 0.06 * S, m_pants), f"shin.{s}")
+        part(limb(f"{name}_thigh{s}", hp, kn, (0.07 if lower == "skirt" else 0.088) * S * W, (0.058 if lower == "skirt" else 0.068) * S * W, m_legs_up), f"thigh.{s}")
+        part(ellipsoid(f"{name}_knee{s}", kn, (0.067 * S * W, 0.067 * S * W, 0.067 * S), m_legs_low), f"shin.{s}")
+        part(limb(f"{name}_shin{s}", kn, an + v(0, 0, 0.02), 0.065 * S * W, 0.06 * S * W, m_legs_low), f"shin.{s}")
         shoe = ellipsoid(f"{name}_shoe{s}", v(x * 0.095, -0.035, 0.05), (0.056 * S, 0.13 * S, 0.055 * S), m_shoes, subsurf=0)
         part(shoe, f"foot.{s}")
         sole = ellipsoid(f"{name}_sole{s}", v(x * 0.095, -0.035, 0.018), (0.058 * S, 0.132 * S, 0.018 * S), m_sole, subsurf=0)
         part(sole, f"foot.{s}")
-    return dict(arm=arm, name=name, eyes=eyes, mouth=mouth_open, mline=mouth_line, parts=P, S=S)
+    head_parts = P.get("head", []) + P.get("eye.L", []) + P.get("eye.R", []) + P.get("neck", [])
+    return dict(arm=arm, name=name, eyes=eyes, mouth=mouth_open, mline=mouth_line, parts=P, S=S, head_parts=head_parts)
 
 
 # ---------------------------------------------------------------------------
@@ -388,9 +434,30 @@ def blink(f, frame, dur=4):
 
 
 def look(f, frame, yaw=0.0, pitch=0.0):
-    """Augen schauen (Grad): yaw + = nach links der Figur, pitch + = hoch."""
+    """Augen schauen: yaw/pitch in Grad (+ = nach links der Figur / hoch). Iris gleitet über das Augenweiß."""
+    dx = max(-1.0, min(1.0, yaw / 30.0)) * 0.0085 * f["S"]
+    dz = max(-1.0, min(1.0, pitch / 25.0)) * 0.009 * f["S"]
     for s in ("L", "R"):
-        rot(f, f"eye.{s}", frame, x=pitch, z=yaw)
+        pb = f["arm"].pose.bones[f"eye.{s}"]
+        pb.location = (-dx, 0.0, dz)  # lokale Knochenachsen: x = Welt -x, z = Welt +z
+        pb.keyframe_insert("location", frame=frame)
+
+
+def lipsync(f, wav, t0, fps, gain=1.0):
+    """Mund nach Lautstärke der Sprachdatei öffnen."""
+    import wave as _w
+    import numpy as _np
+    with _w.open(wav) as wf:
+        sr = wf.getframerate()
+        a = _np.frombuffer(wf.readframes(wf.getnframes()), dtype=_np.int16).astype(float)
+    hop = sr // fps
+    rms = _np.array([_np.sqrt(_np.mean(a[i:i + hop] ** 2)) for i in range(0, len(a) - hop, hop)])
+    rms = rms / (rms.max() or 1)
+    f0 = int(round(t0 * fps)) + 1
+    mouth(f, f0 - 2, 0)
+    for i in range(0, len(rms), 2):
+        mouth(f, f0 + i, min(1.0, (rms[i] ** 0.6) * gain))
+    mouth(f, f0 + len(rms) + 2, 0)
 
 
 def mouth(f, frame, openness):

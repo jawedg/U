@@ -1,0 +1,21 @@
+{
+ "title": "Futaba, 11. März 2011 – Teil 1",
+ "sentences": [
+  {"id": "lsp1", "part": 2, "voice": "Kore", "text": "Achtung, Achtung! An alle Bewohner von Futaba: Verlassen Sie sofort die Stadt!"},
+  {"id": "m1", "part": 0, "voice": "Charon", "text": "Gestern war hier noch alles ganz normal."},
+  {"id": "s1", "part": 1, "voice": "Puck", "text": "Ey, morgen gehen wir ans Meer, oder? Es soll richtig warm werden."},
+  {"id": "m2", "part": 0, "voice": "Charon", "text": "Wenn meine Mutter mich lässt."},
+  {"id": "o1", "part": 3, "voice": "Gacrux", "text": "Na, ihr zwei! Schon Schule aus?"},
+  {"id": "s2", "part": 1, "voice": "Puck", "text": "Curry? Okay, ich komm mit."},
+  {"id": "s3", "part": 1, "voice": "Puck", "text": "Was ist das?!"},
+  {"id": "s4", "part": 1, "voice": "Puck", "text": "Runter! Runter!"},
+  {"id": "m3", "part": 0, "voice": "Charon", "text": "Es hört einfach nicht auf."}
+ ],
+ "sources": [
+  "JMA (Japan Meteorological Agency): Erdbeben-Frühwarnung 11.03.2011, 14:46; Große Tsunami-Warnung 14:49",
+  "Stärke 9,0: USGS / JMA – stärkstes in Japan gemessenes Beben",
+  "Evakuierungsanordnung 10-km-Zone: 12.03.2011, 5:44 Uhr (Regierung Japan; NAIIC-Bericht 2012)",
+  "Schild 'Atomkraft – Energie für eine helle Zukunft' in Futaba: 1988 aufgestellt, 2015 abgebaut",
+  "Futaba: Rückkehr in Teile der Stadt erst ab 30.08.2022 erlaubt"
+ ]
+}

@@ -1,0 +1,286 @@
+{
+ "lines": [
+  {
+   "file": "futaba2/line-2-0.wav",
+   "seconds": 5.316,
+   "words": [
+    {
+     "word": "Achtung,",
+     "start": 0.1
+    },
+    {
+     "word": "Achtung!",
+     "start": 0.724
+    },
+    {
+     "word": "An",
+     "start": 1.347
+    },
+    {
+     "word": "alle",
+     "start": 1.525
+    },
+    {
+     "word": "Bewohner",
+     "start": 1.792
+    },
+    {
+     "word": "von",
+     "start": 2.238
+    },
+    {
+     "word": "Futaba:",
+     "start": 2.46
+    },
+    {
+     "word": "Verlassen",
+     "start": 3.039
+    },
+    {
+     "word": "Sie",
+     "start": 3.529
+    },
+    {
+     "word": "sofort",
+     "start": 3.752
+    },
+    {
+     "word": "die",
+     "start": 4.108
+    },
+    {
+     "word": "Stadt!",
+     "start": 4.331
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-0-0.wav",
+   "seconds": 2.586,
+   "words": [
+    {
+     "word": "Gestern",
+     "start": 0.1
+    },
+    {
+     "word": "war",
+     "start": 0.452
+    },
+    {
+     "word": "hier",
+     "start": 0.648
+    },
+    {
+     "word": "noch",
+     "start": 0.883
+    },
+    {
+     "word": "alles",
+     "start": 1.118
+    },
+    {
+     "word": "ganz",
+     "start": 1.392
+    },
+    {
+     "word": "normal.",
+     "start": 1.627
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-1-0.wav",
+   "seconds": 3.235,
+   "words": [
+    {
+     "word": "Ey,",
+     "start": 0.1
+    },
+    {
+     "word": "morgen",
+     "start": 0.357
+    },
+    {
+     "word": "gehen",
+     "start": 0.586
+    },
+    {
+     "word": "wir",
+     "start": 0.786
+    },
+    {
+     "word": "ans",
+     "start": 0.928
+    },
+    {
+     "word": "Meer,",
+     "start": 1.071
+    },
+    {
+     "word": "oder?",
+     "start": 1.385
+    },
+    {
+     "word": "Es",
+     "start": 1.7
+    },
+    {
+     "word": "soll",
+     "start": 1.814
+    },
+    {
+     "word": "richtig",
+     "start": 1.985
+    },
+    {
+     "word": "warm",
+     "start": 2.242
+    },
+    {
+     "word": "werden.",
+     "start": 2.414
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-0-1.wav",
+   "seconds": 1.548,
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.1
+    },
+    {
+     "word": "meine",
+     "start": 0.254
+    },
+    {
+     "word": "Mutter",
+     "start": 0.433
+    },
+    {
+     "word": "mich",
+     "start": 0.638
+    },
+    {
+     "word": "lässt.",
+     "start": 0.791
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-3-0.wav",
+   "seconds": 2.523,
+   "words": [
+    {
+     "word": "Na,",
+     "start": 0.1
+    },
+    {
+     "word": "ihr",
+     "start": 0.455
+    },
+    {
+     "word": "zwei!",
+     "start": 0.653
+    },
+    {
+     "word": "Schon",
+     "start": 1.087
+    },
+    {
+     "word": "Schule",
+     "start": 1.363
+    },
+    {
+     "word": "aus?",
+     "start": 1.679
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-1-1.wav",
+   "seconds": 1.968,
+   "words": [
+    {
+     "word": "Curry?",
+     "start": 0.1
+    },
+    {
+     "word": "Okay,",
+     "start": 0.487
+    },
+    {
+     "word": "ich",
+     "start": 0.841
+    },
+    {
+     "word": "komm",
+     "start": 1.002
+    },
+    {
+     "word": "mit.",
+     "start": 1.195
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-1-2.wav",
+   "seconds": 1.641,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.373
+    },
+    {
+     "word": "das?!",
+     "start": 0.646
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-1-3.wav",
+   "seconds": 1.426,
+   "words": [
+    {
+     "word": "Runter!",
+     "start": 0.1
+    },
+    {
+     "word": "Runter!",
+     "start": 0.538
+    }
+   ]
+  },
+  {
+   "file": "futaba2/line-0-2.wav",
+   "seconds": 1.764,
+   "words": [
+    {
+     "word": "Es",
+     "start": 0.1
+    },
+    {
+     "word": "hört",
+     "start": 0.235
+    },
+    {
+     "word": "einfach",
+     "start": 0.437
+    },
+    {
+     "word": "nicht",
+     "start": 0.741
+    },
+    {
+     "word": "auf.",
+     "start": 0.977
+    }
+   ]
+  }
+ ]
+}

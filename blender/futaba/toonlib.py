@@ -265,7 +265,7 @@ def stand(p, frame, arms=True, spine=True):
     p["rig"].keyframe_insert("location", frame=frame)
 
 
-def comp_outlines(kn=1.5, kd=0.4, thr=0.6, human_min=10000):
+def comp_outlines(kn=1.5, kd=0.4, thr=0.6, human_min=10000, fade_near=8.0, fade_far=30.0):
     """Schnelle Umrisse im Compositor statt Freestyle:
     - Objekt- und Material-Grenzen (Index-Pässe) -> saubere Comic-Linien, auch bei Menschen (Haut/Kleidung/Haare)
     - Normalen-Kanten nur für Nicht-Menschen (Hauskanten), Tiefen-Kanten überall."""
@@ -321,6 +321,10 @@ def comp_outlines(kn=1.5, kd=0.4, thr=0.6, human_min=10000):
     en = math("MULTIPLY", math("MULTIPLY", sobel(rl.outputs["Normal"]), v=kn), math("SUBTRACT", math("ADD", human, v=0), v=1.0))
     en = math("ABSOLUTE", en)
     depth = rl.outputs["Depth"]
+    # Normalen-Kanten nur in der Nähe (weit weg nur Umriss) -> keine schwarzen Kleckse bei Büschen/Wolken
+    fade = N.new("ShaderNodeClamp")
+    Lk.new(math("DIVIDE", math("SUBTRACT", depth, v=fade_far), v=fade_near - fade_far), fade.inputs[0])
+    en = math("MULTIPLY", en, fade.outputs[0])
     ed = math("MULTIPLY", math("DIVIDE", sobel(depth, True), math("ADD", depth, v=0.05)), v=kd)
     geo = math("MULTIPLY", math("SUBTRACT", math("MAXIMUM", en, ed), v=thr), v=3.0)
     ids = math("ADD", sobel(mat_i, True), sobel(ob_i, True))
