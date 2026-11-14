@@ -384,8 +384,8 @@ def sky(day=True):
         e[1].position, e[1].color = 0.35, (0.5, 0.7, 0.92, 1)
         bg.inputs[1].default_value = 1.0
     else:
-        e[0].position, e[0].color = 0.0, (0.95, 0.72, 0.6, 1)
-        e[1].position, e[1].color = 0.3, (0.24, 0.3, 0.5, 1)
+        e[0].position, e[0].color = 0.0, (0.85, 0.55, 0.45, 1)
+        e[1].position, e[1].color = 0.25, (0.12, 0.16, 0.32, 1)
         bg.inputs[1].default_value = 1.0
     nt.links.new(sep.outputs[2], ramp.inputs[0])
     nt.links.new(ramp.outputs[0], bg.inputs[0])
@@ -394,7 +394,7 @@ def sky(day=True):
     mix = nt.nodes.new("ShaderNodeMixShader")
     amb = nt.nodes.new("ShaderNodeBackground")
     amb.inputs[0].default_value = (0.75, 0.8, 0.9, 1) if day else (0.25, 0.3, 0.45, 1)
-    amb.inputs[1].default_value = 0.3 if day else 0.25
+    amb.inputs[1].default_value = 0.3 if day else 0.1
     out = nt.nodes["World Output"]
     nt.links.new(lp.outputs["Is Camera Ray"], mix.inputs[0])
     nt.links.new(amb.outputs[0], mix.inputs[1])
@@ -408,7 +408,7 @@ def sky(day=True):
         sun.data.color = (1.0, 0.97, 0.9)
         sun.rotation_euler = (math.radians(52), math.radians(0), math.radians(-45))
     else:
-        sun.data.energy = 0.45
+        sun.data.energy = 0.22
         sun.data.color = (0.75, 0.82, 1.0)
         sun.rotation_euler = (math.radians(75), math.radians(0), math.radians(-60))
     return sun

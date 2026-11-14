@@ -456,7 +456,7 @@ def lipsync(f, wav, t0, fps, gain=1.0):
     f0 = int(round(t0 * fps)) + 1
     mouth(f, f0 - 2, 0)
     for i in range(0, len(rms), 2):
-        mouth(f, f0 + i, min(1.0, (rms[i] ** 0.6) * gain))
+        mouth(f, f0 + i, float(min(1.0, (rms[i] ** 0.6) * gain)))
     mouth(f, f0 + len(rms) + 2, 0)
 
 
@@ -464,7 +464,7 @@ def mouth(f, frame, openness):
     m = f["mouth"]
     m.scale = (1.0 + 0.2 * openness, 1.0, max(0.05, openness * 3.2))
     m.keyframe_insert("scale", frame=frame)
-    f["mline"].hide_render = openness > 0.15
+    f["mline"].hide_render = bool(openness > 0.15)
     f["mline"].keyframe_insert("hide_render", frame=frame)
 
 
