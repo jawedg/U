@@ -1,0 +1,13 @@
+{
+ "title": "Futaba, 11. März 2011 – Testclip",
+ "sentences": [
+  {"id": "s1", "part": 1, "voice": "Puck", "text": "Ey, sollen wir morgen ans Meer? Es soll warm werden."},
+  {"id": "m1", "part": 0, "voice": "Charon", "text": "Wenn meine Mutter mich lässt."},
+  {"id": "s2", "part": 1, "voice": "Puck", "text": "Deine Mama schon wieder?"},
+  {"id": "m2", "part": 0, "voice": "Charon", "text": "Heute gibt's Curry."},
+  {"id": "s3", "part": 1, "voice": "Puck", "text": "Was ist das?!"},
+  {"id": "s4", "part": 1, "voice": "Puck", "text": "Runter! Runter!"},
+  {"id": "m3", "part": 0, "voice": "Charon", "text": "Es hört nicht auf."}
+ ],
+ "sources": []
+}

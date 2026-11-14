@@ -1,0 +1,170 @@
+{
+ "lines": [
+  {
+   "file": "futaba/line-1-0.wav",
+   "seconds": 2.681,
+   "words": [
+    {
+     "word": "Ey,",
+     "start": 0.1
+    },
+    {
+     "word": "sollen",
+     "start": 0.356
+    },
+    {
+     "word": "wir",
+     "start": 0.583
+    },
+    {
+     "word": "morgen",
+     "start": 0.725
+    },
+    {
+     "word": "ans",
+     "start": 0.952
+    },
+    {
+     "word": "Meer?",
+     "start": 1.094
+    },
+    {
+     "word": "Es",
+     "start": 1.407
+    },
+    {
+     "word": "soll",
+     "start": 1.521
+    },
+    {
+     "word": "warm",
+     "start": 1.691
+    },
+    {
+     "word": "werden.",
+     "start": 1.862
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-0-0.wav",
+   "seconds": 1.835,
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.1
+    },
+    {
+     "word": "meine",
+     "start": 0.298
+    },
+    {
+     "word": "Mutter",
+     "start": 0.528
+    },
+    {
+     "word": "mich",
+     "start": 0.792
+    },
+    {
+     "word": "lässt.",
+     "start": 0.989
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-1-1.wav",
+   "seconds": 1.343,
+   "words": [
+    {
+     "word": "Deine",
+     "start": 0.1
+    },
+    {
+     "word": "Mama",
+     "start": 0.268
+    },
+    {
+     "word": "schon",
+     "start": 0.412
+    },
+    {
+     "word": "wieder?",
+     "start": 0.581
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-0-1.wav",
+   "seconds": 1.143,
+   "words": [
+    {
+     "word": "Heute",
+     "start": 0.1
+    },
+    {
+     "word": "gibt's",
+     "start": 0.26
+    },
+    {
+     "word": "Curry.",
+     "start": 0.419
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-1-2.wav",
+   "seconds": 1.057,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.1
+    },
+    {
+     "word": "ist",
+     "start": 0.227
+    },
+    {
+     "word": "das?!",
+     "start": 0.354
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-1-3.wav",
+   "seconds": 1.319,
+   "words": [
+    {
+     "word": "Runter!",
+     "start": 0.1
+    },
+    {
+     "word": "Runter!",
+     "start": 0.485
+    }
+   ]
+  },
+  {
+   "file": "futaba/line-0-2.wav",
+   "seconds": 1.05,
+   "words": [
+    {
+     "word": "Es",
+     "start": 0.1
+    },
+    {
+     "word": "hört",
+     "start": 0.174
+    },
+    {
+     "word": "nicht",
+     "start": 0.285
+    },
+    {
+     "word": "auf.",
+     "start": 0.415
+    }
+   ]
+  }
+ ]
+}
