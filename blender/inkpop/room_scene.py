@@ -17,9 +17,10 @@ FPS = 24
 T = lambda s: int(round(s * FPS)) + 1
 R = random.Random(9)
 AT = {"tv1": 0.6, "h1": 4.4, "m1": 7.3, "ma1": 9.0, "h2": 10.9, "tv2": 12.6, "h3": 13.9, "m2": 16.4, "h4": 22.5, "m3": 26.5,
-      "tv3": 35.2, "ma2": 40.6, "lsp": 45.0, "h5": 50.0, "m4": 51.1}
+      "tv3": 35.2, "ma2": 40.6, "lsp": 45.0, "h5": 50.0, "m4": 51.1, "h6": 57.4, "m5": 60.0, "ma3": 61.7}
 EEW, QUAKE, QEND, CAM2, UNDER, OUT, MAMA, POWER, END = 12.0, 15.8, 33.0, 17.6, 19.2, 35.0, 37.0, 43.8, 55.5
-json.dump(dict(AT=AT, EEW=EEW, QUAKE=QUAKE, QEND=QEND, POWER=POWER, END=END, FPS=FPS, CAM2=CAM2),
+T2, END2 = 55.5, 65.0  # 15:27 – die Welle kommt (Fenster)
+json.dump(dict(AT=AT, EEW=EEW, QUAKE=QUAKE, QEND=QEND, POWER=POWER, END=END, T2=T2, END2=END2, FPS=FPS, CAM2=CAM2),
           open(os.path.join(ROOT, "src", "futaba3", "timeline.json"), "w"), indent=1)
 TIM = json.load(open(os.path.join(ROOT, "src", "futaba3", "timing.json")))
 SCR = json.load(open(os.path.join(ROOT, "src", "futaba3", "script.json")))
@@ -152,7 +153,9 @@ def place_r(f, t, loc, rx, yaw):
 
 
 place_r(hana, 16.0, (HK[0], HK[1], -0.47), 0.0, math.radians(-60))
-place_r(hana, 17.4, (ROOTU.x, ROOTU.y, 0.1), math.radians(84), yaw_u)
+_pre = ROOTU - face_d * 0.75
+place_r(hana, 16.8, (_pre.x, _pre.y, 0.06), math.radians(84), yaw_u)
+place_r(hana, 17.6, (ROOTU.x, ROOTU.y, 0.05), math.radians(84), yaw_u)
 for sd in ("L", "R"):
     rot(hana, f"thigh.{sd}", 16.0, x=-92, z=(-8 if sd == "L" else 8))
     rot(hana, f"shin.{sd}", 16.0, x=165)
@@ -162,8 +165,20 @@ for sd in ("L", "R"):
     rot(hana, f"upperarm.{sd}", 17.4, x=-95, z=(-14 if sd == "L" else 14))
     rot(hana, f"forearm.{sd}", 17.4, x=-70)
 rot(hana, "spine", 16.0, x=10)
-rot(hana, "spine", 17.4, x=-12)
-head(hana, [(17.4, 0, 72), (QEND, 0, 72)])
+rot(hana, "spine", 17.4, x=-16)
+head(hana, [(16.8, 0, 30), (17.6, 0, 52), (QEND, 0, 52)])
+# Hana zittert, rutscht näher, streckt mir die Hand entgegen
+for fr in range(T(17.6), T(QEND), 2):
+    t = (fr - 1) / FPS
+    am = qamp(t)
+    F.rot(hana, "chest", fr, x=1.5 * am * math.sin(t * 37), y=2.5 * am * math.sin(t * 29 + 1), z=2.0 * am * math.sin(t * 23))
+rot(hana, "upperarm.R", 28.4, x=-95, z=14)
+rot(hana, "forearm.R", 28.4, x=-70)
+rot(hana, "upperarm.R", 29.4, x=-150, z=6)
+rot(hana, "forearm.R", 29.4, x=-12)
+rot(hana, "upperarm.R", QEND, x=-150, z=6)
+rot(hana, "forearm.R", QEND, x=-12)
+F.brows(hana, T(28.6), 1.0, 1.0)
 F.look(hana, T(17.4), 0, 6)
 F.brows(hana, T(17.6), 0.8, 1.0)
 for o in [o for o in bpy.data.objects if o.name.startswith(("hana_hairside", "hana_hairback"))]:
@@ -173,7 +188,8 @@ for t in blinks:
     F.blink(hana, T(t))
 F.brows(hana, T(QEND), 1.0, 1.0)
 # wieder hoch (33,5–35,5), steht neben dem Tisch, Angst
-place_r(hana, OUT - 1.2, (ROOTU.x, ROOTU.y, 0.1), math.radians(84), yaw_u)
+place_r(hana, OUT - 1.2, (ROOTU.x, ROOTU.y, 0.05), math.radians(84), yaw_u)
+place_r(hana, OUT - 0.4, (_pre.x, _pre.y, 0.06), math.radians(84), yaw_u)
 STAND = (-0.75, 0.05)
 _ys = heading(Vector((0.2, -0.6, 0)) - Vector((STAND[0], STAND[1], 0)))
 while _ys - yaw_u > math.pi:
@@ -190,9 +206,9 @@ for sd in ("L", "R"):
     rot(hana, f"forearm.{sd}", OUT - 1.2, x=-70)
     rot(hana, f"upperarm.{sd}", OUT + 0.6, x=-20, z=(6 if sd == "L" else -6))
     rot(hana, f"forearm.{sd}", OUT + 0.6, x=-95)  # Hände vor der Brust
-rot(hana, "spine", OUT - 1.2, x=-12)
+rot(hana, "spine", OUT - 1.2, x=-16)
 rot(hana, "spine", OUT + 0.6, x=4)
-head(hana, [(QEND, 0, 72), (OUT + 0.6, 0, 0), (36.0, 30, 10), (37.4, -70, 5), (41.0, -70, 5), (42.4, 20, 10), (44.6, 40, 5), (48.4, 40, 5),
+head(hana, [(QEND, 0, 52), (OUT + 0.6, 0, 0), (36.0, 30, 10), (37.4, -70, 5), (41.0, -70, 5), (42.4, 20, 10), (44.6, 40, 5), (48.4, 40, 5),
             (49.6, 0, 18), (END, 0, 18)])
 F.look(hana, T(OUT + 0.6), 0, 0)
 F.look(hana, T(37.4), -20, 0)
@@ -367,6 +383,14 @@ key_cam(44.4, (0.05, -0.95, 1.36), (-1.15, 2.8, 1.05))  # zum Fenster: Durchsage
 key_cam(48.6, (-0.05, -0.85, 1.36), (-1.2, 2.8, 1.1))
 key_cam(49.6, (0.0, -0.8, 1.34), (-0.75, 0.05, 1.0))   # zu Hana
 key_cam(END, (-0.15, -0.6, 1.3), (-0.75, 0.05, 1.0))
+key_cam(T2 + 0.6, (-0.55, 1.55, 1.36), (-1.1, 4.4, 0.95))       # 15:27 am Fenster
+key_cam(57.2, (-0.6, 1.7, 1.36), (-1.15, 4.4, 0.95))
+key_cam(57.9, (-0.62, 1.72, 1.36), (-1.6, 2.35, 1.15))          # zu Hana
+key_cam(59.6, (-0.62, 1.75, 1.36), (-1.6, 2.35, 1.15))
+key_cam(60.4, (-0.75, 2.05, 1.36), (-1.2, 4.4, 0.9))            # näher ans Fenster: die Welle
+key_cam(61.6, (-0.8, 2.2, 1.36), (-1.2, 4.4, 0.9))
+key_cam(62.3, (-0.7, 2.0, 1.38), (0.35, 0.9, 1.35))             # Mama stürmt rein
+key_cam(END2, (-0.7, 1.95, 1.38), (0.2, 1.1, 1.35))
 # Beben + Gehen: Wackeln der Kamera
 noise_fr = list(range(T(CAM2), T(END) + 1, 2))
 for fr in noise_fr:
@@ -385,8 +409,8 @@ for fr in range(T(QUAKE) - 2, T(QEND + 1.5) + 1, 2):
     am = qamp(t)
     if fr < T(CAM2):
         F.rot(me, "chest", fr, x=2.5 * am * math.sin(t * 29), y=1.8 * am * math.sin(t * 23 + 1), z=1.8 * am * math.sin(t * 19))
-    cam2.delta_rotation_euler = (math.radians(1.6 * am * math.sin(t * 31)), math.radians(1.2 * am * math.sin(t * 27 + 1)), math.radians(1.4 * am * math.sin(t * 21)))
-    cam2.delta_location = (0.012 * am * math.sin(t * 37), 0.01 * am * math.sin(t * 33), 0.008 * am * math.sin(t * 41))
+    cam2.delta_rotation_euler = (math.radians(2.8 * am * math.sin(t * 31) + 0.8 * am * math.sin(t * 7)), math.radians(2.0 * am * math.sin(t * 27 + 1)), math.radians(2.4 * am * math.sin(t * 21)))
+    cam2.delta_location = (0.02 * am * math.sin(t * 37), 0.016 * am * math.sin(t * 33), 0.014 * am * math.sin(t * 41))
     cam2.keyframe_insert("delta_rotation_euler", frame=fr)
     cam2.keyframe_insert("delta_location", frame=fr)
 # leichtes Atmen der freien Kamera nach dem Beben
@@ -474,6 +498,146 @@ for L in S["lights"] + [S["kitchenlight"]]:
         L.data.keyframe_insert("energy", frame=T(t))
 dsl.data.materials[0] = F.flat_mat("dsglow", (0.6, 0.85, 1.0))
 
+# ---------- Mehr Bewegung unter dem Tisch ----------
+# Mandarinen fallen vom Tisch und rollen über den Teppich, eine Tasse fällt und kippt
+mk = LR.soft("mikan2", (0.95, 0.56, 0.12))
+rolls = []
+for k, (x0, t0, x1, y1) in enumerate(((0.05, 20.6, -0.25, 0.22), (0.15, 21.4, 0.02, 0.18), (-0.1, 23.0, -0.45, 0.3), (0.25, 24.2, 0.12, 0.28))):
+    o = F.ellipsoid(f"rollmikan{k}", Vector((x0, 0.06, 0.5)), (0.038, 0.038, 0.034), mk, seg=16, rings=10)
+    o.keyframe_insert("location", frame=T(t0))
+    o.keyframe_insert("rotation_euler", frame=T(t0))
+    o.location = (x0 - 0.02, -0.02, 0.04)
+    o.keyframe_insert("location", frame=T(t0 + 0.32))
+    o.location = (x1, y1, 0.04)
+    o.rotation_euler = (R.uniform(4, 9), R.uniform(4, 9), 0)
+    o.keyframe_insert("location", frame=T(t0 + 1.9))
+    o.keyframe_insert("rotation_euler", frame=T(t0 + 1.9))
+    rolls.append(o)
+cup2 = LR.cyl("fallcup", (0.0, 0.0, 0), 0.035, 0.08, LR.soft("cupm2", (0.82, 0.86, 0.8)), verts=16, r2=0.04)
+cup2.location = (-0.3, 0.08, 0.5)
+cup2.keyframe_insert("location", frame=T(24.6))
+cup2.keyframe_insert("rotation_euler", frame=T(24.6))
+cup2.location = (-0.36, -0.05, 0.04)
+cup2.rotation_euler = (math.radians(90), 0, math.radians(30))
+cup2.keyframe_insert("location", frame=T(24.95))
+cup2.keyframe_insert("rotation_euler", frame=T(24.95))
+cup2.location = (-0.42, -0.02, 0.04)
+cup2.rotation_euler = (math.radians(90), 0, math.radians(70))
+cup2.keyframe_insert("location", frame=T(25.6))
+cup2.keyframe_insert("rotation_euler", frame=T(25.6))
+EV.setdefault("fall", []).append(24.95)
+json.dump(EV, open(os.path.join(ROOT, "src", "futaba3", "events.json"), "w"), indent=1)
+# Meine Hand greift nach Hanas Hand (an Kamera 2)
+myarm = LR.group("myarm")
+myarm.parent = cam2
+jm = bpy.data.materials["me_jacket"]
+sk = bpy.data.materials["me_skin"]
+F.limb("mysleeve", Vector((0, -0.02, 0.16)), Vector((0, 0, 0.02)), 0.042, 0.038, jm, seg=16).parent = myarm
+pm = F.ellipsoid("mypalm", Vector((0, 0, -0.03)), (0.04, 0.016, 0.045), sk, seg=18, rings=10)
+pm.parent = myarm
+for k in range(4):
+    fx = -0.026 + k * 0.017
+    fg = F.limb(f"myfinger{k}", Vector((fx, 0, -0.065)), Vector((fx * 1.1, -0.012, -0.115 + abs(k - 1.5) * 0.008)), 0.008, 0.007, sk, seg=10, subsurf=0)
+    fg.parent = myarm
+    F.ellipsoid(f"myfingertip{k}", Vector((fx * 1.1, -0.012, -0.115 + abs(k - 1.5) * 0.008)), (0.007, 0.007, 0.007), sk, seg=10, rings=6).parent = myarm
+F.limb("mythumb", Vector((0.04, 0, -0.035)), Vector((0.06, -0.01, -0.075)), 0.009, 0.008, sk, seg=10, subsurf=0).parent = myarm
+for t, loc, rx in ((28.4, (0.32, -0.55, -0.3), -20), (29.6, (0.07, -0.17, -0.45), -12), (QEND, (0.07, -0.17, -0.45), -12), (OUT - 1.0, (0.32, -0.55, -0.3), -20)):
+    myarm.location = loc
+    myarm.rotation_euler = (math.radians(rx), math.radians(-25), 0)
+    myarm.keyframe_insert("location", frame=T(t))
+    myarm.keyframe_insert("rotation_euler", frame=T(t))
+vis(myarm, [(0, False), (28.3, True), (OUT - 0.9, False)])
+
+# ---------- 15:27 – die Welle (am Fenster) ----------
+# Hana steht am Fenster, dreht sich zu mir; Mama stürmt herein
+place_r(hana, END, (hana["arm"].location.x, hana["arm"].location.y, 0.0), 0.0, hana["arm"].rotation_euler.z)
+place_r(hana, T2 + 0.4, (-1.55, 2.25, 0.0), 0.0, heading(Vector((0.1, 1.0, 0))))
+for sd in ("L", "R"):
+    rot(hana, f"thigh.{sd}", T2 + 0.4)
+    rot(hana, f"shin.{sd}", T2 + 0.4, x=4)
+    rot(hana, f"upperarm.{sd}", T2 + 0.4, x=-40, z=(8 if sd == "L" else -8))
+    rot(hana, f"forearm.{sd}", T2 + 0.4, x=-60)
+rot(hana, "spine", T2 + 0.4, x=4)
+head(hana, [(T2 + 0.4, 0, 0), (57.2, 0, 0), (57.7, -80, 5), (59.8, -80, 5), (60.4, 0, 0), (END2, 0, 0)])
+rot(hana, "upperarm.R", 57.6, x=-40, z=-8)
+rot(hana, "upperarm.R", 58.0, x=-95, z=-30)  # zeigt nach draußen
+rot(hana, "forearm.R", 58.0, x=-10)
+F.look(hana, T(57.7), -20, 0)
+F.brows(hana, T(57.6), 1.0, 1.0)
+F.lipsync(hana, WAV["h6"], AT["h6"], FPS)
+place_r(mama, END, (mama["arm"].location.x, mama["arm"].location.y, 0.0), 0.0, mama["arm"].rotation_euler.z)
+place_r(mama, T2 + 0.4, (1.3, 0.2, 0.0), 0.0, heading(Vector((-1.0, 0.5, 0))))
+place_r(mama, 61.4, (1.3, 0.2, 0.0), 0.0, heading(Vector((-1.0, 0.5, 0))))
+place_r(mama, 62.4, (0.45, 0.9, 0.0), 0.0, heading(Vector((-1.0, 0.6, 0))))
+for k in range(5):
+    t = 61.4 + k * 0.2
+    for sd, sg in (("L", 1), ("R", -1)):
+        rot(mama, f"thigh.{sd}", t, x=-30 * sg * (1 if k % 2 else -1))
+        rot(mama, f"shin.{sd}", t, x=10 + 30 * (k % 2))
+for sd in ("L", "R"):
+    rot(mama, f"thigh.{sd}", 62.5)
+    rot(mama, f"shin.{sd}", 62.5, x=4)
+rot(mama, "upperarm.R", 62.3, x=-20, z=0)
+rot(mama, "upperarm.R", 62.8, x=-85, z=-20)
+rot(mama, "forearm.R", 62.8, x=-20)
+head(mama, [(T2 + 0.4, 0, 0), (62.4, 0, 0), (62.8, -10, 0)])
+F.brows(mama, T(61.6), 1.0, 1.0)
+F.lipsync(mama, WAV["ma3"], AT["ma3"], FPS)
+# Welle: Wasserfläche + Gischt steigen zwischen Fenster und Ausblick, strömen von links nach rechts
+def alpha_mat(name, file, emit=1.0):
+    m = bpy.data.materials.new(name)
+    m.use_nodes = True
+    nt = m.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    tx = nt.nodes.new("ShaderNodeTexImage")
+    tx.image = bpy.data.images.load(os.path.join(HERE, "tex", file), check_existing=True)
+    em = nt.nodes.new("ShaderNodeEmission")
+    em.inputs[1].default_value = emit
+    nt.links.new(tx.outputs[0], em.inputs[0])
+    tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+    mx = nt.nodes.new("ShaderNodeMixShader")
+    nt.links.new(tx.outputs[1], mx.inputs[0])
+    nt.links.new(tr.outputs[0], mx.inputs[1])
+    nt.links.new(em.outputs[0], mx.inputs[2])
+    nt.links.new(mx.outputs[0], out.inputs[0])
+    m["toon"] = 1
+    return m
+
+
+WM = alpha_mat("wavem", "wave.png", 0.95)
+WX = (-2.05 - 0.25) / 2
+waves = []
+for k, (yy, w, h, z0, z1, x0, x1, t0) in enumerate(((LR.Y1 + 1.5, 7.0, 2.9, -0.75, 0.3, -1.8, -0.9, 56.2), (LR.Y1 + 1.3, 7.0, 2.6, -0.95, 0.12, -2.3, -1.2, 57.4))):
+    wv = LR.uvplane(f"wave{k}", (WX, yy, z0), w, h, WM, (math.radians(90), 0, 0))
+    for t, z, x in ((T2, z0, x0), (t0, z0, x0), (60.5, (z0 + z1) / 2 + 0.15, (x0 + x1) / 2), (END2, z1, x1)):
+        wv.location = (WX + x, yy, z)
+        wv.keyframe_insert("location", frame=T(t))
+    vis(wv, [(0, False), (T2, True)])
+    waves.append(wv)
+# Trümmer auf dem Wasser
+debm = LR.soft("debris", (0.5, 0.36, 0.24))
+roofm = LR.soft("debroof", (0.35, 0.38, 0.46))
+for k in range(7):
+    d = LR.box(f"debris{k}", (0, 0, 0), (R.uniform(0.12, 0.35), 0.04, R.uniform(0.03, 0.08)), debm if k % 3 else roofm)
+    yy = LR.Y1 + 1.4
+    for t in (T2, 57.6 + k * 0.3, END2):
+        u = (t - 57.6) / (END2 - 57.6)
+        zt = -0.2 + 0.85 * max(0.0, min(1.0, (t - 56.2) / (END2 - 56.2)))
+        d.location = (WX - 1.8 + k * 0.55 + max(0.0, u) * 1.4, yy, (zt if t > T2 else -3.0) + 0.04 * math.sin(k + t))
+        d.rotation_euler = (0, R.uniform(-0.6, 0.6), R.uniform(-0.3, 0.3))
+        d.keyframe_insert("location", frame=T(t))
+        d.keyframe_insert("rotation_euler", frame=T(t))
+# leichtes Handkamera-Wackeln in der Fenster-Szene, stärker als die Welle näher kommt
+for fr in range(T(T2), T(END2) + 1, 2):
+    t = (fr - 1) / FPS
+    am = 0.3 + 0.9 * max(0.0, min(1.0, (t - 58.0) / 6.0))
+    cam2.delta_rotation_euler = (math.radians(0.9 * am * math.sin(t * 9)), math.radians(0.7 * am * math.sin(t * 7 + 1)), math.radians(0.6 * am * math.sin(t * 5)))
+    cam2.delta_location = (0.006 * am * math.sin(t * 11), 0.005 * am * math.sin(t * 13), 0.006 * am * math.sin(t * 17))
+    cam2.keyframe_insert("delta_rotation_euler", frame=fr)
+    cam2.keyframe_insert("delta_location", frame=fr)
+
 # ---------- Render ----------
 import toonlib as TL
 arms = {me["arm"], hana["arm"], mama["arm"]}
@@ -501,7 +665,7 @@ for m in bpy.data.materials:
 sc.render.engine = "BLENDER_EEVEE"
 sc.eevee.taa_render_samples = int(os.environ.get("SAMPLES", 10))
 sc.render.fps = FPS
-sc.frame_start, sc.frame_end = 1, T(END)
+sc.frame_start, sc.frame_end = 1, T(END2)
 pct = int(sys.argv[-1]) if sys.argv[-1].isdigit() else 85
 sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1080, 1920, pct
 sc.render.image_settings.file_format = "PNG"

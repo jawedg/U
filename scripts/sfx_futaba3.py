@@ -14,12 +14,13 @@ ROOT = Path(__file__).resolve().parent.parent
 TL = json.load(open(ROOT / "src/futaba3/timeline.json"))
 EV = json.load(open(ROOT / "src/futaba3/events.json"))
 SR = 44100
-TOTAL = TL["END"] + 9.5
+TOTAL = TL.get("END2", TL["END"]) + 9.5
 N = int(TOTAL * SR)
 rng = np.random.default_rng(2011)
 mix = np.zeros((N, 2))
 t_all = np.arange(N) / SR
-EEW, Q, QE, PWR, END = TL["EEW"], TL["QUAKE"], TL["QEND"], TL["POWER"], TL["END"]
+EEW, Q, QE, PWR, END = TL["EEW"], TL["QUAKE"], TL["QEND"], TL["POWER"], TL.get("END2", TL["END"])
+T2 = TL.get("T2", TL["END"])
 
 
 def band(x, lo, hi):
@@ -146,10 +147,29 @@ tt = np.arange(int(0.5 * SR)) / SR
 add(PWR, np.sin(2 * np.pi * 50 * tt * (1 - tt * 0.8)) * np.exp(-tt * 6), 0.15)
 # Sirene draußen (steigt/fällt), ab kurz vor der Durchsage bis zum Ende
 s0 = PWR + 0.6
-tt = np.arange(int((TOTAL - s0) * SR)) / SR
+tt = np.arange(int((TOTAL - s0) * SR)) / SR  # Sirene läuft bis zum Ende
 fs = 600 + 400 * (0.5 - 0.5 * np.cos(2 * np.pi * tt / 6.0))
 siren = band(np.sin(2 * np.pi * np.cumsum(fs) / SR), 300, 2500) * np.minimum(1, tt / 2.0)
 add(s0, siren, 0.05, -0.7)
+# Zeitsprung-Karte (15:27): dumpfer Schlag
+tt = np.arange(int(1.6 * SR)) / SR
+add(T2 + 0.02, norm(np.sin(2 * np.pi * (42 + 40 * np.exp(-tt * 9)) * tt) * env(len(tt), 0.003, 0.45)), 0.55)
+# Die Welle: fernes Tosen schwillt an, Knirschen von Holz, Wasser schlägt ans Haus
+w0 = T2 + 0.8
+wr = norm(band(noise(TOTAL), 40, 1800)) * np.clip((t_all - w0) / (END - w0), 0, 1) ** 1.3 * gate(w0, END + 0.3, 0.3)
+mix[:, 0] += wr * 0.75
+mix[:, 1] += np.roll(wr, 600) * 0.75
+low = norm(band(noise(TOTAL), 20, 140)) * np.clip((t_all - w0) / (END - w0), 0, 1) * gate(w0, END + 0.3, 0.3)
+mix[:, 0] += low * 0.5
+mix[:, 1] += low * 0.5
+for _ in range(14):
+    d = 0.5 + rng.random()
+    tt = np.arange(int(d * SR)) / SR
+    cr = np.sin(2 * np.pi * np.cumsum(60 + 40 * np.sin(tt * 4)) / SR) * band(noise(d), 60, 700)
+    add(rng.uniform(w0 + 2, END - 0.5), norm(cr) * np.sin(np.pi * tt / d), 0.12, rng.random() - 0.5)
+# Mandarinen/Tasse: dumpfe Aufschläge
+for t0 in (20.92, 21.72, 23.32, 24.52, 24.95):
+    add(t0, tone(140, 0.12, 0.002, 0.04) + 0.4 * norm(band(noise(0.12), 300, 3000)) * env(int(0.12 * SR), 0.001, 0.02), 0.25, -0.2)
 # Schluss: tiefer Schlag beim Übergang zur Texttafel + Drone
 tt = np.arange(int(2.5 * SR)) / SR
 add(END, norm(np.sin(2 * np.pi * (38 + 40 * np.exp(-tt * 8)) * tt) * env(len(tt), 0.003, 0.7)), 0.6)

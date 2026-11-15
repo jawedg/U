@@ -429,6 +429,84 @@
      "start": 2.188
     }
    ]
+  },
+  {
+   "file": "futaba3/line-4-0.wav",
+   "seconds": 2.373,
+   "words": [
+    {
+     "word": "Mama!",
+     "start": 0.1
+    },
+    {
+     "word": "Da",
+     "start": 0.673
+    },
+    {
+     "word": "kommt",
+     "start": 0.881
+    },
+    {
+     "word": "Wasser!",
+     "start": 1.246
+    }
+   ]
+  },
+  {
+   "file": "futaba3/line-5-0.wav",
+   "seconds": 2.8,
+   "words": [
+    {
+     "word": "Zu",
+     "start": 0.1
+    },
+    {
+     "word": "spät!",
+     "start": 0.241
+    },
+    {
+     "word": "Rauf",
+     "start": 0.627
+    },
+    {
+     "word": "in",
+     "start": 0.838
+    },
+    {
+     "word": "den",
+     "start": 0.979
+    },
+    {
+     "word": "ersten",
+     "start": 1.154
+    },
+    {
+     "word": "Stock!",
+     "start": 1.436
+    },
+    {
+     "word": "Schnell!",
+     "start": 1.857
+    }
+   ]
+  },
+  {
+   "file": "futaba3/line-6-0.wav",
+   "seconds": 1.504,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.1
+    },
+    {
+     "word": "Meer",
+     "start": 0.307
+    },
+    {
+     "word": "kommt.",
+     "start": 0.556
+    }
+   ]
   }
  ]
 }

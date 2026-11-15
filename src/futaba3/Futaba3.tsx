@@ -9,7 +9,8 @@ import TLj from "./timeline.json";
 const TL = TLj as any;
 export const FUTABA3_FPS = 24;
 const CARDS = 9.0;
-export const FUTABA3_FRAMES = Math.round((TL.END + CARDS) * FUTABA3_FPS);
+const VEND = TL.END2 ?? TL.END;
+export const FUTABA3_FRAMES = Math.round((VEND + CARDS) * FUTABA3_FPS);
 const SANS = "Inter, 'DejaVu Sans', sans-serif";
 const AT = TL.AT as Record<string, number>;
 const LINES = (script as any).sentences.map((s: any, i: number) => ({ ...s, at: AT[s.id], l: (timing as any).lines[i] }));
@@ -125,13 +126,14 @@ const EndCards: React.FC<{ t: number }> = ({ t }) => {
 export const Futaba3Video: React.FC = () => {
   const f = useCurrentFrame();
   const t = f / FUTABA3_FPS;
-  const inVideo = t < TL.END;
+  const inVideo = t < VEND;
+  const jumpCard = t >= TL.T2 && t < TL.T2 + 1.1;
   const q = t > TL.QUAKE && t < TL.QEND + 1.5 ? Math.min(1, (t - TL.QUAKE) / 1.2) * Math.min(1, Math.max(0, (TL.QEND + 1.5 - t) / 2.5)) : 0;
   const sx = q * 10 * Math.sin(t * 43) + q * 5 * Math.sin(t * 17);
   const sy = q * 9 * Math.sin(t * 37 + 1) + q * 4 * Math.sin(t * 13);
   const alarm = t > TL.EEW && t < TL.QUAKE + 1.5 ? 0.25 + 0.25 * Math.sin((t - TL.EEW) * Math.PI * 4) : 0;
-  const time = t < TL.EEW ? "14:45" : t < 34.6 ? "14:46" : "14:49";
-  const flash = (t >= TL.EEW && t < TL.EEW + 0.8) || (t >= 34.6 && t < 35.4);
+  const time = t < TL.EEW ? "14:45" : t < 34.6 ? "14:46" : t < TL.T2 ? "14:49" : "15:27";
+  const flash = (t >= TL.EEW && t < TL.EEW + 0.8) || (t >= 34.6 && t < 35.4) || (t >= TL.T2 + 1.1 && t < TL.T2 + 2.2);
   const dark = t > TL.POWER ? 0.12 : 0;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
@@ -160,9 +162,15 @@ export const Futaba3Video: React.FC = () => {
             </div>
           ) : null}
           <Caption t={t} />
+          {jumpCard ? (
+            <AbsoluteFill style={{ background: "#0b0b10", alignItems: "center", justifyContent: "center", fontFamily: SANS, color: "#fff", textAlign: "center" }}>
+              <div style={{ fontWeight: 900, fontSize: 64, letterSpacing: 4 }}>41 MINUTEN SPÄTER</div>
+              <div style={{ fontWeight: 800, fontSize: 40, color: "#ffd23f", marginTop: 16 }}>15:27 UHR</div>
+            </AbsoluteFill>
+          ) : null}
         </>
       ) : (
-        <EndCards t={t - TL.END} />
+        <EndCards t={t - VEND} />
       )}
       <Audio src={staticFile("futaba3/sfx.mp3")} volume={0.9} />
       {LINES.map((ln: any, i: number) => (
