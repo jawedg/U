@@ -507,6 +507,92 @@
      "start": 0.556
     }
    ]
+  },
+  {
+   "file": "futaba3/line-7-0.wav",
+   "seconds": 1.456,
+   "words": [
+    {
+     "word": "Papa",
+     "start": 0.1
+    },
+    {
+     "word": "geht",
+     "start": 0.288
+    },
+    {
+     "word": "nicht",
+     "start": 0.475
+    },
+    {
+     "word": "ran.",
+     "start": 0.694
+    }
+   ]
+  },
+  {
+   "file": "futaba3/line-8-0.wav",
+   "seconds": 4.247,
+   "words": [
+    {
+     "word": "Irgendwo",
+     "start": 0.1
+    },
+    {
+     "word": "da",
+     "start": 0.568
+    },
+    {
+     "word": "hinten",
+     "start": 0.755
+    },
+    {
+     "word": "ist",
+     "start": 1.13
+    },
+    {
+     "word": "das",
+     "start": 1.364
+    },
+    {
+     "word": "Kraftwerk.",
+     "start": 1.598
+    },
+    {
+     "word": "Und",
+     "start": 2.346
+    },
+    {
+     "word": "Papa",
+     "start": 2.58
+    },
+    {
+     "word": "ist",
+     "start": 2.861
+    },
+    {
+     "word": "da",
+     "start": 3.095
+    },
+    {
+     "word": "drin.",
+     "start": 3.282
+    }
+   ]
+  },
+  {
+   "file": "futaba3/line-9-0.wav",
+   "seconds": 1.338,
+   "words": [
+    {
+     "word": "Nicht",
+     "start": 0.1
+    },
+    {
+     "word": "loslassen!",
+     "start": 0.34
+    }
+   ]
   }
  ]
 }

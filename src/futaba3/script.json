@@ -108,6 +108,24 @@
    "part": 6,
    "voice": "Charon",
    "text": "Das Meer kommt."
+  },
+  {
+   "id": "m6",
+   "part": 7,
+   "voice": "Charon",
+   "text": "Papa geht nicht ran."
+  },
+  {
+   "id": "m7",
+   "part": 8,
+   "voice": "Charon",
+   "text": "Irgendwo da hinten ist das Kraftwerk. Und Papa ist da drin."
+  },
+  {
+   "id": "h7",
+   "part": 9,
+   "voice": "Leda",
+   "text": "Nicht loslassen!"
   }
  ],
  "sources": [
