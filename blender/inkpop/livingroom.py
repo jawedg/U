@@ -443,6 +443,20 @@ def build():
     return S
 
 
+def action_fcurves(act):
+    """F-Kurven einer Action (Blender 5: Ebenen/Streifen/Kanalbeutel)."""
+    if act is None:
+        return []
+    if hasattr(act, "fcurves"):
+        return list(act.fcurves)
+    out = []
+    for l in act.layers:
+        for st in l.strips:
+            for cb in st.channelbags:
+                out += list(cb.fcurves)
+    return out
+
+
 def tv_material(scr, keys):
     """keys: [(frame, Datei)] – wechselt das Fernsehbild (Nachrichten -> Warnung -> Tsunami -> aus)."""
     m = bpy.data.materials.new("tvscreen")
@@ -486,7 +500,7 @@ def tv_material(scr, keys):
             on_now = files.index(kf) >= idx
             mx.inputs[0].default_value = 1.0 if on_now else 0.0
             mx.inputs[0].keyframe_insert("default_value", frame=fr)
-    for fc in (m.node_tree.animation_data.action.fcurves if m.node_tree.animation_data and hasattr(m.node_tree.animation_data.action, "fcurves") else []):
+    for fc in action_fcurves(m.node_tree.animation_data.action if m.node_tree.animation_data else None):
         for kp in fc.keyframe_points:
             kp.interpolation = "CONSTANT"
     m["toon"] = 1
