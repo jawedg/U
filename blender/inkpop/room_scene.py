@@ -498,7 +498,22 @@ for L in S["lights"] + [S["kitchenlight"]]:
         L.data.keyframe_insert("energy", frame=T(t))
 dsl.data.materials[0] = F.flat_mat("dsglow", (0.6, 0.85, 1.0))
 
-# ---------- Mehr Bewegung unter dem Tisch ----------
+# ---------- Noren (Türvorhang) schwingt zur Seite, wenn Mama durchgeht ----------
+for k, n in enumerate(S["noren"]):
+    # Drehpunkt an die Oberkante legen
+    for v in n.data.vertices:
+        v.co.y -= 0.36
+    n.location.z += 0.36
+    n.animation_data_clear()
+    base = n.rotation_euler.copy()
+    push = (1.0 if k == 1 else 0.75) * (1 if k != 2 else 0.85)
+    for t, ang in ((MAMA + 0.55, 0), (MAMA + 0.85, 62 * push), (MAMA + 1.2, 48 * push), (MAMA + 1.6, -18 * push), (MAMA + 2.0, 10 * push), (MAMA + 2.5, -4 * push), (MAMA + 3.0, 0)):
+        n.rotation_euler = (base.x + math.radians(-ang), base.y, base.z + math.radians(6 * (k - 1) * (ang != 0)))
+        n.keyframe_insert("rotation_euler", frame=T(t))
+    n.rotation_euler = base
+    n.keyframe_insert("rotation_euler", frame=1)
+
+
 # Mandarinen fallen vom Tisch und rollen über den Teppich, eine Tasse fällt und kippt
 mk = LR.soft("mikan2", (0.95, 0.56, 0.12))
 rolls = []
