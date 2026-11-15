@@ -425,7 +425,7 @@ ph1.location = (0.0, 0.0, 0.02)
 ph1.rotation_euler = (math.radians(-76), 0, 0)
 vis(ph1, [(0, False), (PING - 0.1, True), (10.0, False)])
 for o_ in me["parts"].get("hand.R", []):
-    vis(o_, [(0, False)])
+    vis(o_, [(0, False), (HOOK, False), (10.0, True), (11.4, False)])
 
 cam2 = make_cam("cam2")
 CAM2 = 11.4
