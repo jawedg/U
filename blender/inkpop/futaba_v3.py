@@ -32,10 +32,11 @@ T2 = 49.8           # Zeitsprung 15:27 (Karte 49.8–50.9)
 RUN = 58.2          # Treppe
 UP = 62.2           # oben am Fenster
 END = 69.0
+IMPACT, BLACK, VEND = 70.6, 72.2, 73.2  # Welle trifft das Haus, dann schwarz
 AT = {"h1": 4.6, "tv2": 7.4, "h3": 8.7, "m2": 9.9, "h4": 15.0, "m3": 18.8, "m6": 29.0, "tv3": 30.8, "ma2": 36.4, "lsp": 40.6,
       "h5": 45.3, "m4": 46.4, "h6": 51.6, "m5": 54.2, "ma3": 55.6, "h7": 60.0, "m7": 63.4}
 json.dump(dict(AT=AT, HOOK=HOOK, PING=PING, EEW=EEW, QUAKE=QUAKE, QEND=QEND, CALL=CALL, TVW=TVW, MAMA=MAMA, POWER=POWER, T2=T2, RUN=RUN,
-               UP=UP, END=END, FPS=FPS), open(os.path.join(ROOT, "src", "futaba4", "timeline.json"), "w"), indent=1)
+               UP=UP, END=END, IMPACT=IMPACT, BLACK=BLACK, VEND=VEND, FPS=FPS), open(os.path.join(ROOT, "src", "futaba4", "timeline.json"), "w"), indent=1)
 TIM = json.load(open(os.path.join(ROOT, "src", "futaba3", "timing.json")))
 SCR = json.load(open(os.path.join(ROOT, "src", "futaba3", "script.json")))
 WAV = {s["id"]: os.path.join(ROOT, "public", l["file"]) for s, l in zip(SCR["sentences"], TIM["lines"])}
@@ -718,11 +719,75 @@ for k in range(12):
         d.keyframe_insert("location", frame=T(t))
         d.keyframe_insert("rotation_euler", frame=T(t))
 
+# ---------- Die Welle trifft das Haus (69–72,2) ----------
+for t, z in ((70.0, 1.8), (IMPACT, 2.3), (71.4, 2.5), (BLACK, FZ - 0.05)):  # bis knapp unter den Boden oben
+    water.location.z = z
+    water.keyframe_insert("location", frame=T(t))
+for t, x, y, z, rx, rz in ((70.0, O.x + 2.0, O.y + 7.0, 1.2, 6, 1.0), (IMPACT, O.x + 1.0, O.y + 2.6, 2.4, 25, 1.6), (71.3, O.x + 0.6, O.y + 2.3, 2.7, 40, 1.9),
+                           (BLACK, O.x + 0.4, O.y + 2.2, 2.9, 48, 2.0)):
+    carg.location = (x, y, z)
+    carg.rotation_euler = (math.radians(rx), math.radians(-8), rz)
+    carg.keyframe_insert("location", frame=T(t))
+    carg.keyframe_insert("rotation_euler", frame=T(t))
+for k in range(12):
+    d = bpy.data.objects[f"fdebris{k}"]
+    d.location = (O.x - 2.5 + k * 0.45, O.y + 2.4 + (k % 3) * 0.3, FZ + 0.3 + 0.1 * (k % 4))
+    d.rotation_euler = (R.uniform(-1, 1), R.uniform(-1, 1), R.uniform(-1, 1))
+    d.keyframe_insert("location", frame=T(BLACK))
+    d.keyframe_insert("rotation_euler", frame=T(BLACK))
+crack_m = bpy.data.materials.new("crackm")
+crack_m.use_nodes = True
+_nt = crack_m.node_tree
+for _n in list(_nt.nodes):
+    _nt.nodes.remove(_n)
+_o = _nt.nodes.new("ShaderNodeOutputMaterial")
+_tx = _nt.nodes.new("ShaderNodeTexImage")
+_tx.image = bpy.data.images.load(os.path.join(HERE, "tex", "crack.png"))
+_em = _nt.nodes.new("ShaderNodeEmission")
+_nt.links.new(_tx.outputs[0], _em.inputs[0])
+_tr = _nt.nodes.new("ShaderNodeBsdfTransparent")
+_mx = _nt.nodes.new("ShaderNodeMixShader")
+_nt.links.new(_tx.outputs[1], _mx.inputs[0])
+_nt.links.new(_tr.outputs[0], _mx.inputs[1])
+_nt.links.new(_em.outputs[0], _mx.inputs[2])
+_nt.links.new(_mx.outputs[0], _o.inputs[0])
+crack_m["toon"] = 1
+crack = LR.uvplane("crack", (O.x + 0.0, O.y + 1.64, FZ + 1.15), 2.2, 1.5, crack_m, (math.radians(90), 0, 0))
+vis(crack, [(0, False), (IMPACT + 0.1, True)])
+# Hana schreit, hält sich an mir fest
+head(hana, [(69.8, -55, 0), (70.3, -10, -10), (IMPACT + 0.2, -40, 10), (BLACK, -45, 12)])
+F.brows(hana, T(70.3), 1.0, 1.0)
+F.mouth(hana, T(70.2), 0)
+F.mouth(hana, T(70.5), 0.9)
+F.mouth(hana, T(BLACK), 0.8)
+place(hana, IMPACT, (O.x - 0.55, O.y + 0.9, FZ), heading(Vector((0.4, 1.0, 0))))
+place(hana, 71.3, (O.x - 0.3, O.y + 0.45, FZ), heading(Vector((0.6, -0.3, 0))) + 2 * math.pi * 0)
+rot(hana, "upperarm.R", IMPACT, x=-25, z=-6)
+rot(hana, "upperarm.R", 71.3, x=-80, z=-10)
+rot(hana, "forearm.R", 71.3, x=-30)
+rot(hana, "upperarm.L", 71.3, x=-80, z=10)
+rot(hana, "forearm.L", 71.3, x=-30)
+# Kamera: nach unten aufs steigende Wasser, Einschlag, nach hinten wegtaumeln
+key_cam(69.7, (O.x + 0.2, O.y + 0.7, FZ + 1.45), (O.x + 0.4, O.y + 4, 1.6))
+key_cam(IMPACT, (O.x + 0.2, O.y + 0.8, FZ + 1.42), (O.x + 0.6, O.y + 3, 2.4))
+key_cam(71.3, (O.x + 0.1, O.y + 0.1, FZ + 1.25), (O.x - 0.3, O.y + 2.5, FZ + 1.9))
+key_cam(BLACK, (O.x + 0.0, O.y - 0.3, FZ + 1.05), (O.x - 0.6, O.y + 2.0, FZ + 2.3))
+for fr in range(T(END), T(VEND) + 1, 1):
+    t = (fr - 1) / FPS
+    am = 0.4 if t < IMPACT else 3.5 * math.exp(-(t - IMPACT) * 0.6)
+    cam2.delta_rotation_euler = (math.radians(am * math.sin(t * 33)), math.radians(am * 0.8 * math.sin(t * 29 + 1)), math.radians(am * 0.7 * math.sin(t * 23) + (6 if t > IMPACT else 0) * min(1, (t - IMPACT) / 0.6)))
+    cam2.delta_location = (0.03 * am / 3.5 * math.sin(t * 37), 0.03 * am / 3.5 * math.sin(t * 31), 0.03 * am / 3.5 * math.sin(t * 41))
+    cam2.keyframe_insert("delta_rotation_euler", frame=fr)
+    cam2.keyframe_insert("delta_location", frame=fr)
+
 upl = bpy.data.objects.new("uplight", bpy.data.lights.new("uplight", "AREA"))
 sc.collection.objects.link(upl)
 upl.data.energy = 120
 upl.data.size = 2.5
 upl.location = (O.x, O.y, FZ + 2.3)
+for t, e in ((0, 120), (IMPACT, 120), (IMPACT + 0.15, 20), (IMPACT + 0.3, 110), (71.2, 15), (71.3, 90), (71.6, 0)):
+    upl.data.energy = e
+    upl.data.keyframe_insert("energy", frame=T(t) if t else 1)
 
 # ---------- Render ----------
 import toonlib as TL
@@ -759,7 +824,7 @@ for m in bpy.data.materials:
 sc.render.engine = "BLENDER_EEVEE"
 sc.eevee.taa_render_samples = int(os.environ.get("SAMPLES", 10))
 sc.render.fps = FPS
-sc.frame_start, sc.frame_end = 1, T(END)
+sc.frame_start, sc.frame_end = 1, T(VEND)
 pct = int(sys.argv[-1]) if sys.argv[-1].isdigit() else 75
 sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1080, 1920, pct
 sc.render.image_settings.file_format = "PNG"

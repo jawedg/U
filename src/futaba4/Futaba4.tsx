@@ -9,7 +9,7 @@ import TLj from "./timeline.json";
 const TL = TLj as any;
 export const FUTABA4_FPS = 24;
 const CARDS = 9.0;
-const VEND = TL.END;
+const VEND = TL.VEND;
 export const FUTABA4_FRAMES = Math.round((VEND + CARDS) * FUTABA4_FPS);
 const SANS = "Inter, 'DejaVu Sans', sans-serif";
 const AT = TL.AT as Record<string, number>;
@@ -104,10 +104,12 @@ const EndCards: React.FC<{ t: number }> = ({ t }) => {
   const c = interpolate(t, [4.6, 5.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ background: "#16161c", alignItems: "center", justifyContent: "center", textAlign: "center", fontFamily: SANS, color: "#fff", padding: 70 }}>
-      <div style={{ opacity: a, fontSize: 40, fontWeight: 700, lineHeight: 1.3 }}>
-        Am nächsten Morgen um 5:44 Uhr mussten alle Bewohner von Futaba die Stadt verlassen.
+      <div style={{ opacity: a, fontSize: 64, fontWeight: 900, lineHeight: 1.15 }}>ÜBERLEBEN SIE DIE NACHT?</div>
+      <div style={{ opacity: b, fontSize: 34, fontWeight: 700, lineHeight: 1.35, marginTop: 34 }}>
+        Am nächsten Morgen um 5:44 Uhr musste ganz Futaba evakuiert werden.
+        <br />
+        <span style={{ color: "#ffd23f", fontWeight: 900 }}>Die Menschen durften 11 Jahre nicht zurück.</span>
       </div>
-      <div style={{ opacity: b, fontSize: 56, fontWeight: 900, color: "#ffd23f", marginTop: 40 }}>Sie durften 11 Jahre nicht zurück.</div>
       <div style={{ opacity: c, marginTop: 70, width: "100%" }}>
         <div style={{ fontSize: 50, fontWeight: 900 }}>WAS HÄTTEST DU GETAN?</div>
         <div style={{ margin: "30px auto 0", background: "#2f6fd6", border: "5px solid #111", borderRadius: 22, padding: "22px 20px", fontSize: 38, fontWeight: 900 }}>
@@ -157,6 +159,7 @@ export const Futaba4Video: React.FC = () => {
           <Banner t={t} at={TL.EEW + 0.1} dur={2.2} who="⚠️ 緊急地震速報 · jetzt" text="Erdbeben-Frühwarnung" sub="Starke Erschütterungen erwartet" red />
           <Banner t={t} at={TL.CALL + 1.9} dur={1.2} who="📞 Papa" text="Anruf fehlgeschlagen" sub="Kein Netz" red />
           <Banner t={t} at={TL.TVW + 0.1} dur={3.0} who="⚠️ 大津波警報 · 14:49" text="Große Tsunami-Warnung" sub="Küste Fukushima – sofort in Sicherheit bringen" red />
+          {t >= TL.BLACK ? <AbsoluteFill style={{ background: "#000" }} /> : null}
           {hook ? (
             <div style={{ position: "absolute", left: 0, right: 0, top: 700, textAlign: "center", fontFamily: SANS }}>
               <div style={{ display: "inline-block", background: "#111", color: "#fff", fontWeight: 900, fontSize: 52, padding: "12px 26px", border: "5px solid #fff", borderRadius: 12 }}>

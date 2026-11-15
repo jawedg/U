@@ -14,13 +14,14 @@ ROOT = Path(__file__).resolve().parent.parent
 TL = json.load(open(ROOT / "src/futaba4/timeline.json"))
 EV = json.load(open(ROOT / "src/futaba4/events.json"))
 SR = 44100
-TOTAL = TL["END"] + 9.5
+TOTAL = TL["VEND"] + 9.5
 N = int(TOTAL * SR)
 rng = np.random.default_rng(2011)
 mix = np.zeros((N, 2))
 t_all = np.arange(N) / SR
 EEW, Q, QE, PWR, END = TL["EEW"], TL["QUAKE"], TL["QEND"], TL["POWER"], TL["END"]
 T2, HOOK, PING, RUN, UP, CALL = TL["T2"], TL["HOOK"], TL["PING"], TL["RUN"], TL["UP"], TL["CALL"]
+IMP, BLK, VEND = TL["IMPACT"], TL["BLACK"], TL["VEND"]
 
 
 def band(x, lo, hi):
@@ -99,11 +100,28 @@ while t < UP - 0.2:
     add(t, norm(st_), 0.3, 0.0)
     t += 0.26
 # Oben: Wasser draußen rauscht, Holz knarrt, etwas schlägt an
-up_w = norm(band(noise(TOTAL), 60, 1600)) * gate(UP, END + 0.5, 0.2) * 0.35
+up_w = norm(band(noise(TOTAL), 60, 1600)) * gate(UP, BLK, 0.2) * 0.35
 mix[:, 0] += up_w
 mix[:, 1] += np.roll(up_w, 900)
 for k in range(5):
     add(UP + 0.8 + k * 1.3, norm(band(noise(0.3), 80, 1500)) * env(int(0.3 * SR), 0.002, 0.08), 0.25, -0.5 + k * 0.25)
+# Welle trifft das Haus: Tosen schwillt an, Krachen, Glas, Auto schlägt an, Haus ächzt; schwarz: dumpfes Wasser
+sw = norm(band(noise(TOTAL), 30, 2500)) * np.clip((t_all - (TL["END"] - 0.5)) / (IMP - TL["END"] + 0.5), 0, 1) ** 1.5 * gate(TL["END"] - 0.5, BLK, 0.1)
+mix[:, 0] += sw * 0.9
+mix[:, 1] += np.roll(sw, 500) * 0.9
+tt = np.arange(int(2.5 * SR)) / SR
+add(IMP, norm(np.sin(2 * np.pi * (30 + 60 * np.exp(-tt * 6)) * tt) * env(len(tt), 0.002, 0.9) + 0.6 * band(noise(2.5), 80, 5000) * env(len(tt), 0.002, 0.35)), 1.0)
+add(IMP + 0.08, norm(band(noise(0.9), 1500, 11000)) * env(int(0.9 * SR), 0.001, 0.18), 0.55, 0.3)   # Glas
+for k in range(30):
+    add(IMP + 0.1 + rng.random() * 0.8, tone(2500 + rng.random() * 3500, 0.15, 0.001, 0.05), 0.05, rng.random() * 2 - 1)
+add(IMP + 0.7, norm(band(noise(0.6), 60, 1500)) * env(int(0.6 * SR), 0.002, 0.2), 0.6, -0.4)   # Auto schlägt an
+for k in range(4):
+    d = 0.9
+    tt = np.arange(int(d * SR)) / SR
+    add(IMP + 0.3 + k * 0.4, norm(np.sin(2 * np.pi * np.cumsum(55 + 30 * np.sin(tt * 3)) / SR) * band(noise(d), 40, 600)) * np.sin(np.pi * tt / d), 0.3, 0)
+muff = norm(band(noise(TOTAL), 30, 400)) * gate(BLK, VEND + 0.3, 0.05) * 0.5
+mix[:, 0] += muff
+mix[:, 1] += muff
 # Konsole: kleine Piepser (Hana spielt)
 t = HOOK + 0.2
 while t < EEW:
@@ -160,7 +178,7 @@ for k in range(10):
     add(t0, np.sin(2 * np.pi * (1300 + 300 * np.sin(tt * 9)) * tt) * np.sin(np.pi * tt / d) * 0.5, 0.025, 0.1)
 # Danach: Autoalarm weit weg, Tsunami-Signal im Fernsehen
 ca = QE + 1.0
-tt = np.arange(int((TOTAL - ca) * SR)) / SR
+tt = np.arange(int((BLK - ca) * SR)) / SR
 f = 900 + 500 * np.sign(np.sin(2 * np.pi * 1.6 * tt))
 add(ca, band(np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)), 300, 2500) * np.minimum(1, tt / 0.5), 0.025, -0.8)
 for k in range(6):
@@ -174,7 +192,7 @@ tt = np.arange(int(0.5 * SR)) / SR
 add(PWR, np.sin(2 * np.pi * 50 * tt * (1 - tt * 0.8)) * np.exp(-tt * 6), 0.15)
 # Sirene draußen (steigt/fällt), ab kurz vor der Durchsage bis zum Ende
 s0 = PWR + 0.6
-tt = np.arange(int((TOTAL - s0) * SR)) / SR  # Sirene läuft bis zum Ende
+tt = np.arange(int((BLK - s0) * SR)) / SR  # Sirene bis zum Schwarzbild
 fs = 600 + 400 * (0.5 - 0.5 * np.cos(2 * np.pi * tt / 6.0))
 siren = band(np.sin(2 * np.pi * np.cumsum(fs) / SR), 300, 2500) * np.minimum(1, tt / 2.0)
 add(s0, siren, 0.05, -0.7)
@@ -199,8 +217,8 @@ for t0 in EV.get("fall", [])[-5:]:
     add(t0, tone(140, 0.12, 0.002, 0.04) + 0.4 * norm(band(noise(0.12), 300, 3000)) * env(int(0.12 * SR), 0.001, 0.02), 0.25, -0.2)
 # Schluss: tiefer Schlag beim Übergang zur Texttafel + Drone
 tt = np.arange(int(2.5 * SR)) / SR
-add(END, norm(np.sin(2 * np.pi * (38 + 40 * np.exp(-tt * 8)) * tt) * env(len(tt), 0.003, 0.7)), 0.6)
-drone = (np.sin(2 * np.pi * 55 * t_all) + 0.5 * np.sin(2 * np.pi * 82.4 * t_all)) * gate(END + 0.3, TOTAL, 1.5) * 0.04
+add(VEND, norm(np.sin(2 * np.pi * (38 + 40 * np.exp(-tt * 8)) * tt) * env(len(tt), 0.003, 0.7)), 0.5)
+drone = (np.sin(2 * np.pi * 55 * t_all) + 0.5 * np.sin(2 * np.pi * 82.4 * t_all)) * gate(VEND + 0.3, TOTAL, 1.5) * 0.04
 mix[:, 0] += drone
 mix[:, 1] += drone
 
