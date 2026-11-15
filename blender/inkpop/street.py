@@ -49,7 +49,7 @@ def box(name, loc, size, mat, rot=(0, 0, 0), bevel=0.0):
     o = bpy.context.object
     o.name = name
     o.scale = size
-    bpy.ops.object.transform_apply(scale=True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     o.data.materials.append(mat)
     if bevel:
         b = o.modifiers.new("bev", "BEVEL")
@@ -63,7 +63,7 @@ def plane(name, loc, w, h, mat, rot):
     o = bpy.context.object
     o.name = name
     o.scale = (w, h, 1)
-    bpy.ops.object.transform_apply(scale=True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     o.data.materials.append(mat)
     return o
 

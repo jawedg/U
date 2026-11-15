@@ -114,7 +114,7 @@ def box(name, loc, size, mat, rot=(0, 0, 0), bevel=0.0, parent=None):
     o = bpy.context.object
     o.name = name
     o.scale = size
-    bpy.ops.object.transform_apply(scale=True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     o.data.materials.append(mat)
     if bevel:
         b = o.modifiers.new("bev", "BEVEL")
@@ -145,7 +145,7 @@ def uvplane(name, loc, w, h, mat, rot):
     o = bpy.context.object
     o.name = name
     o.scale = (w, h, 1)
-    bpy.ops.object.transform_apply(scale=True)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
     o.data.materials.append(mat)
     return o
 
@@ -388,11 +388,33 @@ def build():
     ell("pullknob", (0.12, 0.2, H - 1.03), (0.012, 0.012, 0.02), soft("knob", (0.9, 0.85, 0.3)), parent=lamp)
     S["lamp"] = lamp
     # Tür zur Küche hinten rechts mit Noren-Vorhang
-    box("door_frame", (1.6, Y0 + 0.02, 1.0), (0.9, 0.06, 2.0), wood_mid)
-    box("door_dark", (1.6, Y0 + 0.04, 1.0), (0.8, 0.02, 1.95), soft("kitchen", (0.35, 0.32, 0.3)))
+    dcut = box("door_cut", (1.6, Y0 - 0.05, 1.0), (0.82, 0.4, 2.0), white)
+    m_ = bpy.data.objects["wall_back"].modifiers.new("door", "BOOLEAN")
+    m_.object = dcut
+    m_.operation = "DIFFERENCE"
+    dcut.hide_render = dcut.hide_viewport = True
+    for nm, loc, size in (("df_l", (1.17, Y0 + 0.01, 1.0), (0.05, 0.08, 2.02)), ("df_r", (2.03, Y0 + 0.01, 1.0), (0.05, 0.08, 2.02)),
+                          ("df_t", (1.6, Y0 + 0.01, 2.02), (0.92, 0.08, 0.05))):
+        box(nm, loc, size, wood_mid)
+    kit = soft("kitchenwall", (0.86, 0.84, 0.78), shade=0.6)
+    box("k_floor", (1.6, Y0 - 1.0, -0.05), (2.0, 2.0, 0.1), soft("kfloor", (0.75, 0.72, 0.66)))
+    box("k_back", (1.6, Y0 - 2.0, 1.2), (2.0, 0.1, 2.4), kit)
+    box("k_l", (0.6, Y0 - 1.0, 1.2), (0.1, 2.0, 2.4), kit)
+    box("k_r", (2.6, Y0 - 1.0, 1.2), (0.1, 2.0, 2.4), kit)
+    box("k_ceil", (1.6, Y0 - 1.0, 2.45), (2.0, 2.0, 0.1), kit)
+    box("k_counter", (1.6, Y0 - 1.75, 0.45), (1.8, 0.5, 0.9), soft("kcounter", (0.62, 0.66, 0.7)), bevel=0.01)
+    box("k_cab", (1.6, Y0 - 1.85, 1.8), (1.8, 0.3, 0.6), soft("kcab", (0.9, 0.88, 0.82)), bevel=0.01)
+    S["kettle"] = ell("k_kettle", (1.3, Y0 - 1.7, 0.98), (0.09, 0.09, 0.08), soft("kettlem", (0.8, 0.25, 0.2)))
     noren = painted("norenm", "curtain.png", scale=0.3, tint_col=(1.3, 0.6, 0.6))
+    S["noren"] = []
     for k in range(3):
-        uvplane("noren", (1.33 + k * 0.27, Y0 + 0.08, 1.6), 0.26, 0.75, noren, (math.radians(90), 0, 0))
+        nr = uvplane("noren", (1.33 + k * 0.27, Y0 + 0.06, 1.62), 0.26, 0.72, noren, (math.radians(90), 0, 0))
+        S["noren"].append(nr)
+    kl = bpy.data.objects.new("kitchenlight", bpy.data.lights.new("kitchenlight", "POINT"))
+    sc.collection.objects.link(kl)
+    kl.data.energy = 60
+    kl.location = (1.6, Y0 - 1.0, 2.2)
+    S["kitchenlight"] = kl
     # ---------- Licht ----------
     sun = bpy.data.objects.new("sun", bpy.data.lights.new("sun", "SUN"))
     sc.collection.objects.link(sun)
@@ -412,6 +434,7 @@ def build():
     room.data.energy = 140
     room.data.size = 3.5
     room.location = (0, 0, H - 0.05)
+    S["lights"] = [fill, room]
     w = bpy.data.worlds.new("w")
     sc.world = w
     w.use_nodes = True

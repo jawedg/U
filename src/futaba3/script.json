@@ -1,0 +1,26 @@
+{
+ "title": "Futaba, 11. März 2011 – Wohnzimmer",
+ "sentences": [
+  {"id": "tv1", "part": 3, "voice": "Kore", "text": "Und morgen wird es in der Region Tohoku wieder sonnig und mild."},
+  {"id": "h1", "part": 1, "voice": "Leda", "text": "Guck mal, ich bin schon Level zwanzig!"},
+  {"id": "m1", "part": 0, "voice": "Charon", "text": "Hm. Nicht schlecht."},
+  {"id": "ma1", "part": 2, "voice": "Aoede", "text": "Kinder, wollt ihr noch Tee?"},
+  {"id": "h2", "part": 1, "voice": "Leda", "text": "Jaaa!"},
+  {"id": "tv2", "part": 3, "voice": "Kore", "text": "Erdbeben-Frühwarnung! Starke Erschütterungen erwartet!"},
+  {"id": "h3", "part": 1, "voice": "Leda", "text": "Was ist das?!"},
+  {"id": "m2", "part": 0, "voice": "Charon", "text": "Unter den Tisch! Schnell!"},
+  {"id": "h4", "part": 1, "voice": "Leda", "text": "Ich hab Angst!"},
+  {"id": "m3", "part": 0, "voice": "Charon", "text": "Es hört einfach nicht auf."},
+  {"id": "tv3", "part": 3, "voice": "Kore", "text": "Große Tsunami-Warnung! Küste von Fukushima! Bringen Sie sich sofort in Sicherheit!"},
+  {"id": "ma2", "part": 2, "voice": "Aoede", "text": "Kinder! Wir müssen sofort hoch zur Schule!"},
+  {"id": "lsp", "part": 3, "voice": "Kore", "text": "Großer Tsunami-Alarm! Begeben Sie sich sofort auf höher gelegenes Gelände!"},
+  {"id": "h5", "part": 1, "voice": "Leda", "text": "Und Papa?"},
+  {"id": "m4", "part": 0, "voice": "Charon", "text": "Papa arbeitet im Kraftwerk. Vier Kilometer von hier."}
+ ],
+ "sources": [
+  "JMA: Erdbeben-Frühwarnung 11.03.2011, 14:46; Große Tsunami-Warnung 14:49",
+  "USGS/JMA: Stärke 9,0 – stärkstes in Japan gemessenes Beben",
+  "Evakuierungsanordnung 10-km-Zone um Fukushima Daiichi: 12.03.2011, 5:44 Uhr (NAIIC-Bericht 2012)",
+  "Futaba: Rückkehr in Teile der Stadt erst ab 30.08.2022 erlaubt (Präfektur Fukushima)"
+ ]
+}

@@ -18,6 +18,7 @@ import { Pov3DVideo, POV_FPS, POV_FRAMES } from "./pov3d/Pov3D";
 import { FukuVideo, FUKU_FPS, FUKU_FRAMES } from "./fuku/Fuku";
 import { FutabaVideo, FUTABA_FPS, FUTABA_FRAMES } from "./futaba/Futaba";
 import { Futaba2Video, FUTABA2_FPS, FUTABA2_FRAMES } from "./futaba2/Futaba2";
+import { Futaba3Video, FUTABA3_FPS, FUTABA3_FRAMES } from "./futaba3/Futaba3";
 
 export const FPS = 30;
 
@@ -98,6 +99,7 @@ export const RemotionRoot: React.FC = () => {
     <Composition id="FukushimaPOV" component={FukuVideo} durationInFrames={FUKU_FRAMES} fps={FUKU_FPS} width={1080} height={1920} />
     <Composition id="FutabaTest" component={FutabaVideo} durationInFrames={FUTABA_FRAMES} fps={FUTABA_FPS} width={1080} height={1920} />
     <Composition id="FutabaTeil1" component={Futaba2Video} durationInFrames={FUTABA2_FRAMES} fps={FUTABA2_FPS} width={1080} height={1920} />
+    <Composition id="FutabaWohnzimmer" component={Futaba3Video} durationInFrames={FUTABA3_FRAMES} fps={FUTABA3_FPS} width={1080} height={1920} />
     <Composition id="Pov3DProbe" component={Pov3DVideo} durationInFrames={POV_FRAMES} fps={POV_FPS} width={1080} height={1920} />
     <Composition id="AnimeFolge1" component={AnimeVideo} durationInFrames={animeFrames()} fps={30} width={1080} height={1920} />
     <Composition id="WasWaere" component={WhatIfVideo} durationInFrames={whatifFrames()} fps={WFPS2} width={1080} height={1920} />
