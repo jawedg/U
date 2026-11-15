@@ -683,12 +683,13 @@ WM = alpha_mat("wavem", "wave.png", 0.95)
 WX = (-2.05 - 0.25) / 2
 for k, (yy, w, h, z0, z1, x0, x1, t0) in enumerate(((LR.Y1 + 1.5, 7.0, 2.9, -0.75, 0.3, -1.8, -0.9, 51.0), (LR.Y1 + 1.3, 7.0, 2.6, -0.95, 0.12, -2.3, -1.2, 52.2))):
     wv = LR.uvplane(f"wave{k}", (WX, yy, z0), w, h, WM, (math.radians(90), 0, 0))
-    for t, z, x in ((0, z1 - 0.1, x1 - 0.3), (HOOK, z1, x1), (HOOK + 0.05, -3.0, x0), (T2, z0, x0), (t0, z0, x0), (54.5, (z0 + z1) / 2 + 0.15, (x0 + x1) / 2), (RUN, z1, x1)):
+    for t, z, x in ((0, z1 - 0.1, x1 - 0.3), (HOOK, z1, x1), (HOOK + 0.05, -3.0, x0), (T2 - 0.05, -3.0, x0), (T2, z0, x0), (t0, z0, x0), (54.5, (z0 + z1) / 2 + 0.15, (x0 + x1) / 2), (RUN, z1, x1)):
         wv.location = (WX + x, yy, z)
         wv.keyframe_insert("location", frame=T(t) if t else 1)
-    for fc in (wv.animation_data.action.fcurves if hasattr(wv.animation_data.action, "fcurves") else []):
+    for fc in LR.action_fcurves(wv.animation_data.action):
         for kp in fc.keyframe_points:
-            if abs((kp.co[0] - 1) / FPS - HOOK) < 0.03:
+            tt = (kp.co[0] - 1) / FPS
+            if abs(tt - HOOK) < 0.03 or abs(tt - (HOOK + 0.05)) < 0.03 or abs(tt - (T2 - 0.05)) < 0.03:
                 kp.interpolation = "CONSTANT"
 
 # ---------- Oben: Flut auf der Straße ----------
