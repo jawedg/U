@@ -133,41 +133,66 @@ F.brows(hana, T(8.0), 0.0)
 F.brows(hana, T(12.4), 0.8, 0.3)
 F.brows(hana, T(13.8), 1.0, 1.0)
 # unter den Tisch (16,0–17,6): kniet, Oberkörper flach, Arme über dem Kopf, schaut zu mir (Kamera unter dem Tisch)
-UH = Vector((-0.33, 0.62, 0))
-yaw_u = heading(Vector((0.32, 0.42, 0)) - UH)
-place(hana, 16.0, (HK[0], HK[1], -0.47), math.radians(-60))
-place(hana, 17.4, (UH.x, UH.y, -0.52), yaw_u + math.pi)
+# Unter dem Tisch: Hana liegt bäuchlings, Kopf zu mir (Kamera), stützt sich auf die Unterarme – Gesicht sichtbar
+CAMU = Vector((0.32, 0.42, 0))
+dirc = Vector((-1.6, 0.8, 0)) - CAMU
+dirc.normalize()
+HEADU = CAMU + dirc * 0.62
+face_d = -dirc
+yaw_u = heading(face_d)
+ROOTU = HEADU - face_d * (1.18 * 0.92)
+
+
+def place_r(f, t, loc, rx, yaw):
+    a_ = f["arm"]
+    a_.location = loc
+    a_.rotation_euler = (rx, 0, yaw)
+    a_.keyframe_insert("location", frame=T(t))
+    a_.keyframe_insert("rotation_euler", frame=T(t))
+
+
+place_r(hana, 16.0, (HK[0], HK[1], -0.47), 0.0, math.radians(-60))
+place_r(hana, 17.4, (ROOTU.x, ROOTU.y, 0.1), math.radians(84), yaw_u)
 for sd in ("L", "R"):
     rot(hana, f"thigh.{sd}", 16.0, x=-92, z=(-8 if sd == "L" else 8))
-    rot(hana, f"thigh.{sd}", 17.4, x=-125, z=(-10 if sd == "L" else 10))
-    rot(hana, f"shin.{sd}", 17.4, x=150)
+    rot(hana, f"shin.{sd}", 16.0, x=165)
+    rot(hana, f"thigh.{sd}", 17.4, x=4, z=(-4 if sd == "L" else 4))
+    rot(hana, f"shin.{sd}", 17.4, x=25)
     rot(hana, f"upperarm.{sd}", 16.0, x=-35, z=(10 if sd == "L" else -10))
-    rot(hana, f"upperarm.{sd}", 17.4, x=-155, z=(18 if sd == "L" else -18))
-    rot(hana, f"forearm.{sd}", 17.4, x=-120)
+    rot(hana, f"upperarm.{sd}", 17.4, x=-95, z=(-14 if sd == "L" else 14))
+    rot(hana, f"forearm.{sd}", 17.4, x=-70)
 rot(hana, "spine", 16.0, x=10)
-rot(hana, "spine", 17.4, x=38)
-head(hana, [(17.4, 0, 55), (QEND, 0, 55)])
-F.look(hana, T(17.4), 0, 10)
+rot(hana, "spine", 17.4, x=-12)
+head(hana, [(17.4, 0, 72), (QEND, 0, 72)])
+F.look(hana, T(17.4), 0, 6)
+F.brows(hana, T(17.6), 0.8, 1.0)
+for o in [o for o in bpy.data.objects if o.name.startswith(("hana_hairside", "hana_hairback"))]:
+    vis(o, [(0, True), (17.0, False), (OUT - 0.4, True)])
 blinks = (2.0, 6.0, 9.5, 18.6, 21.0, 24.6, 28.2, 31.5, 38.2, 42.0, 47.0, 52.6)
 for t in blinks:
     F.blink(hana, T(t))
 F.brows(hana, T(QEND), 1.0, 1.0)
 # wieder hoch (33,5–35,5), steht neben dem Tisch, Angst
-place(hana, OUT - 1.2, (UH.x, UH.y, -0.52), yaw_u + math.pi)
+place_r(hana, OUT - 1.2, (ROOTU.x, ROOTU.y, 0.1), math.radians(84), yaw_u)
 STAND = (-0.75, 0.05)
-place(hana, OUT + 0.6, (STAND[0], STAND[1], 0.0), heading(Vector((0.2, -0.6, 0)) - Vector((STAND[0], STAND[1], 0))))
+_ys = heading(Vector((0.2, -0.6, 0)) - Vector((STAND[0], STAND[1], 0)))
+while _ys - yaw_u > math.pi:
+    _ys -= 2 * math.pi
+while _ys - yaw_u < -math.pi:
+    _ys += 2 * math.pi
+place_r(hana, OUT + 0.6, (STAND[0], STAND[1], 0.0), 0.0, _ys)
 for sd in ("L", "R"):
-    rot(hana, f"thigh.{sd}", OUT - 1.2, x=-125, z=(-10 if sd == "L" else 10))
-    rot(hana, f"shin.{sd}", OUT - 1.2, x=150)
+    rot(hana, f"thigh.{sd}", OUT - 1.2, x=4, z=(-4 if sd == "L" else 4))
+    rot(hana, f"shin.{sd}", OUT - 1.2, x=25)
     rot(hana, f"thigh.{sd}", OUT + 0.6, x=-2)
     rot(hana, f"shin.{sd}", OUT + 0.6, x=4)
-    rot(hana, f"upperarm.{sd}", OUT - 1.2, x=-155, z=(18 if sd == "L" else -18))
-    rot(hana, f"forearm.{sd}", OUT - 1.2, x=-120)
+    rot(hana, f"upperarm.{sd}", OUT - 1.2, x=-95, z=(-14 if sd == "L" else 14))
+    rot(hana, f"forearm.{sd}", OUT - 1.2, x=-70)
     rot(hana, f"upperarm.{sd}", OUT + 0.6, x=-20, z=(6 if sd == "L" else -6))
     rot(hana, f"forearm.{sd}", OUT + 0.6, x=-95)  # Hände vor der Brust
-rot(hana, "spine", OUT - 1.2, x=38)
+rot(hana, "spine", OUT - 1.2, x=-12)
 rot(hana, "spine", OUT + 0.6, x=4)
-head(hana, [(QEND, 0, 55), (OUT + 0.6, 0, 0), (36.0, 30, 10), (37.4, -70, 5), (41.0, -70, 5), (42.4, 20, 10), (44.6, 40, 5), (48.4, 40, 5),
+head(hana, [(QEND, 0, 72), (OUT + 0.6, 0, 0), (36.0, 30, 10), (37.4, -70, 5), (41.0, -70, 5), (42.4, 20, 10), (44.6, 40, 5), (48.4, 40, 5),
             (49.6, 0, 18), (END, 0, 18)])
 F.look(hana, T(OUT + 0.6), 0, 0)
 F.look(hana, T(37.4), -20, 0)
@@ -264,24 +289,30 @@ _wrist_local = Vector((-0.062, -0.012, -0.05))
 mug.matrix_basis = _M.Translation(-(_Rm.to_3x3() @ _wrist_local)) @ _Rm
 skin = bpy.data.materials["me_skin"]
 grip = []
-for k, z in enumerate((0.024, 0.007, -0.010, -0.027)):
-    rr = 0.042 + 0.0085
-    a0, a1 = math.radians(176), math.radians(70 + k * 6)
-    pts = [(rr * math.cos(a0 + (a1 - a0) * u), rr * math.sin(a0 + (a1 - a0) * u), z - 0.003 * u) for u in (0, 0.25, 0.5, 0.75, 1.0)]
-    fl = F.curve_line(f"gripf{k}", pts, 0.0088 - 0.0006 * k, skin)
+for k, (z, r, end) in enumerate(((0.026, 0.0079, 72), (0.0075, 0.0081, 68), (-0.0112, 0.0077, 76), (-0.0292, 0.0067, 96))):
+    rr = 0.042 + r * 0.95
+    a0, a1 = math.radians(172), math.radians(end)
+    pts = [(rr * math.cos(a0 + (a1 - a0) * u), rr * math.sin(a0 + (a1 - a0) * u), z - 0.002 * u) for u in (0, 0.2, 0.4, 0.6, 0.8, 1.0)]
+    fl = F.curve_line(f"gripf{k}", pts, r, skin)
     fl.parent = mug
-    fl.location = fl.location  # Kurve liegt in Becher-Koordinaten
-    tip = F.ellipsoid(f"griptip{k}", Vector(pts[-1]), (0.0086, 0.0086, 0.0086), skin, seg=12, rings=8)
+    tip = F.ellipsoid(f"griptip{k}", Vector(pts[-1]), (r, r, r), skin, seg=12, rings=8)
     tip.parent = mug
-    grip += [fl, tip]
-palm = F.ellipsoid("grippalm", Vector((-0.06, -0.006, -0.004)), (0.015, 0.036, 0.046), skin, seg=20, rings=12)
+    nail = F.ellipsoid(f"gripnail{k}", Vector(pts[-1]) + Vector((math.cos(a1), math.sin(a1), 0)) * 0.0045 + Vector((0, 0, 0.0)),
+                       (r * 0.55, r * 0.55, r * 0.6), LR.soft("nail", (0.98, 0.88, 0.84), shade=0.85), seg=10, rings=6)
+    nail.parent = mug
+    kn = F.ellipsoid(f"gripknuckle{k}", Vector((0.056 * math.cos(math.radians(170)), 0.056 * math.sin(math.radians(170)), z)), (0.009, 0.009, r * 1.15), skin, seg=12, rings=8)
+    kn.parent = mug
+    grip += [fl, tip, nail, kn]
+palm = F.ellipsoid("grippalm", Vector((-0.064, 0.004, -0.006)), (0.017, 0.033, 0.047), skin, seg=24, rings=14)
 palm.parent = mug
-tpts = [(0.05 * math.cos(math.radians(a)), 0.05 * math.sin(math.radians(a)), 0.034 + 0.004 * i) for i, a in enumerate((178, 160, 142, 126))]
-th = F.curve_line("gripthumb", tpts, 0.0102, skin)
+back = F.ellipsoid("gripback", Vector((-0.071, -0.006, -0.012)), (0.012, 0.032, 0.05), skin, seg=24, rings=14)
+back.parent = mug
+tpts = [(0.051 * math.cos(math.radians(a)), 0.051 * math.sin(math.radians(a)), 0.036 + 0.004 * i) for i, a in enumerate((176, 160, 145, 131))]
+th = F.curve_line("gripthumb", tpts, 0.0104, skin)
 th.parent = mug
-tt = F.ellipsoid("gripthumbtip", Vector(tpts[-1]), (0.01, 0.01, 0.01), skin, seg=12, rings=8)
+tt = F.ellipsoid("gripthumbtip", Vector(tpts[-1]), (0.0102, 0.0102, 0.0102), skin, seg=12, rings=8)
 tt.parent = mug
-grip += [palm, th, tt]
+grip += [palm, back, th, tt]
 for o in grip:
     o.parent = mug
 vis(mug, [(0, True), (16.3, False)])

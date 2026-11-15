@@ -235,6 +235,7 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
         vt.co = Vector((x * 0.112 * w, y * 0.122 * fy - (0.008 if z < -0.3 else 0), z * 0.142))
     head = mesh_from_bm(name + "_head", bm, m_skin, subsurf=1)
     head.location = v(0, 0.0, 1.535)
+    head.scale = (S, S, S)
     part(head, "head")
     for s, x in (("L", 1), ("R", -1)):  # Ohren
         part(ellipsoid(f"{name}_ear{s}", v(x * 0.108, 0.01, 1.53), (0.01 * S, 0.02 * S, 0.03 * S), m_skin), "head")
@@ -281,6 +282,7 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
     sol.thickness = 0.012
     sol.offset = 1.0
     hair_o.location = v(0, 0, 1.56)
+    hair_o.scale = (S, S, S)
     part(hair_o, "head")
     tufts = ((-0.06, 0.618, -0.4), (-0.02, 0.63, -0.1), (0.025, 0.632, 0.15), (0.065, 0.62, 0.45)) if hair_style in ("block", "long") else ()
     for k, (hx, hz, rot) in enumerate(tufts):
