@@ -170,7 +170,7 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
     m_shoes = ink_mat(name + "_shoes", shoes)
     m_sole = ink_mat("sole", (0.2, 0.2, 0.22))
     m_white = flat_mat("eyewhite", (0.98, 0.97, 0.94))
-    m_iris = flat_mat(name + "_iris", iris)
+    m_iris = flat_mat(name + "_iris", tuple(min(1.0, c * 1.45 + 0.05) for c in iris))
     m_pupil = flat_mat("pupil", (0.03, 0.02, 0.02))
     m_mouth = flat_mat("mouth", (0.35, 0.08, 0.1))
 
@@ -250,12 +250,12 @@ def make_figure(name, skin=(0.88, 0.66, 0.48), hair=(0.07, 0.07, 0.09), jacket=(
         w = ellipsoid(f"{name}_white{s}", c, (0.0275 * S, 0.012 * S, 0.032 * S), m_white)
         part(w, "head")
         grp = []
-        for nm, r, mt, dz, dy in (("iris", 0.0162, m_iris, -0.001, -0.0125), ("pupil", 0.0084, m_pupil, -0.001, -0.0131), ("glint", 0.0035, m_white, 0.007, -0.0137)):
+        for nm, r, mt, dz, dy in (("iris", 0.0150, m_iris, -0.001, -0.0125), ("pupil", 0.0068, m_pupil, -0.001, -0.0131), ("glint", 0.0036, m_white, 0.006, -0.0137)):
             o = disc(f"{name}_{nm}{s}", c + v(x * (0.004 if nm == "glint" else 0), dy, dz), r * S, r * 1.1 * S, mt)
             part(o, f"eye.{s}")
             grp.append(o)
         lid = curve_line(f"{name}_lid{s}", [tuple(c + v(x * dx, -0.0105 - 0.004 * (1 - abs(dx) / 0.031), 0.021 + 0.012 * (1 - (dx / 0.031) ** 2))) for dx in (-0.031, -0.016, 0, 0.017, 0.033)],
-                         0.0038 * S, INK)
+                         0.0029 * S, INK)
         part(lid, "head")
         low = None
         brow = curve_line(f"{name}_brow{s}", [tuple(v(x * bx, face_y(bx, 1.585 + bz, 0.005), 1.585 + bz)) for bx, bz in ((0.02, -0.002), (0.042, 0.006), (0.064, 0.002))],

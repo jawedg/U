@@ -363,10 +363,10 @@ key_cam(36.6, (0.2, -0.45, 1.42), (1.1, 2.55, 0.9))
 key_cam(37.6, (0.2, -0.4, 1.42), (1.4, -2.5, 1.2))     # Mama kommt
 key_cam(41.6, (0.2, -0.4, 1.42), (1.15, -1.5, 1.35))
 key_cam(42.8, (0.2, -0.4, 1.42), (1.1, 2.55, 0.9))     # zurück zum Fernseher: Strom weg
-key_cam(44.4, (0.15, -0.35, 1.42), (-1.15, 2.8, 1.2))  # zum Fenster: Durchsage
-key_cam(48.6, (0.1, -0.2, 1.42), (-1.2, 2.8, 1.25))
-key_cam(49.6, (0.1, -0.25, 1.4), (-0.75, 0.05, 1.0))   # zu Hana
-key_cam(END, (0.0, -0.1, 1.38), (-0.75, 0.05, 1.0))
+key_cam(44.4, (0.05, -0.95, 1.36), (-1.15, 2.8, 1.05))  # zum Fenster: Durchsage
+key_cam(48.6, (-0.05, -0.85, 1.36), (-1.2, 2.8, 1.1))
+key_cam(49.6, (0.0, -0.8, 1.34), (-0.75, 0.05, 1.0))   # zu Hana
+key_cam(END, (-0.15, -0.6, 1.3), (-0.75, 0.05, 1.0))
 # Beben + Gehen: Wackeln der Kamera
 noise_fr = list(range(T(CAM2), T(END) + 1, 2))
 for fr in noise_fr:
@@ -486,6 +486,18 @@ for i, o in enumerate(bpy.data.objects):
         q = q.parent
     o.pass_index = 10000 + i if hum else 1 + i
 TL.comp_outlines(kn=1.0, kd=0.5, thr=0.7, fade_near=4.0, fade_far=9.0)
+# Augen ohne eigene Umrisslinien (sonst wirken sie aus der Entfernung wie Sonnenbrillen):
+# Augenweiß/Iris/Pupille/Glanz bekommen dieselbe Material- und Objekt-ID wie die Haut des Kopfes.
+for f_ in (me, hana, mama):
+    head_o = bpy.data.objects[f_["name"] + "_head"]
+    for o in bpy.data.objects:
+        if o.name.startswith(f_["name"] + "_") and any(k in o.name for k in ("_white", "_iris", "_pupil", "_glint")):
+            o.pass_index = head_o.pass_index
+for m in bpy.data.materials:
+    if m.name.endswith("_skin") or m.name in ("eyewhite", "pupil") or m.name.endswith("_iris"):
+        for n in m.node_tree.nodes:
+            if n.type == "COMBXYZ":
+                n.inputs[0].default_value = 9999.0
 sc.render.engine = "BLENDER_EEVEE"
 sc.eevee.taa_render_samples = int(os.environ.get("SAMPLES", 10))
 sc.render.fps = FPS
