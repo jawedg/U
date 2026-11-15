@@ -239,7 +239,7 @@ cam1.matrix_basis = a.matrix_world @ Matrix.Translation(Vector((0, -0.075, 1.555
 tgt = bpy.data.objects.new("ikR", None)
 sc.collection.objects.link(tgt)
 tgt.parent = cam1
-for t, loc in ((0, (0.1, -0.24, -0.46)), (12.2, (0.1, -0.24, -0.46)), (12.7, (0.12, -0.3, -0.44)), (15.8, (0.12, -0.3, -0.44)), (16.5, (0.25, -0.75, -0.3))):
+for t, loc in ((0, (0.07, -0.2, -0.37)), (12.2, (0.07, -0.2, -0.37)), (12.7, (0.09, -0.24, -0.36)), (15.8, (0.09, -0.24, -0.36)), (16.5, (0.25, -0.75, -0.3))):
     tgt.location = loc
     tgt.keyframe_insert("location", frame=T(t) if t else 1)
 c = a.pose.bones["forearm.R"].constraints.new("IK")
@@ -248,15 +248,45 @@ c.chain_count = 2
 mug = LR.group("mug")
 LR.cyl("mugbody", (0, 0, 0), 0.042, 0.095, LR.soft("mugm", (0.95, 0.94, 0.9)), verts=24).parent = mug
 LR.cyl("mugband", (0, 0, 0.01), 0.0425, 0.03, LR.soft("mugb", (0.3, 0.45, 0.72)), verts=24).parent = mug
-LR.cyl("tea", (0, 0, 0.043), 0.038, 0.005, LR.soft("team", (0.55, 0.62, 0.3)), verts=24).parent = mug
+LR.cyl("tea", (0, 0, 0.0485), 0.035, 0.002, LR.soft("team", (0.5, 0.58, 0.28)), verts=24).parent = mug
 bpy.ops.mesh.primitive_torus_add(major_radius=0.026, minor_radius=0.007, location=(0.05, 0, 0.005), rotation=(math.radians(90), 0, 0))
 hd = bpy.context.object
 hd.data.materials.append(LR.soft("mugm", (0.95, 0.94, 0.9)))
 hd.parent = mug
+# Becher aufrecht (oben leicht zur Kamera geneigt), Henkel nach links; rechte Hand umgreift den Becher (eigene Greif-Hand)
+from mathutils import Matrix as _M
+_Z = Vector((0, 0.953, 0.301)).normalized()
+_X = Vector((-1, 0, 0))
+_Y = _Z.cross(_X)
+_Rm = _M((_X, _Y, _Z)).transposed().to_4x4()
 mug.parent = tgt
-mug.location = (-0.065, 0.0, 0.0)
-mug.rotation_euler = (math.radians(-72), 0, math.radians(200))
+_wrist_local = Vector((-0.062, -0.012, -0.05))
+mug.matrix_basis = _M.Translation(-(_Rm.to_3x3() @ _wrist_local)) @ _Rm
+skin = bpy.data.materials["me_skin"]
+grip = []
+for k, z in enumerate((0.024, 0.007, -0.010, -0.027)):
+    rr = 0.042 + 0.0085
+    a0, a1 = math.radians(176), math.radians(70 + k * 6)
+    pts = [(rr * math.cos(a0 + (a1 - a0) * u), rr * math.sin(a0 + (a1 - a0) * u), z - 0.003 * u) for u in (0, 0.25, 0.5, 0.75, 1.0)]
+    fl = F.curve_line(f"gripf{k}", pts, 0.0088 - 0.0006 * k, skin)
+    fl.parent = mug
+    fl.location = fl.location  # Kurve liegt in Becher-Koordinaten
+    tip = F.ellipsoid(f"griptip{k}", Vector(pts[-1]), (0.0086, 0.0086, 0.0086), skin, seg=12, rings=8)
+    tip.parent = mug
+    grip += [fl, tip]
+palm = F.ellipsoid("grippalm", Vector((-0.06, -0.006, -0.004)), (0.015, 0.036, 0.046), skin, seg=20, rings=12)
+palm.parent = mug
+tpts = [(0.05 * math.cos(math.radians(a)), 0.05 * math.sin(math.radians(a)), 0.034 + 0.004 * i) for i, a in enumerate((178, 160, 142, 126))]
+th = F.curve_line("gripthumb", tpts, 0.0102, skin)
+th.parent = mug
+tt = F.ellipsoid("gripthumbtip", Vector(tpts[-1]), (0.01, 0.01, 0.01), skin, seg=12, rings=8)
+tt.parent = mug
+grip += [palm, th, tt]
+for o in grip:
+    o.parent = mug
 vis(mug, [(0, True), (16.3, False)])
+for o in me["parts"].get("hand.R", []):
+    vis(o, [(0, False), (16.3, True), (CAM2, False)])
 
 # ---------- Kamera 2: frei (unter den Tisch, wieder raus, umsehen) ----------
 cam2 = make_cam("cam2")
