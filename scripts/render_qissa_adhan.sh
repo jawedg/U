@@ -8,6 +8,7 @@
 #   (keine Interpolation = keine Klötzchen/Doppelbilder; MID60=0 überspringt das, dann ffmpeg-minterpolate als Notlösung)
 # JOBS Blender-Prozesse arbeiten wie eine Warteschlange: jeder nimmt sich die Einstellung mit den meisten offenen Bildern
 # (Platzhalter-Dateien verhindern doppelte Arbeit). Lange Läufe: setsid nohup ./scripts/render_qissa_adhan.sh > out/qissa_render.log 2>&1 &
+# MID_SHOTS="traum umar": echte Zwischenbilder nur dort (viel Bewegung/Lichtpunkte), sonst minterpolate (ruhige Szenen sind sauber).
 # ACHTUNG: diese Datei nie bearbeiten, während sie läuft (bash liest nach) – neue Fassung daneben schreiben und per mv ersetzen.
 set -u
 cd "$(dirname "$0")/.."
@@ -16,6 +17,7 @@ SAMPLES=${SAMPLES:-3}
 JOBS=${JOBS:-4}
 MID60=${MID60:-1}
 PASSES=${PASSES:-"main mid"}
+MID_SHOTS=${MID_SHOTS:-}   # nur diese Einstellungen bekommen echte Zwischenbilder (leer = alle)
 TLF=src/qissa_adhan/timeline.json
 RFPS=$(python3 -c "import json; print(json.load(open('$TLF')).get('render_fps', 24))")
 SHOTS=("$@")
@@ -33,7 +35,10 @@ open_frames() {  # offene Bilder einer Einstellung im Durchgang $2
 }
 pick() {
   local best="" bf=0 f
-  for s in "${SHOTS[@]}"; do f=$(open_frames "$s" "$1"); if [ "$f" -gt "$bf" ]; then best=$s; bf=$f; fi; done
+  for s in "${SHOTS[@]}"; do
+    if [ "$1" = mid ] && [ -n "$MID_SHOTS" ] && [[ " $MID_SHOTS " != *" $s "* ]]; then continue; fi
+    f=$(open_frames "$s" "$1"); if [ "$f" -gt "$bf" ]; then best=$s; bf=$f; fi
+  done
   echo "$best"
 }
 worker() {
