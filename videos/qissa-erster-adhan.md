@@ -5,7 +5,7 @@
 Diese Worte hörst du 5× am Tag – aber woher kommen sie? 🌙 Aus einem Traum … und Umar hatte ihn schon 20 Tage vorher 🤯 Wusstest du das? 1 oder 2? 👇
 
 Quellen: Sahih al-Bukhari 603 & 604, Sunan Abi Dawud 498, 499 & 519, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706, Sira Ibn Hisham.
-Geräusche: Wikimedia Commons (CC BY / CC BY-SA, Urheber siehe assets/sfx/CREDITS.md).
+Schofar-Klang: Tfursten, Wikimedia Commons (CC BY-SA 3.0). Weitere Geräusche: SFXMint, SFX Kit (CC0).
 
 #islam #adhan #pov #wahregeschichte #bilal #medina #sahaba #islamischegeschichte #muslim #qissa #3danimation #fyp
 

@@ -136,8 +136,10 @@ Lokal reicht `npm run render:3d`.
     leuchtende Fußspuren). Testbilder: `FRAMES=a-b` bzw. Standbild-Zeiten als 5. Argument von adhan.py.
   - Ton: `sfx_qissa_adhan.py` mischt ALLES zu `public/qissa_adhan/master.wav` (Stimmen, Adhan, Atmo mit Ducking, Effekte; -14 LUFS, True Peak
     -1,5 dB, Begrenzer) → Remotion spielt nur diese Spur (vorher übersteuerte die Summe). Echte Geräusche (Schofar, Glocke, Feuer, Grillen,
-    Hahn, Schritte, Tür …) von Wikimedia Commons in `assets/sfx/*.flac`, Nachweise `assets/sfx/CREDITS.md` (CC BY/BY-SA → in TikTok-Beschreibung
-    nennen). Commons drosselt die Cloud-IP stark (429, Retry-After 600 s) → geduldig einzeln laden.
+    Hahn, Schritte, Tür …) in `assets/sfx/*.flac`, Nachweise `assets/sfx/CREDITS.md`. Quellen: SFXMint (CC0, KI-erzeugt; Katalog
+    `flreey/sfxmint-cc0-sound-effects` auf Hugging Face, Dateien über sfxmint.com/dl/<id>.wav – Tageslimit pro IP!) und SFX Kit
+    (`wyzowl/sfx-kit`, CC0) – HF-Downloads laufen über us.aws.cdn.hf.co. Schofar von Wikimedia Commons (CC BY-SA → Urheber in
+    TikTok-Beschreibung nennen); Commons drosselt die Cloud-IP stark (429, Retry-After 600 s).
 - **Erzähl-Version (Nutzer-Feedback Nov. 2026: „klingt billig, langweilig, stille Stellen gefallen nicht“):** Charon ERZÄHLT spannend
   (Gemini 2.5 flash TTS mit Regie-Anweisungen, `voiceParts` in script.json, bis 2 Sprecher je Anfrage), erfundene Leute in Dialogen mit
   eigenen Stimmen (Puck, Algenib, Fenrir, Aoede, Leda – Untertitel kursiv). Worte von Sahaba und dem Propheten ﷺ: Erzähler sagt „… sagte:“,
