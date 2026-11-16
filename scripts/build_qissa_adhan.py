@@ -2,11 +2,13 @@
 """Zeitplan für „Der erste Adhan“ (QISSA, POV): welche Einstellung wann, wann welcher Satz, Zitat, Effekt.
 
 Liest src/qissa_adhan/script.json und – falls schon vertont – src/qissa_adhan/timing.json (voice_gemini.py).
-Ohne Vertonung werden die Satzlängen geschätzt. Schreibt src/qissa_adhan/timeline.json, die von Blender
+Ohne Vertonung werden die Satzlängen geschätzt. Mit --keep-layout bekommt jeder vertonte Satz mindestens seinen
+geschätzten Platz (die Einstellungen wurden schon mit dem geschätzten Plan gerendert → Bild und Ton bleiben synchron). Schreibt src/qissa_adhan/timeline.json, die von Blender
 (blender/qissa/adhan.py: Länge jeder Einstellung + Ereignisse) und Remotion (QissaAdhan) gelesen wird.
 """
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -68,12 +70,16 @@ def main() -> None:
     if tp.exists():
         timing = json.loads(tp.read_text(encoding="utf-8"))["lines"]
     voiced = timing is not None
+    keep = "--keep-layout" in sys.argv
 
     def line_info(i: str) -> dict:
         s = sents[i]
         if voiced:
             ln = timing[order.index(i)]
-            return {"file": ln["file"], "dur": round(ln["seconds"] - 0.3, 3), "words": ln["words"]}
+            dur = round(ln["seconds"] - 0.3, 3)
+            if keep:  # Platz wie im geschätzten Plan, damit schon gerenderte Einstellungen passen (Rest = Atempause)
+                dur = max(dur, est_seconds(s["text"]))
+            return {"file": ln["file"], "dur": dur, "words": ln["words"]}
         dur = est_seconds(s["text"])
         return {"file": "", "dur": dur, "words": word_times(s["text"], dur)}
 

@@ -4,6 +4,7 @@
 #   → Ton-Spur → Video → kleine Version (≤ 60 MB, lässt sich in der App speichern).
 #   ./scripts/run_qissa_adhan.sh            (alles)
 #   NOVOICE=1 ./scripts/run_qissa_adhan.sh  (Entwurf ohne Stimme, geschätzte Zeiten)
+#   KEEP=1 ./scripts/run_qissa_adhan.sh     (Stimme nachträglich: Sätze an die schon gerenderten Bilder anpassen)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 BR=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
@@ -14,7 +15,7 @@ if [ -z "${NOVOICE:-}" ]; then
   export GEMINI_API_KEY="${GEMINI_API_KEY:-proxy-injected}"
   python3 scripts/voice_gemini.py --project qissa_adhan
 fi
-python3 scripts/build_qissa_adhan.py
+python3 scripts/build_qissa_adhan.py ${KEEP:+--keep-layout}   # KEEP=1: Bildzeiten der schon gerenderten Einstellungen behalten
 
 # Einstellungen mit > 10 % Längenänderung neu rendern, die anderen per playbackRate anpassen
 CHANGED=$(python3 - <<'EOF'
