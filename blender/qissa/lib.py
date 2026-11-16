@@ -40,9 +40,9 @@ def empty(name, loc=(0, 0, 0), parent=None, rot=(0, 0, 0)):
 
 # ---------------------------------------------------------------- Materialien
 def pbr(name, col, rough=0.85, metal=0.0, var=0.0, scale=3.0, bump=0.0, bscale=30.0, emit=None, es=0.0,
-        alpha=None, brick=0.0, rings=0.0, two=None, spec=0.3):
+        alpha=None, brick=0.0, rings=0.0, two=None, spec=0.3, grime=0.0, plaster=0.0):
     """Principled-Material mit optionaler Farb-Variation (Noise), Relief (Bump), Ziegel- oder Ring-Muster."""
-    key = (name, tuple(round(c, 3) for c in col), var, bump, emit, es, alpha)
+    key = (name, tuple(round(c, 3) for c in col), var, bump, emit, es, alpha, grime, plaster)
     if key in _MATS:
         return _MATS[key]
     m = bpy.data.materials.new(name)
@@ -56,7 +56,7 @@ def pbr(name, col, rough=0.85, metal=0.0, var=0.0, scale=3.0, bump=0.0, bscale=3
     if "Specular IOR Level" in b.inputs:
         b.inputs["Specular IOR Level"].default_value = spec
     tc = None
-    if var or bump or brick or rings or two:
+    if var or bump or brick or rings or two or grime or plaster:
         tc = N.new("ShaderNodeTexCoord")
     col_sock = None
     if var:
@@ -136,6 +136,56 @@ def pbr(name, col, rough=0.85, metal=0.0, var=0.0, scale=3.0, bump=0.0, bscale=3
         bp.inputs["Strength"].default_value = 0.6
         L.new(wv.outputs["Fac"], bp.inputs["Height"])
         L.new(bp.outputs["Normal"], b.inputs["Normal"])
+    if plaster:  # Putz-Flecken: hellere, scharf begrenzte Flächen (alter Lehmputz)
+        nzp = N.new("ShaderNodeTexNoise")
+        nzp.inputs["Scale"].default_value = 0.9
+        nzp.inputs["Detail"].default_value = 5.0
+        nzp.inputs["Roughness"].default_value = 0.65
+        L.new(tc.outputs["Object"], nzp.inputs["Vector"])
+        rp = N.new("ShaderNodeValToRGB")
+        rp.color_ramp.elements[0].position = 0.52
+        rp.color_ramp.elements[0].color = (0, 0, 0, 1)
+        rp.color_ramp.elements[1].position = 0.57
+        rp.color_ramp.elements[1].color = (plaster, plaster, plaster, 1)
+        L.new(nzp.outputs["Fac"], rp.inputs["Fac"])
+        mp = N.new("ShaderNodeMix")
+        mp.data_type = "RGBA"
+        L.new(rp.outputs["Color"], mp.inputs["Factor"])
+        if col_sock is not None:
+            L.new(col_sock, mp.inputs[6])
+        else:
+            mp.inputs[6].default_value = (*col, 1)
+        mp.inputs[7].default_value = (*[min(1, c * 1.13 + 0.02) for c in col], 1)
+        col_sock = mp.outputs[2]
+    if grime:  # Schmutz/Feuchte unten an Wänden (dunkler zum Boden hin, unregelmäßig)
+        geo = N.new("ShaderNodeNewGeometry")
+        sz = N.new("ShaderNodeSeparateXYZ")
+        L.new(geo.outputs["Position"], sz.inputs[0])
+        nzg = N.new("ShaderNodeTexNoise")
+        nzg.inputs["Scale"].default_value = 2.5
+        nzg.inputs["Detail"].default_value = 6.0
+        L.new(tc.outputs["Object"], nzg.inputs["Vector"])
+        hz = N.new("ShaderNodeMath")
+        hz.operation = "MULTIPLY_ADD"  # Höhe + Noise * 0.5 -> unregelmäßige Kante
+        L.new(nzg.outputs["Fac"], hz.inputs[0])
+        hz.inputs[1].default_value = 0.55
+        L.new(sz.outputs["Z"], hz.inputs[2])
+        mr = N.new("ShaderNodeMapRange")
+        mr.inputs["From Min"].default_value = 0.25
+        mr.inputs["From Max"].default_value = 1.15
+        mr.inputs["To Min"].default_value = grime
+        mr.inputs["To Max"].default_value = 0.0
+        L.new(hz.outputs[0], mr.inputs["Value"])
+        mg = N.new("ShaderNodeMix")
+        mg.data_type = "RGBA"
+        mg.blend_type = "MULTIPLY"
+        L.new(mr.outputs["Result"], mg.inputs["Factor"])
+        if col_sock is not None:
+            L.new(col_sock, mg.inputs[6])
+        else:
+            mg.inputs[6].default_value = (*col, 1)
+        mg.inputs[7].default_value = (0.42, 0.36, 0.3, 1)
+        col_sock = mg.outputs[2]
     if col_sock is not None:
         L.new(col_sock, b.inputs["Base Color"])
     if bump and not rings:
@@ -874,6 +924,12 @@ def world_sky(mode="night", amb=None):
         mid = E.new(0.2)
         mid.color = (0.42, 0.42, 0.62, 1)
         strength = 1.0
+    elif mode == "dreamnight":  # Traum bei Nacht: goldener Horizont, Indigo, Sterne
+        E[0].position, E[0].color = 0.0, (0.42, 0.26, 0.13, 1)
+        E[1].position, E[1].color = 0.6, (0.006, 0.008, 0.026, 1)
+        mid = E.new(0.13)
+        mid.color = (0.05, 0.055, 0.15, 1)
+        strength = 1.0
     else:  # dream
         E[0].position, E[0].color = -0.1, (0.9, 0.68, 0.42, 1)
         E[1].position, E[1].color = 0.7, (0.16, 0.12, 0.1, 1)
@@ -904,7 +960,7 @@ def world_sky(mode="night", amb=None):
         L.new(col, gm.inputs[6])
         gm.inputs[7].default_value = (1.6, 0.72, 0.32, 1)
         col = gm.outputs[2]
-    if mode in ("night", "dusk"):
+    if mode in ("night", "dusk", "dreamnight"):
         vo = N.new("ShaderNodeTexVoronoi")
         vo.inputs["Scale"].default_value = 180.0
         L.new(tc.outputs["Generated"], vo.inputs["Vector"])
@@ -912,7 +968,7 @@ def world_sky(mode="night", amb=None):
         mr.inputs["From Min"].default_value = 0.06
         mr.inputs["From Max"].default_value = 0.0
         mr.inputs["To Min"].default_value = 0.0
-        mr.inputs["To Max"].default_value = 2.5 if mode == "night" else 0.6
+        mr.inputs["To Max"].default_value = {"night": 2.5, "dreamnight": 3.2}.get(mode, 0.6)
         L.new(vo.outputs["Distance"], mr.inputs["Value"])
         hz = N.new("ShaderNodeMapRange")  # nur oberhalb des Horizonts
         hz.inputs["From Min"].default_value = 0.02

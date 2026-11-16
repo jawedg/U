@@ -2,53 +2,79 @@
  "lines": [
   {
    "file": "qissa_adhan/line-0-0.wav",
-   "seconds": 6.13,
+   "seconds": 4.16,
    "words": [
     {
-     "word": "Stell",
+     "word": "Diese",
      "start": 0.1
     },
     {
-     "word": "dir",
-     "start": 0.607
+     "word": "Worte",
+     "start": 0.551
     },
     {
-     "word": "vor",
-     "start": 0.97
+     "word": "hörst",
+     "start": 1.003
     },
     {
-     "word": "...",
-     "start": 1.332
+     "word": "du",
+     "start": 1.454
     },
     {
-     "word": "es",
-     "start": 1.839
+     "word": "jeden",
+     "start": 1.712
     },
     {
-     "word": "gibt",
-     "start": 2.129
+     "word": "Tag.",
+     "start": 2.163
     },
     {
-     "word": "keinen",
-     "start": 2.564
-    },
-    {
-     "word": "*Adhan*.",
-     "start": 3.144
-    },
-    {
-     "word": "Keinen",
-     "start": 4.013
-    },
-    {
-     "word": "einzigen.",
-     "start": 4.593
+     "word": "Fünfmal.",
+     "start": 2.808
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-1.wav",
-   "seconds": 5.6,
+   "seconds": 3.36,
+   "words": [
+    {
+     "word": "Aber",
+     "start": 0.1
+    },
+    {
+     "word": "woher",
+     "start": 0.372
+    },
+    {
+     "word": "kommen",
+     "start": 0.689
+    },
+    {
+     "word": "sie?",
+     "start": 1.052
+    },
+    {
+     "word": "...",
+     "start": 1.505
+    },
+    {
+     "word": "Aus",
+     "start": 1.822
+    },
+    {
+     "word": "einem",
+     "start": 2.049
+    },
+    {
+     "word": "*Traum*.",
+     "start": 2.366
+    }
+   ]
+  },
+  {
+   "file": "qissa_adhan/line-0-2.wav",
+   "seconds": 7.114,
    "words": [
     {
      "word": "Medina,",
@@ -56,37 +82,65 @@
     },
     {
      "word": "im",
-     "start": 1.159
+     "start": 0.805
     },
     {
      "word": "Jahr",
-     "start": 1.485
+     "start": 1.022
     },
     {
      "word": "622.",
-     "start": 1.973
+     "start": 1.348
     },
     {
-     "word": "Mitten",
-     "start": 2.788
+     "word": "Es",
+     "start": 1.89
     },
     {
-     "word": "in",
-     "start": 3.439
+     "word": "gibt",
+     "start": 2.107
     },
     {
-     "word": "der",
-     "start": 3.765
+     "word": "noch",
+     "start": 2.432
     },
     {
-     "word": "Nacht.",
-     "start": 4.172
+     "word": "keinen",
+     "start": 2.758
+    },
+    {
+     "word": "Adhan.",
+     "start": 3.192
+    },
+    {
+     "word": "Niemand",
+     "start": 3.843
+    },
+    {
+     "word": "weiß,",
+     "start": 4.331
+    },
+    {
+     "word": "wann",
+     "start": 4.928
+    },
+    {
+     "word": "das",
+     "start": 5.253
+    },
+    {
+     "word": "Gebet",
+     "start": 5.524
+    },
+    {
+     "word": "beginnt.",
+     "start": 5.904
     }
    ]
   },
   {
-   "file": "qissa_adhan/line-0-2.wav",
-   "seconds": 3.549,
+   "file": "qissa_adhan/line-0-3.wav",
+   "seconds": 3.058,
    "words": [
     {
      "word": "Hat",
@@ -94,49 +148,49 @@
     },
     {
      "word": "das",
-     "start": 0.287
+     "start": 0.257
     },
     {
      "word": "Gebet",
-     "start": 0.475
+     "start": 0.414
     },
     {
      "word": "schon",
-     "start": 0.737
+     "start": 0.633
     },
     {
-     "word": "angefangen?",
-     "start": 1.0
+     "word": "angefangen?!",
+     "start": 0.852
     },
     {
      "word": "Ich",
-     "start": 1.637
+     "start": 1.385
     },
     {
      "word": "...",
-     "start": 1.824
+     "start": 1.542
     },
     {
      "word": "ich",
-     "start": 2.087
+     "start": 1.762
     },
     {
      "word": "weiß",
-     "start": 2.274
+     "start": 1.918
     },
     {
      "word": "es",
-     "start": 2.499
+     "start": 2.107
     },
     {
      "word": "nicht!",
-     "start": 2.649
+     "start": 2.232
     }
    ]
   },
   {
    "file": "qissa_adhan/line-1-0.wav",
-   "seconds": 3.633,
+   "seconds": 3.422,
    "words": [
     {
      "word": "Na,",
@@ -144,45 +198,45 @@
     },
     {
      "word": "mein",
-     "start": 0.48
+     "start": 0.454
     },
     {
      "word": "Junge?",
-     "start": 0.734
+     "start": 0.69
     },
     {
      "word": "Wieder",
-     "start": 1.24
+     "start": 1.162
     },
     {
      "word": "zu",
-     "start": 1.578
+     "start": 1.477
     },
     {
      "word": "spät",
-     "start": 1.747
+     "start": 1.634
     },
     {
      "word": "...",
-     "start": 2.001
+     "start": 1.871
     },
     {
      "word": "oder",
-     "start": 2.296
+     "start": 2.146
     },
     {
      "word": "zu",
-     "start": 2.55
+     "start": 2.382
     },
     {
      "word": "früh?",
-     "start": 2.719
+     "start": 2.539
     }
    ]
   },
   {
    "file": "qissa_adhan/line-1-1.wav",
-   "seconds": 4.149,
+   "seconds": 3.921,
    "words": [
     {
      "word": "Keiner",
@@ -190,75 +244,29 @@
     },
     {
      "word": "weiß",
-     "start": 0.7
+     "start": 0.662
     },
     {
      "word": "es!",
-     "start": 1.15
+     "start": 1.083
     },
     {
      "word": "Wir",
-     "start": 1.824
+     "start": 1.715
     },
     {
      "word": "schätzen",
-     "start": 2.199
+     "start": 2.066
     },
     {
      "word": "nur.",
-     "start": 2.949
-    }
-   ]
-  },
-  {
-   "file": "qissa_adhan/line-0-3.wav",
-   "seconds": 3.764,
-   "words": [
-    {
-     "word": "So",
-     "start": 0.1
-    },
-    {
-     "word": "geht",
-     "start": 0.276
-    },
-    {
-     "word": "das",
-     "start": 0.54
-    },
-    {
-     "word": "jeden",
-     "start": 0.76
-    },
-    {
-     "word": "Tag.",
-     "start": 1.069
-    },
-    {
-     "word": "Jeder",
-     "start": 1.509
-    },
-    {
-     "word": "kommt,",
-     "start": 1.817
-    },
-    {
-     "word": "wann",
-     "start": 2.345
-    },
-    {
-     "word": "er",
-     "start": 2.609
-    },
-    {
-     "word": "denkt.",
-     "start": 2.786
+     "start": 2.768
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-4.wav",
-   "seconds": 7.016,
+   "seconds": 5.365,
    "words": [
     {
      "word": "Der",
@@ -266,207 +274,215 @@
     },
     {
      "word": "Prophet,",
-     "start": 0.367
+     "start": 0.299
     },
     {
      "word": "Friede",
-     "start": 1.115
+     "start": 0.856
     },
     {
      "word": "sei",
-     "start": 1.543
+     "start": 1.174
     },
     {
      "word": "mit",
-     "start": 1.81
+     "start": 1.373
     },
     {
      "word": "ihm,",
-     "start": 2.077
+     "start": 1.572
     },
     {
      "word": "macht",
-     "start": 2.612
+     "start": 1.97
     },
     {
      "word": "sich",
-     "start": 2.986
+     "start": 2.249
     },
     {
      "word": "Sorgen.",
-     "start": 3.306
+     "start": 2.488
     },
     {
      "word": "Wie",
-     "start": 4.001
+     "start": 3.005
     },
     {
      "word": "ruft",
-     "start": 4.268
+     "start": 3.204
     },
     {
      "word": "man",
-     "start": 4.589
+     "start": 3.443
     },
     {
      "word": "die",
-     "start": 4.856
+     "start": 3.642
     },
     {
      "word": "Menschen",
-     "start": 5.123
+     "start": 3.841
     },
     {
      "word": "zum",
-     "start": 5.658
+     "start": 4.239
     },
     {
      "word": "*Gebet*?",
-     "start": 5.925
+     "start": 4.438
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-5.wav",
-   "seconds": 7.925,
+   "seconds": 4.926,
    "words": [
     {
-     "word": "Einer",
+     "word": "Mit",
      "start": 0.1
     },
     {
-     "word": "sagt:",
-     "start": 0.464
-    },
-    {
-     "word": "eine",
-     "start": 1.035
+     "word": "einer",
+     "start": 0.295
     },
     {
      "word": "*Glocke*,",
-     "start": 1.347
+     "start": 0.569
     },
     {
      "word": "wie",
-     "start": 2.022
+     "start": 1.077
     },
     {
      "word": "die",
-     "start": 2.281
+     "start": 1.272
     },
     {
-     "word": "Christen.",
-     "start": 2.541
+     "word": "Christen?",
+     "start": 1.467
     },
     {
-     "word": "Ein",
-     "start": 3.32
+     "word": "Mit",
+     "start": 2.053
     },
     {
-     "word": "anderer:",
-     "start": 3.58
-    },
-    {
-     "word": "ein",
-     "start": 4.307
+     "word": "einem",
+     "start": 2.249
     },
     {
      "word": "*Horn*,",
-     "start": 4.567
+     "start": 2.522
     },
     {
      "word": "wie",
-     "start": 5.138
+     "start": 2.952
     },
     {
      "word": "die",
-     "start": 5.398
+     "start": 3.147
     },
     {
-     "word": "Juden.",
-     "start": 5.657
+     "word": "Juden?",
+     "start": 3.343
     },
     {
-     "word": "Oder",
-     "start": 6.281
-    },
-    {
-     "word": "ein",
-     "start": 6.592
+     "word": "Mit",
+     "start": 3.811
     },
     {
      "word": "*Feuer*?",
-     "start": 6.852
+     "start": 4.007
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-6.wav",
-   "seconds": 3.082,
+   "seconds": 3.122,
    "words": [
     {
-     "word": "Doch",
+     "word": "Nein.",
      "start": 0.1
     },
     {
-     "word": "nichts",
-     "start": 0.41
+     "word": "Nichts",
+     "start": 0.624
     },
     {
      "word": "davon",
-     "start": 0.823
+     "start": 1.005
     },
     {
      "word": "...",
-     "start": 1.185
+     "start": 1.339
     },
     {
      "word": "passt",
-     "start": 1.547
+     "start": 1.672
     },
     {
      "word": "zu",
-     "start": 1.908
+     "start": 2.005
     },
     {
      "word": "uns.",
-     "start": 2.115
+     "start": 2.196
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-7.wav",
-   "seconds": 2.494,
+   "seconds": 4.011,
    "words": [
     {
-     "word": "*Abdullah",
+     "word": "Dann,",
      "start": 0.1
     },
     {
-     "word": "ibn",
-     "start": 0.532
+     "word": "in",
+     "start": 0.564
     },
     {
-     "word": "Zaid*",
-     "start": 0.748
+     "word": "dieser",
+     "start": 0.733
+    },
+    {
+     "word": "Nacht",
+     "start": 1.071
+    },
+    {
+     "word": "...",
+     "start": 1.366
     },
     {
      "word": "hat",
-     "start": 1.007
+     "start": 1.662
+    },
+    {
+     "word": "*Abdullah",
+     "start": 1.873
+    },
+    {
+     "word": "ibn",
+     "start": 2.295
+    },
+    {
+     "word": "Zaid*",
+     "start": 2.506
     },
     {
      "word": "einen",
-     "start": 1.223
+     "start": 2.759
     },
     {
      "word": "Traum.",
-     "start": 1.525
+     "start": 3.055
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-8.wav",
-   "seconds": 4.892,
+   "seconds": 4.69,
    "words": [
     {
      "word": "Ein",
@@ -474,61 +490,53 @@
     },
     {
      "word": "Mann",
-     "start": 0.313
+     "start": 0.316
     },
     {
      "word": "in",
-     "start": 0.568
+     "start": 0.574
     },
     {
-     "word": "*grüner*",
-     "start": 0.738
+     "word": "*grünen*",
+     "start": 0.747
     },
     {
-     "word": "Kleidung",
-     "start": 1.079
+     "word": "Gewändern",
+     "start": 1.092
     },
     {
-     "word": "geht",
-     "start": 1.505
+     "word": "umkreist",
+     "start": 1.566
     },
     {
-     "word": "um",
-     "start": 1.76
-    },
-    {
-     "word": "ihn",
-     "start": 1.93
-    },
-    {
-     "word": "herum.",
-     "start": 2.143
+     "word": "ihn.",
+     "start": 1.997
     },
     {
      "word": "In",
-     "start": 2.654
+     "start": 2.429
     },
     {
      "word": "seiner",
-     "start": 2.824
+     "start": 2.601
     },
     {
      "word": "Hand:",
-     "start": 3.165
+     "start": 2.946
     },
     {
      "word": "eine",
-     "start": 3.633
+     "start": 3.421
     },
     {
      "word": "*Glocke*.",
-     "start": 3.888
+     "start": 3.679
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-9.wav",
-   "seconds": 1.371,
+   "seconds": 1.564,
    "words": [
     {
      "word": "Abdullah",
@@ -536,11 +544,11 @@
     },
     {
      "word": "fragt",
-     "start": 0.404
+     "start": 0.476
     },
     {
      "word": "ihn:",
-     "start": 0.617
+     "start": 0.739
     }
    ]
   },
@@ -597,7 +605,7 @@
   },
   {
    "file": "qissa_adhan/line-0-10.wav",
-   "seconds": 1.234,
+   "seconds": 1.663,
    "words": [
     {
      "word": "Doch",
@@ -605,15 +613,15 @@
     },
     {
      "word": "der",
-     "start": 0.247
+     "start": 0.338
     },
     {
      "word": "Mann",
-     "start": 0.369
+     "start": 0.537
     },
     {
      "word": "sagt:",
-     "start": 0.515
+     "start": 0.775
     }
    ]
   },
@@ -654,7 +662,7 @@
   },
   {
    "file": "qissa_adhan/line-0-11.wav",
-   "seconds": 4.45,
+   "seconds": 3.638,
    "words": [
     {
      "word": "Und",
@@ -662,49 +670,49 @@
     },
     {
      "word": "er",
-     "start": 0.364
+     "start": 0.309
     },
     {
      "word": "lehrt",
-     "start": 0.574
+     "start": 0.476
     },
     {
      "word": "ihn",
-     "start": 0.943
+     "start": 0.768
     },
     {
      "word": "Worte",
-     "start": 1.207
+     "start": 0.976
     },
     {
      "word": "...",
-     "start": 1.576
+     "start": 1.269
     },
     {
      "word": "die",
-     "start": 1.945
+     "start": 1.561
     },
     {
      "word": "heute",
-     "start": 2.208
+     "start": 1.769
     },
     {
      "word": "jeder",
-     "start": 2.577
+     "start": 2.062
     },
     {
      "word": "Muslim",
-     "start": 2.946
+     "start": 2.354
     },
     {
      "word": "kennt.",
-     "start": 3.368
+     "start": 2.688
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-12.wav",
-   "seconds": 7.789,
+   "seconds": 5.22,
    "words": [
     {
      "word": "Am",
@@ -712,83 +720,59 @@
     },
     {
      "word": "Morgen",
-     "start": 0.271
+     "start": 0.261
     },
     {
-     "word": "erzählt",
-     "start": 0.614
+     "word": "geht",
+     "start": 0.583
     },
     {
      "word": "Abdullah",
-     "start": 1.0
+     "start": 0.825
     },
     {
-     "word": "dem",
-     "start": 1.428
+     "word": "sofort",
+     "start": 1.227
+    },
+    {
+     "word": "zum",
+     "start": 1.549
     },
     {
      "word": "Propheten,",
-     "start": 1.642
+     "start": 1.751
     },
     {
      "word": "Friede",
-     "start": 2.328
+     "start": 2.395
     },
     {
      "word": "sei",
-     "start": 2.67
+     "start": 2.717
     },
     {
      "word": "mit",
-     "start": 2.884
+     "start": 2.918
     },
     {
-     "word": "ihm,",
-     "start": 3.099
-    },
-    {
-     "word": "von",
-     "start": 3.527
-    },
-    {
-     "word": "seinem",
-     "start": 3.741
-    },
-    {
-     "word": "Traum.",
-     "start": 4.084
+     "word": "ihm.",
+     "start": 3.12
     },
     {
      "word": "Und",
-     "start": 4.598
+     "start": 3.522
     },
     {
      "word": "der",
-     "start": 4.812
+     "start": 3.724
     },
     {
-     "word": "Prophet,",
-     "start": 5.026
-    },
-    {
-     "word": "Friede",
-     "start": 5.626
-    },
-    {
-     "word": "sei",
-     "start": 5.969
-    },
-    {
-     "word": "mit",
-     "start": 6.183
-    },
-    {
-     "word": "ihm,",
-     "start": 6.397
+     "word": "Prophet",
+     "start": 3.925
     },
     {
      "word": "sagte:",
-     "start": 6.825
+     "start": 4.287
     }
    ]
   },
@@ -909,103 +893,111 @@
   },
   {
    "file": "qissa_adhan/line-0-13.wav",
-   "seconds": 2.918,
+   "seconds": 3.45,
    "words": [
     {
-     "word": "*Bilal*?",
+     "word": "*Bilal*?!",
      "start": 0.1
     },
     {
      "word": "Der",
-     "start": 0.484
+     "start": 0.57
     },
     {
      "word": "Mann,",
-     "start": 0.644
+     "start": 0.766
     },
     {
      "word": "den",
-     "start": 0.996
+     "start": 1.197
     },
     {
      "word": "sie",
-     "start": 1.156
+     "start": 1.393
     },
     {
      "word": "in",
-     "start": 1.316
+     "start": 1.589
     },
     {
      "word": "Mekka",
-     "start": 1.444
+     "start": 1.746
     },
     {
      "word": "so",
-     "start": 1.668
+     "start": 2.02
     },
     {
      "word": "gequält",
-     "start": 1.796
+     "start": 2.177
     },
     {
      "word": "haben?",
-     "start": 2.084
+     "start": 2.53
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-14.wav",
-   "seconds": 3.887,
+   "seconds": 5.349,
    "words": [
     {
-     "word": "Bilal",
+     "word": "Genau",
      "start": 0.1
     },
     {
+     "word": "der.",
+     "start": 0.465
+    },
+    {
+     "word": "Bilal",
+     "start": 0.987
+    },
+    {
      "word": "steigt",
-     "start": 0.411
+     "start": 1.352
     },
     {
      "word": "auf",
-     "start": 0.767
+     "start": 1.769
     },
     {
      "word": "das",
-     "start": 0.99
+     "start": 2.03
     },
     {
      "word": "*höchste",
-     "start": 1.212
+     "start": 2.291
     },
     {
      "word": "Dach*",
-     "start": 1.613
+     "start": 2.76
     },
     {
      "word": "...",
-     "start": 1.88
+     "start": 3.073
     },
     {
      "word": "und",
-     "start": 2.191
+     "start": 3.439
     },
     {
      "word": "holt",
-     "start": 2.414
+     "start": 3.699
     },
     {
      "word": "tief",
-     "start": 2.68
+     "start": 4.012
     },
     {
      "word": "Luft.",
-     "start": 2.947
+     "start": 4.325
     }
    ]
   },
   {
    "file": "qissa_adhan/line-2-0.wav",
-   "seconds": 1.261,
+   "seconds": 1.211,
    "words": [
     {
      "word": "Hörst",
@@ -1013,17 +1005,17 @@
     },
     {
      "word": "du",
-     "start": 0.337
+     "start": 0.32
     },
     {
      "word": "das?",
-     "start": 0.473
+     "start": 0.446
     }
    ]
   },
   {
    "file": "qissa_adhan/line-2-1.wav",
-   "seconds": 2.087,
+   "seconds": 1.985,
    "words": [
     {
      "word": "Mama",
@@ -1031,25 +1023,25 @@
     },
     {
      "word": "...",
-     "start": 0.379
+     "start": 0.361
     },
     {
      "word": "was",
-     "start": 0.705
+     "start": 0.665
     },
     {
      "word": "ist",
-     "start": 0.938
+     "start": 0.882
     },
     {
      "word": "das?",
-     "start": 1.171
+     "start": 1.1
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-15.wav",
-   "seconds": 6.241,
+   "seconds": 5.389,
    "words": [
     {
      "word": "Zum",
@@ -1057,57 +1049,53 @@
     },
     {
      "word": "ersten",
-     "start": 0.403
+     "start": 0.372
     },
     {
      "word": "Mal",
-     "start": 0.887
+     "start": 0.807
     },
     {
      "word": "...",
-     "start": 1.19
+     "start": 1.079
     },
     {
      "word": "hört",
-     "start": 1.614
+     "start": 1.459
     },
     {
      "word": "Medina",
-     "start": 1.977
+     "start": 1.785
     },
     {
      "word": "den",
-     "start": 2.461
+     "start": 2.22
     },
     {
      "word": "*Adhan*.",
-     "start": 2.764
+     "start": 2.492
     },
     {
-     "word": "Und",
-     "start": 3.49
-    },
-    {
-     "word": "alle",
-     "start": 3.793
+     "word": "Alle",
+     "start": 3.145
     },
     {
      "word": "laufen",
-     "start": 4.156
+     "start": 3.471
     },
     {
      "word": "zur",
-     "start": 4.641
+     "start": 3.906
     },
     {
      "word": "Moschee.",
-     "start": 4.944
+     "start": 4.178
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-16.wav",
-   "seconds": 5.879,
+   "seconds": 6.558,
    "words": [
     {
      "word": "Da",
@@ -1115,75 +1103,75 @@
     },
     {
      "word": "fliegt",
-     "start": 0.251
+     "start": 0.27
     },
     {
      "word": "eine",
-     "start": 0.554
+     "start": 0.611
     },
     {
      "word": "Tür",
-     "start": 0.78
+     "start": 0.867
     },
     {
      "word": "auf.",
-     "start": 0.969
+     "start": 1.08
     },
     {
      "word": "*Umar*!",
-     "start": 1.347
+     "start": 1.506
     },
     {
      "word": "Er",
-     "start": 1.763
+     "start": 1.975
     },
     {
      "word": "rennt",
-     "start": 1.914
+     "start": 2.145
     },
     {
      "word": "so",
-     "start": 2.179
+     "start": 2.444
     },
     {
      "word": "schnell,",
-     "start": 2.33
+     "start": 2.614
     },
     {
      "word": "dass",
-     "start": 2.859
+     "start": 3.21
     },
     {
      "word": "sein",
-     "start": 3.086
+     "start": 3.466
     },
     {
      "word": "Umhang",
-     "start": 3.312
+     "start": 3.722
     },
     {
      "word": "über",
-     "start": 3.615
+     "start": 4.063
     },
     {
      "word": "den",
-     "start": 3.841
+     "start": 4.318
     },
     {
      "word": "Boden",
-     "start": 4.03
+     "start": 4.531
     },
     {
      "word": "schleift.",
-     "start": 4.295
+     "start": 4.83
     },
     {
      "word": "Er",
-     "start": 4.862
+     "start": 5.469
     },
     {
      "word": "ruft:",
-     "start": 5.013
+     "start": 5.639
     }
    ]
   },
@@ -1256,29 +1244,77 @@
   },
   {
    "file": "qissa_adhan/line-0-17.wav",
-   "seconds": 2.305,
+   "seconds": 7.234,
    "words": [
     {
-     "word": "Zwei",
+     "word": "Und",
      "start": 0.1
     },
     {
-     "word": "Männer.",
-     "start": 0.393
+     "word": "das",
+     "start": 0.351
     },
     {
-     "word": "*Ein*",
-     "start": 1.026
+     "word": "Verrückteste?",
+     "start": 0.603
     },
     {
-     "word": "Traum.",
-     "start": 1.27
+     "word": "Umar",
+     "start": 1.557
+    },
+    {
+     "word": "hatte",
+     "start": 1.859
+    },
+    {
+     "word": "diesen",
+     "start": 2.211
+    },
+    {
+     "word": "Traum",
+     "start": 2.613
+    },
+    {
+     "word": "schon",
+     "start": 2.964
+    },
+    {
+     "word": "*zwanzig",
+     "start": 3.316
+    },
+    {
+     "word": "Tage*",
+     "start": 3.768
+    },
+    {
+     "word": "vorher",
+     "start": 4.07
+    },
+    {
+     "word": "gesehen",
+     "start": 4.472
+    },
+    {
+     "word": "...",
+     "start": 4.924
+    },
+    {
+     "word": "und",
+     "start": 5.276
+    },
+    {
+     "word": "niemandem",
+     "start": 5.527
+    },
+    {
+     "word": "erzählt.",
+     "start": 6.08
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-18.wav",
-   "seconds": 6.431,
+   "seconds": 6.943,
    "words": [
     {
      "word": "Seit",
@@ -1286,65 +1322,65 @@
     },
     {
      "word": "über",
-     "start": 0.427
+     "start": 0.455
     },
     {
      "word": "*1400*",
-     "start": 0.753
+     "start": 0.81
     },
     {
      "word": "Jahren",
-     "start": 1.08
+     "start": 1.165
     },
     {
      "word": "hört",
-     "start": 1.516
+     "start": 1.639
     },
     {
      "word": "man",
-     "start": 1.842
+     "start": 1.994
     },
     {
      "word": "diese",
-     "start": 2.115
+     "start": 2.29
     },
     {
      "word": "Worte.",
-     "start": 2.496
+     "start": 2.705
     },
     {
      "word": "Fünfmal",
-     "start": 3.149
+     "start": 3.415
     },
     {
      "word": "am",
-     "start": 3.639
+     "start": 3.948
     },
     {
      "word": "Tag.",
-     "start": 3.857
+     "start": 4.184
     },
     {
      "word": "Auf",
-     "start": 4.402
+     "start": 4.776
     },
     {
      "word": "der",
-     "start": 4.674
+     "start": 5.072
     },
     {
      "word": "ganzen",
-     "start": 4.946
+     "start": 5.368
     },
     {
      "word": "Welt.",
-     "start": 5.382
+     "start": 5.842
     }
    ]
   },
   {
    "file": "qissa_adhan/line-0-19.wav",
-   "seconds": 3.725,
+   "seconds": 3.913,
    "words": [
     {
      "word": "Wusstest",
@@ -1352,39 +1388,39 @@
     },
     {
      "word": "du",
-     "start": 0.547
+     "start": 0.574
     },
     {
      "word": "das?",
-     "start": 0.726
+     "start": 0.763
     },
     {
      "word": "Schreib",
-     "start": 1.173
+     "start": 1.237
     },
     {
      "word": "*1*",
-     "start": 1.576
+     "start": 1.663
     },
     {
      "word": "oder",
-     "start": 1.71
+     "start": 1.805
     },
     {
      "word": "*2*",
-     "start": 1.978
+     "start": 2.09
     },
     {
      "word": "in",
-     "start": 2.113
+     "start": 2.232
     },
     {
      "word": "die",
-     "start": 2.291
+     "start": 2.421
     },
     {
      "word": "Kommentare.",
-     "start": 2.515
+     "start": 2.658
     }
    ]
   }

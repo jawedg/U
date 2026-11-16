@@ -1,7 +1,7 @@
 {
  "title": "Der erste Adhan – QISSA (POV)",
  "series": "QISSA",
- "note": "Erzähl-Version (Nutzerwunsch Nov. 2026): Charon erzählt spannend wie ein Geschichtenerzähler, erfundene Leute sprechen mit eigenen Stimmen (Dialoge). Worte von Sahaba und dem Propheten ﷺ werden als ZITAT gesprochen (eigene Zitat-Stimme mit Hall, vom Erzähler mit '… sagte:' angekündigt) und erscheinen zusätzlich als goldene Schrift. Der Prophet ﷺ wird nie gezeigt (nur Licht) und nicht gespielt.",
+ "note": "Erzähl-Version (Nutzerwunsch Nov. 2026): Charon erzählt spannend wie ein Geschichtenerzähler, erfundene Leute sprechen mit eigenen Stimmen (Dialoge). Worte von Sahaba und dem Propheten ﷺ werden als ZITAT gesprochen (eigene Zitat-Stimme mit Hall, vom Erzähler mit '… sagte:' angekündigt) und erscheinen zusätzlich als goldene Schrift. Der Prophet ﷺ wird nie gezeigt (nur Licht) und nicht gespielt. Version 3 (Nov. 2026, Nutzer: 'langweilig, Zuschauer wischen weg'): Einstieg mit echtem 'Allahu akbar' + Frage (Hook), kürzere Sätze, Twist am Ende (Umar 20 Tage, Abu Dawud 498).",
  "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
  "voiceParts": {
   "0": {
@@ -10,7 +10,7 @@
     "Erzaehler": "Charon",
     "Junge": "Puck"
    },
-   "notes": "# AUDIO PROFILE\nErzaehler: a gripping German storyteller, like the narrator of a dramatic historical documentary or a campfire tale. Deep, warm, captivating, close to the microphone.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, half whispering.\n## THE SCENE\nA true story from Medina in the year 622, told for a short, gripping video. The audience hangs on every word.\n### DIRECTOR'S NOTES\nErzaehler: suspenseful but with momentum (never sluggish): real pauses at '...', quieter and lower for mystery, more intensity at the turning points, a bit faster in exciting moments. Never monotone, never like reading a list. Calm and reverent whenever he mentions the Prophet.\nLeave a clear short pause between the lines."
+   "notes": "# AUDIO PROFILE\nErzaehler: a gripping German storyteller like the best viral TikTok and YouTube story channels. Deep, warm, close to the microphone, with real energy and tension in every sentence - the listener must not be able to stop listening.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, breathless.\n## THE SCENE\nA true story from Medina in the year 622, told in a fast, gripping short video. The first seconds decide everything.\n### DIRECTOR'S NOTES\nErzaehler: urgent and suspenseful with strong momentum, a brisk pace, punchy short sentences. Dramatic pauses ONLY at '...'. Drop the voice low and intense for mysteries, push with more intensity at the turning points and questions. Never slow, never monotone, never like reading a list. Calm and reverent whenever he mentions the Prophet.\nJunge: real emotion, surprised and agitated.\nLeave a clear short pause between the lines."
   },
   "1": {
    "model": "gemini-2.5-flash-preview-tts",
@@ -39,23 +39,29 @@
  },
  "sentences": [
   {
-   "id": "e1",
+   "id": "h1",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Stell dir vor ... es gibt keinen *Adhan*. Keinen einzigen."
+   "text": "Diese Worte hörst du jeden Tag. Fünfmal."
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Aber woher kommen sie? ... Aus einem *Traum*."
   },
   {
    "id": "e2",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Medina, im Jahr 622. Mitten in der Nacht."
+   "text": "Medina, im Jahr 622. Es gibt noch keinen Adhan. Niemand weiß, wann das Gebet beginnt."
   },
   {
    "id": "d1",
    "part": 0,
    "speaker": "Junge",
-   "dialog": true,
-   "text": "Hat das Gebet schon angefangen? Ich ... ich weiß es nicht!"
+   "text": "Hat das Gebet schon angefangen?! Ich ... ich weiß es nicht!",
+   "dialog": true
   },
   {
    "id": "m1",
@@ -72,12 +78,6 @@
    "text": "Keiner weiß es! Wir schätzen nur."
   },
   {
-   "id": "d2",
-   "part": 0,
-   "speaker": "Erzaehler",
-   "text": "So geht das jeden Tag. Jeder kommt, wann er denkt."
-  },
-  {
    "id": "d3",
    "part": 0,
    "speaker": "Erzaehler",
@@ -87,25 +87,25 @@
    "id": "d4",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Einer sagt: eine *Glocke*, wie die Christen. Ein anderer: ein *Horn*, wie die Juden. Oder ein *Feuer*?"
+   "text": "Mit einer *Glocke*, wie die Christen? Mit einem *Horn*, wie die Juden? Mit *Feuer*?"
   },
   {
    "id": "d5",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Doch nichts davon ... passt zu uns."
+   "text": "Nein. Nichts davon ... passt zu uns."
   },
   {
    "id": "d6",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "*Abdullah ibn Zaid* hat einen Traum."
+   "text": "Dann, in dieser Nacht ... hat *Abdullah ibn Zaid* einen Traum."
   },
   {
    "id": "d7",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Ein Mann in *grüner* Kleidung geht um ihn herum. In seiner Hand: eine *Glocke*."
+   "text": "Ein Mann in *grünen* Gewändern umkreist ihn. In seiner Hand: eine *Glocke*."
   },
   {
    "id": "e4",
@@ -147,7 +147,7 @@
    "id": "d9",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Am Morgen erzählt Abdullah dem Propheten, Friede sei mit ihm, von seinem Traum. Und der Prophet, Friede sei mit ihm, sagte:"
+   "text": "Am Morgen geht Abdullah sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:"
   },
   {
    "id": "q3",
@@ -162,14 +162,14 @@
    "id": "d10",
    "part": 0,
    "speaker": "Junge",
-   "dialog": true,
-   "text": "*Bilal*? Der Mann, den sie in Mekka so gequält haben?"
+   "text": "*Bilal*?! Der Mann, den sie in Mekka so gequält haben?",
+   "dialog": true
   },
   {
    "id": "d11",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Bilal steigt auf das *höchste Dach* ... und holt tief Luft."
+   "text": "Genau der. Bilal steigt auf das *höchste Dach* ... und holt tief Luft."
   },
   {
    "id": "f1",
@@ -189,7 +189,7 @@
    "id": "e6",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Und alle laufen zur Moschee."
+   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Alle laufen zur Moschee."
   },
   {
    "id": "d12",
@@ -210,7 +210,7 @@
    "id": "d13",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Zwei Männer. *Ein* Traum."
+   "text": "Und das Verrückteste? Umar hatte diesen Traum schon *zwanzig Tage* vorher gesehen ... und niemandem erzählt."
   },
   {
    "id": "d14",
@@ -233,9 +233,13 @@
  "athanFile": "qissa_adhan/athan_full.mp3",
  "sources": [
   "Sahih al-Bukhari 603, 604 (die Leute schätzten die Gebetszeit; Glocke wie die Christen, Horn wie die Juden, Feuer)",
-  "Sunan Abi Dawud 498 (der Prophet ﷺ sorgte sich, wie man die Leute zum Gebet sammelt)",
+  "Sunan Abi Dawud 498 (der Prophet ﷺ sorgte sich, wie man die Leute zum Gebet sammelt; Horn der Juden, Glocke der Christen; Umar hatte den Traum schon vorher gesehen und ihn zwanzig Tage verschwiegen)",
   "Sunan Abi Dawud 499, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706 (Traum von Abdullah ibn Zaid: ein Mann in zwei grünen Gewändern ging um ihn herum, trug eine Glocke; 'Verkaufst du die Glocke?' – 'Wir rufen damit zum Gebet' – 'Soll ich dir nicht etwas Besseres zeigen?'; 'Das ist ein wahrer Traum, so Allah will. Steh auf mit Bilal und bring ihm bei, was du gesehen hast, denn er hat eine kräftigere Stimme als du'; Umar hörte es in seinem Haus, kam heraus und zog seinen Umhang hinter sich her: 'Bei Dem, der dich mit der Wahrheit gesandt hat, ich habe dasselbe gesehen wie er')",
   "Sunan Abi Dawud 519 (Bilal ruft vom höchsten Haus neben der Moschee)",
   "Sira Ibn Hisham (Bilal wurde in Mekka gequält)"
- ]
+ ],
+ "tighten": {
+  "maxPause": 0.34,
+  "tempo": 1.07
+ }
 }

@@ -19,7 +19,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "src" / "qissa_adhan"
-FPS = 24
+FPS = 60          # Video (flüssig; TikTok spielt max. 60 fps)
+RFPS = int(__import__('os').environ.get('QISSA_RFPS', '30'))  # Blender-Bilder pro Sekunde (dazwischen wird interpoliert)
 ATHAN_IN = 1.9       # Startpunkt in der Aufnahme (kurz vor dem ersten „Allahu akbar“)
 ATHAN_TAKBIR = [2.3, 6.5, 10.0, 14.0]  # „Allahu akbar“ in der Aufnahme (Sekunden)
 RATE_MIN, RATE_MAX = 0.75, 1.33        # erlaubte Bild-Geschwindigkeit zwischen zwei Ankern
@@ -29,26 +30,31 @@ RATE_MIN, RATE_MAX = 0.75, 1.33        # erlaubte Bild-Geschwindigkeit zwischen 
 #   ("athan",) Adhan beginnt · ("duck",) Adhan wird leise (Reaktionen) · ("athan_end",) Adhan ist aus
 #   ("choice", s, id) Auswahltafel, währenddessen Satz id
 PLAN = [
-    ("shot", "gasse", "MEDINA · 622 · NACHT", [("p", 0.4), ("l", "e1"), ("p", 0.25), ("l", "e2"), ("p", 0.3), ("l", "d1"), ("p", 0.35)]),
-    ("shot", "moschee", None, [("p", 0.3), ("l", "m1"), ("p", 0.2), ("l", "m2"), ("p", 0.3), ("l", "d2"), ("p", 0.35)]),
-    ("shot", "beratung", None, [("p", 0.35), ("l", "d3"), ("p", 0.3), ("l", "d4"), ("p", 0.25), ("l", "d5"), ("p", 0.4)]),
-    ("card", "nacht", "IN DIESER NACHT", 1.7),
-    ("shot", "traum", None, [("p", 0.4), ("l", "d6"), ("p", 0.2), ("l", "d7"), ("p", 0.25), ("l", "e4"), ("p", 0.1), ("q", "q1"),
-                             ("p", 0.3), ("l", "e5"), ("p", 0.1), ("q", "q2"), ("p", 0.35), ("l", "d8"), ("p", 0.5)]),
-    ("card", "morgen_karte", "AM MORGEN", 1.6),
-    ("shot", "morgen", "MEDINA · MORGENDÄMMERUNG", [("p", 0.4), ("l", "d9"), ("p", 0.1), ("q", "q3"), ("p", 0.35), ("l", "d10"),
-                                                  ("p", 0.4)]),
-    ("shot", "dach_a", None, [("p", 0.3), ("l", "d11"), ("p", 0.3), ("athan",), ("p", 4.4)]),
+    # Einstieg (Hook): Ausschnitte aus späteren Einstellungen – echtes „Allahu akbar“, dann die Frage
+    ("clip", "hook_a", "dach_a", [("hook_takbir",), ("p", 2.1)]),
+    ("clip", "hook_b", "ende", [("p", 0.1), ("l", "h1"), ("p", 0.1)]),
+    ("clip", "hook_c", "traum", [("p", 0.05), ("l", "h2"), ("p", 0.25)]),
+    ("shot", "gasse", "MEDINA · 622 · NACHT", [("p", 0.25), ("l", "e2"), ("p", 0.2), ("l", "d1"), ("p", 0.25)]),
+    ("shot", "moschee", None, [("p", 0.2), ("l", "m1"), ("p", 0.15), ("l", "m2"), ("p", 0.25)]),
+    ("shot", "beratung", None, [("p", 0.2), ("l", "d3"), ("p", 0.2), ("l", "d4"), ("p", 0.2), ("l", "d5"), ("p", 0.3)]),
+    ("card", "nacht", "IN DIESER NACHT", 1.2),
+    ("shot", "traum", None, [("p", 0.3), ("l", "d6"), ("p", 0.15), ("l", "d7"), ("p", 0.2), ("l", "e4"), ("p", 0.05), ("q", "q1"),
+                             ("p", 0.2), ("l", "e5"), ("p", 0.05), ("q", "q2"), ("p", 0.25), ("l", "d8"), ("p", 0.35)]),
+    ("card", "morgen_karte", "AM MORGEN", 1.2),
+    ("shot", "morgen", "MEDINA · MORGENDÄMMERUNG", [("p", 0.3), ("l", "d9"), ("p", 0.05), ("q", "q3"), ("p", 0.2), ("l", "d10"),
+                                                  ("p", 0.3)]),
+    ("shot", "dach_a", None, [("p", 0.2), ("l", "d11"), ("p", 0.2), ("athan",), ("p", 4.4)]),
     ("shot", "dach_c", None, [("p", 4.0)]),
-    ("shot", "dach_b", None, [("duck",), ("p", 0.3), ("l", "f1"), ("p", 0.3), ("l", "k1"), ("p", 0.5), ("athan_end",)]),
-    ("shot", "dach_d", None, [("p", 0.2), ("l", "e6"), ("p", 0.4)]),
-    ("shot", "umar", None, [("p", 0.3), ("l", "d12"), ("p", 0.1), ("q", "q4"), ("p", 0.35), ("l", "d13"), ("p", 0.5)]),
-    ("shot", "ende", None, [("p", 0.3), ("l", "d14"), ("p", 0.4), ("choice", 4.4, "e7")]),
-    ("card", "logo", "QISSA", 2.4),
+    ("shot", "dach_b", None, [("duck",), ("p", 0.3), ("l", "f1"), ("p", 0.25), ("l", "k1"), ("p", 0.4), ("athan_end",)]),
+    ("shot", "dach_d", None, [("p", 0.15), ("l", "e6"), ("p", 0.25)]),
+    ("shot", "umar", None, [("p", 0.25), ("l", "d12"), ("p", 0.05), ("q", "q4"), ("p", 0.3), ("l", "d13"), ("p", 0.35)]),
+    ("shot", "ende", None, [("p", 0.2), ("choice", 4.0, "e7")]),  # d14 („Seit über 1400 Jahren …“) weggelassen: sagt schon der Einstieg
+    ("card", "logo", "QISSA", 2.0),
 ]
+HOOK_IN = 2.2   # Startpunkt in der Aufnahme für das „Allahu akbar“ im Einstieg
 # Anker je Einstellung: Zeitpunkte, an denen in Blender etwas passiert (Kopfdrehung, Tür, Adhan-Pose …)
 ANCHORS = {
-    "moschee": ["l:m1", "l:m2", "l:d2"],
+    "moschee": ["l:m1", "l:m2"],
     "beratung": ["l:d3", "e:glocke_d4", "e:horn_d4", "e:feuer_d4", "l:d5"],
     "traum": ["q:q1", "q:q2", "l:d8"],
     "morgen": ["l:d9", "q:q3", "e:bilal_d10"],
@@ -172,28 +178,43 @@ def main() -> None:
             segs.append({"id": item[1], "kind": "card", "text": item[2], "start": round(t, 3), "dur": item[3]})
             t += item[3]
             continue
-        _, sid, label, steps = item
+        if item[0] == "clip":
+            _, sid, src, steps = item
+            label = None
+        else:
+            _, sid, label, steps = item
         t0 = t
         for st in steps:
             if st[0] == "p":
                 t += st[1]
             elif st[0] in ("l", "q"):
                 t += add_line(st[1], sid, t)
-            elif st[0] in ("athan", "duck", "athan_end"):
+            elif st[0] in ("athan", "duck", "athan_end", "hook_takbir"):
                 ev[st[0]] = round(t, 3)
             elif st[0] == "choice":
                 d = add_line(st[2], sid, t + 0.3)
                 dur = max(st[1], d + 0.9)
                 choice = {"start": round(t, 3), "dur": round(dur, 3), **script["choice"]}
                 t += dur
+        if item[0] == "clip":
+            segs.append({"id": sid, "kind": "clip", "src": src, "start": round(t0, 3), "dur": round(t - t0, 3)})
+            continue
         segs.append({"id": sid, "kind": "shot", "label": label, "start": round(t0, 3), "dur": round(t - t0, 3),
-                     "frames": int(round((t - t0) * FPS))})
+                     "frames": int(round((t - t0) * RFPS))})
     total = round(t, 3)
     seg = {s["id"]: s for s in segs}
     ev["takbir"] = [round(ev["athan"] + x - ATHAN_IN, 3) for x in ATHAN_TAKBIR if ev["athan"] + x - ATHAN_IN < ev["duck"] - 1.0]
+    ev["takbir_hook"] = round(ev["hook_takbir"] + ATHAN_TAKBIR[0] - HOOK_IN, 3)
     ev["door_umar"] = round(seg["umar"]["start"] + 0.35, 3)
-    out = {"fps": FPS, "voiced": voiced, "total": total, "frames": int(round(total * FPS)), "segments": segs, "lines": lines,
-           "quotes": qs, "choice": choice, "events": ev, "athan": {"file": script["athanFile"], "in": ATHAN_IN}}
+    # Einstieg: Ausschnitt-Startzeit in der Quell-Einstellung (Sekunden ab deren Beginn)
+    src_at = {"hook_a": ev["athan"] - seg["dach_a"]["start"] - 0.15,
+              "hook_b": 1.0,
+              "hook_c": next(l["start"] for l in lines if l["id"] == "d7") - seg["traum"]["start"] + 0.5}
+    for s_ in segs:
+        if s_["kind"] == "clip":
+            s_["at"] = round(src_at[s_["id"]], 3)
+    out = {"fps": FPS, "render_fps": RFPS, "voiced": voiced, "total": total, "frames": int(round(total * FPS)), "segments": segs, "lines": lines,
+           "quotes": qs, "choice": choice, "events": ev, "athan": {"file": script["athanFile"], "in": ATHAN_IN, "hook_in": HOOK_IN}}
 
     # Zeit-Anker für schon gerenderte Einstellungen
     refp = D / "rendered_ref.json"
@@ -207,6 +228,7 @@ def main() -> None:
         if s["kind"] == "shot":
             s["map"], s["rerender"] = time_map(s["id"], s["dur"], shot_times(out, s["id"]), ref)
             s["src_frames"] = ref.get(s["id"], {}).get("frames", s["frames"])
+            s["src_dur"] = ref.get(s["id"], {}).get("dur", s["dur"])
     (D / "timeline.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{'vertont' if voiced else 'GESCHÄTZT'} · Gesamtlänge {int(total // 60)}:{total % 60:04.1f} min · {out['frames']} Bilder")
     for s in segs:

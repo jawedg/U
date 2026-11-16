@@ -8,11 +8,11 @@ M = {}
 
 
 def mats():
-    M["sand"] = Q.pbr("sand", (0.52, 0.4, 0.28), 1.0, var=0.16, scale=0.35, bump=0.06, bscale=4, spec=0.1)
+    M["sand"] = Q.pbr("sand", (0.52, 0.4, 0.28), 1.0, var=0.24, scale=0.35, bump=0.12, bscale=6, spec=0.1)
     M["court"] = Q.pbr("court", (0.5, 0.39, 0.28), 1.0, var=0.2, scale=0.7, bump=0.05, bscale=8, spec=0.1)
-    M["adobe"] = Q.pbr("adobe", (0.58, 0.44, 0.32), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.09)
-    M["adobe2"] = Q.pbr("adobe2", (0.64, 0.5, 0.37), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.07)
-    M["adobe3"] = Q.pbr("adobe3", (0.5, 0.38, 0.28), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.1)
+    M["adobe"] = Q.pbr("adobe", (0.58, 0.44, 0.32), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.09, grime=0.55, plaster=0.8)
+    M["adobe2"] = Q.pbr("adobe2", (0.64, 0.5, 0.37), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.07, grime=0.55, plaster=0.8)
+    M["adobe3"] = Q.pbr("adobe3", (0.5, 0.38, 0.28), 0.95, var=0.16, scale=0.9, bump=0.12, bscale=5, brick=0.1, grime=0.55, plaster=0.8)
     M["wood"] = Q.pbr("wood", (0.27, 0.17, 0.1), 0.75, var=0.25, scale=8, bump=0.2, bscale=40)
     M["wood_dark"] = Q.pbr("wood_dark", (0.14, 0.09, 0.06), 0.7, var=0.2, scale=8)
     M["trunk"] = Q.pbr("trunk", (0.34, 0.25, 0.17), 0.95, var=0.12, scale=4, rings=18)
@@ -24,6 +24,17 @@ def mats():
     M["win_lit"] = Q.pbr("win_lit", (0.1, 0.06, 0.03), 0.9, emit=(1.0, 0.55, 0.22), es=1.6)
     M["mount"] = Q.pbr("mount", (0.3, 0.22, 0.17), 0.95, var=0.2, scale=0.05)
     M["mat"] = Q.pbr("mat_reed", (0.55, 0.42, 0.24), 0.9, var=0.15, scale=10, rings=60)
+    M["clay"] = Q.pbr("clay", (0.56, 0.3, 0.17), 0.8, var=0.22, scale=6, bump=0.15, bscale=25)
+    M["clay2"] = Q.pbr("clay2", (0.66, 0.5, 0.36), 0.85, var=0.2, scale=6, bump=0.15, bscale=25)
+    M["basket"] = Q.pbr("basket", (0.6, 0.47, 0.27), 0.9, var=0.2, scale=12, rings=90)
+    M["sack"] = Q.pbr("sack", (0.62, 0.55, 0.42), 1.0, var=0.18, scale=5, bump=0.4, bscale=60)
+    M["rope"] = Q.pbr("rope", (0.45, 0.37, 0.24), 0.9, var=0.1)
+    M["cloth_b"] = Q.pbr("cloth_b", (0.1, 0.13, 0.32), 0.9, var=0.2, scale=4, bump=0.1, bscale=40)
+    M["cloth_r"] = Q.pbr("cloth_r", (0.42, 0.1, 0.07), 0.9, var=0.2, scale=4, bump=0.1, bscale=40)
+    M["cloth_w"] = Q.pbr("cloth_w", (0.72, 0.67, 0.56), 0.9, var=0.15, scale=4, bump=0.1, bscale=40)
+    M["stone"] = Q.pbr("stone", (0.42, 0.36, 0.3), 0.9, var=0.3, scale=8, bump=0.3, bscale=20)
+    M["leather"] = Q.pbr("leather", (0.25, 0.15, 0.08), 0.6, var=0.2, scale=6)
+    M["grain"] = Q.pbr("grain", (0.7, 0.58, 0.34), 1.0, var=0.2, scale=40, bump=0.5, bscale=200)
     return M
 
 
@@ -323,7 +334,209 @@ def town(night=True, seed=11):
             L["light"].location.z += 0.1
             info["niche_lamps"].append(L)
     info["doors"] = doors
+    props(info)
     return info
+
+
+# ---------------------------------------------------------------- Details: Krüge, Körbe, Säcke, Leitern, Sonnendächer, Wäsche, Steine
+_TPL = {}
+
+
+def _inst(key, name, loc, rot=(0, 0, 0), scale=1.0):
+    """Kopie eines Vorlage-Objekts (gleiche Geometrie, spart Speicher)."""
+    t = _TPL[key]
+    o = bpy.data.objects.new(name, t.data)
+    Q.link(o)
+    o.location = loc
+    o.rotation_euler = rot
+    o.scale = (scale, scale, scale) if isinstance(scale, (int, float)) else scale
+    return o
+
+
+def _templates():
+    if _TPL:
+        return
+    far = (0, 0, -500)
+    _TPL["amph"] = Q.loft("tpl_amph", [(0.0, 0.07, 0.07), (0.04, 0.13, 0.13), (0.2, 0.21, 0.21), (0.4, 0.2, 0.2), (0.55, 0.12, 0.12),
+                                        (0.62, 0.065, 0.065), (0.7, 0.06, 0.06), (0.72, 0.08, 0.08)], M["clay"], seg=20)
+    _TPL["pot"] = Q.loft("tpl_pot", [(0.0, 0.09, 0.09), (0.05, 0.17, 0.17), (0.17, 0.21, 0.21), (0.28, 0.17, 0.17), (0.33, 0.13, 0.13),
+                                      (0.36, 0.145, 0.145)], M["clay2"], seg=20)
+    _TPL["jar"] = Q.loft("tpl_jar", [(0.0, 0.1, 0.1), (0.1, 0.24, 0.24), (0.38, 0.28, 0.28), (0.6, 0.22, 0.22), (0.7, 0.14, 0.14),
+                                      (0.74, 0.16, 0.16)], M["clay"], seg=22)
+    _TPL["basket"] = Q.loft("tpl_basket", [(0.0, 0.17, 0.17), (0.04, 0.2, 0.2), (0.22, 0.25, 0.25), (0.24, 0.26, 0.26)], M["basket"],
+                            seg=20, cap_top=False)
+    _TPL["sack"] = Q.loft("tpl_sack", [(0.0, 0.16, 0.13), (0.06, 0.24, 0.2), (0.3, 0.25, 0.21), (0.48, 0.2, 0.17), (0.58, 0.1, 0.09),
+                                        (0.62, 0.05, 0.05), (0.66, 0.07, 0.07)], M["sack"], seg=16, folds=(7, 0.06, 0.12, 3))
+    for k in _TPL:
+        _TPL[k].location = far
+
+
+def _ladder(name, base, top, w=0.45, mat=None):
+    mat = mat or M["wood"]
+    b, t = Vector(base), Vector(top)
+    side = (t - b).cross(Vector((0, 0, 1))).normalized() * (w / 2)
+    for k, sgn in enumerate((-1, 1)):
+        Q.limb(f"{name}_r{k}", b + sgn * side, t + sgn * side, 0.03, 0.028, mat, seg=6)
+    n = int((t - b).length / 0.32)
+    for i in range(1, n):
+        p = b + (t - b) * (i / n)
+        Q.limb(f"{name}_s{i}", p - side, p + side, 0.018, 0.018, mat, seg=5)
+
+
+def _awning(name, x_wall, y0, y1, h=2.35, depth=1.15, sx=1):
+    """Sonnendach aus Palmzweigen über einer Tür: 2 Pfosten + schräge Matte + Fransen."""
+    xo = x_wall - sx * depth
+    for k, y in enumerate((y0, y1)):
+        Q.limb(f"{name}_p{k}", (xo, y, 0), (xo, y, h - 0.08), 0.045, 0.04, M["trunk"], seg=7)
+    Q.limb(f"{name}_b", (xo, y0, h - 0.05), (xo, y1, h - 0.05), 0.05, 0.05, M["trunk"], seg=7)
+    cx = (x_wall + xo) / 2
+    slope = math.atan2(0.3, depth) * (-sx)
+    Q.box(f"{name}_m", (cx, (y0 + y1) / 2, h + 0.1), (depth + 0.25, y1 - y0 + 0.4, 0.05), M["roof"], rot=(0, slope, 0), bevel=0.01)
+    rnd = random.Random(hash(name) % 9999)
+    n = int((y1 - y0 + 0.4) / 0.11)
+    for i in range(n):
+        y = y0 - 0.2 + i * 0.11
+        L_ = rnd.uniform(0.2, 0.38)
+        Q.limb(f"{name}_f{i}", (xo - sx * 0.1, y, h - 0.04), (xo - sx * 0.14, y + rnd.uniform(-0.03, 0.03), h - 0.04 - L_), 0.012, 0.004,
+               M["dead"], seg=4)
+
+
+def _laundry(name, y, x0=-2.0, x1=2.0, z=2.75, seed=0):
+    """Wäscheleine quer über die Gasse mit Tüchern (wehen leicht)."""
+    rnd = random.Random(seed)
+    sag = 0.18
+    pts = [(x0 + (x1 - x0) * i / 8, y, z - sag * math.sin(math.pi * i / 8)) for i in range(9)]
+    for i in range(8):
+        Q.limb(f"{name}_r{i}", pts[i], pts[i + 1], 0.008, 0.008, M["rope"], seg=4)
+    xs = sorted(rnd.sample([-1.3, -0.8, -0.3, 0.4, 0.9, 1.35], 3))
+    for k, x in enumerate(xs):
+        zz = z - sag * math.sin(math.pi * (x - x0) / (x1 - x0))
+        m = rnd.choice([M["cloth_b"], M["cloth_r"], M["cloth_w"], M["cloth_w"]])
+        hinge = Q.empty(f"{name}_h{k}", (x, y, zz))
+        wv, hv = rnd.uniform(0.3, 0.5), rnd.uniform(0.45, 0.75)
+        bm = bmesh.new()
+        nx, nz = 10, 8
+        g = [[bm.verts.new((wv * (i / nx - 0.5), 0.025 * math.sin(i * 1.9 + k) * (0.4 + j / nz) + 0.01 * math.sin(j * 2.3),
+                            -hv * j / nz)) for i in range(nx + 1)] for j in range(nz + 1)]
+        for j in range(nz):
+            for i in range(nx):
+                bm.faces.new((g[j][i], g[j][i + 1], g[j + 1][i + 1], g[j + 1][i]))
+        me = bpy.data.meshes.new(f"{name}_cm{k}")
+        bm.to_mesh(me)
+        bm.free()
+        for f_ in me.polygons:
+            f_.use_smooth = True
+        me.materials.append(m)
+        co = bpy.data.objects.new(f"{name}_c{k}", me)
+        Q.link(co)
+        co.parent = hinge
+        ph = rnd.uniform(0, 6.28)
+        for f in range(0, 7200, 18):  # leichtes Wehen (Zeit in Bildern bis 300 s)
+            t = f / Q.FPS
+            hinge.rotation_euler = (0.06 * math.sin(0.9 * t + ph) + 0.03 * math.sin(2.3 * t + ph * 2), 0, 0)
+            hinge.keyframe_insert("rotation_euler", frame=f + 1)
+            if f > 3000:
+                break
+
+
+def _pebbles(name, area, n, seed=0, rmin=0.02, rmax=0.07):
+    """viele kleine Steine in EINEM Objekt (schnell)."""
+    rnd = random.Random(seed)
+    bm = bmesh.new()
+    (xa, xb), (ya, yb) = area
+    for _ in range(n):
+        r = rnd.uniform(rmin, rmax)
+        c = Vector((rnd.uniform(xa, xb), rnd.uniform(ya, yb), r * 0.3))
+        g = bmesh.ops.create_icosphere(bm, subdivisions=1, radius=r)
+        sc_ = Vector((rnd.uniform(0.7, 1.3), rnd.uniform(0.7, 1.3), rnd.uniform(0.4, 0.7)))
+        for v in g["verts"]:
+            v.co = Vector((v.co.x * sc_.x, v.co.y * sc_.y, v.co.z * sc_.z)) + c + Vector([rnd.uniform(-0.15, 0.15) * r for _ in range(3)])
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    me.materials.append(M["stone"])
+    o = bpy.data.objects.new(name, me)
+    Q.link(o)
+    return o
+
+
+def dust(name, center, size, n=900, seed=0, drift=(0.25, 0.1, 0.05), dur=60.0, col=(1.0, 0.85, 0.6), strength=0.6):
+    """Staub in der Luft: winzige Flocken, die im Licht glitzern und langsam treiben (ein Objekt)."""
+    rnd = random.Random(seed)
+    bm = bmesh.new()
+    for _ in range(n):
+        c = Vector([center[i] + rnd.uniform(-size[i] / 2, size[i] / 2) for i in range(3)])
+        r = rnd.uniform(0.002, 0.006)
+        g = bmesh.ops.create_icosphere(bm, subdivisions=0, radius=r)
+        for v in g["verts"]:
+            v.co += c
+    me = bpy.data.meshes.new(name)
+    bm.to_mesh(me)
+    bm.free()
+    m = Q.pbr(f"{name}_mat", (0.8, 0.72, 0.6), 0.6, emit=col, es=strength)
+    me.materials.append(m)
+    o = bpy.data.objects.new(name, me)
+    Q.link(o)
+    o.keyframe_insert("location", frame=1)
+    o.location = Vector(drift) * dur
+    o.keyframe_insert("location", frame=int(dur * Q.FPS) + 1)
+    Q.set_interp(o, "LINEAR")
+    return o
+
+
+def props(info, seed=5, alley=True, square=True):
+    """Leben in den Gassen und um die Moschee: Krüge, Körbe, Säcke, Leitern, Sonnendächer, Wäsche, Steine, Brennholz."""
+    _templates()
+    rnd = random.Random(seed)
+    free = [(-0.5, -31.0), (1.75, -32.6), (-1.9, -27.8), (2.2, -40.0)]  # Personen / Umars Tür frei lassen
+
+    def ok(x, y, r=0.9):
+        return all((x - a) ** 2 + (y - b) ** 2 > r * r for a, b in free)
+
+    k = 0
+    if alley:
+        for i, (nm, (dr, x0, y0, w, d)) in enumerate(sorted(info.get("doors", {}).items())):
+            side = 1 if x0 > 0 else -1
+            xw = x0 if side > 0 else x0 + w  # Wandfläche zur Gasse
+            for j in range(rnd.randint(1, 3)):
+                y = rnd.uniform(y0 + 0.4, y0 + d - 0.4)
+                x = xw - side * rnd.uniform(0.22, 0.42)
+                if not ok(x, y) or abs(x) < 1.25:
+                    continue
+                kind = rnd.choice(["amph", "amph", "pot", "jar", "basket", "sack", "sack"])
+                o = _inst(kind, f"pr{k}", (x, y, 0), rot=(rnd.uniform(-0.04, 0.04), rnd.uniform(-0.04, 0.04), rnd.uniform(0, 6.28)),
+                          scale=rnd.uniform(0.85, 1.2))
+                if kind == "basket" and rnd.random() < 0.7:
+                    Q.ball(f"pr{k}_fill", (x, y, 0.2), (0.22, 0.22, 0.07), rnd.choice([M["dates"], M["grain"]]), seg=12)
+                if kind in ("amph", "pot") and rnd.random() < 0.5:  # zweiter Krug daneben
+                    _inst("pot", f"pr{k}b", (x, y + rnd.choice([-0.45, 0.45]), 0), rot=(0, 0, rnd.uniform(0, 6.28)), scale=rnd.uniform(0.8, 1.1))
+                k += 1
+            if rnd.random() < 0.28:  # Leiter zum Dach
+                y = rnd.uniform(y0 + 0.8, y0 + d - 0.8)
+                if ok(xw - side * 0.5, y, 1.2):
+                    _ladder(f"lad{i}", (xw - side * 0.85, y, 0), (xw - side * 0.08, y, 3.25))
+            if rnd.random() < 0.3:  # Sonnendach
+                yc = rnd.uniform(y0 + 1.2, y0 + d - 1.2)
+                if ok(xw - side * 0.6, yc, 1.4):
+                    _awning(f"aw{i}", xw, yc - 0.8, yc + 0.8, sx=side)
+            if rnd.random() < 0.25:  # Brennholz an der Wand
+                y = rnd.uniform(y0 + 0.5, y0 + d - 0.5)
+                if ok(xw, y):
+                    for b_ in range(rnd.randint(5, 9)):
+                        Q.cyl(f"wd{i}_{b_}", (xw - side * rnd.uniform(0.12, 0.3), y + rnd.uniform(-0.35, 0.35), 0.05 + 0.07 * (b_ % 3)),
+                              rnd.uniform(0.03, 0.05), rnd.uniform(0.6, 0.9), M["wood"], seg=7, rot=(math.pi / 2, 0, rnd.uniform(-0.2, 0.2)))
+        for j, y in enumerate((-25.5, -44.0, -58.5, -70.0)):
+            _laundry(f"wl{j}", y, seed=j + 3)
+        _pebbles("peb_alley", ((-1.9, 1.9), (-78, -18)), 900, seed=seed)
+    if square:  # Vorplatz Südtor + um die Moschee
+        for j in range(26):
+            a = rnd.uniform(0, 2 * math.pi)
+            x, y = rnd.uniform(-15, 15), rnd.choice([rnd.uniform(-19.5, -17.6), rnd.uniform(17.6, 19.5)])
+            if abs(x) < 3.0:
+                continue
+            kind = rnd.choice(["amph", "pot", "jar", "basket", "sack"])
+            _inst(kind, f"ps{j}", (x, y, 0), rot=(0, 0, a), scale=rnd.uniform(0.85, 1.15))
+        _pebbles("peb_square", ((-30, 30), (-30, 30)), 1400, seed=seed + 1, rmax=0.09)
 
 
 def join_static(keep=()):

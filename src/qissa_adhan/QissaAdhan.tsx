@@ -16,7 +16,6 @@ import {
   useCurrentFrame,
 } from "remotion";
 import TLj from "./timeline.json";
-import rendered from "./rendered.json";
 
 const TL = TLj as any;
 export const QISSA_FPS: number = TL.fps;
@@ -178,9 +177,12 @@ const Quote: React.FC<{ t: number }> = ({ t }) => {
 
 // ---------------------------------------------------------------- Titel am Anfang
 const Title: React.FC<{ t: number }> = ({ t }) => {
-  if (t > 4.2) return null;
-  const op = interpolate(t, [0, 0.35, 3.6, 4.1], [0, 1, 1, 0], clamp);
-  const pop = spring({ frame: fr(t), fps: FPS, config: { damping: 18, stiffness: 120 } });
+  const gasse = TL.segments.find((s: any) => s.id === "gasse");
+  const end = gasse ? gasse.start : 4.2;
+  if (t > end + 0.1) return null;
+  const op = interpolate(t, [0, 0.12, end - 0.45, end], [0, 1, 1, 0], clamp);
+  const pop = spring({ frame: fr(t), fps: FPS, config: { damping: 14, stiffness: 160 } });
+  const pop2 = spring({ frame: fr(t - 0.18), fps: FPS, config: { damping: 11, stiffness: 150 } });
   return (
     <div style={{ position: "absolute", top: 150, left: 40, right: 40, textAlign: "center", opacity: op }}>
       <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 6, color: "rgba(255,248,235,0.85)", marginBottom: 22 }}>
@@ -189,31 +191,30 @@ const Title: React.FC<{ t: number }> = ({ t }) => {
       <div
         style={{
           fontFamily: SANS,
-          fontWeight: 500,
-          fontSize: 54,
+          fontWeight: 600,
+          fontSize: 62,
           letterSpacing: 1,
           color: "#fbf6ec",
           textShadow: "0 2px 14px rgba(0,0,0,0.8)",
-          transform: `translateY(${(1 - pop) * 20}px)`,
+          transform: `translateY(${(1 - pop) * 24}px)`,
+          opacity: pop,
         }}
       >
-        WAS WÄRE, WENN DU DEN
+        WOHER KOMMT
       </div>
       <div
         style={{
           fontFamily: SANS,
-          fontWeight: 600,
-          fontSize: 96,
+          fontWeight: 700,
+          fontSize: 108,
           lineHeight: 1.05,
           color: GOLD,
           textShadow: "0 3px 18px rgba(0,0,0,0.75)",
-          transform: `scale(${0.9 + 0.1 * pop})`,
+          transform: `scale(${0.85 + 0.15 * pop2})`,
+          opacity: pop2,
         }}
       >
-        ERSTEN ADHAN
-      </div>
-      <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 54, color: "#fbf6ec", textShadow: "0 2px 14px rgba(0,0,0,0.8)" }}>
-        GEHÖRT HÄTTEST?
+        DER ADHAN?
       </div>
     </div>
   );
@@ -223,7 +224,7 @@ const Title: React.FC<{ t: number }> = ({ t }) => {
 const Label: React.FC<{ t: number }> = ({ t }) => {
   for (const s of TL.segments) {
     if (s.kind !== "shot" || !s.label) continue;
-    const t0 = s.start + (s.id === "gasse" ? 4.2 : 0.3);
+    const t0 = s.start + 0.3;
     const local = t - t0;
     if (local < 0 || local > 3.6) continue;
     const n = Math.floor(local / 0.05);
@@ -255,14 +256,18 @@ const Label: React.FC<{ t: number }> = ({ t }) => {
 
 // ---------------------------------------------------------------- arabischer Takbir während des Adhan
 const Takbir: React.FC<{ t: number }> = ({ t }) => {
-  const ts: number[] = TL.events.takbir;
-  for (const t0 of ts) {
+  // [Start, Dauer, Höhe]: im Einstieg tiefer (oben steht die Titel-Frage)
+  const ts: [number, number, number][] = [
+    ...(TL.events.takbir_hook != null ? [[TL.events.takbir_hook, 1.75, 560] as [number, number, number]] : []),
+    ...TL.events.takbir.map((x: number) => [x, 3.4, 230] as [number, number, number]),
+  ];
+  for (const [t0, len, top] of ts) {
     const local = t - (t0 - 0.2);
-    if (local < 0 || local > 3.4) continue;
-    const op = interpolate(local, [0, 0.5, 2.6, 3.4], [0, 1, 1, 0], clamp);
-    const sc = interpolate(local, [0, 3.4], [0.96, 1.04], clamp);
+    if (local < 0 || local > len) continue;
+    const op = interpolate(local, [0, 0.3, len - 0.5, len], [0, 1, 1, 0], clamp);
+    const sc = interpolate(local, [0, len], [0.96, 1.04], clamp);
     return (
-      <div style={{ position: "absolute", top: 230, left: 0, right: 0, textAlign: "center", opacity: op, transform: `scale(${sc})` }}>
+      <div style={{ position: "absolute", top, left: 0, right: 0, textAlign: "center", opacity: op, transform: `scale(${sc})` }}>
         <div
           style={{
             fontFamily: "Amiri, serif",
@@ -392,7 +397,7 @@ const Grain: React.FC<{ f: number }> = ({ f }) => (
     <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.5) 100%)" }} />
     <svg width="1080" height="1920" style={{ position: "absolute", opacity: 0.09, mixBlendMode: "overlay" }}>
       <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed={Math.floor(f / 2) % 50} />
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed={Math.floor(f / 5) % 50} />
         <feColorMatrix type="saturate" values="0" />
       </filter>
       <rect width="1080" height="1920" filter="url(#grain)" />
@@ -401,40 +406,46 @@ const Grain: React.FC<{ f: number }> = ({ f }) => (
 );
 
 // ---------------------------------------------------------------- Video
-const R = rendered as Record<string, number>;
+const shotStyle = { width: 1080, height: 1920, filter: "saturate(1.14) contrast(1.06) brightness(1.03)" };
 
 export const QissaAdhanVideo: React.FC = () => {
   const f = useCurrentFrame();
   const t = sec(f);
-  const ath = TL.events;
-  const athStart = fr(ath.athan);
-  const athEnd = fr(ath.athan_end);
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       {TL.segments
         .filter((s: any) => s.kind === "shot")
         .flatMap((s: any) => {
           // Zeit-Anker: zwischen zwei Ankern konstantes Tempo, an den Ankern stimmt das Bild genau (build_qissa_adhan.py)
-          const m: [number, number][] = s.map ?? [[0, 0], [s.dur, (R[s.id] ?? fr(s.dur)) / FPS]];
-          const last = (s.src_frames ?? R[s.id] ?? fr(s.dur)) - 1;
+          const m: [number, number][] = s.map ?? [[0, 0], [s.dur, s.dur]];
+          const last = fr(s.src_dur ?? s.dur) - 1;
           return m.slice(0, -1).map(([a0, b0], i) => {
             const [a1, b1] = m[i + 1];
             const from = fr(s.start + a0);
             const dur = fr(s.start + a1) - from;
             if (dur <= 0) return null;
+            const rate = (b1 - b0) / (a1 - a0);
             return (
               <Sequence key={`${s.id}-${i}`} from={from} durationInFrames={dur}>
                 <OffthreadVideo
                   src={staticFile(`qissa_adhan/shots/${s.id}.mp4`)}
                   muted
                   trimBefore={Math.min(last, Math.round(b0 * FPS))}
-                  playbackRate={(b1 - b0) / (a1 - a0)}
-                  style={{ width: 1080, height: 1920, filter: "saturate(1.16) contrast(1.07) brightness(1.03)" }}
+                  playbackRate={Math.abs(rate - 1) < 0.002 ? 1 : rate}
+                  style={shotStyle}
                 />
               </Sequence>
             );
           });
         })}
+      {/* Einstieg: kurze Ausschnitte aus späteren Einstellungen */}
+      {TL.segments
+        .filter((s: any) => s.kind === "clip")
+        .map((s: any) => (
+          <Sequence key={s.id} from={fr(s.start)} durationInFrames={fr(s.start + s.dur) - fr(s.start)}>
+            <OffthreadVideo src={staticFile(`qissa_adhan/shots/${s.src}.mp4`)} muted trimBefore={fr(s.at)} style={shotStyle} />
+          </Sequence>
+        ))}
       <Grain f={f} />
       <Title t={t} />
       <Label t={t} />
@@ -449,28 +460,8 @@ export const QissaAdhanVideo: React.FC = () => {
             <Card s={s} t={t} />
           </Sequence>
         ))}
-      {/* Ton: Atmo/Effekte, Adhan (echte Aufnahme), Stimmen */}
-      <Audio src={staticFile("qissa_adhan/sfx.wav")} volume={0.85} />
-      <Sequence from={athStart} durationInFrames={athEnd - athStart}>
-        <Audio
-          src={staticFile(TL.athan.file)}
-          startFrom={fr(TL.athan.in)}
-          volume={(lf: number) => {
-            const ts = sec(lf + athStart);
-            const fadeIn = interpolate(ts, [ath.athan, ath.athan + 0.4], [0, 1], clamp);
-            const duck = interpolate(ts, [ath.duck - 0.3, ath.duck + 0.4], [1, 0.3], clamp);
-            const fadeOut = interpolate(ts, [ath.athan_end - 1.0, ath.athan_end], [1, 0], clamp);
-            return 0.95 * fadeIn * duck * fadeOut;
-          }}
-        />
-      </Sequence>
-      {TL.lines
-        .filter((l: any) => l.file)
-        .map((l: any) => (
-          <Sequence key={l.id} from={fr(l.start)} durationInFrames={fr(l.dur + 0.4 + (l.tail ?? 0))}>
-            <Audio src={staticFile(l.file)} volume={1} />
-          </Sequence>
-        ))}
+      {/* Ton: fertig gemischt (Stimmen, Adhan, Atmo, Effekte, Begrenzer) – scripts/sfx_qissa_adhan.py */}
+      <Audio src={staticFile("qissa_adhan/master.wav")} />
     </AbsoluteFill>
   );
 };

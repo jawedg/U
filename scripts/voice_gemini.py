@@ -541,6 +541,55 @@ def word_times(text: str, dur: float) -> list[dict]:
     return timed
 
 
+def tighten(path: Path, max_pause: float = 0.38, tempo: float = 1.0, dots: bool = False) -> None:
+    """Lange Sprechpausen im Stück kürzen (spannender, flotter) und optional leicht schneller (Tonhöhe bleibt).
+    Bei '...' im Text darf die längste Pause etwas länger bleiben (dramatische Pause)."""
+    import wave
+    import numpy as np
+    with wave.open(str(path)) as w:
+        sr, ch, sw = w.getframerate(), w.getnchannels(), w.getsampwidth()
+        x = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, ch).astype(float)
+    hop = int(0.01 * sr)
+    n = len(x) // hop
+    rms = np.array([np.sqrt(np.mean(x[i * hop:(i + 1) * hop] ** 2)) for i in range(n)]) + 1e-9
+    db = 20 * np.log10(rms / (rms.max()))
+    quiet = db < -38
+    runs, i = [], 0
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            if i > 0 and j < n:  # nur Pausen IM Stück (Rand macht clean())
+                runs.append((i * hop, j * hop))
+            i = j
+        else:
+            i += 1
+    long_run = max(runs, key=lambda r: r[1] - r[0]) if runs else None
+    keep, last, xf = [], 0, int(0.012 * sr)
+    for a, b in runs:
+        lim = int((0.62 if dots and (a, b) == long_run else max_pause) * sr)
+        if b - a <= lim:
+            continue
+        h = lim // 2
+        keep.append(x[last:a + h])
+        last = b - h
+    keep.append(x[last:])
+    y = keep[0]
+    for k in keep[1:]:  # kurze Überblendung gegen Knackser
+        r = np.linspace(0, 1, xf)[:, None]
+        y = np.concatenate([y[:-xf], y[-xf:] * (1 - r) + k[:xf] * r, k[xf:]])
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(ch)
+        w.setsampwidth(sw)
+        w.setframerate(sr)
+        w.writeframes(np.clip(y, -32768, 32767).astype(np.int16).tobytes())
+    if abs(tempo - 1.0) > 1e-3:
+        tmp = path.with_suffix(".tempo.wav")
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(path), "-af", f"atempo={tempo}", str(tmp)], check=True)
+        tmp.replace(path)
+
+
 HALL_TAIL = 2.4  # Sekunden Nachhall nach dem Zitat
 
 
@@ -671,6 +720,9 @@ def main() -> None:
             lines.append({"file": "", "seconds": float(script.get("athanSeconds", 10)), "words": []})
             continue
         f = fmap[i]
+        tg = script.get("tighten")
+        if tg and s.get("fx") != "hall":
+            tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
         dur = clean(f, vfilter)
         ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times(s["text"], dur)}
         if s.get("fx") == "hall":

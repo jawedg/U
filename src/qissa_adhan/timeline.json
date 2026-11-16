@@ -1,190 +1,197 @@
 {
- "fps": 24,
+ "fps": 60,
+ "render_fps": 30,
  "voiced": true,
- "total": 139.811,
- "frames": 3355,
+ "total": 129.897,
+ "frames": 7794,
  "segments": [
+  {
+   "id": "hook_a",
+   "kind": "clip",
+   "src": "dach_a",
+   "start": 0.0,
+   "dur": 2.1,
+   "at": 5.299
+  },
+  {
+   "id": "hook_b",
+   "kind": "clip",
+   "src": "ende",
+   "start": 2.1,
+   "dur": 4.06,
+   "at": 1.0
+  },
+  {
+   "id": "hook_c",
+   "kind": "clip",
+   "src": "traum",
+   "start": 6.16,
+   "dur": 3.36,
+   "at": 4.661
+  },
   {
    "id": "gasse",
    "kind": "shot",
    "label": "MEDINA · 622 · NACHT",
-   "start": 0.0,
-   "dur": 15.679,
-   "frames": 376,
+   "start": 9.52,
+   "dur": 10.272,
+   "frames": 308,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     15.679,
+     10.272,
      15.679
     ]
    ],
-   "rerender": false,
-   "src_frames": 376
+   "rerender": true,
+   "src_frames": 376,
+   "src_dur": 15.679
   },
   {
    "id": "moschee",
    "kind": "shot",
    "label": null,
-   "start": 15.679,
-   "dur": 11.796,
-   "frames": 283,
+   "start": 19.792,
+   "dur": 7.343,
+   "frames": 220,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     0.3,
-     0.3
-    ],
-    [
-     3.833,
-     3.833
-    ],
-    [
-     7.982,
-     7.982
-    ],
-    [
-     11.796,
+     7.343,
      11.796
     ]
    ],
-   "rerender": false,
-   "src_frames": 283
+   "rerender": true,
+   "src_frames": 283,
+   "src_dur": 11.796
   },
   {
    "id": "beratung",
    "kind": "shot",
    "label": null,
-   "start": 27.475,
-   "dur": 18.423,
-   "frames": 442,
+   "start": 27.135,
+   "dur": 13.413,
+   "frames": 402,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     8.713,
+     6.034,
      7.327
     ],
     [
-     18.423,
+     7.987,
+     9.312
+    ],
+    [
+     9.472,
+     11.066
+    ],
+    [
+     13.413,
      14.81
     ]
    ],
    "rerender": false,
-   "src_frames": 355
+   "src_frames": 355,
+   "src_dur": 14.81
   },
   {
    "id": "nacht",
    "kind": "card",
    "text": "IN DIESER NACHT",
-   "start": 45.898,
-   "dur": 1.7
+   "start": 40.548,
+   "dur": 1.2
   },
   {
    "id": "traum",
    "kind": "shot",
    "label": null,
-   "start": 47.598,
-   "dur": 20.208,
-   "frames": 485,
+   "start": 41.748,
+   "dur": 20.683,
+   "frames": 620,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     8.807,
-     7.3
-    ],
-    [
-     13.384,
-     11.65
-    ],
-    [
-     20.208,
+     20.683,
      19.7
     ]
    ],
-   "rerender": false,
-   "src_frames": 473
+   "rerender": true,
+   "src_frames": 473,
+   "src_dur": 19.7
   },
   {
    "id": "morgen_karte",
    "kind": "card",
    "text": "AM MORGEN",
-   "start": 67.806,
-   "dur": 1.6
+   "start": 62.431,
+   "dur": 1.2
   },
   {
    "id": "morgen",
    "kind": "shot",
    "label": "MEDINA · MORGENDÄMMERUNG",
-   "start": 69.406,
-   "dur": 20.663,
-   "frames": 496,
+   "start": 63.631,
+   "dur": 18.226,
+   "frames": 547,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     0.4,
-     0.4
-    ],
-    [
-     7.989,
-     7.989
-    ],
-    [
-     17.745,
+     14.876,
      17.745
     ],
     [
-     20.663,
+     18.226,
      20.663
     ]
    ],
-   "rerender": false,
-   "src_frames": 496
+   "rerender": true,
+   "src_frames": 496,
+   "src_dur": 20.663
   },
   {
    "id": "dach_a",
    "kind": "shot",
    "label": null,
-   "start": 90.069,
-   "dur": 8.587,
-   "frames": 206,
+   "start": 81.857,
+   "dur": 9.849,
+   "frames": 295,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     4.187,
-     3.94
-    ],
-    [
-     8.587,
+     9.849,
      8.34
     ]
    ],
    "rerender": false,
-   "src_frames": 200
+   "src_frames": 200,
+   "src_dur": 8.34
   },
   {
    "id": "dach_c",
    "kind": "shot",
    "label": null,
-   "start": 98.656,
+   "start": 91.706,
    "dur": 4.0,
-   "frames": 96,
+   "frames": 120,
    "map": [
     [
      0.0,
@@ -196,149 +203,182 @@
     ]
    ],
    "rerender": false,
-   "src_frames": 96
+   "src_frames": 96,
+   "src_dur": 4.0
   },
   {
    "id": "dach_b",
    "kind": "shot",
    "label": null,
-   "start": 102.656,
-   "dur": 3.848,
-   "frames": 92,
+   "start": 95.706,
+   "dur": 3.546,
+   "frames": 106,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     3.848,
+     3.546,
      4.2
     ]
    ],
    "rerender": false,
-   "src_frames": 101
+   "src_frames": 101,
+   "src_dur": 4.2
   },
   {
    "id": "dach_d",
    "kind": "shot",
    "label": null,
-   "start": 106.504,
-   "dur": 6.541,
-   "frames": 157,
+   "start": 99.252,
+   "dur": 5.489,
+   "frames": 165,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     6.541,
+     5.489,
      6.541
     ]
    ],
    "rerender": false,
-   "src_frames": 157
+   "src_frames": 157,
+   "src_dur": 6.541
   },
   {
    "id": "umar",
    "kind": "shot",
    "label": null,
-   "start": 113.045,
-   "dur": 13.135,
-   "frames": 315,
+   "start": 104.741,
+   "dur": 18.443,
+   "frames": 553,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     0.35,
-     0.35
-    ],
-    [
-     13.135,
+     18.443,
      13.04
     ]
    ],
-   "rerender": false,
-   "src_frames": 313
+   "rerender": true,
+   "src_frames": 313,
+   "src_dur": 13.04
   },
   {
    "id": "ende",
    "kind": "shot",
    "label": null,
-   "start": 126.18,
-   "dur": 11.231,
-   "frames": 270,
+   "start": 123.184,
+   "dur": 4.713,
+   "frames": 141,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     11.231,
+     4.713,
      10.9
     ]
    ],
-   "rerender": false,
-   "src_frames": 262
+   "rerender": true,
+   "src_frames": 262,
+   "src_dur": 10.9
   },
   {
    "id": "logo",
    "kind": "card",
    "text": "QISSA",
-   "start": 137.411,
-   "dur": 2.4
+   "start": 127.897,
+   "dur": 2.0
   }
  ],
  "lines": [
   {
-   "id": "e1",
-   "shot": "gasse",
-   "start": 0.4,
-   "dur": 5.83,
+   "id": "h1",
+   "shot": "hook_b",
+   "start": 2.2,
+   "dur": 3.86,
    "file": "qissa_adhan/line-0-0.wav",
-   "text": "Stell dir vor ... es gibt keinen *Adhan*. Keinen einzigen.",
+   "text": "Diese Worte hörst du jeden Tag. Fünfmal.",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "Stell",
+     "word": "Diese",
      "start": 0.1
     },
     {
-     "word": "dir",
-     "start": 0.607
+     "word": "Worte",
+     "start": 0.551
     },
     {
-     "word": "vor",
-     "start": 0.97
+     "word": "hörst",
+     "start": 1.003
+    },
+    {
+     "word": "du",
+     "start": 1.454
+    },
+    {
+     "word": "jeden",
+     "start": 1.712
+    },
+    {
+     "word": "Tag.",
+     "start": 2.163
+    },
+    {
+     "word": "Fünfmal.",
+     "start": 2.808
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h2",
+   "shot": "hook_c",
+   "start": 6.21,
+   "dur": 3.06,
+   "file": "qissa_adhan/line-0-1.wav",
+   "text": "Aber woher kommen sie? ... Aus einem *Traum*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Aber",
+     "start": 0.1
+    },
+    {
+     "word": "woher",
+     "start": 0.372
+    },
+    {
+     "word": "kommen",
+     "start": 0.689
+    },
+    {
+     "word": "sie?",
+     "start": 1.052
     },
     {
      "word": "...",
-     "start": 1.332
+     "start": 1.505
     },
     {
-     "word": "es",
-     "start": 1.839
+     "word": "Aus",
+     "start": 1.822
     },
     {
-     "word": "gibt",
-     "start": 2.129
+     "word": "einem",
+     "start": 2.049
     },
     {
-     "word": "keinen",
-     "start": 2.564
-    },
-    {
-     "word": "*Adhan*.",
-     "start": 3.144
-    },
-    {
-     "word": "Keinen",
-     "start": 4.013
-    },
-    {
-     "word": "einzigen.",
-     "start": 4.593
+     "word": "*Traum*.",
+     "start": 2.366
     }
    ],
    "tail": 0
@@ -346,10 +386,10 @@
   {
    "id": "e2",
    "shot": "gasse",
-   "start": 6.48,
-   "dur": 5.3,
-   "file": "qissa_adhan/line-0-1.wav",
-   "text": "Medina, im Jahr 622. Mitten in der Nacht.",
+   "start": 9.77,
+   "dur": 6.814,
+   "file": "qissa_adhan/line-0-2.wav",
+   "text": "Medina, im Jahr 622. Es gibt noch keinen Adhan. Niemand weiß, wann das Gebet beginnt.",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -358,31 +398,59 @@
     },
     {
      "word": "im",
-     "start": 1.159
+     "start": 0.805
     },
     {
      "word": "Jahr",
-     "start": 1.485
+     "start": 1.022
     },
     {
      "word": "622.",
-     "start": 1.973
+     "start": 1.348
     },
     {
-     "word": "Mitten",
-     "start": 2.788
+     "word": "Es",
+     "start": 1.89
     },
     {
-     "word": "in",
-     "start": 3.439
+     "word": "gibt",
+     "start": 2.107
     },
     {
-     "word": "der",
-     "start": 3.765
+     "word": "noch",
+     "start": 2.432
     },
     {
-     "word": "Nacht.",
-     "start": 4.172
+     "word": "keinen",
+     "start": 2.758
+    },
+    {
+     "word": "Adhan.",
+     "start": 3.192
+    },
+    {
+     "word": "Niemand",
+     "start": 3.843
+    },
+    {
+     "word": "weiß,",
+     "start": 4.331
+    },
+    {
+     "word": "wann",
+     "start": 4.928
+    },
+    {
+     "word": "das",
+     "start": 5.253
+    },
+    {
+     "word": "Gebet",
+     "start": 5.524
+    },
+    {
+     "word": "beginnt.",
+     "start": 5.904
     }
    ],
    "tail": 0
@@ -390,10 +458,10 @@
   {
    "id": "d1",
    "shot": "gasse",
-   "start": 12.08,
-   "dur": 3.249,
-   "file": "qissa_adhan/line-0-2.wav",
-   "text": "Hat das Gebet schon angefangen? Ich ... ich weiß es nicht!",
+   "start": 16.784,
+   "dur": 2.758,
+   "file": "qissa_adhan/line-0-3.wav",
+   "text": "Hat das Gebet schon angefangen?! Ich ... ich weiß es nicht!",
    "speaker": "Junge",
    "words": [
     {
@@ -402,43 +470,43 @@
     },
     {
      "word": "das",
-     "start": 0.287
+     "start": 0.257
     },
     {
      "word": "Gebet",
-     "start": 0.475
+     "start": 0.414
     },
     {
      "word": "schon",
-     "start": 0.737
+     "start": 0.633
     },
     {
-     "word": "angefangen?",
-     "start": 1.0
+     "word": "angefangen?!",
+     "start": 0.852
     },
     {
      "word": "Ich",
-     "start": 1.637
+     "start": 1.385
     },
     {
      "word": "...",
-     "start": 1.824
+     "start": 1.542
     },
     {
      "word": "ich",
-     "start": 2.087
+     "start": 1.762
     },
     {
      "word": "weiß",
-     "start": 2.274
+     "start": 1.918
     },
     {
      "word": "es",
-     "start": 2.499
+     "start": 2.107
     },
     {
      "word": "nicht!",
-     "start": 2.649
+     "start": 2.232
     }
    ],
    "tail": 0,
@@ -447,8 +515,8 @@
   {
    "id": "m1",
    "shot": "moschee",
-   "start": 15.979,
-   "dur": 3.333,
+   "start": 19.992,
+   "dur": 3.122,
    "file": "qissa_adhan/line-1-0.wav",
    "text": "Na, mein Junge? Wieder zu spät ... oder zu früh?",
    "speaker": "Alter",
@@ -459,39 +527,39 @@
     },
     {
      "word": "mein",
-     "start": 0.48
+     "start": 0.454
     },
     {
      "word": "Junge?",
-     "start": 0.734
+     "start": 0.69
     },
     {
      "word": "Wieder",
-     "start": 1.24
+     "start": 1.162
     },
     {
      "word": "zu",
-     "start": 1.578
+     "start": 1.477
     },
     {
      "word": "spät",
-     "start": 1.747
+     "start": 1.634
     },
     {
      "word": "...",
-     "start": 2.001
+     "start": 1.871
     },
     {
      "word": "oder",
-     "start": 2.296
+     "start": 2.146
     },
     {
      "word": "zu",
-     "start": 2.55
+     "start": 2.382
     },
     {
      "word": "früh?",
-     "start": 2.719
+     "start": 2.539
     }
    ],
    "tail": 0,
@@ -500,8 +568,8 @@
   {
    "id": "m2",
    "shot": "moschee",
-   "start": 19.512,
-   "dur": 3.849,
+   "start": 23.264,
+   "dur": 3.621,
    "file": "qissa_adhan/line-1-1.wav",
    "text": "Keiner weiß es! Wir schätzen nur.",
    "speaker": "Mann",
@@ -512,85 +580,33 @@
     },
     {
      "word": "weiß",
-     "start": 0.7
+     "start": 0.662
     },
     {
      "word": "es!",
-     "start": 1.15
+     "start": 1.083
     },
     {
      "word": "Wir",
-     "start": 1.824
+     "start": 1.715
     },
     {
      "word": "schätzen",
-     "start": 2.199
+     "start": 2.066
     },
     {
      "word": "nur.",
-     "start": 2.949
+     "start": 2.768
     }
    ],
    "tail": 0,
    "dialog": true
   },
   {
-   "id": "d2",
-   "shot": "moschee",
-   "start": 23.661,
-   "dur": 3.464,
-   "file": "qissa_adhan/line-0-3.wav",
-   "text": "So geht das jeden Tag. Jeder kommt, wann er denkt.",
-   "speaker": "Erzaehler",
-   "words": [
-    {
-     "word": "So",
-     "start": 0.1
-    },
-    {
-     "word": "geht",
-     "start": 0.276
-    },
-    {
-     "word": "das",
-     "start": 0.54
-    },
-    {
-     "word": "jeden",
-     "start": 0.76
-    },
-    {
-     "word": "Tag.",
-     "start": 1.069
-    },
-    {
-     "word": "Jeder",
-     "start": 1.509
-    },
-    {
-     "word": "kommt,",
-     "start": 1.817
-    },
-    {
-     "word": "wann",
-     "start": 2.345
-    },
-    {
-     "word": "er",
-     "start": 2.609
-    },
-    {
-     "word": "denkt.",
-     "start": 2.786
-    }
-   ],
-   "tail": 0
-  },
-  {
    "id": "d3",
    "shot": "beratung",
-   "start": 27.825,
-   "dur": 6.716,
+   "start": 27.335,
+   "dur": 5.065,
    "file": "qissa_adhan/line-0-4.wav",
    "text": "Der Prophet, Friede sei mit ihm, macht sich Sorgen. Wie ruft man die Menschen zum *Gebet*?",
    "speaker": "Erzaehler",
@@ -601,63 +617,63 @@
     },
     {
      "word": "Prophet,",
-     "start": 0.367
+     "start": 0.299
     },
     {
      "word": "Friede",
-     "start": 1.115
+     "start": 0.856
     },
     {
      "word": "sei",
-     "start": 1.543
+     "start": 1.174
     },
     {
      "word": "mit",
-     "start": 1.81
+     "start": 1.373
     },
     {
      "word": "ihm,",
-     "start": 2.077
+     "start": 1.572
     },
     {
      "word": "macht",
-     "start": 2.612
+     "start": 1.97
     },
     {
      "word": "sich",
-     "start": 2.986
+     "start": 2.249
     },
     {
      "word": "Sorgen.",
-     "start": 3.306
+     "start": 2.488
     },
     {
      "word": "Wie",
-     "start": 4.001
+     "start": 3.005
     },
     {
      "word": "ruft",
-     "start": 4.268
+     "start": 3.204
     },
     {
      "word": "man",
-     "start": 4.589
+     "start": 3.443
     },
     {
      "word": "die",
-     "start": 4.856
+     "start": 3.642
     },
     {
      "word": "Menschen",
-     "start": 5.123
+     "start": 3.841
     },
     {
      "word": "zum",
-     "start": 5.658
+     "start": 4.239
     },
     {
      "word": "*Gebet*?",
-     "start": 5.925
+     "start": 4.438
     }
    ],
    "tail": 0
@@ -665,79 +681,67 @@
   {
    "id": "d4",
    "shot": "beratung",
-   "start": 34.841,
-   "dur": 7.625,
+   "start": 32.6,
+   "dur": 4.626,
    "file": "qissa_adhan/line-0-5.wav",
-   "text": "Einer sagt: eine *Glocke*, wie die Christen. Ein anderer: ein *Horn*, wie die Juden. Oder ein *Feuer*?",
+   "text": "Mit einer *Glocke*, wie die Christen? Mit einem *Horn*, wie die Juden? Mit *Feuer*?",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "Einer",
+     "word": "Mit",
      "start": 0.1
     },
     {
-     "word": "sagt:",
-     "start": 0.464
-    },
-    {
-     "word": "eine",
-     "start": 1.035
+     "word": "einer",
+     "start": 0.295
     },
     {
      "word": "*Glocke*,",
-     "start": 1.347
+     "start": 0.569
     },
     {
      "word": "wie",
-     "start": 2.022
+     "start": 1.077
     },
     {
      "word": "die",
-     "start": 2.281
+     "start": 1.272
     },
     {
-     "word": "Christen.",
-     "start": 2.541
+     "word": "Christen?",
+     "start": 1.467
     },
     {
-     "word": "Ein",
-     "start": 3.32
+     "word": "Mit",
+     "start": 2.053
     },
     {
-     "word": "anderer:",
-     "start": 3.58
-    },
-    {
-     "word": "ein",
-     "start": 4.307
+     "word": "einem",
+     "start": 2.249
     },
     {
      "word": "*Horn*,",
-     "start": 4.567
+     "start": 2.522
     },
     {
      "word": "wie",
-     "start": 5.138
+     "start": 2.952
     },
     {
      "word": "die",
-     "start": 5.398
+     "start": 3.147
     },
     {
-     "word": "Juden.",
-     "start": 5.657
+     "word": "Juden?",
+     "start": 3.343
     },
     {
-     "word": "Oder",
-     "start": 6.281
-    },
-    {
-     "word": "ein",
-     "start": 6.592
+     "word": "Mit",
+     "start": 3.811
     },
     {
      "word": "*Feuer*?",
-     "start": 6.852
+     "start": 4.007
     }
    ],
    "tail": 0
@@ -745,39 +749,39 @@
   {
    "id": "d5",
    "shot": "beratung",
-   "start": 42.716,
-   "dur": 2.782,
+   "start": 37.426,
+   "dur": 2.822,
    "file": "qissa_adhan/line-0-6.wav",
-   "text": "Doch nichts davon ... passt zu uns.",
+   "text": "Nein. Nichts davon ... passt zu uns.",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "Doch",
+     "word": "Nein.",
      "start": 0.1
     },
     {
-     "word": "nichts",
-     "start": 0.41
+     "word": "Nichts",
+     "start": 0.624
     },
     {
      "word": "davon",
-     "start": 0.823
+     "start": 1.005
     },
     {
      "word": "...",
-     "start": 1.185
+     "start": 1.339
     },
     {
      "word": "passt",
-     "start": 1.547
+     "start": 1.672
     },
     {
      "word": "zu",
-     "start": 1.908
+     "start": 2.005
     },
     {
      "word": "uns.",
-     "start": 2.115
+     "start": 2.196
     }
    ],
    "tail": 0
@@ -785,35 +789,55 @@
   {
    "id": "d6",
    "shot": "traum",
-   "start": 47.998,
-   "dur": 2.194,
+   "start": 42.048,
+   "dur": 3.711,
    "file": "qissa_adhan/line-0-7.wav",
-   "text": "*Abdullah ibn Zaid* hat einen Traum.",
+   "text": "Dann, in dieser Nacht ... hat *Abdullah ibn Zaid* einen Traum.",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "*Abdullah",
+     "word": "Dann,",
      "start": 0.1
     },
     {
-     "word": "ibn",
-     "start": 0.532
+     "word": "in",
+     "start": 0.564
     },
     {
-     "word": "Zaid*",
-     "start": 0.748
+     "word": "dieser",
+     "start": 0.733
+    },
+    {
+     "word": "Nacht",
+     "start": 1.071
+    },
+    {
+     "word": "...",
+     "start": 1.366
     },
     {
      "word": "hat",
-     "start": 1.007
+     "start": 1.662
+    },
+    {
+     "word": "*Abdullah",
+     "start": 1.873
+    },
+    {
+     "word": "ibn",
+     "start": 2.295
+    },
+    {
+     "word": "Zaid*",
+     "start": 2.506
     },
     {
      "word": "einen",
-     "start": 1.223
+     "start": 2.759
     },
     {
      "word": "Traum.",
-     "start": 1.525
+     "start": 3.055
     }
    ],
    "tail": 0
@@ -821,10 +845,10 @@
   {
    "id": "d7",
    "shot": "traum",
-   "start": 50.392,
-   "dur": 4.592,
+   "start": 45.909,
+   "dur": 4.39,
    "file": "qissa_adhan/line-0-8.wav",
-   "text": "Ein Mann in *grüner* Kleidung geht um ihn herum. In seiner Hand: eine *Glocke*.",
+   "text": "Ein Mann in *grünen* Gewändern umkreist ihn. In seiner Hand: eine *Glocke*.",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -833,55 +857,47 @@
     },
     {
      "word": "Mann",
-     "start": 0.313
+     "start": 0.316
     },
     {
      "word": "in",
-     "start": 0.568
+     "start": 0.574
     },
     {
-     "word": "*grüner*",
-     "start": 0.738
+     "word": "*grünen*",
+     "start": 0.747
     },
     {
-     "word": "Kleidung",
-     "start": 1.079
+     "word": "Gewändern",
+     "start": 1.092
     },
     {
-     "word": "geht",
-     "start": 1.505
+     "word": "umkreist",
+     "start": 1.566
     },
     {
-     "word": "um",
-     "start": 1.76
-    },
-    {
-     "word": "ihn",
-     "start": 1.93
-    },
-    {
-     "word": "herum.",
-     "start": 2.143
+     "word": "ihn.",
+     "start": 1.997
     },
     {
      "word": "In",
-     "start": 2.654
+     "start": 2.429
     },
     {
      "word": "seiner",
-     "start": 2.824
+     "start": 2.601
     },
     {
      "word": "Hand:",
-     "start": 3.165
+     "start": 2.946
     },
     {
      "word": "eine",
-     "start": 3.633
+     "start": 3.421
     },
     {
      "word": "*Glocke*.",
-     "start": 3.888
+     "start": 3.679
     }
    ],
    "tail": 0
@@ -889,8 +905,8 @@
   {
    "id": "e4",
    "shot": "traum",
-   "start": 55.234,
-   "dur": 1.071,
+   "start": 50.499,
+   "dur": 1.264,
    "file": "qissa_adhan/line-0-9.wav",
    "text": "Abdullah fragt ihn:",
    "speaker": "Erzaehler",
@@ -901,11 +917,11 @@
     },
     {
      "word": "fragt",
-     "start": 0.404
+     "start": 0.476
     },
     {
      "word": "ihn:",
-     "start": 0.617
+     "start": 0.739
     }
    ],
    "tail": 0
@@ -913,7 +929,7 @@
   {
    "id": "q1",
    "shot": "traum",
-   "start": 56.405,
+   "start": 51.813,
    "dur": 3.243,
    "file": "qissa_adhan/line-3-0.wav",
    "text": "Verkaufst du mir die Glocke? Wir wollen damit zum Gebet rufen.",
@@ -971,8 +987,8 @@
   {
    "id": "e5",
    "shot": "traum",
-   "start": 59.948,
-   "dur": 0.934,
+   "start": 55.256,
+   "dur": 1.363,
    "file": "qissa_adhan/line-0-10.wav",
    "text": "Doch der Mann sagt:",
    "speaker": "Erzaehler",
@@ -983,15 +999,15 @@
     },
     {
      "word": "der",
-     "start": 0.247
+     "start": 0.338
     },
     {
      "word": "Mann",
-     "start": 0.369
+     "start": 0.537
     },
     {
      "word": "sagt:",
-     "start": 0.515
+     "start": 0.775
     }
    ],
    "tail": 0
@@ -999,7 +1015,7 @@
   {
    "id": "q2",
    "shot": "traum",
-   "start": 60.982,
+   "start": 56.669,
    "dur": 1.824,
    "file": "qissa_adhan/line-3-1.wav",
    "text": "Soll ich dir nicht etwas Besseres zeigen?",
@@ -1041,8 +1057,8 @@
   {
    "id": "d8",
    "shot": "traum",
-   "start": 63.156,
-   "dur": 4.15,
+   "start": 58.743,
+   "dur": 3.338,
    "file": "qissa_adhan/line-0-11.wav",
    "text": "Und er lehrt ihn Worte ... die heute jeder Muslim kennt.",
    "speaker": "Erzaehler",
@@ -1053,43 +1069,43 @@
     },
     {
      "word": "er",
-     "start": 0.364
+     "start": 0.309
     },
     {
      "word": "lehrt",
-     "start": 0.574
+     "start": 0.476
     },
     {
      "word": "ihn",
-     "start": 0.943
+     "start": 0.768
     },
     {
      "word": "Worte",
-     "start": 1.207
+     "start": 0.976
     },
     {
      "word": "...",
-     "start": 1.576
+     "start": 1.269
     },
     {
      "word": "die",
-     "start": 1.945
+     "start": 1.561
     },
     {
      "word": "heute",
-     "start": 2.208
+     "start": 1.769
     },
     {
      "word": "jeder",
-     "start": 2.577
+     "start": 2.062
     },
     {
      "word": "Muslim",
-     "start": 2.946
+     "start": 2.354
     },
     {
      "word": "kennt.",
-     "start": 3.368
+     "start": 2.688
     }
    ],
    "tail": 0
@@ -1097,10 +1113,10 @@
   {
    "id": "d9",
    "shot": "morgen",
-   "start": 69.806,
-   "dur": 7.489,
+   "start": 63.931,
+   "dur": 4.92,
    "file": "qissa_adhan/line-0-12.wav",
-   "text": "Am Morgen erzählt Abdullah dem Propheten, Friede sei mit ihm, von seinem Traum. Und der Prophet, Friede sei mit ihm, sagte:",
+   "text": "Am Morgen geht Abdullah sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -1109,83 +1125,59 @@
     },
     {
      "word": "Morgen",
-     "start": 0.271
+     "start": 0.261
     },
     {
-     "word": "erzählt",
-     "start": 0.614
+     "word": "geht",
+     "start": 0.583
     },
     {
      "word": "Abdullah",
-     "start": 1.0
+     "start": 0.825
     },
     {
-     "word": "dem",
-     "start": 1.428
+     "word": "sofort",
+     "start": 1.227
+    },
+    {
+     "word": "zum",
+     "start": 1.549
     },
     {
      "word": "Propheten,",
-     "start": 1.642
+     "start": 1.751
     },
     {
      "word": "Friede",
-     "start": 2.328
+     "start": 2.395
     },
     {
      "word": "sei",
-     "start": 2.67
+     "start": 2.717
     },
     {
      "word": "mit",
-     "start": 2.884
+     "start": 2.918
     },
     {
-     "word": "ihm,",
-     "start": 3.099
-    },
-    {
-     "word": "von",
-     "start": 3.527
-    },
-    {
-     "word": "seinem",
-     "start": 3.741
-    },
-    {
-     "word": "Traum.",
-     "start": 4.084
+     "word": "ihm.",
+     "start": 3.12
     },
     {
      "word": "Und",
-     "start": 4.598
+     "start": 3.522
     },
     {
      "word": "der",
-     "start": 4.812
+     "start": 3.724
     },
     {
-     "word": "Prophet,",
-     "start": 5.026
-    },
-    {
-     "word": "Friede",
-     "start": 5.626
-    },
-    {
-     "word": "sei",
-     "start": 5.969
-    },
-    {
-     "word": "mit",
-     "start": 6.183
-    },
-    {
-     "word": "ihm,",
-     "start": 6.397
+     "word": "Prophet",
+     "start": 3.925
     },
     {
      "word": "sagte:",
-     "start": 6.825
+     "start": 4.287
     }
    ],
    "tail": 0
@@ -1193,7 +1185,7 @@
   {
    "id": "q3",
    "shot": "morgen",
-   "start": 77.395,
+   "start": 68.901,
    "dur": 9.306,
    "file": "qissa_adhan/line-3-2.wav",
    "text": "Das ist ein wahrer Traum, so Allah will. Steh auf mit Bilal und bring ihm bei, was du gesehen hast. Denn seine Stimme ist kräftiger als deine.",
@@ -1315,51 +1307,51 @@
   {
    "id": "d10",
    "shot": "morgen",
-   "start": 87.051,
-   "dur": 2.618,
+   "start": 78.407,
+   "dur": 3.15,
    "file": "qissa_adhan/line-0-13.wav",
-   "text": "*Bilal*? Der Mann, den sie in Mekka so gequält haben?",
+   "text": "*Bilal*?! Der Mann, den sie in Mekka so gequält haben?",
    "speaker": "Junge",
    "words": [
     {
-     "word": "*Bilal*?",
+     "word": "*Bilal*?!",
      "start": 0.1
     },
     {
      "word": "Der",
-     "start": 0.484
+     "start": 0.57
     },
     {
      "word": "Mann,",
-     "start": 0.644
+     "start": 0.766
     },
     {
      "word": "den",
-     "start": 0.996
+     "start": 1.197
     },
     {
      "word": "sie",
-     "start": 1.156
+     "start": 1.393
     },
     {
      "word": "in",
-     "start": 1.316
+     "start": 1.589
     },
     {
      "word": "Mekka",
-     "start": 1.444
+     "start": 1.746
     },
     {
      "word": "so",
-     "start": 1.668
+     "start": 2.02
     },
     {
      "word": "gequält",
-     "start": 1.796
+     "start": 2.177
     },
     {
      "word": "haben?",
-     "start": 2.084
+     "start": 2.53
     }
    ],
    "tail": 0,
@@ -1368,55 +1360,63 @@
   {
    "id": "d11",
    "shot": "dach_a",
-   "start": 90.369,
-   "dur": 3.587,
+   "start": 82.057,
+   "dur": 5.049,
    "file": "qissa_adhan/line-0-14.wav",
-   "text": "Bilal steigt auf das *höchste Dach* ... und holt tief Luft.",
+   "text": "Genau der. Bilal steigt auf das *höchste Dach* ... und holt tief Luft.",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "Bilal",
+     "word": "Genau",
      "start": 0.1
     },
     {
+     "word": "der.",
+     "start": 0.465
+    },
+    {
+     "word": "Bilal",
+     "start": 0.987
+    },
+    {
      "word": "steigt",
-     "start": 0.411
+     "start": 1.352
     },
     {
      "word": "auf",
-     "start": 0.767
+     "start": 1.769
     },
     {
      "word": "das",
-     "start": 0.99
+     "start": 2.03
     },
     {
      "word": "*höchste",
-     "start": 1.212
+     "start": 2.291
     },
     {
      "word": "Dach*",
-     "start": 1.613
+     "start": 2.76
     },
     {
      "word": "...",
-     "start": 1.88
+     "start": 3.073
     },
     {
      "word": "und",
-     "start": 2.191
+     "start": 3.439
     },
     {
      "word": "holt",
-     "start": 2.414
+     "start": 3.699
     },
     {
      "word": "tief",
-     "start": 2.68
+     "start": 4.012
     },
     {
      "word": "Luft.",
-     "start": 2.947
+     "start": 4.325
     }
    ],
    "tail": 0
@@ -1424,8 +1424,8 @@
   {
    "id": "f1",
    "shot": "dach_b",
-   "start": 102.956,
-   "dur": 0.961,
+   "start": 96.006,
+   "dur": 0.911,
    "file": "qissa_adhan/line-2-0.wav",
    "text": "Hörst du das?",
    "speaker": "Frau",
@@ -1436,11 +1436,11 @@
     },
     {
      "word": "du",
-     "start": 0.337
+     "start": 0.32
     },
     {
      "word": "das?",
-     "start": 0.473
+     "start": 0.446
     }
    ],
    "tail": 0,
@@ -1449,8 +1449,8 @@
   {
    "id": "k1",
    "shot": "dach_b",
-   "start": 104.217,
-   "dur": 1.787,
+   "start": 97.167,
+   "dur": 1.685,
    "file": "qissa_adhan/line-2-1.wav",
    "text": "Mama ... was ist das?",
    "speaker": "Kind",
@@ -1461,19 +1461,19 @@
     },
     {
      "word": "...",
-     "start": 0.379
+     "start": 0.361
     },
     {
      "word": "was",
-     "start": 0.705
+     "start": 0.665
     },
     {
      "word": "ist",
-     "start": 0.938
+     "start": 0.882
     },
     {
      "word": "das?",
-     "start": 1.171
+     "start": 1.1
     }
    ],
    "tail": 0,
@@ -1482,10 +1482,10 @@
   {
    "id": "e6",
    "shot": "dach_d",
-   "start": 106.704,
-   "dur": 5.941,
+   "start": 99.402,
+   "dur": 5.089,
    "file": "qissa_adhan/line-0-15.wav",
-   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Und alle laufen zur Moschee.",
+   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Alle laufen zur Moschee.",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -1494,51 +1494,47 @@
     },
     {
      "word": "ersten",
-     "start": 0.403
+     "start": 0.372
     },
     {
      "word": "Mal",
-     "start": 0.887
+     "start": 0.807
     },
     {
      "word": "...",
-     "start": 1.19
+     "start": 1.079
     },
     {
      "word": "hört",
-     "start": 1.614
+     "start": 1.459
     },
     {
      "word": "Medina",
-     "start": 1.977
+     "start": 1.785
     },
     {
      "word": "den",
-     "start": 2.461
+     "start": 2.22
     },
     {
      "word": "*Adhan*.",
-     "start": 2.764
+     "start": 2.492
     },
     {
-     "word": "Und",
-     "start": 3.49
-    },
-    {
-     "word": "alle",
-     "start": 3.793
+     "word": "Alle",
+     "start": 3.145
     },
     {
      "word": "laufen",
-     "start": 4.156
+     "start": 3.471
     },
     {
      "word": "zur",
-     "start": 4.641
+     "start": 3.906
     },
     {
      "word": "Moschee.",
-     "start": 4.944
+     "start": 4.178
     }
    ],
    "tail": 0
@@ -1546,8 +1542,8 @@
   {
    "id": "d12",
    "shot": "umar",
-   "start": 113.345,
-   "dur": 5.579,
+   "start": 104.991,
+   "dur": 6.258,
    "file": "qissa_adhan/line-0-16.wav",
    "text": "Da fliegt eine Tür auf. *Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:",
    "speaker": "Erzaehler",
@@ -1558,75 +1554,75 @@
     },
     {
      "word": "fliegt",
-     "start": 0.251
+     "start": 0.27
     },
     {
      "word": "eine",
-     "start": 0.554
+     "start": 0.611
     },
     {
      "word": "Tür",
-     "start": 0.78
+     "start": 0.867
     },
     {
      "word": "auf.",
-     "start": 0.969
+     "start": 1.08
     },
     {
      "word": "*Umar*!",
-     "start": 1.347
+     "start": 1.506
     },
     {
      "word": "Er",
-     "start": 1.763
+     "start": 1.975
     },
     {
      "word": "rennt",
-     "start": 1.914
+     "start": 2.145
     },
     {
      "word": "so",
-     "start": 2.179
+     "start": 2.444
     },
     {
      "word": "schnell,",
-     "start": 2.33
+     "start": 2.614
     },
     {
      "word": "dass",
-     "start": 2.859
+     "start": 3.21
     },
     {
      "word": "sein",
-     "start": 3.086
+     "start": 3.466
     },
     {
      "word": "Umhang",
-     "start": 3.312
+     "start": 3.722
     },
     {
      "word": "über",
-     "start": 3.615
+     "start": 4.063
     },
     {
      "word": "den",
-     "start": 3.841
+     "start": 4.318
     },
     {
      "word": "Boden",
-     "start": 4.03
+     "start": 4.531
     },
     {
      "word": "schleift.",
-     "start": 4.295
+     "start": 4.83
     },
     {
      "word": "Er",
-     "start": 4.862
+     "start": 5.469
     },
     {
      "word": "ruft:",
-     "start": 5.013
+     "start": 5.639
     }
    ],
    "tail": 0
@@ -1634,7 +1630,7 @@
   {
    "id": "q4",
    "shot": "umar",
-   "start": 119.024,
+   "start": 111.299,
    "dur": 4.301,
    "file": "qissa_adhan/line-3-3.wav",
    "text": "Bei Dem, der dich mit der Wahrheit gesandt hat: Ich habe dasselbe gesehen wie er!",
@@ -1708,99 +1704,75 @@
   {
    "id": "d13",
    "shot": "umar",
-   "start": 123.675,
-   "dur": 2.005,
+   "start": 115.9,
+   "dur": 6.934,
    "file": "qissa_adhan/line-0-17.wav",
-   "text": "Zwei Männer. *Ein* Traum.",
+   "text": "Und das Verrückteste? Umar hatte diesen Traum schon *zwanzig Tage* vorher gesehen ... und niemandem erzählt.",
    "speaker": "Erzaehler",
    "words": [
     {
-     "word": "Zwei",
+     "word": "Und",
      "start": 0.1
     },
     {
-     "word": "Männer.",
-     "start": 0.393
+     "word": "das",
+     "start": 0.351
     },
     {
-     "word": "*Ein*",
-     "start": 1.026
+     "word": "Verrückteste?",
+     "start": 0.603
     },
     {
-     "word": "Traum.",
-     "start": 1.27
-    }
-   ],
-   "tail": 0
-  },
-  {
-   "id": "d14",
-   "shot": "ende",
-   "start": 126.48,
-   "dur": 6.131,
-   "file": "qissa_adhan/line-0-18.wav",
-   "text": "Seit über *1400* Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt.",
-   "speaker": "Erzaehler",
-   "words": [
-    {
-     "word": "Seit",
-     "start": 0.1
+     "word": "Umar",
+     "start": 1.557
     },
     {
-     "word": "über",
-     "start": 0.427
+     "word": "hatte",
+     "start": 1.859
     },
     {
-     "word": "*1400*",
-     "start": 0.753
+     "word": "diesen",
+     "start": 2.211
     },
     {
-     "word": "Jahren",
-     "start": 1.08
+     "word": "Traum",
+     "start": 2.613
     },
     {
-     "word": "hört",
-     "start": 1.516
+     "word": "schon",
+     "start": 2.964
     },
     {
-     "word": "man",
-     "start": 1.842
+     "word": "*zwanzig",
+     "start": 3.316
     },
     {
-     "word": "diese",
-     "start": 2.115
+     "word": "Tage*",
+     "start": 3.768
     },
     {
-     "word": "Worte.",
-     "start": 2.496
+     "word": "vorher",
+     "start": 4.07
     },
     {
-     "word": "Fünfmal",
-     "start": 3.149
+     "word": "gesehen",
+     "start": 4.472
     },
     {
-     "word": "am",
-     "start": 3.639
+     "word": "...",
+     "start": 4.924
     },
     {
-     "word": "Tag.",
-     "start": 3.857
+     "word": "und",
+     "start": 5.276
     },
     {
-     "word": "Auf",
-     "start": 4.402
+     "word": "niemandem",
+     "start": 5.527
     },
     {
-     "word": "der",
-     "start": 4.674
-    },
-    {
-     "word": "ganzen",
-     "start": 4.946
-    },
-    {
-     "word": "Welt.",
-     "start": 5.382
+     "word": "erzählt.",
+     "start": 6.08
     }
    ],
    "tail": 0
@@ -1808,8 +1780,8 @@
   {
    "id": "e7",
    "shot": "ende",
-   "start": 133.311,
-   "dur": 3.425,
+   "start": 123.684,
+   "dur": 3.613,
    "file": "qissa_adhan/line-0-19.wav",
    "text": "Wusstest du das? Schreib *1* oder *2* in die Kommentare.",
    "speaker": "Erzaehler",
@@ -1820,39 +1792,39 @@
     },
     {
      "word": "du",
-     "start": 0.547
+     "start": 0.574
     },
     {
      "word": "das?",
-     "start": 0.726
+     "start": 0.763
     },
     {
      "word": "Schreib",
-     "start": 1.173
+     "start": 1.237
     },
     {
      "word": "*1*",
-     "start": 1.576
+     "start": 1.663
     },
     {
      "word": "oder",
-     "start": 1.71
+     "start": 1.805
     },
     {
      "word": "*2*",
-     "start": 1.978
+     "start": 2.09
     },
     {
      "word": "in",
-     "start": 2.113
+     "start": 2.232
     },
     {
      "word": "die",
-     "start": 2.291
+     "start": 2.421
     },
     {
      "word": "Kommentare.",
-     "start": 2.515
+     "start": 2.658
     }
    ],
    "tail": 0
@@ -1862,7 +1834,7 @@
   {
    "id": "q1",
    "shot": "traum",
-   "start": 56.405,
+   "start": 51.813,
    "dur": 3.243,
    "text": "Verkaufst du mir die Glocke? Wir wollen damit zum Gebet rufen.",
    "by": "Abdullah ibn Zaid (ra) im Traum",
@@ -1916,7 +1888,7 @@
   {
    "id": "q2",
    "shot": "traum",
-   "start": 60.982,
+   "start": 56.669,
    "dur": 1.824,
    "text": "Soll ich dir nicht etwas Besseres zeigen?",
    "by": "der Mann in grüner Kleidung",
@@ -1954,7 +1926,7 @@
   {
    "id": "q3",
    "shot": "morgen",
-   "start": 77.395,
+   "start": 68.901,
    "dur": 9.306,
    "text": "Das ist ein wahrer Traum, so Allah will. Steh auf mit Bilal und bring ihm bei, was du gesehen hast. Denn seine Stimme ist kräftiger als deine.",
    "by": "der Prophet ﷺ · Abu Dawud 499",
@@ -2072,7 +2044,7 @@
   {
    "id": "q4",
    "shot": "umar",
-   "start": 119.024,
+   "start": 111.299,
    "dur": 4.301,
    "text": "Bei Dem, der dich mit der Wahrheit gesandt hat: Ich habe dasselbe gesehen wie er!",
    "by": "Umar ibn al-Khattab (ra) · Abu Dawud 499",
@@ -2141,33 +2113,37 @@
   }
  ],
  "choice": {
-  "start": 133.011,
-  "dur": 4.4,
+  "start": 123.384,
+  "dur": 4.513,
   "q": "WUSSTEST DU DAS?",
   "a": "JA",
   "b": "NEIN"
  },
  "events": {
-  "glocke_d4": 36.188,
-  "horn_d4": 39.408,
-  "feuer_d4": 41.693,
-  "glocke_d7": 54.28,
-  "glocke_q1": 57.417,
-  "bilal_q3": 80.974,
-  "bilal_d10": 87.151,
-  "bilal_d11": 90.469,
-  "athan": 94.256,
-  "duck": 102.656,
-  "athan_end": 106.504,
-  "umar_d12": 114.692,
+  "hook_takbir": 0.0,
+  "glocke_d4": 33.169,
+  "horn_d4": 35.122,
+  "feuer_d4": 36.607,
+  "glocke_d7": 49.588,
+  "glocke_q1": 52.825,
+  "bilal_q3": 72.48,
+  "bilal_d10": 78.507,
+  "bilal_d11": 83.044,
+  "athan": 87.306,
+  "duck": 95.706,
+  "athan_end": 99.252,
+  "umar_d12": 106.497,
+  "umar_d13": 117.457,
   "takbir": [
-   94.656,
-   98.856
+   87.706,
+   91.906
   ],
-  "door_umar": 113.395
+  "takbir_hook": 0.1,
+  "door_umar": 105.091
  },
  "athan": {
   "file": "qissa_adhan/athan_full.mp3",
-  "in": 1.9
+  "in": 1.9,
+  "hook_in": 2.2
  }
 }

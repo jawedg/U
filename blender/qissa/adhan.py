@@ -18,6 +18,7 @@ SEG = {s["id"]: s for s in TL["segments"]}
 LINE = {l["id"]: l for l in TL["lines"]}
 QUOTE = {q["id"]: q for q in TL["quotes"]}
 EV = TL["events"]
+Q.FPS = TL.get("render_fps", 24)  # Blender-Bilder pro Sekunde (Video: 60 fps, dazwischen interpoliert)
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 SHOT = argv[0] if argv else "gasse"
@@ -201,21 +202,95 @@ def shot_beratung():
 
 
 def shot_traum():
-    Q.world_sky("dream")
+    Q.world_sky("dreamnight", amb=((0.32, 0.34, 0.58), 0.4))
+    MD.mats()
     X0 = Vector((3000, 0, 0))
-    mfloor = Q.glow_mat("dream_floor", (1.0, 0.82, 0.55), 1.6)
-    fl = Q.cyl("dream_floor", X0 - Vector((0, 0, 0.026)), 60, 0.05, Q.pbr("dream_ground", (0.7, 0.55, 0.38), 0.5, emit=(1.0, 0.8, 0.5), es=0.12), seg=64)
-    # schwebende Lichtpunkte im ganzen Raum (Traum)
     rq = random.Random(9)
+    # Traum-Wüste: weite Dünen (Gitter mit sanftem Relief), golden schimmernd
+    import bmesh
+    bm = bmesh.new()
+    n, size = 90, 160.0
+    vs = []
+    for j in range(n + 1):
+        row = []
+        for i in range(n + 1):
+            x, y = -size / 2 + size * i / n, -size / 2 + size * j / n
+            r = math.hypot(x, y)
+            z = (0.0 if r < 7 else min(1.0, (r - 7) / 10)) * (1.4 * math.sin(x * 0.11 + 0.7 * math.sin(y * 0.07)) +
+                                                                 0.8 * math.sin(y * 0.16 + x * 0.05) + 0.3 * math.sin(x * 0.4 + y * 0.3))
+            row.append(bm.verts.new((X0.x + x, X0.y + y, z - 0.03)))
+        vs.append(row)
+    for j in range(n):
+        for i in range(n):
+            bm.faces.new((vs[j][i], vs[j][i + 1], vs[j + 1][i + 1], vs[j + 1][i]))
+    me = bpy.data.meshes.new("dream_dunes")
+    bm.to_mesh(me)
+    bm.free()
+    for f in me.polygons:
+        f.use_smooth = True
+    me.materials.append(Q.pbr("dream_sand", (0.5, 0.39, 0.27), 0.6, var=0.25, scale=0.08, bump=0.25, bscale=3, emit=(1.0, 0.78, 0.48), es=0.03))
+    Q.link(bpy.data.objects.new("dream_dunes", me))
+    # Medina als Traumbild ringsum im Dunst: Häuser + Palmen
+    for i in range(16):
+        a_ = 2 * math.pi * i / 16 + rq.uniform(-0.12, 0.12)
+        r = rq.uniform(17, 30)
+        w, d_ = rq.uniform(4, 8), rq.uniform(4, 7)
+        MD.house(f"dh{i}", X0.x + r * math.cos(a_) - w / 2, X0.y + r * math.sin(a_) - d_ / 2, w, d_, rq.choice([3.0, 3.4, 5.6]),
+                 seed=300 + i, lit=True, windows=2)
+    for i in range(12):
+        a_ = 2 * math.pi * i / 12 + 0.26
+        r = rq.uniform(12, 24)
+        MD.palm(f"dp{i}", (X0.x + r * math.cos(a_), X0.y + r * math.sin(a_), 0), h=rq.uniform(7, 10.5), seed=400 + i)
+    # leuchtende Wolkenbänke am Horizont und darüber
+    for i in range(22):
+        a_ = rq.uniform(0, 2 * math.pi)
+        r = rq.uniform(40, 75)
+        z = rq.uniform(-1, 6) if i < 14 else rq.uniform(20, 32)
+        sc_ = (rq.uniform(9, 18), rq.uniform(5, 9), rq.uniform(1.6, 3.2))
+        Q.ball(f"cloud{i}", (X0.x + r * math.cos(a_), X0.y + r * math.sin(a_), z), sc_,
+               Q.glow_mat(f"cloud_m{i}", (0.6, 0.62, 0.85) if i >= 14 else (0.9, 0.7, 0.5), rq.uniform(0.25, 0.45), alpha=0.4, fresnel=True),
+               seg=20)
+    # großer Mond (Sichel) im Dunst
+    mo = Q.ball("dream_moon", (X0.x - 60, X0.y + 70, 34), 5.0, Q.glow_mat("moon_m", (1.0, 0.93, 0.78), 9.0), seg=32)
+    Q.ball("dream_moon_cut", (X0.x - 57.6, X0.y + 68.0, 35.4), 4.7, Q.glow_mat("moon_cut", (0.012, 0.016, 0.045), 1.0), seg=32)
+    # schwebende Lichtpunkte im ganzen Raum + Staub, der im Kreis mitwirbelt
     mq = Q.glow_mat("dream_mote", (1.0, 0.86, 0.55), 14.0)
-    for i in range(90):
-        a = rq.uniform(0, 2 * math.pi)
-        r = rq.uniform(1.0, 14.0)
-        o = Q.ball(f"dm{i}", X0 + Vector((r * math.cos(a), r * math.sin(a), rq.uniform(0.2, 4.5))), rq.uniform(0.008, 0.02), mq, seg=8)
+    for i in range(120):
+        a_ = rq.uniform(0, 2 * math.pi)
+        r = rq.choice([rq.uniform(1.0, 3.0), rq.uniform(8.5, 16.0)])
+        o = Q.ball(f"dm{i}", X0 + Vector((r * math.cos(a_), r * math.sin(a_), rq.uniform(0.2, 5.5))), rq.uniform(0.008, 0.022), mq, seg=8)
         o.keyframe_insert("location", frame=1)
-        o.location.z += rq.uniform(0.4, 1.2)
-        o.location.x += rq.uniform(-0.3, 0.3)
+        o.location.z += rq.uniform(0.4, 1.4)
+        o.location.x += rq.uniform(-0.4, 0.4)
         o.keyframe_insert("location", frame=Q.T(D))
+    for k_, (rad, hz, turns, cnt) in enumerate(((2.0, 0.6, 1.0, 260), (2.6, 1.5, 0.7, 200), (1.4, 2.5, 1.3, 140))):
+        piv = Q.empty(f"swirl{k_}", tuple(X0))
+        bm = bmesh.new()
+        for _ in range(cnt):
+            a_ = rq.uniform(0, 2 * math.pi)
+            rr = rad + rq.uniform(-0.3, 0.3)
+            g = bmesh.ops.create_icosphere(bm, subdivisions=0, radius=rq.uniform(0.004, 0.01))
+            off = Vector((rr * math.cos(a_), rr * math.sin(a_), hz + rq.uniform(-0.5, 0.5)))
+            for v in g["verts"]:
+                v.co += off
+        me = bpy.data.meshes.new(f"swirl_me{k_}")
+        bm.to_mesh(me)
+        bm.free()
+        me.materials.append(Q.glow_mat(f"swirl_m{k_}", (1.0, 0.82, 0.5), 10.0))
+        so = bpy.data.objects.new(f"swirl_o{k_}", me)
+        Q.link(so)
+        so.parent = piv
+        piv.rotation_euler = (0, 0, 0)
+        piv.keyframe_insert("rotation_euler", frame=1)
+        piv.rotation_euler = (0, 0, 2 * math.pi * turns * (1 if k_ != 1 else -1))
+        piv.keyframe_insert("rotation_euler", frame=Q.T(D) + 1)
+        Q.set_interp(piv, "LINEAR")
+    # tiefer Bodennebel (weiche, leuchtende Schwaden)
+    for i in range(10):
+        a_ = rq.uniform(0, 2 * math.pi)
+        r = rq.uniform(4, 14)
+        Q.ball(f"fog{i}", (X0.x + r * math.cos(a_), X0.y + r * math.sin(a_), 0.15), (rq.uniform(3, 6), rq.uniform(2, 4), 0.35),
+               Q.glow_mat(f"fog_m{i}", (1.0, 0.85, 0.62), 0.5, alpha=0.35, fresnel=True), seg=16)
     ab = Q.person("abdullah", tuple(X0), yaw=0.0, glow=True, seed=91, robe=(0.92, 0.9, 0.84), wrap=(0.95, 0.94, 0.9), head="turban")
     Q.idle(ab, 0, D, seed=2, look=[(0, 0, 0)])
     gm = Q.person("gruen", tuple(X0 + Vector((0, -2.2, 0))), seed=92, robe=(0.1, 0.36, 0.2), wrap=(0.86, 0.84, 0.76),
@@ -268,22 +343,45 @@ def shot_traum():
         o.keyframe_insert("location", frame=Q.T(t0))
         o.location.z += rnd.uniform(3, 6)
         o.keyframe_insert("location", frame=Q.T(D))
-    Q.point("dream_key", tuple(X0 + Vector((-3, -4, 5))), 220, color=(1.0, 0.85, 0.65), radius=1.0)
-    Q.point("dream_rim", tuple(X0 + Vector((2, 4, 3))), 160, color=(1.0, 0.75, 0.45), radius=1.0)
+    # leuchtende Fußspuren, wo der Mann im Kreis geht (erscheinen Schritt für Schritt, verglimmen langsam)
+    mfp = Q.glow_mat("footprint", (1.0, 0.72, 0.32), 4.0)
+    nst = 22
+    for k_ in range(nst):
+        u = (k_ + 0.5) / nst
+        a_ = -math.pi / 2 + 1.5 * math.pi * u
+        side = 0.13 if k_ % 2 else -0.13
+        px = X0.x + (r + side) * math.cos(a_)
+        py = X0.y + (r + side) * math.sin(a_)
+        fp = Q.ball(f"fp{k_}", (px, py, 0.012), (0.15, 0.065, 0.008), mfp, seg=10)
+        fp.rotation_euler = (0, 0, a_ + math.pi / 2)
+        tk = 0.3 + (end_t - 0.3) * u
+        fp.scale = (0.001, 0.001, 0.001)
+        fp.keyframe_insert("scale", frame=max(1, Q.T(tk - 0.05)))
+        fp.scale = (1, 1, 1)
+        fp.keyframe_insert("scale", frame=Q.T(tk) + 1)
+        fp.keyframe_insert("scale", frame=Q.T(tk + 3.5) + 1)
+        fp.scale = (0.6, 0.6, 0.6)
+        fp.keyframe_insert("scale", frame=Q.T(min(D, tk + 7.0)) + 1)
+    Q.point("dream_key", tuple(X0 + Vector((-3, -4, 5))), 260, color=(1.0, 0.85, 0.65), radius=1.0)
+    Q.point("dream_rim", tuple(X0 + Vector((2, 4, 3))), 200, color=(1.0, 0.75, 0.45), radius=1.0)
+    Q.point("dream_back", tuple(X0 + Vector((0, 9, 2))), 300, color=(1.0, 0.7, 0.4), radius=2.0)
+    Q.point("dream_top", tuple(X0 + Vector((0, 0, 6.5))), 520, color=(1.0, 0.82, 0.55), radius=1.5)
     bpy.context.scene.world.mist_settings.start = 6.0
-    bpy.context.scene.world.mist_settings.depth = 45.0
-    # Kamera: langsamer Bogen + Annäherung (dritte Person, traumhaft)
-    rig, shake, cam = Q.pov_camera(lens=16)
+    bpy.context.scene.world.mist_settings.depth = 55.0
+    # Kamera: beginnt hoch und weit (die ganze Traumwelt), sinkt im Bogen herab, endet nah über Abdullahs Schulter
+    rig, shake, cam = Q.pov_camera(lens=18)
     keys = []
-    for k in range(9):
-        u = k / 8
-        a = math.radians(-100 + 55 * u)
-        rr = 6.6 - 1.6 * u
-        p = (X0.x + rr * math.cos(a), X0.y + rr * math.sin(a), 1.75 + 0.45 * u)
-        keys.append((D * u, p, (Q.yaw_to(p, (X0.x, X0.y)), Q.pitch_to(p, (X0.x, X0.y, 1.2)), 0)))
+    for k_ in range(13):
+        u = k_ / 12
+        e = 1 - (1 - u) ** 2.2  # schnell heran, dann langsam
+        a_ = math.radians(-135 + 95 * e)
+        rr = 7.6 - 4.0 * e
+        p = (X0.x + rr * math.cos(a_), X0.y + rr * math.sin(a_), 3.4 - 1.65 * e)
+        tgt = (X0.x + 0.3 * math.sin(u * 3), X0.y, 1.25 + 0.2 * (1 - e))
+        keys.append((D * u, p, (Q.yaw_to(p, tgt[:2]), Q.pitch_to(p, tgt), 0)))
     Q.cam_keys(rig, keys, interp="BEZIER")
-    Q.handheld(shake, 0, D, amp=0.3)
-    return dict(mist_col=(0.78, 0.6, 0.4), mist_amt=0.45)
+    Q.handheld(shake, 0, D, amp=0.18)
+    return dict(mist_col=(0.06, 0.07, 0.15), mist_amt=0.55)
 
 
 def shot_morgen():
@@ -488,11 +586,15 @@ SHOTS = {"gasse": shot_gasse, "moschee": shot_moschee, "beratung": shot_beratung
 
 Q.reset()
 cfg = SHOTS[SHOT]()
-if SHOT != "traum" and os.environ.get("JOIN", "1") == "1":
+if os.environ.get("JOIN", "1") == "1":
     MD.join_static()
 Q.render_setup(pct=PCT, samples=SAMPLES, mist_col=cfg["mist_col"], mist_amt=cfg["mist_amt"])
 sc = bpy.context.scene
+if os.environ.get("NOCOMP"):  # Test: ohne Compositor (Dunst/Leuchten)
+    sc.render.use_compositing = False
 sc.frame_start, sc.frame_end = 1, SEG[SHOT]["frames"]
+if os.environ.get("FRAMES"):  # Test: nur Bilder a-b
+    sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
 os.makedirs(OUT, exist_ok=True)
 if STILLS:
     for t in STILLS:
