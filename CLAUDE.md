@@ -123,7 +123,21 @@ Lokal reicht `npm run render:3d`.
   Länger als 2 h → mit `setsid nohup` starten (Skript-Vorlage: render + 2-Pass 1250 kbit/s → ≤ 60 MB).
 
 ## QISSA – Islam-POV-Serie in 3D (Stil „Signal Lost“, aktueller Wunsch des Nutzers)
-- Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, 24 fps), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
+- Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, **60 fps**), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
+- **Version 3 (Nutzer-Feedback Nov. 2026: „langweilig, nicht flüssig (will 120 Hz), Geräusche übersteuert, Horn klingt nicht wie Horn,
+  Grafik leer – mehr Details, Zuschauer wischen nach Sekunden weg“):**
+  - Einstieg (Hook, erste 9 s): echtes „Allahu akbar“ + Frage-Titel „WOHER KOMMT DER ADHAN?“ + „Diese Worte hörst du jeden Tag … Aus einem
+    Traum.“ als Ausschnitte späterer Einstellungen (`clip`-Segmente in build_qissa_adhan.py). Twist am Ende (Umar 20 Tage, Abu Dawud 498).
+  - `tighten` in script.json: voice_gemini.py kürzt lange Sprechpausen (max. 0,34 s) und spricht 7 % schneller (atempo).
+  - Flüssig: TikTok spielt max. 60 fps → Blender rendert 30 fps in VOLLER Auflösung (100 %, 3 Samples – mehr Samples sehen gleich aus,
+    kosten aber ~2,8 s je Sample), ffmpeg `minterpolate` → 60 fps. Kein playbackRate-Umrechnen mehr (ruckelt) – nach neuer Vertonung neu rendern.
+  - Mehr Details: `MD.props()` (Krüge, Körbe, Säcke, Leitern, Sonnendächer, Wäsche, Steine, Brennholz), Wände mit Putzflecken + Schmutz unten
+    (`pbr(..., grime, plaster)`), Traum als „Traum bei Nacht“ (`world_sky("dreamnight")`, Dünen, Medina im Dunst, Mond, Goldstaub-Wirbel,
+    leuchtende Fußspuren). Testbilder: `FRAMES=a-b` bzw. Standbild-Zeiten als 5. Argument von adhan.py.
+  - Ton: `sfx_qissa_adhan.py` mischt ALLES zu `public/qissa_adhan/master.wav` (Stimmen, Adhan, Atmo mit Ducking, Effekte; -14 LUFS, True Peak
+    -1,5 dB, Begrenzer) → Remotion spielt nur diese Spur (vorher übersteuerte die Summe). Echte Geräusche (Schofar, Glocke, Feuer, Grillen,
+    Hahn, Schritte, Tür …) von Wikimedia Commons in `assets/sfx/*.flac`, Nachweise `assets/sfx/CREDITS.md` (CC BY/BY-SA → in TikTok-Beschreibung
+    nennen). Commons drosselt die Cloud-IP stark (429, Retry-After 600 s) → geduldig einzeln laden.
 - **Erzähl-Version (Nutzer-Feedback Nov. 2026: „klingt billig, langweilig, stille Stellen gefallen nicht“):** Charon ERZÄHLT spannend
   (Gemini 2.5 flash TTS mit Regie-Anweisungen, `voiceParts` in script.json, bis 2 Sprecher je Anfrage), erfundene Leute in Dialogen mit
   eigenen Stimmen (Puck, Algenib, Fenrir, Aoede, Leda – Untertitel kursiv). Worte von Sahaba und dem Propheten ﷺ: Erzähler sagt „… sagte:“,
@@ -142,9 +156,9 @@ Lokal reicht `npm run render:3d`.
      (3 Anfragen: Charon-Block, Orus, Iapetus) → `timing.json`.
   2. `python3 scripts/build_qissa_adhan.py` → `timeline.json` (Einstellungen, Sätze, Zitate, Ereignisse; ohne Vertonung geschätzt).
   3. `./scripts/render_qissa_adhan.sh [einstellungen…]` → Blender-Bilder `out/qissa_frames/<einstellung>/` → `public/qissa_adhan/shots/*.mp4`
-     (4 Blender parallel, 50 %, 6 Samples; ~15 s/Bild je Prozess; lange Läufe mit `setsid nohup`). `rendered.json` = gerenderte Bildzahl
-     je Einstellung (Remotion passt per playbackRate an, falls die Vertonung die Länge leicht ändert).
-  4. `python3 scripts/sfx_qissa_adhan.py` → `public/qissa_adhan/sfx.wav` (Atmo + Effekte, keine Musik).
+     (60 fps; 4 Blender-Prozesse als Warteschlange, 100 %, 3 Samples, 30 Bilder/s; ~3500 Bilder ≈ 4–6 h; immer mit `setsid nohup`).
+     Danach `python3 scripts/build_qissa_adhan.py --mark-rendered <einstellungen…>`.
+  4. `python3 scripts/sfx_qissa_adhan.py` → `public/qissa_adhan/master.wav` (fertige Tonspur, keine Musik).
   5. `npx remotion render QissaAdhan out/qissa-erster-adhan.mp4 --concurrency=4 --browser-executable=…` (kein --gl nötig).
 - Blender-Bausteine (`blender/qissa/lib.py`): `person()` (Gewand mit Falten, Turban/Tuch/Kappe, Umhang, sitzend/stehend, Gelenke als Empties),
   `walk()`, `idle()`, `head_to()`, `arm_pose()`, `hands_to_ears()`, `holy_light()`, `halo()`, `pov_camera()` + `cam_keys()` + `handheld()`,
