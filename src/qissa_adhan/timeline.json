@@ -18,11 +18,11 @@
     ],
     [
      15.679,
-     9.11
+     15.679
     ]
    ],
-   "rerender": true,
-   "src_frames": 219
+   "rerender": false,
+   "src_frames": 376
   },
   {
    "id": "moschee",
@@ -37,12 +37,24 @@
      0.0
     ],
     [
+     0.3,
+     0.3
+    ],
+    [
+     3.833,
+     3.833
+    ],
+    [
+     7.982,
+     7.982
+    ],
+    [
      11.796,
-     10.08
+     11.796
     ]
    ],
-   "rerender": true,
-   "src_frames": 242
+   "rerender": false,
+   "src_frames": 283
   },
   {
    "id": "beratung",
@@ -124,15 +136,23 @@
     ],
     [
      0.4,
-     0.5
+     0.4
+    ],
+    [
+     7.989,
+     7.989
+    ],
+    [
+     17.745,
+     17.745
     ],
     [
      20.663,
-     16.52
+     20.663
     ]
    ],
-   "rerender": true,
-   "src_frames": 396
+   "rerender": false,
+   "src_frames": 496
   },
   {
    "id": "dach_a",
@@ -212,11 +232,11 @@
     ],
     [
      6.541,
-     4.4
+     6.541
     ]
    ],
-   "rerender": true,
-   "src_frames": 106
+   "rerender": false,
+   "src_frames": 157
   },
   {
    "id": "umar",
