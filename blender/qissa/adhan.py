@@ -205,16 +205,17 @@ def shot_traum():
     X0 = Vector((3000, 0, 0))
     mfloor = Q.glow_mat("dream_floor", (1.0, 0.82, 0.55), 1.6)
     fl = Q.cyl("dream_floor", X0 - Vector((0, 0, 0.026)), 60, 0.05, Q.pbr("dream_ground", (0.7, 0.55, 0.38), 0.5, emit=(1.0, 0.8, 0.5), es=0.12), seg=64)
-    # Lichtschleier (große, schwache Leuchtkugeln)
-    for i in range(7):
-        a = i / 7 * 2 * math.pi
-        Q.ball(f"veil{i}", X0 + Vector((9 * math.cos(a), 9 * math.sin(a), 2.5)), (4, 4, 3),
-               Q.glow_mat(f"veil{i}", (1.0, 0.85, 0.6), 0.8, 0.3, fresnel=True), seg=24)
-    for i in range(6):
-        a = i / 6 * 2 * math.pi + 0.4
-        ray = Q.cyl(f"ray{i}", X0 + Vector((3.5 * math.cos(a), 3.5 * math.sin(a), 6)), 0.6, 14,
-                    Q.glow_mat(f"ray{i}", (1.0, 0.86, 0.6), 1.0, 0.14, fresnel=True, grad_z=(-7, 7)), seg=20, caps=False, r2=0.15)
-        ray.rotation_euler = (math.radians(14) * math.sin(a), math.radians(14) * math.cos(a), 0)
+    # schwebende Lichtpunkte im ganzen Raum (Traum)
+    rq = random.Random(9)
+    mq = Q.glow_mat("dream_mote", (1.0, 0.86, 0.55), 14.0)
+    for i in range(90):
+        a = rq.uniform(0, 2 * math.pi)
+        r = rq.uniform(1.0, 14.0)
+        o = Q.ball(f"dm{i}", X0 + Vector((r * math.cos(a), r * math.sin(a), rq.uniform(0.2, 4.5))), rq.uniform(0.008, 0.02), mq, seg=8)
+        o.keyframe_insert("location", frame=1)
+        o.location.z += rq.uniform(0.4, 1.2)
+        o.location.x += rq.uniform(-0.3, 0.3)
+        o.keyframe_insert("location", frame=Q.T(D))
     ab = Q.person("abdullah", tuple(X0), yaw=0.0, glow=True, seed=91, robe=(0.92, 0.9, 0.84), wrap=(0.95, 0.94, 0.9), head="turban")
     Q.idle(ab, 0, D, seed=2, look=[(0, 0, 0)])
     gm = Q.person("gruen", tuple(X0 + Vector((0, -2.2, 0))), seed=92, robe=(0.1, 0.36, 0.2), wrap=(0.86, 0.84, 0.76),
@@ -272,17 +273,17 @@ def shot_traum():
     bpy.context.scene.world.mist_settings.start = 6.0
     bpy.context.scene.world.mist_settings.depth = 45.0
     # Kamera: langsamer Bogen + Annäherung (dritte Person, traumhaft)
-    rig, shake, cam = Q.pov_camera(lens=24)
+    rig, shake, cam = Q.pov_camera(lens=16)
     keys = []
     for k in range(9):
         u = k / 8
         a = math.radians(-100 + 55 * u)
-        rr = 6.0 - 2.2 * u
-        p = (X0.x + rr * math.cos(a), X0.y + rr * math.sin(a), 1.7 + 0.5 * u)
+        rr = 6.6 - 1.6 * u
+        p = (X0.x + rr * math.cos(a), X0.y + rr * math.sin(a), 1.75 + 0.45 * u)
         keys.append((D * u, p, (Q.yaw_to(p, (X0.x, X0.y)), Q.pitch_to(p, (X0.x, X0.y, 1.2)), 0)))
     Q.cam_keys(rig, keys, interp="BEZIER")
     Q.handheld(shake, 0, D, amp=0.3)
-    return dict(mist_col=(0.8, 0.62, 0.42), mist_amt=0.55)
+    return dict(mist_col=(0.78, 0.6, 0.4), mist_amt=0.45)
 
 
 def shot_morgen():
