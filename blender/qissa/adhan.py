@@ -115,7 +115,7 @@ def shot_moschee():
     Q.cam_keys(rig, [(0, (0.35, -20.0, 1.62), None), (4.0, pos_stop, None), (D, (0.7, -13.8, 1.62), None)], loc_interp="BEZIER")
     a1 = Q.yaw_to(pos_stop, m1)
     Q.cam_keys(rig, [(0, None, (2, 0, 0)), (2.6, None, (-6, 2, 0)), (max(3.4, ls("m1") - 0.5), None, (a1 * 0.8, -3, 0)),
-                     (le("m2") + 0.1, None, (a1 * 0.7, -3, 0)), (ls("d2") + 0.9, None, (8, 3, 0)), (D, None, (12, 4, 0))])
+                     (le("m2") + 0.1, None, (a1 * 0.7, -3, 0)), (D, None, (10, 3, 0))])
     Q.handheld(shake, 0, D, amp=0.9, walk_from=0, walk_to=4.0)
     P1 = Q.person("mann1", (*m1, 0), yaw=Q.face_yaw(m1, m2), seed=31, head="turban", cloak=(0.3, 0.24, 0.18))
     P2 = Q.person("mann2", (*m2, 0), yaw=Q.face_yaw(m2, m1), seed=32, head="scarf")
