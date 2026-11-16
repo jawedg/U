@@ -43,12 +43,12 @@
     ],
     [
      10.272,
-     15.679
+     10.272
     ]
    ],
-   "rerender": true,
-   "src_frames": 376,
-   "src_dur": 15.679
+   "rerender": false,
+   "src_frames": 308,
+   "src_dur": 10.272
   },
   {
    "id": "moschee",
@@ -63,13 +63,21 @@
      0.0
     ],
     [
+     0.2,
+     0.2
+    ],
+    [
+     3.472,
+     3.472
+    ],
+    [
      7.343,
-     11.796
+     7.343
     ]
    ],
-   "rerender": true,
-   "src_frames": 283,
-   "src_dur": 11.796
+   "rerender": false,
+   "src_frames": 220,
+   "src_dur": 7.343
   },
   {
    "id": "beratung",
@@ -84,25 +92,33 @@
      0.0
     ],
     [
+     0.2,
+     0.2
+    ],
+    [
      6.034,
-     7.327
+     6.034
     ],
     [
      7.987,
-     9.312
+     7.987
     ],
     [
      9.472,
-     11.066
+     9.472
+    ],
+    [
+     10.291,
+     10.291
     ],
     [
      13.413,
-     14.81
+     13.413
     ]
    ],
    "rerender": false,
-   "src_frames": 355,
-   "src_dur": 14.81
+   "src_frames": 402,
+   "src_dur": 13.413
   },
   {
    "id": "nacht",
@@ -124,13 +140,25 @@
      0.0
     ],
     [
+     10.065,
+     10.065
+    ],
+    [
+     14.921,
+     14.921
+    ],
+    [
+     16.995,
+     16.995
+    ],
+    [
      20.683,
-     19.7
+     20.683
     ]
    ],
-   "rerender": true,
-   "src_frames": 473,
-   "src_dur": 19.7
+   "rerender": false,
+   "src_frames": 620,
+   "src_dur": 20.683
   },
   {
    "id": "morgen_karte",
@@ -152,17 +180,25 @@
      0.0
     ],
     [
+     0.3,
+     0.3
+    ],
+    [
+     5.27,
+     5.27
+    ],
+    [
      14.876,
-     17.745
+     14.876
     ],
     [
      18.226,
-     20.663
+     18.226
     ]
    ],
-   "rerender": true,
-   "src_frames": 496,
-   "src_dur": 20.663
+   "rerender": false,
+   "src_frames": 547,
+   "src_dur": 18.226
   },
   {
    "id": "dach_a",
@@ -177,13 +213,17 @@
      0.0
     ],
     [
+     5.449,
+     5.449
+    ],
+    [
      9.849,
-     8.34
+     9.849
     ]
    ],
    "rerender": false,
-   "src_frames": 200,
-   "src_dur": 8.34
+   "src_frames": 295,
+   "src_dur": 9.849
   },
   {
    "id": "dach_c",
@@ -203,7 +243,7 @@
     ]
    ],
    "rerender": false,
-   "src_frames": 96,
+   "src_frames": 120,
    "src_dur": 4.0
   },
   {
@@ -220,12 +260,12 @@
     ],
     [
      3.546,
-     4.2
+     3.546
     ]
    ],
    "rerender": false,
-   "src_frames": 101,
-   "src_dur": 4.2
+   "src_frames": 106,
+   "src_dur": 3.546
   },
   {
    "id": "dach_d",
@@ -241,12 +281,12 @@
     ],
     [
      5.489,
-     6.541
+     5.489
     ]
    ],
    "rerender": false,
-   "src_frames": 157,
-   "src_dur": 6.541
+   "src_frames": 165,
+   "src_dur": 5.489
   },
   {
    "id": "umar",
@@ -261,13 +301,17 @@
      0.0
     ],
     [
+     0.35,
+     0.35
+    ],
+    [
      18.443,
-     13.04
+     18.443
     ]
    ],
-   "rerender": true,
-   "src_frames": 313,
-   "src_dur": 13.04
+   "rerender": false,
+   "src_frames": 553,
+   "src_dur": 18.443
   },
   {
    "id": "ende",
@@ -283,12 +327,12 @@
     ],
     [
      4.713,
-     10.9
+     4.713
     ]
    ],
-   "rerender": true,
-   "src_frames": 262,
-   "src_dur": 10.9
+   "rerender": false,
+   "src_frames": 141,
+   "src_dur": 4.713
   },
   {
    "id": "logo",
