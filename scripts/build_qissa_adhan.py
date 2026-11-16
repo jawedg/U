@@ -38,11 +38,12 @@ PLAN = [
 
 
 def est_seconds(text: str) -> float:
+    """Geschätzte Sprechdauer (geeicht an früheren Gemini-Charon-Aufnahmen: athan2d, fuku, futaba3 -> Faktor 0,76)."""
     t = text.replace("*", "")
     words = len(t.split())
     stops = len(re.findall(r"[.!?]", t))
     commas = len(re.findall(r"[,:;]", t))
-    return round(words / 2.35 + 0.28 * stops + 0.12 * commas + 0.15, 2)
+    return round(0.76 * (words / 2.35 + 0.28 * stops + 0.12 * commas + 0.15), 2)
 
 
 def word_times(text: str, dur: float) -> list:
