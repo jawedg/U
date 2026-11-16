@@ -158,10 +158,11 @@ def main():
     # --- Tafel „In dieser Nacht“
     a, b = seg("nacht")
     add(a - 0.2, whoosh(1.0, 0.6), 1.0)
-    add(a, night, 0.25, dur=b - a + 0.2, fade_out=0.3)
-    # --- Traum
+    add(a, night, 0.45, dur=b - a + 0.6, fade_out=1.2)
+    # --- Traum (Traum-Atmo blendet schon auf der Tafel ein und klingt auf der nächsten aus → nie Stille)
     a, b = seg("traum")
-    add(a, dream, 0.9, dur=b - a, fade_in=0.8, fade_out=1.0)
+    a0 = SEG["nacht"]["start"] + 0.3
+    add(a0, dream, 0.9, dur=b - a0 + 1.0, fade_in=1.2, fade_out=1.6)
     add(a, shimmer(b - a), 0.7, fade_in=1.5, fade_out=1.0)
     add(LINES["d7"]["start"] + 1.0, bell, 0.25)
     add(QUOTES["q1"]["start"] + 0.2, bell, 0.18)
@@ -171,7 +172,8 @@ def main():
     add(a - 0.2, whoosh(1.0, 0.6), 1.0)
     a = SEG["morgen"]["start"]
     b = SEG["umar"]["start"] + SEG["umar"]["dur"]
-    add(a, dawn, 0.85, dur=b - a, fade_in=0.6)
+    a0 = SEG["morgen_karte"]["start"] + 0.3
+    add(a0, dawn, 0.85, dur=b - a0, fade_in=1.2)
     add(a, shimmer(SEG["morgen"]["dur"]), 0.45, fade_in=1.0, fade_out=1.0)
     steps(a + 0.2, a + 4.8, gap=0.5, g=0.22)
     add(SEG["dach_a"]["start"] + 0.5, murmur(EV["athan"] - SEG["dach_a"]["start"]), 0.12, fade_out=0.8)
