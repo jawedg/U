@@ -1,0 +1,38 @@
+{
+ "title": "Der erste Adhan – QISSA (POV)",
+ "series": "QISSA",
+ "note": "Variante A: Du = erfundener junger Mann aus Medina. Nur du (Charon) und erfundene Leute sprechen. Worte von Sahaba und dem Propheten ﷺ nur als goldene Schrift (quotes). Der Prophet ﷺ nur als Licht.",
+ "sentences": [
+  {"id": "d1", "part": 0, "voice": "Charon", "text": "Schon wieder. Ich weiß nicht mal, ob das Gebet schon angefangen hat."},
+  {"id": "m1", "part": 1, "voice": "Orus", "text": "Hat das Gebet schon begonnen?"},
+  {"id": "m2", "part": 2, "voice": "Iapetus", "text": "Keiner weiß es. Wir schätzen nur."},
+  {"id": "d2", "part": 0, "voice": "Charon", "text": "So geht das jeden Tag. Jeder kommt, wann er denkt."},
+  {"id": "d3", "part": 0, "voice": "Charon", "text": "Der Prophet, Friede sei mit ihm, macht sich Sorgen. Wie ruft man die Leute zum *Gebet*?"},
+  {"id": "d4", "part": 0, "voice": "Charon", "text": "Eine *Glocke*, wie die Christen? Ein *Horn*, wie die Juden? Ein *Feuer*?"},
+  {"id": "d5", "part": 0, "voice": "Charon", "text": "Nichts davon passt zu uns."},
+  {"id": "d6", "part": 0, "voice": "Charon", "text": "In dieser Nacht hat *Abdullah ibn Zaid* einen Traum."},
+  {"id": "d7", "part": 0, "voice": "Charon", "text": "Ein Mann in *grüner* Kleidung trägt eine Glocke."},
+  {"id": "d8", "part": 0, "voice": "Charon", "text": "Und er lehrt ihn Worte, die heute jeder Muslim kennt."},
+  {"id": "d9", "part": 0, "voice": "Charon", "text": "Am Morgen erzählt Abdullah dem Propheten, Friede sei mit ihm, von seinem Traum."},
+  {"id": "d10", "part": 0, "voice": "Charon", "text": "*Bilal*? Der Mann, den sie in Mekka so gequält haben?"},
+  {"id": "d11", "part": 0, "voice": "Charon", "text": "Er steigt auf das *höchste Dach* neben der Moschee."},
+  {"id": "d12", "part": 0, "voice": "Charon", "text": "*Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift."},
+  {"id": "d13", "part": 0, "voice": "Charon", "text": "Zwei Männer. *Ein* Traum."},
+  {"id": "d14", "part": 0, "voice": "Charon", "text": "Seit über *1400* Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt."}
+ ],
+ "quotes": [
+  {"id": "q1", "text": "„Verkaufst du mir die Glocke? Wir wollen damit zum Gebet rufen.“", "by": "Abdullah ibn Zaid (ra) im Traum"},
+  {"id": "q2", "text": "„Soll ich dir nicht etwas Besseres zeigen?“", "by": "der Mann in grüner Kleidung"},
+  {"id": "q3", "text": "„Das ist ein wahrer Traum, so Allah will. Bring es Bilal bei, denn er hat die kräftigere Stimme.“", "by": "der Prophet ﷺ · Abu Dawud 499"},
+  {"id": "q4", "text": "„Bei Dem, der dich mit der Wahrheit gesandt hat: Ich habe dasselbe gesehen wie er!“", "by": "Umar ibn al-Khattab (ra) · Abu Dawud 499"}
+ ],
+ "choice": {"q": "WUSSTEST DU DAS?", "a": "JA", "b": "NEIN"},
+ "athanFile": "qissa_adhan/athan_full.mp3",
+ "sources": [
+  "Sahih al-Bukhari 603, 604 (die Leute schätzten die Gebetszeit; Glocke wie die Christen, Horn wie die Juden, Feuer)",
+  "Sunan Abi Dawud 498 (der Prophet ﷺ sorgte sich, wie man die Leute zum Gebet sammelt)",
+  "Sunan Abi Dawud 499, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706 (Traum von Abdullah ibn Zaid, Mann in zwei grünen Gewändern mit Glocke, 'wahrer Traum', 'bring es Bilal bei', Umar zieht seinen Umhang hinter sich her: 'Ich habe dasselbe gesehen')",
+  "Sunan Abi Dawud 519 (Bilal ruft vom höchsten Haus neben der Moschee)",
+  "Sira Ibn Hisham (Bilal wurde in Mekka gequält)"
+ ]
+}

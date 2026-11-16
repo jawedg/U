@@ -6,9 +6,10 @@
   - Piper/edge-tts gefallen dem Nutzer NICHT (zu roboterhaft).
   - Chatterbox (Open Source) will der Nutzer auch NICHT. Google Cloud (Chirp 3 HD) NICHT – Nutzer will keine Karte/Bankdaten hinterlegen.
     Reserve bei Gemini-Tageslimit: `voice_gemini.py` wechselt automatisch auf das Ausweichmodell (FALLBACKS), gleiche Stimme Charon.
-- **Stil: 2D-Strichzeichnung („von früher“)** wie `src/athan2d/` – helle Linien auf dunklem Grund, Gold-Akzente,
-  Papier-Körnung, Ort-Label + arabischer Text oben, Satz-Untertitel unten (gesprochene Wörter hell, Schlüsselwörter gold).
-  3D (`src/train`, `src/athan`) gefällt dem Nutzer NICHT mehr (zu holprig).
+- **Islam-Kanal NEU (Nov. 2026): Serie „QISSA – wahre Geschichten“ im POV-3D-Stil** wie die TikToks von „Signal Lost“
+  (@signalost0): Ich-Sicht in echten 3D-Räumen (Blender), großer Frage-Titel oben, Ort/Zeit-Zeile in Schreibmaschinenschrift,
+  Untertitel in Serifenschrift, schwarze Zwischentafeln, Auswahltafel ① ② am Ende, Logo. Siehe Abschnitt „QISSA“ unten.
+  Älterer Stil: 2D-Strichzeichnung wie `src/athan2d/`. 3D mit Three.js in Remotion (`src/train`, `src/athan`) gefällt NICHT (zu holprig).
 - Format 1080×1920.
 
 ## Gemini-TTS – wichtig
@@ -113,3 +114,27 @@ Lokal reicht `npm run render:3d`.
   Prüfspitzen fächern nach Lage auf (keine Durchdringung). Licht: RoomEnvironment + Schatten + N8AO (`@react-three/postprocessing@3.0.4`).
 - Rendern: `--props='{"fx":"ao","dpr":0.75}' --timeout=300000` (dpr = 3D-Auflösung; Kosten sind pixelgebunden, ~1,3 s/Bild → ~3 h).
   Länger als 2 h → mit `setsid nohup` starten (Skript-Vorlage: render + 2-Pass 1250 kbit/s → ≤ 60 MB).
+
+## QISSA – Islam-POV-Serie in 3D (Stil „Signal Lost“, aktueller Wunsch des Nutzers)
+- Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, 24 fps), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
+- **Variante A (vom Nutzer gewählt):** „Du“ = erfundener junger Mann aus Medina (Stimme Charon). Mit eigener Stimme sprechen nur du
+  und erfundene Leute (z. B. Orus, Iapetus). Worte von Sahaba und dem Propheten ﷺ NUR als goldene Schrift (`quotes` in script.json).
+  Menschen ohne Gesicht (leerer Kopf), Sahaba mit Licht über dem Kopf (`glow=True`), Prophet ﷺ nur als Licht-Säule (`holy_light`).
+  Adhan nie per KI – echte Aufnahme vom Nutzer (`public/qissa_adhan/athan_full.mp3`, nicht im Repo), nur ein passender Ausschnitt.
+- Serienname vorläufig **QISSA** (قصة = Geschichte), Zusatz „WAHRE GESCHICHTEN“ – Nutzer kann ihn noch ändern (Title/Card in QissaAdhan.tsx).
+- Ablauf:
+  1. `src/qissa_adhan/script.json` (Sätze mit `part`/`voice`, Zitate, Quellen) → `python3 scripts/voice_gemini.py --project qissa_adhan`
+     (3 Anfragen: Charon-Block, Orus, Iapetus) → `timing.json`.
+  2. `python3 scripts/build_qissa_adhan.py` → `timeline.json` (Einstellungen, Sätze, Zitate, Ereignisse; ohne Vertonung geschätzt).
+  3. `./scripts/render_qissa_adhan.sh [einstellungen…]` → Blender-Bilder `out/qissa_frames/<einstellung>/` → `public/qissa_adhan/shots/*.mp4`
+     (4 Blender parallel, 50 %, 6 Samples; ~15 s/Bild je Prozess; lange Läufe mit `setsid nohup`). `rendered.json` = gerenderte Bildzahl
+     je Einstellung (Remotion passt per playbackRate an, falls die Vertonung die Länge leicht ändert).
+  4. `python3 scripts/sfx_qissa_adhan.py` → `public/qissa_adhan/sfx.wav` (Atmo + Effekte, keine Musik).
+  5. `npx remotion render QissaAdhan out/qissa-erster-adhan.mp4 --concurrency=4 --browser-executable=…` (kein --gl nötig).
+- Blender-Bausteine (`blender/qissa/lib.py`): `person()` (Gewand mit Falten, Turban/Tuch/Kappe, Umhang, sitzend/stehend, Gelenke als Empties),
+  `walk()`, `idle()`, `head_to()`, `arm_pose()`, `hands_to_ears()`, `holy_light()`, `halo()`, `pov_camera()` + `cam_keys()` + `handheld()`,
+  `pov_hands()` (Hand mit Öllampe), `world_sky("night"|"dawn"|"dream")`, `render_setup()` (AgX Punchy, Dunst per Mist, Bloom).
+  `blender/qissa/medina.py`: Moschee (Lehmmauern, Palmstamm-Säulen, Palmzweig-Dach), Gassen, Häuser, Palmen, Berge; `join_static()`
+  verschmilzt alles Unbewegte (halbiert die Renderzeit). Schatten nur von Mond/Sonne (weiche Punktlicht-Schatten rauschen und sind teuer).
+- Schriften lokal in `public/fonts/` (EB Garamond, Amiri; OFL), Untertitel-Serifenschrift wie im Vorbild.
+- TikTok-Beschreibung + Quellen: `videos/qissa-erster-adhan.md`.

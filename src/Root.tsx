@@ -20,6 +20,7 @@ import { FutabaVideo, FUTABA_FPS, FUTABA_FRAMES } from "./futaba/Futaba";
 import { Futaba2Video, FUTABA2_FPS, FUTABA2_FRAMES } from "./futaba2/Futaba2";
 import { Futaba3Video, FUTABA3_FPS, FUTABA3_FRAMES } from "./futaba3/Futaba3";
 import { Futaba4Video, FUTABA4_FPS, FUTABA4_FRAMES } from "./futaba4/Futaba4";
+import { QissaAdhanVideo, QISSA_FPS, QISSA_FRAMES } from "./qissa_adhan/QissaAdhan";
 
 export const FPS = 30;
 
@@ -102,6 +103,7 @@ export const RemotionRoot: React.FC = () => {
     <Composition id="FutabaTeil1" component={Futaba2Video} durationInFrames={FUTABA2_FRAMES} fps={FUTABA2_FPS} width={1080} height={1920} />
     <Composition id="FutabaWohnzimmer" component={Futaba3Video} durationInFrames={FUTABA3_FRAMES} fps={FUTABA3_FPS} width={1080} height={1920} />
     <Composition id="FutabaV3" component={Futaba4Video} durationInFrames={FUTABA4_FRAMES} fps={FUTABA4_FPS} width={1080} height={1920} />
+    <Composition id="QissaAdhan" component={QissaAdhanVideo} durationInFrames={QISSA_FRAMES} fps={QISSA_FPS} width={1080} height={1920} />
     <Composition id="Pov3DProbe" component={Pov3DVideo} durationInFrames={POV_FRAMES} fps={POV_FPS} width={1080} height={1920} />
     <Composition id="AnimeFolge1" component={AnimeVideo} durationInFrames={animeFrames()} fps={30} width={1080} height={1920} />
     <Composition id="WasWaere" component={WhatIfVideo} durationInFrames={whatifFrames()} fps={WFPS2} width={1080} height={1920} />

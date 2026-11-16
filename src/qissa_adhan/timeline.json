@@ -1,0 +1,981 @@
+{
+ "fps": 24,
+ "voiced": false,
+ "total": 139.48,
+ "frames": 3348,
+ "segments": [
+  {
+   "id": "gasse",
+   "kind": "shot",
+   "label": "MEDINA · 622 · NACHT",
+   "start": 0.0,
+   "dur": 10.54,
+   "frames": 253
+  },
+  {
+   "id": "moschee",
+   "kind": "shot",
+   "label": null,
+   "start": 10.54,
+   "dur": 12.71,
+   "frames": 305
+  },
+  {
+   "id": "beratung",
+   "kind": "shot",
+   "label": null,
+   "start": 23.25,
+   "dur": 18.81,
+   "frames": 451
+  },
+  {
+   "id": "nacht",
+   "kind": "card",
+   "text": "IN DIESER NACHT",
+   "start": 42.06,
+   "dur": 1.7
+  },
+  {
+   "id": "traum",
+   "kind": "shot",
+   "label": null,
+   "start": 43.76,
+   "dur": 22.8,
+   "frames": 547
+  },
+  {
+   "id": "morgen_karte",
+   "kind": "card",
+   "text": "AM MORGEN",
+   "start": 66.56,
+   "dur": 1.6
+  },
+  {
+   "id": "morgen",
+   "kind": "shot",
+   "label": "MEDINA · MORGENDÄMMERUNG",
+   "start": 68.16,
+   "dur": 19.24,
+   "frames": 462
+  },
+  {
+   "id": "dach_a",
+   "kind": "shot",
+   "label": null,
+   "start": 87.4,
+   "dur": 9.36,
+   "frames": 225
+  },
+  {
+   "id": "dach_b",
+   "kind": "shot",
+   "label": null,
+   "start": 96.76,
+   "dur": 4.2,
+   "frames": 101
+  },
+  {
+   "id": "dach_c",
+   "kind": "shot",
+   "label": null,
+   "start": 100.96,
+   "dur": 4.0,
+   "frames": 96
+  },
+  {
+   "id": "dach_d",
+   "kind": "shot",
+   "label": null,
+   "start": 104.96,
+   "dur": 4.4,
+   "frames": 106
+  },
+  {
+   "id": "umar",
+   "kind": "shot",
+   "label": null,
+   "start": 109.36,
+   "dur": 15.05,
+   "frames": 361
+  },
+  {
+   "id": "ende",
+   "kind": "shot",
+   "label": null,
+   "start": 124.41,
+   "dur": 12.67,
+   "frames": 304
+  },
+  {
+   "id": "logo",
+   "kind": "card",
+   "text": "QISSA",
+   "start": 137.08,
+   "dur": 2.4
+  }
+ ],
+ "lines": [
+  {
+   "id": "d1",
+   "shot": "gasse",
+   "start": 3.9,
+   "dur": 5.94,
+   "file": "",
+   "text": "Schon wieder. Ich weiß nicht mal, ob das Gebet schon angefangen hat.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Schon",
+     "start": 0.1
+    },
+    {
+     "word": "wieder.",
+     "start": 0.528
+    },
+    {
+     "word": "Ich",
+     "start": 1.324
+    },
+    {
+     "word": "weiß",
+     "start": 1.63
+    },
+    {
+     "word": "nicht",
+     "start": 1.997
+    },
+    {
+     "word": "mal,",
+     "start": 2.425
+    },
+    {
+     "word": "ob",
+     "start": 3.037
+    },
+    {
+     "word": "das",
+     "start": 3.282
+    },
+    {
+     "word": "Gebet",
+     "start": 3.587
+    },
+    {
+     "word": "schon",
+     "start": 4.016
+    },
+    {
+     "word": "angefangen",
+     "start": 4.444
+    },
+    {
+     "word": "hat.",
+     "start": 5.178
+    }
+   ]
+  },
+  {
+   "id": "m1",
+   "shot": "moschee",
+   "start": 11.04,
+   "dur": 2.56,
+   "file": "",
+   "text": "Hat das Gebet schon begonnen?",
+   "voice": "Orus",
+   "words": [
+    {
+     "word": "Hat",
+     "start": 0.1
+    },
+    {
+     "word": "das",
+     "start": 0.396
+    },
+    {
+     "word": "Gebet",
+     "start": 0.692
+    },
+    {
+     "word": "schon",
+     "start": 1.107
+    },
+    {
+     "word": "begonnen?",
+     "start": 1.522
+    }
+   ]
+  },
+  {
+   "id": "m2",
+   "shot": "moschee",
+   "start": 13.85,
+   "dur": 3.26,
+   "file": "",
+   "text": "Keiner weiß es. Wir schätzen nur.",
+   "voice": "Iapetus",
+   "words": [
+    {
+     "word": "Keiner",
+     "start": 0.1
+    },
+    {
+     "word": "weiß",
+     "start": 0.602
+    },
+    {
+     "word": "es.",
+     "start": 0.978
+    },
+    {
+     "word": "Wir",
+     "start": 1.542
+    },
+    {
+     "word": "schätzen",
+     "start": 1.856
+    },
+    {
+     "word": "nur.",
+     "start": 2.483
+    }
+   ]
+  },
+  {
+   "id": "d2",
+   "shot": "moschee",
+   "start": 17.56,
+   "dur": 5.09,
+   "file": "",
+   "text": "So geht das jeden Tag. Jeder kommt, wann er denkt.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "So",
+     "start": 0.1
+    },
+    {
+     "word": "geht",
+     "start": 0.365
+    },
+    {
+     "word": "das",
+     "start": 0.763
+    },
+    {
+     "word": "jeden",
+     "start": 1.095
+    },
+    {
+     "word": "Tag.",
+     "start": 1.559
+    },
+    {
+     "word": "Jeder",
+     "start": 2.222
+    },
+    {
+     "word": "kommt,",
+     "start": 2.686
+    },
+    {
+     "word": "wann",
+     "start": 3.481
+    },
+    {
+     "word": "er",
+     "start": 3.879
+    },
+    {
+     "word": "denkt.",
+     "start": 4.144
+    }
+   ]
+  },
+  {
+   "id": "d3",
+   "shot": "beratung",
+   "start": 23.85,
+   "dur": 7.76,
+   "file": "",
+   "text": "Der Prophet, Friede sei mit ihm, macht sich Sorgen. Wie ruft man die Leute zum *Gebet*?",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.1
+    },
+    {
+     "word": "Prophet,",
+     "start": 0.418
+    },
+    {
+     "word": "Friede",
+     "start": 1.309
+    },
+    {
+     "word": "sei",
+     "start": 1.818
+    },
+    {
+     "word": "mit",
+     "start": 2.137
+    },
+    {
+     "word": "ihm,",
+     "start": 2.455
+    },
+    {
+     "word": "macht",
+     "start": 3.091
+    },
+    {
+     "word": "sich",
+     "start": 3.537
+    },
+    {
+     "word": "Sorgen.",
+     "start": 3.919
+    },
+    {
+     "word": "Wie",
+     "start": 4.746
+    },
+    {
+     "word": "ruft",
+     "start": 5.064
+    },
+    {
+     "word": "man",
+     "start": 5.446
+    },
+    {
+     "word": "die",
+     "start": 5.764
+    },
+    {
+     "word": "Leute",
+     "start": 6.083
+    },
+    {
+     "word": "zum",
+     "start": 6.528
+    },
+    {
+     "word": "*Gebet*?",
+     "start": 6.846
+    }
+   ]
+  },
+  {
+   "id": "d4",
+   "shot": "beratung",
+   "start": 32.06,
+   "dur": 6.34,
+   "file": "",
+   "text": "Eine *Glocke*, wie die Christen? Ein *Horn*, wie die Juden? Ein *Feuer*?",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Eine",
+     "start": 0.1
+    },
+    {
+     "word": "*Glocke*,",
+     "start": 0.469
+    },
+    {
+     "word": "wie",
+     "start": 1.269
+    },
+    {
+     "word": "die",
+     "start": 1.576
+    },
+    {
+     "word": "Christen?",
+     "start": 1.884
+    },
+    {
+     "word": "Ein",
+     "start": 2.807
+    },
+    {
+     "word": "*Horn*,",
+     "start": 3.114
+    },
+    {
+     "word": "wie",
+     "start": 3.791
+    },
+    {
+     "word": "die",
+     "start": 4.098
+    },
+    {
+     "word": "Juden?",
+     "start": 4.406
+    },
+    {
+     "word": "Ein",
+     "start": 5.144
+    },
+    {
+     "word": "*Feuer*?",
+     "start": 5.452
+    }
+   ]
+  },
+  {
+   "id": "d5",
+   "shot": "beratung",
+   "start": 38.8,
+   "dur": 2.56,
+   "file": "",
+   "text": "Nichts davon passt zu uns.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Nichts",
+     "start": 0.1
+    },
+    {
+     "word": "davon",
+     "start": 0.613
+    },
+    {
+     "word": "passt",
+     "start": 1.062
+    },
+    {
+     "word": "zu",
+     "start": 1.512
+    },
+    {
+     "word": "uns.",
+     "start": 1.768
+    }
+   ]
+  },
+  {
+   "id": "d6",
+   "shot": "traum",
+   "start": 44.26,
+   "dur": 4.26,
+   "file": "",
+   "text": "In dieser Nacht hat *Abdullah ibn Zaid* einen Traum.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "In",
+     "start": 0.1
+    },
+    {
+     "word": "dieser",
+     "start": 0.351
+    },
+    {
+     "word": "Nacht",
+     "start": 0.852
+    },
+    {
+     "word": "hat",
+     "start": 1.29
+    },
+    {
+     "word": "*Abdullah",
+     "start": 1.604
+    },
+    {
+     "word": "ibn",
+     "start": 2.23
+    },
+    {
+     "word": "Zaid*",
+     "start": 2.544
+    },
+    {
+     "word": "einen",
+     "start": 2.92
+    },
+    {
+     "word": "Traum.",
+     "start": 3.358
+    }
+   ]
+  },
+  {
+   "id": "d7",
+   "shot": "traum",
+   "start": 48.82,
+   "dur": 3.83,
+   "file": "",
+   "text": "Ein Mann in *grüner* Kleidung trägt eine Glocke.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.1
+    },
+    {
+     "word": "Mann",
+     "start": 0.403
+    },
+    {
+     "word": "in",
+     "start": 0.767
+    },
+    {
+     "word": "*grüner*",
+     "start": 1.01
+    },
+    {
+     "word": "Kleidung",
+     "start": 1.496
+    },
+    {
+     "word": "trägt",
+     "start": 2.102
+    },
+    {
+     "word": "eine",
+     "start": 2.527
+    },
+    {
+     "word": "Glocke.",
+     "start": 2.891
+    }
+   ]
+  },
+  {
+   "id": "d8",
+   "shot": "traum",
+   "start": 60.85,
+   "dur": 4.81,
+   "file": "",
+   "text": "Und er lehrt ihn Worte, die heute jeder Muslim kennt.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.1
+    },
+    {
+     "word": "er",
+     "start": 0.417
+    },
+    {
+     "word": "lehrt",
+     "start": 0.67
+    },
+    {
+     "word": "ihn",
+     "start": 1.113
+    },
+    {
+     "word": "Worte,",
+     "start": 1.43
+    },
+    {
+     "word": "die",
+     "start": 2.19
+    },
+    {
+     "word": "heute",
+     "start": 2.507
+    },
+    {
+     "word": "jeder",
+     "start": 2.95
+    },
+    {
+     "word": "Muslim",
+     "start": 3.393
+    },
+    {
+     "word": "kennt.",
+     "start": 3.9
+    }
+   ]
+  },
+  {
+   "id": "d9",
+   "shot": "morgen",
+   "start": 68.66,
+   "dur": 6.2,
+   "file": "",
+   "text": "Am Morgen erzählt Abdullah dem Propheten, Friede sei mit ihm, von seinem Traum.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.1
+    },
+    {
+     "word": "Morgen",
+     "start": 0.327
+    },
+    {
+     "word": "erzählt",
+     "start": 0.78
+    },
+    {
+     "word": "Abdullah",
+     "start": 1.29
+    },
+    {
+     "word": "dem",
+     "start": 1.857
+    },
+    {
+     "word": "Propheten,",
+     "start": 2.14
+    },
+    {
+     "word": "Friede",
+     "start": 3.047
+    },
+    {
+     "word": "sei",
+     "start": 3.5
+    },
+    {
+     "word": "mit",
+     "start": 3.783
+    },
+    {
+     "word": "ihm,",
+     "start": 4.067
+    },
+    {
+     "word": "von",
+     "start": 4.633
+    },
+    {
+     "word": "seinem",
+     "start": 4.917
+    },
+    {
+     "word": "Traum.",
+     "start": 5.37
+    }
+   ]
+  },
+  {
+   "id": "d10",
+   "shot": "morgen",
+   "start": 81.71,
+   "dur": 5.09,
+   "file": "",
+   "text": "*Bilal*? Der Mann, den sie in Mekka so gequält haben?",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "*Bilal*?",
+     "start": 0.1
+    },
+    {
+     "word": "Der",
+     "start": 0.885
+    },
+    {
+     "word": "Mann,",
+     "start": 1.212
+    },
+    {
+     "word": "den",
+     "start": 1.931
+    },
+    {
+     "word": "sie",
+     "start": 2.258
+    },
+    {
+     "word": "in",
+     "start": 2.585
+    },
+    {
+     "word": "Mekka",
+     "start": 2.847
+    },
+    {
+     "word": "so",
+     "start": 3.305
+    },
+    {
+     "word": "gequält",
+     "start": 3.566
+    },
+    {
+     "word": "haben?",
+     "start": 4.155
+    }
+   ]
+  },
+  {
+   "id": "d11",
+   "shot": "dach_a",
+   "start": 87.8,
+   "dur": 4.26,
+   "file": "",
+   "text": "Er steigt auf das *höchste Dach* neben der Moschee.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.1
+    },
+    {
+     "word": "steigt",
+     "start": 0.355
+    },
+    {
+     "word": "auf",
+     "start": 0.864
+    },
+    {
+     "word": "das",
+     "start": 1.182
+    },
+    {
+     "word": "*höchste",
+     "start": 1.5
+    },
+    {
+     "word": "Dach*",
+     "start": 2.073
+    },
+    {
+     "word": "neben",
+     "start": 2.455
+    },
+    {
+     "word": "der",
+     "start": 2.901
+    },
+    {
+     "word": "Moschee.",
+     "start": 3.219
+    }
+   ]
+  },
+  {
+   "id": "d12",
+   "shot": "umar",
+   "start": 109.96,
+   "dur": 5.94,
+   "file": "",
+   "text": "*Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "*Umar*!",
+     "start": 0.1
+    },
+    {
+     "word": "Er",
+     "start": 0.773
+    },
+    {
+     "word": "rennt",
+     "start": 1.018
+    },
+    {
+     "word": "so",
+     "start": 1.446
+    },
+    {
+     "word": "schnell,",
+     "start": 1.691
+    },
+    {
+     "word": "dass",
+     "start": 2.547
+    },
+    {
+     "word": "sein",
+     "start": 2.914
+    },
+    {
+     "word": "Umhang",
+     "start": 3.282
+    },
+    {
+     "word": "über",
+     "start": 3.771
+    },
+    {
+     "word": "den",
+     "start": 4.138
+    },
+    {
+     "word": "Boden",
+     "start": 4.444
+    },
+    {
+     "word": "schleift.",
+     "start": 4.872
+    }
+   ]
+  },
+  {
+   "id": "d13",
+   "shot": "umar",
+   "start": 121.2,
+   "dur": 2.41,
+   "file": "",
+   "text": "Zwei Männer. *Ein* Traum.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Zwei",
+     "start": 0.1
+    },
+    {
+     "word": "Männer.",
+     "start": 0.46
+    },
+    {
+     "word": "*Ein*",
+     "start": 1.24
+    },
+    {
+     "word": "Traum.",
+     "start": 1.54
+    }
+   ]
+  },
+  {
+   "id": "d14",
+   "shot": "ende",
+   "start": 124.81,
+   "dur": 7.37,
+   "file": "",
+   "text": "Seit über *1400* Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt.",
+   "voice": "Charon",
+   "words": [
+    {
+     "word": "Seit",
+     "start": 0.1
+    },
+    {
+     "word": "über",
+     "start": 0.496
+    },
+    {
+     "word": "*1400*",
+     "start": 0.891
+    },
+    {
+     "word": "Jahren",
+     "start": 1.287
+    },
+    {
+     "word": "hört",
+     "start": 1.814
+    },
+    {
+     "word": "man",
+     "start": 2.21
+    },
+    {
+     "word": "diese",
+     "start": 2.539
+    },
+    {
+     "word": "Worte.",
+     "start": 3.001
+    },
+    {
+     "word": "Fünfmal",
+     "start": 3.792
+    },
+    {
+     "word": "am",
+     "start": 4.385
+    },
+    {
+     "word": "Tag.",
+     "start": 4.649
+    },
+    {
+     "word": "Auf",
+     "start": 5.308
+    },
+    {
+     "word": "der",
+     "start": 5.638
+    },
+    {
+     "word": "ganzen",
+     "start": 5.967
+    },
+    {
+     "word": "Welt.",
+     "start": 6.495
+    }
+   ]
+  }
+ ],
+ "quotes": [
+  {
+   "id": "q1",
+   "shot": "traum",
+   "start": 53.0,
+   "dur": 4.2,
+   "text": "„Verkaufst du mir die Glocke? Wir wollen damit zum Gebet rufen.“",
+   "by": "Abdullah ibn Zaid (ra) im Traum"
+  },
+  {
+   "id": "q2",
+   "shot": "traum",
+   "start": 57.35,
+   "dur": 3.3,
+   "text": "„Soll ich dir nicht etwas Besseres zeigen?“",
+   "by": "der Mann in grüner Kleidung"
+  },
+  {
+   "id": "q3",
+   "shot": "morgen",
+   "start": 75.21,
+   "dur": 6.2,
+   "text": "„Das ist ein wahrer Traum, so Allah will. Bring es Bilal bei, denn er hat die kräftigere Stimme.“",
+   "by": "der Prophet ﷺ · Abu Dawud 499"
+  },
+  {
+   "id": "q4",
+   "shot": "umar",
+   "start": 116.2,
+   "dur": 4.8,
+   "text": "„Bei Dem, der dich mit der Wahrheit gesandt hat: Ich habe dasselbe gesehen wie er!“",
+   "by": "Umar ibn al-Khattab (ra) · Abu Dawud 499"
+  }
+ ],
+ "choice": {
+  "start": 132.68,
+  "dur": 4.4,
+  "q": "WUSSTEST DU DAS?",
+  "a": "JA",
+  "b": "NEIN"
+ },
+ "events": {
+  "glocke_d4": 32.529,
+  "horn_d4": 35.174,
+  "feuer_d4": 37.512,
+  "glocke_d7": 51.711,
+  "bilal_d10": 81.81,
+  "umar_d12": 110.06,
+  "athan": 92.36,
+  "athan_end": 124.41,
+  "takbir": [
+   94.66,
+   98.86,
+   102.36,
+   106.36
+  ],
+  "door_umar": 109.71
+ },
+ "athan": {
+  "file": "qissa_adhan/athan_full.mp3",
+  "in": 0.0
+ }
+}
