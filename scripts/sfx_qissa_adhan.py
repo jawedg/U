@@ -185,119 +185,193 @@ def cloth(sec):
     return S.band(S.noise(sec), 250, 1800) * (0.5 + 0.5 * np.abs(np.sin(2 * np.pi * 3.2 * tt))) * 0.5
 
 
+def R(key, t0=0.0, dur=None, peak=0.8, alt=None):
+    """echte Aufnahme oder Ersatz (alt = Funktion ohne Argumente)"""
+    x = real(key, t0, dur, peak)
+    return x if x is not None else (alt() if alt else None)
+
+
+def speed(x, f):
+    """schneller/langsamer abspielen (Tonhöhe ändert sich mit, wie Band) – für Laufschritte, Ferne"""
+    n = int(len(x) / f)
+    src = np.linspace(0, len(x) - 1, n)
+    return np.stack([np.interp(src, np.arange(len(x)), x[:, c]) for c in range(2)], axis=1)
+
+
+def far(x, lo=250, hi=3500):
+    """klingt weiter weg: Bandbreite kleiner"""
+    return np.stack([S.band(x[:, c], lo, hi) for c in range(2)], axis=1)
+
+
+def shofar_syn(dur=2.4):
+    """Ersatz-Schofar (Widderhorn): rauer, blechern-summender Ton mit Anblas-Gleiten, Vibrato, Sprung nach oben am Ende, Hall"""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    f = np.full(n, 233.0)
+    f *= 1 - 0.22 * np.exp(-t / 0.05)                       # Anblasen: von unten hineingleiten
+    f *= 1 + 0.006 * np.sin(2 * np.pi * 5.3 * t) + 0.003 * np.sin(2 * np.pi * 11.7 * t + 1)
+    jump = 0.72 * dur
+    f *= 1 + 0.5 * np.clip((t - jump) / 0.05, 0, 1)         # Sprung zur Quinte (typisch für Tekia)
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    x = sum((1.3 if k % 2 else 1.0) / k ** 0.85 * np.sin(k * ph + 0.3 * k) for k in range(1, 16))
+    x = np.tanh(1.8 * x / 4)                                 # Schnarren des Horns
+    form = S.band(x, 450, 750) * 1.0 + S.band(x, 1000, 1500) * 0.8 + S.band(x, 2300, 3000) * 0.45 + S.band(x, 120, 400) * 0.6
+    breath = S.band(S.noise(dur), 900, 5000) * 0.05
+    env = np.clip(t / 0.06, 0, 1) * (0.85 + 0.15 * np.exp(-t / 0.3)) * np.clip((dur - t) / 0.18, 0, 1)
+    env *= 1 + 0.25 * np.exp(-t / 0.15) * np.sin(2 * np.pi * 28 * t)  # Flattern beim Anblasen
+    y = (form + breath) * env
+    ir_t = np.arange(int(0.9 * SR)) / SR
+    ir = S.noise(0.9) * np.exp(-ir_t / 0.22)
+    wet = np.convolve(y, ir)[:n] * 0.012
+    y = y + wet
+    return np.stack([y, np.roll(y, 40)], axis=1) / (np.max(np.abs(y)) or 1) * 0.8
+
+
 def walk_steps(t0, t1, g=0.3, run=False):
-    """Schritte: echte Kies-/Sandschritte (Aufnahme, geloopt) oder synthetisch"""
-    x = real("gravel_run" if run else "gravel1") if run else real("gravel1")
-    if x is None:
-        x = real("gravel2")
+    """Schritte im Sand: echte Aufnahme (geloopt; beim Laufen schneller abgespielt) oder synthetisch"""
+    x = real("steps_sand")
     if x is None or t1 - t0 < 0.4:
         steps(t0, t1, gap=0.24 if run else 0.47, g=g * 0.9, run=run)
         return
-    add(t0, x, g * (1.3 if run else 1.0), fade_in=0.15, fade_out=0.3, dur=t1 - t0, fx=True)
+    if run:
+        x = speed(x, 1.55)
+    add(t0, x, g * (1.2 if run else 1.0), fade_in=0.15, fade_out=0.3, dur=t1 - t0, fx=True)
 
 
 def night_bed(t0, t1, g=1.0, fade_in=0.0, fade_out=0.0):
-    """Nacht: echte Grillen (Feldaufnahme) + leiser Wüstenwind"""
-    c = real("crickets", 2.0)
-    add(t0, c, 0.55 * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
-    add(t0, get(S.amb_night, "amb_night", 60), (0.35 if c is not None else 0.9) * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+    """Nacht: Grillen/Nacht-Atmo + leiser Wüstenwind"""
+    c = real("crickets")
+    add(t0, c, 0.6 * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+    add(t0, real("wind", 3.0), 0.22 * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+    add(t0, get(S.amb_night, "amb_night", 60), (0.15 if c is not None else 0.9) * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
 
 
-def dawn_bed(t0, t1, g=1.0, fade_in=0.0, fade_out=0.0):
-    """Morgen: echte Vögel/Hunde/Grillen in der Dämmerung + leiser Wind"""
-    d = real("dawn", 5.0)
-    add(t0, d, 0.6 * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
-    add(t0, get(S.amb_dawn, "amb_dawn", 60), (0.3 if d is not None else 0.85) * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+def dawn_bed(t0, t1, g=1.0, fade_in=0.0, fade_out=0.0, seed=0):
+    """Morgen: Wüstenwind + Vögel (verteilt) + leise synthetische Morgen-Atmo"""
+    w = real("wind")
+    add(t0, w, 0.45 * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+    add(t0, get(S.amb_dawn, "amb_dawn", 60), (0.25 if w is not None else 0.85) * g, dur=t1 - t0, fade_in=fade_in, fade_out=fade_out)
+    b = real("birds")
+    if b is not None:
+        r = np.random.default_rng(seed)
+        t = t0 + r.uniform(0.3, 1.5)
+        while t < t1 - 1.0:
+            add(t, speed(b, r.uniform(0.9, 1.15)), 0.35 * g * r.uniform(0.6, 1.0), pan=r.uniform(-0.6, 0.6), fade_out=0.3)
+            t += r.uniform(3.0, 6.0)
+
+
+def bang():
+    """Tür fliegt auf: Holz-Tür + Knarren + dumpfer Schlag"""
+    o, c, i = real("door_open"), real("door_creak"), real("impact")
+    if o is None:
+        return door_bang()
+    n = int(1.3 * SR)
+    y = np.zeros((n, 2))
+    for x, at, g in ((c, 0.0, 0.6), (o, 0.05, 1.0), (i, 0.12, 0.5)):
+        if x is not None:
+            k = int(at * SR)
+            m = min(n - k, len(x))
+            y[k:k + m] += x[:m] * g
+    return y
 
 
 def main():
     dream = get(S.amb_dream, "amb_dream", 40)
-    syn_bell = get(S.bell, "bell")
-    syn_horn = get(S.horn, "horn")
-    syn_fire = get(S.fire, "fire")
-    church = real("bell1") if real("bell1") is not None else syn_bell
-    hand = real("handbell", 0.0, 4.0)
-    shofar = real("shofar", 0.0, 3.2)
-    fire = real("fire", 1.0, 3.0)
+    church = R("bell1", 0, 3.2, alt=lambda: get(S.bell, "bell"))
+    hand = R("handbell", 0, 4.0, alt=lambda: get(S.bell, "bell"))
+    horn = real("shofar") if real("shofar") is not None else shofar_syn(2.4)
+    fire = R("fire", 0.5, 3.0, alt=lambda: get(S.fire, "fire")[: int(2.4 * SR)])
     rooster = real("rooster1")
-    rooster2 = real("rooster2")
-    door_s = real("door_hinge")
-    door_b = real("door_slam")
+    heart = R("heartbeat", 0, 9.0, alt=lambda: heartbeat(7.0))
+    W = lambda: R("whoosh_slow", alt=lambda: whoosh(0.9, 0.6))       # noqa: E731
+    Wr = lambda: R("whoosh_rev", alt=lambda: whoosh(0.7, 0.5))       # noqa: E731
+    B = lambda: R("boom_big", alt=boom)                              # noqa: E731
+    Bs = lambda: R("impact", alt=boom)                               # noqa: E731
+    sparkle = real("sparkle")
+    shim = real("shimmer")
 
     # --- Einstieg (Hook): Morgen über Medina, „Allahu akbar“ (Adhan-Spur unten), Schnitt mit Schlag
     a, b = seg("hook_a")
-    dawn_bed(a, b + 0.3, 0.55, fade_out=0.3)
+    dawn_bed(a, b + 0.3, 0.5, fade_out=0.3, seed=1)
     a, b = seg("hook_b")
-    add(a - 0.15, whoosh(0.5, 0.6), 1.0, fx=True)
-    add(a, boom(), 0.5, fx=True)
-    dawn_bed(a, b + 0.3, 0.8, fade_out=0.3)
+    add(a - 0.45, Wr(), 0.8, fx=True)
+    add(a, B(), 0.55, fx=True)
+    dawn_bed(a, b + 0.3, 0.8, fade_out=0.3, seed=2)
     a, b = seg("hook_c")
-    add(a - 0.25, whoosh(0.7, 0.6), 1.0, fx=True)
+    add(a - 0.5, W(), 0.8, fx=True)
     add(a, dream, 0.8, dur=b - a + 0.4, fade_in=0.15, fade_out=0.4)
-    add(a, shimmer(b - a + 0.4, 1.6), 1.0, fade_in=0.3, fade_out=0.4)
-    add(a + 0.1, hand, 0.25, fx=True, fade_out=1.0)
+    add(a, shimmer(b - a + 0.4, 1.4), 1.0, fade_in=0.3, fade_out=0.4)
+    add(a + 0.05, shim, 0.5, fx=True)
+    add(a + 0.2, hand, 0.25, fx=True, fade_out=1.0)
 
     # --- Nacht: Gasse, Moschee, Beratung
     a, b = seg("gasse")
-    add(a - 0.3, whoosh(0.9, 0.5), 1.0, fx=True)
-    add(a + 0.05, boom(), 0.6, fx=True)
+    add(a - 0.45, Wr(), 0.8, fx=True)
+    add(a + 0.02, B(), 0.6, fx=True)
     night_bed(a, b + 0.3, 1.0, fade_in=0.3)
-    walk_steps(a + 0.2, b - 1.0, 0.32)
+    walk_steps(a + 0.2, b - 1.0, 0.3)
     a, b = seg("moschee")
-    night_bed(a, b + 0.3, 0.9)
-    add(a + 1.5, murmur(b - a - 1.5), 0.16, fade_in=1.0, fade_out=1.0)
-    walk_steps(a, a + 2.5, 0.25)
+    night_bed(a, b + 0.3, 0.85)
+    add(a + 1.2, R("walla", alt=lambda: murmur(5)), 0.35, dur=b - a - 1.2, fade_in=1.0, fade_out=1.0)
+    add(a + 1.2, real("walla2"), 0.25, dur=b - a - 1.2, fade_in=1.0, fade_out=1.0)
+    walk_steps(a, a + 2.5, 0.22)
     a, b = seg("beratung")
     night_bed(a, b + 0.3, 0.55)
-    add(a, shimmer(b - a), 0.4, fade_in=1.0, fade_out=1.0)
-    add(EV["glocke_d4"] - 0.05, church, 0.5, fx=True, fade_out=0.8, dur=2.4)
-    add(EV["horn_d4"] - 0.05, shofar if shofar is not None else syn_horn, 0.45, fx=True, fade_out=0.5, dur=2.2)
-    add(EV["feuer_d4"] - 0.1, fire if fire is not None else syn_fire[: int(2.2 * SR)], 0.6, fx=True, fade_in=0.05, fade_out=0.8, dur=2.4)
+    add(a, real("walla2", 3.0), 0.18, dur=b - a, fade_in=1.0, fade_out=1.0)
+    add(a, shimmer(b - a), 0.3, fade_in=1.0, fade_out=1.0)
+    add(EV["glocke_d4"] - 0.05, church, 0.55, fx=True, fade_out=0.8, dur=2.6)
+    add(EV["horn_d4"] - 0.05, horn, 0.5, fx=True, fade_out=0.4, dur=2.3)
+    add(EV["feuer_d4"] - 0.1, fire, 0.75, fx=True, fade_in=0.05, fade_out=0.8, dur=2.6)
     # --- Tafel „In dieser Nacht“
     a, b = seg("nacht")
-    add(a - 0.2, whoosh(1.0, 0.6), 1.0, fx=True)
-    add(a + 0.05, boom(), 0.45, fx=True)
+    add(a - 0.5, W(), 0.8, fx=True)
+    add(a + 0.02, Bs(), 0.6, fx=True)
     night_bed(a, b + 0.6, 0.45, fade_out=1.2)
     # --- Traum (Traum-Atmo blendet schon auf der Tafel ein -> nie Stille)
     a, b = seg("traum")
     a0 = SEG["nacht"]["start"] + 0.3
     add(a0, dream, 0.9, dur=b - a0 + 1.0, fade_in=1.2, fade_out=1.6)
-    add(a, shimmer(b - a), 0.7, fade_in=1.5, fade_out=1.0)
-    add(EV.get("glocke_d7", LINES["d7"]["start"] + 1.0) - 0.05, hand if hand is not None else syn_bell, 0.35, fx=True, fade_out=1.0)
-    add(a + 0.2, heartbeat(7.0), 0.5, fade_in=1.0, fade_out=2.0, fx=True)
+    add(a0, real("wind", 8.0), 0.25, dur=b - a0 + 1.0, fade_in=1.2, fade_out=1.6)
+    add(a, shimmer(b - a), 0.6, fade_in=1.5, fade_out=1.0)
+    add(EV.get("glocke_d7", LINES["d7"]["start"] + 1.0) - 0.05, hand, 0.4, fx=True, fade_out=1.0)
+    add(a + 0.2, heart, 0.55, fade_in=0.8, fade_out=2.0, fx=True)
     add(LINES["d8"]["start"], shimmer(4.5, 2.0), 1.0, fade_in=0.8, fade_out=1.5)
     for q in QUOTES.values():
-        add(q["start"] - 0.3, shimmer(q["dur"] + 2.0, 1.4), 1.0, fade_in=0.6, fade_out=1.5)
+        add(q["start"] - 0.3, shimmer(q["dur"] + 2.0, 1.2), 1.0, fade_in=0.6, fade_out=1.5)
+        add(q["start"] - 0.25, sparkle, 0.35, fx=True)
     # --- Tafel „Am Morgen“ + Morgen + Adhan-Szenen + Umar
     a, b = seg("morgen_karte")
-    add(a - 0.2, whoosh(1.0, 0.6), 1.0, fx=True)
-    add(a + 0.05, boom(), 0.35, fx=True)
+    add(a - 0.5, W(), 0.8, fx=True)
+    add(a + 0.02, Bs(), 0.45, fx=True)
     a = SEG["morgen"]["start"]
     b = SEG["umar"]["start"] + SEG["umar"]["dur"]
     a0 = SEG["morgen_karte"]["start"] + 0.3
-    dawn_bed(a0, b, 1.0, fade_in=1.2)
-    add(a + 0.4, rooster, 0.22, fx=True, pan=-0.4)
-    add(a, shimmer(SEG["morgen"]["dur"]), 0.35, fade_in=1.0, fade_out=1.0)
+    dawn_bed(a0, b, 1.0, fade_in=1.2, seed=3)
+    add(a + 0.3, rooster, 0.3, fx=True, pan=-0.4)
+    add(a + 5.5, far(real("camel")) if real("camel") is not None else None, 0.25, fx=True, pan=0.5)
+    add(a, shimmer(SEG["morgen"]["dur"]), 0.3, fade_in=1.0, fade_out=1.0)
     walk_steps(a + 0.2, a + 4.8, 0.2)
-    add(SEG["dach_a"]["start"] + 0.5, murmur(EV["athan"] - SEG["dach_a"]["start"]), 0.1, fade_out=0.8)
-    add(EV["athan"] - 2.2, riser(2.2), 0.22, fx=True)
+    add(SEG["dach_a"]["start"] + 0.5, R("walla", alt=lambda: murmur(5)), 0.22, dur=EV["athan"] - SEG["dach_a"]["start"] - 0.5,
+        fade_out=0.8)
+    add(EV["athan"] - 4.1, R("riser", alt=lambda: riser(2.2)), 0.35, fx=True, fade_out=0.15)
     td = EV["door_umar"]
-    add(td - 0.25, door_s, 0.35, fx=True, dur=1.2, fade_out=0.4)
-    add(td, door_b if door_b is not None else door_bang(), 0.6, fx=True)
-    walk_steps(td + 0.1, td + 4.0, 0.42, run=True)
+    add(td - 0.08, bang(), 0.8, fx=True)
+    walk_steps(td + 0.15, td + 4.0, 0.4, run=True)
     add(td + 0.1, cloth(3.5), 0.35, fade_out=1.0, fx=True)
     a2, b2 = seg("umar")
-    walk_steps(td + 2.1, b2 - 0.3, 0.22)
+    walk_steps(td + 2.1, b2 - 0.3, 0.2)
     # --- Ende: Morgen, Vögel, Auswahltafel, Logo
     a, b = seg("ende")
-    dawn_bed(a, b + 2.6, 1.0, fade_out=2.0)
-    add(a + 0.3, rooster2, 0.15, fx=True, pan=0.5)
+    dawn_bed(a, b + 2.6, 1.0, fade_out=2.0, seed=4)
+    if rooster is not None:
+        add(a + 0.3, far(speed(rooster, 0.94)), 0.15, fx=True, pan=0.5)
+    add(a + 1.6, far(real("donkey")) if real("donkey") is not None else None, 0.08, fx=True, pan=-0.6)
     ch = TL["choice"]
     add(ch["start"], ping(), 0.5, fx=True)
     add(ch["start"] + 0.5, ping(), 0.4, fx=True)
     a, b = seg("logo")
-    add(a, boom(), 0.5, fx=True)
-    add(a - 0.3, whoosh(0.8, 0.4), 1.0, fx=True)
+    add(a, B(), 0.5, fx=True)
+    add(a - 0.5, W(), 0.6, fx=True)
 
     # ================= Stimmen + Adhan, Mischung, Lautheit
     n = len(buf)

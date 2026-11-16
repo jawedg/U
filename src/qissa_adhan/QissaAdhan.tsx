@@ -391,18 +391,9 @@ const Choice: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-// ---------------------------------------------------------------- Filmkorn + Vignette
-const Grain: React.FC<{ f: number }> = ({ f }) => (
-  <AbsoluteFill style={{ pointerEvents: "none" }}>
-    <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.5) 100%)" }} />
-    <svg width="1080" height="1920" style={{ position: "absolute", opacity: 0.09, mixBlendMode: "overlay" }}>
-      <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed={Math.floor(f / 5) % 50} />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-      <rect width="1080" height="1920" filter="url(#grain)" />
-    </svg>
-  </AbsoluteFill>
+// ---------------------------------------------------------------- Vignette (kein Filmkorn: Rauschen wird beim Verkleinern zu Klötzchen)
+const Grain: React.FC<{ f: number }> = () => (
+  <AbsoluteFill style={{ pointerEvents: "none", background: "radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.5) 100%)" }} />
 );
 
 // ---------------------------------------------------------------- Video

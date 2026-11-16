@@ -596,7 +596,19 @@ sc.frame_start, sc.frame_end = 1, SEG[SHOT]["frames"]
 if os.environ.get("FRAMES"):  # Test: nur Bilder a-b
     sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
 os.makedirs(OUT, exist_ok=True)
-if STILLS:
+if os.environ.get("MID") == "1":
+    # Echte Zwischenbilder für 60 fps: Bild k+0,5 (gleiche Animation, Blender wertet den Zwischenzeitpunkt aus).
+    # Mehrere Prozesse teilen sich die Arbeit über Platzhalter-Dateien (O_EXCL). Datei k = Zeitpunkt zwischen Bild k und k+1.
+    for k in range(sc.frame_start, sc.frame_end):
+        fp = os.path.join(OUT, f"{k:04d}.png")
+        try:
+            os.close(os.open(fp, os.O_CREAT | os.O_EXCL | os.O_WRONLY))
+        except FileExistsError:
+            continue
+        sc.frame_set(k, subframe=0.5)
+        sc.render.filepath = fp
+        bpy.ops.render.render(write_still=True)
+elif STILLS:
     for t in STILLS:
         sc.frame_set(Q.T(t))
         sc.render.filepath = os.path.join(OUT, f"{SHOT}_{t:05.2f}.png")

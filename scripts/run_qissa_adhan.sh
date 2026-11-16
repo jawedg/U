@@ -31,12 +31,14 @@ fi
 
 python3 scripts/sfx_qissa_adhan.py
 NAME=${NAME:-qissa-erster-adhan}
-npx remotion render QissaAdhan "out/$NAME.mp4" --concurrency=4 --browser-executable="$BR" --log=error
-# kleine Version: 2 Durchgänge, Bitrate so, dass ≤ 58 MB herauskommen
+npx remotion render QissaAdhan "out/$NAME.mp4" --concurrency=4 --crf=15 --browser-executable="$BR" --log=error
+# kleine Version: HEVC (H.265, ~halbe Datenmenge bei gleicher Qualität -> keine Klötzchen), 2 Durchgänge, ≤ 58 MB
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$NAME.mp4")
-VB=$(python3 -c "print(int(58*8*1024/float('$DUR') - 128))")
-ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx264 -preset slow -b:v "${VB}k" -pass 1 -an -f mp4 /dev/null
-ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx264 -preset slow -b:v "${VB}k" -pass 2 -c:a aac -b:a 128k "out/$NAME-klein.mp4"
-rm -f ffmpeg2pass-0.log ffmpeg2pass-0.log.mbtree
+VB=$(python3 -c "print(int(58*8*1024/float('$DUR') - 170))")
+X265="aq-mode=3:psy-rd=1.5:deblock=-1,-1:log-level=error"
+ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx265 -preset slow -b:v "${VB}k" -x265-params "pass=1:$X265" -an -f mp4 /dev/null
+ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx265 -preset slow -b:v "${VB}k" -x265-params "pass=2:$X265" -tag:v hvc1 \
+  -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart "out/$NAME-klein.mp4"
+rm -f ffmpeg2pass-0.log ffmpeg2pass-0.log.mbtree x265_2pass.log x265_2pass.log.cutree
 ls -la "out/$NAME.mp4" "out/$NAME-klein.mp4"
 echo "✅ fertig: out/$NAME-klein.mp4"
