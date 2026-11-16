@@ -19,6 +19,13 @@
 - Free Tier: nur ~10 Anfragen/Tag pro Modell → ganzen Text in EINER Anfrage erzeugen
   (macht das Skript automatisch, schneidet dann an den Pausen). Ausweichmodell:
   `GEMINI_TTS_MODEL=gemini-3.1-flash-tts-preview`.
+- **Erzählstimme mit Ausdruck (Nov. 2026, Nutzer: Charon „klingt billig/langweilig“):** `gemini-2.5-flash-preview-tts` versteht
+  Regie-Anweisungen im Prompt (`# AUDIO PROFILE … ### DIRECTOR'S NOTES … #### TRANSCRIPT` + `Sprecher: Text`), liest sie NICHT vor,
+  und kann 2 Sprecher in einer Anfrage (`multiSpeakerVoiceConfig`). `gemini-3.8-flash-tts` liest solche Anweisungen/[Tags] teils mit vor,
+  will bei Mehrsprechern `speechMetadata.speaker` je Textteil und kennt keine systemInstruction. `gemini-2.5-pro-preview-tts`: im Free Tier gesperrt (429).
+  Hörproben-Skripte (Erzähler + Dialog, Zitat mit Hall per Faltung): Ergebnis `out/stimmproben/qissa-probe-*.m4a`.
+- Schlüssel liegt als Network Secret (Host `generativelanguage.googleapis.com`, Header `x-goog-api-key`) in der Umgebung „Standard“ →
+  Skripte mit `GEMINI_API_KEY=proxy-injected` starten (der Proxy ersetzt den Platzhalter).
 - Bereits erzeugte Erzählung liegt in `out/stimmproben/<Stimme>.wav` und wird wiederverwendet –
   nach Textänderung diese Datei löschen, sonst passt die Stimme nicht zum neuen Text.
 
