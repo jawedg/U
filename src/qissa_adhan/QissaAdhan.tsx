@@ -1,7 +1,7 @@
 // QISSA · „Der erste Adhan“ – Ich-Sicht in 3D (Blender: blender/qissa/adhan.py), Stil wie POV-Kurzfilme:
 // großer Frage-Titel oben, Orts-/Zeit-Zeile in Schreibmaschinenschrift, Untertitel in Serifenschrift (2–4 Wörter),
-// Worte von Sahaba und dem Propheten ﷺ NUR als goldene Schrift (keine Stimme), schwarze Zwischentafeln,
-// Auswahltafel ① ② am Ende, Logo. Zeitplan: src/qissa_adhan/timeline.json (scripts/build_qissa_adhan.py).
+// Erzähler + Dialoge (kursiv), Worte von Sahaba und dem Propheten ﷺ als gesprochenes Zitat (Hall) + goldene Schrift,
+// schwarze Zwischentafeln, Auswahltafel ① ② am Ende, Logo. Zeitplan: src/qissa_adhan/timeline.json (scripts/build_qissa_adhan.py).
 import React from "react";
 import {
   AbsoluteFill,
@@ -71,6 +71,7 @@ const Words: React.FC<{ text: string }> = ({ text }) => {
 // ---------------------------------------------------------------- Untertitel (gesprochene Sätze)
 const Subtitle: React.FC<{ t: number }> = ({ t }) => {
   for (const ln of TL.lines) {
+    if (ln.quote) continue;
     const local = t - ln.start;
     if (local < -0.05 || local > ln.dur + 0.15) continue;
     const words: { word: string; start: number }[] = ln.words;
@@ -99,11 +100,12 @@ const Subtitle: React.FC<{ t: number }> = ({ t }) => {
             fontWeight: 500,
             fontSize: 64,
             lineHeight: 1.2,
-            color: "#fbf6ec",
+            color: ln.dialog ? "#f6ead2" : "#fbf6ec",
+            fontStyle: ln.dialog ? "italic" : "normal",
             textShadow: "0 2px 10px rgba(0,0,0,0.85), 0 0 3px rgba(0,0,0,0.9)",
           }}
         >
-          <Words text={text} />
+          <Words text={ln.dialog ? `„${text}“` : text} />
         </span>
       </div>
     );
@@ -111,14 +113,18 @@ const Subtitle: React.FC<{ t: number }> = ({ t }) => {
   return null;
 };
 
-// ---------------------------------------------------------------- goldene Zitate (nur Schrift)
+// ---------------------------------------------------------------- goldene Zitate (gesprochen mit Hall, Wort für Wort)
 const Quote: React.FC<{ t: number }> = ({ t }) => {
   for (const q of TL.quotes) {
     const local = t - q.start;
-    if (local < 0 || local > q.dur) continue;
-    const words: string[] = q.text.split(" ");
-    const reveal = Math.max(1, Math.min(words.length, Math.ceil((local / Math.max(0.6, q.dur * 0.55)) * words.length)));
-    const op = interpolate(local, [0, 0.3, q.dur - 0.35, q.dur], [0, 1, 1, 0], clamp);
+    const end = q.dur + 0.9;
+    if (local < -0.1 || local > end) continue;
+    const timed: { word: string; start: number }[] = q.words ?? [];
+    const words: string[] = timed.length ? timed.map((w) => w.word) : q.text.split(" ");
+    const reveal = timed.length
+      ? Math.max(1, timed.filter((w) => local >= w.start - 0.05).length)
+      : Math.max(1, Math.min(words.length, Math.ceil((local / Math.max(0.6, q.dur * 0.55)) * words.length)));
+    const op = interpolate(local, [-0.1, 0.2, end - 0.4, end], [0, 1, 1, 0], clamp);
     return (
       <div style={{ position: "absolute", left: 0, right: 0, top: 900, textAlign: "center", opacity: op }}>
         <div
@@ -145,8 +151,8 @@ const Quote: React.FC<{ t: number }> = ({ t }) => {
           }}
         >
           {words.map((w, i) => (
-            <span key={i} style={{ opacity: i < reveal ? 1 : 0 }}>
-              {w + " "}
+            <span key={i} style={{ opacity: i < reveal ? 1 : 0.12 }}>
+              {(i === 0 ? "„" : "") + w + (i === words.length - 1 ? "“" : " ")}
             </span>
           ))}
         </div>
@@ -403,25 +409,31 @@ export const QissaAdhanVideo: React.FC = () => {
   const ath = TL.events;
   const athStart = fr(ath.athan);
   const athEnd = fr(ath.athan_end);
-  const umarStart = TL.segments.find((s: any) => s.id === "umar").start;
   return (
     <AbsoluteFill style={{ background: "#000" }}>
       {TL.segments
         .filter((s: any) => s.kind === "shot")
-        .map((s: any) => {
-          const need = fr(s.dur);
-          const have = R[s.id] ?? need;
-          const rate = have / need; // Anpassung, falls die Vertonung die Länge leicht verändert
-          return (
-            <Sequence key={s.id} from={fr(s.start)} durationInFrames={need}>
-              <OffthreadVideo
-                src={staticFile(`qissa_adhan/shots/${s.id}.mp4`)}
-                muted
-                playbackRate={rate}
-                style={{ width: 1080, height: 1920, filter: "saturate(1.16) contrast(1.07) brightness(1.03)" }}
-              />
-            </Sequence>
-          );
+        .flatMap((s: any) => {
+          // Zeit-Anker: zwischen zwei Ankern konstantes Tempo, an den Ankern stimmt das Bild genau (build_qissa_adhan.py)
+          const m: [number, number][] = s.map ?? [[0, 0], [s.dur, (R[s.id] ?? fr(s.dur)) / FPS]];
+          const last = (s.src_frames ?? R[s.id] ?? fr(s.dur)) - 1;
+          return m.slice(0, -1).map(([a0, b0], i) => {
+            const [a1, b1] = m[i + 1];
+            const from = fr(s.start + a0);
+            const dur = fr(s.start + a1) - from;
+            if (dur <= 0) return null;
+            return (
+              <Sequence key={`${s.id}-${i}`} from={from} durationInFrames={dur}>
+                <OffthreadVideo
+                  src={staticFile(`qissa_adhan/shots/${s.id}.mp4`)}
+                  muted
+                  trimBefore={Math.min(last, Math.round(b0 * FPS))}
+                  playbackRate={(b1 - b0) / (a1 - a0)}
+                  style={{ width: 1080, height: 1920, filter: "saturate(1.16) contrast(1.07) brightness(1.03)" }}
+                />
+              </Sequence>
+            );
+          });
         })}
       <Grain f={f} />
       <Title t={t} />
@@ -446,8 +458,8 @@ export const QissaAdhanVideo: React.FC = () => {
           volume={(lf: number) => {
             const ts = sec(lf + athStart);
             const fadeIn = interpolate(ts, [ath.athan, ath.athan + 0.4], [0, 1], clamp);
-            const duck = interpolate(ts, [umarStart, umarStart + 0.6], [1, 0.32], clamp);
-            const fadeOut = interpolate(ts, [ath.athan_end - 1.8, ath.athan_end], [1, 0], clamp);
+            const duck = interpolate(ts, [ath.duck - 0.3, ath.duck + 0.4], [1, 0.3], clamp);
+            const fadeOut = interpolate(ts, [ath.athan_end - 1.0, ath.athan_end], [1, 0], clamp);
             return 0.95 * fadeIn * duck * fadeOut;
           }}
         />
@@ -455,7 +467,7 @@ export const QissaAdhanVideo: React.FC = () => {
       {TL.lines
         .filter((l: any) => l.file)
         .map((l: any) => (
-          <Sequence key={l.id} from={fr(l.start)} durationInFrames={fr(l.dur + 0.4)}>
+          <Sequence key={l.id} from={fr(l.start)} durationInFrames={fr(l.dur + 0.4 + (l.tail ?? 0))}>
             <Audio src={staticFile(l.file)} volume={1} />
           </Sequence>
         ))}

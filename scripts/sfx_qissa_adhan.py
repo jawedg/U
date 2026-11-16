@@ -113,6 +113,29 @@ def boom(sec=2.5):
     return (np.sin(2 * np.pi * 48 * tt) * np.exp(-tt / 0.8) + S.band(S.noise(sec), 30, 200) * np.exp(-tt / 0.3) * 0.5)
 
 
+def riser(sec=2.2):
+    """anschwellendes Rauschen (Spannung vor dem Adhan / vor Wendepunkten) – keine Musik"""
+    n = int(sec * SR)
+    tt = np.linspace(0, 1, n)
+    x = S.band(S.noise(sec), 300, 5000) * tt ** 2.2
+    x += S.band(S.noise(sec), 60, 250) * tt ** 1.5 * 0.6
+    return x * (1 - np.clip((tt - 0.96) / 0.04, 0, 1))
+
+
+def heartbeat(sec, bpm=62):
+    """dumpfer Herzschlag (Traum)"""
+    x = np.zeros(int(sec * SR))
+    tt = np.arange(int(0.25 * SR)) / SR
+    thump = np.sin(2 * np.pi * 55 * tt) * np.exp(-tt / 0.06)
+    k = 0.0
+    while k < sec - 0.5:
+        for off, g in ((0.0, 1.0), (0.24, 0.7)):
+            i = int((k + off) * SR)
+            x[i:i + len(thump)] += thump[: len(x) - i] * g
+        k += 60 / bpm
+    return S.band(x, 30, 160)
+
+
 def ping():
     tt = np.arange(int(0.6 * SR)) / SR
     return (np.sin(2 * np.pi * 1320 * tt) + 0.4 * np.sin(2 * np.pi * 1980 * tt)) * np.exp(-tt / 0.15) * 0.5
@@ -144,6 +167,7 @@ def main():
     a, b = seg("gasse")
     add(a, night, 0.9, dur=b - a + 0.3, fade_in=0.4)
     add(a, whoosh(0.9, 0.5), 1.0)
+    add(a + 0.25, boom(), 0.55)
     steps(a + 0.25, b - 1.0, gap=0.46, g=0.35)
     a, b = seg("moschee")
     add(a, night, 0.8, dur=b - a + 0.3)
@@ -158,18 +182,23 @@ def main():
     # --- Tafel „In dieser Nacht“
     a, b = seg("nacht")
     add(a - 0.2, whoosh(1.0, 0.6), 1.0)
+    add(a + 0.05, boom(), 0.45)
     add(a, night, 0.45, dur=b - a + 0.6, fade_out=1.2)
     # --- Traum (Traum-Atmo blendet schon auf der Tafel ein und klingt auf der nächsten aus → nie Stille)
     a, b = seg("traum")
     a0 = SEG["nacht"]["start"] + 0.3
     add(a0, dream, 0.9, dur=b - a0 + 1.0, fade_in=1.2, fade_out=1.6)
     add(a, shimmer(b - a), 0.7, fade_in=1.5, fade_out=1.0)
-    add(LINES["d7"]["start"] + 1.0, bell, 0.25)
+    add(EV.get("glocke_d7", LINES["d7"]["start"] + 1.0) - 0.05, bell, 0.25)
+    add(a + 0.2, heartbeat(7.0), 0.5, fade_in=1.0, fade_out=2.0)
     add(QUOTES["q1"]["start"] + 0.2, bell, 0.18)
     add(LINES["d8"]["start"], shimmer(4.5, 2.0), 1.0, fade_in=0.8, fade_out=1.5)
+    for q in QUOTES.values():
+        add(q["start"] - 0.3, shimmer(q["dur"] + 2.0, 1.4), 1.0, fade_in=0.6, fade_out=1.5)
     # --- Tafel „Am Morgen“ + Morgen + Adhan-Szenen + Umar
     a, b = seg("morgen_karte")
     add(a - 0.2, whoosh(1.0, 0.6), 1.0)
+    add(a + 0.05, boom(), 0.35)
     a = SEG["morgen"]["start"]
     b = SEG["umar"]["start"] + SEG["umar"]["dur"]
     a0 = SEG["morgen_karte"]["start"] + 0.3
@@ -177,6 +206,7 @@ def main():
     add(a, shimmer(SEG["morgen"]["dur"]), 0.45, fade_in=1.0, fade_out=1.0)
     steps(a + 0.2, a + 4.8, gap=0.5, g=0.22)
     add(SEG["dach_a"]["start"] + 0.5, murmur(EV["athan"] - SEG["dach_a"]["start"]), 0.12, fade_out=0.8)
+    add(EV["athan"] - 2.2, riser(2.2), 0.35)
     td = EV["door_umar"]
     add(td, door_bang(), 0.8)
     steps(td + 0.1, td + 4.0, gap=0.24, g=0.4, run=True)

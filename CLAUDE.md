@@ -124,7 +124,15 @@ Lokal reicht `npm run render:3d`.
 
 ## QISSA – Islam-POV-Serie in 3D (Stil „Signal Lost“, aktueller Wunsch des Nutzers)
 - Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, 24 fps), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
-- **Variante A (vom Nutzer gewählt):** „Du“ = erfundener junger Mann aus Medina (Stimme Charon). Mit eigener Stimme sprechen nur du
+- **Erzähl-Version (Nutzer-Feedback Nov. 2026: „klingt billig, langweilig, stille Stellen gefallen nicht“):** Charon ERZÄHLT spannend
+  (Gemini 2.5 flash TTS mit Regie-Anweisungen, `voiceParts` in script.json, bis 2 Sprecher je Anfrage), erfundene Leute in Dialogen mit
+  eigenen Stimmen (Puck, Algenib, Fenrir, Aoede, Leda – Untertitel kursiv). Worte von Sahaba und dem Propheten ﷺ: Erzähler sagt „… sagte:“,
+  dann spricht eine Zitat-Stimme (Iapetus, `fx: hall`, gemini-3.8 als reiner Text) + goldene Schrift Wort für Wort. Keine stummen Stellen.
+  Adhan: 2 Takbir pur (nicht drüber sprechen), dann leise unter kurzen Reaktionen, dann aus.
+  Schnitte: `beep_align` in voice_gemini.py (Stücke an Pausen + Pieptöne → 1 Transkript-Anfrage). Lokale Whisper-Installation wurde abgelehnt.
+  Schon gerenderte Einstellungen: `rendered_ref.json` + Zeit-Anker (`ANCHORS` in build_qissa_adhan.py) → stückweises Bildtempo in Remotion;
+  passt es nicht (Fehler > 1 s / Tempo außerhalb 0,8–1,25) → `rerender` → `./scripts/run_qissa_adhan.sh` rendert nur diese neu.
+- **Variante A (vom Nutzer gewählt, alte Fassung):** „Du“ = erfundener junger Mann aus Medina (Stimme Charon). Mit eigener Stimme sprechen nur du
   und erfundene Leute (z. B. Orus, Iapetus). Worte von Sahaba und dem Propheten ﷺ NUR als goldene Schrift (`quotes` in script.json).
   Menschen ohne Gesicht (leerer Kopf), Sahaba mit Licht über dem Kopf (`glow=True`), Prophet ﷺ nur als Licht-Säule (`holy_light`).
   Adhan nie per KI – echte Aufnahme vom Nutzer (`public/qissa_adhan/athan_full.mp3`, nicht im Repo), nur ein passender Ausschnitt.

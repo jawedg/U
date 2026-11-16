@@ -37,8 +37,13 @@ PAUSE = 0.3  # Sekunden Pause nach jeder Szene
 ALIGN = False  # Schnittpunkte per Gemini-Transkription bestimmen (genauer bei langen Blöcken)
 
 
-def tts(text: str, voice: str) -> bytes:
+def tts(text: str, voice: str, cfg: dict | None = None) -> bytes:
     global MODEL
+    if cfg:  # Block mit Regie-Anweisungen / mehreren Sprechern: festes Modell, kein Ausweichen (anderer Klang)
+        try:
+            return _tts(text, voice, cfg)
+        except DayLimit:
+            sys.exit(f"❌ Tageslimit für {cfg['model']} erreicht. Morgen wieder (oder anderes Modell in voiceParts).")
     while True:
         try:
             return _tts(text, voice)
@@ -58,19 +63,21 @@ class DayLimit(Exception):
 _used: set[str] = set()
 
 
-def _tts(text: str, voice: str) -> bytes:
+def _tts(text: str, voice: str, cfg: dict | None = None) -> bytes:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         sys.exit("❌ GEMINI_API_KEY fehlt (https://aistudio.google.com/apikey)")
+    speech = {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}
+    if cfg and len(cfg["speakers"]) > 1:
+        speech = {"multiSpeakerVoiceConfig": {"speakerVoiceConfigs": [
+            {"speaker": k, "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": v}}} for k, v in cfg["speakers"].items()]}}
     body = {
         "contents": [{"parts": [{"text": text}]}],
-        "generationConfig": {
-            "responseModalities": ["AUDIO"],
-            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}},
-        },
+        "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": speech},
     }
+    model = cfg["model"] if cfg else MODEL
     req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(),
         headers={"Content-Type": "application/json", "x-goog-api-key": key},
     )
@@ -112,14 +119,14 @@ def duration(path: Path) -> float:
     return float(out)
 
 
-def clean(path: Path) -> float:
-    """Stille am Anfang/Ende abschneiden, Lautstärke angleichen."""
+def clean(path: Path, extra: str = "") -> float:
+    """Stille am Anfang/Ende abschneiden, (optional Stimm-Filter), Lautstärke angleichen."""
     tmp = path.with_suffix(".tmp.wav")
     subprocess.run(
         ["ffmpeg", "-loglevel", "error", "-y", "-i", str(path), "-af",
          "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
          "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-         "adelay=80,apad=pad_dur=0.08,loudnorm=I=-16:TP=-1.5", "-ar", "48000", str(tmp)],
+         f"adelay=80,apad=pad_dur=0.08,{extra + ',' if extra else ''}loudnorm=I=-16:TP=-1.5", "-ar", "48000", str(tmp)],
         check=True,
     )
     tmp.replace(path)
@@ -130,7 +137,7 @@ def spoken(s: dict) -> str:
     return s.get("say", s["text"]).replace("*", "")
 
 
-def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list[Path]:
+def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "", align: bool = False) -> list[Path]:
     """Schnittpunkte: erwartete Position (nach Textlänge) -> nächste echte Sprechpause."""
     n = len(texts)
     log = subprocess.run(
@@ -153,6 +160,11 @@ def split(full: Path, texts: list[str], out_dir: Path, prefix: str = "") -> list
         if c.get("sig") == sig:
             cuts = c["cuts"]
             print("   ✓ Schnitte aus Cache")
+    if cuts is None and align and n > 2:  # Transkript-Abgleich zuerst (Erzählung mit Dialogen: Pausen ungleichmäßig)
+        cuts = beep_align(full, texts, gaps, total)
+        if cuts:
+            cache.write_text(json.dumps({"sig": sig, "cuts": cuts}))
+            print("   ✓ Schnitte per Transkript-Abgleich")
     if cuts is None and n > 2:
         cuts = local_align(full, texts, gaps, total)
         if cuts:
@@ -372,6 +384,95 @@ def _norm(txt: str) -> list[str]:
     return re.sub(r"[^a-zäöüß0-9 ]", " ", txt.lower().replace("ß", "ss")).split()
 
 
+def _beep_join(pieces: list[Path], out: Path) -> None:
+    """Hängt Audiostücke aneinander, dazwischen je ein kurzer Piepton (Trennzeichen für die Transkription)."""
+    import numpy as np
+    sr = 16000
+    t = np.arange(int(0.35 * sr)) / sr
+    beep = np.concatenate([np.zeros(int(0.5 * sr)), 0.6 * np.sin(2 * np.pi * 1000 * t) * np.hanning(len(t)), np.zeros(int(0.5 * sr))])
+    xs = []
+    for k, f in enumerate(pieces):
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(f), "-ac", "1", "-ar", str(sr), "-f", "s16le", "-"],
+                             capture_output=True, check=True).stdout
+        x = np.frombuffer(raw, np.int16).astype(float) / 32768
+        xs.append(x / max(1e-6, np.max(np.abs(x))) * 0.8)
+        if k < len(pieces) - 1:
+            xs.append(beep)
+    y = np.concatenate(xs)
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "s16le", "-ar", str(sr), "-ac", "1", "-i", "-", "-b:a", "48k", str(out)],
+                   input=(y * 32767).astype(np.int16).tobytes(), check=True)
+
+
+def beep_transcribe(pieces: list[Path]) -> list[str] | None:
+    """Transkribiert viele Stücke in EINER Anfrage zuverlässig in der richtigen Reihenfolge:
+    alle Stücke in einer Aufnahme, getrennt durch Pieptöne; das Modell schreibt '###' für jeden Piepton."""
+    tmp = pieces[0].parent / "_beep.mp3"
+    _beep_join(pieces, tmp)
+    parts = [{"inlineData": {"mimeType": "audio/mp3", "data": base64.b64encode(tmp.read_bytes()).decode()}},
+             {"text": f"Deutsche Sprachaufnahme. Sie enthält genau {len(pieces) - 1} kurze Pieptöne, die Abschnitte trennen. "
+                      "Transkribiere wortwörtlich in EINER Zeile und setze '###' NUR dort, wo ein Piepton zu hören ist – "
+                      "NICHT bei Satzenden, Pausen oder Sprecherwechseln. "
+                      f"Die Antwort muss also genau {len(pieces) - 1}-mal '###' enthalten. Zahlen als Ziffern. Nur das Transkript."}]
+    tmp.unlink()
+    for _ in range(2):
+        out = _text_model(parts)
+        if not out:
+            return None
+        segs = [x.strip() for x in out.split("###")]
+        if len(segs) == len(pieces):
+            return segs
+        print(f"   … Transkript hat {len(segs)} statt {len(pieces)} Abschnitte, nochmal")
+    return None
+
+
+def beep_align(full: Path, texts: list[str], gaps: list[tuple[float, float]], total: float) -> list[float] | None:
+    """Schnitte an echten Sprechpausen: Aufnahme an allen Pausen zerlegen, Stücke per Piepton-Transkript
+    erkennen, Wörter mit dem Skript abgleichen. Jede Satzgrenze muss auf eine Pause fallen."""
+    import difflib
+    bounds = [0.0] + [(a_ + b_) / 2 for a_, b_ in gaps] + [total]
+    tmp = full.parent / "_chunks"
+    tmp.mkdir(exist_ok=True)
+    pieces = []
+    for i in range(len(bounds) - 1):
+        f = tmp / f"c{i:03d}.wav"
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(full), "-ss", f"{bounds[i]:.3f}", "-to", f"{bounds[i + 1]:.3f}", str(f)],
+                       check=True)
+        pieces.append(f)
+    segs = beep_transcribe(pieces)
+    for f in pieces:
+        f.unlink()
+    tmp.rmdir()
+    if not segs:
+        return None
+    t_words, t_chunk = [], []
+    for i, seg in enumerate(segs):
+        for w in _norm(seg):
+            t_words.append(w)
+            t_chunk.append(i)
+    s_words, first = [], []
+    for t in texts:
+        first.append(len(s_words))
+        s_words += _norm(t)
+    sm = difflib.SequenceMatcher(a=s_words, b=t_words, autojunk=False)
+    m_of = {}
+    for blk in sm.get_matching_blocks():
+        for j in range(blk.size):
+            m_of[blk.a + j] = blk.b + j
+    cuts = []
+    for k in range(1, len(texts)):
+        a0 = first[k]
+        tb = next((m_of[x] - (x - a0) for x in range(a0, min(a0 + 5, len(s_words))) if x in m_of), None)
+        prev = next((m_of[x] for x in range(a0 - 1, max(-1, a0 - 6), -1) if x in m_of), None)
+        if tb is None or prev is None:
+            return None
+        ci = t_chunk[max(0, min(len(t_chunk) - 1, tb))]
+        if t_chunk[prev] >= ci:  # Satzgrenze liegt nicht auf einer Pause
+            print(f"   … Satz {k + 1} beginnt mitten in einem Stück")
+            return None
+        cuts.append(bounds[ci])
+    return cuts
+
+
 def align_cuts(full: Path, texts: list[str], gaps: list[tuple[float, float]], total: float) -> list[float] | None:
     """Schneidet an echten Sprechpausen: jede Phrase zwischen zwei Pausen wird von Gemini transkribiert,
     das Transkript wird Wort für Wort mit dem Skript abgeglichen."""
@@ -440,12 +541,71 @@ def word_times(text: str, dur: float) -> list[dict]:
     return timed
 
 
+HALL_TAIL = 2.4  # Sekunden Nachhall nach dem Zitat
+
+
+def hall(path: Path, sec: float = 2.8, wet: float = 0.55) -> None:
+    """Zitat-Stimme mit großem Hall (Faltung mit künstlichem Raum, stereo); Datei wird um den Nachhall länger."""
+    import numpy as np
+    with wave.open(str(path)) as w:
+        sr, ch = w.getframerate(), w.getnchannels()
+        x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32768
+    if ch > 1:
+        x = x.reshape(-1, ch).mean(axis=1)
+    rng = np.random.default_rng(1)
+    n = int(sec * sr)
+    t = np.arange(n) / sr
+    pre = np.zeros(int(0.04 * sr))
+    out = []
+    for _ in range(2):
+        ir = rng.standard_normal(n) * np.exp(-t / (sec / 6.9)) * (1 - np.exp(-t / 0.01))
+        spec = np.fft.rfft(ir)
+        f = np.fft.rfftfreq(n, 1 / sr)
+        spec *= (f > 150) * (1 / (1 + (f / 5000) ** 4))  # Hall ohne Dröhnen/Zischen
+        ir = np.concatenate([pre, np.fft.irfft(spec, n)])
+        ir /= np.sqrt(np.sum(ir ** 2))
+        L = len(x) + len(ir)
+        out.append(np.fft.irfft(np.fft.rfft(x, L) * np.fft.rfft(ir, L), L))
+    w = np.stack(out, 1)
+    keep = len(x) + int(HALL_TAIL * sr)
+    w = w[:keep]
+    dry = np.zeros_like(w)
+    dry[: len(x)] = x[:, None]
+    y = dry * (1 - wet * 0.4) + w * wet * 1.2
+    y *= 0.89 / max(1e-9, np.max(np.abs(y)))
+    fade = int(0.4 * sr)
+    y[-fade:] *= np.linspace(1, 0, fade)[:, None]
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes((y * 32767).astype(np.int16).tobytes())
+
+
+def check(files: list[Path], texts: list[str]) -> None:
+    """Kontrolle: alle Stücke mit Gemini transkribieren (1 Anfrage) und mit dem Skript vergleichen."""
+    import difflib
+    segs = beep_transcribe(files)
+    if not segs:
+        print("   ⚠️  Kontrolle nicht möglich (Textmodell nicht erreichbar)")
+        return
+    got = dict(enumerate(segs))
+    bad = 0
+    for i, t in enumerate(texts):
+        r = difflib.SequenceMatcher(a=_norm(t), b=_norm(got.get(i, ""))).ratio()
+        if r < 0.8:
+            bad += 1
+            print(f"   ⚠️  Stück {i + 1} passt nicht ({r:.0%}): soll „{t}“ – ist „{got.get(i, '')}“")
+    print("   ✓ Kontrolle: alle Stücke passen zum Text" if not bad else f"   ❌ Kontrolle: {bad} Stück(e) falsch geschnitten")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", default="train", help="Ordner unter src/ (z. B. train, athan)")
     ap.add_argument("--voice", default="Charon")  # Lieblingsstimme des Nutzers
     ap.add_argument("--samples", nargs="*")
     ap.add_argument("--neu", action="store_true", help="Erzählung neu erzeugen")
+    ap.add_argument("--check", action="store_true", help="Schnitte per Gemini-Transkription kontrollieren")
     a = ap.parse_args()
 
     script_path = ROOT / "src" / a.project / "script.json"
@@ -461,7 +621,13 @@ def main() -> None:
     parts = sorted({s.get("part", 0) for s in voiced})
     multi = len(parts) > 1
 
+    vparts = script.get("voiceParts", {})
+    vfilter = script.get("voiceFilter", "")
+
     def full_path(v: str, part: int = 0) -> Path:
+        cfg = vparts.get(str(part))
+        if cfg:
+            return samples_dir / f"{a.project}-p{part}-{'+'.join(cfg['speakers'].values())}.wav"
         if a.project == "train":
             return samples_dir / f"{v}.wav"
         return samples_dir / (f"{a.project}-{v}-p{part}.wav" if multi else f"{a.project}-{v}.wav")
@@ -470,8 +636,19 @@ def main() -> None:
         f = full_path(v, part)
         if a.neu or not f.exists():
             block = [s for s in voiced if s.get("part", 0) == part]
-            print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}), Block {part} ({len(block)} Szenen) …")
-            save_audio(f, tts("\n\n".join(spoken(s) for s in block), v))
+            cfg = vparts.get(str(part))
+            if cfg:  # Regie-Anweisungen + Transkript („Sprecher: Text“ bei mehreren Sprechern)
+                multi_spk = len(cfg["speakers"]) > 1
+                lines_ = [f"{s['speaker']}: {spoken(s)}" if multi_spk else spoken(s) for s in block]
+                text = cfg["notes"].strip() + "\n#### TRANSCRIPT\n" + ("\n" if multi_spk else "\n\n").join(lines_)
+                if cfg.get("plain"):  # Modelle, die Anweisungen mitlesen: nur reiner Text
+                    text = "\n\n".join(spoken(s) for s in block)
+                print(f"🎙️  Erzeuge Block {part} mit {', '.join(f'{k}={x}' for k, x in cfg['speakers'].items())} "
+                      f"({cfg['model']}, {len(block)} Sätze) …")
+                save_audio(f, tts(text, v, cfg))
+            else:
+                print(f"🎙️  Erzeuge Erzählung mit {v} ({MODEL}), Block {part} ({len(block)} Szenen) …")
+                save_audio(f, tts("\n\n".join(spoken(s) for s in block), v))
         return f
 
     if a.samples:
@@ -486,7 +663,7 @@ def main() -> None:
         idxs = [i for i, s in enumerate(scenes) if s.get("text") and s.get("part", 0) == part]
         block = [scenes[i] for i in idxs]
         v = block[0].get("voice", a.voice)
-        fs = split(narrate(v, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "")
+        fs = split(narrate(v, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
         fmap.update(zip(idxs, fs))
     lines = []
     for i, s in enumerate(scenes):
@@ -494,10 +671,16 @@ def main() -> None:
             lines.append({"file": "", "seconds": float(script.get("athanSeconds", 10)), "words": []})
             continue
         f = fmap[i]
-        dur = clean(f)
-        lines.append({"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3),
-                      "words": word_times(s["text"], dur)})
+        dur = clean(f, vfilter)
+        ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times(s["text"], dur)}
+        if s.get("fx") == "hall":
+            hall(f)
+            ln["tail"] = HALL_TAIL
+        lines.append(ln)
         print(f"   {i + 1:2d}. ({dur:4.1f}s) {spoken(s)}")
+    if vparts or a.check:  # Schnitte kontrollieren (1 Anfrage an ein Textmodell)
+        idx = [i for i, s in enumerate(scenes) if s.get("text")]
+        check([fmap[i] for i in idx], [spoken(scenes[i]) for i in idx])
     timing_path.write_text(json.dumps({"lines": lines}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     total = sum(l["seconds"] for l in lines)
     print(f"✅ Stimme '{a.voice}' fertig – Gesamtlänge ca. {int(total // 60)}:{int(total % 60):02d} min")

@@ -4,7 +4,7 @@
 #   → Ton-Spur → Video → kleine Version (≤ 60 MB, lässt sich in der App speichern).
 #   ./scripts/run_qissa_adhan.sh            (alles)
 #   NOVOICE=1 ./scripts/run_qissa_adhan.sh  (Entwurf ohne Stimme, geschätzte Zeiten)
-#   KEEP=1 ./scripts/run_qissa_adhan.sh     (Stimme nachträglich: Sätze an die schon gerenderten Bilder anpassen)
+#   PREVIEW=1 ./scripts/run_qissa_adhan.sh  (Vorschau: nichts neu rendern, alte Bilder über Zeit-Anker anpassen)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 BR=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
@@ -15,31 +15,17 @@ if [ -z "${NOVOICE:-}" ]; then
   export GEMINI_API_KEY="${GEMINI_API_KEY:-proxy-injected}"
   python3 scripts/voice_gemini.py --project qissa_adhan
 fi
-python3 scripts/build_qissa_adhan.py ${KEEP:+--keep-layout}   # KEEP=1: Bildzeiten der schon gerenderten Einstellungen behalten
+python3 scripts/build_qissa_adhan.py
 
-# Einstellungen mit > 10 % Längenänderung neu rendern, die anderen per playbackRate anpassen
-CHANGED=$(python3 - <<'EOF'
-import json
-tl = json.load(open("src/qissa_adhan/timeline.json"))
-r = json.load(open("src/qissa_adhan/rendered.json"))
-out = [s["id"] for s in tl["segments"] if s["kind"] == "shot" and not (0.9 <= r.get(s["id"], 0) / s["frames"] <= 1.1)]
-print(" ".join(out))
-EOF
-)
-if [ -n "$CHANGED" ]; then
+# Einstellungen, die über die Zeit-Anker nicht mehr passen, neu rendern (build_qissa_adhan.py markiert sie)
+CHANGED=$(python3 -c "import json; print(' '.join(s['id'] for s in json.load(open('src/qissa_adhan/timeline.json'))['segments'] if s.get('rerender')))")
+if [ -n "$CHANGED" ] && [ -z "${PREVIEW:-}" ]; then
   echo "🔁 neu rendern: $CHANGED"
   for s in $CHANGED; do rm -rf "out/qissa_frames/${s:?}"; done
   # shellcheck disable=SC2086
   ./scripts/render_qissa_adhan.sh $CHANGED
-  python3 - "$CHANGED" <<'EOF'
-import json, sys
-tl = json.load(open("src/qissa_adhan/timeline.json"))
-r = json.load(open("src/qissa_adhan/rendered.json"))
-for s in tl["segments"]:
-    if s["kind"] == "shot" and s["id"] in sys.argv[1].split():
-        r[s["id"]] = s["frames"]
-json.dump(r, open("src/qissa_adhan/rendered.json", "w"), indent=1)
-EOF
+  # shellcheck disable=SC2086
+  python3 scripts/build_qissa_adhan.py --mark-rendered $CHANGED
 fi
 
 python3 scripts/sfx_qissa_adhan.py
