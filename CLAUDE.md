@@ -129,8 +129,15 @@ Lokal reicht `npm run render:3d`.
   - Einstieg (Hook, erste 9 s): echtes „Allahu akbar“ + Frage-Titel „WOHER KOMMT DER ADHAN?“ + „Diese Worte hörst du jeden Tag … Aus einem
     Traum.“ als Ausschnitte späterer Einstellungen (`clip`-Segmente in build_qissa_adhan.py). Twist am Ende (Umar 20 Tage, Abu Dawud 498).
   - `tighten` in script.json: voice_gemini.py kürzt lange Sprechpausen (max. 0,34 s) und spricht 7 % schneller (atempo).
-  - Flüssig: TikTok spielt max. 60 fps → Blender rendert 30 fps in VOLLER Auflösung (100 %, 3 Samples – mehr Samples sehen gleich aus,
-    kosten aber ~2,8 s je Sample), ffmpeg `minterpolate` → 60 fps. Kein playbackRate-Umrechnen mehr (ruckelt) – nach neuer Vertonung neu rendern.
+  - Flüssig: TikTok spielt max. 60 fps → Blender rendert 30 fps in VOLLER Auflösung (100 %, 2 Samples – mehr Samples sehen gleich aus,
+    kosten aber ~2,8 s je Sample), ffmpeg `minterpolate` → 60 fps. Bei vielen Lichtpunkten (Traum) macht minterpolate Klötzchen/Doppelpunkte →
+    dort rendert Blender die ECHTEN Zwischenbilder (`MID=1`: Bild k+0,5 per `frame_set(k, subframe=0.5)`; `MID_SHOTS="traum"`).
+    Kein playbackRate-Umrechnen mehr (ruckelt) – nach neuer Vertonung neu rendern.
+  - Keine Verpixelung (Nutzer!): kein Filmkorn (wird beim Verkleinern zu Klötzchen), kleine Version als HEVC (`-tag:v hvc1`, 2 Durchgänge, 58 MB).
+  - Der Cloud-Rechner startet alle paar Stunden neu (Prozesse weg, Dateien bleiben) → alles fortsetzbar: render_qissa_adhan.sh überspringt
+    fertige Bilder (vorher 0-Byte-Platzhalter löschen), `scripts/finish_qissa_adhan.sh` rendert Remotion in 4 Teilstücken ohne Ton
+    (fertige werden übersprungen), fügt master.wav an und macht die HEVC-Kleinversion. Nach Text-Änderungen in Blender-Einstellungen prüfen,
+    ob sie gestrichene Satz-IDs benutzen (ls("d2") ließ Blender stundenlang abstürzen).
   - Mehr Details: `MD.props()` (Krüge, Körbe, Säcke, Leitern, Sonnendächer, Wäsche, Steine, Brennholz), Wände mit Putzflecken + Schmutz unten
     (`pbr(..., grime, plaster)`), Traum als „Traum bei Nacht“ (`world_sky("dreamnight")`, Dünen, Medina im Dunst, Mond, Goldstaub-Wirbel,
     leuchtende Fußspuren). Testbilder: `FRAMES=a-b` bzw. Standbild-Zeiten als 5. Argument von adhan.py.
@@ -158,10 +165,11 @@ Lokal reicht `npm run render:3d`.
      (3 Anfragen: Charon-Block, Orus, Iapetus) → `timing.json`.
   2. `python3 scripts/build_qissa_adhan.py` → `timeline.json` (Einstellungen, Sätze, Zitate, Ereignisse; ohne Vertonung geschätzt).
   3. `./scripts/render_qissa_adhan.sh [einstellungen…]` → Blender-Bilder `out/qissa_frames/<einstellung>/` → `public/qissa_adhan/shots/*.mp4`
-     (60 fps; 4 Blender-Prozesse als Warteschlange, 100 %, 3 Samples, 30 Bilder/s; ~3500 Bilder ≈ 4–6 h; immer mit `setsid nohup`).
+     (60 fps; 4 Blender-Prozesse als Warteschlange, 100 %, 2 Samples, 30 Bilder/s, ~8–14 Bilder/min; ~3500 Bilder ≈ 5–6 h; immer mit
+     `setsid nohup`, z. B. `SAMPLES=2 MID_SHOTS="traum" setsid nohup ./scripts/render_qissa_adhan.sh > out/qissa_render.log 2>&1 &`).
      Danach `python3 scripts/build_qissa_adhan.py --mark-rendered <einstellungen…>`.
   4. `python3 scripts/sfx_qissa_adhan.py` → `public/qissa_adhan/master.wav` (fertige Tonspur, keine Musik).
-  5. `npx remotion render QissaAdhan out/qissa-erster-adhan.mp4 --concurrency=4 --browser-executable=…` (kein --gl nötig).
+  5. `./scripts/finish_qissa_adhan.sh` → `out/qissa-erster-adhan.mp4` + `out/qissa-erster-adhan-klein.mp4` (Remotion ~16 min, HEVC ~20 min).
 - Blender-Bausteine (`blender/qissa/lib.py`): `person()` (Gewand mit Falten, Turban/Tuch/Kappe, Umhang, sitzend/stehend, Gelenke als Empties),
   `walk()`, `idle()`, `head_to()`, `arm_pose()`, `hands_to_ears()`, `holy_light()`, `halo()`, `pov_camera()` + `cam_keys()` + `handheld()`,
   `pov_hands()` (Hand mit Öllampe), `world_sky("night"|"dawn"|"dream")`, `render_setup()` (AgX Punchy, Dunst per Mist, Bloom).
