@@ -712,6 +712,9 @@ def main() -> None:
         idxs = [i for i, s in enumerate(scenes) if s.get("text") and s.get("part", 0) == part]
         block = [scenes[i] for i in idxs]
         v = block[0].get("voice", a.voice)
+        pc = vparts.get(str(part))
+        if pc and len(pc["speakers"]) == 1:  # Block mit EINER Stimme: die Stimme aus voiceParts nehmen
+            v = next(iter(pc["speakers"].values()))
         fs = split(narrate(v, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
         fmap.update(zip(idxs, fs))
     lines = []
@@ -721,6 +724,8 @@ def main() -> None:
             continue
         f = fmap[i]
         tg = script.get("tighten")
+        if tg and str(s.get("part", 0)) in tg.get("parts", {}):  # eigene Einstellung je Block (z. B. Dialoge)
+            tg = tg["parts"][str(s.get("part", 0))]
         if tg and s.get("fx") != "hall":
             tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
         dur = clean(f, vfilter)

@@ -7,10 +7,10 @@
   "0": {
    "model": "gemini-2.5-flash-preview-tts",
    "speakers": {
-    "Erzaehler": "Charon",
+    "Erzaehler": "Orus",
     "Junge": "Puck"
    },
-   "notes": "# AUDIO PROFILE\nErzaehler: a gripping German storyteller like the best viral TikTok and YouTube story channels. Deep, warm, close to the microphone, with real energy and tension in every sentence - the listener must not be able to stop listening.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, breathless.\n## THE SCENE\nA true story from Medina in the year 622, told in a fast, gripping short video. The first seconds decide everything.\n### DIRECTOR'S NOTES\nErzaehler: urgent and suspenseful with strong momentum, a brisk pace, punchy short sentences. Dramatic pauses ONLY at '...'. Drop the voice low and intense for mysteries, push with more intensity at the turning points and questions. Never slow, never monotone, never like reading a list. Calm and reverent whenever he mentions the Prophet.\nJunge: real emotion, surprised and agitated.\nLeave a clear short pause between the lines."
+   "notes": "# AUDIO PROFILE\nErzaehler: a deep, warm, resonant German documentary narrator, like the voice of a prestigious history documentary on television. Rich low voice, very close to the microphone, calm confident authority, velvety and pleasant to listen to.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA cinematic documentary about a true story from Medina in the year 622.\n### DIRECTOR'S NOTES\nErzaehler: slow but gripping, never rushed, never theatrical, never monotone. Real dramatic pauses at '...'. Lower and more intimate at the mysteries, a little more intensity at the turning points. Calm and reverent whenever he mentions the Prophet.\nJunge: natural and emotional, like a real person.\nLeave a clear short pause between the lines."
   },
   "1": {
    "model": "gemini-2.5-flash-preview-tts",
@@ -31,10 +31,17 @@
   "3": {
    "model": "gemini-3.8-flash-tts",
    "speakers": {
-    "Zitat": "Iapetus"
+    "Zitat": "Charon"
    },
    "notes": "# AUDIO PROFILE\nA deep, warm, firm male voice reciting famous quotations from the hadith with great respect. He is quoting, not acting a character. Not whispering.\n### DIRECTOR'S NOTES\nCalm and clear, full voice, moderate pace. Speak ALL four quotations below completely, in this order, none may be skipped. A clear pause of about one second between the quotations.",
    "plain": true
+  },
+  "4": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Nachbar": "Achird"
+   },
+   "notes": "# AUDIO PROFILE\nAn older man from Medina sitting in front of his door at night, warm, calm, a little tired, slightly rough voice.\n## THE SCENE\nMedina, 622, at night. A young man asks him whether the prayer has already begun.\n### DIRECTOR'S NOTES\nNatural, like a real person talking to a young man in the street. Not loud."
   }
  },
  "sentences": [
@@ -60,8 +67,15 @@
    "id": "d1",
    "part": 0,
    "speaker": "Junge",
-   "text": "Hat das Gebet schon angefangen?! Ich ... ich weiß es nicht!",
+   "text": "Entschuldigung ... hat das Gebet schon angefangen?",
    "dialog": true
+  },
+  {
+   "id": "n1",
+   "part": 4,
+   "speaker": "Nachbar",
+   "dialog": true,
+   "text": "Ich weiß es nicht, mein Sohn. Keiner weiß es. Lauf lieber!"
   },
   {
    "id": "m1",
@@ -239,7 +253,18 @@
   "Sira Ibn Hisham (Bilal wurde in Mekka gequält)"
  ],
  "tighten": {
-  "maxPause": 0.34,
-  "tempo": 1.07
- }
+  "maxPause": 0.5,
+  "tempo": 1.0,
+  "parts": {
+   "1": {
+    "maxPause": 0.34,
+    "tempo": 1.07
+   },
+   "2": {
+    "maxPause": 0.34,
+    "tempo": 1.07
+   }
+  }
+ },
+ "retime": "rate1"
 }

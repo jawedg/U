@@ -76,6 +76,8 @@ def crowd(spots, seed=0, glow=False, prefix="c"):
 
 # ============================================================ Einstellungen
 def shot_gasse():
+    """Nachts durch die Gasse; der junge Mann (Ich-Sicht) bleibt beim Mann an der Tür stehen und fragt ihn (d1),
+    der schaut hoch, antwortet (n1) und zeigt Richtung Moschee; dann geht es weiter."""
     L = night()
     I = MD.town(night=True)
     rig, shake, cam = Q.pov_camera()
@@ -83,22 +85,38 @@ def shot_gasse():
     Q.flicker(H["lamp"]["light"], 0, D, 9.0, seed=1)
     for k, nl in enumerate(I["niche_lamps"]):
         Q.flicker(nl["light"], 0, D, 35.0, seed=10 + k)
-    y0, y1 = -37.5, -24.0
-    tw = D - 1.0
+    man = (1.75, -32.6)                       # sitzt an seiner Tür (Ostseite)
+    t_ask, t_ans, t_end = ls("d1"), ls("n1"), le("n1")
+    t_stop = max(2.0, t_ask - 0.45)
+    stop = (-0.15, -34.9, 1.62)
+    y0 = -40.2
     keys = []
-    for k in range(0, 11):
-        t = tw * k / 10
-        keys.append((t, (0.3 - 0.15 * k / 10, y0 + (y1 - y0) * k / 10, 1.62), None))
-    keys.append((D, (0.15, y1 + 0.2, 1.62), None))
-    Q.cam_keys(rig, keys, loc_interp="LINEAR")
-    Q.cam_keys(rig, [(0, None, (4, -3, 0)), (1.8, None, (16, -2, 0)), (4.2, None, (-14, -4, 0)), (6.6, None, (-2, 1, 0)),
-                     (D, None, (2, 4, 0))])
-    Q.handheld(shake, 0, D, amp=1.0, walk_from=0, walk_to=tw, walk_amp=1.0)
-    # Leute: einer geht vorn zur Moschee, einer sitzt an einer Tür, einer steht im Eingang
-    a = Q.person("vor", (-0.5, -31.0, 0), seed=21, head="turban")
-    Q.walk(a, [(-0.5, -31.0), (-0.3, -22.0), (0.0, -15.0)], 0.0, speed=1.15)
-    b = Q.person("sitz", (1.75, -32.6, 0), yaw=-math.pi / 2, sit=True, seed=22, head="scarf")
-    Q.idle(b, 0, D, seed=3, look=[(0, -10, 0), (3.5, -40, 5), (6.5, -60, 5)])
+    for k in range(0, 9):  # langsam gehen bis vor den Mann
+        u = k / 8
+        keys.append((t_stop * u, (0.3 + (stop[0] - 0.3) * u, y0 + (stop[1] - y0) * u, 1.62), None))
+    keys.append((t_end - 0.15, stop, None))
+    keys.append((D, (0.0, stop[1] + 0.5, 1.62), None))  # „Lauf lieber!“ -> weiter
+    Q.cam_keys(rig, keys, loc_interp="BEZIER")
+    face_man = Q.yaw_to(stop, man)
+    look_down = Q.pitch_to(stop, (man[0], man[1], 1.05))
+    Q.cam_keys(rig, [(0, None, (4, -3, 0)), (1.8, None, (14, -2, 0)), (min(4.2, t_stop - 2.0), None, (-12, -4, 0)),
+                     (t_stop - 0.8, None, (-6, -3, 0)), (t_ask + 0.2, None, (face_man, look_down, 0)),
+                     (t_end - 0.3, None, (face_man * 0.85, look_down + 1, 0)), (D, None, (face_man * 0.35, -2, 0))])
+    Q.handheld(shake, 0, D, amp=0.8, walk_from=0, walk_to=t_stop)
+    # Leute: einer geht vorn zur Moschee, einer sitzt an seiner Tür (antwortet), einer steht im Eingang
+    a = Q.person("vor", (-0.5, -29.0, 0), seed=21, head="turban")
+    Q.walk(a, [(-0.5, -29.0), (-0.3, -22.0), (0.0, -15.0)], 0.0, speed=1.15)
+    b = Q.person("sitz", (*man, 0), yaw=-math.pi / 2, sit=True, seed=22, head="scarf")
+    Q.idle(b, 0, D, seed=3)
+    for k in range(3):  # schaut vor sich hin, dann zu dir hoch, während du fragst und er antwortet
+        Q.head_to(b, k * 2.0, (man[0] - 3, man[1] + (k - 1) * 2.5, 1.0))
+    Q.head_to(b, t_ask + 0.35, stop)
+    Q.head_to(b, t_ans + 0.8, stop)
+    Q.head_to(b, t_end - 0.7, (0.0, -15.0, 1.6))          # „Lauf lieber!“ – Blick Richtung Moschee
+    Q.head_to(b, D, (0.0, -15.0, 1.6))
+    Q.arm_pose(b, t_end - 1.3, "R", -10, -20)
+    Q.arm_pose(b, t_end - 0.6, "R", -70, -10, sh_y=-30)    # zeigt die Gasse hinauf zur Moschee
+    Q.arm_pose(b, D, "R", -70, -10, sh_y=-30)
     c = Q.person("tuer", (-1.9, -27.8, 0), yaw=math.pi / 2, seed=23, head="cap")
     Q.idle(c, 0, D, seed=4)
     return L

@@ -34,12 +34,13 @@ PLAN = [
     ("clip", "hook_a", "dach_a", [("hook_takbir",), ("p", 2.1)]),
     ("clip", "hook_b", "ende", [("p", 0.1), ("l", "h1"), ("p", 0.1)]),
     ("clip", "hook_c", "traum", [("p", 0.05), ("l", "h2"), ("p", 0.25)]),
-    ("shot", "gasse", "MEDINA · 622 · NACHT", [("p", 0.25), ("l", "e2"), ("p", 0.2), ("l", "d1"), ("p", 0.25)]),
+    ("shot", "gasse", "MEDINA · 622 · NACHT", [("p", 0.25), ("l", "e2"), ("p", 0.3), ("l", "d1"), ("p", 0.25), ("l", "n1"),
+                                              ("p", 0.35)]),
     ("shot", "moschee", None, [("p", 0.2), ("l", "m1"), ("p", 0.15), ("l", "m2"), ("p", 0.25)]),
-    ("shot", "beratung", None, [("p", 0.2), ("l", "d3"), ("p", 0.2), ("l", "d4"), ("p", 0.2), ("l", "d5"), ("p", 0.3)]),
+    ("shot", "beratung", None, [("p", 0.1), ("l", "d3"), ("p", 0.1), ("l", "d4"), ("p", 0.1), ("l", "d5"), ("p", 0.12)]),
     ("card", "nacht", "IN DIESER NACHT", 1.2),
-    ("shot", "traum", None, [("p", 0.3), ("l", "d6"), ("p", 0.15), ("l", "d7"), ("p", 0.2), ("l", "e4"), ("p", 0.05), ("q", "q1"),
-                             ("p", 0.2), ("l", "e5"), ("p", 0.05), ("q", "q2"), ("p", 0.25), ("l", "d8"), ("p", 0.35)]),
+    ("shot", "traum", None, [("p", 0.15), ("l", "d6"), ("p", 0.1), ("l", "d7"), ("p", 0.12), ("l", "e4"), ("p", 0.05), ("q", "q1"),
+                             ("p", 0.12), ("l", "e5"), ("p", 0.05), ("q", "q2"), ("p", 0.15), ("l", "d8"), ("p", 0.2)]),
     ("card", "morgen_karte", "AM MORGEN", 1.2),
     ("shot", "morgen", "MEDINA · MORGENDÄMMERUNG", [("p", 0.3), ("l", "d9"), ("p", 0.05), ("q", "q3"), ("p", 0.2), ("l", "d10"),
                                                   ("p", 0.3)]),
@@ -54,6 +55,7 @@ PLAN = [
 HOOK_IN = 2.2   # Startpunkt in der Aufnahme für das „Allahu akbar“ im Einstieg
 # Anker je Einstellung: Zeitpunkte, an denen in Blender etwas passiert (Kopfdrehung, Tür, Adhan-Pose …)
 ANCHORS = {
+    "gasse": ["l:d1", "l:n1"],
     "moschee": ["l:m1", "l:m2"],
     "beratung": ["l:d3", "e:glocke_d4", "e:horn_d4", "e:feuer_d4", "l:d5"],
     "traum": ["q:q1", "q:q2", "l:d8"],
@@ -224,9 +226,13 @@ def main() -> None:
             ref[sid] = {"dur": seg[sid]["dur"], "frames": seg[sid]["frames"], "t": shot_times(out, sid)}
             print(f"   ✓ {sid} gilt als gerendert mit diesem Zeitplan")
         refp.write_text(json.dumps(ref, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    rate1 = script.get("retime") == "rate1"
     for s in segs:
         if s["kind"] == "shot":
             s["map"], s["rerender"] = time_map(s["id"], s["dur"], shot_times(out, s["id"]), ref)
+            if rate1 and s["id"] in ref and not s["rerender"]:
+                # Originaltempo, nur hinten gekürzt (ist die neue Einstellung länger: minimal langsamer)
+                s["map"] = [[0.0, 0.0], [s["dur"], round(min(s["dur"], ref[s["id"]]["dur"]), 3)]]
             s["src_frames"] = ref.get(s["id"], {}).get("frames", s["frames"])
             s["src_dur"] = ref.get(s["id"], {}).get("dur", s["dur"])
     (D / "timeline.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
