@@ -33,7 +33,7 @@
    "speakers": {
     "Zitat": "Charon"
    },
-   "notes": "# AUDIO PROFILE\nA deep, warm, firm male voice reciting famous quotations from the hadith with great respect. He is quoting, not acting a character. Not whispering.\n### DIRECTOR'S NOTES\nCalm and clear, full voice, moderate pace. Speak ALL four quotations below completely, in this order, none may be skipped. A clear pause of about one second between the quotations.",
+   "notes": "Zitat des Propheten (Friede sei mit ihm): Charon mit Hall – nur dieser Satz (aus der früheren Aufnahme ausgeschnitten).",
    "plain": true
   },
   "4": {
@@ -42,6 +42,30 @@
     "Nachbar": "Achird"
    },
    "notes": "# AUDIO PROFILE\nAn older man from Medina sitting in front of his door at night, warm, calm, a little tired, slightly rough voice.\n## THE SCENE\nMedina, 622, at night. A young man asks him whether the prayer has already begun.\n### DIRECTOR'S NOTES\nNatural, like a real person talking to a young man in the street. Not loud."
+  },
+  "5": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Abdullah": "Iapetus"
+   },
+   "notes": "Abdullah ibn Zaid im Traum (Zitat, Hall)."
+  },
+  "6": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Gruener": "Enceladus"
+   },
+   "notes": "Der Mann in grüner Kleidung im Traum (Zitat, Hall)."
+  },
+  "7": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Umar": "Alnilam"
+   },
+   "notes": "Umar ibn al-Khattab (Zitat, Hall)."
   }
  },
  "sentences": [
@@ -129,8 +153,8 @@
   },
   {
    "id": "q1",
-   "part": 3,
-   "speaker": "Zitat",
+   "part": 5,
+   "speaker": "Abdullah",
    "quote": true,
    "fx": "hall",
    "by": "Abdullah ibn Zaid (ra) im Traum",
@@ -144,8 +168,8 @@
   },
   {
    "id": "q2",
-   "part": 3,
-   "speaker": "Zitat",
+   "part": 6,
+   "speaker": "Gruener",
    "quote": true,
    "fx": "hall",
    "by": "der Mann in grüner Kleidung",
@@ -213,8 +237,8 @@
   },
   {
    "id": "q4",
-   "part": 3,
-   "speaker": "Zitat",
+   "part": 7,
+   "speaker": "Umar",
    "quote": true,
    "fx": "hall",
    "by": "Umar ibn al-Khattab (ra) · Abu Dawud 499",

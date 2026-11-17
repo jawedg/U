@@ -590,6 +590,86 @@ def tighten(path: Path, max_pause: float = 0.38, tempo: float = 1.0, dots: bool 
         tmp.replace(path)
 
 
+
+def word_times_audio(path: Path, text: str, dur: float) -> list[dict]:
+    """Wortzeiten nach dem echten Ton (statt gleichmäßig verteilt – da liefen die Untertitel nach Pausen voraus):
+    1) Sprechpausen im Stück finden, 2) Satzgrenzen (. ! ? : …) auf die passendsten Pausen legen,
+    3) innerhalb eines Satzes läuft die Wort-Uhr nur, während gesprochen wird."""
+    import numpy as np
+    try:
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(path), "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                             capture_output=True, check=True).stdout
+    except subprocess.CalledProcessError:
+        return word_times(text, dur)
+    x = np.frombuffer(raw, np.int16).astype(float) / 32768
+    hop = 160  # 10 ms
+    n = len(x) // hop
+    words = text.split()
+    if n < 10 or not words:
+        return word_times(text, dur)
+    rms = np.array([np.sqrt(np.mean(x[i * hop:(i + 1) * hop] ** 2)) for i in range(n)]) + 1e-9
+    sp = 20 * np.log10(rms / rms.max()) > -34
+    k = 0
+    while k < n:  # kurze Lücken (< 120 ms, z. B. Verschlusslaute) zählen als Sprechen
+        if not sp[k]:
+            j = k
+            while j < n and not sp[j]:
+                j += 1
+            if j - k < 12 and k > 0 and j < n:
+                sp[k:j] = True
+            k = j
+        else:
+            k += 1
+    if sp.sum() < 20:
+        return word_times(text, dur)
+    first = int(np.argmax(sp))
+    last = n - int(np.argmax(sp[::-1]))
+    pauses, k = [], first
+    while k < last:  # (Anfang, Ende) in s, nur innerhalb der Sprache
+        if not sp[k]:
+            j = k
+            while j < last and not sp[j]:
+                j += 1
+            if j - k >= 15:
+                pauses.append((k * 0.01, j * 0.01))
+            k = j
+        else:
+            k += 1
+    cum = np.cumsum(sp) * 0.01
+
+    def at_speech(frac, lo, hi):  # Zeit in [lo, hi], bei der der Anteil frac der Sprechzeit erreicht ist
+        c0, c1 = cum[min(n - 1, int(lo * 100))], cum[min(n - 1, max(0, int(hi * 100) - 1))]
+        i = int(np.searchsorted(cum, c0 + frac * (c1 - c0) + 1e-6))
+        return min(max(i * 0.01, lo), hi)
+    # Gewicht ~ Sprechlänge; Zahlen werden lang gesprochen („622“ = sechshundertzweiundzwanzig)
+    weights = [4 * len(re.sub(r"\D", "", w)) + 2 if re.search(r"\d", w) else len(re.sub(r"[^\wäöüÄÖÜß]", "", w)) + 2
+               for w in words]
+    ends = [i for i, w in enumerate(words[:-1]) if re.search(r"[.!?:…]\*?[“\"]?$", w)]  # Satzende nach Wort i
+    t_start, t_end = first * 0.01, last * 0.01
+    bounds, used = [], -1
+    for i in ends:
+        exp = at_speech(sum(weights[:i + 1]) / sum(weights), t_start, t_end)
+        cand = [(abs((p0 + p1) / 2 - exp) - 1.0 * (p1 - p0), m) for m, (p0, p1) in enumerate(pauses)
+                if m > used and abs((p0 + p1) / 2 - exp) < 2.0]
+        if cand:
+            m = min(cand)[1]
+            used = m
+            bounds.append((i, pauses[m][0], pauses[m][1]))
+    out, w0, s0 = [], 0, t_start
+    for i, p0, p1 in bounds + [(len(words) - 1, t_end, t_end)]:
+        seg = list(range(w0, i + 1))
+        tot = sum(weights[j] for j in seg) or 1
+        acc = 0
+        for j in seg:
+            t = at_speech(acc / tot, s0, p0)
+            out.append({"word": words[j], "start": round(max(0.0, t - 0.04), 3)})
+            acc += weights[j]
+        w0, s0 = i + 1, p1
+    for q in range(1, len(out)):  # streng steigend
+        if out[q]["start"] <= out[q - 1]["start"]:
+            out[q]["start"] = round(out[q - 1]["start"] + 0.05, 3)
+    return out
+
 HALL_TAIL = 2.4  # Sekunden Nachhall nach dem Zitat
 
 
@@ -729,7 +809,7 @@ def main() -> None:
         if tg and s.get("fx") != "hall":
             tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
         dur = clean(f, vfilter)
-        ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times(s["text"], dur)}
+        ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times_audio(f, s["text"], dur)}
         if s.get("fx") == "hall":
             hall(f)
             ln["tail"] = HALL_TAIL

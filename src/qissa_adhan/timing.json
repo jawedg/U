@@ -6,31 +6,31 @@
    "words": [
     {
      "word": "Diese",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Worte",
-     "start": 0.526
+     "start": 0.5
     },
     {
      "word": "hörst",
-     "start": 0.952
+     "start": 0.95
     },
     {
      "word": "du",
-     "start": 1.378
+     "start": 1.4
     },
     {
      "word": "jeden",
-     "start": 1.622
+     "start": 1.65
     },
     {
      "word": "Tag.",
-     "start": 2.048
+     "start": 2.1
     },
     {
      "word": "Fünfmal.",
-     "start": 2.656
+     "start": 2.89
     }
    ]
   },
@@ -40,35 +40,35 @@
    "words": [
     {
      "word": "Aber",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "woher",
-     "start": 0.347
+     "start": 0.32
     },
     {
      "word": "kommen",
-     "start": 0.636
+     "start": 0.63
     },
     {
      "word": "sie?",
-     "start": 0.966
+     "start": 0.99
     },
     {
      "word": "...",
-     "start": 1.378
+     "start": 1.82
     },
     {
      "word": "Aus",
-     "start": 1.666
+     "start": 1.9
     },
     {
      "word": "einem",
-     "start": 1.873
+     "start": 2.11
     },
     {
      "word": "*Traum*.",
-     "start": 2.161
+     "start": 2.4
     }
    ]
   },
@@ -78,63 +78,63 @@
    "words": [
     {
      "word": "Medina,",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "im",
-     "start": 0.871
+     "start": 1.15
     },
     {
      "word": "Jahr",
-     "start": 1.109
+     "start": 1.46
     },
     {
      "word": "622.",
-     "start": 1.465
+     "start": 1.92
     },
     {
      "word": "Es",
-     "start": 2.058
+     "start": 3.5
     },
     {
      "word": "gibt",
-     "start": 2.296
+     "start": 3.67
     },
     {
      "word": "noch",
-     "start": 2.652
+     "start": 3.93
     },
     {
      "word": "keinen",
-     "start": 3.008
+     "start": 4.19
     },
     {
      "word": "Adhan.",
-     "start": 3.482
+     "start": 4.53
     },
     {
      "word": "Niemand",
-     "start": 4.194
+     "start": 5.34
     },
     {
      "word": "weiß,",
-     "start": 4.729
+     "start": 5.76
     },
     {
      "word": "wann",
-     "start": 5.381
+     "start": 6.04
     },
     {
      "word": "das",
-     "start": 5.737
+     "start": 6.32
     },
     {
      "word": "Gebet",
-     "start": 6.034
+     "start": 6.55
     },
     {
      "word": "beginnt.",
-     "start": 6.449
+     "start": 6.88
     }
    ]
   },
@@ -144,31 +144,31 @@
    "words": [
     {
      "word": "Entschuldigung",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "...",
-     "start": 0.65
+     "start": 0.62
     },
     {
      "word": "hat",
-     "start": 0.891
+     "start": 0.98
     },
     {
      "word": "das",
-     "start": 1.063
+     "start": 1.16
     },
     {
      "word": "Gebet",
-     "start": 1.235
+     "start": 1.35
     },
     {
      "word": "schon",
-     "start": 1.476
+     "start": 1.62
     },
     {
      "word": "angefangen?",
-     "start": 1.717
+     "start": 1.88
     }
    ]
   },
@@ -178,47 +178,47 @@
    "words": [
     {
      "word": "Ich",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "weiß",
-     "start": 0.332
+     "start": 0.26
     },
     {
      "word": "es",
-     "start": 0.609
+     "start": 0.51
     },
     {
      "word": "nicht,",
-     "start": 0.795
+     "start": 0.68
     },
     {
      "word": "mein",
-     "start": 1.35
+     "start": 0.98
     },
     {
      "word": "Sohn.",
-     "start": 1.628
+     "start": 1.23
     },
     {
      "word": "Keiner",
-     "start": 2.137
+     "start": 1.97
     },
     {
      "word": "weiß",
-     "start": 2.508
+     "start": 2.38
     },
     {
      "word": "es.",
-     "start": 2.786
+     "start": 2.69
     },
     {
      "word": "Lauf",
-     "start": 3.202
+     "start": 3.39
     },
     {
      "word": "lieber!",
-     "start": 3.48
+     "start": 3.7
     }
    ]
   },
@@ -228,43 +228,43 @@
    "words": [
     {
      "word": "Na,",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "mein",
-     "start": 0.454
+     "start": 0.38
     },
     {
      "word": "Junge?",
-     "start": 0.69
+     "start": 0.89
     },
     {
      "word": "Wieder",
-     "start": 1.162
+     "start": 2.03
     },
     {
      "word": "zu",
-     "start": 1.477
+     "start": 2.24
     },
     {
      "word": "spät",
-     "start": 1.634
+     "start": 2.35
     },
     {
      "word": "...",
-     "start": 1.871
+     "start": 2.52
     },
     {
      "word": "oder",
-     "start": 2.146
+     "start": 2.57
     },
     {
      "word": "zu",
-     "start": 2.382
+     "start": 2.73
     },
     {
      "word": "früh?",
-     "start": 2.539
+     "start": 2.84
     }
    ]
   },
@@ -274,27 +274,27 @@
    "words": [
     {
      "word": "Keiner",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "weiß",
-     "start": 0.662
+     "start": 0.45
     },
     {
      "word": "es!",
-     "start": 1.083
+     "start": 0.75
     },
     {
      "word": "Wir",
-     "start": 1.715
+     "start": 1.26
     },
     {
      "word": "schätzen",
-     "start": 2.066
+     "start": 1.82
     },
     {
      "word": "nur.",
-     "start": 2.768
+     "start": 2.94
     }
    ]
   },
@@ -304,67 +304,67 @@
    "words": [
     {
      "word": "Der",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Prophet,",
-     "start": 0.316
+     "start": 0.27
     },
     {
      "word": "Friede",
-     "start": 0.922
+     "start": 0.68
     },
     {
      "word": "sei",
-     "start": 1.269
+     "start": 1.25
     },
     {
      "word": "mit",
-     "start": 1.485
+     "start": 1.47
     },
     {
      "word": "ihm,",
-     "start": 1.701
+     "start": 1.7
     },
     {
      "word": "macht",
-     "start": 2.134
+     "start": 1.93
     },
     {
      "word": "sich",
-     "start": 2.437
+     "start": 2.42
     },
     {
      "word": "Sorgen.",
-     "start": 2.697
+     "start": 2.69
     },
     {
      "word": "Wie",
-     "start": 3.26
+     "start": 3.54
     },
     {
      "word": "ruft",
-     "start": 3.476
+     "start": 3.75
     },
     {
      "word": "man",
-     "start": 3.736
+     "start": 4.0
     },
     {
      "word": "die",
-     "start": 3.952
+     "start": 4.22
     },
     {
      "word": "Menschen",
-     "start": 4.169
+     "start": 4.43
     },
     {
      "word": "zum",
-     "start": 4.601
+     "start": 4.85
     },
     {
      "word": "*Gebet*?",
-     "start": 4.818
+     "start": 5.07
     }
    ]
   },
@@ -374,59 +374,59 @@
    "words": [
     {
      "word": "Mit",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "einer",
-     "start": 0.292
+     "start": 0.23
     },
     {
      "word": "*Glocke*,",
-     "start": 0.56
+     "start": 0.5
     },
     {
      "word": "wie",
-     "start": 1.058
+     "start": 0.8
     },
     {
      "word": "die",
-     "start": 1.25
+     "start": 0.98
     },
     {
      "word": "Christen?",
-     "start": 1.442
+     "start": 1.17
     },
     {
      "word": "Mit",
-     "start": 2.017
+     "start": 2.03
     },
     {
      "word": "einem",
-     "start": 2.209
+     "start": 2.23
     },
     {
      "word": "*Horn*,",
-     "start": 2.477
+     "start": 2.51
     },
     {
      "word": "wie",
-     "start": 2.899
+     "start": 2.75
     },
     {
      "word": "die",
-     "start": 3.09
+     "start": 2.95
     },
     {
      "word": "Juden?",
-     "start": 3.282
+     "start": 3.15
     },
     {
      "word": "Mit",
-     "start": 3.742
+     "start": 3.94
     },
     {
      "word": "*Feuer*?",
-     "start": 3.934
+     "start": 4.14
     }
    ]
   },
@@ -436,31 +436,31 @@
    "words": [
     {
      "word": "Nein.",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Nichts",
-     "start": 0.645
+     "start": 0.92
     },
     {
      "word": "davon",
-     "start": 1.041
+     "start": 1.22
     },
     {
      "word": "...",
-     "start": 1.387
+     "start": 1.49
     },
     {
      "word": "passt",
-     "start": 1.734
+     "start": 2.06
     },
     {
      "word": "zu",
-     "start": 2.08
+     "start": 2.38
     },
     {
      "word": "uns.",
-     "start": 2.278
+     "start": 2.57
     }
    ]
   },
@@ -470,47 +470,47 @@
    "words": [
     {
      "word": "Dann,",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "in",
-     "start": 0.629
+     "start": 0.33
     },
     {
      "word": "dieser",
-     "start": 0.821
+     "start": 0.51
     },
     {
      "word": "Nacht",
-     "start": 1.206
+     "start": 0.89
     },
     {
      "word": "...",
-     "start": 1.542
+     "start": 1.21
     },
     {
      "word": "hat",
-     "start": 1.879
+     "start": 1.92
     },
     {
      "word": "*Abdullah",
-     "start": 2.119
+     "start": 2.29
     },
     {
      "word": "ibn",
-     "start": 2.6
+     "start": 2.8
     },
     {
      "word": "Zaid*",
-     "start": 2.841
+     "start": 3.06
     },
     {
      "word": "einen",
-     "start": 3.129
+     "start": 3.36
     },
     {
      "word": "Traum.",
-     "start": 3.466
+     "start": 3.72
     }
    ]
   },
@@ -520,51 +520,51 @@
    "words": [
     {
      "word": "Ein",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Mann",
-     "start": 0.333
+     "start": 0.28
     },
     {
      "word": "in",
-     "start": 0.612
+     "start": 0.57
     },
     {
      "word": "*grünen*",
-     "start": 0.798
+     "start": 0.76
     },
     {
      "word": "Gewändern",
-     "start": 1.17
+     "start": 1.14
     },
     {
      "word": "umkreist",
-     "start": 1.682
+     "start": 1.66
     },
     {
      "word": "ihn.",
-     "start": 2.148
+     "start": 2.14
     },
     {
      "word": "In",
-     "start": 2.613
+     "start": 2.87
     },
     {
      "word": "seiner",
-     "start": 2.799
+     "start": 3.02
     },
     {
      "word": "Hand:",
-     "start": 3.171
+     "start": 3.34
     },
     {
      "word": "eine",
-     "start": 3.683
+     "start": 4.09
     },
     {
      "word": "*Glocke*.",
-     "start": 3.962
+     "start": 4.3
     }
    ]
   },
@@ -574,65 +574,65 @@
    "words": [
     {
      "word": "Abdullah",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "fragt",
-     "start": 0.426
+     "start": 0.49
     },
     {
      "word": "ihn:",
-     "start": 0.654
+     "start": 0.79
     }
    ]
   },
   {
-   "file": "qissa_adhan/line-3-0.wav",
-   "seconds": 3.543,
+   "file": "qissa_adhan/line-5-0.wav",
+   "seconds": 3.762,
    "words": [
     {
      "word": "Verkaufst",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "du",
-     "start": 0.501
+     "start": 0.5
     },
     {
      "word": "mir",
-     "start": 0.647
+     "start": 0.66
     },
     {
      "word": "die",
-     "start": 0.83
+     "start": 0.87
     },
     {
      "word": "Glocke?",
-     "start": 1.012
+     "start": 1.08
     },
     {
      "word": "Wir",
-     "start": 1.487
+     "start": 1.83
     },
     {
      "word": "wollen",
-     "start": 1.669
+     "start": 2.02
     },
     {
      "word": "damit",
-     "start": 1.961
+     "start": 2.33
     },
     {
      "word": "zum",
-     "start": 2.217
+     "start": 2.6
     },
     {
      "word": "Gebet",
-     "start": 2.399
+     "start": 2.8
     },
     {
      "word": "rufen.",
-     "start": 2.655
+     "start": 3.07
     }
    ],
    "tail": 2.4
@@ -643,53 +643,53 @@
    "words": [
     {
      "word": "Doch",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "der",
-     "start": 0.271
+     "start": 0.27
     },
     {
      "word": "Mann",
-     "start": 0.413
+     "start": 0.47
     },
     {
      "word": "sagt:",
-     "start": 0.584
+     "start": 0.7
     }
    ]
   },
   {
-   "file": "qissa_adhan/line-3-1.wav",
-   "seconds": 2.124,
+   "file": "qissa_adhan/line-6-0.wav",
+   "seconds": 2.315,
    "words": [
     {
      "word": "Soll",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "ich",
-     "start": 0.278
+     "start": 0.28
     },
     {
      "word": "dir",
-     "start": 0.427
+     "start": 0.47
     },
     {
      "word": "nicht",
-     "start": 0.575
+     "start": 0.66
     },
     {
      "word": "etwas",
-     "start": 0.783
+     "start": 0.93
     },
     {
      "word": "Besseres",
-     "start": 0.991
+     "start": 1.2
     },
     {
      "word": "zeigen?",
-     "start": 1.288
+     "start": 1.59
     }
    ],
    "tail": 2.4
@@ -700,47 +700,47 @@
    "words": [
     {
      "word": "Und",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "er",
-     "start": 0.33
+     "start": 0.26
     },
     {
      "word": "lehrt",
-     "start": 0.513
+     "start": 0.42
     },
     {
      "word": "ihn",
-     "start": 0.835
+     "start": 0.72
     },
     {
      "word": "Worte",
-     "start": 1.065
+     "start": 0.93
     },
     {
      "word": "...",
-     "start": 1.386
+     "start": 1.22
     },
     {
      "word": "die",
-     "start": 1.708
+     "start": 1.92
     },
     {
      "word": "heute",
-     "start": 1.938
+     "start": 2.15
     },
     {
      "word": "jeder",
-     "start": 2.259
+     "start": 2.48
     },
     {
      "word": "Muslim",
-     "start": 2.581
+     "start": 2.81
     },
     {
      "word": "kennt.",
-     "start": 2.948
+     "start": 3.19
     }
    ]
   },
@@ -750,15 +750,15 @@
    "words": [
     {
      "word": "Am",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Morgen",
-     "start": 0.262
+     "start": 0.22
     },
     {
      "word": "geht",
-     "start": 0.587
+     "start": 0.57
     },
     {
      "word": "Abdullah",
@@ -766,161 +766,161 @@
     },
     {
      "word": "sofort",
-     "start": 1.236
+     "start": 1.27
     },
     {
      "word": "zum",
-     "start": 1.561
+     "start": 1.61
     },
     {
      "word": "Propheten,",
-     "start": 1.764
+     "start": 1.83
     },
     {
      "word": "Friede",
-     "start": 2.413
+     "start": 2.31
     },
     {
      "word": "sei",
-     "start": 2.737
+     "start": 2.66
     },
     {
      "word": "mit",
-     "start": 2.94
+     "start": 2.88
     },
     {
      "word": "ihm.",
-     "start": 3.143
+     "start": 3.1
     },
     {
      "word": "Und",
-     "start": 3.549
+     "start": 3.81
     },
     {
      "word": "der",
-     "start": 3.752
+     "start": 4.0
     },
     {
      "word": "Prophet",
-     "start": 3.955
+     "start": 4.2
     },
     {
      "word": "sagte:",
-     "start": 4.32
+     "start": 4.56
     }
    ]
   },
   {
-   "file": "qissa_adhan/line-3-2.wav",
+   "file": "qissa_adhan/line-3-0.wav",
    "seconds": 9.606,
    "words": [
     {
      "word": "Das",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "ist",
-     "start": 0.338
+     "start": 0.3
     },
     {
      "word": "ein",
-     "start": 0.577
+     "start": 0.68
     },
     {
      "word": "wahrer",
-     "start": 0.815
+     "start": 0.94
     },
     {
      "word": "Traum,",
-     "start": 1.196
+     "start": 1.35
     },
     {
      "word": "so",
-     "start": 1.768
+     "start": 1.86
     },
     {
      "word": "Allah",
-     "start": 1.959
+     "start": 2.06
     },
     {
      "word": "will.",
-     "start": 2.292
+     "start": 2.42
     },
     {
      "word": "Steh",
-     "start": 2.817
+     "start": 3.64
     },
     {
      "word": "auf",
-     "start": 3.103
+     "start": 3.91
     },
     {
      "word": "mit",
-     "start": 3.341
+     "start": 4.15
     },
     {
      "word": "Bilal",
-     "start": 3.579
+     "start": 4.38
     },
     {
      "word": "und",
-     "start": 3.913
+     "start": 4.7
     },
     {
      "word": "bring",
-     "start": 4.151
+     "start": 4.93
     },
     {
      "word": "ihm",
-     "start": 4.485
+     "start": 5.26
     },
     {
      "word": "bei,",
-     "start": 4.723
+     "start": 5.49
     },
     {
      "word": "was",
-     "start": 5.2
+     "start": 5.72
     },
     {
      "word": "du",
-     "start": 5.438
+     "start": 5.95
     },
     {
      "word": "gesehen",
-     "start": 5.629
+     "start": 6.14
     },
     {
      "word": "hast.",
-     "start": 6.058
+     "start": 6.56
     },
     {
      "word": "Denn",
-     "start": 6.582
+     "start": 7.2
     },
     {
      "word": "seine",
-     "start": 6.868
+     "start": 7.44
     },
     {
      "word": "Stimme",
-     "start": 7.202
+     "start": 7.72
     },
     {
      "word": "ist",
-     "start": 7.583
+     "start": 8.05
     },
     {
      "word": "kräftiger",
-     "start": 7.821
+     "start": 8.25
     },
     {
      "word": "als",
-     "start": 8.345
+     "start": 8.7
     },
     {
      "word": "deine.",
-     "start": 8.584
+     "start": 8.9
     }
    ],
    "tail": 2.4
@@ -931,43 +931,43 @@
    "words": [
     {
      "word": "*Bilal*?!",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Der",
-     "start": 0.533
+     "start": 0.94
     },
     {
      "word": "Mann,",
-     "start": 0.714
+     "start": 1.11
     },
     {
      "word": "den",
-     "start": 1.111
+     "start": 1.33
     },
     {
      "word": "sie",
-     "start": 1.291
+     "start": 1.51
     },
     {
      "word": "in",
-     "start": 1.472
+     "start": 1.69
     },
     {
      "word": "Mekka",
-     "start": 1.616
+     "start": 1.83
     },
     {
      "word": "so",
-     "start": 1.869
+     "start": 2.08
     },
     {
      "word": "gequält",
-     "start": 2.014
+     "start": 2.22
     },
     {
      "word": "haben?",
-     "start": 2.339
+     "start": 2.54
     }
    ]
   },
@@ -977,55 +977,55 @@
    "words": [
     {
      "word": "Genau",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "der.",
-     "start": 0.443
+     "start": 0.46
     },
     {
      "word": "Bilal",
-     "start": 0.932
+     "start": 1.37
     },
     {
      "word": "steigt",
-     "start": 1.275
+     "start": 1.65
     },
     {
      "word": "auf",
-     "start": 1.666
+     "start": 1.97
     },
     {
      "word": "das",
-     "start": 1.911
+     "start": 2.17
     },
     {
      "word": "*höchste",
-     "start": 2.156
+     "start": 2.38
     },
     {
      "word": "Dach*",
-     "start": 2.596
+     "start": 2.74
     },
     {
      "word": "...",
-     "start": 2.89
+     "start": 2.98
     },
     {
      "word": "und",
-     "start": 3.232
+     "start": 3.57
     },
     {
      "word": "holt",
-     "start": 3.477
+     "start": 3.8
     },
     {
      "word": "tief",
-     "start": 3.771
+     "start": 4.08
     },
     {
      "word": "Luft.",
-     "start": 4.064
+     "start": 4.36
     }
    ]
   },
@@ -1035,15 +1035,15 @@
    "words": [
     {
      "word": "Hörst",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "du",
-     "start": 0.32
+     "start": 0.37
     },
     {
      "word": "das?",
-     "start": 0.446
+     "start": 0.56
     }
    ]
   },
@@ -1053,23 +1053,23 @@
    "words": [
     {
      "word": "Mama",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "...",
-     "start": 0.361
+     "start": 0.36
     },
     {
      "word": "was",
-     "start": 0.665
+     "start": 0.87
     },
     {
      "word": "ist",
-     "start": 0.882
+     "start": 1.1
     },
     {
      "word": "das?",
-     "start": 1.1
+     "start": 1.33
     }
    ]
   },
@@ -1079,51 +1079,51 @@
    "words": [
     {
      "word": "Zum",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "ersten",
-     "start": 0.361
+     "start": 0.29
     },
     {
      "word": "Mal",
-     "start": 0.78
+     "start": 0.69
     },
     {
      "word": "...",
-     "start": 1.041
+     "start": 0.94
     },
     {
      "word": "hört",
-     "start": 1.407
+     "start": 1.65
     },
     {
      "word": "Medina",
-     "start": 1.72
+     "start": 1.99
     },
     {
      "word": "den",
-     "start": 2.139
+     "start": 2.45
     },
     {
      "word": "*Adhan*.",
-     "start": 2.4
+     "start": 2.74
     },
     {
      "word": "Alle",
-     "start": 3.027
+     "start": 3.62
     },
     {
      "word": "laufen",
-     "start": 3.341
+     "start": 3.87
     },
     {
      "word": "zur",
-     "start": 3.759
+     "start": 4.2
     },
     {
      "word": "Moschee.",
-     "start": 4.02
+     "start": 4.41
     }
    ]
   },
@@ -1133,145 +1133,145 @@
    "words": [
     {
      "word": "Da",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "fliegt",
-     "start": 0.281
+     "start": 0.23
     },
     {
      "word": "eine",
-     "start": 0.644
+     "start": 0.61
     },
     {
      "word": "Tür",
-     "start": 0.916
+     "start": 0.89
     },
     {
      "word": "auf.",
-     "start": 1.142
+     "start": 1.12
     },
     {
      "word": "*Umar*!",
-     "start": 1.595
+     "start": 1.85
     },
     {
      "word": "Er",
-     "start": 2.094
+     "start": 2.74
     },
     {
      "word": "rennt",
-     "start": 2.275
+     "start": 2.89
     },
     {
      "word": "so",
-     "start": 2.592
+     "start": 3.16
     },
     {
      "word": "schnell,",
-     "start": 2.773
+     "start": 3.32
     },
     {
      "word": "dass",
-     "start": 3.408
+     "start": 3.67
     },
     {
      "word": "sein",
-     "start": 3.679
+     "start": 3.91
     },
     {
      "word": "Umhang",
-     "start": 3.951
+     "start": 4.14
     },
     {
      "word": "über",
-     "start": 4.314
+     "start": 4.45
     },
     {
      "word": "den",
-     "start": 4.586
+     "start": 4.69
     },
     {
      "word": "Boden",
-     "start": 4.812
+     "start": 4.88
     },
     {
      "word": "schleift.",
-     "start": 5.129
+     "start": 5.15
     },
     {
      "word": "Er",
-     "start": 5.809
+     "start": 6.04
     },
     {
      "word": "ruft:",
-     "start": 5.99
+     "start": 6.23
     }
    ]
   },
   {
-   "file": "qissa_adhan/line-3-3.wav",
-   "seconds": 4.601,
+   "file": "qissa_adhan/line-7-0.wav",
+   "seconds": 4.516,
    "words": [
     {
      "word": "Bei",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "Dem,",
-     "start": 0.286
+     "start": 0.23
     },
     {
      "word": "der",
-     "start": 0.658
+     "start": 0.42
     },
     {
      "word": "dich",
-     "start": 0.843
+     "start": 0.61
     },
     {
      "word": "mit",
-     "start": 1.066
+     "start": 0.83
     },
     {
      "word": "der",
-     "start": 1.252
+     "start": 1.02
     },
     {
      "word": "Wahrheit",
-     "start": 1.438
+     "start": 1.21
     },
     {
      "word": "gesandt",
-     "start": 1.81
+     "start": 1.58
     },
     {
      "word": "hat:",
-     "start": 2.144
+     "start": 1.92
     },
     {
      "word": "Ich",
-     "start": 2.516
+     "start": 2.31
     },
     {
      "word": "habe",
-     "start": 2.702
+     "start": 2.53
     },
     {
      "word": "dasselbe",
-     "start": 2.925
+     "start": 2.81
     },
     {
      "word": "gesehen",
-     "start": 3.297
+     "start": 3.26
     },
     {
      "word": "wie",
-     "start": 3.631
+     "start": 3.67
     },
     {
      "word": "er!",
-     "start": 3.817
+     "start": 3.9
     }
    ],
    "tail": 2.4
@@ -1282,67 +1282,67 @@
    "words": [
     {
      "word": "Und",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "das",
-     "start": 0.32
+     "start": 0.25
     },
     {
      "word": "Verrückteste?",
-     "start": 0.539
+     "start": 0.46
     },
     {
      "word": "Umar",
-     "start": 1.374
+     "start": 1.52
     },
     {
      "word": "hatte",
-     "start": 1.637
+     "start": 1.76
     },
     {
      "word": "diesen",
-     "start": 1.945
+     "start": 2.04
     },
     {
      "word": "Traum",
-     "start": 2.296
+     "start": 2.36
     },
     {
      "word": "schon",
-     "start": 2.604
+     "start": 2.65
     },
     {
      "word": "*zwanzig",
-     "start": 2.911
+     "start": 2.93
     },
     {
      "word": "Tage*",
-     "start": 3.307
+     "start": 3.29
     },
     {
      "word": "vorher",
-     "start": 3.57
+     "start": 3.54
     },
     {
      "word": "gesehen",
-     "start": 3.921
+     "start": 3.86
     },
     {
      "word": "...",
-     "start": 4.317
+     "start": 4.22
     },
     {
      "word": "und",
-     "start": 4.624
+     "start": 4.91
     },
     {
      "word": "niemandem",
-     "start": 4.844
+     "start": 5.12
     },
     {
      "word": "erzählt.",
-     "start": 5.327
+     "start": 5.59
     }
    ]
   },
@@ -1352,63 +1352,63 @@
    "words": [
     {
      "word": "Seit",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "über",
-     "start": 0.418
+     "start": 0.33
     },
     {
      "word": "*1400*",
-     "start": 0.735
+     "start": 0.62
     },
     {
      "word": "Jahren",
-     "start": 1.053
+     "start": 1.48
     },
     {
      "word": "hört",
-     "start": 1.476
+     "start": 1.87
     },
     {
      "word": "man",
-     "start": 1.793
+     "start": 2.15
     },
     {
      "word": "diese",
-     "start": 2.058
+     "start": 2.39
     },
     {
      "word": "Worte.",
-     "start": 2.429
+     "start": 2.73
     },
     {
      "word": "Fünfmal",
-     "start": 3.064
+     "start": 3.55
     },
     {
      "word": "am",
-     "start": 3.54
+     "start": 4.04
     },
     {
      "word": "Tag.",
-     "start": 3.752
+     "start": 4.25
     },
     {
      "word": "Auf",
-     "start": 4.281
+     "start": 5.02
     },
     {
      "word": "der",
-     "start": 4.545
+     "start": 5.19
     },
     {
      "word": "ganzen",
-     "start": 4.81
+     "start": 5.36
     },
     {
      "word": "Welt.",
-     "start": 5.233
+     "start": 5.64
     }
    ]
   },
@@ -1418,43 +1418,43 @@
    "words": [
     {
      "word": "Wusstest",
-     "start": 0.1
+     "start": 0.05
     },
     {
      "word": "du",
-     "start": 0.502
+     "start": 0.41
     },
     {
      "word": "das?",
-     "start": 0.663
+     "start": 0.55
     },
     {
      "word": "Schreib",
-     "start": 1.065
+     "start": 1.23
     },
     {
      "word": "*1*",
-     "start": 1.428
+     "start": 1.56
     },
     {
      "word": "oder",
-     "start": 1.548
+     "start": 1.78
     },
     {
      "word": "*2*",
-     "start": 1.79
+     "start": 2.0
     },
     {
      "word": "in",
-     "start": 1.91
+     "start": 2.22
     },
     {
      "word": "die",
-     "start": 2.071
+     "start": 2.36
     },
     {
      "word": "Kommentare.",
-     "start": 2.272
+     "start": 2.55
     }
    ]
   }

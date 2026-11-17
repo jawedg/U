@@ -192,26 +192,28 @@ def shot_beratung():
         Q.head_to(P, 0.0, (Hl["root"].location.x, Hl["root"].location.y, 1.0))
         sah.append((P, p))
     light_pt = (C.x, C.y + R, 1.4)
-    # wer schlägt was vor (Glocke links, Horn rechts, Feuer links hinten)
+    # wer schlägt was vor (Glocke links, Horn rechts, Feuer links hinten) – ruhige, weiche Bewegungen (Nutzer: vorher zu hektisch)
     who = {"glocke_d4": 1, "horn_d4": 6, "feuer_d4": 2}
-    cam_rot = [(0, (0, -4, 0)), (ls("d3") + 2.0, (0, -2, 0))]
     for ev, idx in who.items():
         t = lt(EV[ev])
         P, p = sah[idx]
-        Q.head_to(P, t - 0.6, (*light_pt[:2], 1.0))
-        Q.head_to(P, t - 0.2, (C.x, C.y - 1.2, 0.9))
-        Q.arm_pose(P, t - 0.5, "R", 28, -50)
-        Q.arm_pose(P, t + 0.1, "R", -40, -70)
-        Q.arm_pose(P, t + 1.4, "R", 28, -50)
-        Q.head_to(P, t + 1.8, (*light_pt[:2], 1.0))
-        for j, (Pj, pj) in enumerate(sah):  # die anderen schauen kurz hin
-            if j != idx and (j + idx) % 2 == 0:
-                Q.head_to(Pj, t + 0.1, (p[0], p[1], 0.9))
-                Q.head_to(Pj, t + 1.6, (*light_pt[:2], 1.0))
-        cam_rot.append((t - 0.3, (Q.yaw_to(pov, p) * 0.6, -6, 0)))
-        cam_rot.append((t + 1.3, (Q.yaw_to(pov, p) * 0.6, -6, 0)))
-    cam_rot.append((ls("d5") + 0.3, (0, -3, 0)))
-    cam_rot.append((D, (0, -1, 0)))
+        Q.head_to(P, t - 1.0, (*light_pt[:2], 1.0))
+        Q.head_to(P, t, (C.x, C.y - 1.2, 0.9))           # dreht sich langsam zur Runde
+        Q.arm_pose(P, t - 0.9, "R", 28, -50)
+        Q.arm_pose(P, t + 0.2, "R", -30, -60)              # Hand hebt sich beim Vorschlag
+        Q.arm_pose(P, t + 2.0, "R", 28, -50)
+        Q.head_to(P, t + 2.6, (*light_pt[:2], 1.0))      # und langsam zurück zum Licht
+    # nur zwei andere schauen beim ersten Vorschlag langsam hin und später zurück
+    t1 = lt(EV["glocke_d4"])
+    for j in (3, 7):
+        Pj, pj = sah[j]
+        Q.head_to(Pj, t1 - 0.2, (*light_pt[:2], 1.0))
+        Q.head_to(Pj, t1 + 0.9, (sah[1][1][0], sah[1][1][1], 0.9))
+        Q.head_to(Pj, t1 + 3.4, (*light_pt[:2], 1.0))
+    # Kamera: kein Hin-und-her-Schwenken mehr, nur eine langsame, kleine Bewegung
+    te = lt(EV["feuer_d4"])
+    cam_rot = [(0, (0, -4, 0)), (ls("d3") + 2.0, (0, -3, 0)), (t1 - 0.5, (6, -5, 0)), (te + 1.0, (-5, -5, 0)),
+               (max(te + 2.5, ls("d5") + 0.8), (0, -3, 0)), (D, (0, -1, 0))]
     Q.cam_keys(rig, [(0, pov, None), (D, (0.0, pov[1] + 0.45, 0.98), None)], loc_interp="BEZIER")
     Q.cam_keys(rig, [(t, None, a) for t, a in cam_rot])
     Q.handheld(shake, 0, D, amp=0.55)
@@ -488,8 +490,22 @@ def shot_dach_b():
     t1 = Q.walk(a, [(0.4, -28.5), (0.3, -30.3)], 0.0, speed=1.0)
     Q.hold(a, t1, D)
     Q.head_to(a, t1 + 0.3, sky, up=30)
-    b = Q.person("tuer1", (-2.6, -26.0, 0), yaw=math.pi / 2, seed=102, head="scarf")
-    t2 = Q.walk(b, [(-2.6, -26.0), (-1.2, -26.4)], 0.4, speed=0.9)
+    # die Mutter kommt aus einer ECHTEN Haustür (Westseite der Gasse), die Tür geht dabei auf (vorher: kam aus der Wand)
+    best = None
+    for nm, (dr, x0_, y0_, w_, d_) in I["doors"].items():
+        if dr is None or x0_ > 0:
+            continue
+        hx, hy = dr.location.x, dr.location.y + 0.475
+        dist = abs(hy + 26.0) + abs(hx + 2.0)
+        if best is None or dist < best[0]:
+            best = (dist, dr, hx, hy)
+    _, hinge, hx, hy = best
+    hinge.rotation_euler = (0, 0, 0)
+    hinge.keyframe_insert("rotation_euler", frame=Q.T(0.15))
+    hinge.rotation_euler = (0, 0, math.radians(-100))
+    hinge.keyframe_insert("rotation_euler", frame=Q.T(0.9))
+    b = Q.person("tuer1", (hx - 0.45, hy, 0), yaw=Q.face_yaw((hx, hy), (hx + 2, hy)), seed=102, head="scarf")
+    t2 = Q.walk(b, [(hx - 0.45, hy), (hx + 0.55, hy - 0.1), (hx + 1.2, hy - 0.4)], 0.45, speed=0.9)
     Q.hold(b, t2, D)
     Q.head_to(b, t2 + 0.2, sky, up=35)
     c = Q.person("tuer2", (1.7, -36.5, 0), yaw=-math.pi / 2, seed=103, head="cap")
