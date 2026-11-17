@@ -124,6 +124,12 @@ Lokal reicht `npm run render:3d`.
 
 ## QISSA – Islam-POV-Serie in 3D (Stil „Signal Lost“, aktueller Wunsch des Nutzers)
 - Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, **60 fps**), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
+- **Version 4 (Nutzer, 17.11.2026):** Erzähler **Orus** (Doku-Stil: „tief, warm, wie Dokumentation“ – Regie wie in
+  `out/stimmproben/erzaehler-3-orus.m4a`), arabische Namen DEUTSCH ausgesprochen (arabische Schrift im Sprechtext gefiel nicht),
+  KEIN atempo/starkes Pausen-Kürzen beim Erzähler (klingt robotisch; `tighten` je Block, Dialoge behalten 0,34 s/1,07).
+  Zitate mit Hall sind in Wahrheit **Charon** (voiceParts 3; Nutzer mag sie). Gasse: echtes Gespräch – junger Mann fragt den Mann
+  an der Tür, der antwortet (Block 4, Stimme Achird). `"retime": "rate1"`: gerenderte Einstellungen laufen nach neuer Vertonung im
+  Originaltempo (nur gekürzt) – so musste nur die Gasse neu gerendert werden (`scripts/v4_qissa_adhan.sh`). ﷺ immer in Amiri setzen.
 - **Version 3 (Nutzer-Feedback Nov. 2026: „langweilig, nicht flüssig (will 120 Hz), Geräusche übersteuert, Horn klingt nicht wie Horn,
   Grafik leer – mehr Details, Zuschauer wischen nach Sekunden weg“):**
   - Einstieg (Hook, erste 9 s): echtes „Allahu akbar“ + Frage-Titel „WOHER KOMMT DER ADHAN?“ + „Diese Worte hörst du jeden Tag … Aus einem
