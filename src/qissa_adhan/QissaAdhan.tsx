@@ -112,6 +112,23 @@ const Subtitle: React.FC<{ t: number }> = ({ t }) => {
   return null;
 };
 
+// ﷺ (Segenswunsch) immer in Amiri setzen – andere Schriften haben das Zeichen nicht, es sah im Video anders aus
+const Salawat: React.FC<{ text: string }> = ({ text }) => (
+  <>
+    {text.split("ﷺ").map((part, i, arr) => (
+      <React.Fragment key={i}>
+        {part}
+        {i < arr.length - 1 ? (
+          <span style={{ fontFamily: "Amiri, serif", fontWeight: 700, fontSize: "1.9em", letterSpacing: 0, verticalAlign: "-0.28em",
+            color: GOLD, textTransform: "none", margin: "0 0.15em" }}>
+            ﷺ
+          </span>
+        ) : null}
+      </React.Fragment>
+    ))}
+  </>
+);
+
 // ---------------------------------------------------------------- goldene Zitate (gesprochen mit Hall, Wort für Wort)
 const Quote: React.FC<{ t: number }> = ({ t }) => {
   for (const q of TL.quotes) {
@@ -169,7 +186,7 @@ const Quote: React.FC<{ t: number }> = ({ t }) => {
             textTransform: "uppercase",
           }}
         >
-          — {q.by}
+          — <Salawat text={q.by} />
         </div>
       </div>
     );
