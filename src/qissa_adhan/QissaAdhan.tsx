@@ -116,7 +116,9 @@ const Subtitle: React.FC<{ t: number }> = ({ t }) => {
 const Quote: React.FC<{ t: number }> = ({ t }) => {
   for (const q of TL.quotes) {
     const local = t - q.start;
-    const end = q.dur + 0.9;
+    // ausblenden, bevor der nächste Satz (Untertitel) kommt – sonst überlappen Zitat und Untertitel
+    const next = Math.min(...TL.lines.filter((l: any) => l.start > q.start + 0.1).map((l: any) => l.start), Infinity);
+    const end = Math.min(q.dur + 0.9, next - q.start - 0.02);
     if (local < -0.1 || local > end) continue;
     const timed: { word: string; start: number }[] = q.words ?? [];
     const words: string[] = timed.length ? timed.map((w) => w.word) : q.text.split(" ");
