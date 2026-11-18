@@ -43,12 +43,12 @@
     ],
     [
      15.542,
-     15.264
+     15.542
     ]
    ],
    "rerender": false,
-   "src_frames": 458,
-   "src_dur": 15.264
+   "src_frames": 466,
+   "src_dur": 15.542
   },
   {
    "id": "moschee",
@@ -85,12 +85,12 @@
     ],
     [
      14.87,
-     13.413
+     14.87
     ]
    ],
    "rerender": false,
-   "src_frames": 402,
-   "src_dur": 13.413
+   "src_frames": 446,
+   "src_dur": 14.87
   },
   {
    "id": "nacht",
@@ -113,12 +113,12 @@
     ],
     [
      22.807,
-     20.683
+     22.807
     ]
    ],
    "rerender": false,
-   "src_frames": 620,
-   "src_dur": 20.683
+   "src_frames": 684,
+   "src_dur": 22.807
   },
   {
    "id": "morgen_karte",
@@ -141,12 +141,12 @@
     ],
     [
      19.736,
-     18.226
+     19.736
     ]
    ],
    "rerender": false,
-   "src_frames": 547,
-   "src_dur": 18.226
+   "src_frames": 592,
+   "src_dur": 19.736
   },
   {
    "id": "dach_a",
@@ -162,12 +162,12 @@
     ],
     [
      10.18,
-     9.849
+     10.18
     ]
    ],
    "rerender": false,
-   "src_frames": 295,
-   "src_dur": 9.849
+   "src_frames": 305,
+   "src_dur": 10.18
   },
   {
    "id": "dach_c",
@@ -246,12 +246,12 @@
     ],
     [
      18.816,
-     18.443
+     18.816
     ]
    ],
    "rerender": false,
-   "src_frames": 553,
-   "src_dur": 18.443
+   "src_frames": 564,
+   "src_dur": 18.816
   },
   {
    "id": "ende",
@@ -267,12 +267,12 @@
     ],
     [
      11.671,
-     4.713
+     11.671
     ]
    ],
-   "rerender": true,
-   "src_frames": 141,
-   "src_dur": 4.713
+   "rerender": false,
+   "src_frames": 350,
+   "src_dur": 11.671
   },
   {
    "id": "logo",
