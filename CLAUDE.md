@@ -123,7 +123,7 @@ Lokal reicht `npm run render:3d`.
   2. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
   3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt, Notfall: OpenCV-Gesichter)
   4. nur Clip-Stellen im Original (1080p60, `raw_NN.ts`) laden → **ffmpeg in EINEM Durchgang** (kein Remotion – Nutzer fand
-     die Qualität schlecht): harte Ansichtswechsel split / game (Vollbild) / cam (nur bei großer Facecam), **keine Zooms**,
+     die Qualität schlecht): Facecam oben + **komplettes Spielbild 16:9 (nie abschneiden/zoomen!)** + unscharfer Hintergrund, Untertitel darunter, **keine Zooms**,
      Lanczos-Skalierung, 60 fps, x264 slow CRF 17, Bitrate so begrenzt, dass Datei ≤ ~55 MB → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
   - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
     andere Stimmen gelb (Gemini `other_voice_lines`). Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
