@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- QISSAH – Profilbild-Varianten „Q + QISSAH“ in 2D (Nutzer: das Q mit QISSAH darunter gefiel am besten, kein 3D).
+     Rendern: node logo/render_html.js logo/q_varianten.html qissah-q   -> out/logo/qissah-q-<n>.png -->
+<style>
+  @font-face { font-family: "EB Garamond"; src: url("../public/fonts/eb-garamond-latin-600-normal.woff2"); font-weight: 600; }
+  @font-face { font-family: "Cinzel"; src: url("fonts/cinzel-latin-600-normal.woff2"); font-weight: 600; }
+  @font-face { font-family: "Cinzel"; src: url("fonts/cinzel-latin-700-normal.woff2"); font-weight: 700; }
+  @font-face { font-family: "Playfair"; src: url("fonts/playfair-display-latin-700-normal.woff2"); font-weight: 700; }
+  @font-face { font-family: "Playfair"; src: url("fonts/playfair-display-latin-700-italic.woff2"); font-weight: 700; font-style: italic; }
+  :root { --gold: #e8b54d; --ink: #07080a; }
+  html, body { margin: 0; background: #222; }
+  .logo { width: 1080px; height: 1080px; position: relative; overflow: hidden; margin-bottom: 20px;
+          background: radial-gradient(circle at 50% 45%, #17140e 0%, var(--ink) 65%); }
+  .c { position: absolute; left: 0; right: 0; text-align: center; line-height: 1; }
+  .glow { filter: drop-shadow(0 0 18px rgba(232,181,77,.45)) drop-shadow(0 0 60px rgba(232,181,77,.18)); }
+  .mono { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--gold); }
+  .garamond { font-family: "EB Garamond", serif; font-weight: 600; color: var(--gold); }
+  .metal { background: linear-gradient(170deg, #fff1c4 0%, #f3cd72 22%, #c48a2c 48%, #f6d98e 62%, #a66d1d 100%);
+           -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ring { position: absolute; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<!-- 1 Wie vorher, mit feinem Goldring -->
+<div class="logo" id="l1">
+  <div class="ring" style="inset:70px;border:6px solid rgba(232,181,77,.55)"></div>
+  <div class="ring" style="inset:92px;border:2px solid rgba(232,181,77,.3)"></div>
+  <div class="c garamond glow" style="top:120px;font-size:500px;padding-left:28px">Q</div>
+  <div class="c mono glow" style="top:770px;font-size:66px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+<!-- 2 Mondsichel im Q -->
+<div class="logo" id="l2">
+  <div class="c garamond glow" style="top:120px;font-size:600px;padding-left:36px">Q</div>
+  <svg class="glow" style="position:absolute;left:0;top:0" width="1080" height="1080">
+    <defs><mask id="m2"><rect width="1080" height="1080" fill="white"/><circle cx="571" cy="386" r="62" fill="black"/></mask></defs>
+    <circle cx="540" cy="404" r="70" fill="#f6d38a" mask="url(#m2)"/>
+    <path d="M598 452 l6 17 17 6 -17 6 -6 17 -6 -17 -17 -6 17 -6z" fill="#f6d38a"/>
+  </svg>
+  <div class="c mono glow" style="top:800px;font-size:76px;letter-spacing:22px;padding-left:22px">QISSAH</div>
+</div>
+
+<!-- 3 Metall-Gold-Verlauf -->
+<div class="logo" id="l3">
+  <div class="c garamond metal" style="top:110px;font-size:620px;padding-left:36px">Q</div>
+  <div class="c" style="top:810px;font-family:Cinzel;font-weight:700;font-size:82px;letter-spacing:18px;padding-left:18px">
+    <span class="metal">QISSAH</span></div>
+</div>
+
+<!-- 4 Cinzel: römische Großbuchstaben, Linie dazwischen -->
+<div class="logo" id="l4">
+  <div class="c glow" style="top:150px;font-family:Cinzel;font-weight:600;font-size:520px;color:var(--gold)">Q</div>
+  <div class="c glow" style="top:785px;font-family:Cinzel;font-weight:700;font-size:80px;letter-spacing:20px;padding-left:20px;color:var(--gold)">QISSAH</div>
+</div>
+
+<!-- 5 Playfair: elegantes Q mit starkem Kontrast -->
+<div class="logo" id="l5">
+  <div class="c glow" style="top:100px;font-family:Playfair;font-weight:700;font-size:600px;color:var(--gold);padding-left:20px">Q</div>
+  <div class="c glow" style="top:805px;font-family:Cinzel;font-weight:600;font-size:74px;letter-spacing:22px;padding-left:22px;color:var(--gold)">QISSAH</div>
+</div>
+
+<!-- 6 Nachtblau mit Sternen -->
+<div class="logo" id="l6" style="background:radial-gradient(circle at 50% 40%, #16263f 0%, #0b1424 45%, #04070d 80%)">
+  <svg style="position:absolute;left:0;top:0" width="1080" height="1080" fill="#f6d38a">
+    <circle cx="250" cy="250" r="4"/><circle cx="830" cy="220" r="5"/><circle cx="180" cy="560" r="3"/><circle cx="900" cy="600" r="3.5"/>
+    <circle cx="330" cy="130" r="3"/><circle cx="720" cy="120" r="3"/><circle cx="860" cy="400" r="2.5"/><circle cx="210" cy="400" r="2.5"/>
+    <path d="M800 300 l7 20 20 7 -20 7 -7 20 -7 -20 -20 -7 20 -7z"/>
+  </svg>
+  <div class="c garamond glow" style="top:120px;font-size:600px;padding-left:36px;color:#f2c766">Q</div>
+  <div class="c mono glow" style="top:800px;font-size:76px;letter-spacing:22px;padding-left:22px;color:#f2c766">QISSAH</div>
+</div>
+
+<!-- 7 Umgekehrt: dunkles Q auf Gold -->
+<div class="logo" id="l7" style="background:radial-gradient(circle at 45% 35%, #f7d88e 0%, #e8b54d 45%, #b57d24 100%)">
+  <div class="c garamond" style="top:120px;font-size:600px;padding-left:36px;color:#0c0a07">Q</div>
+  <div class="c mono" style="top:800px;font-size:76px;letter-spacing:22px;padding-left:22px;color:#0c0a07">QISSAH</div>
+</div>
+
+<!-- 8 Q unter einem Bogen (wie ein Moschee-Torbogen) -->
+<div class="logo" id="l8">
+  <svg class="glow" style="position:absolute;left:0;top:0" width="1080" height="1080" fill="none" stroke="#e8b54d" stroke-width="7">
+    <path d="M255 800 L255 470 C255 320 400 240 540 160 C680 240 825 320 825 470 L825 800"/>
+    <path d="M280 800 L280 474 C280 335 415 262 540 190 C665 262 800 335 800 474 L800 800" stroke-width="2.5" opacity=".6"/>
+  </svg>
+  <div class="c garamond glow" style="top:300px;font-size:390px;padding-left:20px">Q</div>
+  <div class="c mono glow" style="top:840px;font-size:70px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+</body>
+</html>
