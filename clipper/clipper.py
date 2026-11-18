@@ -270,7 +270,10 @@ def gemini(parts, schema_hint=True, timeout=600):
                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4}}).encode()
     key = os.environ.get("GEMINI_API_KEY") or "proxy"  # in der Cloud setzt der Proxy den Schluessel ein
     last = None
+    tried_out = set()
     for model in [m for m in TEXT_MODELS for _ in (0, 1)]:  # jedes Modell 2 Versuche (503 = kurz überlastet)
+        if model in tried_out:
+            continue
         req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                                      data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
         try:
@@ -281,6 +284,8 @@ def gemini(parts, schema_hint=True, timeout=600):
             return json.loads(txt)
         except urllib.error.HTTPError as e:
             last = f"{model}: HTTP {e.code} {e.read()[:300]!r}"
+            if e.code == 429:  # Tageslimit -> gleich naechstes Modell
+                tried_out.add(model)
         except Exception as e:  # noqa
             last = f"{model}: {e}"
         log(f"   ⚠️  {last[:160]} – neuer Versuch")
@@ -533,7 +538,7 @@ def plan_shots(dur, lay, react, action, sentence_starts, cut_points):
         # zu lange Einstellungen teilen (max ~3 s)
         out = []
         for x, y in zip(pts, pts[1:]):
-            n = max(1, int((y - x) // 3.0))
+            n = max(1, int(np.ceil((y - x) / 2.5)))
             out += [(x + (y - x) * i / n, x + (y - x) * (i + 1) / n) for i in range(n)]
         # zu kurze Einstellungen zusammenlegen
         res = []
@@ -571,7 +576,7 @@ def build_props(clip, lay, chunks, peaks, src_file, src_t0):
     words = []  # [wort, start, ende, wer, satzanfang]
     for c in chunks:
         for sg in c["segs"]:
-            who = "o" if any(abs(sg["s"] - t) < 0.6 for t in other) else "s"
+            who = "o" if any(abs(sg["s"] - t) < 0.2 for t in other) else "s"
             for j, w in enumerate(sg["words"]):
                 if s - 0.05 <= w[1] < e:
                     words.append([w[0], w[1], w[2], who, j == 0])
@@ -650,8 +655,10 @@ def make_cam(src_mp4, cam, out):
 def render(props, out, work, name):
     pf = work / f"{name}.props.json"
     pf.write_text(json.dumps(props))
+    # Qualitaet hoch, aber Datei <= ~55 MB (groessere Videos lassen sich in der App nicht speichern)
+    rate = max(2.0, min(9.0, 52 * 8 / max(1.0, props["duration"])))
     cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=18",
-           "--x264-preset=slow", "--max-rate=9M", "--buffer-size=18M", "--audio-bitrate=192k",
+           "--x264-preset=slow", f"--max-rate={rate:.1f}M", f"--buffer-size={2 * rate:.1f}M", "--audio-bitrate=192k",
            "--log=error"]
     if Path(BROWSER).exists():
         cmd.append(f"--browser-executable={BROWSER}")
