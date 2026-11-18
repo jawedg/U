@@ -97,6 +97,8 @@ class TwitchSource:
         self.title = info.get("title") or ""
         self.channel = info.get("uploader") or info.get("uploader_id") or ""
         self.duration = float(info.get("duration") or 0)
+        self.start_ts = info.get("timestamp")  # Startzeit des Streams (fuer Zuschauer-Clips)
+        self.login = (info.get("uploader_id") or self.channel or "").lower()
         fmts = [f for f in info["formats"] if "m3u8" in (f.get("protocol") or "")]
         aud = [f for f in fmts if f.get("vcodec") == "none"]
         vid = [f for f in fmts if f.get("height")]
@@ -294,6 +296,11 @@ Stream title: {title}
 Context: {kontext}
 Lines marked with 🔊 contain a sudden loudness spike (screaming, laughing, hype, explosions, rage).
 Lines "(🔊 … no speech)" are loud moments without words.
+Lines "👥 VIEWERS CLIPPED THIS" mark moments that real viewers clipped live on Twitch, with how many clips, their
+total views and the titles the viewers gave them. THIS IS THE STRONGEST SIGNAL of what was actually funny or crazy.
+If such lines exist, pick your clips among these moments (more clips/views = better), use the viewer titles to
+understand what happened, and use the transcript to set exact start/end (the moment happened in the ~30 s before the
+marker; start at the setup, end right after the payoff).
 
 Find the BEST moments that would go viral as vertical short clips (at most {n}). Be very strict:
 only pick a moment if a stranger who has never seen this streamer would stop scrolling, laugh, be shocked or
@@ -336,10 +343,15 @@ TRANSCRIPT:
 """
 
 
-def build_transcript(chunks, peaks):
+def build_transcript(chunks, peaks, hot=()):
     lines, pi = [], 0
     segs = [s for c in chunks for s in c["segs"]]
+    hot = sorted(hot, key=lambda h: h["mark"])
+    hi = 0
     for s in segs:
+        while hi < len(hot) and hot[hi]["mark"] <= s["s"]:
+            lines.append(hot_line(hot[hi]))
+            hi += 1
         while pi < len(peaks) and peaks[pi][0] < s["s"] - 1:
             lines.append(f"[{hms(peaks[pi][0])}] (🔊 loud moment, no speech)")
             pi += 1
@@ -350,18 +362,101 @@ def build_transcript(chunks, peaks):
         lines.append(f"[{hms(s['s'])}]{mark} {s['text']}")
     for p in peaks[pi:]:
         lines.append(f"[{hms(p[0])}] (🔊 loud moment, no speech)")
+    lines += [hot_line(h) for h in hot[hi:]]
     return "\n".join(lines)
 
 
-def select_clips(src, chunks, peaks, n, kontext, work, tag=""):
+def hot_line(h):
+    return (f"[{hms(h['mark'])}] 👥 VIEWERS CLIPPED THIS: {h['n']} clips, {h['views']} views – titles: "
+            + " | ".join(t for t in h["titles"][:5] if t.strip()))
+
+
+def community_hotspots(src, work):
+    """Stellen, die Zuschauer live als Twitch-Clip gespeichert haben (staerkstes Signal fuer virale Momente).
+    -> [{mark (Stream-Sekunde, an der geclippt wurde), start, end, views, n, titles}], beste zuerst."""
+    f = work / "zuschauer_clips.json"
+    if f.exists():
+        return json.loads(f.read_text())
+    start = getattr(src, "start_ts", None)
+    login = getattr(src, "login", "")
+    if not start or not login:
+        return []
+    import yt_dlp
+    age = time.time() - start
+    rng = "24hr" if age < 0.9 * 86400 else ("7d" if age < 6.5 * 86400 else ("30d" if age < 29 * 86400 else "all"))
+    log(f"👥 Lade Zuschauer-Clips von {login} ({rng}) …")
+    try:
+        with yt_dlp.YoutubeDL({"quiet": True, "no_warnings": True, "extract_flat": True, "playlistend": 400}) as y:
+            info = y.extract_info(f"https://www.twitch.tv/{login}/clips?filter=clips&range={rng}", download=False)
+    except Exception as e:  # noqa
+        log(f"   ⚠️  Zuschauer-Clips nicht abrufbar ({e})")
+        return []
+    rows = []
+    for e in info.get("entries") or []:
+        ts, v = e.get("timestamp"), e.get("view_count") or 0
+        if ts and 0 <= ts - start <= src.duration + 120:
+            rows.append((ts - start, int(v), e.get("title") or ""))
+    rows.sort()
+    hs = []
+    for off, v, t in rows:
+        if hs and off - hs[-1]["last"] < 45:
+            h = hs[-1]
+            h["views"] += v
+            h["n"] += 1
+            h["last"] = off
+            h["titles"].append(t)
+        else:
+            hs.append({"first": off, "last": off, "views": v, "n": 1, "titles": [t]})
+    for h in hs:
+        h["mark"] = h["first"]
+        h["start"] = max(0, h["first"] - 35)
+        h["end"] = min(src.duration, h["last"] + 4)
+        h["score"] = h["views"] + 40 * h["n"]
+    hs.sort(key=lambda h: -h["score"])
+    log(f"   {len(rows)} Zuschauer-Clips → {len(hs)} Hotspots")
+    f.write_text(json.dumps(hs, ensure_ascii=False))
+    return hs
+
+
+def clips_from_hotspots(hot, chunks, peaks, n):
+    """Notfall ohne KI: die meistgeclippten Stellen direkt nehmen, Anfang/Ende an Satzgrenzen legen."""
+    segs = [s for c in chunks for s in c["segs"]]
+    best = max((h["score"] for h in hot), default=1)
+    out = []
+    for h in hot[:n]:
+        a, b = h["start"], h["end"]
+        st = [s["s"] for s in segs if a - 3 <= s["s"] <= a + 6]
+        en = [s["e"] for s in segs if b - 4 <= s["e"] <= b + 4]
+        a, b = (st[0] if st else a), (max(en) + 0.4 if en else b)
+        title = max(h["titles"], key=lambda t: (len(t.split()) >= 2, len(t))) or "Crazy moment"
+        out.append({"start": a, "end": b, "title": title, "viral_score": int(60 + 35 * h["score"] / best),
+                    "reason_de": f"{h['n']} Zuschauer haben diese Stelle live geclippt ({h['views']} Aufrufe).",
+                    "description": f"{title} 😂 #twitch #streamer #clips #fyp", "keywords": [], "other_voice_lines": [],
+                    "sfx_tags": [], "reaction_times": [p[0] for p in peaks if a < p[0] < b][:3], "skip": []})
+    return out
+
+
+def select_clips(src, chunks, peaks, n, kontext, work, tag="", hot=()):
     f = work / f"auswahl{tag}.json"
     if f.exists():
         return json.loads(f.read_text())["clips"]
-    tr = build_transcript(chunks, peaks)
+    t0, t1 = (chunks[0]["t0"], chunks[-1]["t0"] + CHUNK) if chunks else (0, 0)
+    hot = [h for h in hot if t0 <= h["mark"] <= t1]
+    tr = build_transcript(chunks, peaks, hot)
     (work / f"transkript{tag}.txt").write_text(tr)
-    log(f"🤖 Gemini sucht die {n} besten Momente ({len(tr) // 4000}k Token Transkript) …")
-    res = gemini([{"text": SELECT_PROMPT.format(channel=src.channel or "?", title=src.title, kontext=kontext,
-                                                n=n, transcript=tr)}])
+    log(f"🤖 Gemini sucht die {n} besten Momente ({len(tr) // 4000}k Token Transkript, {len(hot)} Zuschauer-Hotspots) …")
+    try:
+        res = gemini([{"text": SELECT_PROMPT.format(channel=src.channel or "?", title=src.title, kontext=kontext,
+                                                    n=n, transcript=tr)}])
+    except Exception as e:  # noqa
+        if not hot:
+            raise
+        log(f"   ⚠️  Gemini nicht erreichbar ({str(e)[:80]}) – nehme die meistgeclippten Stellen direkt")
+        res = {"clips": []}
+    if not res.get("clips") and hot:
+        clips = clips_from_hotspots(hot, chunks, peaks, n)
+        f.write_text(json.dumps({"clips": clips}, indent=1, ensure_ascii=False))
+        return clips
     clips = []
     for c in res.get("clips", []):
         s, e = parse_t(c.get("start")), parse_t(c.get("end"))
@@ -865,7 +960,8 @@ def main():
     log("🎧 1/4 Ton laden + Spracherkennung …")
     chunks = analyse(src, t0, t1, work)
     peaks = loud_peaks(chunks)
-    clips = select_clips(src, chunks, peaks, a.anzahl, a.kontext, work)
+    hot = community_hotspots(src, work)
+    clips = select_clips(src, chunks, peaks, a.anzahl, a.kontext, work, hot=hot)
     if not clips:
         sys.exit("❌ Gemini hat keine Clips gefunden.")
     log(f"✅ {len(clips)} Momente gefunden:")

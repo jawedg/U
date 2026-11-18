@@ -120,7 +120,11 @@ Lokal reicht `npm run render:3d`.
   Geräusch-Tags wie `*LAUGHING*`).
 - `npm run clip -- <Twitch-VOD-Link oder Datei> [--von 1:00:00 --bis 4:00:00] [--anzahl 8] [--kontext "..."]`
   1. Ton in 10-min-Stücken (Twitch Audio_Only) → faster-whisper `small.en` (Wort-Zeiten) + Lautstärke-Spitzen
-  2. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
+  2. **Zuschauer-Hotspots** (`community_hotspots`): Twitch-Clips, die Zuschauer live gemacht haben (yt-dlp-Liste
+     `…/clips?range=24hr|7d|30d`, Zeitstempel − Stream-Start), im Abstand < 45 s gebündelt, nach Aufrufen sortiert →
+     stärkstes Signal (Nutzer: Transkript-Auswahl war „random“). Frische Streams (< 24 h) liefern viele, alte kaum welche
+     → am selben Tag clippen. Im Transkript als „👥 VIEWERS CLIPPED THIS“ markiert; ohne Gemini direkt genommen.
+  2b. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
   3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt). Kontrolle `check_cam`: echte Facecam =
      Gesicht, das in 5 Bildern des Clips an derselben Stelle bleibt; sonst Box um dieses Gesicht bauen (Gemini-Lite hielt
      einmal eine Spielfigur für die Facecam).
