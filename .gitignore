@@ -32,3 +32,4 @@ public/qissa_adhan/sfx.wav
 public/qissa_adhan/*line-*.wav
 public/qissa_adhan/master.wav
 checkpoints/
+out/stimmproben/klon-*
