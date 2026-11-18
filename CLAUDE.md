@@ -113,3 +113,17 @@ Lokal reicht `npm run render:3d`.
   Prüfspitzen fächern nach Lage auf (keine Durchdringung). Licht: RoomEnvironment + Schatten + N8AO (`@react-three/postprocessing@3.0.4`).
 - Rendern: `--props='{"fx":"ao","dpr":0.75}' --timeout=300000` (dpr = 3D-Auflösung; Kosten sind pixelgebunden, ~1,3 s/Bild → ~3 h).
   Länger als 2 h → mit `setsid nohup` starten (Skript-Vorlage: render + 2-Pass 1250 kbit/s → ≤ 60 MB).
+
+## Viral-Clipper (Streamer-Clips, GTA 6) – `clipper/clipper.py` + Komposition `ViralClip`
+- Nutzer clippt Twitch-Streams (hat Erlaubnis der Streamer), Untertitel **Englisch**. Vorbild: TikTok @streamer.clipss25
+  (Facecam oben / Gameplay unten, harte Schnitte, 1 Wort pro Bild in Anton, weiß + gelbe Schlüsselwörter, schwarzer Rand,
+  Geräusch-Tags wie `*LAUGHING*`).
+- `npm run clip -- <Twitch-VOD-Link oder Datei> [--von 1:00:00 --bis 4:00:00] [--anzahl 8] [--kontext "..."]`
+  1. Ton in 10-min-Stücken (Twitch Audio_Only) → faster-whisper `small.en` (Wort-Zeiten) + Lautstärke-Spitzen
+  2. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
+  3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt, Notfall: OpenCV-Gesichter)
+  4. nur Clip-Stellen in 1080p laden → `public/clipper/<id>/src_NN.mp4` → Remotion → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
+- Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
+- Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
+  YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
+- Setup: `pip install faster-whisper opencv-python-headless yt-dlp`, `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).

@@ -22,10 +22,12 @@
     "render:wiso": "remotion render WisoKB4 out/wiso-kb4.mp4",
     "voice:wiso-alle": "python3 scripts/voice_gemini.py --project wiso_all --voice Charon",
     "check:wiso-alle": "python3 scripts/check_voice_split.py wiso_all",
-    "render:wiso-alle": "remotion render WisoAlle out/wiso-komplett.mp4"
+    "render:wiso-alle": "remotion render WisoAlle out/wiso-komplett.mp4",
+    "clip": "python3 clipper/clipper.py"
   },
   "dependencies": {
     "@fontsource/amiri": "^5.3.0",
+    "@fontsource/anton": "^5.3.0",
     "@fontsource/caveat": "^5.3.0",
     "@fontsource/libre-baskerville": "^5.3.0",
     "@react-three/fiber": "^9.2.0",

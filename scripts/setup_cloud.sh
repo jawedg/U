@@ -3,6 +3,7 @@
 set -e
 cd "$(dirname "$0")/.."
 [ -d node_modules ] || npm install --no-audit --no-fund
+python3 -c "import faster_whisper, cv2, yt_dlp" 2>/dev/null || pip install -q faster-whisper opencv-python-headless yt-dlp
 python3 -c "import sherpa_onnx, soundfile" 2>/dev/null || pip install -q "sherpa-onnx==1.12.40" soundfile numpy
 if [ ! -d models/sherpa-onnx-whisper-base ] && [ ! -d /tmp/models/sherpa-onnx-whisper-base ]; then
   mkdir -p models && cd models
