@@ -269,7 +269,7 @@ def gemini(parts, schema_hint=True, timeout=600):
                        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4}}).encode()
     key = os.environ.get("GEMINI_API_KEY") or "proxy"  # in der Cloud setzt der Proxy den Schluessel ein
     last = None
-    for model in TEXT_MODELS:
+    for model in [m for m in TEXT_MODELS for _ in (0, 1)]:  # jedes Modell 2 Versuche (503 = kurz überlastet)
         req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                                      data=body, headers={"Content-Type": "application/json", "x-goog-api-key": key})
         try:
@@ -282,7 +282,8 @@ def gemini(parts, schema_hint=True, timeout=600):
             last = f"{model}: HTTP {e.code} {e.read()[:300]!r}"
         except Exception as e:  # noqa
             last = f"{model}: {e}"
-        log(f"   ⚠️  {last} – versuche nächstes Modell")
+        log(f"   ⚠️  {last[:160]} – neuer Versuch")
+        time.sleep(5)
     raise RuntimeError("Gemini fehlgeschlagen: " + str(last))
 
 
@@ -411,6 +412,8 @@ def norm_box(b):
 
 def faces(img):
     import cv2
+    if not hasattr(cv2, "CascadeClassifier"):  # OpenCV 5 hat keine Haar-Kaskaden mehr -> "opencv-python-headless<5"
+        return []
     g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cas = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     H, W = g.shape

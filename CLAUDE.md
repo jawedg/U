@@ -126,4 +126,4 @@ Lokal reicht `npm run render:3d`.
 - Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
-- Setup: `pip install faster-whisper opencv-python-headless yt-dlp`, `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).
+- Setup: `pip install faster-whisper "opencv-python-headless<5" yt-dlp` (OpenCV 5 hat keine Haar-Gesichtserkennung mehr), `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).
