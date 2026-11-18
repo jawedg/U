@@ -491,7 +491,8 @@ def check_cam(lay, paths):
     c = lay["cam"]
     inside = [f for f in sf if c["x"] <= f[0] + f[2] / 2 <= c["x"] + c["w"] and c["y"] <= f[1] + f[3] / 2 <= c["y"] + c["h"]]
     if inside:
-        return lay
+        fx, fy, fw, fh, _ = inside[0]
+        return {**lay, "face": [float(fx + fw / 2), float(fy + fh / 2)]}
     # Gemini lag daneben (z. B. Spielfigur) -> Box um das stabile Gesicht bauen und an den Cam-Rahmen legen
     fx, fy, fw, fh, _ = sf[0]
     bw, bh = min(0.45, fw * 3.6), min(0.5, fh * 3.0)
@@ -499,7 +500,7 @@ def check_cam(lay, paths):
     box["w"], box["h"] = min(box["w"], 1 - box["x"]), min(box["h"], 1 - box["y"])
     box = static_snap(paths, box)
     log(f"   🔧 Facecam korrigiert (Gemini-Box ohne festes Gesicht) → x={box['x']:.2f} y={box['y']:.2f}")
-    return {"mode": "split", "cam": box}
+    return {"mode": "split", "cam": {k: float(v) for k, v in box.items()}, "face": [float(fx + fw / 2), float(fy + fh / 2)]}
 
 
 def norm_box(b):
@@ -684,14 +685,20 @@ def probe(path):
     return int(w), int(h), round(float(n) / float(d))
 
 
-def fit(x, y, w, h, A, W, H):
-    """Ausschnitt (x,y,w,h) mittig auf Seitenverhaeltnis A (= Breite/Hoehe) bringen, innerhalb des Bildes."""
+def fit(x, y, w, h, A, W, H, focus=None):
+    """Ausschnitt (x,y,w,h) auf Seitenverhaeltnis A (= Breite/Hoehe) bringen, innerhalb des Bildes.
+    focus = (fx, fy) in Pixeln: Ausschnitt um diesen Punkt (Gesicht) statt um die Mitte, aber innerhalb der Box."""
+    x0, y0, w0, h0 = x, y, w, h
     if w / h > A:
         nw = h * A
         x, w = x + (w - nw) / 2, nw
+        if focus:
+            x = min(x0 + w0 - w, max(x0, focus[0] - w / 2))
     else:
         nh = w / A
         y, h = y + (h - nh) / 2, nh
+        if focus:
+            y = min(y0 + h0 - h, max(y0, focus[1] - h * 0.42))
     return (ev(w), ev(h), ev(min(W - w, max(0, x))), ev(min(H - h, max(0, y))))
 
 
@@ -707,8 +714,9 @@ def geometry(lay, W, H):
         g["CH"] = ev(min(960, max(640, 1080 * ch / cw)))
         g["BIG"] = 1300
         g["cam"] = fit(cx, cy, cw, ch, 1080 / g["CH"], W, H)
-        g["cambig"] = fit(cx, cy, cw, ch, 1080 / g["BIG"], W, H)
-        g["camfull"] = fit(cx, cy, cw, ch, 9 / 16, W, H)
+        focus = (lay["face"][0] * W, lay["face"][1] * H) if lay.get("face") else None
+        g["cambig"] = fit(cx, cy, cw, ch, 1080 / g["BIG"], W, H, focus)
+        g["camfull"] = fit(cx, cy, cw, ch, 9 / 16, W, H, focus)
 
         def game(panel_h):  # Gameplay-Ausschnitt so legen, dass die Facecam nicht doppelt zu sehen ist
             gw = min(W, ev(H * 1080 / panel_h))
@@ -764,8 +772,10 @@ def write_ass(edit, g, path):
     path.write_text("\n".join(L) + "\n")
 
 
-def render(raw, s0, edit, lay, out, work, name):
-    """Ein einziger ffmpeg-Durchgang aus dem Original: Schnitte + Ansichten + Untertitel + Lautheit."""
+def render(raw, s0, edit, lay, out, work, name, cam_shift=0.0):
+    """Ein einziger ffmpeg-Durchgang aus dem Original: Schnitte + Ansichten + Untertitel + Lautheit.
+    cam_shift (s): Facecam-Bild so viel spaeter nehmen (manche Streamer-Kameras hinken dem Mikro hinterher) –
+    Gameplay und Ton bleiben unveraendert."""
     W, H, fps = probe(raw)
     fps = min(60, max(30, fps))
     g = geometry(lay, W, H)
@@ -780,16 +790,24 @@ def render(raw, s0, edit, lay, out, work, name):
             view = next((sh["view"] for sh in edit["shots"] if sh["from"] <= (x + y) / 2 < sh["to"]), edit["shots"][-1]["view"])
             pieces.append((a + (x - o0), y - x, view))
         acc = o1
-    inputs, F = [], []
+    inputs, F, k = [], [], 0
     for i, (ss, d, view) in enumerate(pieces):
+        vi = ci = k
         inputs += ["-ss", f"{max(0, ss - s0):.3f}", "-t", f"{d:.3f}", "-i", str(raw)]
-        pre = f"[{i}:v]fps={fps},setpts=PTS-STARTPTS"
+        k += 1
+        if cam_shift and view in ("split", "big", "cam"):
+            ci = k
+            inputs += ["-ss", f"{max(0, ss - s0 + cam_shift):.3f}", "-t", f"{d:.3f}", "-i", str(raw)]
+            k += 1
+        pre = f"[{vi}:v]fps={fps},setpts=PTS-STARTPTS"
+        camsrc = (f"[{ci}:v]fps={fps},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=1,"
+                  f"trim=duration={d:.3f}")
         if view in ("split", "big"):
             CH = g["CH"] if view == "split" else g["BIG"]
             cw, ch, cx, cy = g["cam"] if view == "split" else g["cambig"]
             gw, gh, gx, gy = g["game"] if view == "split" else g["gamebig"]
-            F.append(f"{pre},split[a{i}][b{i}];"
-                     f"[a{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{CH}:flags=lanczos,unsharp=5:5:0.45:5:5:0[c{i}];"
+            F.append(f"{pre},split[a{i}][b{i}]" if ci == vi else f"{camsrc}[a{i}];{pre}[b{i}]")
+            F.append(f"[a{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{CH}:flags=lanczos,unsharp=5:5:0.45:5:5:0[c{i}];"
                      f"[b{i}]crop={gw}:{gh}:{gx}:{gy},scale=1080:{1920 - CH}:flags=lanczos[g{i}];"
                      f"[c{i}][g{i}]vstack,setsar=1,format=yuv420p[v{i}]")
         elif view == "game":
@@ -800,9 +818,9 @@ def render(raw, s0, edit, lay, out, work, name):
                      f"[bo{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
         else:
             cw, ch, cx, cy = g["camfull"] if view == "cam" else g["full"]
-            F.append(f"{pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,unsharp=5:5:0.35:5:5:0,"
+            F.append(f"{camsrc if (view == 'cam' and ci != vi) else pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,unsharp=5:5:0.35:5:5:0,"
                      f"setsar=1,format=yuv420p[v{i}]")
-        F.append(f"[{i}:a]asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,"
+        F.append(f"[{vi}:a]asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,"
                  f"afade=t=in:d=0.012,afade=t=out:st={max(0, d - 0.015):.3f}:d=0.015[a{i}]")
     ass = work / f"{name}.ass"
     write_ass(edit, g, ass)
@@ -832,6 +850,8 @@ def main():
                     help="Optional: worum geht es im Stream, z. B. 'GTA 6 Story' (hilft der KI)")
     ap.add_argument("--nur-analyse", action="store_true", help="Nur Auswahl + Bericht, nicht rendern")
     ap.add_argument("--clips", help="Nur diese Clip-Nummern rendern, z. B. 1,3")
+    ap.add_argument("--cam-versatz", type=int, help="Facecam um so viele ms spaeter nehmen (Lippen-Sync), "
+                                                     "Standard aus clipper/cam_versatz.json")
     a = ap.parse_args()
 
     q = a.quelle
@@ -857,13 +877,26 @@ def main():
     if a.nur_analyse:
         return
     want = {int(x) for x in a.clips.split(",")} if a.clips else None
-    render_clips(src, clips, lays, chunks, peaks, work, want=want)
+    render_clips(src, clips, lays, chunks, peaks, work, want=want, cam_ms=a.cam_versatz)
     write_report(src, clips, work)
     log(f"\n📄 Bericht: {(work / 'bericht.md').relative_to(ROOT)}")
 
 
-def render_clips(src, clips, lays, chunks, peaks, work, prefix="clip", want=None):
+CAM_SHIFT_FILE = Path(__file__).resolve().parent / "cam_versatz.json"  # {kanal: ms}
+
+
+def cam_shift_for(channel, override=None):
+    if override is not None:
+        return override / 1000
+    try:
+        return json.loads(CAM_SHIFT_FILE.read_text()).get((channel or "").lower(), 0) / 1000
+    except Exception:  # noqa
+        return 0.0
+
+
+def render_clips(src, clips, lays, chunks, peaks, work, prefix="clip", want=None, cam_ms=None):
     done = []
+    shift = cam_shift_for(src.channel, cam_ms)
     for i, (c, lay) in enumerate(zip(clips, lays), 1):
         if want and i not in want:
             continue
@@ -873,13 +906,13 @@ def render_clips(src, clips, lays, chunks, peaks, work, prefix="clip", want=None
         if out.exists():
             continue
         log(f"🎞️  {i}/{len(clips)} {c.get('title', '')} ({c['end'] - c['start']:.0f} s Rohmaterial)")
-        raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 0.5, work / f"raw_{prefix}_{i:02d}.ts")
+        raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 1.5, work / f"raw_{prefix}_{i:02d}.ts")
         W, H, _ = probe(raw)
         cam_view = "cam" if lay["mode"] == "split" and geometry(lay, W, H)["camPx"] >= 380 else "big"
         edit = build_edit(c, lay, chunks, peaks, cam_view)
         (work / f"{name}.edit.json").write_text(json.dumps(edit))
         t = time.time()
-        render(raw, s0, edit, lay, out, work, name)
+        render(raw, s0, edit, lay, out, work, name, cam_shift=shift)
         if raw.parent == work and raw.suffix == ".ts":
             raw.unlink(missing_ok=True)  # Rohmaterial wird nicht mehr gebraucht
             raw.with_suffix(".start").unlink(missing_ok=True)

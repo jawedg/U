@@ -129,6 +129,10 @@ Lokal reicht `npm run render:3d`.
      **nur auf die Facecam zoomen** (Vollbild bei Cam ≥ 380 px, sonst Cam groß + Spiel klein) – **nie aufs Gameplay zoomen**,
      kein unscharfer Rand-Layout (Nutzer: „nicht full Hochformat“),
      Lanczos-Skalierung, 60 fps, x264 slow CRF 17, Bitrate so begrenzt, dass Datei ≤ ~55 MB → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
+  - **Lippen-Sync** (Nutzer: Mund passt nicht zur Stimme): manche Streamer-Kameras hinken dem Mikro hinterher → Facecam
+    zeitlich verschieben (`--cam-versatz <ms>` oder pro Kanal in `clipper/cam_versatz.json`), Spiel + Ton bleiben. Automatische
+    Messung (Mundbewegung vs. Ton) war zu unsicher → Testvarianten A–D in `out/clips/lipsync_test/`, Nutzer wählt.
+  - Große Facecam / Vollbild-Cam wird aufs Gesicht zentriert (`face` aus `check_cam`).
   - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
     andere Stimmen gelb (Gemini `other_voice_lines`). Nutzer fand Gemini-Lite-Auswahl „random“ → bei Bedarf wählt Claude selbst:
     `transkript.txt` lesen und `auswahl.json` (gleiches Format) selbst schreiben, dann Clipper erneut starten. Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
