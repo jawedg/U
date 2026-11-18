@@ -130,6 +130,10 @@ Lokal reicht `npm run render:3d`.
   - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
     andere Stimmen gelb (Gemini `other_voice_lines`). Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
 - Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
+- **Live-Modus** `python3 clipper/live.py <kanal> [--runde 30] [--anzahl 3]`: Rekorder-Thread lädt die 2-s-Stücke des
+  Live-Streams (1080p60, Werbung übersprungen) nach `out/clips/live_<kanal>_<datum>/seg/`, alle N min eine Runde
+  (Analyse → Gemini-Auswahl → Render, Dateien `rNN_…`), Facecam-Layout wird wiederverwendet (spart Gemini), fertige Stücke
+  werden gelöscht. Braucht Freigabe `*.ttvnw.net` (hat der Nutzer in den Einstellungen eingetragen). Mit `setsid nohup` starten.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
 - Setup: `pip install faster-whisper "opencv-python-headless<5" yt-dlp` (OpenCV 5 hat keine Haar-Gesichtserkennung mehr), `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).

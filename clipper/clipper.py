@@ -353,12 +353,12 @@ def build_transcript(chunks, peaks):
     return "\n".join(lines)
 
 
-def select_clips(src, chunks, peaks, n, kontext, work):
-    f = work / "auswahl.json"
+def select_clips(src, chunks, peaks, n, kontext, work, tag=""):
+    f = work / f"auswahl{tag}.json"
     if f.exists():
         return json.loads(f.read_text())["clips"]
     tr = build_transcript(chunks, peaks)
-    (work / "transkript.txt").write_text(tr)
+    (work / f"transkript{tag}.txt").write_text(tr)
     log(f"🤖 Gemini sucht die {n} besten Momente ({len(tr) // 4000}k Token Transkript) …")
     res = gemini([{"text": SELECT_PROMPT.format(channel=src.channel or "?", title=src.title, kontext=kontext,
                                                 n=n, transcript=tr)}])
@@ -389,17 +389,31 @@ Return ONLY JSON: {"frames":[{"facecam":[ymin,xmin,ymax,xmax] or null,"fullscree
 with coordinates normalized to 0–1000. The facecam box must tightly cover the whole camera overlay (not just the face)."""
 
 
-def detect_layouts(src, clips, work):
-    f = work / "layout.json"
+def detect_layouts(src, clips, work, tag="", reuse=None):
+    """reuse = Layout einer frueheren Runde: wird uebernommen, wenn im Bild ein Gesicht in der alten Facecam-Box ist
+    (spart Gemini-Anfragen im Live-Modus)."""
+    f = work / f"layout{tag}.json"
     if f.exists():
         return json.loads(f.read_text())
     imgs, parts = [], [{"text": LAYOUT_PROMPT}]
     for i, c in enumerate(clips):
-        p = work / f"frame_{i + 1:02d}.jpg"
+        p = work / f"frame{tag}_{i + 1:02d}.jpg"
         if not p.exists():
             src.frame(c["start"] + min(5, (c["end"] - c["start"]) / 2), p)
         imgs.append(p)
         parts.append({"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(p.read_bytes()).decode()}})
+    if reuse and reuse.get("mode") == "split":
+        import cv2
+        ok = []
+        for p in imgs:
+            c = reuse["cam"]
+            ok.append(any(c["x"] <= fx + fw / 2 <= c["x"] + c["w"] and c["y"] <= fy + fh / 2 <= c["y"] + c["h"]
+                          for fx, fy, fw, fh in faces(cv2.imread(str(p)))))
+        if ok and sum(ok) >= len(ok) / 2:
+            log("🔎 Facecam wie in der letzten Runde (Gesicht gefunden) – keine Gemini-Anfrage nötig")
+            out = [reuse] * len(imgs)
+            f.write_text(json.dumps(out, indent=1))
+            return out
     log("🔎 Gemini sucht die Facecam …")
     try:
         frames = gemini(parts).get("frames", [])
@@ -769,29 +783,39 @@ def main():
     if a.nur_analyse:
         return
     want = {int(x) for x in a.clips.split(",")} if a.clips else None
+    render_clips(src, clips, lays, chunks, peaks, work, want=want)
+    write_report(src, clips, work)
+    log(f"\n📄 Bericht: {(work / 'bericht.md').relative_to(ROOT)}")
+
+
+def render_clips(src, clips, lays, chunks, peaks, work, prefix="clip", want=None):
+    done = []
     for i, (c, lay) in enumerate(zip(clips, lays), 1):
         if want and i not in want:
             continue
-        name = f"clip_{i:02d}_viral-{int(c.get('viral_score') or 0)}_{slug(c.get('title', ''))}"
+        name = f"{prefix}_{i:02d}_viral-{int(c.get('viral_score') or 0)}_{slug(c.get('title', ''))}"
         out = work / f"{name}.mp4"
         c["file"] = out.name
         if out.exists():
             continue
         log(f"🎞️  {i}/{len(clips)} {c.get('title', '')} ({c['end'] - c['start']:.0f} s Rohmaterial)")
-        raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 0.5, work / f"raw_{i:02d}.ts")
+        raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 0.5, work / f"raw_{prefix}_{i:02d}.ts")
         W, H, _ = probe(raw)
         cam_view = "cam" if lay["mode"] == "split" and geometry(lay, W, H)["camPx"] >= 380 else "big"
         edit = build_edit(c, lay, chunks, peaks, cam_view)
         (work / f"{name}.edit.json").write_text(json.dumps(edit))
         t = time.time()
         render(raw, s0, edit, lay, out, work, name)
+        if raw.parent == work and raw.suffix == ".ts":
+            raw.unlink(missing_ok=True)  # Rohmaterial wird nicht mehr gebraucht
+            raw.with_suffix(".start").unlink(missing_ok=True)
         log(f"   ✅ {out.relative_to(ROOT)}  ({edit['dur']:.0f} s, {out.stat().st_size / 1e6:.0f} MB, "
             f"{time.time() - t:.0f} s Renderzeit)")
-    write_report(src, clips, work)
-    log(f"\n📄 Bericht: {(work / 'bericht.md').relative_to(ROOT)}")
+        done.append(out)
+    return done
 
 
-def write_report(src, clips, work):
+def write_report(src, clips, work, name="bericht.md"):
     L = [f"# Clips: {src.channel} – {src.title}", ""]
     for i, c in enumerate(clips, 1):
         L += [f"## {i}. {c.get('title', '')} — Viral-Score {c.get('viral_score', '?')}/100",
@@ -799,7 +823,7 @@ def write_report(src, clips, work):
               f"- Datei: `{c.get('file', '(noch nicht gerendert)')}`",
               f"- Warum: {c.get('reason_de', '')}", "", "Beschreibung zum Kopieren:", "```",
               c.get("description", ""), "```", ""]
-    (work / "bericht.md").write_text("\n".join(L))
+    (work / name).write_text("\n".join(L))
 
 
 if __name__ == "__main__":
