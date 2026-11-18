@@ -508,12 +508,12 @@ def keep_segments(words, peaks, s, e, skip=()):
     return [(a, b) for a, b in segs if b - a > 0.3]
 
 
-def plan_shots(dur, base, react, cam_full_ok):
-    """Ansichten im fertigen Clip – nur harte Schnitte, keine Zooms, Spielbild nie abgeschnitten.
-    split = Facecam ueber dem kompletten Spielbild, cam = Facecam im Vollbild (nur wenn die Cam gross/scharf genug ist)."""
+def plan_shots(dur, base, react, cam_view):
+    """Ansichten im fertigen Clip – harte Schnitte wie im Vorbild. Gezoomt wird nur auf die Facecam (bei Reaktionen),
+    nie aufs Gameplay. cam_view = "cam" (Vollbild, grosse Cam) oder "big" (Cam gross, Spiel klein darunter)."""
     special = []
-    if base == "split" and cam_full_ok:
-        special = sorted((max(0, t - 0.3), min(dur, t + 2.2), "cam") for t in react)
+    if base == "split":
+        special = sorted((max(0, t - 0.3), min(dur, t + 2.4), cam_view) for t in react)
     shots, t = [], 0.0
     for a, b, v in special:
         a = max(a, t)
@@ -535,7 +535,7 @@ def plan_shots(dur, base, react, cam_full_ok):
     return res or [{"from": 0, "to": dur, "view": base}]
 
 
-def build_edit(clip, lay, chunks, peaks, cam_full_ok):
+def build_edit(clip, lay, chunks, peaks, cam_view):
     s, e = clip["start"], clip["end"]
     other = clip.get("other_voice_lines") or []
     words = []  # [wort, start, ende, wer]
@@ -580,7 +580,7 @@ def build_edit(clip, lay, chunks, peaks, cam_full_ok):
                 caps.append({"from": t0, "to": min(dur, t0 + 1.3), "text": tg["text"].upper(),
                              "who": "o" if tg.get("who") == "other" else "s", "big": False})
     inside = lambda ts: [out_t(t) for t in ts if s <= t < e]  # noqa
-    shots = plan_shots(dur, lay["mode"], inside(clip.get("reaction_times") or []), cam_full_ok)
+    shots = plan_shots(dur, lay["mode"], inside(clip.get("reaction_times") or []), cam_view)
     return {"segs": segs, "dur": dur, "caps": sorted(caps, key=lambda c: c["from"]), "shots": shots}
 
 
@@ -596,34 +596,48 @@ def probe(path):
     return int(w), int(h), round(float(n) / float(d))
 
 
+def fit(x, y, w, h, A, W, H):
+    """Ausschnitt (x,y,w,h) mittig auf Seitenverhaeltnis A (= Breite/Hoehe) bringen, innerhalb des Bildes."""
+    if w / h > A:
+        nw = h * A
+        x, w = x + (w - nw) / 2, nw
+    else:
+        nh = w / A
+        y, h = y + (h - nh) / 2, nh
+    return (ev(w), ev(h), ev(min(W - w, max(0, x))), ev(min(H - h, max(0, y))))
+
+
 def geometry(lay, W, H):
-    """Ausschnitte in Quell-Pixeln + Feldhoehen im 1080x1920-Bild."""
+    """Ausschnitte in Quell-Pixeln fuer die Ansichten im 1080x1920-Bild (immer volles Hochformat).
+    split = Facecam oben, Gameplay unten | big = Facecam gross oben, Gameplay klein unten |
+    cam = Facecam Vollbild | full = 9:16 um die Person (IRL) | game = ganzes Spiel + unscharfer Hintergrund (keine Cam)"""
     g = {"W": W, "H": H}
     if lay["mode"] == "split":
         c = lay["cam"]
         cx, cy, cw, ch = c["x"] * W, c["y"] * H, c["w"] * W, c["h"] * H
-        CH = min(860, max(480, 1080 * ch / cw))  # Facecam in ihrem eigenen Seitenverhaeltnis (kein Abschneiden)
-        A = 1080 / CH
-        if cw / ch > A:
-            nw = ch * A
-            cx, cw = cx + (cw - nw) / 2, nw
-        else:
-            nh = cw / A
-            cy, ch = cy + (ch - nh) / 2, nh
-        g["CH"] = ev(CH)
-        g["cam"] = (ev(cw), ev(ch), ev(cx), ev(cy))
         g["camPx"] = ch
-        # Facecam-Vollbild: 9:16-Ausschnitt aus der Cam
-        fw = min(c["w"] * W, c["h"] * H * 9 / 16)
-        g["camfull"] = (ev(fw), ev(fw * 16 / 9), ev((c["x"] + c["w"] / 2) * W - fw / 2), ev(c["y"] * H))
+        g["CH"] = ev(min(960, max(640, 1080 * ch / cw)))
+        g["BIG"] = 1300
+        g["cam"] = fit(cx, cy, cw, ch, 1080 / g["CH"], W, H)
+        g["cambig"] = fit(cx, cy, cw, ch, 1080 / g["BIG"], W, H)
+        g["camfull"] = fit(cx, cy, cw, ch, 9 / 16, W, H)
+
+        def game(panel_h):  # Gameplay-Ausschnitt so legen, dass die Facecam nicht doppelt zu sehen ist
+            gw = min(W, ev(H * 1080 / panel_h))
+            mid = (W - gw) / 2
+            if cx + cw / 2 < W / 2:
+                gx = max(mid, cx + cw)
+            else:
+                gx = min(mid, cx - gw)
+            return (gw, H, ev(min(W - gw, max(0, gx))), 0)
+
+        g["game"] = game(1920 - g["CH"])
+        g["gamebig"] = game(1920 - g["BIG"])
     fw = min(W, ev(H * 9 / 16))
     fx = (lay.get("focusX", 0.5) if lay["mode"] == "full" else 0.5) * W - fw / 2
     g["full"] = (fw, H, ev(min(W - fw, max(0, fx))), 0)
-    # ganzes Spielbild in voller Breite, mittig; Facecam direkt darueber
-    g["GH"] = ev(1080 * H / W)
-    top = ev((1920 - g.get("CH", 0) - g["GH"]) / 2)
-    g["camY"] = top
-    g["gameY"] = top + g.get("CH", 0)
+    g["GH"] = ev(1080 * H / W)  # ganzes Spiel in voller Breite (nur Modus ohne Facecam)
+    g["gameY"] = ev((1920 - g["GH"]) / 2)
     return g
 
 
@@ -645,9 +659,12 @@ def write_ass(edit, g, path):
         if c["to"] - c["from"] < 0.04:
             continue
         view = next((sh["view"] for sh in edit["shots"] if sh["from"] <= c["from"] < sh["to"]), edit["shots"][-1]["view"])
-        if view in ("split", "game"):
-            below = 1920 - (g["gameY"] + g["GH"])
-            y = g["gameY"] + g["GH"] + below * 0.45 if below > 260 else g["gameY"] + g["GH"] - 150
+        if view == "split":
+            y = g["CH"] - 25 if c["who"] == "s" else g["CH"] + (1920 - g["CH"]) * 0.45
+        elif view == "big":
+            y = g["BIG"] - 25 if c["who"] == "s" else g["BIG"] + (1920 - g["BIG"]) * 0.5
+        elif view == "game":
+            y = g["gameY"] + g["GH"] + (1920 - g["gameY"] - g["GH"]) * 0.45
         else:
             y = 1920 * 0.79
         # libass-Groesse = Zeilenhoehe; Anton: Grossbuchstabe ~0.48 x Groesse hoch, ~0.3 x Groesse breit
@@ -679,24 +696,24 @@ def render(raw, s0, edit, lay, out, work, name):
     for i, (ss, d, view) in enumerate(pieces):
         inputs += ["-ss", f"{max(0, ss - s0):.3f}", "-t", f"{d:.3f}", "-i", str(raw)]
         pre = f"[{i}:v]fps={fps},setpts=PTS-STARTPTS"
-        bg = (f"scale=270:480:force_original_aspect_ratio=increase,crop=270:480,boxblur=12:2,"
-              f"scale=1080:1920:flags=bicubic,eq=brightness=-0.18:saturation=1.1")
-        if view in ("split", "game"):
-            parts = 3 if view == "split" else 2
-            outs = "".join(f"[{k}{i}]" for k in "bgc"[:parts])
-            F.append(f"{pre},split={parts}{outs}")
-            F.append(f"[b{i}]{bg}[bo{i}]")
-            F.append(f"[g{i}]scale=1080:{g['GH']}:flags=lanczos[go{i}]")
-            if view == "split":
-                cw, ch, cx, cy = g["cam"]
-                F.append(f"[c{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{g['CH']}:flags=lanczos,unsharp=5:5:0.45:5:5:0[co{i}]")
-                F.append(f"[bo{i}][co{i}]overlay=0:{g['camY']}[t{i}]")
-                F.append(f"[t{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
-            else:
-                F.append(f"[bo{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
+        if view in ("split", "big"):
+            CH = g["CH"] if view == "split" else g["BIG"]
+            cw, ch, cx, cy = g["cam"] if view == "split" else g["cambig"]
+            gw, gh, gx, gy = g["game"] if view == "split" else g["gamebig"]
+            F.append(f"{pre},split[a{i}][b{i}];"
+                     f"[a{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{CH}:flags=lanczos,unsharp=5:5:0.45:5:5:0[c{i}];"
+                     f"[b{i}]crop={gw}:{gh}:{gx}:{gy},scale=1080:{1920 - CH}:flags=lanczos[g{i}];"
+                     f"[c{i}][g{i}]vstack,setsar=1,format=yuv420p[v{i}]")
+        elif view == "game":
+            F.append(f"{pre},split[b{i}][g{i}];"
+                     f"[b{i}]scale=270:480:force_original_aspect_ratio=increase,crop=270:480,boxblur=12:2,"
+                     f"scale=1080:1920:flags=bicubic,eq=brightness=-0.18[bo{i}];"
+                     f"[g{i}]scale=1080:{g['GH']}:flags=lanczos[go{i}];"
+                     f"[bo{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
         else:
             cw, ch, cx, cy = g["camfull"] if view == "cam" else g["full"]
-            F.append(f"{pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p[v{i}]")
+            F.append(f"{pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,unsharp=5:5:0.35:5:5:0,"
+                     f"setsar=1,format=yuv420p[v{i}]")
         F.append(f"[{i}:a]asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,"
                  f"afade=t=in:d=0.012,afade=t=out:st={max(0, d - 0.015):.3f}:d=0.015[a{i}]")
     ass = work / f"{name}.ass"
@@ -763,8 +780,8 @@ def main():
         log(f"🎞️  {i}/{len(clips)} {c.get('title', '')} ({c['end'] - c['start']:.0f} s Rohmaterial)")
         raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 0.5, work / f"raw_{i:02d}.ts")
         W, H, _ = probe(raw)
-        cam_ok = lay["mode"] == "split" and geometry(lay, W, H)["camPx"] >= 560
-        edit = build_edit(c, lay, chunks, peaks, cam_ok)
+        cam_view = "cam" if lay["mode"] == "split" and geometry(lay, W, H)["camPx"] >= 380 else "big"
+        edit = build_edit(c, lay, chunks, peaks, cam_view)
         (work / f"{name}.edit.json").write_text(json.dumps(edit))
         t = time.time()
         render(raw, s0, edit, lay, out, work, name)
