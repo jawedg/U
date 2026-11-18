@@ -591,6 +591,23 @@ def tighten(path: Path, max_pause: float = 0.38, tempo: float = 1.0, dots: bool 
 
 
 
+
+def _speech_span(path: Path) -> tuple[float, float]:
+    """(Beginn, Ende) der Sprache in einer Datei in Sekunden (alles über -45 dB unter dem Maximum)."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(path), "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(float) / 32768
+    hop = 160
+    n = len(x) // hop
+    if n < 3:
+        return 0.0, len(x) / 16000
+    rms = np.array([np.sqrt(np.mean(x[i * hop:(i + 1) * hop] ** 2)) for i in range(n)]) + 1e-9
+    on = np.where(20 * np.log10(rms / rms.max()) > -45)[0]
+    if not len(on):
+        return 0.0, len(x) / 16000
+    return on[0] * 0.01, (on[-1] + 1) * 0.01
+
 def word_times_audio(path: Path, text: str, dur: float) -> list[dict]:
     """Wortzeiten nach dem echten Ton (statt gleichmäßig verteilt – da liefen die Untertitel nach Pausen voraus):
     1) Sprechpausen im Stück finden, 2) Satzgrenzen (. ! ? : …) auf die passendsten Pausen legen,
@@ -788,6 +805,7 @@ def main() -> None:
     # Blöcke dürfen über das Video verteilt sein (z. B. alle Sätze des Prüfers in einem Block) und eine eigene
     # Stimme haben ("voice" in der Szene). Die Stücke werden danach wieder der Szenen-Reihenfolge zugeordnet.
     fmap: dict[int, Path] = {}
+    flow_files: set = set()
     for part in parts:
         idxs = [i for i, s in enumerate(scenes) if s.get("text") and s.get("part", 0) == part]
         block = [scenes[i] for i in idxs]
@@ -795,7 +813,26 @@ def main() -> None:
         pc = vparts.get(str(part))
         if pc and len(pc["speakers"]) == 1:  # Block mit EINER Stimme: die Stimme aus voiceParts nehmen
             v = next(iter(pc["speakers"].values()))
-        fs = split(narrate(v, part), [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
+        full = narrate(v, part)
+        fs = split(full, [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
+        if pc and pc.get("flow"):
+            # Fluss-Modus (Nutzer: Erzähler klang „gehackt“): die Aufnahme bleibt wie gesprochen – Pausen, Atmer und
+            # Lautstärke wie im Original. Ganze Aufnahme EINMAL filtern + angleichen, dann exakt an den Schnitten teilen.
+            proc = full.with_suffix(".flow.wav")
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(full), "-af",
+                            f"{vfilter + ',' if vfilter else ''}loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", str(proc)], check=True)
+            t = 0.0
+            edge = float(pc.get("edge", 0.3))  # höchstens so viel Stille vorn/hinten behalten (natürlich, aber nicht zu lang)
+            for f in fs:
+                d = duration(f)
+                a0, a1 = _speech_span(f)
+                s0 = t + max(0.0, a0 - edge)
+                s1 = t + min(d, a1 + edge)
+                subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{s0:.4f}", "-t", f"{s1 - s0:.4f}", "-i", str(proc), "-af",
+                                "afade=t=in:d=0.006,areverse,afade=t=in:d=0.006,areverse", str(f.with_suffix(".tmp.wav"))], check=True)
+                f.with_suffix(".tmp.wav").replace(f)
+                flow_files.add(f)
+                t += d
         fmap.update(zip(idxs, fs))
     lines = []
     for i, s in enumerate(scenes):
@@ -803,13 +840,18 @@ def main() -> None:
             lines.append({"file": "", "seconds": float(script.get("athanSeconds", 10)), "words": []})
             continue
         f = fmap[i]
-        tg = script.get("tighten")
-        if tg and str(s.get("part", 0)) in tg.get("parts", {}):  # eigene Einstellung je Block (z. B. Dialoge)
-            tg = tg["parts"][str(s.get("part", 0))]
-        if tg and s.get("fx") != "hall":
-            tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
-        dur = clean(f, vfilter)
+        if f in flow_files:  # schon fertig (Fluss-Modus): nicht kürzen, nicht einzeln angleichen
+            dur = duration(f)
+        else:
+            tg = script.get("tighten")
+            if tg and str(s.get("part", 0)) in tg.get("parts", {}):  # eigene Einstellung je Block (z. B. Dialoge)
+                tg = tg["parts"][str(s.get("part", 0))]
+            if tg and s.get("fx") != "hall":
+                tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
+            dur = clean(f, vfilter)
         ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times_audio(f, s["text"], dur)}
+        if f in flow_files:
+            ln["flow"] = s.get("part", 0)
         if s.get("fx") == "hall":
             hall(f)
             ln["tail"] = HALL_TAIL

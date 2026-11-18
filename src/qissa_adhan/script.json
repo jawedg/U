@@ -7,10 +7,11 @@
   "0": {
    "model": "gemini-2.5-flash-preview-tts",
    "speakers": {
-    "Erzaehler": "Orus",
+    "Erzaehler": "Algieba",
     "Junge": "Puck"
    },
-   "notes": "# AUDIO PROFILE\nErzaehler: a dramatic German audiobook and story narrator, like the most popular German TikTok story channels. Deep, dark, slightly smoky voice, extremely close to the microphone, intimate and tense. He also speaks Arabic like a native speaker.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA gripping true story from Medina in the year 622, told in a dark, cinematic short video.\n### DIRECTOR'S NOTES\nErzaehler: flowing pace with momentum, very dynamic intonation: drops low and quiet for suspense, rises with urgency at the turning points. Short dramatic pauses only at '...'. Never monotone, never robotic. Calm and reverent whenever he mentions the Prophet. The words in Arabic script are Arabic names and terms: pronounce them exactly like a native Arabic speaker, in the same voice and without any extra pause, then continue fluently in German.\nJunge: natural and emotional, like a real person; Arabic-script names spoken like a native Arabic speaker.\nLeave a clear short pause between the lines."
+   "notes": "# AUDIO PROFILE\nErzaehler: a dramatic German audiobook and story narrator, like the most popular German TikTok story channels. Deep, dark, slightly smoky voice, extremely close to the microphone, intimate and tense. He also speaks Arabic like a native speaker.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA gripping true story from Medina in the year 622, told in a dark, cinematic short video.\n### DIRECTOR'S NOTES\nErzaehler: flowing pace with momentum, very dynamic intonation: drops low and quiet for suspense, rises with urgency at the turning points. Short dramatic pauses only at '...'. Never monotone, never robotic. Calm and reverent whenever he mentions the Prophet. The words in Arabic script are Arabic names and terms: pronounce them exactly like a native Arabic speaker, in the same voice and without any extra pause, then continue fluently in German.\nJunge: natural and emotional, like a real person; Arabic-script names spoken like a native Arabic speaker.\nLeave a clear short pause between the lines.",
+   "flow": true
   },
   "1": {
    "model": "gemini-2.5-flash-preview-tts",

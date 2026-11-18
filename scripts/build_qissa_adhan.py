@@ -175,7 +175,34 @@ def main() -> None:
                 ev[f"{k}_{i}"] = round(at + w["start"], 3)
         return li["dur"]
 
-    for item in PLAN:
+    # Fluss-Modus: zwischen zwei Erzähler-Sätzen, die in der Aufnahme direkt aufeinander folgen, KEINE eigene Pause –
+    # die Stücke enthalten schon die natürliche Pause (halb vorn, halb hinten). So klingt es wie am Stück gesprochen.
+    flow = {}
+    if voiced:
+        for i, ln_ in zip(order, timing):
+            if "flow" in ln_:
+                flow[i] = ln_["flow"]
+    flow_next = {}
+    for part_ in set(flow.values()):
+        ids_ = [i for i in order if flow.get(i) == part_]
+        flow_next.update({a_: b_ for a_, b_ in zip(ids_, ids_[1:])})
+    seq = []  # (Plan-Index, Schritt-Index, Schritt) – zum Vorausschauen über Einstellungen hinweg (Tafeln brechen den Fluss)
+    for pi, item in enumerate(PLAN):
+        if item[0] == "card":
+            seq.append((pi, -1, ("card",)))
+        else:
+            seq.extend((pi, si, st) for si, st in enumerate(item[3]))
+
+    def flowing(pi, si):
+        k = next(n for n, x in enumerate(seq) if x[0] == pi and x[1] == si)
+        def key(st):
+            return st[1] if st[0] in ("l", "q") else "#" + st[0]
+        marks = ("l", "q", "card", "athan", "choice", "hook_takbir")
+        prev = next((key(x[2]) for x in reversed(seq[:k]) if x[2][0] in marks), None)
+        nxt = next((key(x[2]) for x in seq[k + 1:] if x[2][0] in marks), None)
+        return prev is not None and nxt is not None and flow_next.get(prev) == nxt
+
+    for pi, item in enumerate(PLAN):
         if item[0] == "card":
             segs.append({"id": item[1], "kind": "card", "text": item[2], "start": round(t, 3), "dur": item[3]})
             t += item[3]
@@ -186,9 +213,9 @@ def main() -> None:
         else:
             _, sid, label, steps = item
         t0 = t
-        for st in steps:
+        for si, st in enumerate(steps):
             if st[0] == "p":
-                t += st[1]
+                t += 0.0 if flowing(pi, si) else st[1]
             elif st[0] in ("l", "q"):
                 t += add_line(st[1], sid, t)
             elif st[0] in ("athan", "duck", "athan_end", "hook_takbir"):

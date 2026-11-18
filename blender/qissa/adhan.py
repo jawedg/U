@@ -422,7 +422,7 @@ def shot_morgen():
     Q.idle(bil, 0, D, seed=7, look=[(0, 0, 0)])
     tb = lt(EV["bilal_d10"])
     Q.hold(bil, 0, tb - 0.2)
-    t2 = Q.walk(bil, [bil_p0, bil_p1], tb - 0.2, speed=1.0)
+    t2 = Q.walk(bil, [bil_p0, (3.05, 10.25), bil_p1], tb - 0.2, speed=1.0)  # vor der Säulenreihe (y=11) entlang, nicht hindurch
     bil["root"].rotation_euler.z = Q.face_yaw(bil_p1, (0, 12.4))
     bil["root"].keyframe_insert("rotation_euler", frame=Q.T(t2 + 0.5))
     Q.hold(bil, t2 + 0.5, D)
