@@ -19,7 +19,6 @@ import { FukuVideo, FUKU_FPS, FUKU_FRAMES } from "./fuku/Fuku";
 import { FutabaVideo, FUTABA_FPS, FUTABA_FRAMES } from "./futaba/Futaba";
 import { Futaba2Video, FUTABA2_FPS, FUTABA2_FRAMES } from "./futaba2/Futaba2";
 import { Futaba3Video, FUTABA3_FPS, FUTABA3_FRAMES } from "./futaba3/Futaba3";
-import { ViralClip, defaultClipProps } from "./clipper/ViralClip";
 import { Futaba4Video, FUTABA4_FPS, FUTABA4_FRAMES } from "./futaba4/Futaba4";
 
 export const FPS = 30;
@@ -109,16 +108,6 @@ export const RemotionRoot: React.FC = () => {
     <Composition id="MessPOV" component={MessVideo} durationInFrames={messFrames()} fps={LFPS} width={1920} height={1080} />
     <Composition id="GestellTex" component={GestellTex} durationInFrames={1} fps={LFPS} width={960 * TEX_SCALE} height={760 * TEX_SCALE} />
     <Composition id="PruefSim" component={PruefVideo} durationInFrames={lernFrames(7)} fps={LFPS} width={1920} height={1080} />
-    <Composition
-      id="ViralClip"
-      component={ViralClip}
-      defaultProps={defaultClipProps}
-      durationInFrames={300}
-      fps={30}
-      width={1080}
-      height={1920}
-      calculateMetadata={({ props }) => ({ durationInFrames: Math.max(1, Math.round(props.duration * 30)) })}
-    />
     <Composition id="LernGK2" component={LegeVideo} durationInFrames={lernFrames(5)} fps={LFPS} width={1920} height={1080} />
     </>
   );

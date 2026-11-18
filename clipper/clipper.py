@@ -10,7 +10,8 @@ Ablauf:
   1. Ton des Streams in 10-min-Stuecken laden -> Whisper (Woerter mit Zeit) + Lautstaerke (Schreie/Lacher)
   2. Gemini liest das ganze Transkript und waehlt die besten Momente (+ Viral-Bewertung 0-100)
   3. Nur diese Stellen als Video laden (1080p), Facecam per Gemini-Bild-Erkennung finden
-  4. Remotion rendert jeden Clip: Facecam oben, Spiel unten, Wort-fuer-Wort-Untertitel (Anton, gelbe Schluesselwoerter)
+  4. ffmpeg schneidet jeden Clip in EINEM Durchgang aus dem Original (1080p60): Facecam oben / Spiel unten,
+     harte Ansichtswechsel, Wort-fuer-Wort-Untertitel (Anton, Streamer weiss, andere gelb)
 Ergebnis: out/clips/<id>/clip_01_viral-87.mp4 ... + bericht.md (Titel, Beschreibung, Hashtags, Bewertung)
 Zwischenstaende werden gespeichert -> Abbruch/Neustart setzt fort.
 """
@@ -35,9 +36,8 @@ os.environ.setdefault("HF_HUB_DISABLE_XET", "1")  # Xet-Server ist in der Cloud 
 ROOT = Path(__file__).resolve().parent.parent
 SR = 16000
 CHUNK = 600  # Sekunden pro Analyse-Stueck
-FPS = 30
 TEXT_MODELS = ["gemini-3.5-flash", "gemini-flash-latest", "gemini-3.5-flash-lite", "gemini-flash-lite-latest"]
-BROWSER = "/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell"
+FONTS = Path(__file__).resolve().parent / "fonts"  # Anton (OFL) fuer die Untertitel
 
 
 # ---------------------------------------------------------------- Hilfen
@@ -158,14 +158,14 @@ class TwitchSource:
         i = int((t0 - s0) * SR)
         return a[i:i + int((t1 - t0) * SR)]
 
-    def cut(self, t0, t1, out):
-        data, s0 = self.fetch(self.video_url, t0, t1)
-        tmp = out.with_suffix(".ts")
-        tmp.write_bytes(data)
-        try:
-            encode(["-ss", f"{t0 - s0:.3f}", "-i", str(tmp)], t1 - t0, out)
-        finally:
-            tmp.unlink(missing_ok=True)
+    def raw(self, t0, t1, out):
+        """Original-Stuecke (1080p60, unveraendert) als .ts speichern -> (Datei, Stream-Zeit am Dateianfang)."""
+        meta = out.with_suffix(".start")
+        if not out.exists() or not meta.exists():
+            data, s0 = self.fetch(self.video_url, t0, t1)
+            out.write_bytes(data)
+            meta.write_text(str(s0))
+        return out, float(meta.read_text())
 
     def frame(self, t, out):
         data, s0 = self.fetch(self.video_url, t, t + 0.5)
@@ -184,19 +184,11 @@ class FileSource:
     def audio(self, t0, t1):
         return decode_audio(self.path, t0, t1 - t0)
 
-    def cut(self, t0, t1, out):
-        encode(["-ss", f"{t0:.3f}", "-i", str(self.path)], t1 - t0, out)
+    def raw(self, t0, t1, out):
+        return self.path, 0.0
 
     def frame(self, t, out):
         ffmpeg("-ss", f"{t:.2f}", "-i", str(self.path), "-frames:v", "1", "-q:v", "3", str(out))
-
-
-def encode(inp, dur, out):
-    """Clip-Quelle: 30 fps, max 1080p, viele Keyframes (schnelles Rendern in Remotion)."""
-    ffmpeg(*inp, "-t", f"{dur:.3f}", "-vf", f"fps={FPS},scale=-2:'min(1080,ih)'", "-c:v", "libx264",
-           "-preset", "veryfast", "-crf", "16", "-g", "15", "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
-           "-c:a", "aac", "-b:a", "192k",
-           "-ar", "48000", "-movflags", "+faststart", str(out))
 
 
 # ---------------------------------------------------------------- 1. Analyse (Whisper + Lautstaerke)
@@ -497,12 +489,12 @@ def clean(w):
 
 
 def keep_segments(words, peaks, s, e, skip=()):
-    """Enge Jump-Cuts: jede Pause ohne Sprache und ohne Laerm raus, dazu die von Gemini markierten langweiligen Teile."""
+    """Pausen ohne Sprache und ohne Laerm raus (Jump-Cuts), dazu die von Gemini markierten langweiligen Teile."""
     cuts = [(max(s, a), min(e, b)) for a, b in skip if b - a > 0.5 and a < e and b > s]
     times = [(w[1], w[2]) for w in words]
     for (a0, a1), (b0, b1) in zip(times, times[1:]):
-        if b0 - a1 > 0.6 and not any(a1 - 0.3 < p[0] < b0 + 0.3 for p in peaks):
-            cuts.append((a1 + 0.15, b0 - 0.1))
+        if b0 - a1 > 0.9 and not any(a1 - 0.3 < p[0] < b0 + 0.3 for p in peaks):
+            cuts.append((a1 + 0.2, b0 - 0.12))
     cuts.sort()
     segs, cur = [], s
     for a, b in cuts:
@@ -510,76 +502,68 @@ def keep_segments(words, peaks, s, e, skip=()):
             segs.append((cur, a))
         cur = max(cur, b)
     segs.append((cur, e))
-    return [(a, b) for a, b in segs if b - a > 0.25]
+    return [(a, b) for a, b in segs if b - a > 0.3]
 
 
-def plan_shots(dur, lay, react, action, sentence_starts, cut_points):
-    """Kamera-Plan im fertigen Clip: alle 1-3 s passiert etwas (Zoom rein, Ansicht wechselt) – wie bei den grossen Clip-Kanaelen."""
-    special = []  # (von, bis, ansicht)
-    for t in react:
-        special.append((max(0, t - 0.25), min(dur, t + 2.0), "cam"))
-    for t in action:
-        special.append((max(0, t - 0.4), min(dur, t + 2.4), "game"))
+def plan_shots(dur, base, action, react, cam_full_ok, other_spans=(), loud=()):
+    """Ansichten im fertigen Clip – nur harte Schnitte, keine Zooms (wie im Vorbild):
+    split = Facecam oben / Spiel unten, game = Spiel im Vollbild (Action), cam = Facecam Vollbild (nur wenn scharf genug)."""
+    special = []
+    if base == "split":
+        special += [(max(0, t - 0.4), min(dur, t + 2.6), "game") for t in action]
+        # andere Stimme (NPC, Freund, Gast) spricht -> Spielbild gross
+        special += [(a - 0.1, min(b + 0.2, a + 4.0), "game") for a, b in other_spans if b - a > 1.2]
+        if cam_full_ok:
+            special += [(max(0, t - 0.3), min(dur, t + 2.2), "cam") for t in react]
     special.sort()
-    merged = []
+    shots, t = [], 0.0
     for a, b, v in special:
-        if merged and a < merged[-1][1] + 0.6:  # Ueberschneidung -> spaeteres faengt nach dem frueheren an
-            a = merged[-1][1]
-            if b - a < 0.8:
-                continue
-        merged.append((a, b, v))
-    base = "split" if lay["mode"] == "split" else ("full" if lay["mode"] == "full" else "game")
-    marks = sorted({round(t, 2) for t in sentence_starts + cut_points if 0.3 < t < dur - 0.5})
-    shots, t, k = [], 0.0, 0
-
-    def fill(a, b):
-        nonlocal k
-        pts = [a] + [m for m in marks if a + 1.2 < m < b - 1.0] + [b]
-        # zu lange Einstellungen teilen (max ~3 s)
-        out = []
-        for x, y in zip(pts, pts[1:]):
-            n = max(1, int(np.ceil((y - x) / 2.5)))
-            out += [(x + (y - x) * i / n, x + (y - x) * (i + 1) / n) for i in range(n)]
-        # zu kurze Einstellungen zusammenlegen
-        res = []
-        for x, y in out:
-            if res and (y - x < 1.2 or res[-1][1] - res[-1][0] < 1.2):
-                res[-1] = (res[-1][0], y)
-            else:
-                res.append((x, y))
-        for x, y in res:
-            zoom = [1.0, 1.14, 1.06, 1.22][k % 4]
-            shots.append({"from": round(x, 3), "to": round(y, 3), "view": base, "zoom": zoom, "drift": 0.035})
-            k += 1
-
-    for a, b, v in merged:
-        if a - t > 0.3:
-            fill(t, a)
-        elif shots:
-            a = t
-        view = v if base == "split" or v == "cam" else base
-        if base == "game" and v == "cam":
-            view = "game"
-        shots.append({"from": round(a, 3), "to": round(b, 3), "view": view, "zoom": 1.25 if v == "cam" else 1.08,
-                      "drift": 0.06, "punch": v == "cam"})
+        a = max(a, t)
+        if b - a < 1.2:
+            continue
+        if a - t < 1.2 and shots:  # zu kurze Zwischenstuecke vermeiden
+            shots[-1]["to"] = a
+        elif a > t:
+            shots.append({"from": t, "to": a, "view": base})
+        shots.append({"from": a, "to": b, "view": v})
         t = b
-    if dur - t > 0.05:
-        fill(t, dur)
-    for i, sh in enumerate(shots):
-        sh["whip"] = i > 0 and sh["view"] != shots[i - 1]["view"]
-    return shots
+    if dur - t > 0.01:
+        if dur - t < 1.0 and shots:
+            shots[-1]["to"] = dur
+        else:
+            shots.append({"from": t, "to": dur, "view": base})
+    shots = shots or [{"from": 0, "to": dur, "view": base}]
+    if base != "split":
+        return shots
+    # Einstellungen > 6 s aufbrechen: zwischendurch Spiel im Vollbild (bevorzugt bei lauten Momenten)
+    out = []
+    for sh in shots:
+        a, b = sh["from"], sh["to"]
+        while sh["view"] == "split" and b - a > 6.5:
+            cand = [t for t in loud if a + 3.0 < t < min(b - 2.5, a + 7.0)]
+            t = cand[0] - 0.3 if cand else a + 4.0
+            out.append({"from": a, "to": t, "view": "split"})
+            out.append({"from": t, "to": t + 2.2, "view": "game"})
+            a = t + 2.2
+        out.append({"from": a, "to": b, "view": sh["view"]})
+    # gleiche Ansichten zusammenfassen, Mini-Einstellungen (< 1 s) an die vorige haengen
+    res = []
+    for x in out:
+        if res and (x["view"] == res[-1]["view"] or x["to"] - x["from"] < 1.0):
+            res[-1]["to"] = x["to"]
+        else:
+            res.append(dict(x))
+    return res
 
 
-def build_props(clip, lay, chunks, peaks, src_file, src_t0):
+def build_edit(clip, lay, chunks, peaks, cam_full_ok):
     s, e = clip["start"], clip["end"]
     other = clip.get("other_voice_lines") or []
-    words = []  # [wort, start, ende, wer, satzanfang]
+    words = []  # [wort, start, ende, wer]
     for c in chunks:
         for sg in c["segs"]:
             who = "o" if any(abs(sg["s"] - t) < 0.2 for t in other) else "s"
-            for j, w in enumerate(sg["words"]):
-                if s - 0.05 <= w[1] < e:
-                    words.append([w[0], w[1], w[2], who, j == 0])
+            words += [[w[0], w[1], w[2], who] for w in sg["words"] if s - 0.05 <= w[1] < e]
     segs = keep_segments(words, peaks, s, e, clip.get("skip") or [])
 
     def out_t(t):  # Zeit im Stream -> Zeit im fertigen Clip
@@ -606,65 +590,146 @@ def build_props(clip, lay, chunks, peaks, src_file, src_t0):
             txt, b, big = txt + " " + ws[i + 1][0], ws[i + 1][2], big or ws[i + 1][0] in kw
             i += 1
         nxt = ws[i + 1][1] if i + 1 < len(ws) else b + 0.6
-        caps.append({"from": round(out_t(a), 3), "to": round(out_t(min(nxt, b + 0.8)), 3), "text": txt,
-                     "who": who, "big": big})
+        caps.append({"from": out_t(a), "to": out_t(min(nxt, b + 0.8)), "text": txt, "who": who, "big": big})
         i += 1
     for k in range(len(caps) - 1):
         caps[k]["to"] = min(caps[k]["to"], caps[k + 1]["from"])
-    tags = []
     for tg in clip.get("sfx_tags") or []:
         if s <= tg["time"] < e and tg["text"]:
             t0 = out_t(tg["time"])
             if not any(c["from"] < t0 + 1.0 and c["to"] > t0 for c in caps):
-                tags.append({"from": round(t0, 3), "to": round(min(dur, t0 + 1.3), 3), "text": tg["text"].upper(),
-                             "who": "o" if tg.get("who") == "other" else "s"})
+                caps.append({"from": t0, "to": min(dur, t0 + 1.3), "text": tg["text"].upper(),
+                             "who": "o" if tg.get("who") == "other" else "s", "big": False})
     inside = lambda ts: [out_t(t) for t in ts if s <= t < e]  # noqa
-    cut_points, acc = [], 0.0
-    for a, b in segs[:-1]:
-        acc += b - a
-        cut_points.append(acc)
-    sentence = [out_t(w[1]) for w in words if w[4]]
-    shots = plan_shots(dur, lay, inside(clip.get("reaction_times") or []), inside(clip.get("action_times") or []),
-                       sentence, cut_points)
-    return {
-        "src": src_file,
-        "duration": round(dur, 3),
-        "segments": [{"from": round(a - src_t0, 3), "to": round(b - src_t0, 3)} for a, b in segs],
-        "layout": lay,
-        "shots": shots,
-        "captions": caps,
-        "tags": tags,
-    }
+    spans = []  # zusammenhaengende Stellen, an denen andere Stimmen sprechen (Ausgabezeit)
+    for w in words:
+        if w[3] == "o":
+            a, b = out_t(w[1]), out_t(w[2])
+            if spans and a - spans[-1][1] < 0.6:
+                spans[-1][1] = b
+            else:
+                spans.append([a, b])
+    loud = [out_t(t) for t, _ in peaks if s <= t < e]
+    shots = plan_shots(dur, lay["mode"], inside(clip.get("action_times") or []),
+                       inside(clip.get("reaction_times") or []), cam_full_ok, spans, loud)
+    return {"segs": segs, "dur": dur, "caps": sorted(caps, key=lambda c: c["from"]), "shots": shots}
 
 
-def make_cam(src_mp4, cam, out):
-    """Facecam einzeln ausschneiden und hochwertig hochskalieren (Lanczos + Nachschaerfen) -> deutlich schaerfer."""
-    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
-                        "-of", "csv=p=0", str(src_mp4)], capture_output=True, text=True).stdout.strip().split(",")
-    W, H = int(r[0]), int(r[1])
-    x, y = int(cam["x"] * W) // 2 * 2, int(cam["y"] * H) // 2 * 2
-    w, h = int(cam["w"] * W) // 2 * 2, int(cam["h"] * H) // 2 * 2
-    tw = 1440
-    th = int(tw * h / w) // 2 * 2
-    ffmpeg("-i", str(src_mp4), "-an", "-vf",
-           f"crop={w}:{h}:{x}:{y},hqdn3d=1.5:1.5:3:3,scale={tw}:{th}:flags=lanczos,unsharp=5:5:0.9:3:3:0.4",
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-g", "15", "-pix_fmt", "yuv420p", str(out))
-    return {"w": tw, "h": th, "srcPx": h}
+def ev(n):
+    return int(round(n / 2)) * 2
 
 
-def render(props, out, work, name):
-    pf = work / f"{name}.props.json"
-    pf.write_text(json.dumps(props))
-    # Qualitaet hoch, aber Datei <= ~55 MB (groessere Videos lassen sich in der App nicht speichern)
-    rate = max(2.0, min(9.0, 52 * 8 / max(1.0, props["duration"])))
-    cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=18",
-           "--x264-preset=slow", f"--max-rate={rate:.1f}M", f"--buffer-size={2 * rate:.1f}M", "--audio-bitrate=192k",
-           "--log=error"]
-    if Path(BROWSER).exists():
-        cmd.append(f"--browser-executable={BROWSER}")
-    r = subprocess.run(cmd, cwd=ROOT)
-    if r.returncode:
-        raise RuntimeError("Remotion-Render fehlgeschlagen")
+def probe(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+                        "stream=width,height,r_frame_rate", "-of", "csv=p=0", str(path)], capture_output=True, text=True)
+    w, h, fr = r.stdout.strip().splitlines()[0].split(",")[:3]
+    n, d = fr.split("/")
+    return int(w), int(h), round(float(n) / float(d))
+
+
+def geometry(lay, W, H):
+    """Ausschnitte in Quell-Pixeln + Feldhoehen im 1080x1920-Bild."""
+    g = {"W": W, "H": H}
+    if lay["mode"] == "split":
+        c = lay["cam"]
+        cx, cy, cw, ch = c["x"] * W, c["y"] * H, c["w"] * W, c["h"] * H
+        CH = min(860, max(480, 1080 * ch / cw))  # Facecam in ihrem eigenen Seitenverhaeltnis (kein Abschneiden)
+        A = 1080 / CH
+        if cw / ch > A:
+            nw = ch * A
+            cx, cw = cx + (cw - nw) / 2, nw
+        else:
+            nh = cw / A
+            cy, ch = cy + (ch - nh) / 2, nh
+        g["CH"] = ev(CH)
+        g["cam"] = (ev(cw), ev(ch), ev(cx), ev(cy))
+        g["camPx"] = ch
+        gw = min(W, ev(H * 1080 / (1920 - g["CH"])))
+        g["game"] = (gw, H, ev((W - gw) / 2), 0)
+        # Facecam-Vollbild: 9:16-Ausschnitt aus der Cam
+        fw = min(c["w"] * W, c["h"] * H * 9 / 16)
+        g["camfull"] = (ev(fw), ev(fw * 16 / 9), ev((c["x"] + c["w"] / 2) * W - fw / 2), ev(c["y"] * H))
+    fw = min(W, ev(H * 9 / 16))
+    fx = (lay.get("focusX", 0.5) if lay["mode"] == "full" else 0.5) * W - fw / 2
+    g["full"] = (fw, H, ev(min(W - fw, max(0, fx))), 0)
+    return g
+
+
+def ass_time(t):
+    return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
+
+
+def write_ass(edit, g, path):
+    """Untertitel wie im Vorbild: 1 Wort pro Bild, Anton, dicker schwarzer Rand, Streamer weiss / andere gelb."""
+    L = ["[Script Info]", "ScriptType: v4.00+", "PlayResX: 1080", "PlayResY: 1920", "ScaledBorderAndShadow: yes",
+         "WrapStyle: 2", "", "[V4+ Styles]",
+         "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, "
+         "Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, "
+         "MarginR, MarginV, Encoding",
+         "Style: Cap,Anton,270,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,0,0,0,0,100,100,1,0,1,13,6,5,40,40,0,1",
+         "", "[Events]", "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text"]
+    CH = g.get("CH", 0)
+    for c in edit["caps"]:
+        if c["to"] - c["from"] < 0.04:
+            continue
+        view = next((sh["view"] for sh in edit["shots"] if sh["from"] <= c["from"] < sh["to"]), edit["shots"][-1]["view"])
+        if view == "split":
+            y = CH - 20 if c["who"] == "s" else CH + (1920 - CH) * 0.45
+        else:
+            y = 1920 * 0.79
+        # libass-Groesse = Zeilenhoehe; Anton: Grossbuchstabe ~0.48 x Groesse hoch, ~0.3 x Groesse breit
+        fs = min(295 if c["big"] else 270, 960 / max(1, len(c["text"]) * 0.3))
+        col = r"\c&H1AE8FF&" if c["who"] == "o" else ""
+        txt = c["text"].replace("\\", "").replace("{", "(").replace("}", ")")
+        L.append(f"Dialogue: 0,{ass_time(c['from'])},{ass_time(c['to'])},Cap,,0,0,0,,"
+                 rf"{{\pos(540,{y:.0f})\fs{fs:.0f}\fscx82\fscy82\t(0,80,\fscx100\fscy100){col}}}{txt}")
+    path.write_text("\n".join(L) + "\n")
+
+
+def render(raw, s0, edit, lay, out, work, name):
+    """Ein einziger ffmpeg-Durchgang aus dem Original: Schnitte + Ansichten + Untertitel + Lautheit."""
+    W, H, fps = probe(raw)
+    fps = min(60, max(30, fps))
+    g = geometry(lay, W, H)
+    # Stuecke = Jump-Cut-Segmente geschnitten mit den Ansichtswechseln
+    pieces, acc = [], 0.0
+    for a, b in edit["segs"]:
+        o0, o1 = acc, acc + (b - a)
+        cuts = sorted({o0, o1, *[x for sh in edit["shots"] for x in (sh["from"], sh["to"]) if o0 < x < o1]})
+        for x, y in zip(cuts, cuts[1:]):
+            if y - x < 0.03:
+                continue
+            view = next((sh["view"] for sh in edit["shots"] if sh["from"] <= (x + y) / 2 < sh["to"]), edit["shots"][-1]["view"])
+            pieces.append((a + (x - o0), y - x, view))
+        acc = o1
+    inputs, F = [], []
+    for i, (ss, d, view) in enumerate(pieces):
+        inputs += ["-ss", f"{max(0, ss - s0):.3f}", "-t", f"{d:.3f}", "-i", str(raw)]
+        pre = f"[{i}:v]fps={fps},setpts=PTS-STARTPTS"
+        if view == "split":
+            cw, ch, cx, cy = g["cam"]
+            gw, gh, gx, gy = g["game"]
+            F.append(f"{pre},split[a{i}][b{i}];"
+                     f"[a{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{g['CH']}:flags=lanczos,unsharp=5:5:0.45:5:5:0[c{i}];"
+                     f"[b{i}]crop={gw}:{gh}:{gx}:{gy},scale=1080:{1920 - g['CH']}:flags=lanczos[g{i}];"
+                     f"[c{i}][g{i}]vstack,setsar=1,format=yuv420p[v{i}]")
+        else:
+            cw, ch, cx, cy = g["camfull"] if view == "cam" else g["full"]
+            F.append(f"{pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p[v{i}]")
+        F.append(f"[{i}:a]asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,"
+                 f"afade=t=in:d=0.012,afade=t=out:st={max(0, d - 0.015):.3f}:d=0.015[a{i}]")
+    ass = work / f"{name}.ass"
+    write_ass(edit, g, ass)
+    F.append("".join(f"[v{i}][a{i}]" for i in range(len(pieces))) + f"concat=n={len(pieces)}:v=1:a=1[vc][ac]")
+    F.append(f"[vc]subtitles=filename='{ass}':fontsdir='{FONTS}'[vo]")
+    F.append("[ac]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[ao]")
+    fc = work / f"{name}.filter"
+    fc.write_text(";\n".join(F))
+    rate = max(3.0, min(14.0, 52 * 8 / max(1.0, edit["dur"])))  # Datei <= ~55 MB (App-Grenze)
+    ffmpeg(*inputs, "-filter_complex_script", str(fc), "-map", "[vo]", "-map", "[ao]", "-r", str(fps),
+           "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-maxrate", f"{rate:.1f}M", "-bufsize", f"{2 * rate:.1f}M",
+           "-profile:v", "high", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart",
+           str(out))
 
 
 def slug(s):
@@ -705,8 +770,6 @@ def main():
     write_report(src, clips, work)
     if a.nur_analyse:
         return
-    pub = ROOT / "public" / "clipper" / src.id
-    pub.mkdir(parents=True, exist_ok=True)
     want = {int(x) for x in a.clips.split(",")} if a.clips else None
     for i, (c, lay) in enumerate(zip(clips, lays), 1):
         if want and i not in want:
@@ -716,20 +779,16 @@ def main():
         c["file"] = out.name
         if out.exists():
             continue
-        log(f"🎞️  {i}/{len(clips)} {c.get('title', '')} ({c['end'] - c['start']:.0f} s)")
-        sp = pub / f"src_{i:02d}.mp4"
-        if not sp.exists():
-            src.cut(c["start"], c["end"], sp)
-        props = build_props(c, lay, chunks, peaks, f"clipper/{src.id}/{sp.name}", c["start"])
-        wh = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
-                             "-of", "csv=p=0", str(sp)], capture_output=True, text=True).stdout.strip().split(",")
-        props["srcW"], props["srcH"] = int(wh[0]), int(wh[1])
-        if lay["mode"] == "split":
-            cp = pub / f"cam_{i:02d}.mp4"
-            info = make_cam(sp, lay["cam"], cp)
-            props["cam"] = {"src": f"clipper/{src.id}/{cp.name}", **info}
-        render(props, out, work, name)
-        log(f"   ✅ {out.relative_to(ROOT)}")
+        log(f"🎞️  {i}/{len(clips)} {c.get('title', '')} ({c['end'] - c['start']:.0f} s Rohmaterial)")
+        raw, s0 = src.raw(c["start"] - 0.5, c["end"] + 0.5, work / f"raw_{i:02d}.ts")
+        W, H, _ = probe(raw)
+        cam_ok = lay["mode"] == "split" and geometry(lay, W, H)["camPx"] >= 560
+        edit = build_edit(c, lay, chunks, peaks, cam_ok)
+        (work / f"{name}.edit.json").write_text(json.dumps(edit))
+        t = time.time()
+        render(raw, s0, edit, lay, out, work, name)
+        log(f"   ✅ {out.relative_to(ROOT)}  ({edit['dur']:.0f} s, {out.stat().st_size / 1e6:.0f} MB, "
+            f"{time.time() - t:.0f} s Renderzeit)")
     write_report(src, clips, work)
     log(f"\n📄 Bericht: {(work / 'bericht.md').relative_to(ROOT)}")
 

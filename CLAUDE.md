@@ -122,7 +122,11 @@ Lokal reicht `npm run render:3d`.
   1. Ton in 10-min-Stücken (Twitch Audio_Only) → faster-whisper `small.en` (Wort-Zeiten) + Lautstärke-Spitzen
   2. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
   3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt, Notfall: OpenCV-Gesichter)
-  4. nur Clip-Stellen in 1080p laden → `public/clipper/<id>/src_NN.mp4` → Remotion → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
+  4. nur Clip-Stellen im Original (1080p60, `raw_NN.ts`) laden → **ffmpeg in EINEM Durchgang** (kein Remotion – Nutzer fand
+     die Qualität schlecht): harte Ansichtswechsel split / game (Vollbild) / cam (nur bei großer Facecam), **keine Zooms**,
+     Lanczos-Skalierung, 60 fps, x264 slow CRF 17, Bitrate so begrenzt, dass Datei ≤ ~55 MB → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
+  - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
+    andere Stimmen gelb (Gemini `other_voice_lines`), Ansicht wechselt bei anderen Stimmen/Action und spätestens alle ~6 s.
 - Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
