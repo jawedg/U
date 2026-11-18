@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- QISSAH – geschwungenes Q (Playfair kursiv, Nutzer: gefiel) + QISSAH (Cinzel), mit Ring / Gold / Muster / Nachtblau / Metall.
+     Rendern: node logo/render_html.js logo/kursiv_varianten.html qissah-kursiv -> out/logo/qissah-kursiv-<n>.png -->
+<style>
+  @font-face { font-family: "Playfair"; src: url("fonts/playfair-display-latin-700-italic.woff2"); font-weight: 700; font-style: italic; }
+  @font-face { font-family: "Cinzel"; src: url("fonts/cinzel-latin-600-normal.woff2"); font-weight: 600; }
+  @font-face { font-family: "Ruqaa"; src: url("fonts/aref-ruqaa-arabic-700-normal.woff2"); font-weight: 700; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  :root { --gold: #e8b54d; --ink: #0c0a07; }
+  html, body { margin: 0; background: #222; }
+  .logo { width: 1080px; height: 1080px; position: relative; overflow: hidden; margin-bottom: 20px;
+          background: radial-gradient(circle at 50% 45%, #17140e 0%, #07080a 65%); }
+  .c { position: absolute; left: 0; right: 0; text-align: center; line-height: 1; color: var(--gold); }
+  .glow { filter: drop-shadow(0 0 18px rgba(232,181,77,.45)) drop-shadow(0 0 60px rgba(232,181,77,.18)); }
+  .q { font-family: Playfair, serif; font-style: italic; font-weight: 700; }
+  .n { font-family: Cinzel, serif; font-weight: 600; }
+  .metal { background: linear-gradient(170deg, #fff1c4 0%, #f3cd72 22%, #c48a2c 48%, #f6d98e 62%, #a66d1d 100%);
+           -webkit-background-clip: text; background-clip: text; color: transparent; }
+  svg.full { position: absolute; left: 0; top: 0; }
+</style>
+</head>
+<body>
+
+<!-- 1 genau wie es gefiel -->
+<div class="logo" id="k1">
+  <div class="c q glow" style="top:100px;font-size:640px;padding-left:10px">Q</div>
+  <div class="c n glow" style="top:805px;font-size:74px;letter-spacing:22px;padding-left:22px">QISSAH</div>
+</div>
+
+<!-- 2 mit leuchtendem Goldring -->
+<div class="logo" id="k2">
+  <svg class="full" width="1080" height="1080"><use href="#neonRings"/></svg>
+  <div class="c q glow" style="top:140px;font-size:540px;padding-left:10px">Q</div>
+  <div class="c n glow" style="top:755px;font-size:68px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+<!-- 3 schwarz auf Gold mit Ring -->
+<div class="logo" id="k3" style="background:radial-gradient(circle at 45% 35%, #f7d88e 0%, #e8b54d 45%, #b57d24 100%)">
+  <svg class="full" width="1080" height="1080"><use href="#inkRings"/></svg>
+  <div class="c q" style="top:140px;font-size:540px;padding-left:10px;color:var(--ink)">Q</div>
+  <div class="c n" style="top:755px;font-size:68px;letter-spacing:20px;padding-left:20px;color:var(--ink)">QISSAH</div>
+</div>
+
+<!-- 4 mit islamischem Sternmuster + Goldring -->
+<div class="logo" id="k4">
+  <svg class="full" width="1080" height="1080"><rect width="1080" height="1080" fill="url(#geo)" opacity=".12" clip-path="url(#inner)"/>
+    <circle cx="540" cy="500" r="320" fill="url(#hole)"/><use href="#neonRings"/></svg>
+  <div class="c q glow" style="top:140px;font-size:540px;padding-left:10px">Q</div>
+  <div class="c n glow" style="top:755px;font-size:68px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+<!-- 5 Nachtblau mit Sternen + kleinem arabischem Wort -->
+<div class="logo" id="k5" style="background:radial-gradient(circle at 50% 40%, #16263f 0%, #0b1424 45%, #04070d 80%)">
+  <svg class="full" width="1080" height="1080" fill="#f6d38a">
+    <circle cx="250" cy="250" r="4"/><circle cx="830" cy="230" r="5"/><circle cx="170" cy="560" r="3"/><circle cx="910" cy="600" r="3.5"/>
+    <circle cx="330" cy="150" r="3"/><circle cx="760" cy="140" r="3"/><circle cx="880" cy="420" r="2.5"/><circle cx="200" cy="400" r="2.5"/>
+    <path d="M820 320 l7 20 20 7 -20 7 -7 20 -7 -20 -20 -7 20 -7z"/></svg>
+  <div class="c glow" style="top:120px;font-family:Ruqaa;font-weight:700;font-size:110px;color:#f2c766">قصة</div>
+  <div class="c q glow" style="top:200px;font-size:520px;padding-left:10px;color:#f2c766">Q</div>
+  <div class="c n glow" style="top:790px;font-size:68px;letter-spacing:20px;padding-left:20px;color:#f2c766">QISSAH</div>
+</div>
+
+<!-- 6 Metall-Gold-Glanz -->
+<div class="logo" id="k6">
+  <div class="c q" style="top:30px;font-size:640px;padding-left:10px"><span class="metal" style="display:inline-block;padding:40px 140px 260px">Q</span></div>
+  <div class="c n" style="top:805px;font-size:74px;letter-spacing:22px;padding-left:22px"><span class="metal">QISSAH</span></div>
+</div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="22" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="hole"><stop offset="0" stop-color="#0b0a08" stop-opacity=".95"/><stop offset=".7" stop-color="#0b0a08" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#0b0a08" stop-opacity="0"/></radialGradient>
+    <pattern id="geo" width="120" height="120" patternUnits="userSpaceOnUse">
+      <g stroke="#f0bf55" stroke-width="2.2" fill="none">
+        <rect x="35" y="35" width="50" height="50"/><rect x="35" y="35" width="50" height="50" transform="rotate(45 60 60)"/>
+        <path d="M0 0 L25 25 M120 0 L95 25 M0 120 L25 95 M120 120 L95 95 M60 0 L60 25 M60 120 L60 95 M0 60 L25 60 M120 60 L95 60"/>
+      </g>
+    </pattern>
+    <clipPath id="inner"><circle cx="540" cy="540" r="458"/></clipPath>
+    <g id="neonRings">
+      <g filter="url(#neon)" fill="none">
+        <circle cx="540" cy="540" r="497" stroke="#e9a93a" stroke-width="13"/>
+        <circle cx="540" cy="540" r="470" stroke="#e9a93a" stroke-width="9"/>
+      </g>
+      <g fill="none">
+        <circle cx="540" cy="540" r="497" stroke="#fff0c2" stroke-width="4"/>
+        <circle cx="540" cy="540" r="470" stroke="#fff0c2" stroke-width="3"/>
+      </g>
+    </g>
+    <g id="inkRings" fill="none" stroke="#0c0a07">
+      <circle cx="540" cy="540" r="497" stroke-width="9"/>
+      <circle cx="540" cy="540" r="474" stroke-width="3.5"/>
+    </g>
+  </defs>
+</svg>
+</body>
+</html>
