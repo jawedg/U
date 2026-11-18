@@ -297,11 +297,14 @@ Lines marked with 🔊 contain a sudden loudness spike (screaming, laughing, hyp
 Lines "(🔊 … no speech)" are loud moments without words.
 
 Find the {n} BEST moments that would go viral as vertical short clips. Rules:
-- Each clip 15–60 s long (ideal 20–40 s) and self-contained: setup -> payoff, understandable without the stream context.
+- The LENGTH depends on the moment: as long as the story needs, as short as possible. A quick reaction can be 15–30 s,
+  a typical moment 30–60 s, a longer story / chase / argument / build-up 1–3 min. Never cut off the payoff,
+  never pad with boring parts. Each clip must be self-contained: setup -> payoff, understandable without the stream.
 - Start right at the hook (at most ~1.5 s before the first interesting line), end right after the punchline / reaction
   has played out. No dead air, no boring intro.
 - Good: funny fails, rage, shocked or hyped reactions, chaos, unexpected events, hilarious quotes, wins, clutch moments,
-  beef/arguments, wholesome moments, reactions to new game features and secrets.
+  beef/arguments, wholesome moments, crazy stories, reactions to something new or surprising, interactions with
+  guests/other streamers/strangers. Works for any kind of stream (games, IRL, just chatting, reactions, events).
 - Bad: reading chat / donations, sponsor reads, menus, loading, long silent gameplay, moments that need prior context.
 - No overlapping clips. Sort by viral_score (best first).
 - viral_score = honest 0–100 estimate of viral potential (90+ only for exceptional moments, typical 50–80).
@@ -353,7 +356,7 @@ def select_clips(src, chunks, peaks, n, kontext, work):
         s, e = parse_t(c.get("start")), parse_t(c.get("end"))
         if s is None or e is None or e - s < 8:
             continue
-        c["start"], c["end"] = s, min(e, s + 75)
+        c["start"], c["end"] = s, min(e, s + 240)
         c["sfx_tags"] = [{"time": parse_t(x.get("time")), "text": x.get("text", "")} for x in c.get("sfx_tags") or []
                          if parse_t(x.get("time")) is not None]
         c["reaction_times"] = [parse_t(x) for x in c.get("reaction_times") or [] if parse_t(x) is not None]
@@ -561,8 +564,8 @@ def main():
     ap.add_argument("--von", help="Start im Stream, z. B. 1:30:00")
     ap.add_argument("--bis", help="Ende im Stream, z. B. 4:00:00")
     ap.add_argument("--anzahl", type=int, default=8, help="Wie viele Clips (Standard 8)")
-    ap.add_argument("--kontext", default="GTA 6 gameplay stream (Grand Theft Auto VI)",
-                    help="Worum geht es im Stream (hilft der KI)")
+    ap.add_argument("--kontext", default="unknown – figure out the game / topic from the stream title and transcript",
+                    help="Optional: worum geht es im Stream, z. B. 'GTA 6 Story' (hilft der KI)")
     ap.add_argument("--nur-analyse", action="store_true", help="Nur Auswahl + Bericht, nicht rendern")
     ap.add_argument("--clips", help="Nur diese Clip-Nummern rendern, z. B. 1,3")
     a = ap.parse_args()

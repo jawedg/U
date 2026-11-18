@@ -114,8 +114,8 @@ Lokal reicht `npm run render:3d`.
 - Rendern: `--props='{"fx":"ao","dpr":0.75}' --timeout=300000` (dpr = 3D-Auflösung; Kosten sind pixelgebunden, ~1,3 s/Bild → ~3 h).
   Länger als 2 h → mit `setsid nohup` starten (Skript-Vorlage: render + 2-Pass 1250 kbit/s → ≤ 60 MB).
 
-## Viral-Clipper (Streamer-Clips, GTA 6) – `clipper/clipper.py` + Komposition `ViralClip`
-- Nutzer clippt Twitch-Streams (hat Erlaubnis der Streamer), Untertitel **Englisch**. Vorbild: TikTok @streamer.clipss25
+## Viral-Clipper (Streamer-Clips: GTA 6 und alle anderen Streams) – `clipper/clipper.py` + Komposition `ViralClip`
+- Nutzer clippt Twitch-Streams aller Art (hat Erlaubnis der Streamer), Untertitel **Englisch**. Clip-Länge richtet sich nach dem Moment (15 s bis ~3 min). Vorbild: TikTok @streamer.clipss25
   (Facecam oben / Gameplay unten, harte Schnitte, 1 Wort pro Bild in Anton, weiß + gelbe Schlüsselwörter, schwarzer Rand,
   Geräusch-Tags wie `*LAUGHING*`).
 - `npm run clip -- <Twitch-VOD-Link oder Datei> [--von 1:00:00 --bis 4:00:00] [--anzahl 8] [--kontext "..."]`
