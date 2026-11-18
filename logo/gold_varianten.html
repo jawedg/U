@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- QISSAH – schwarzes Q auf Gold (Nutzer: gefiel), kombiniert mit Ring / Stern / Torbogen / Sternmuster / Arabisch.
+     Rendern: node logo/render_html.js logo/gold_varianten.html qissah-gold -> out/logo/qissah-gold-<n>.png -->
+<style>
+  @font-face { font-family: "EB Garamond"; src: url("../public/fonts/eb-garamond-latin-600-normal.woff2"); font-weight: 600; }
+  @font-face { font-family: "Messiri"; src: url("fonts/el-messiri-latin-700-normal.woff2"); font-weight: 700; unicode-range: U+0000-024F; }
+  @font-face { font-family: "Ruqaa"; src: url("fonts/aref-ruqaa-arabic-700-normal.woff2"); font-weight: 700; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  :root { --ink: #0c0a07; }
+  html, body { margin: 0; background: #222; }
+  .logo { width: 1080px; height: 1080px; position: relative; overflow: hidden; margin-bottom: 20px;
+          background: radial-gradient(circle at 45% 35%, #f7d88e 0%, #e8b54d 45%, #b57d24 100%); }
+  .c { position: absolute; left: 0; right: 0; text-align: center; line-height: 1; color: var(--ink); }
+  .q { font-family: "EB Garamond", serif; font-weight: 600; }
+  .mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+  svg.full { position: absolute; left: 0; top: 0; }
+</style>
+</head>
+<body>
+
+<!-- 1 wie es gefiel + feiner schwarzer Doppelring am Rand -->
+<div class="logo" id="g1">
+  <svg class="full" width="1080" height="1080"><use href="#rings"/></svg>
+  <div class="c q" style="top:150px;font-size:540px;padding-left:32px">Q</div>
+  <div class="c mono" style="top:765px;font-size:68px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+<!-- 2 mit islamischem Sternmuster im Hintergrund -->
+<div class="logo" id="g2">
+  <svg class="full" width="1080" height="1080"><rect width="1080" height="1080" fill="url(#geo)" opacity=".13"/>
+    <circle cx="540" cy="500" r="330" fill="url(#hole)"/><use href="#rings"/></svg>
+  <div class="c q" style="top:150px;font-size:540px;padding-left:32px">Q</div>
+  <div class="c mono" style="top:765px;font-size:68px;letter-spacing:20px;padding-left:20px">QISSAH</div>
+</div>
+
+<!-- 3 Q im 8-Zacken-Stern -->
+<div class="logo" id="g3">
+  <svg class="full" width="1080" height="1080"><use href="#rings"/>
+    <g fill="none" stroke="#0c0a07">
+      <rect x="333" y="263" width="414" height="414" stroke-width="7"/>
+      <rect x="333" y="263" width="414" height="414" stroke-width="7" transform="rotate(45 540 470)"/>
+      <rect x="353" y="283" width="374" height="374" stroke-width="2.5" opacity=".6"/>
+      <rect x="353" y="283" width="374" height="374" stroke-width="2.5" opacity=".6" transform="rotate(45 540 470)"/>
+    </g></svg>
+  <div class="c q" style="top:318px;font-size:280px;padding-left:4px">Q</div>
+  <div class="c mono" style="top:790px;font-size:64px;letter-spacing:18px;padding-left:18px">QISSAH</div>
+</div>
+
+<!-- 4 Q unter einem Torbogen -->
+<div class="logo" id="g4">
+  <svg class="full" width="1080" height="1080"><use href="#rings"/>
+    <g fill="none" stroke="#0c0a07">
+      <path d="M318 760 L318 470 C318 340 430 270 540 190 C650 270 762 340 762 470 L762 760" stroke-width="7"/>
+      <path d="M344 760 L344 474 C344 355 446 290 540 222 C634 290 736 355 736 474 L736 760" stroke-width="2.5" opacity=".6"/>
+    </g>
+    <g transform="translate(540 160)" fill="#0c0a07"><rect x="-15" y="-15" width="30" height="30"/>
+      <rect x="-15" y="-15" width="30" height="30" transform="rotate(45)"/></g></svg>
+  <div class="c q" style="top:345px;font-size:330px;padding-left:4px">Q</div>
+  <div class="c mono" style="top:800px;font-size:64px;letter-spacing:18px;padding-left:18px">QISSAH</div>
+</div>
+
+<!-- 5 kleines arabisches Wort über dem Q -->
+<div class="logo" id="g5">
+  <svg class="full" width="1080" height="1080"><use href="#rings"/></svg>
+  <div class="c" style="top:150px;font-family:Ruqaa;font-weight:700;font-size:120px">قصة</div>
+  <div class="c q" style="top:265px;font-size:440px;padding-left:26px">Q</div>
+  <div class="c mono" style="top:790px;font-size:64px;letter-spacing:18px;padding-left:18px">QISSAH</div>
+</div>
+
+<!-- 6 QISSAH in arabisch angehauchter Schrift (El Messiri) -->
+<div class="logo" id="g6">
+  <svg class="full" width="1080" height="1080"><use href="#rings"/></svg>
+  <div class="c q" style="top:150px;font-size:540px;padding-left:32px">Q</div>
+  <div class="c" style="top:755px;font-family:Messiri;font-weight:700;font-size:80px;letter-spacing:18px;padding-left:18px">QISSAH</div>
+</div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <radialGradient id="hole"><stop offset="0" stop-color="#f3cf7c" stop-opacity="1"/><stop offset=".65" stop-color="#ecc067" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#e8b54d" stop-opacity="0"/></radialGradient>
+    <pattern id="geo" width="120" height="120" patternUnits="userSpaceOnUse">
+      <g stroke="#0c0a07" stroke-width="2.4" fill="none">
+        <rect x="35" y="35" width="50" height="50"/><rect x="35" y="35" width="50" height="50" transform="rotate(45 60 60)"/>
+        <path d="M0 0 L25 25 M120 0 L95 25 M0 120 L25 95 M120 120 L95 95 M60 0 L60 25 M60 120 L60 95 M0 60 L25 60 M120 60 L95 60"/>
+      </g>
+    </pattern>
+    <g id="rings" fill="none" stroke="#0c0a07">
+      <circle cx="540" cy="540" r="497" stroke-width="9"/>
+      <circle cx="540" cy="540" r="474" stroke-width="3.5"/>
+    </g>
+  </defs>
+</svg>
+</body>
+</html>
