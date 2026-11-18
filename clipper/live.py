@@ -201,23 +201,28 @@ def main():
             time.sleep(10)
             continue
         r = st["round"]
-        C.log(f"\n🎬 Runde {r}: {C.hms(st['done'])} – {C.hms(t1)}")
-        chunks = C.analyse(src, st["done"], t1, work)
-        peaks = C.loud_peaks(chunks)
-        clips = [c for c in C.select_clips(src, chunks, peaks, a.anzahl, kontext, work, tag=f"_r{r:02d}")
-                 if c["start"] >= st["done"] and c["end"] <= t1 + 1]
-        for c in clips:
-            c["end"] = min(c["end"], t1)
-        if clips:
-            for i, c in enumerate(clips, 1):
-                C.log(f"   {i}. [{c.get('viral_score', '?'):>3}] {C.hms(c['start'])}  {c.get('title', '')}")
-            lays = C.detect_layouts(src, clips, work, tag=f"_r{r:02d}", reuse=st["layout"])
-            st["layout"] = next((l for l in lays if l.get("mode") == "split"), st["layout"])
-            C.render_clips(src, clips, lays, chunks, peaks, work, prefix=f"r{r:02d}")
-            st["clips"] += clips
-            C.write_report(src, sorted(st["clips"], key=lambda c: -int(c.get("viral_score") or 0)), work)
-        else:
-            C.log("   (keine starken Momente in dieser Runde)")
+        try:
+            C.log(f"\n🎬 Runde {r}: {C.hms(st['done'])} – {C.hms(t1)}")
+            chunks = C.analyse(src, st["done"], t1, work)
+            peaks = C.loud_peaks(chunks)
+            clips = [c for c in C.select_clips(src, chunks, peaks, a.anzahl, kontext, work, tag=f"_r{r:02d}")
+                     if c["start"] >= st["done"] and c["end"] <= t1 + 1]
+            for c in clips:
+                c["end"] = min(c["end"], t1)
+            if clips:
+                for i, c in enumerate(clips, 1):
+                    C.log(f"   {i}. [{c.get('viral_score', '?'):>3}] {C.hms(c['start'])}  {c.get('title', '')}")
+                lays = C.detect_layouts(src, clips, work, tag=f"_r{r:02d}", reuse=st["layout"])
+                st["layout"] = next((l for l in lays if l.get("mode") == "split"), st["layout"])
+                C.render_clips(src, clips, lays, chunks, peaks, work, prefix=f"r{r:02d}")
+                st["clips"] += clips
+                C.write_report(src, sorted(st["clips"], key=lambda c: -int(c.get("viral_score") or 0)), work)
+            else:
+                C.log("   (keine starken Momente in dieser Runde)")
+        except Exception as e:  # z. B. Gemini ueberlastet -> spaeter nochmal, Aufnahme laeuft weiter
+            C.log(f"   ⚠️  Runde {r} fehlgeschlagen ({str(e)[:150]}) – neuer Versuch in 3 min")
+            time.sleep(180)
+            continue
         src.cleanup(t1 - 30)
         st["done"], st["round"] = t1, r + 1
         state_f.write_text(json.dumps(st, ensure_ascii=False))

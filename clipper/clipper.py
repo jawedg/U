@@ -263,7 +263,7 @@ def gemini(parts, schema_hint=True, timeout=600):
     key = os.environ.get("GEMINI_API_KEY") or "proxy"  # in der Cloud setzt der Proxy den Schluessel ein
     last = None
     tried_out = set()
-    for model in [m for m in TEXT_MODELS for _ in (0, 1)]:  # jedes Modell 2 Versuche (503 = kurz überlastet)
+    for model in [m for _ in range(3) for m in TEXT_MODELS]:  # 3 Durchgaenge (503 = kurz ueberlastet)
         if model in tried_out:
             continue
         req = urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
@@ -281,7 +281,7 @@ def gemini(parts, schema_hint=True, timeout=600):
         except Exception as e:  # noqa
             last = f"{model}: {e}"
         log(f"   ⚠️  {last[:160]} – neuer Versuch")
-        time.sleep(5)
+        time.sleep(15)
     raise RuntimeError("Gemini fehlgeschlagen: " + str(last))
 
 
