@@ -194,7 +194,8 @@ class FileSource:
 def encode(inp, dur, out):
     """Clip-Quelle: 30 fps, max 1080p, viele Keyframes (schnelles Rendern in Remotion)."""
     ffmpeg(*inp, "-t", f"{dur:.3f}", "-vf", f"fps={FPS},scale=-2:'min(1080,ih)'", "-c:v", "libx264",
-           "-preset", "veryfast", "-crf", "17", "-g", "15", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+           "-preset", "veryfast", "-crf", "16", "-g", "15", "-pix_fmt", "yuv420p", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+           "-c:a", "aac", "-b:a", "192k",
            "-ar", "48000", "-movflags", "+faststart", str(out))
 
 
@@ -309,17 +310,26 @@ Find the {n} BEST moments that would go viral as vertical short clips. Rules:
 - Bad: reading chat / donations, sponsor reads, menus, loading, long silent gameplay, moments that need prior context.
 - No overlapping clips. Sort by viral_score (best first).
 - viral_score = honest 0–100 estimate of viral potential (90+ only for exceptional moments, typical 50–80).
-- keywords: 2–8 words that are actually SPOKEN in the clip and should be highlighted in yellow (the punchline words,
-  names, numbers, emotional words).
-- sfx_tags: short non-speech captions in this style: "*LAUGHING*", "*SCREAMS*", "*CAR CRASHES*", "*SILENCE*",
-  only where clearly happening (use the 🔊 markers and context), 0–4 per clip.
-- reaction_times: moments where the streamer's face/reaction is the important thing (we zoom on the facecam), 0–3.
+- keywords: 2–8 punchline words that are actually SPOKEN in the clip (they pop bigger on screen).
+- other_voice_lines: the timestamps (exactly as written in the transcript, e.g. "1:02:35.9") of every transcript line
+  in the clip that is NOT spoken by the streamer (game characters / NPCs, friends on call, guests, TTS, videos).
+  Their captions are shown in yellow, the streamer's in white.
+- sfx_tags: short non-speech captions in this style: "*LAUGHING*", "*SCREAMS*", "*SHOCKED*", "*CAR CRASHES*",
+  "*HANGS UP*", "*SILENCE*", only where clearly happening (use the 🔊 markers and context), 0–5 per clip.
+  "who": "streamer" or "other".
+- reaction_times: moments where the streamer's face/reaction is the important thing (we punch in on the facecam), 1–5.
+- action_times: moments where something happens in the game/scene itself that viewers must SEE (crash, explosion,
+  kill, fail, jump scare, something funny on screen) – we show the gameplay full screen there, 0–5.
+- skip: parts inside the clip that are boring and can be cut out without breaking the story (filler, waiting,
+  reading chat), as {{"from","to"}}, 0–4.
 
 Return ONLY JSON:
 {{"clips":[{{"start":"H:MM:SS.s","end":"H:MM:SS.s","title":"short catchy title (English)",
 "viral_score":87,"reason_de":"kurze Begründung auf Deutsch, warum das viral gehen kann",
 "description":"English TikTok caption in the style 'Kai Cenat is Shocked After …😂😂' plus 4–6 hashtags",
-"keywords":["…"],"sfx_tags":[{{"time":"H:MM:SS.s","text":"*LAUGHING*"}}],"reaction_times":["H:MM:SS.s"]}}]}}
+"keywords":["…"],"other_voice_lines":["H:MM:SS.s"],
+"sfx_tags":[{{"time":"H:MM:SS.s","text":"*LAUGHING*","who":"streamer"}}],"reaction_times":["H:MM:SS.s"],
+"action_times":["H:MM:SS.s"],"skip":[{{"from":"H:MM:SS.s","to":"H:MM:SS.s"}}]}}]}}
 
 TRANSCRIPT:
 {transcript}
@@ -358,9 +368,12 @@ def select_clips(src, chunks, peaks, n, kontext, work):
         if s is None or e is None or e - s < 8:
             continue
         c["start"], c["end"] = s, min(e, s + 240)
-        c["sfx_tags"] = [{"time": parse_t(x.get("time")), "text": x.get("text", "")} for x in c.get("sfx_tags") or []
-                         if parse_t(x.get("time")) is not None]
-        c["reaction_times"] = [parse_t(x) for x in c.get("reaction_times") or [] if parse_t(x) is not None]
+        c["sfx_tags"] = [{"time": parse_t(x.get("time")), "text": x.get("text", ""), "who": x.get("who", "streamer")}
+                         for x in c.get("sfx_tags") or [] if parse_t(x.get("time")) is not None]
+        for k in ("reaction_times", "action_times", "other_voice_lines"):
+            c[k] = [parse_t(x) for x in c.get(k) or [] if parse_t(x) is not None]
+        c["skip"] = [(parse_t(x.get("from")), parse_t(x.get("to"))) for x in c.get("skip") or []
+                     if parse_t(x.get("from")) is not None and parse_t(x.get("to")) is not None]
         clips.append(c)
     clips.sort(key=lambda c: -int(c.get("viral_score") or 0))
     f.write_text(json.dumps({"clips": clips}, indent=1, ensure_ascii=False))
@@ -478,22 +491,91 @@ def clean(w):
     return WORD_RE.sub("", w).strip("-").upper()
 
 
-def keep_segments(words, peaks, s, e):
-    """Lange Pausen ohne Sprache und ohne Laerm kuerzen (Jump-Cuts wie bei Clip-Kanaelen)."""
-    segs, cur = [], s
+def keep_segments(words, peaks, s, e, skip=()):
+    """Enge Jump-Cuts: jede Pause ohne Sprache und ohne Laerm raus, dazu die von Gemini markierten langweiligen Teile."""
+    cuts = [(max(s, a), min(e, b)) for a, b in skip if b - a > 0.5 and a < e and b > s]
     times = [(w[1], w[2]) for w in words]
     for (a0, a1), (b0, b1) in zip(times, times[1:]):
-        if b0 - a1 > 1.8 and not any(a1 - 0.5 < p[0] < b0 + 0.5 for p in peaks):
-            segs.append((cur, a1 + 0.35))
-            cur = b0 - 0.3
+        if b0 - a1 > 0.6 and not any(a1 - 0.3 < p[0] < b0 + 0.3 for p in peaks):
+            cuts.append((a1 + 0.15, b0 - 0.1))
+    cuts.sort()
+    segs, cur = [], s
+    for a, b in cuts:
+        if a > cur:
+            segs.append((cur, a))
+        cur = max(cur, b)
     segs.append((cur, e))
-    return [(a, b) for a, b in segs if b - a > 0.2]
+    return [(a, b) for a, b in segs if b - a > 0.25]
+
+
+def plan_shots(dur, lay, react, action, sentence_starts, cut_points):
+    """Kamera-Plan im fertigen Clip: alle 1-3 s passiert etwas (Zoom rein, Ansicht wechselt) – wie bei den grossen Clip-Kanaelen."""
+    special = []  # (von, bis, ansicht)
+    for t in react:
+        special.append((max(0, t - 0.25), min(dur, t + 2.0), "cam"))
+    for t in action:
+        special.append((max(0, t - 0.4), min(dur, t + 2.4), "game"))
+    special.sort()
+    merged = []
+    for a, b, v in special:
+        if merged and a < merged[-1][1] + 0.6:  # Ueberschneidung -> spaeteres faengt nach dem frueheren an
+            a = merged[-1][1]
+            if b - a < 0.8:
+                continue
+        merged.append((a, b, v))
+    base = "split" if lay["mode"] == "split" else ("full" if lay["mode"] == "full" else "game")
+    marks = sorted({round(t, 2) for t in sentence_starts + cut_points if 0.3 < t < dur - 0.5})
+    shots, t, k = [], 0.0, 0
+
+    def fill(a, b):
+        nonlocal k
+        pts = [a] + [m for m in marks if a + 1.2 < m < b - 1.0] + [b]
+        # zu lange Einstellungen teilen (max ~3 s)
+        out = []
+        for x, y in zip(pts, pts[1:]):
+            n = max(1, int((y - x) // 3.0))
+            out += [(x + (y - x) * i / n, x + (y - x) * (i + 1) / n) for i in range(n)]
+        # zu kurze Einstellungen zusammenlegen
+        res = []
+        for x, y in out:
+            if res and (y - x < 1.2 or res[-1][1] - res[-1][0] < 1.2):
+                res[-1] = (res[-1][0], y)
+            else:
+                res.append((x, y))
+        for x, y in res:
+            zoom = [1.0, 1.14, 1.06, 1.22][k % 4]
+            shots.append({"from": round(x, 3), "to": round(y, 3), "view": base, "zoom": zoom, "drift": 0.035})
+            k += 1
+
+    for a, b, v in merged:
+        if a - t > 0.3:
+            fill(t, a)
+        elif shots:
+            a = t
+        view = v if base == "split" or v == "cam" else base
+        if base == "game" and v == "cam":
+            view = "game"
+        shots.append({"from": round(a, 3), "to": round(b, 3), "view": view, "zoom": 1.25 if v == "cam" else 1.08,
+                      "drift": 0.06, "punch": v == "cam"})
+        t = b
+    if dur - t > 0.05:
+        fill(t, dur)
+    for i, sh in enumerate(shots):
+        sh["whip"] = i > 0 and sh["view"] != shots[i - 1]["view"]
+    return shots
 
 
 def build_props(clip, lay, chunks, peaks, src_file, src_t0):
     s, e = clip["start"], clip["end"]
-    words = [w for c in chunks for sg in c["segs"] for w in sg["words"] if s - 0.05 <= w[1] < e]
-    segs = keep_segments(words, peaks, s, e)
+    other = clip.get("other_voice_lines") or []
+    words = []  # [wort, start, ende, wer, satzanfang]
+    for c in chunks:
+        for sg in c["segs"]:
+            who = "o" if any(abs(sg["s"] - t) < 0.6 for t in other) else "s"
+            for j, w in enumerate(sg["words"]):
+                if s - 0.05 <= w[1] < e:
+                    words.append([w[0], w[1], w[2], who, j == 0])
+    segs = keep_segments(words, peaks, s, e, clip.get("skip") or [])
 
     def out_t(t):  # Zeit im Stream -> Zeit im fertigen Clip
         acc = 0.0
@@ -509,16 +591,18 @@ def build_props(clip, lay, chunks, peaks, src_file, src_t0):
     kw = {clean(k) for x in clip.get("keywords") or [] for k in str(x).split()}
     kw.discard("")
     caps, i = [], 0
-    ws = [(clean(w[0]), w[1], w[2]) for w in words if clean(w[0])]
+    ws = [(clean(w[0]), w[1], w[2], w[3]) for w in words if clean(w[0])]
     while i < len(ws):
-        txt, a, b = ws[i]
-        yellow = txt in kw
+        txt, a, b, who = ws[i]
+        big = txt in kw
         # sehr kurze Woerter mit dem naechsten zusammen zeigen (z. B. "RIGHT NOW")
-        if i + 1 < len(ws) and (b - a < 0.22 or len(txt) <= 2) and len(txt) + len(ws[i + 1][0]) <= 11 and ws[i + 1][1] - b < 0.15:
-            txt, b, yellow = txt + " " + ws[i + 1][0], ws[i + 1][2], yellow or ws[i + 1][0] in kw
+        if (i + 1 < len(ws) and ws[i + 1][3] == who and (b - a < 0.22 or len(txt) <= 2)
+                and len(txt) + len(ws[i + 1][0]) <= 11 and ws[i + 1][1] - b < 0.15):
+            txt, b, big = txt + " " + ws[i + 1][0], ws[i + 1][2], big or ws[i + 1][0] in kw
             i += 1
         nxt = ws[i + 1][1] if i + 1 < len(ws) else b + 0.6
-        caps.append({"from": round(out_t(a), 3), "to": round(out_t(min(nxt, b + 0.6)), 3), "text": txt, "yellow": yellow})
+        caps.append({"from": round(out_t(a), 3), "to": round(out_t(min(nxt, b + 0.8)), 3), "text": txt,
+                     "who": who, "big": big})
         i += 1
     for k in range(len(caps) - 1):
         caps[k]["to"] = min(caps[k]["to"], caps[k + 1]["from"])
@@ -527,28 +611,47 @@ def build_props(clip, lay, chunks, peaks, src_file, src_t0):
         if s <= tg["time"] < e and tg["text"]:
             t0 = out_t(tg["time"])
             if not any(c["from"] < t0 + 1.0 and c["to"] > t0 for c in caps):
-                tags.append({"from": round(t0, 3), "to": round(min(dur, t0 + 1.2), 3), "text": tg["text"].upper()})
-    react = []
-    if lay["mode"] == "split":
-        for rt in clip.get("reaction_times") or []:
-            if s <= rt < e:
-                t0 = out_t(rt)
-                react.append({"from": round(max(0, t0 - 0.2), 3), "to": round(min(dur, t0 + 1.8), 3)})
+                tags.append({"from": round(t0, 3), "to": round(min(dur, t0 + 1.3), 3), "text": tg["text"].upper(),
+                             "who": "o" if tg.get("who") == "other" else "s"})
+    inside = lambda ts: [out_t(t) for t in ts if s <= t < e]  # noqa
+    cut_points, acc = [], 0.0
+    for a, b in segs[:-1]:
+        acc += b - a
+        cut_points.append(acc)
+    sentence = [out_t(w[1]) for w in words if w[4]]
+    shots = plan_shots(dur, lay, inside(clip.get("reaction_times") or []), inside(clip.get("action_times") or []),
+                       sentence, cut_points)
     return {
         "src": src_file,
         "duration": round(dur, 3),
         "segments": [{"from": round(a - src_t0, 3), "to": round(b - src_t0, 3)} for a, b in segs],
         "layout": lay,
-        "reactions": react,
+        "shots": shots,
         "captions": caps,
         "tags": tags,
     }
 
 
+def make_cam(src_mp4, cam, out):
+    """Facecam einzeln ausschneiden und hochwertig hochskalieren (Lanczos + Nachschaerfen) -> deutlich schaerfer."""
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+                        "-of", "csv=p=0", str(src_mp4)], capture_output=True, text=True).stdout.strip().split(",")
+    W, H = int(r[0]), int(r[1])
+    x, y = int(cam["x"] * W) // 2 * 2, int(cam["y"] * H) // 2 * 2
+    w, h = int(cam["w"] * W) // 2 * 2, int(cam["h"] * H) // 2 * 2
+    tw = 1440
+    th = int(tw * h / w) // 2 * 2
+    ffmpeg("-i", str(src_mp4), "-an", "-vf",
+           f"crop={w}:{h}:{x}:{y},hqdn3d=1.5:1.5:3:3,scale={tw}:{th}:flags=lanczos,unsharp=5:5:0.9:3:3:0.4",
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-g", "15", "-pix_fmt", "yuv420p", str(out))
+    return {"w": tw, "h": th, "srcPx": h}
+
+
 def render(props, out, work, name):
     pf = work / f"{name}.props.json"
     pf.write_text(json.dumps(props))
-    cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=23",
+    cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=18",
+           "--x264-preset=slow", "--max-rate=9M", "--buffer-size=18M", "--audio-bitrate=192k",
            "--log=error"]
     if Path(BROWSER).exists():
         cmd.append(f"--browser-executable={BROWSER}")
@@ -614,6 +717,10 @@ def main():
         wh = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
                              "-of", "csv=p=0", str(sp)], capture_output=True, text=True).stdout.strip().split(",")
         props["srcW"], props["srcH"] = int(wh[0]), int(wh[1])
+        if lay["mode"] == "split":
+            cp = pub / f"cam_{i:02d}.mp4"
+            info = make_cam(sp, lay["cam"], cp)
+            props["cam"] = {"src": f"clipper/{src.id}/{cp.name}", **info}
         render(props, out, work, name)
         log(f"   ✅ {out.relative_to(ROOT)}")
     write_report(src, clips, work)
