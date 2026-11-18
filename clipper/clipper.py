@@ -423,9 +423,83 @@ def detect_layouts(src, clips, work, tag="", reuse=None):
     out = []
     for i, p in enumerate(imgs):
         fr = frames[i] if i < len(frames) else {}
-        out.append(refine_layout(fr, p))
+        lay = refine_layout(fr, p)
+        # Kontrolle: echte Facecam = Gesicht, das ueber mehrere Bilder an derselben Stelle bleibt
+        c = clips[i]
+        extra = []
+        for k, frac in enumerate((0.2, 0.45, 0.7, 0.9)):
+            q = work / f"frame{tag}_{i + 1:02d}_{k}.jpg"
+            if not q.exists():
+                try:
+                    src.frame(c["start"] + (c["end"] - c["start"]) * frac, q)
+                except Exception:  # noqa
+                    continue
+            extra.append(q)
+        out.append(check_cam(lay, [p] + extra))
     f.write_text(json.dumps(out, indent=1))
     return out
+
+
+def stable_faces(paths):
+    """Gesichter, die in mindestens der Haelfte der Bilder an (fast) derselben Stelle sind -> (x, y, w, h, Anzahl)."""
+    import cv2
+    allf = [faces(cv2.imread(str(p))) for p in paths]
+    cand = []
+    for fl in allf:
+        for fx, fy, fw, fh in fl:
+            cx, cy = fx + fw / 2, fy + fh / 2
+            n = sum(any(abs(cx - (gx + gw / 2)) < 0.035 and abs(cy - (gy + gh / 2)) < 0.05 for gx, gy, gw, gh in g)
+                    for g in allf)
+            cand.append((fx, fy, fw, fh, n))
+    need = max(2, (len(paths) + 1) // 2)
+    return sorted([c for c in cand if c[4] >= need], key=lambda c: -c[4])
+
+
+def static_snap(paths, box):
+    """Facecam-Kanten an Linien legen, die in allen Bildern gleich bleiben (Rahmen der Cam)."""
+    import cv2
+    E = None
+    for p in paths:
+        g = cv2.cvtColor(cv2.imread(str(p)), cv2.COLOR_BGR2GRAY)
+        e = (cv2.Canny(g, 50, 150) > 0).astype(np.float32)
+        E = e if E is None else E + e
+    E = E / len(paths) > 0.7
+    H, W = E.shape
+    x0, y0, x1, y1 = box["x"] * W, box["y"] * H, (box["x"] + box["w"]) * W, (box["y"] + box["h"]) * H
+    r = int(0.06 * W)
+
+    def best(lo, hi, line, cur):
+        cand = [(line(v), v) for v in range(max(0, int(lo)), min(int(hi), (W if line is col else H) - 1) + 1)]
+        sc, v = max(cand) if cand else (0, cur)
+        return v if sc > 0.5 else cur
+
+    ya, yb, xa, xb = int(y0 + 0.2 * (y1 - y0)), int(y1 - 0.2 * (y1 - y0)), int(x0 + 0.2 * (x1 - x0)), int(x1 - 0.2 * (x1 - x0))
+    col = lambda x: E[ya:yb, x].mean() if yb > ya else 0  # noqa
+    row = lambda y: E[y, xa:xb].mean() if xb > xa else 0  # noqa
+    nx0, nx1 = best(x0 - r, x0 + r, col, x0), best(x1 - r, x1 + r, col, x1)
+    ny0, ny1 = best(y0 - r, y0 + r, row, y0), best(y1 - r, y1 + r, row, y1)
+    m = 0.006
+    return {"x": nx0 / W + m, "y": ny0 / H + m, "w": (nx1 - nx0) / W - 2 * m, "h": (ny1 - ny0) / H - 2 * m}
+
+
+def check_cam(lay, paths):
+    if lay.get("mode") != "split":
+        return lay
+    sf = stable_faces(paths)
+    if not sf:
+        return lay  # keine Gesichtserkennung moeglich -> Gemini vertrauen
+    c = lay["cam"]
+    inside = [f for f in sf if c["x"] <= f[0] + f[2] / 2 <= c["x"] + c["w"] and c["y"] <= f[1] + f[3] / 2 <= c["y"] + c["h"]]
+    if inside:
+        return lay
+    # Gemini lag daneben (z. B. Spielfigur) -> Box um das stabile Gesicht bauen und an den Cam-Rahmen legen
+    fx, fy, fw, fh, _ = sf[0]
+    bw, bh = min(0.45, fw * 3.6), min(0.5, fh * 3.0)
+    box = {"x": max(0, fx + fw / 2 - bw / 2), "y": max(0, fy + fh * 0.45 - bh / 2), "w": bw, "h": bh}
+    box["w"], box["h"] = min(box["w"], 1 - box["x"]), min(box["h"], 1 - box["y"])
+    box = static_snap(paths, box)
+    log(f"   🔧 Facecam korrigiert (Gemini-Box ohne festes Gesicht) → x={box['x']:.2f} y={box['y']:.2f}")
+    return {"mode": "split", "cam": box}
 
 
 def norm_box(b):

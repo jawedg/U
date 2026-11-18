@@ -121,19 +121,23 @@ Lokal reicht `npm run render:3d`.
 - `npm run clip -- <Twitch-VOD-Link oder Datei> [--von 1:00:00 --bis 4:00:00] [--anzahl 8] [--kontext "..."]`
   1. Ton in 10-min-Stücken (Twitch Audio_Only) → faster-whisper `small.en` (Wort-Zeiten) + Lautstärke-Spitzen
   2. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
-  3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt, Notfall: OpenCV-Gesichter)
+  3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt). Kontrolle `check_cam`: echte Facecam =
+     Gesicht, das in 5 Bildern des Clips an derselben Stelle bleibt; sonst Box um dieses Gesicht bauen (Gemini-Lite hielt
+     einmal eine Spielfigur für die Facecam).
   4. nur Clip-Stellen im Original (1080p60, `raw_NN.ts`) laden → **ffmpeg in EINEM Durchgang** (kein Remotion – Nutzer fand
      die Qualität schlecht): volles Hochformat: Facecam oben + Gameplay unten (Ausschnitt so verschoben, dass die Cam nicht doppelt ist); bei Reaktionen
      **nur auf die Facecam zoomen** (Vollbild bei Cam ≥ 380 px, sonst Cam groß + Spiel klein) – **nie aufs Gameplay zoomen**,
      kein unscharfer Rand-Layout (Nutzer: „nicht full Hochformat“),
      Lanczos-Skalierung, 60 fps, x264 slow CRF 17, Bitrate so begrenzt, dass Datei ≤ ~55 MB → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
   - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
-    andere Stimmen gelb (Gemini `other_voice_lines`). Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
+    andere Stimmen gelb (Gemini `other_voice_lines`). Nutzer fand Gemini-Lite-Auswahl „random“ → bei Bedarf wählt Claude selbst:
+    `transkript.txt` lesen und `auswahl.json` (gleiches Format) selbst schreiben, dann Clipper erneut starten. Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
 - Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
 - **Live-Modus** `python3 clipper/live.py <kanal> [--runde 30] [--anzahl 3]`: Rekorder-Thread lädt die 2-s-Stücke des
   Live-Streams (1080p60, Werbung übersprungen) nach `out/clips/live_<kanal>_<datum>/seg/`, alle N min eine Runde
   (Analyse → Gemini-Auswahl → Render, Dateien `rNN_…`), Facecam-Layout wird wiederverwendet (spart Gemini), fertige Stücke
-  werden gelöscht. Braucht Freigabe `*.ttvnw.net` (hat der Nutzer in den Einstellungen eingetragen). Mit `setsid nohup` starten.
+  werden gelöscht. **Achtung: Twitch spielt ohne Abo alle ~5 min ~3 min Werbung ein → ~40 % des Live-Streams fehlen.**
+  Besser: Aufzeichnung (VOD) nach Streamende clippen. Braucht Freigabe `*.ttvnw.net` (hat der Nutzer in den Einstellungen eingetragen). Mit `setsid nohup` starten.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
 - Setup: `pip install faster-whisper "opencv-python-headless<5" yt-dlp` (OpenCV 5 hat keine Haar-Gesichtserkennung mehr), `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).
