@@ -2,7 +2,7 @@
 
 ## TikTok-Beschreibung (zum Kopieren)
 
-Diese Worte hörst du 5× am Tag – aber woher kommen sie? 🌙 Aus einem Traum … und Umar hatte ihn schon 20 Tage vorher 🤯 Wusstest du das? 1 oder 2? 👇
+Diese Worte hörst du 5× am Tag – aber woher kommen sie? 🌙 Aus einem Traum … und Umar hatte ihn schon 20 Tage vorher 🤯 Seit über 1400 Jahren – und alles begann mit einem Traum.
 
 Quellen: Sahih al-Bukhari 603 & 604, Sunan Abi Dawud 498, 499 & 519, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706, Sira Ibn Hisham.
 Schofar-Klang: Tfursten, Wikimedia Commons (CC BY-SA 3.0). Weitere Geräusche: SFXMint, SFX Kit (CC0).
@@ -22,7 +22,7 @@ Schofar-Klang: Tfursten, Wikimedia Commons (CC BY-SA 3.0). Weitere Geräusche: S
 - Bilal wurde in Mekka gequält: Sira Ibn Hisham
 
 ## Darstellung
-- Ein Erzähler (Charon) erzählt; erfundene Leute sprechen mit eigenen Stimmen (Dialoge, kursive Untertitel).
+- Ein Erzähler (Algieba, arabische Namen arabisch ausgesprochen) erzählt; erfundene Leute sprechen mit eigenen Stimmen (Dialoge, kursive Untertitel).
 - Worte der Sahaba und des Propheten ﷺ: vom Erzähler angekündigt („… sagte:“), von einer Zitat-Stimme mit Hall gesprochen und als goldene Schrift gezeigt.
 - Menschen ohne Gesicht, Sahaba mit Licht über dem Kopf, der Prophet ﷺ nie als Figur – nur als Licht.
 - Adhan: echte Aufnahme (vom Nutzer); im Einstieg das erste „Allahu akbar“, später die ersten zwei „Allahu akbar“ pur, ohne darüber zu sprechen.

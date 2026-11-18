@@ -124,6 +124,17 @@ Lokal reicht `npm run render:3d`.
 
 ## QISSA – Islam-POV-Serie in 3D (Stil „Signal Lost“, aktueller Wunsch des Nutzers)
 - Folge 1 „Der erste Adhan“: Komposition `QissaAdhan` (1080×1920, **60 fps**), Ordner `src/qissa_adhan/`, Blender `blender/qissa/`.
+- **Version 5 (Nutzer, 18.11.2026):** Erzähler **Algieba** (aus 14 tiefen Gemini-Stimmen gewählt, `out/stimmproben/stimme-05*`),
+  Hörbuch-Stil mit Regie-Anweisungen (gemini-2.5-flash, Block 0 mit Junge=Puck). Arabische Namen ARABISCH aussprechen (Nutzer!):
+  im Satz `"say"` mit arabischer Schrift (أذان, عبد الله بن زيد, بلال, عمر), Untertitel zeigen `"text"`.
+  **Fließend** (Nutzer: Erzähler klang „gehackt“): `"flow": true` im voicePart → Aufnahme am Stück EINMAL filtern + Lautheit
+  angleichen, dann exakt schneiden (Ränder max. 0,3 s Stille), kein tighten/clean je Satz; build_qissa_adhan.py setzt zwischen
+  aufeinanderfolgenden Flow-Sätzen keine Extra-Pause. Schnittstellen von Hand geprüft (`out/stimmproben/*.cuts.json`).
+  Zitat-Stimmen je Person eigener Block: Abdullah=Iapetus, Grüner Mann=Enceladus, Umar=Alnilam (3.8 + Hall), q3 = Charon.
+  Ende neu: „Seit über 1400 Jahren … Und alles begann … mit einem Traum.“ (kein „Wusstest du das?“, keine Auswahltafel: `"choice": null`).
+  Stimme klonen (Seed-VC, `scripts/voice_clone.py`, `/home/user/venv-vc`) hat der Nutzer ABGELEHNT – nicht wieder anbieten.
+  Blender: Bilal läuft vor der Säulenreihe (y=11), Mutter kommt aus echter Tür, Beratung mit ruhigen Kopfbewegungen.
+  Einstellungen, die nur 2–3 % länger wurden, per minterpolate gestreckt statt neu gerendert (`scripts/v5_qissa_adhan.sh`).
 - **Version 4 (Nutzer, 17.11.2026):** Erzähler **Orus** (Doku-Stil: „tief, warm, wie Dokumentation“ – Regie wie in
   `out/stimmproben/erzaehler-3-orus.m4a`), arabische Namen DEUTSCH ausgesprochen (arabische Schrift im Sprechtext gefiel nicht),
   KEIN atempo/starkes Pausen-Kürzen beim Erzähler (klingt robotisch; `tighten` je Block, Dialoge behalten 0,34 s/1,07).
