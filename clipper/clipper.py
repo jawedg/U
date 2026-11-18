@@ -295,7 +295,10 @@ Context: {kontext}
 Lines marked with 🔊 contain a sudden loudness spike (screaming, laughing, hype, explosions, rage).
 Lines "(🔊 … no speech)" are loud moments without words.
 
-Find the {n} BEST moments that would go viral as vertical short clips. Rules:
+Find the BEST moments that would go viral as vertical short clips (at most {n}). Be very strict:
+only pick a moment if a stranger who has never seen this streamer would stop scrolling, laugh, be shocked or
+send it to a friend. Ordinary gameplay, normal conversation, mild reactions or "kind of funny" moments are NOT
+enough. If the stream has fewer great moments, return fewer clips – quality over quantity. Rules:
 - The LENGTH depends on the moment: as long as the story needs, as short as possible. A quick reaction can be 15–30 s,
   a typical moment 30–60 s, a longer story / chase / argument / build-up 1–3 min. Never cut off the payoff,
   never pad with boring parts. Each clip must be self-contained: setup -> payoff, understandable without the stream.
@@ -307,6 +310,8 @@ Find the {n} BEST moments that would go viral as vertical short clips. Rules:
 - Bad: reading chat / donations, sponsor reads, menus, loading, long silent gameplay, moments that need prior context.
 - No overlapping clips. Sort by viral_score (best first).
 - viral_score = honest 0–100 estimate of viral potential (90+ only for exceptional moments, typical 50–80).
+  Strong signals: screaming/hype (🔊 clusters), everyone laughing, a clear punchline, a shocking event, conflict,
+  a quotable line, a big win or an embarrassing fail.
 - keywords: 2–8 punchline words that are actually SPOKEN in the clip (they pop bigger on screen).
 - other_voice_lines: the timestamps (exactly as written in the transcript, e.g. "1:02:35.9") of every transcript line
   in the clip that is NOT spoken by the streamer (game characters / NPCs, friends on call, guests, TTS, videos).
@@ -314,9 +319,7 @@ Find the {n} BEST moments that would go viral as vertical short clips. Rules:
 - sfx_tags: short non-speech captions in this style: "*LAUGHING*", "*SCREAMS*", "*SHOCKED*", "*CAR CRASHES*",
   "*HANGS UP*", "*SILENCE*", only where clearly happening (use the 🔊 markers and context), 0–5 per clip.
   "who": "streamer" or "other".
-- reaction_times: moments where the streamer's face/reaction is the important thing (we punch in on the facecam), 1–5.
-- action_times: moments where something happens in the game/scene itself that viewers must SEE (crash, explosion,
-  kill, fail, jump scare, something funny on screen) – we show the gameplay full screen there, 0–5.
+- reaction_times: moments where the streamer's face/reaction is the important thing (facecam full screen), 1–5.
 - skip: parts inside the clip that are boring and can be cut out without breaking the story (filler, waiting,
   reading chat), as {{"from","to"}}, 0–4.
 
@@ -326,7 +329,7 @@ Return ONLY JSON:
 "description":"English TikTok caption in the style 'Kai Cenat is Shocked After …😂😂' plus 4–6 hashtags",
 "keywords":["…"],"other_voice_lines":["H:MM:SS.s"],
 "sfx_tags":[{{"time":"H:MM:SS.s","text":"*LAUGHING*","who":"streamer"}}],"reaction_times":["H:MM:SS.s"],
-"action_times":["H:MM:SS.s"],"skip":[{{"from":"H:MM:SS.s","to":"H:MM:SS.s"}}]}}]}}
+"skip":[{{"from":"H:MM:SS.s","to":"H:MM:SS.s"}}]}}]}}
 
 TRANSCRIPT:
 {transcript}
@@ -367,7 +370,7 @@ def select_clips(src, chunks, peaks, n, kontext, work):
         c["start"], c["end"] = s, min(e, s + 240)
         c["sfx_tags"] = [{"time": parse_t(x.get("time")), "text": x.get("text", ""), "who": x.get("who", "streamer")}
                          for x in c.get("sfx_tags") or [] if parse_t(x.get("time")) is not None]
-        for k in ("reaction_times", "action_times", "other_voice_lines"):
+        for k in ("reaction_times", "other_voice_lines"):
             c[k] = [parse_t(x) for x in c.get(k) or [] if parse_t(x) is not None]
         c["skip"] = [(parse_t(x.get("from")), parse_t(x.get("to"))) for x in c.get("skip") or []
                      if parse_t(x.get("from")) is not None and parse_t(x.get("to")) is not None]
@@ -505,55 +508,31 @@ def keep_segments(words, peaks, s, e, skip=()):
     return [(a, b) for a, b in segs if b - a > 0.3]
 
 
-def plan_shots(dur, base, action, react, cam_full_ok, other_spans=(), loud=()):
-    """Ansichten im fertigen Clip – nur harte Schnitte, keine Zooms (wie im Vorbild):
-    split = Facecam oben / Spiel unten, game = Spiel im Vollbild (Action), cam = Facecam Vollbild (nur wenn scharf genug)."""
+def plan_shots(dur, base, react, cam_full_ok):
+    """Ansichten im fertigen Clip – nur harte Schnitte, keine Zooms, Spielbild nie abgeschnitten.
+    split = Facecam ueber dem kompletten Spielbild, cam = Facecam im Vollbild (nur wenn die Cam gross/scharf genug ist)."""
     special = []
-    if base == "split":
-        special += [(max(0, t - 0.4), min(dur, t + 2.6), "game") for t in action]
-        # andere Stimme (NPC, Freund, Gast) spricht -> Spielbild gross
-        special += [(a - 0.1, min(b + 0.2, a + 4.0), "game") for a, b in other_spans if b - a > 1.2]
-        if cam_full_ok:
-            special += [(max(0, t - 0.3), min(dur, t + 2.2), "cam") for t in react]
-    special.sort()
+    if base == "split" and cam_full_ok:
+        special = sorted((max(0, t - 0.3), min(dur, t + 2.2), "cam") for t in react)
     shots, t = [], 0.0
     for a, b, v in special:
         a = max(a, t)
         if b - a < 1.2:
             continue
-        if a - t < 1.2 and shots:  # zu kurze Zwischenstuecke vermeiden
-            shots[-1]["to"] = a
-        elif a > t:
+        if a > t:
             shots.append({"from": t, "to": a, "view": base})
         shots.append({"from": a, "to": b, "view": v})
         t = b
     if dur - t > 0.01:
-        if dur - t < 1.0 and shots:
-            shots[-1]["to"] = dur
-        else:
-            shots.append({"from": t, "to": dur, "view": base})
-    shots = shots or [{"from": 0, "to": dur, "view": base}]
-    if base != "split":
-        return shots
-    # Einstellungen > 6 s aufbrechen: zwischendurch Spiel im Vollbild (bevorzugt bei lauten Momenten)
-    out = []
-    for sh in shots:
-        a, b = sh["from"], sh["to"]
-        while sh["view"] == "split" and b - a > 6.5:
-            cand = [t for t in loud if a + 3.0 < t < min(b - 2.5, a + 7.0)]
-            t = cand[0] - 0.3 if cand else a + 4.0
-            out.append({"from": a, "to": t, "view": "split"})
-            out.append({"from": t, "to": t + 2.2, "view": "game"})
-            a = t + 2.2
-        out.append({"from": a, "to": b, "view": sh["view"]})
+        shots.append({"from": t, "to": dur, "view": base})
     # gleiche Ansichten zusammenfassen, Mini-Einstellungen (< 1 s) an die vorige haengen
     res = []
-    for x in out:
+    for x in shots:
         if res and (x["view"] == res[-1]["view"] or x["to"] - x["from"] < 1.0):
             res[-1]["to"] = x["to"]
         else:
             res.append(dict(x))
-    return res
+    return res or [{"from": 0, "to": dur, "view": base}]
 
 
 def build_edit(clip, lay, chunks, peaks, cam_full_ok):
@@ -601,17 +580,7 @@ def build_edit(clip, lay, chunks, peaks, cam_full_ok):
                 caps.append({"from": t0, "to": min(dur, t0 + 1.3), "text": tg["text"].upper(),
                              "who": "o" if tg.get("who") == "other" else "s", "big": False})
     inside = lambda ts: [out_t(t) for t in ts if s <= t < e]  # noqa
-    spans = []  # zusammenhaengende Stellen, an denen andere Stimmen sprechen (Ausgabezeit)
-    for w in words:
-        if w[3] == "o":
-            a, b = out_t(w[1]), out_t(w[2])
-            if spans and a - spans[-1][1] < 0.6:
-                spans[-1][1] = b
-            else:
-                spans.append([a, b])
-    loud = [out_t(t) for t, _ in peaks if s <= t < e]
-    shots = plan_shots(dur, lay["mode"], inside(clip.get("action_times") or []),
-                       inside(clip.get("reaction_times") or []), cam_full_ok, spans, loud)
+    shots = plan_shots(dur, lay["mode"], inside(clip.get("reaction_times") or []), cam_full_ok)
     return {"segs": segs, "dur": dur, "caps": sorted(caps, key=lambda c: c["from"]), "shots": shots}
 
 
@@ -644,14 +613,17 @@ def geometry(lay, W, H):
         g["CH"] = ev(CH)
         g["cam"] = (ev(cw), ev(ch), ev(cx), ev(cy))
         g["camPx"] = ch
-        gw = min(W, ev(H * 1080 / (1920 - g["CH"])))
-        g["game"] = (gw, H, ev((W - gw) / 2), 0)
         # Facecam-Vollbild: 9:16-Ausschnitt aus der Cam
         fw = min(c["w"] * W, c["h"] * H * 9 / 16)
         g["camfull"] = (ev(fw), ev(fw * 16 / 9), ev((c["x"] + c["w"] / 2) * W - fw / 2), ev(c["y"] * H))
     fw = min(W, ev(H * 9 / 16))
     fx = (lay.get("focusX", 0.5) if lay["mode"] == "full" else 0.5) * W - fw / 2
     g["full"] = (fw, H, ev(min(W - fw, max(0, fx))), 0)
+    # ganzes Spielbild in voller Breite, mittig; Facecam direkt darueber
+    g["GH"] = ev(1080 * H / W)
+    top = ev((1920 - g.get("CH", 0) - g["GH"]) / 2)
+    g["camY"] = top
+    g["gameY"] = top + g.get("CH", 0)
     return g
 
 
@@ -673,8 +645,9 @@ def write_ass(edit, g, path):
         if c["to"] - c["from"] < 0.04:
             continue
         view = next((sh["view"] for sh in edit["shots"] if sh["from"] <= c["from"] < sh["to"]), edit["shots"][-1]["view"])
-        if view == "split":
-            y = CH - 20 if c["who"] == "s" else CH + (1920 - CH) * 0.45
+        if view in ("split", "game"):
+            below = 1920 - (g["gameY"] + g["GH"])
+            y = g["gameY"] + g["GH"] + below * 0.45 if below > 260 else g["gameY"] + g["GH"] - 150
         else:
             y = 1920 * 0.79
         # libass-Groesse = Zeilenhoehe; Anton: Grossbuchstabe ~0.48 x Groesse hoch, ~0.3 x Groesse breit
@@ -706,13 +679,21 @@ def render(raw, s0, edit, lay, out, work, name):
     for i, (ss, d, view) in enumerate(pieces):
         inputs += ["-ss", f"{max(0, ss - s0):.3f}", "-t", f"{d:.3f}", "-i", str(raw)]
         pre = f"[{i}:v]fps={fps},setpts=PTS-STARTPTS"
-        if view == "split":
-            cw, ch, cx, cy = g["cam"]
-            gw, gh, gx, gy = g["game"]
-            F.append(f"{pre},split[a{i}][b{i}];"
-                     f"[a{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{g['CH']}:flags=lanczos,unsharp=5:5:0.45:5:5:0[c{i}];"
-                     f"[b{i}]crop={gw}:{gh}:{gx}:{gy},scale=1080:{1920 - g['CH']}:flags=lanczos[g{i}];"
-                     f"[c{i}][g{i}]vstack,setsar=1,format=yuv420p[v{i}]")
+        bg = (f"scale=270:480:force_original_aspect_ratio=increase,crop=270:480,boxblur=12:2,"
+              f"scale=1080:1920:flags=bicubic,eq=brightness=-0.18:saturation=1.1")
+        if view in ("split", "game"):
+            parts = 3 if view == "split" else 2
+            outs = "".join(f"[{k}{i}]" for k in "bgc"[:parts])
+            F.append(f"{pre},split={parts}{outs}")
+            F.append(f"[b{i}]{bg}[bo{i}]")
+            F.append(f"[g{i}]scale=1080:{g['GH']}:flags=lanczos[go{i}]")
+            if view == "split":
+                cw, ch, cx, cy = g["cam"]
+                F.append(f"[c{i}]crop={cw}:{ch}:{cx}:{cy},scale=1080:{g['CH']}:flags=lanczos,unsharp=5:5:0.45:5:5:0[co{i}]")
+                F.append(f"[bo{i}][co{i}]overlay=0:{g['camY']}[t{i}]")
+                F.append(f"[t{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
+            else:
+                F.append(f"[bo{i}][go{i}]overlay=0:{g['gameY']},setsar=1,format=yuv420p[v{i}]")
         else:
             cw, ch, cx, cy = g["camfull"] if view == "cam" else g["full"]
             F.append(f"{pre},crop={cw}:{ch}:{cx}:{cy},scale=1080:1920:flags=lanczos,setsar=1,format=yuv420p[v{i}]")

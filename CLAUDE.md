@@ -126,7 +126,7 @@ Lokal reicht `npm run render:3d`.
      die Qualität schlecht): harte Ansichtswechsel split / game (Vollbild) / cam (nur bei großer Facecam), **keine Zooms**,
      Lanczos-Skalierung, 60 fps, x264 slow CRF 17, Bitrate so begrenzt, dass Datei ≤ ~55 MB → `out/clips/<id>/clip_NN_viral-XX_….mp4` + `bericht.md`
   - Untertitel als ASS (libass) mit `clipper/fonts/Anton-Regular.ttf`, Größe 270 (libass-Größe = Zeilenhöhe), Streamer weiß,
-    andere Stimmen gelb (Gemini `other_voice_lines`), Ansicht wechselt bei anderen Stimmen/Action und spätestens alle ~6 s.
+    andere Stimmen gelb (Gemini `other_voice_lines`). Auswahl streng (lieber weniger, nur echte Highlights), immer ganzen Stream analysieren.
 - Zwischenstände (`out/clips/<id>/chunks`, `auswahl.json`, `layout.json`) werden wiederverwendet; zum Neu-Auswählen `auswahl.json` löschen.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
