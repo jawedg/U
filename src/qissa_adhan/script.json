@@ -10,7 +10,7 @@
     "Erzaehler": "Orus",
     "Junge": "Puck"
    },
-   "notes": "# AUDIO PROFILE\nErzaehler: a deep, warm, resonant German documentary narrator, like the voice of a prestigious history documentary on television. Rich low voice, very close to the microphone, calm confident authority, velvety and pleasant to listen to.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA cinematic documentary about a true story from Medina in the year 622.\n### DIRECTOR'S NOTES\nErzaehler: slow but gripping, never rushed, never theatrical, never monotone. Real dramatic pauses at '...'. Lower and more intimate at the mysteries, a little more intensity at the turning points. Calm and reverent whenever he mentions the Prophet.\nJunge: natural and emotional, like a real person.\nLeave a clear short pause between the lines."
+   "notes": "# AUDIO PROFILE\nErzaehler: a dramatic German audiobook and story narrator, like the most popular German TikTok story channels. Deep, dark, slightly smoky voice, extremely close to the microphone, intimate and tense. He also speaks Arabic like a native speaker.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA gripping true story from Medina in the year 622, told in a dark, cinematic short video.\n### DIRECTOR'S NOTES\nErzaehler: flowing pace with momentum, very dynamic intonation: drops low and quiet for suspense, rises with urgency at the turning points. Short dramatic pauses only at '...'. Never monotone, never robotic. Calm and reverent whenever he mentions the Prophet. The words in Arabic script are Arabic names and terms: pronounce them exactly like a native Arabic speaker, in the same voice and without any extra pause, then continue fluently in German.\nJunge: natural and emotional, like a real person; Arabic-script names spoken like a native Arabic speaker.\nLeave a clear short pause between the lines."
   },
   "1": {
    "model": "gemini-2.5-flash-preview-tts",
@@ -85,7 +85,8 @@
    "id": "e2",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Medina, im Jahr 622. Es gibt noch keinen Adhan. Niemand weiß, wann das Gebet beginnt."
+   "text": "Medina, im Jahr 622. Es gibt noch keinen Adhan. Niemand weiß, wann das Gebet beginnt.",
+   "say": "Medina, im Jahr 622. Es gibt noch keinen أذان. Niemand weiß, wann das Gebet beginnt."
   },
   {
    "id": "d1",
@@ -137,7 +138,8 @@
    "id": "d6",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Dann, in dieser Nacht ... hat *Abdullah ibn Zaid* einen Traum."
+   "text": "Dann, in dieser Nacht ... hat *Abdullah ibn Zaid* einen Traum.",
+   "say": "Dann, in dieser Nacht ... hat عبد الله بن زيد einen Traum."
   },
   {
    "id": "d7",
@@ -149,7 +151,8 @@
    "id": "e4",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Abdullah fragt ihn:"
+   "text": "Abdullah fragt ihn:",
+   "say": "عبد الله fragt ihn:"
   },
   {
    "id": "q1",
@@ -185,7 +188,8 @@
    "id": "d9",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Am Morgen geht Abdullah sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:"
+   "text": "Am Morgen geht Abdullah sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:",
+   "say": "Am Morgen geht عبد الله sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:"
   },
   {
    "id": "q3",
@@ -201,13 +205,15 @@
    "part": 0,
    "speaker": "Junge",
    "text": "*Bilal*?! Der Mann, den sie in Mekka so gequält haben?",
-   "dialog": true
+   "dialog": true,
+   "say": "بلال?! Der Mann, den sie in Mekka so gequält haben?"
   },
   {
    "id": "d11",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Genau der. Bilal steigt auf das *höchste Dach* ... und holt tief Luft."
+   "text": "Genau der. Bilal steigt auf das *höchste Dach* ... und holt tief Luft.",
+   "say": "Genau der. بلال steigt auf das höchste Dach ... und holt tief Luft."
   },
   {
    "id": "f1",
@@ -227,13 +233,15 @@
    "id": "e6",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Alle laufen zur Moschee."
+   "text": "Zum ersten Mal ... hört Medina den *Adhan*. Alle laufen zur Moschee.",
+   "say": "Zum ersten Mal ... hört Medina den أذان. Alle laufen zur Moschee."
   },
   {
    "id": "d12",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Da fliegt eine Tür auf. *Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:"
+   "text": "Da fliegt eine Tür auf. *Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:",
+   "say": "Da fliegt eine Tür auf. عمر! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:"
   },
   {
    "id": "q4",
@@ -248,7 +256,8 @@
    "id": "d13",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Und das Verrückteste? Umar hatte diesen Traum schon *zwanzig Tage* vorher gesehen ... und niemandem erzählt."
+   "text": "Und das Verrückteste? Umar hatte diesen Traum schon *zwanzig Tage* vorher gesehen ... und niemandem erzählt.",
+   "say": "Und das Verrückteste? عمر hatte diesen Traum schon zwanzig Tage vorher gesehen ... und niemandem erzählt."
   },
   {
    "id": "d14",
@@ -260,14 +269,10 @@
    "id": "e7",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Wusstest du das? Schreib *1* oder *2* in die Kommentare."
+   "text": "Und alles begann ... mit einem *Traum*."
   }
  ],
- "choice": {
-  "q": "WUSSTEST DU DAS?",
-  "a": "JA",
-  "b": "NEIN"
- },
+ "choice": null,
  "athanFile": "qissa_adhan/athan_full.mp3",
  "sources": [
   "Sahih al-Bukhari 603, 604 (die Leute schätzten die Gebetszeit; Glocke wie die Christen, Horn wie die Juden, Feuer)",

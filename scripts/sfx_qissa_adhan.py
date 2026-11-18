@@ -366,9 +366,12 @@ def main():
     if rooster is not None:
         add(a + 0.3, far(speed(rooster, 0.94)), 0.15, fx=True, pan=0.5)
     add(a + 1.6, far(real("donkey")) if real("donkey") is not None else None, 0.08, fx=True, pan=-0.6)
-    ch = TL["choice"]
-    add(ch["start"], ping(), 0.5, fx=True)
-    add(ch["start"] + 0.5, ping(), 0.4, fx=True)
+    ch = TL.get("choice")
+    if ch:
+        add(ch["start"], ping(), 0.5, fx=True)
+        add(ch["start"] + 0.5, ping(), 0.4, fx=True)
+    if "e7" in LINES:  # „Und alles begann … mit einem Traum.“ – leiser Schimmer + tiefer Schlag zum Logo
+        add(LINES["e7"]["start"] - 0.2, shimmer(4.0, 1.4), 0.8, fade_in=0.5, fade_out=1.5)
     a, b = seg("logo")
     add(a, B(), 0.5, fx=True)
     add(a - 0.5, W(), 0.6, fx=True)

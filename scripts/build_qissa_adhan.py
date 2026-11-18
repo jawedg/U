@@ -49,7 +49,7 @@ PLAN = [
     ("shot", "dach_b", None, [("duck",), ("p", 0.3), ("l", "f1"), ("p", 0.25), ("l", "k1"), ("p", 0.4), ("athan_end",)]),
     ("shot", "dach_d", None, [("p", 0.15), ("l", "e6"), ("p", 0.25)]),
     ("shot", "umar", None, [("p", 0.25), ("l", "d12"), ("p", 0.05), ("q", "q4"), ("p", 0.3), ("l", "d13"), ("p", 0.35)]),
-    ("shot", "ende", None, [("p", 0.2), ("choice", 4.0, "e7")]),  # d14 („Seit über 1400 Jahren …“) weggelassen: sagt schon der Einstieg
+    ("shot", "ende", None, [("p", 0.2), ("l", "d14"), ("p", 0.35), ("l", "e7"), ("p", 1.4)]),  # Ende: Kreis zum Anfang („Aus einem Traum“)
     ("card", "logo", "QISSA", 2.0),
 ]
 HOOK_IN = 2.2   # Startpunkt in der Aufnahme für das „Allahu akbar“ im Einstieg
