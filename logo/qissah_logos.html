@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- QISSAH – Logo-Entwürfe fürs TikTok-Profilbild (1080×1080, wird rund angezeigt). Rendern: node logo/render_logos.js -->
+<style>
+  @font-face { font-family: "Amiri"; src: url("../public/fonts/amiri-arabic-700-normal.woff2"); font-weight: 700; }
+  @font-face { font-family: "EB Garamond"; src: url("../public/fonts/eb-garamond-latin-600-normal.woff2"); font-weight: 600; }
+  @font-face { font-family: "EB Garamond"; src: url("../public/fonts/eb-garamond-latin-500-normal.woff2"); font-weight: 500; }
+  :root { --gold: #e8b54d; --gold2: #f6d38a; --ink: #07080a; }
+  html, body { margin: 0; background: #222; }
+  .logo { width: 1080px; height: 1080px; position: relative; overflow: hidden; display: flex; flex-direction: column;
+          align-items: center; justify-content: center; margin-bottom: 20px; }
+  .glow { filter: drop-shadow(0 0 18px rgba(232,181,77,.45)) drop-shadow(0 0 60px rgba(232,181,77,.18)); }
+  .mono { font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--gold); }
+  .ar { font-family: "Amiri", serif; font-weight: 700; color: var(--gold); line-height: 1; }
+
+  /* 1 Klassisch – wie die Schlusstafel im Video */
+  #l1 { background: radial-gradient(circle at 50% 45%, #15130f 0%, var(--ink) 62%); }
+  #l1 .ring { position: absolute; inset: 70px; border-radius: 50%; border: 6px solid rgba(232,181,77,.55); }
+  #l1 .ring2 { position: absolute; inset: 92px; border-radius: 50%; border: 2px solid rgba(232,181,77,.3); }
+  #l1 .ar { font-size: 330px; margin-top: -60px; }
+  #l1 .mono { font-size: 112px; letter-spacing: 26px; margin-left: 26px; margin-top: 10px; }
+
+  /* 2 Mond – Nachthimmel, Mondsichel um das arabische Wort */
+  #l2 { background: radial-gradient(circle at 50% 40%, #142238 0%, #0a1220 45%, #04060b 80%); }
+  #l2 svg.moon { position: absolute; left: 0; top: 0; }
+  #l2 .ar { font-size: 270px; margin-top: 300px; color: var(--gold2); }
+  #l2 .mono { font-size: 96px; letter-spacing: 24px; margin-left: 24px; margin-top: 20px; }
+
+  /* 3 Monogramm Q */
+  #l3 { background: radial-gradient(circle at 50% 45%, #17140e 0%, var(--ink) 65%); }
+  #l3 .q { font-family: "EB Garamond", serif; font-weight: 600; font-size: 600px; color: var(--gold); line-height: 1;
+           margin-top: -260px; margin-left: 40px; }
+  #l3 .mono { position: absolute; bottom: 175px; font-size: 76px; letter-spacing: 22px; margin-left: 22px; }
+
+  /* 4 Öllampe – wie im Video in der Hand */
+  #l4 { background: radial-gradient(circle at 50% 40%, #2a1d0c 0%, #120d07 38%, var(--ink) 70%); }
+  #l4 .mono { font-size: 112px; letter-spacing: 26px; margin-left: 26px; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div class="logo" id="l1">
+  <div class="ring"></div><div class="ring2"></div>
+  <div class="ar glow">قصة</div>
+  <div class="mono glow">QISSAH</div>
+</div>
+
+<div class="logo" id="l2">
+  <svg class="moon" width="1080" height="1080" viewBox="0 0 1080 1080">
+    <defs>
+      <mask id="cres"><rect width="1080" height="1080" fill="white"/><circle cx="582" cy="228" r="128" fill="black"/></mask>
+      <filter id="mglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <circle cx="530" cy="262" r="140" fill="#f6d38a" mask="url(#cres)" filter="url(#mglow)"/>
+    <g fill="#f6d38a" filter="url(#mglow)">
+      <path d="M700 190 l8 23 23 8 -23 8 -8 23 -8 -23 -23 -8 23 -8z"/>
+      <circle cx="300" cy="230" r="5"/><circle cx="830" cy="420" r="4"/><circle cx="250" cy="420" r="3.5"/>
+      <circle cx="700" cy="140" r="3.5"/><circle cx="380" cy="150" r="3"/>
+    </g>
+  </svg>
+  <div class="ar glow" style="position:relative">قصة</div>
+  <div class="mono glow" style="position:relative">QISSAH</div>
+</div>
+
+<div class="logo" id="l3">
+  <div class="q glow">Q</div>
+  <div class="mono glow">QISSAH</div>
+</div>
+
+<div class="logo" id="l4">
+  <svg width="620" height="560" viewBox="0 0 620 560" class="glow" style="margin-top:-40px;overflow:visible">
+    <defs>
+      <radialGradient id="fl" cx="50%" cy="65%" r="60%">
+        <stop offset="0" stop-color="#fff6d8"/><stop offset=".45" stop-color="#ffd27a"/><stop offset="1" stop-color="#e88a2a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#ffcf72" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf72" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <!-- Lichtschein -->
+    <circle cx="470" cy="215" r="200" fill="url(#halo)"/>
+    <!-- Flamme an der Tülle -->
+    <path d="M470 100 C 500 160, 520 205, 497 250 C 485 272, 455 272, 443 250 C 425 215, 445 165, 470 100 Z" fill="url(#fl)"/>
+    <path d="M470 175 C 482 205, 488 228, 478 246 C 472 256, 466 256, 461 246 C 453 230, 458 205, 470 175 Z" fill="#fffaf0"/>
+    <!-- Öllampe (Tonlampe): Körper, Tülle, Griff -->
+    <g fill="none" stroke="#e8b54d" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M95 360 C 95 300, 170 265, 270 265 C 350 265, 400 280, 445 262 C 470 252, 492 262, 492 280
+               C 492 300, 470 312, 440 318 C 410 324, 400 345, 380 380 C 355 420, 300 440, 240 440
+               C 150 440, 95 410, 95 360 Z"/>
+      <path d="M95 345 C 45 335, 30 290, 60 270 C 85 255, 115 275, 120 300"/>
+      <ellipse cx="250" cy="300" rx="62" ry="16"/>
+      <path d="M150 470 L 360 470" stroke-width="12"/>
+    </g>
+  </svg>
+  <div class="mono glow">QISSAH</div>
+</div>
+
+</body>
+</html>
