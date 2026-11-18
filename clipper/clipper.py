@@ -548,7 +548,7 @@ def build_props(clip, lay, chunks, peaks, src_file, src_t0):
 def render(props, out, work, name):
     pf = work / f"{name}.props.json"
     pf.write_text(json.dumps(props))
-    cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=20",
+    cmd = ["npx", "remotion", "render", "ViralClip", str(out), f"--props={pf}", "--concurrency=4", "--crf=23",
            "--log=error"]
     if Path(BROWSER).exists():
         cmd.append(f"--browser-executable={BROWSER}")
