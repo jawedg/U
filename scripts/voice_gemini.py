@@ -770,19 +770,49 @@ def main() -> None:
     vparts = script.get("voiceParts", {})
     vfilter = script.get("voiceFilter", "")
 
+    def chunk_groups(block: list, cfg: dict | None) -> list[list[int]]:
+        """Stück-Modus: lange Erzählung in kurze Anfragen teilen (neues Stück ab den Satz-IDs in cfg["chunks"]).
+        Nutzer: eine 1:35-min-Aufnahme am Stück klang roboterhaft, kurze Proben (~20 s) klangen natürlich."""
+        starts = set((cfg or {}).get("chunks", []))
+        groups: list[list[int]] = []
+        for j, s in enumerate(block):
+            if not groups or s.get("id") in starts:
+                groups.append([])
+            groups[-1].append(j)
+        return groups
+
     def full_path(v: str, part: int = 0) -> Path:
         cfg = vparts.get(str(part))
         if cfg:
-            return samples_dir / f"{a.project}-p{part}-{'+'.join(cfg['speakers'].values())}.wav"
+            k = ".k" if cfg.get("chunks") else ""
+            return samples_dir / f"{a.project}-p{part}-{'+'.join(cfg['speakers'].values())}{k}.wav"
         if a.project == "train":
             return samples_dir / f"{v}.wav"
         return samples_dir / (f"{a.project}-{v}-p{part}.wav" if multi else f"{a.project}-{v}.wav")
 
     def narrate(v: str, part: int = 0) -> Path:
         f = full_path(v, part)
+        cfg = vparts.get(str(part))
+        if cfg and cfg.get("chunks"):  # Stück-Modus: jedes Stück eigene Anfrage (fertige Stücke werden wiederverwendet)
+            block = [s for s in voiced if s.get("part", 0) == part]
+            multi_spk = len(cfg["speakers"]) > 1
+            cfiles = []
+            for k, g in enumerate(chunk_groups(block, cfg)):
+                cf = f.with_name(f"{f.stem}{k}.wav")
+                if not cf.exists():
+                    lines_ = [f"{block[j]['speaker']}: {spoken(block[j])}" if multi_spk else spoken(block[j]) for j in g]
+                    text = cfg["notes"].strip() + "\n#### TRANSCRIPT\n" + ("\n" if multi_spk else "\n\n").join(lines_)
+                    print(f"🎙️  Erzeuge Block {part}, Stück {k + 1} ({len(g)} Sätze, {cfg['model']}) …", flush=True)
+                    save_audio(cf, tts(text, v, cfg))
+                cfiles.append(cf)
+            lst = f.with_suffix(".list")
+            lst.write_text("".join(f"file '{c.resolve()}'\n" for c in cfiles))
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+                            "-c", "copy", str(f)], check=True)
+            lst.unlink()
+            return f
         if a.neu or not f.exists():
             block = [s for s in voiced if s.get("part", 0) == part]
-            cfg = vparts.get(str(part))
             if cfg:  # Regie-Anweisungen + Transkript („Sprecher: Text“ bei mehreren Sprechern)
                 multi_spk = len(cfg["speakers"]) > 1
                 lines_ = [f"{s['speaker']}: {spoken(s)}" if multi_spk else spoken(s) for s in block]
@@ -814,7 +844,16 @@ def main() -> None:
         if pc and len(pc["speakers"]) == 1:  # Block mit EINER Stimme: die Stimme aus voiceParts nehmen
             v = next(iter(pc["speakers"].values()))
         full = narrate(v, part)
-        fs = split(full, [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
+        if pc and pc.get("chunks"):  # jedes Stück einzeln schneiden (wenige Sätze -> sichere Schnitte), Stückgrenzen sind exakt
+            fs = []
+            for k, g in enumerate(chunk_groups(block, pc)):
+                cf = full.with_name(f"{full.stem}{k}.wav")
+                for p_ in split(cf, [spoken(block[j]) for j in g], out_dir, f"{part}-c{k}-", align=True):
+                    dst = out_dir / f"line-{part}-{len(fs)}.wav"
+                    p_.replace(dst)
+                    fs.append(dst)
+        else:
+            fs = split(full, [spoken(s) for s in block], out_dir, f"{part}-" if multi else "", align=str(part) in vparts)
         if pc and pc.get("flow"):
             # Fluss-Modus (Nutzer: Erzähler klang „gehackt“): die Aufnahme bleibt wie gesprochen – Pausen, Atmer und
             # Lautstärke wie im Original. Ganze Aufnahme EINMAL filtern + angleichen, dann exakt an den Schnitten teilen.
