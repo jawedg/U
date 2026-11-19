@@ -22,7 +22,7 @@ Schofar-Klang: Tfursten, Wikimedia Commons (CC BY-SA 3.0). Weitere Geräusche: S
 - Bilal wurde in Mekka gequält: Sira Ibn Hisham
 
 ## Darstellung
-- Ein Erzähler (Algieba, arabische Namen arabisch ausgesprochen) erzählt; erfundene Leute sprechen mit eigenen Stimmen (Dialoge, kursive Untertitel).
+- Ein Erzähler (ElevenLabs-Stimme „Helmut Stieglbauer“, Regie je Satz; arabische Namen arabisch ausgesprochen) erzählt; erfundene Leute sprechen mit eigenen Stimmen (Dialoge, kursive Untertitel).
 - Worte der Sahaba und des Propheten ﷺ: vom Erzähler angekündigt („… sagte:“), von einer Zitat-Stimme mit Hall gesprochen und als goldene Schrift gezeigt.
 - Menschen ohne Gesicht, Sahaba mit Licht über dem Kopf, der Prophet ﷺ nie als Figur – nur als Licht.
 - Adhan: echte Aufnahme (vom Nutzer); im Einstieg das erste „Allahu akbar“, später die ersten zwei „Allahu akbar“ pur, ohne darüber zu sprechen.
