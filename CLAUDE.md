@@ -190,7 +190,10 @@ Lokal reicht `npm run render:3d`.
   und erfundene Leute (z. B. Orus, Iapetus). Worte von Sahaba und dem Propheten ﷺ NUR als goldene Schrift (`quotes` in script.json).
   Menschen ohne Gesicht (leerer Kopf), Sahaba mit Licht über dem Kopf (`glow=True`), Prophet ﷺ nur als Licht-Säule (`holy_light`).
   Adhan nie per KI – echte Aufnahme vom Nutzer (`public/qissa_adhan/athan_full.mp3`, nicht im Repo), nur ein passender Ausschnitt.
-- Serienname vorläufig **QISSA** (قصة = Geschichte), Zusatz „WAHRE GESCHICHTEN“ – Nutzer kann ihn noch ändern (Title/Card in QissaAdhan.tsx).
+- Kanal-/Serienname **QISSAH** (قصة = Geschichte), Zusatz „WAHRE GESCHICHTEN“. Logo/Profilbild (Nutzer-Wahl): `logo/qissah-profilbild.png`
+  = geschwungenes Q (Playfair Display kursiv 700) + „QISSAH“ (Cinzel 600) in Gold (#e8b54d) im leuchtenden Gold-Doppelring auf Schwarz
+  (Quelle `logo/kursiv_varianten.html`, Variante 2). Schlusstafel im Video = dasselbe Logo, Ring zeichnet sich ein (QissaAdhan.tsx, Card „logo“).
+  Nutzer mag: 2D, Gold auf Schwarz, kein 3D-Logo, keine schmalen Schriften.
 - Ablauf:
   1. `src/qissa_adhan/script.json` (Sätze mit `part`/`voice`, Zitate, Quellen) → `python3 scripts/voice_gemini.py --project qissa_adhan`
      (3 Anfragen: Charon-Block, Orus, Iapetus) → `timing.json`.
