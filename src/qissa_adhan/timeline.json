@@ -43,12 +43,12 @@
     ],
     [
      16.834,
-     15.542
+     16.834
     ]
    ],
    "rerender": false,
-   "src_frames": 466,
-   "src_dur": 15.542
+   "src_frames": 505,
+   "src_dur": 16.834
   },
   {
    "id": "moschee",
@@ -113,12 +113,12 @@
     ],
     [
      26.172,
-     22.807
+     26.172
     ]
    ],
    "rerender": false,
-   "src_frames": 684,
-   "src_dur": 22.807
+   "src_frames": 785,
+   "src_dur": 26.172
   },
   {
    "id": "morgen_karte",
@@ -162,12 +162,12 @@
     ],
     [
      11.415,
-     10.18
+     11.415
     ]
    ],
    "rerender": false,
-   "src_frames": 305,
-   "src_dur": 10.18
+   "src_frames": 342,
+   "src_dur": 11.415
   },
   {
    "id": "dach_c",
@@ -225,12 +225,12 @@
     ],
     [
      6.482,
-     5.489
+     6.482
     ]
    ],
    "rerender": false,
-   "src_frames": 165,
-   "src_dur": 5.489
+   "src_frames": 194,
+   "src_dur": 6.482
   },
   {
    "id": "umar",
@@ -246,12 +246,12 @@
     ],
     [
      21.114,
-     18.816
+     21.114
     ]
    ],
    "rerender": false,
-   "src_frames": 564,
-   "src_dur": 18.816
+   "src_frames": 633,
+   "src_dur": 21.114
   },
   {
    "id": "ende",
