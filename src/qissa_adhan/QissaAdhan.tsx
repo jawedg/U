@@ -34,6 +34,8 @@ const FONTS: [string, string, string, string][] = [
   ["EB Garamond", "fonts/eb-garamond-latin-500-italic.woff2", "500", "italic"],
   ["EB Garamond", "fonts/eb-garamond-latin-600-normal.woff2", "600", "normal"],
   ["Amiri", "fonts/amiri-arabic-700-normal.woff2", "700", "normal"],
+  ["Playfair Display", "fonts/playfair-display-latin-700-italic.woff2", "700", "italic"],
+  ["Cinzel", "fonts/cinzel-latin-600-normal.woff2", "600", "normal"],
 ];
 if (typeof document !== "undefined" && typeof FontFace !== "undefined") {
   const h = delayRender("Schriften laden");
@@ -314,7 +316,7 @@ const Card: React.FC<{ s: any; t: number }> = ({ s, t }) => {
   const local = t - s.start;
   if (s.id === "logo") {
     // Kanal-Logo QISSAH (Nutzer): Gold-Doppelring zeichnet sich ein, das Q (wie im Profilbild-Entwurf) leuchtet auf,
-    // darunter QISSAH + kleines arabisches Wort + „Wahre Geschichten“.
+    // darin QISSAH, unter dem Ring „Wahre Geschichten“ – gleiches Logo wie das TikTok-Profilbild.
     const ease = (a: number, b: number) => interpolate(local, [a, b], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
     const ring = ease(0.05, 0.95);
     const q = spring({ frame: fr(local - 0.3), fps: FPS, config: { damping: 16, stiffness: 120 } });
@@ -341,18 +343,18 @@ const Card: React.FC<{ s: any; t: number }> = ({ s, t }) => {
             <circle cx={540} cy={820} r={R2} stroke="#fff0c2" strokeWidth={2} strokeDasharray={C2} strokeDashoffset={C2 * (1 - ring)} />
           </g>
         </svg>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 560, textAlign: "center", lineHeight: 1,
-                      fontFamily: SERIF, fontWeight: 600, fontSize: 400, color: GOLD, paddingLeft: 22,
-                      opacity: Math.min(1, q * 1.4), transform: `scale(${0.86 + 0.14 * q})`,
+        {/* wie das Profilbild (Nutzer-Wahl „Kursiv B“): geschwungenes Q (Playfair kursiv) + QISSAH (Cinzel) im Ring */}
+        <div style={{ position: "absolute", left: 0, right: 0, top: 552, textAlign: "center", lineHeight: 1,
+                      fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontWeight: 700, fontSize: 360, color: GOLD,
+                      paddingLeft: 7, opacity: Math.min(1, q * 1.4), transform: `scale(${0.86 + 0.14 * q})`,
                       filter: `drop-shadow(0 0 ${18 * glow}px rgba(232,181,77,${glow})) drop-shadow(0 0 50px rgba(232,181,77,0.18))` }}>Q</div>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 1215, textAlign: "center", opacity: name,
-                      transform: `translateY(${(1 - name) * 18}px)` }}>
-          <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 84, letterSpacing: 24 + (1 - name) * 14, paddingLeft: 24, color: GOLD,
-                        filter: "drop-shadow(0 0 10px rgba(232,181,77,0.45))" }}>QISSAH</div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 962, textAlign: "center", opacity: name,
+                      transform: `translateY(${(1 - name) * 14}px)` }}>
+          <div style={{ fontFamily: "Cinzel, serif", fontWeight: 600, fontSize: 46, letterSpacing: 14 + (1 - name) * 10, paddingLeft: 14,
+                        color: GOLD, filter: "drop-shadow(0 0 10px rgba(232,181,77,0.45))" }}>QISSAH</div>
         </div>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 1335, textAlign: "center", opacity: tag }}>
-          <div style={{ fontFamily: "Amiri, serif", fontWeight: 700, fontSize: 56, color: GOLD, opacity: 0.85 }}>قصة</div>
-          <div style={{ fontFamily: MONO, fontSize: 26, letterSpacing: 9, paddingLeft: 9, color: "rgba(255,248,235,0.65)", marginTop: 10 }}>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1215, textAlign: "center", opacity: tag }}>
+          <div style={{ fontFamily: MONO, fontSize: 26, letterSpacing: 9, paddingLeft: 9, color: "rgba(255,248,235,0.65)" }}>
             WAHRE GESCHICHTEN
           </div>
         </div>
