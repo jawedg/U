@@ -608,6 +608,132 @@ def _speech_span(path: Path) -> tuple[float, float]:
         return 0.0, len(x) / 16000
     return on[0] * 0.01, (on[-1] + 1) * 0.01
 
+TAG = re.compile(r"\[[^\]]*\]")  # ElevenLabs-v3-Regie in eckigen Klammern, z. B. [whispers] – wird nicht gesprochen
+
+
+def eleven_tts(text: str, voice: str, model: str, settings: dict | None, cache_dir: Path) -> tuple[Path, dict]:
+    """ElevenLabs-Sprachausgabe MIT Zeit je Buchstabe (für exakte Schnitte + Untertitel). Ergebnis wird zwischengespeichert
+    (gleicher Text/Stimme/Modell = keine neue Anfrage, keine Credits). Schlüssel: Network Secret für api.elevenlabs.io."""
+    import hashlib
+    sig = hashlib.sha1(json.dumps([text, voice, model, settings], ensure_ascii=False).encode()).hexdigest()[:16]
+    mp3, js = cache_dir / f"eleven-{sig}.mp3", cache_dir / f"eleven-{sig}.json"
+    if mp3.exists() and js.exists():
+        return mp3, json.loads(js.read_text())
+    body = {"text": text, "model_id": model}
+    if settings:
+        body["voice_settings"] = settings
+    req = urllib.request.Request(f"https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_192",
+                                 data=json.dumps(body).encode(),
+                                 headers={"xi-api-key": os.environ.get("ELEVENLABS_API_KEY", "proxy-injected"),
+                                          "Content-Type": "application/json"})
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r:
+                d = json.load(r)
+            break
+        except urllib.error.HTTPError as e:
+            msg = e.read()[:300]
+            if e.code in (429, 500, 502, 503) and attempt < 3:
+                print(f"   … ElevenLabs {e.code}, warte …")
+                time.sleep(20 * (attempt + 1))
+                continue
+            sys.exit(f"❌ ElevenLabs {e.code}: {msg}")
+    mp3.write_bytes(base64.b64decode(d["audio_base64"]))
+    js.write_text(json.dumps(d["alignment"]))
+    return mp3, d["alignment"]
+
+
+def eleven_block(block: list, pc: dict, out_dir: Path, part: int, cache_dir: Path, groups: list[list[int]]) -> tuple[list[Path], list]:
+    """Erzähler per ElevenLabs (Nutzer: Gemini klang roboterhaft): je Szene EINE Anfrage (Feld "el" = Text mit Regie-Tags),
+    exakte Satzgrenzen aus den Buchstaben-Zeiten, Ränder max. `edge` s Stille, Wortzeiten für die Untertitel.
+    Rückgabe: Dateien (eine je Satz, in Reihenfolge von block) + Wortlisten."""
+    files, words_all = [], []
+    edge = float(pc.get("edge", 0.3))
+    voice = next(iter(pc["speakers"].values()))
+    for k, g in enumerate(groups):
+        texts = [block[j].get("el") or spoken(block[j]) for j in g]
+        joined, offs = "", []
+        for t in texts:
+            if joined:
+                joined += " "
+            offs.append((len(joined), len(joined) + len(t)))
+            joined += t
+        print(f"🎙️  ElevenLabs Block {part}, Szene {k + 1}/{len(groups)} ({len(joined)} Zeichen, {pc['model']}) …", flush=True)
+        mp3, al = eleven_tts(joined, voice, pc["model"], pc.get("settings"), cache_dir)
+        ch, st, en = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
+        if len(ch) != len(joined):
+            sys.exit(f"❌ Zeiten passen nicht zum Text ({len(ch)} statt {len(joined)} Zeichen)")
+        spoken_mask = [True] * len(joined)
+        for m in TAG.finditer(joined):
+            for i in range(m.start(), m.end()):
+                spoken_mask[i] = False
+        wav = mp3.with_suffix(".proc.wav")
+        flt = pc.get("filter", "highpass=f=60")
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(mp3), "-af",
+                        f"{flt + ',' if flt else ''}loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-ac", "1", str(wav)], check=True)
+        total = duration(wav)
+        spans = []  # (erster gesprochener Buchstabe Beginn, letzter Ende) je Satz
+        for a, b in offs:
+            idx = [i for i in range(a, b) if spoken_mask[i] and not ch[i].isspace()]
+            spans.append((st[idx[0]], en[idx[-1]]))
+        # Schnitte an ECHTE Pausen legen: nach einem Regie-Tag kommen die Buchstaben-Zeiten oft ~0,3 s zu spät
+        # (sonst fehlt z. B. das „M“ von „Medina“). Je Satzgrenze die längste Stille im Bereich der Grenze nehmen.
+        log = subprocess.run(["ffmpeg", "-i", str(wav), "-af", "silencedetect=n=-40dB:d=0.12", "-f", "null", "-"],
+                             capture_output=True, text=True).stderr
+        sil = list(zip([float(x) for x in re.findall(r"silence_start: ([\d.]+)", log)],
+                       [float(x) for x in re.findall(r"silence_end: ([\d.]+)", log)]))
+        lead = next((e for s_, e in sil if s_ <= 0.05), 0.0)  # Stille ganz am Anfang
+        trail = next((s_ for s_, e in sil if e >= total - 0.05), total)  # Stille ganz am Ende
+        cut_end, cut_start = {}, {}
+        for n in range(len(spans) - 1):
+            a_end, b_start = spans[n][1], spans[n + 1][0]
+            cand = [(s_, e) for s_, e in sil if e > a_end - 0.6 and s_ < b_start + 0.6 and s_ > 0.05 and e < total - 0.05]
+            if cand:
+                s_, e = max(cand, key=lambda x: x[1] - x[0])
+                mid = (s_ + e) / 2
+                cut_end[n], cut_start[n + 1] = min(s_ + edge, mid), max(e - edge, mid)
+            else:
+                mid = (a_end + b_start) / 2
+                cut_end[n], cut_start[n + 1] = mid, mid
+        # Szenen-Ende: ElevenLabs schneidet hart nach dem letzten Laut ab -> im Text endet die Szene mit " ..." (Ausklang);
+        # geschnitten wird an der ersten echten Stille nach dem letzten Wort (kein Atmer/Klicken danach)
+        la, lb = offs[-1]
+        lw = max((m.start() + la for m in re.finditer(r"\w+", joined[la:lb]) if spoken_mask[m.start() + la]), default=la)
+        after = [(s_, e) for s_, e in sil if s_ >= st[lw]]
+        if after:
+            trail = after[0][0]
+        for n, (j, (a, b), (s0, s1)) in enumerate(zip(g, offs, spans)):
+            c0 = cut_start.get(n, max(0.0, lead - edge))
+            c1 = cut_end.get(n, min(total, trail + edge))
+            f = out_dir / f"line-{part}-{len(files)}.wav"
+            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{c0:.4f}", "-t", f"{c1 - c0:.4f}", "-i", str(wav), "-af",
+                            f"afade=t=in:d=0.006,areverse,afade=t=in:d={0.05 if n == len(spans) - 1 else 0.012},areverse", str(f)], check=True)
+            files.append(f)
+            # Wortzeiten: gesprochene Wörter (ohne Tags) aus den Buchstaben-Zeiten, dann auf die Untertitel-Wörter abbilden
+            sp = []  # (Beginn, Text) je gesprochenem Wort
+            i = a
+            while i < b:
+                if spoken_mask[i] and not ch[i].isspace():
+                    w0 = i
+                    while i < b and spoken_mask[i] and not ch[i].isspace():
+                        i += 1
+                    sp.append((st[w0] - c0, joined[w0:i]))
+                else:
+                    i += 1
+            disp = block[j]["text"].split()
+            if len(disp) == len(sp):
+                ws = [{"word": w, "start": round(max(0.0, t), 3)} for w, (t, _) in zip(disp, sp)]
+            else:  # andere Wortzahl (z. B. arabischer Name): nach Position im Satz abbilden
+                tot_d = sum(len(w) + 1 for w in disp)
+                ws, pos = [], 0
+                for w in disp:
+                    r = pos / tot_d
+                    ws.append({"word": w, "start": round(max(0.0, sp[min(len(sp) - 1, int(r * len(sp)))][0]), 3)})
+                    pos += len(w) + 1
+            words_all.append(ws)
+    return files, words_all
+
+
 def word_times_audio(path: Path, text: str, dur: float) -> list[dict]:
     """Wortzeiten nach dem echten Ton (statt gleichmäßig verteilt – da liefen die Untertitel nach Pausen voraus):
     1) Sprechpausen im Stück finden, 2) Satzgrenzen (. ! ? : …) auf die passendsten Pausen legen,
@@ -836,6 +962,7 @@ def main() -> None:
     # Stimme haben ("voice" in der Szene). Die Stücke werden danach wieder der Szenen-Reihenfolge zugeordnet.
     fmap: dict[int, Path] = {}
     flow_files: set = set()
+    el_words: dict = {}  # ElevenLabs: exakte Wortzeiten je Datei
     for part in parts:
         idxs = [i for i, s in enumerate(scenes) if s.get("text") and s.get("part", 0) == part]
         block = [scenes[i] for i in idxs]
@@ -843,6 +970,12 @@ def main() -> None:
         pc = vparts.get(str(part))
         if pc and len(pc["speakers"]) == 1:  # Block mit EINER Stimme: die Stimme aus voiceParts nehmen
             v = next(iter(pc["speakers"].values()))
+        if pc and pc.get("engine") == "eleven":  # Erzähler per ElevenLabs (fertig geschnitten, exakte Wortzeiten)
+            fs, wl = eleven_block(block, pc, out_dir, part, samples_dir, chunk_groups(block, pc))
+            flow_files.update(fs)
+            el_words.update(zip(fs, wl))
+            fmap.update(zip(idxs, fs))
+            continue
         full = narrate(v, part)
         if pc and pc.get("chunks"):  # jedes Stück einzeln schneiden (wenige Sätze -> sichere Schnitte), Stückgrenzen sind exakt
             fs = []
@@ -888,7 +1021,7 @@ def main() -> None:
             if tg and s.get("fx") != "hall":
                 tighten(f, tg.get("maxPause", 0.38), tg.get("tempo", 1.0), dots="..." in s["text"])
             dur = clean(f, vfilter)
-        ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": word_times_audio(f, s["text"], dur)}
+        ln = {"file": f"{a.project}/{f.name}", "seconds": round(dur + PAUSE, 3), "words": el_words.get(f) or word_times_audio(f, s["text"], dur)}
         if f in flow_files:
             ln["flow"] = s.get("part", 0)
         if s.get("fx") == "hall":

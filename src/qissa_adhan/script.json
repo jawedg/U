@@ -5,13 +5,22 @@
  "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
  "voiceParts": {
   "0": {
-   "model": "gemini-2.5-flash-preview-tts",
+   "engine": "eleven",
+   "model": "eleven_v3",
    "speakers": {
-    "Erzaehler": "Algieba",
-    "Junge": "Puck"
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
    },
-   "notes": "# AUDIO PROFILE\nErzaehler: a dramatic German audiobook and story narrator, like the most popular German TikTok story channels. Deep, dark, slightly smoky voice, extremely close to the microphone, intimate and tense. He also speaks Arabic like a native speaker.\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n## THE SCENE\nA gripping true story from Medina in the year 622, told in a dark, cinematic short video.\n### DIRECTOR'S NOTES\nErzaehler: flowing pace with momentum, very dynamic intonation: drops low and quiet for suspense, rises with urgency at the turning points. Short dramatic pauses only at '...'. Never monotone, never robotic. Calm and reverent whenever he mentions the Prophet. The words in Arabic script are Arabic names and terms: pronounce them exactly like a native Arabic speaker, in the same voice and without any extra pause, then continue fluently in German.\nJunge: natural and emotional, like a real person; Arabic-script names spoken like a native Arabic speaker.\nLeave a clear short pause between the lines.",
-   "flow": true
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "d3",
+    "d6",
+    "d9",
+    "e6",
+    "d14"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "note": "Nutzer 19.11.2026: Gemini klang roboterhaft -> ElevenLabs v3 mit Regie-Tags je Satz (Feld el), je Szene 1 Anfrage."
   },
   "1": {
    "model": "gemini-2.5-flash-preview-tts",
@@ -67,6 +76,13 @@
     "Umar": "Alnilam"
    },
    "notes": "Umar ibn al-Khattab (Zitat, Hall)."
+  },
+  "8": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Junge": "Puck"
+   },
+   "notes": "# AUDIO PROFILE\nJunge: a young man from Medina, about 20 years old, worried and emotional, natural, a little breathless.\n### DIRECTOR'S NOTES\nNatural and emotional, like a real person, never robotic. The words in Arabic script are names: pronounce them like a native Arabic speaker. Leave a clear pause of about one second between the lines."
   }
  },
  "sentences": [
@@ -74,24 +90,27 @@
    "id": "h1",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Diese Worte hörst du jeden Tag. Fünfmal."
+   "text": "Diese Worte hörst du jeden Tag. Fünfmal.",
+   "el": "[softly] Diese Worte hörst du jeden Tag. ... Fünfmal."
   },
   {
    "id": "h2",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Aber woher kommen sie? ... Aus einem *Traum*."
+   "text": "Aber woher kommen sie? ... Aus einem *Traum*.",
+   "el": "[curious] Aber woher kommen sie? ... [whispers] Aus einem Traum."
   },
   {
    "id": "e2",
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Medina, im Jahr 622. Es gibt noch keinen Adhan. Niemand weiß, wann das Gebet beginnt.",
-   "say": "Medina, im Jahr sechshundertzweiundzwanzig. Es gibt noch keinen أذان. Niemand weiß, wann das Gebet beginnt."
+   "say": "Medina, im Jahr sechshundertzweiundzwanzig. Es gibt noch keinen أذان. Niemand weiß, wann das Gebet beginnt.",
+   "el": "[calm, storytelling] Medina, im Jahr sechshundertzweiundzwanzig. Es gibt noch keinen أذان. [quietly] Niemand weiß, wann das Gebet beginnt."
   },
   {
    "id": "d1",
-   "part": 0,
+   "part": 8,
    "speaker": "Junge",
    "text": "Entschuldigung ... hat das Gebet schon angefangen?",
    "dialog": true
@@ -121,39 +140,45 @@
    "id": "d3",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Der Prophet, Friede sei mit ihm, macht sich Sorgen. Wie ruft man die Menschen zum *Gebet*?"
+   "text": "Der Prophet, Friede sei mit ihm, macht sich Sorgen. Wie ruft man die Menschen zum *Gebet*?",
+   "el": "[warm, reverent] Der Prophet, Friede sei mit ihm, macht sich Sorgen. [thoughtful] Wie ruft man die Menschen zum Gebet?"
   },
   {
    "id": "d4",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Mit einer *Glocke*, wie die Christen? Mit einem *Horn*, wie die Juden? Mit *Feuer*?"
+   "text": "Mit einer *Glocke*, wie die Christen? Mit einem *Horn*, wie die Juden? Mit *Feuer*?",
+   "el": "[curious] Mit einer Glocke, wie die Christen? Mit einem Horn, wie die Juden? [doubtful] Mit Feuer?"
   },
   {
    "id": "d5",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Nein. Nichts davon ... passt zu uns."
+   "text": "Nein. Nichts davon ... passt zu uns.",
+   "el": "[firmly] Nein. ... [quietly] Nichts davon ... passt zu uns."
   },
   {
    "id": "d6",
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Dann, in dieser Nacht ... hat *Abdullah ibn Zaid* einen Traum.",
-   "say": "Dann, in dieser Nacht ... hat عبد الله بن زيد einen Traum."
+   "say": "Dann, in dieser Nacht ... hat عبد الله بن زيد einen Traum.",
+   "el": "[mysterious, hushed] Dann, in dieser Nacht ... hat عبد الله بن زيد einen Traum."
   },
   {
    "id": "d7",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Ein Mann in *grünen* Gewändern umkreist ihn. In seiner Hand: eine *Glocke*."
+   "text": "Ein Mann in *grünen* Gewändern umkreist ihn. In seiner Hand: eine *Glocke*.",
+   "el": "[whispers] Ein Mann in grünen Gewändern umkreist ihn. [softly] In seiner Hand: eine Glocke."
   },
   {
    "id": "e4",
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Abdullah fragt ihn:",
-   "say": "عبد الله fragt ihn:"
+   "say": "عبد الله fragt ihn:",
+   "el": "[softly] عبد الله fragt ihn:"
   },
   {
    "id": "q1",
@@ -168,7 +193,8 @@
    "id": "e5",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Doch der Mann sagt:"
+   "text": "Doch der Mann sagt:",
+   "el": "[hushed] Doch der Mann sagt:"
   },
   {
    "id": "q2",
@@ -183,14 +209,16 @@
    "id": "d8",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Und er lehrt ihn Worte ... die heute jeder Muslim kennt."
+   "text": "Und er lehrt ihn Worte ... die heute jeder Muslim kennt.",
+   "el": "[awed, softly] Und er lehrt ihn Worte ... die heute jeder Muslim kennt. ..."
   },
   {
    "id": "d9",
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Am Morgen geht Abdullah sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:",
-   "say": "Am Morgen geht عبد الله sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:"
+   "say": "Am Morgen geht عبد الله sofort zum Propheten, Friede sei mit ihm. Und der Prophet sagte:",
+   "el": "[excited] Am Morgen geht عبد الله sofort zum Propheten, [calm, reverent] Friede sei mit ihm. Und der Prophet sagte:"
   },
   {
    "id": "q3",
@@ -203,7 +231,7 @@
   },
   {
    "id": "d10",
-   "part": 0,
+   "part": 8,
    "speaker": "Junge",
    "text": "*Bilal*?! Der Mann, den sie in Mekka so gequält haben?",
    "dialog": true,
@@ -214,7 +242,8 @@
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Genau der. Bilal steigt auf das *höchste Dach* ... und holt tief Luft.",
-   "say": "Genau der. بلال steigt auf das höchste Dach ... und holt tief Luft."
+   "say": "Genau der. بلال steigt auf das höchste Dach ... und holt tief Luft.",
+   "el": "[proudly] Genau der. بلال steigt auf das höchste Dach ... [whispers] und holt tief Luft. ..."
   },
   {
    "id": "f1",
@@ -235,14 +264,16 @@
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Zum ersten Mal ... hört Medina den *Adhan*. Alle laufen zur Moschee.",
-   "say": "Zum ersten Mal ... hört Medina den أذان. Alle laufen zur Moschee."
+   "say": "Zum ersten Mal ... hört Medina den أذان. Alle laufen zur Moschee.",
+   "el": "[awed] Zum ersten Mal ... hört Medina den أذان. [excited] Alle laufen zur Moschee."
   },
   {
    "id": "d12",
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Da fliegt eine Tür auf. *Umar*! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:",
-   "say": "Da fliegt eine Tür auf. عمر! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:"
+   "say": "Da fliegt eine Tür auf. عمر! Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:",
+   "el": "[excited] Da fliegt eine Tür auf. عمر! [fast, breathless] Er rennt so schnell, dass sein Umhang über den Boden schleift. Er ruft:"
   },
   {
    "id": "q4",
@@ -258,19 +289,22 @@
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Und das Verrückteste? Umar hatte diesen Traum schon *zwanzig Tage* vorher gesehen ... und niemandem erzählt.",
-   "say": "Und das Verrückteste? عمر hatte diesen Traum schon zwanzig Tage vorher gesehen ... und niemandem erzählt."
+   "say": "Und das Verrückteste? عمر hatte diesen Traum schon zwanzig Tage vorher gesehen ... und niemandem erzählt.",
+   "el": "[mysterious] Und das Verrückteste? [whispers] عمر hatte diesen Traum schon zwanzig Tage vorher gesehen ... und niemandem erzählt. ..."
   },
   {
    "id": "d14",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Seit über *1400* Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt."
+   "text": "Seit über *1400* Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt.",
+   "el": "[warm, slow] Seit über vierzehnhundert Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt."
   },
   {
    "id": "e7",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Und alles begann ... mit einem *Traum*."
+   "text": "Und alles begann ... mit einem *Traum*.",
+   "el": "[softly] Und alles begann ... [whispers] mit einem Traum. ..."
   }
  ],
  "choice": null,
