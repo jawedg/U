@@ -12,6 +12,20 @@
   Älterer Stil: 2D-Strichzeichnung wie `src/athan2d/`. 3D mit Three.js in Remotion (`src/train`, `src/athan`) gefällt NICHT (zu holprig).
 - Format 1080×1920.
 
+## ElevenLabs – Erzählerstimme (aktuell, Nov. 2026)
+- Nutzer: Gemini klingt „wie Computerstimme“ → Erzähler jetzt **ElevenLabs, Stimme „Helmut Stieglbauer – Deep and Dynamic“**
+  (Voice Library, ID `JiW03c2Gt43XNUQAumRP`), Modell **`eleven_v3`** (Nutzer wählte v3 statt multilingual_v2). Nutzer hat Creator-Plan.
+- Schlüssel = Network Secret (Host `api.elevenlabs.io`, Header `xi-api-key`) in der Umgebung „Standard“; Skripte senden `proxy-injected`.
+  Dem Schlüssel fehlen `voices_read`/`user_read` (Stimmen auflisten geht nicht, Sprachausgabe per ID geht).
+- In script.json: voicePart `{"engine":"eleven","model":"eleven_v3","speakers":{"Erzaehler":"<voice_id>"},"chunks":[…],"flow":true}`;
+  je Satz Feld **`el`** = Text mit v3-Regie-Tags (`[whispers]`, `[curious]`, `[excited]`, `[softly]`, `[warm, reverent]` …), Gefühl passend
+  zum Inhalt (Nutzerwunsch: leise wo leise, andere Tonlage bei Fragen). Eine Anfrage je Szene (`chunks`), Endpunkt `/with-timestamps`:
+  Schnitte + Untertitel-Wortzeiten aus den Buchstaben-Zeiten (`eleven_block` in voice_gemini.py), Schnitt an echter Stille (Zeiten nach
+  Tags ~0,3 s zu spät). Szenen-Ende: `" ..."` ans Ende des letzten `el` + 50-ms-Ausblendung (ElevenLabs schneidet hart ab).
+  Cache: `out/stimmproben/eleven-<sig>.mp3/.json` (committet → keine Credits beim Neubau). Kosten ~1.500 Credits je Video-Erzählung.
+- Arabische Namen: **arabische Schrift im `el`-Text** (Nutzer verglich 3 Schreibweisen, wählte diese). Zahlen als Wort (Gemini las 622 als 662).
+- Dialog-Rollen (Junge, Frauen, Zitate) weiter Gemini (Puck usw.).
+
 ## Gemini-TTS – wichtig
 - API-Schlüssel kommt aus der Umgebungsvariable `GEMINI_API_KEY`. Niemals ins Repo schreiben.
   Fehlt er: Nutzer bitten, ihn in den Umgebungs-Einstellungen als Secret `GEMINI_API_KEY` einzutragen.
