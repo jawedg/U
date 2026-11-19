@@ -123,7 +123,8 @@ Lokal reicht `npm run render:3d`.
   2. **Zuschauer-Hotspots** (`community_hotspots`): Twitch-Clips, die Zuschauer live gemacht haben (yt-dlp-Liste
      `…/clips?range=24hr|7d|30d`, Zeitstempel − Stream-Start), im Abstand < 45 s gebündelt, nach Aufrufen sortiert →
      stärkstes Signal (Nutzer: Transkript-Auswahl war „random“). Frische Streams (< 24 h) liefern viele, alte kaum welche
-     → am selben Tag clippen. Im Transkript als „👥 VIEWERS CLIPPED THIS“ markiert; ohne Gemini direkt genommen.
+     → am selben Tag clippen; bei langen Streams vorher sichern: `snapshot_viewer_clips(kanal)` → `out/clips/zuschauer_<kanal>.json`
+     (wird automatisch dazugenommen). Im Transkript als „👥 VIEWERS CLIPPED THIS“ markiert; ohne Gemini direkt genommen.
   2b. **1** Gemini-Textanfrage: Auswahl + Viral-Score 0–100, Titel, Beschreibung/Hashtags, Keywords, Tags, Reaktionsmomente
   3. **1** Gemini-Bildanfrage: Facecam-Box pro Clip (danach an Rahmenlinien angelegt). Kontrolle `check_cam`: echte Facecam =
      Gesicht, das in 5 Bildern des Clips an derselben Stelle bleibt; sonst Box um dieses Gesicht bauen (Gemini-Lite hielt
@@ -145,7 +146,8 @@ Lokal reicht `npm run render:3d`.
   Live-Streams (1080p60, Werbung übersprungen) nach `out/clips/live_<kanal>_<datum>/seg/`, alle N min eine Runde
   (Analyse → Gemini-Auswahl → Render, Dateien `rNN_…`), Facecam-Layout wird wiederverwendet (spart Gemini), fertige Stücke
   werden gelöscht. **Achtung: Twitch spielt ohne Abo alle ~5 min ~3 min Werbung ein → ~40 % des Live-Streams fehlen.**
-  Besser: Aufzeichnung (VOD) nach Streamende clippen. Braucht Freigabe `*.ttvnw.net` (hat der Nutzer in den Einstellungen eingetragen). Mit `setsid nohup` starten.
+  Besser: Aufzeichnung (VOD) nach Streamende clippen. `clipper/warte.sh` (Wächter) stirbt, wenn die Cloud-Sitzung ruht →
+  stattdessen geplante Prüfungen (send_later) nutzen. Braucht Freigabe `*.ttvnw.net` (hat der Nutzer in den Einstellungen eingetragen). Mit `setsid nohup` starten.
 - Twitch-Hosts sind in der Umgebung „Standard“ freigegeben. ffmpeg kann nicht über den Proxy → Segmente lädt Python (requests).
   YouTube/Kick bleiben gesperrt. Twitch-Chat wird nicht gelesen (fremde Client-ID nicht erlaubt).
 - Setup: `pip install faster-whisper "opencv-python-headless<5" yt-dlp` (OpenCV 5 hat keine Haar-Gesichtserkennung mehr), `HF_HUB_DISABLE_XET=1` (setzt das Skript selbst).

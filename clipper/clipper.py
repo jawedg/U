@@ -371,6 +371,24 @@ def hot_line(h):
             + " | ".join(t for t in h["titles"][:5] if t.strip()))
 
 
+def snapshot_viewer_clips(login, rng="24hr", limit=500):
+    """Zuschauer-Clips eines Kanals sichern (out/clips/zuschauer_<kanal>.json), damit sie bei langen Streams nicht
+    aus der 24-h-Liste fallen. Mehrere Sicherungen werden zusammengefuehrt (hoechste Aufrufzahl gewinnt)."""
+    import yt_dlp
+    f = ROOT / "out" / "clips" / f"zuschauer_{login}.json"
+    old = {e["id"]: e for e in json.loads(f.read_text())} if f.exists() else {}
+    with yt_dlp.YoutubeDL({"quiet": True, "no_warnings": True, "extract_flat": True, "playlistend": limit}) as y:
+        info = y.extract_info(f"https://www.twitch.tv/{login}/clips?filter=clips&range={rng}", download=False)
+    for e in info.get("entries") or []:
+        if e.get("id") and e.get("timestamp"):
+            v = int(e.get("view_count") or 0)
+            if e["id"] not in old or old[e["id"]]["views"] < v:
+                old[e["id"]] = {"id": e["id"], "ts": e["timestamp"], "views": v, "title": e.get("title") or ""}
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(json.dumps(list(old.values()), ensure_ascii=False))
+    return list(old.values())
+
+
 def community_hotspots(src, work):
     """Stellen, die Zuschauer live als Twitch-Clip gespeichert haben (staerkstes Signal fuer virale Momente).
     -> [{mark (Stream-Sekunde, an der geclippt wurde), start, end, views, n, titles}], beste zuerst."""
@@ -391,11 +409,16 @@ def community_hotspots(src, work):
     except Exception as e:  # noqa
         log(f"   ⚠️  Zuschauer-Clips nicht abrufbar ({e})")
         return []
-    rows = []
+    seen = {}
     for e in info.get("entries") or []:
-        ts, v = e.get("timestamp"), e.get("view_count") or 0
-        if ts and 0 <= ts - start <= src.duration + 120:
-            rows.append((ts - start, int(v), e.get("title") or ""))
+        if e.get("timestamp"):
+            seen[e.get("id") or len(seen)] = (e["timestamp"], int(e.get("view_count") or 0), e.get("title") or "")
+    snap = ROOT / "out" / "clips" / f"zuschauer_{login}.json"
+    if snap.exists():  # frueher gesicherte Zuschauer-Clips dazunehmen
+        for e in json.loads(snap.read_text()):
+            if e["id"] not in seen or seen[e["id"]][1] < e["views"]:
+                seen[e["id"]] = (e["ts"], e["views"], e["title"])
+    rows = [(ts - start, v, t) for ts, v, t in seen.values() if 0 <= ts - start <= src.duration + 120]
     rows.sort()
     hs = []
     for off, v, t in rows:
