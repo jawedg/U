@@ -6,6 +6,7 @@ import React from "react";
 import {
   AbsoluteFill,
   Audio,
+  Easing,
   OffthreadVideo,
   Sequence,
   continueRender,
@@ -205,7 +206,7 @@ const Title: React.FC<{ t: number }> = ({ t }) => {
   return (
     <div style={{ position: "absolute", top: 150, left: 40, right: 40, textAlign: "center", opacity: op }}>
       <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 6, color: "rgba(255,248,235,0.85)", marginBottom: 22 }}>
-        <span style={{ color: GOLD }}>◆</span> QISSA · WAHRE GESCHICHTEN
+        <span style={{ color: GOLD }}>◆</span> QISSAH · WAHRE GESCHICHTEN
       </div>
       <div
         style={{
@@ -312,13 +313,48 @@ const Takbir: React.FC<{ t: number }> = ({ t }) => {
 const Card: React.FC<{ s: any; t: number }> = ({ s, t }) => {
   const local = t - s.start;
   if (s.id === "logo") {
-    const op = interpolate(local, [0, 0.4], [0, 1], clamp);
+    // Kanal-Logo QISSAH (Nutzer): Gold-Doppelring zeichnet sich ein, das Q (wie im Profilbild-Entwurf) leuchtet auf,
+    // darunter QISSAH + kleines arabisches Wort + „Wahre Geschichten“.
+    const ease = (a: number, b: number) => interpolate(local, [a, b], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+    const ring = ease(0.05, 0.95);
+    const q = spring({ frame: fr(local - 0.3), fps: FPS, config: { damping: 16, stiffness: 120 } });
+    const name = ease(0.75, 1.25);
+    const tag = ease(1.05, 1.6);
+    const glow = 0.45 + 0.25 * Math.sin(Math.min(1, local / 2.4) * Math.PI);
+    const R1 = 330, R2 = 312, C1 = 2 * Math.PI * R1, C2 = 2 * Math.PI * R2;
     return (
-      <AbsoluteFill style={{ background: "#07080a", alignItems: "center", justifyContent: "center", opacity: op }}>
-        <div style={{ fontFamily: "Amiri, serif", fontWeight: 700, fontSize: 70, color: GOLD, opacity: 0.85 }}>قصة</div>
-        <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 88, letterSpacing: 22, color: GOLD, marginLeft: 22 }}>QISSA</div>
-        <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 8, color: "rgba(255,248,235,0.6)", marginTop: 18 }}>
-          WAHRE GESCHICHTEN
+      <AbsoluteFill style={{ background: "radial-gradient(circle at 50% 44%, #16120b 0%, #07080a 58%)", opacity: interpolate(local, [0, 0.25], [0, 1], clamp) }}>
+        <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>
+          <defs>
+            <filter id="logoNeon" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b1" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="b2" />
+              <feMerge><feMergeNode in="b2" /><feMergeNode in="b1" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <g transform="rotate(-90 540 820)" fill="none" filter="url(#logoNeon)">
+            <circle cx={540} cy={820} r={R1} stroke="#e9a93a" strokeWidth={9} strokeDasharray={C1} strokeDashoffset={C1 * (1 - ring)} />
+            <circle cx={540} cy={820} r={R2} stroke="#e9a93a" strokeWidth={6} strokeDasharray={C2} strokeDashoffset={C2 * (1 - ring)} />
+          </g>
+          <g transform="rotate(-90 540 820)" fill="none">
+            <circle cx={540} cy={820} r={R1} stroke="#fff0c2" strokeWidth={3} strokeDasharray={C1} strokeDashoffset={C1 * (1 - ring)} />
+            <circle cx={540} cy={820} r={R2} stroke="#fff0c2" strokeWidth={2} strokeDasharray={C2} strokeDashoffset={C2 * (1 - ring)} />
+          </g>
+        </svg>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 560, textAlign: "center", lineHeight: 1,
+                      fontFamily: SERIF, fontWeight: 600, fontSize: 400, color: GOLD, paddingLeft: 22,
+                      opacity: Math.min(1, q * 1.4), transform: `scale(${0.86 + 0.14 * q})`,
+                      filter: `drop-shadow(0 0 ${18 * glow}px rgba(232,181,77,${glow})) drop-shadow(0 0 50px rgba(232,181,77,0.18))` }}>Q</div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1215, textAlign: "center", opacity: name,
+                      transform: `translateY(${(1 - name) * 18}px)` }}>
+          <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 84, letterSpacing: 24 + (1 - name) * 14, paddingLeft: 24, color: GOLD,
+                        filter: "drop-shadow(0 0 10px rgba(232,181,77,0.45))" }}>QISSAH</div>
+        </div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 1335, textAlign: "center", opacity: tag }}>
+          <div style={{ fontFamily: "Amiri, serif", fontWeight: 700, fontSize: 56, color: GOLD, opacity: 0.85 }}>قصة</div>
+          <div style={{ fontFamily: MONO, fontSize: 26, letterSpacing: 9, paddingLeft: 9, color: "rgba(255,248,235,0.65)", marginTop: 10 }}>
+            WAHRE GESCHICHTEN
+          </div>
         </div>
       </AbsoluteFill>
     );

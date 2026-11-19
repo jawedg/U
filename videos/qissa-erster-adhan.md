@@ -1,4 +1,4 @@
-# QISSA · Folge 1 – „Der erste Adhan“ (POV)
+# QISSAH · Folge 1 – „Der erste Adhan“ (POV)
 
 ## TikTok-Beschreibung (zum Kopieren)
 
@@ -7,7 +7,7 @@ Diese Worte hörst du 5× am Tag – aber woher kommen sie? 🌙 Aus einem Traum
 Quellen: Sahih al-Bukhari 603 & 604, Sunan Abi Dawud 498, 499 & 519, Jami' at-Tirmidhi 189, Sunan Ibn Majah 706, Sira Ibn Hisham.
 Schofar-Klang: Tfursten, Wikimedia Commons (CC BY-SA 3.0). Weitere Geräusche: SFXMint, SFX Kit (CC0).
 
-#islam #adhan #pov #wahregeschichte #bilal #medina #sahaba #islamischegeschichte #muslim #qissa #3danimation #fyp
+#islam #adhan #pov #wahregeschichte #bilal #medina #sahaba #islamischegeschichte #muslim #qissah #3danimation #fyp
 
 ---
 

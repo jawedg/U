@@ -2,8 +2,8 @@
  "fps": 60,
  "render_fps": 30,
  "voiced": true,
- "total": 159.867,
- "frames": 9592,
+ "total": 160.667,
+ "frames": 9640,
  "segments": [
   {
    "id": "hook_a",
@@ -277,9 +277,9 @@
   {
    "id": "logo",
    "kind": "card",
-   "text": "QISSA",
+   "text": "QISSAH",
    "start": 157.867,
-   "dur": 2.0
+   "dur": 2.8
   }
  ],
  "lines": [

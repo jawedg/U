@@ -1,4 +1,4 @@
-# QISSA · Folge 1 – „Der erste Adhan“ · Transkript
+# QISSAH · Folge 1 – „Der erste Adhan“ · Transkript
 
 Länge 2:28. Zeiten = Beginn im Video. Zitate (Sahaba, der Prophet ﷺ) sind deutsche Übersetzungen nach Abu Dawud 499 (sinngemäß, gekürzt).
 
@@ -35,7 +35,7 @@ Länge 2:28. Zeiten = Beginn im Video. Zitate (Sahaba, der Prophet ﷺ) sind deu
 **2:07 · Erzähler:** Und das Verrückteste? Umar hatte diesen Traum schon zwanzig Tage vorher gesehen ... und niemandem erzählt.  
 **2:14 · Erzähler:** Seit über 1400 Jahren hört man diese Worte. Fünfmal am Tag. Auf der ganzen Welt.  
 **2:21 · Erzähler:** Und alles begann ... mit einem Traum.  
-**2:26 · Tafel:** QISSA · WAHRE GESCHICHTEN  
+**2:26 · Tafel:** QISSAH · WAHRE GESCHICHTEN  
 
 ## Nur der gesprochene Text (zum Kopieren)
 

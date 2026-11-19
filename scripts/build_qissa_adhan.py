@@ -50,7 +50,7 @@ PLAN = [
     ("shot", "dach_d", None, [("p", 0.15), ("l", "e6"), ("p", 0.25)]),
     ("shot", "umar", None, [("p", 0.25), ("l", "d12"), ("p", 0.05), ("q", "q4"), ("p", 0.3), ("l", "d13"), ("p", 0.35)]),
     ("shot", "ende", None, [("p", 0.2), ("l", "d14"), ("p", 0.35), ("l", "e7"), ("p", 1.4)]),  # Ende: Kreis zum Anfang („Aus einem Traum“)
-    ("card", "logo", "QISSA", 2.0),
+    ("card", "logo", "QISSAH", 2.8),
 ]
 HOOK_IN = 2.2   # Startpunkt in der Aufnahme für das „Allahu akbar“ im Einstieg
 # Anker je Einstellung: Zeitpunkte, an denen in Blender etwas passiert (Kopfdrehung, Tür, Adhan-Pose …)
