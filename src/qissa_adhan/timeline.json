@@ -85,12 +85,12 @@
     ],
     [
      15.618,
-     14.87
+     15.618
     ]
    ],
    "rerender": false,
-   "src_frames": 446,
-   "src_dur": 14.87
+   "src_frames": 469,
+   "src_dur": 15.618
   },
   {
    "id": "nacht",
@@ -141,12 +141,12 @@
     ],
     [
      20.374,
-     19.736
+     20.374
     ]
    ],
    "rerender": false,
-   "src_frames": 592,
-   "src_dur": 19.736
+   "src_frames": 611,
+   "src_dur": 20.374
   },
   {
    "id": "dach_a",
@@ -267,12 +267,12 @@
     ],
     [
      12.2,
-     11.671
+     12.2
     ]
    ],
    "rerender": false,
-   "src_frames": 350,
-   "src_dur": 11.671
+   "src_frames": 366,
+   "src_dur": 12.2
   },
   {
    "id": "logo",
