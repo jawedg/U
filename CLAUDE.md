@@ -192,7 +192,7 @@ Lokal reicht `npm run render:3d`.
   Adhan nie per KI – echte Aufnahme vom Nutzer (`public/qissa_adhan/athan_full.mp3`, nicht im Repo), nur ein passender Ausschnitt.
 - Kanal-/Serienname **QISSAH** (قصة = Geschichte), Zusatz „WAHRE GESCHICHTEN“. Logo/Profilbild (Nutzer-Wahl): `logo/qissah-profilbild.png`
   = geschwungenes Q (Playfair Display kursiv 700) + „QISSAH“ (Cinzel 600) in Gold (#e8b54d) im leuchtenden Gold-Doppelring auf Schwarz
-  (Quelle `logo/kursiv_varianten.html`, Variante 2). Schlusstafel im Video = dasselbe Logo, Ring zeichnet sich ein (QissaAdhan.tsx, Card „logo“).
+  (Quelle `logo/kursiv_varianten.html`, Variante 2). Schlusstafel im Video (Nutzer zog diese vor): gerades Q (EB Garamond) im Gold-Doppelring, der sich einzeichnet, darunter QISSAH (JetBrains Mono), قصة und „WAHRE GESCHICHTEN“ (QissaAdhan.tsx, Card „logo“, 2,8 s).
   Nutzer mag: 2D, Gold auf Schwarz, kein 3D-Logo, keine schmalen Schriften.
 - Ablauf:
   1. `src/qissa_adhan/script.json` (Sätze mit `part`/`voice`, Zitate, Quellen) → `python3 scripts/voice_gemini.py --project qissa_adhan`
