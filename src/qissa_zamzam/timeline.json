@@ -622,103 +622,103 @@
    "words": [
     {
      "word": "Hier",
-     "start": 0.32
+     "start": 0.364
     },
     {
      "word": "lässt",
-     "start": 0.813
+     "start": 0.478
     },
     {
      "word": "der",
-     "start": 1.12
+     "start": 0.758
     },
     {
      "word": "Prophet",
-     "start": 1.3
+     "start": 0.885
     },
     {
      "word": "*Ibrahim*,",
-     "start": 1.8
+     "start": 1.48
     },
     {
      "word": "Friede",
-     "start": 2.653
+     "start": 2.417
     },
     {
      "word": "sei",
-     "start": 3.04
+     "start": 2.73
     },
     {
      "word": "mit",
-     "start": 3.22
+     "start": 2.886
     },
     {
      "word": "ihm,",
-     "start": 3.46
+     "start": 3.081
     },
     {
      "word": "seine",
-     "start": 4.013
+     "start": 3.497
     },
     {
      "word": "Frau",
-     "start": 4.328
+     "start": 4.08
     },
     {
      "word": "*Hadschar*",
-     "start": 4.6
+     "start": 4.447
     },
     {
      "word": "zurück.",
-     "start": 5.137
+     "start": 5.032
     },
     {
      "word": "Mit",
-     "start": 6.095
+     "start": 6.252
     },
     {
      "word": "ihrem",
-     "start": 6.115
+     "start": 6.333
     },
     {
      "word": "Baby",
-     "start": 6.115
+     "start": 6.687
     },
     {
      "word": "*Ismail*.",
-     "start": 7.005
+     "start": 7.218
     },
     {
      "word": "Nur",
-     "start": 8.065
+     "start": 8.214
     },
     {
      "word": "ein",
-     "start": 8.755
+     "start": 8.897
     },
     {
      "word": "paar",
-     "start": 8.755
+     "start": 9.076
     },
     {
      "word": "Datteln",
-     "start": 9.365
+     "start": 9.404
     },
     {
      "word": "...",
-     "start": 9.945
+     "start": 9.97
     },
     {
      "word": "und",
-     "start": 10.385
+     "start": 10.302
     },
     {
      "word": "etwas",
-     "start": 10.456
+     "start": 10.471
     },
     {
      "word": "Wasser.",
-     "start": 10.456
+     "start": 10.798
     }
    ],
    "tail": 0
@@ -734,51 +734,51 @@
    "words": [
     {
      "word": "Dann",
-     "start": 0.32
+     "start": 0.437
     },
     {
      "word": "dreht",
-     "start": 0.32
+     "start": 0.535
     },
     {
      "word": "Ibrahim",
-     "start": 0.945
+     "start": 0.938
     },
     {
      "word": "sich",
-     "start": 1.633
+     "start": 1.541
     },
     {
      "word": "um",
-     "start": 1.932
+     "start": 1.859
     },
     {
      "word": "...",
-     "start": 2.345
+     "start": 2.276
     },
     {
      "word": "und",
-     "start": 3.005
+     "start": 2.891
     },
     {
      "word": "*geht*.",
-     "start": 3.066
+     "start": 3.087
     },
     {
      "word": "Hadschar",
-     "start": 4.689
+     "start": 4.622
     },
     {
      "word": "läuft",
-     "start": 4.689
+     "start": 4.859
     },
     {
      "word": "ihm",
-     "start": 5.305
+     "start": 5.1
     },
     {
      "word": "nach:",
-     "start": 5.489
+     "start": 5.278
     }
    ],
    "tail": 0
@@ -1132,67 +1132,67 @@
    "words": [
     {
      "word": "Hadschar",
-     "start": 0.32
+     "start": 0.297
     },
     {
      "word": "kann",
-     "start": 1.037
+     "start": 0.815
     },
     {
      "word": "nicht",
-     "start": 1.192
+     "start": 1.037
     },
     {
      "word": "mehr",
-     "start": 1.357
+     "start": 1.259
     },
     {
      "word": "hinsehen.",
-     "start": 1.545
+     "start": 1.439
     },
     {
      "word": "Sie",
-     "start": 2.165
+     "start": 2.348
     },
     {
      "word": "rennt",
-     "start": 2.194
+     "start": 2.664
     },
     {
      "word": "auf",
-     "start": 2.785
+     "start": 3.027
     },
     {
      "word": "den",
-     "start": 2.885
+     "start": 3.18
     },
     {
      "word": "Hügel",
-     "start": 3.085
+     "start": 3.334
     },
     {
      "word": "*Safa*.",
-     "start": 3.517
+     "start": 3.693
     },
     {
      "word": "Schaut",
-     "start": 4.673
+     "start": 4.889
     },
     {
      "word": "ins",
-     "start": 4.681
+     "start": 5.099
     },
     {
      "word": "Tal",
-     "start": 5.285
+     "start": 5.31
     },
     {
      "word": "...",
-     "start": 5.885
+     "start": 5.845
     },
     {
      "word": "niemand.",
-     "start": 6.711
+     "start": 6.733
     }
    ],
    "tail": 0
@@ -1416,71 +1416,71 @@
    "words": [
     {
      "word": "Hadschar",
-     "start": 0.264
+     "start": 0.312
     },
     {
      "word": "baut",
-     "start": 0.32
+     "start": 0.716
     },
     {
      "word": "schnell",
-     "start": 0.877
+     "start": 1.056
     },
     {
      "word": "einen",
-     "start": 1.21
+     "start": 1.411
     },
     {
      "word": "Wall",
-     "start": 1.541
+     "start": 1.763
     },
     {
      "word": "um",
-     "start": 1.877
+     "start": 2.12
     },
     {
      "word": "das",
-     "start": 2.077
+     "start": 2.333
     },
     {
      "word": "Wasser.",
-     "start": 2.254
+     "start": 2.509
     },
     {
      "word": "Der",
-     "start": 3.548
+     "start": 3.857
     },
     {
      "word": "Prophet",
-     "start": 3.614
+     "start": 3.984
     },
     {
      "word": "Muhammad,",
-     "start": 4.261
+     "start": 4.55
     },
     {
      "word": "Friede",
-     "start": 5.07
+     "start": 5.253
     },
     {
      "word": "sei",
-     "start": 5.357
+     "start": 5.697
     },
     {
      "word": "mit",
-     "start": 5.537
+     "start": 5.835
     },
     {
      "word": "ihm,",
-     "start": 5.797
+     "start": 6.026
     },
     {
      "word": "sagte",
-     "start": 6.317
+     "start": 6.417
     },
     {
      "word": "später:",
-     "start": 6.586
+     "start": 6.619
     }
    ],
    "tail": 0
@@ -1954,51 +1954,51 @@
    "words": [
     {
      "word": "Hadschar",
-     "start": 0.277
+     "start": 0.315
     },
     {
      "word": "lässt",
-     "start": 0.32
+     "start": 0.752
     },
     {
      "word": "sie",
-     "start": 1.05
+     "start": 1.058
     },
     {
      "word": "bleiben.",
-     "start": 1.22
+     "start": 1.265
     },
     {
      "word": "Und",
-     "start": 2.088
+     "start": 2.337
     },
     {
      "word": "aus",
-     "start": 2.57
+     "start": 2.393
     },
     {
      "word": "dem",
-     "start": 2.57
+     "start": 2.543
     },
     {
      "word": "leeren",
-     "start": 2.743
+     "start": 2.705
     },
     {
      "word": "Tal",
-     "start": 3.23
+     "start": 3.2
     },
     {
      "word": "...",
-     "start": 3.79
+     "start": 3.575
     },
     {
      "word": "wird",
-     "start": 4.29
+     "start": 3.901
     },
     {
      "word": "*Mekka*.",
-     "start": 4.296
+     "start": 4.137
     }
    ],
    "tail": 0
@@ -2522,16 +2522,16 @@
   "mutter_h3": 12.976,
   "baby_h3": 15.486,
   "wasser_e1": 18.122,
-  "baby_e2": 30.372,
-  "wasser_e2": 34.713,
-  "geht_e3": 38.845,
+  "baby_e2": 30.944,
+  "wasser_e2": 35.055,
+  "geht_e3": 38.866,
   "ja_e5": 63.285,
   "wasser_e6": 68.639,
   "sonne_e6": 70.028,
   "baby_e6": 71.615,
   "durst_e6": 74.433,
-  "safa_e7": 78.692,
-  "niemand_e7": 81.886,
+  "safa_e7": 78.868,
+  "niemand_e7": 81.908,
   "marwa_e8": 84.809,
   "niemand_e8": 87.242,
   "siebten_e10": 92.172,
@@ -2539,8 +2539,8 @@
   "baby_e11": 96.404,
   "engel_e11": 98.164,
   "wasser_e11": 101.562,
-  "wall_e12": 105.325,
-  "wasser_e12": 106.038,
+  "wall_e12": 105.547,
+  "wasser_e12": 106.293,
   "mutter_q4": 113.01,
   "zamzam_q4": 115.13,
   "quelle_q4": 117.14,
@@ -2554,8 +2554,8 @@
   "mutter_e15": 147.127,
   "baby_e15": 148.468,
   "quelle_e15": 150.727,
-  "bleiben_e16": 152.954,
-  "mekka_e16": 156.03,
+  "bleiben_e16": 152.999,
+  "mekka_e16": 155.871,
   "heute_e17": 159.515,
   "zamzam_e18": 170.476,
   "heute_e18": 172.358,

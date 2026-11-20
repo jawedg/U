@@ -288,5 +288,10 @@
   "Koran, Sure 2:158 (Safa und Marwa gehören zu den Kultzeichen Allahs)",
   "Koran, Sure 14:37 (Ibrahims Gebet für seine Familie im Tal ohne Pflanzen beim Haus Allahs)"
  ],
- "retime": "rate1"
+ "retime": "rate1",
+ "nameFix": {
+  "old": "هاجر",
+  "new": "هاجَر",
+  "note": "nach voice_gemini.py: python3 scripts/fix_names_zamzam.py old new"
+ }
 }

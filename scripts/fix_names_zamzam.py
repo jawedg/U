@@ -84,20 +84,28 @@ def main():
         for mt in V.TAG.finditer(el):
             for j in range(mt.start(), mt.end()):
                 mask[j] = False
-        sp, j = [], 0
+        sp, j = [], 0  # (Beginn, Wort) je gesprochenem Wort (auch „...“ zählt wie im Untertitel-Text)
         while j < len(el):
             if mask[j] and not ch[j].isspace():
                 w0 = j
                 while j < len(el) and mask[j] and not ch[j].isspace():
                     j += 1
-                if re.search(r"\w", el[w0:j]):
-                    sp.append(st[w0])
+                sp.append((st[w0], el[w0:j]))
             else:
                 j += 1
         disp = s["text"].split()
+        if len(sp) > len(disp) and sp[-1][1] == "...":
+            sp = sp[:-1]  # angehängter Ausklang
         t_of = lambda t: round(max(0.0, (o0 - 0.02) + (t - (n0 - 0.02)) / k), 3)  # noqa: E731
-        if len(sp) >= len(disp):
-            ln["words"] = [{"word": w, "start": t_of(t)} for w, t in zip(disp, sp)]
+        if len(sp) == len(disp):
+            ln["words"] = [{"word": w, "start": t_of(t)} for w, (t, _) in zip(disp, sp)]
+        else:  # andere Wortzahl: nach Position im Satz
+            tot = sum(len(w) + 1 for w in disp)
+            ws, pos = [], 0
+            for w in disp:
+                ws.append({"word": w, "start": t_of(sp[min(len(sp) - 1, int(pos / tot * len(sp)))][0])})
+                pos += len(w) + 1
+            ln["words"] = ws
         print(f"   {s['id']}: Tempo {k:.3f}, {len(disp)} Wörter, alt {o1 - o0:.2f}s neu {n1 - n0:.2f}s")
     (D / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     # Hinweis im Skript (el bleibt, damit der ElevenLabs-Cache passt): nach voice_gemini.py dieses Skript erneut ausführen
