@@ -630,7 +630,10 @@ MK.no_glow_shadows()
 if os.environ.get("JOIN", "1") == "1":
     MD.join_static(keep=("baby", "skin", "dates", "spring", "engel", "ibrahim", "kaaba_ghost", "dig_glow", "bird", "tent", "fire", "cm",
                          "camp", "me_", "c0", "c1", "c2", "r0", "r1", "r2", "pg", "far_", "hadschar", "spaeher", "rug2", "burst"))
-Q.render_setup(pct=PCT, samples=SAMPLES, mist_col=cfg["mist_col"], mist_amt=cfg["mist_amt"], shadow_res=1.0, sky_sep=SHOT != "heute")
+# Schattenauflösung: die zuerst gerenderten Einstellungen mit 1.0, der Rest mit 0.5 (12 % schneller, kaum sichtbar – 4-CPU-Rechner)
+SHADOW_HI = {"tal", "frage", "wall", "finden", "heute"}
+Q.render_setup(pct=PCT, samples=SAMPLES, mist_col=cfg["mist_col"], mist_amt=cfg["mist_amt"], shadow_res=1.0 if SHOT in SHADOW_HI else 0.5,
+               sky_sep=SHOT != "heute")
 sc = bpy.context.scene
 if os.environ.get("LIST"):  # Test: Objekte mit Präfix auflisten
     for o in bpy.data.objects:
