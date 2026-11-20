@@ -939,7 +939,10 @@ def spring(t_burst, t1, wall_t0=None, wall_t1=None, loc=SPRING):
     z = ground_z(loc.x, loc.y)
     root = Q.empty("spring", (loc.x, loc.y, z))
     wm = water_mat()
-    pool = Q.cyl("spring_pool", (0, 0, 0.03), 0.62, 0.04, wm, seg=48, parent=root)
+    zmax = max(ground_z(loc.x + r_ * math.cos(a_ / 24 * 2 * math.pi), loc.y + r_ * math.sin(a_ / 24 * 2 * math.pi))
+               for r_ in (0.2, 0.4, 0.62) for a_ in range(24))
+    pz = max(0.03, zmax - z + 0.03)
+    pool = Q.cyl("spring_pool", (0, 0, pz), 0.62, 0.04, wm, seg=48, parent=root)
     wet = Q.cyl("spring_wet", (0, 0, 0.008), 1.05, 0.012, M["wet"], seg=48, parent=root)
     rnd = random.Random(4)
     drops = []
@@ -1036,8 +1039,8 @@ def spring(t_burst, t1, wall_t0=None, wall_t1=None, loc=SPRING):
             o.scale = sc_
             o.keyframe_insert("scale", frame=max(2, Q.T(tk + 0.35)))
         # Wasser steigt im Wall
-        keys(pool, Q.T(wall_t0), location=(0, 0, 0.03))
-        keys(pool, Q.T(wall_t1 + 1.0), location=(0, 0, 0.1))
+        keys(pool, Q.T(wall_t0), location=(0, 0, pz))
+        keys(pool, Q.T(wall_t1 + 1.0), location=(0, 0, max(0.1, pz + 0.01)))
     return {"root": root, "pool": pool, "wall": wall, "z": z}
 
 
@@ -1411,12 +1414,21 @@ def pilgrim(name, loc, yaw, seed, woman=False):
                     cloak=(0.94, 0.93, 0.9), height=rnd.uniform(0.96, 1.05))
 
 
+def clear_cols(y):
+    """Abstand zu den Säulenreihen der Mas'a-Halle (y = ±4,75 und ±8,6): sonst laufen Pilger durch Säulen."""
+    a, sg = abs(y), (1 if y >= 0 else -1)
+    if 3.85 < a < 5.65:
+        a = 3.85 if a < 4.75 else 5.65
+    a = min(a, 7.9)
+    return sg * a
+
+
 def far_crowd(name, x0, x1, y0, y1, n, seed=0):
     """Ferne Pilger als EIN Objekt (weiße Gestalten), bewegt sich als Ganzes langsam."""
     rnd = random.Random(seed)
     bm = bmesh.new()
     for _ in range(n):
-        x, y = rnd.uniform(x0, x1), rnd.uniform(y0, y1)
+        x, y = rnd.uniform(x0, x1), clear_cols(rnd.uniform(y0, y1))
         h = rnd.uniform(1.6, 1.8)
         g = bmesh.ops.create_cone(bm, cap_ends=True, segments=10, radius1=0.26, radius2=0.2, depth=h - 0.25)
         for v in g["verts"]:

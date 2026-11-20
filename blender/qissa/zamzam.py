@@ -167,8 +167,10 @@ def shot_abschied():
         cpos = (pos.x, pos.y, gz(pos.x, pos.y) + eye)
         lp = path_point(path, sL)
         tgt = (lp.x, lp.y, gz(lp.x, lp.y) + 1.3)
-        if t < 1.8:
-            tgt = (BABY.x, BABY.y, gz(BABY.x, BABY.y) + 0.1)
+        # Blick ruhig vom Baby hoch zum Licht (Nutzer: Kopf schwang bei 0:36 plötzlich nach links)
+        bt = (BABY.x, BABY.y, gz(BABY.x, BABY.y) + 0.1)
+        wb = smooth(1.3, 3.7, t)
+        tgt = tuple(bt[i] + (tgt[i] - bt[i]) * wb for i in range(3))
         keys.append((t, cpos, None))
         if k % 3 == 0:
             rots.append((t, look(cpos, tgt)))
@@ -576,6 +578,7 @@ def shot_heute():
                 if lane == 1 and abs(y - 2.6) < 0.8 and x0 - 3 < x < x0 + 22:
                     continue  # Weg vor der Kamera frei
                 break
+            y = MK.clear_cols(y)
             woman = rnd.random() < 0.3
             Pp = MK.pilgrim(f"pg{k}", (x, y, 0), yaw=(-math.pi / 2 if dirx > 0 else math.pi / 2), seed=500 + k, woman=woman)
             spd = rnd.uniform(1.05, 1.35) if lane == 1 else rnd.uniform(1.0, 1.3)
