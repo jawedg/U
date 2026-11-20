@@ -62,7 +62,7 @@ for pass in $PASSES; do
   [ "$pass" = mid ] && [ "$MID60" != 1 ] && continue
   for k in $(seq 1 "$JOBS"); do
     worker "$k" "$pass" &
-    sleep 40   # versetzt starten: die Platzhalter des vorigen Prozesses sind dann schon da
+    sleep 20   # versetzt starten: die Platzhalter des vorigen Prozesses sind dann schon da
   done
   wait
   echo "🖼  Durchgang $pass fertig $(date +%H:%M:%S)"
