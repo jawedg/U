@@ -224,5 +224,7 @@ Lokal reicht `npm run render:3d`.
 - Erzähler-Schnitte: voicePart `"cutmode": "latest", "snap": true` (sonst landete „… [whispers] niemand.“ im nächsten Stück, Untertitel zu spät).
 - Durchsichtige Licht-Säulen schrieben Tiefe in den Dunst-Kanal (blaue Ellipse am Himmel) → `render_setup(..., sky_sep=True)`:
   Himmel getrennt (Environment-Pass), Dunst nur auf Undurchsichtiges. Licht-Gestalten werfen keinen Schatten (`MK.no_glow_shadows()`).
-- SFXMint-Downloads brauchen jetzt einen API-Schlüssel (anonym 0/Tag) → nicht nutzbar; Ersatz: synthetische Klänge, Wikimedia Commons (langsam).
+- SFXMint-Downloads brauchen jetzt einen API-Schlüssel (anonym 0/Tag) → nicht nutzbar. **Geräusche jetzt per ElevenLabs** (Nutzer-Idee):
+  `POST /v1/sound-generation` {text, duration_seconds, prompt_influence 0.6}, ~11 Credits/s, Ergebnis `assets/sfx/el_*.flac` (auf -20 LUFS);
+  Prompts immer mit „no music“.
 - Text-Änderung (vom Nutzer genehmigter Text): „Kein Baum“ → „Nur Stein … und Sand“, weil der Hadith einen großen Baum nennt.
