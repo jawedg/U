@@ -646,6 +646,17 @@ if os.environ.get("NOCOMP"):
 sc.frame_start, sc.frame_end = 1, SEG[SHOT]["frames"]
 if os.environ.get("FRAMES"):
     sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
+if os.environ.get("BENCH_DETAIL"):  # Test: Rauschen mit weniger Oktaven (schneller)
+    cap = float(os.environ["BENCH_DETAIL"])
+    for m in bpy.data.materials:
+        if m.node_tree:
+            for n in m.node_tree.nodes:
+                if n.type == "TEX_NOISE":
+                    n.inputs["Detail"].default_value = min(n.inputs["Detail"].default_value, cap)
+if os.environ.get("BENCH_SHADOW"):
+    sc.eevee.shadow_resolution_scale = float(os.environ["BENCH_SHADOW"])
+import time as _time
+print("SETUP_DONE", _time.time())
 os.makedirs(OUT, exist_ok=True)
 if os.environ.get("MID") == "1":
     for k in range(sc.frame_start, sc.frame_end):
