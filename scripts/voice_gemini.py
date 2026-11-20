@@ -685,9 +685,19 @@ def eleven_block(block: list, pc: dict, out_dir: Path, part: int, cache_dir: Pat
         lead = next((e for s_, e in sil if s_ <= 0.05), 0.0)  # Stille ganz am Anfang
         trail = next((s_ for s_, e in sil if e >= total - 0.05), total)  # Stille ganz am Ende
         cut_end, cut_start = {}, {}
+        latest = pc.get("cutmode") == "latest"
         for n in range(len(spans) - 1):
             a_end, b_start = spans[n][1], spans[n + 1][0]
             cand = [(s_, e) for s_, e in sil if e > a_end - 0.6 and s_ < b_start + 0.6 and s_ > 0.05 and e < total - 0.05]
+            if latest:
+                # Folge 2: nach „… [whispers] niemand.“ lag die längste Stille VOR dem letzten Wort -> das Wort landete im
+                # nächsten Stück. Daher: die LETZTE Stille vor dem Beginn des nächsten Satzes, die nach dem Beginn des
+                # letzten Wortes dieses Satzes anfängt (Buchstaben-Zeiten nach Tags sind ~0,3 s zu spät -> Spielraum).
+                a_, b_ = offs[n]
+                lw_n = max((m.start() + a_ for m in re.finditer(r"\w+", joined[a_:b_]) if spoken_mask[m.start() + a_]), default=a_)
+                c2 = [(s_, e) for s_, e in sil if s_ >= st[lw_n] - 0.25 and e <= b_start + 0.45 and s_ > 0.05 and e < total - 0.05]
+                if c2:
+                    cand = [max(c2, key=lambda x: x[1])]
             if cand:
                 s_, e = max(cand, key=lambda x: x[1] - x[0])
                 mid = (s_ + e) / 2
@@ -702,12 +712,22 @@ def eleven_block(block: list, pc: dict, out_dir: Path, part: int, cache_dir: Pat
         after = [(s_, e) for s_, e in sil if s_ >= st[lw]]
         if after:
             trail = after[0][0]
+        import numpy as np
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(wav), "-ac", "1", "-f", "s16le", "-"], capture_output=True,
+                             check=True).stdout
+        xs = np.frombuffer(raw, np.int16).astype(float) / 32768
+
+        def loud(t0_, t1_):  # Pegel (dB) im Bereich – liegt ein Schnitt in einem Atmer, wird weicher ein-/ausgeblendet
+            seg_ = xs[int(max(0, t0_) * 48000):int(max(0, t1_) * 48000)]
+            return 20 * np.log10(np.sqrt(np.mean(seg_ ** 2)) + 1e-9) if len(seg_) else -120
         for n, (j, (a, b), (s0, s1)) in enumerate(zip(g, offs, spans)):
             c0 = cut_start.get(n, max(0.0, lead - edge))
             c1 = cut_end.get(n, min(total, trail + edge))
             f = out_dir / f"line-{part}-{len(files)}.wav"
+            fi = 0.12 if loud(c0, c0 + 0.06) > -45 else 0.006
+            fo = 0.15 if loud(c1 - 0.06, c1) > -45 else (0.05 if n == len(spans) - 1 else 0.012)
             subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{c0:.4f}", "-t", f"{c1 - c0:.4f}", "-i", str(wav), "-af",
-                            f"afade=t=in:d=0.006,areverse,afade=t=in:d={0.05 if n == len(spans) - 1 else 0.012},areverse", str(f)], check=True)
+                            f"afade=t=in:d={fi},areverse,afade=t=in:d={fo},areverse", str(f)], check=True)
             files.append(f)
             # Wortzeiten: gesprochene Wörter (ohne Tags) aus den Buchstaben-Zeiten, dann auf die Untertitel-Wörter abbilden
             sp = []  # (Beginn, Text) je gesprochenem Wort
@@ -717,7 +737,12 @@ def eleven_block(block: list, pc: dict, out_dir: Path, part: int, cache_dir: Pat
                     w0 = i
                     while i < b and spoken_mask[i] and not ch[i].isspace():
                         i += 1
-                    sp.append((st[w0] - c0, joined[w0:i]))
+                    t_w = st[w0]
+                    if pc.get("snap"):  # Wortbeginn kurz nach einer Pause -> auf das Ende der Pause (Zeiten nach Tags zu spät)
+                        hit = [e for s_, e in sil if s_ - 0.05 < t_w < e + 0.45]
+                        if hit:
+                            t_w = min(t_w, hit[-1] + 0.02)
+                    sp.append((min(t_w, c1 - 0.3) - c0, joined[w0:i]))
                 else:
                     i += 1
             disp = block[j]["text"].split()

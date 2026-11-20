@@ -1,0 +1,1641 @@
+{
+ "lines": [
+  {
+   "file": "qissa_zamzam/line-0-0.wav",
+   "seconds": 5.47,
+   "words": [
+    {
+     "word": "Jedes",
+     "start": 0.072
+    },
+    {
+     "word": "Jahr",
+     "start": 0.072
+    },
+    {
+     "word": "laufen",
+     "start": 0.4
+    },
+    {
+     "word": "Millionen",
+     "start": 0.773
+    },
+    {
+     "word": "Menschen",
+     "start": 1.742
+    },
+    {
+     "word": "diesen",
+     "start": 2.297
+    },
+    {
+     "word": "Weg.",
+     "start": 2.74
+    },
+    {
+     "word": "*Siebenmal*.",
+     "start": 3.69
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-1.wav",
+   "seconds": 6.47,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.284
+    },
+    {
+     "word": "sie",
+     "start": 0.32
+    },
+    {
+     "word": "trinken",
+     "start": 0.32
+    },
+    {
+     "word": "aus",
+     "start": 0.864
+    },
+    {
+     "word": "einer",
+     "start": 1.024
+    },
+    {
+     "word": "*Quelle*",
+     "start": 1.277
+    },
+    {
+     "word": "...",
+     "start": 1.784
+    },
+    {
+     "word": "mitten",
+     "start": 2.304
+    },
+    {
+     "word": "in",
+     "start": 2.346
+    },
+    {
+     "word": "der",
+     "start": 2.864
+    },
+    {
+     "word": "Wüste.",
+     "start": 3.024
+    },
+    {
+     "word": "Aber",
+     "start": 4.623
+    },
+    {
+     "word": "woher",
+     "start": 4.623
+    },
+    {
+     "word": "kommt",
+     "start": 5.283
+    },
+    {
+     "word": "sie?",
+     "start": 5.61
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-2.wav",
+   "seconds": 4.952,
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.269
+    },
+    {
+     "word": "begann",
+     "start": 0.32
+    },
+    {
+     "word": "...",
+     "start": 1.096
+    },
+    {
+     "word": "mit",
+     "start": 1.096
+    },
+    {
+     "word": "einer",
+     "start": 1.376
+    },
+    {
+     "word": "*Mutter*.",
+     "start": 1.386
+    },
+    {
+     "word": "Und",
+     "start": 2.9
+    },
+    {
+     "word": "einem",
+     "start": 2.9
+    },
+    {
+     "word": "durstigen",
+     "start": 3.336
+    },
+    {
+     "word": "Baby.",
+     "start": 3.896
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-3.wav",
+   "seconds": 8.315,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.218
+    },
+    {
+     "word": "Tal",
+     "start": 0.218
+    },
+    {
+     "word": "in",
+     "start": 0.218
+    },
+    {
+     "word": "Arabien.",
+     "start": 0.853
+    },
+    {
+     "word": "Kein",
+     "start": 1.056
+    },
+    {
+     "word": "*Wasser*.",
+     "start": 1.88
+    },
+    {
+     "word": "Kein",
+     "start": 2.587
+    },
+    {
+     "word": "Mensch.",
+     "start": 3.467
+    },
+    {
+     "word": "Nur",
+     "start": 5.728
+    },
+    {
+     "word": "Stein",
+     "start": 5.728
+    },
+    {
+     "word": "...",
+     "start": 6.623
+    },
+    {
+     "word": "und",
+     "start": 7.083
+    },
+    {
+     "word": "Sand.",
+     "start": 7.083
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-4.wav",
+   "seconds": 11.822,
+   "words": [
+    {
+     "word": "Hier",
+     "start": 0.32
+    },
+    {
+     "word": "lässt",
+     "start": 0.813
+    },
+    {
+     "word": "der",
+     "start": 1.12
+    },
+    {
+     "word": "Prophet",
+     "start": 1.3
+    },
+    {
+     "word": "*Ibrahim*,",
+     "start": 1.8
+    },
+    {
+     "word": "Friede",
+     "start": 2.653
+    },
+    {
+     "word": "sei",
+     "start": 3.04
+    },
+    {
+     "word": "mit",
+     "start": 3.22
+    },
+    {
+     "word": "ihm,",
+     "start": 3.46
+    },
+    {
+     "word": "seine",
+     "start": 4.013
+    },
+    {
+     "word": "Frau",
+     "start": 4.328
+    },
+    {
+     "word": "*Hadschar*",
+     "start": 4.6
+    },
+    {
+     "word": "zurück.",
+     "start": 5.137
+    },
+    {
+     "word": "Mit",
+     "start": 6.095
+    },
+    {
+     "word": "ihrem",
+     "start": 6.115
+    },
+    {
+     "word": "Baby",
+     "start": 6.115
+    },
+    {
+     "word": "*Ismail*.",
+     "start": 7.005
+    },
+    {
+     "word": "Nur",
+     "start": 8.065
+    },
+    {
+     "word": "ein",
+     "start": 8.755
+    },
+    {
+     "word": "paar",
+     "start": 8.755
+    },
+    {
+     "word": "Datteln",
+     "start": 9.365
+    },
+    {
+     "word": "...",
+     "start": 9.945
+    },
+    {
+     "word": "und",
+     "start": 10.385
+    },
+    {
+     "word": "etwas",
+     "start": 10.456
+    },
+    {
+     "word": "Wasser.",
+     "start": 10.456
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-5.wav",
+   "seconds": 6.538,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.32
+    },
+    {
+     "word": "dreht",
+     "start": 0.32
+    },
+    {
+     "word": "Ibrahim",
+     "start": 0.945
+    },
+    {
+     "word": "sich",
+     "start": 1.633
+    },
+    {
+     "word": "um",
+     "start": 1.932
+    },
+    {
+     "word": "...",
+     "start": 2.345
+    },
+    {
+     "word": "und",
+     "start": 3.005
+    },
+    {
+     "word": "*geht*.",
+     "start": 3.066
+    },
+    {
+     "word": "Hadschar",
+     "start": 4.689
+    },
+    {
+     "word": "läuft",
+     "start": 4.689
+    },
+    {
+     "word": "ihm",
+     "start": 5.305
+    },
+    {
+     "word": "nach:",
+     "start": 5.489
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-1-0.wav",
+   "seconds": 8.445,
+   "words": [
+    {
+     "word": "Ibrahim!",
+     "start": 0.22
+    },
+    {
+     "word": "Wohin",
+     "start": 1.65
+    },
+    {
+     "word": "gehst",
+     "start": 2.08
+    },
+    {
+     "word": "du?",
+     "start": 2.52
+    },
+    {
+     "word": "Du",
+     "start": 3.25
+    },
+    {
+     "word": "lässt",
+     "start": 3.47
+    },
+    {
+     "word": "uns",
+     "start": 3.86
+    },
+    {
+     "word": "in",
+     "start": 4.14
+    },
+    {
+     "word": "diesem",
+     "start": 4.37
+    },
+    {
+     "word": "Tal,",
+     "start": 4.82
+    },
+    {
+     "word": "in",
+     "start": 5.1
+    },
+    {
+     "word": "dem",
+     "start": 5.32
+    },
+    {
+     "word": "es",
+     "start": 5.6
+    },
+    {
+     "word": "nichts",
+     "start": 5.83
+    },
+    {
+     "word": "gibt?",
+     "start": 6.28
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_zamzam/line-0-6.wav",
+   "seconds": 5.313,
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.183
+    },
+    {
+     "word": "antwortet",
+     "start": 0.183
+    },
+    {
+     "word": "nicht.",
+     "start": 0.683
+    },
+    {
+     "word": "Er",
+     "start": 1.43
+    },
+    {
+     "word": "dreht",
+     "start": 1.608
+    },
+    {
+     "word": "sich",
+     "start": 1.608
+    },
+    {
+     "word": "nicht",
+     "start": 2.19
+    },
+    {
+     "word": "um.",
+     "start": 2.47
+    },
+    {
+     "word": "Da",
+     "start": 3.897
+    },
+    {
+     "word": "fragt",
+     "start": 3.902
+    },
+    {
+     "word": "sie:",
+     "start": 4.46
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-1-1.wav",
+   "seconds": 4.762,
+   "words": [
+    {
+     "word": "Hat",
+     "start": 1.04
+    },
+    {
+     "word": "Allah",
+     "start": 1.28
+    },
+    {
+     "word": "dir",
+     "start": 1.62
+    },
+    {
+     "word": "das",
+     "start": 1.87
+    },
+    {
+     "word": "befohlen?",
+     "start": 2.11
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_zamzam/line-0-7.wav",
+   "seconds": 3.648,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.128
+    },
+    {
+     "word": "er",
+     "start": 0.128
+    },
+    {
+     "word": "sagt",
+     "start": 0.128
+    },
+    {
+     "word": "nur",
+     "start": 0.877
+    },
+    {
+     "word": "ein",
+     "start": 1.117
+    },
+    {
+     "word": "Wort",
+     "start": 1.377
+    },
+    {
+     "word": "...",
+     "start": 2.017
+    },
+    {
+     "word": "*Ja*.",
+     "start": 3.048
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-1-2.wav",
+   "seconds": 2.848,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.46
+    },
+    {
+     "word": "wird",
+     "start": 0.68
+    },
+    {
+     "word": "Er",
+     "start": 0.91
+    },
+    {
+     "word": "uns",
+     "start": 1.06
+    },
+    {
+     "word": "nicht",
+     "start": 1.25
+    },
+    {
+     "word": "im",
+     "start": 1.51
+    },
+    {
+     "word": "Stich",
+     "start": 1.66
+    },
+    {
+     "word": "lassen.",
+     "start": 1.92
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_zamzam/line-0-8.wav",
+   "seconds": 7.842,
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.128
+    },
+    {
+     "word": "bald",
+     "start": 0.224
+    },
+    {
+     "word": "ist",
+     "start": 0.54
+    },
+    {
+     "word": "das",
+     "start": 0.78
+    },
+    {
+     "word": "Wasser",
+     "start": 1.006
+    },
+    {
+     "word": "leer.",
+     "start": 1.344
+    },
+    {
+     "word": "Die",
+     "start": 1.86
+    },
+    {
+     "word": "Sonne",
+     "start": 2.395
+    },
+    {
+     "word": "brennt.",
+     "start": 2.395
+    },
+    {
+     "word": "Das",
+     "start": 3.982
+    },
+    {
+     "word": "Baby",
+     "start": 3.982
+    },
+    {
+     "word": "weint",
+     "start": 4.48
+    },
+    {
+     "word": "...",
+     "start": 5.04
+    },
+    {
+     "word": "und",
+     "start": 5.56
+    },
+    {
+     "word": "windet",
+     "start": 5.622
+    },
+    {
+     "word": "sich",
+     "start": 6.224
+    },
+    {
+     "word": "vor",
+     "start": 6.54
+    },
+    {
+     "word": "*Durst*.",
+     "start": 6.8
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-9.wav",
+   "seconds": 7.813,
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.32
+    },
+    {
+     "word": "kann",
+     "start": 1.037
+    },
+    {
+     "word": "nicht",
+     "start": 1.192
+    },
+    {
+     "word": "mehr",
+     "start": 1.357
+    },
+    {
+     "word": "hinsehen.",
+     "start": 1.545
+    },
+    {
+     "word": "Sie",
+     "start": 2.165
+    },
+    {
+     "word": "rennt",
+     "start": 2.194
+    },
+    {
+     "word": "auf",
+     "start": 2.785
+    },
+    {
+     "word": "den",
+     "start": 2.885
+    },
+    {
+     "word": "Hügel",
+     "start": 3.085
+    },
+    {
+     "word": "*Safa*.",
+     "start": 3.517
+    },
+    {
+     "word": "Schaut",
+     "start": 4.673
+    },
+    {
+     "word": "ins",
+     "start": 4.681
+    },
+    {
+     "word": "Tal",
+     "start": 5.285
+    },
+    {
+     "word": "...",
+     "start": 5.885
+    },
+    {
+     "word": "niemand.",
+     "start": 6.711
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-10.wav",
+   "seconds": 5.707,
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.32
+    },
+    {
+     "word": "rennt",
+     "start": 0.32
+    },
+    {
+     "word": "hinüber",
+     "start": 0.881
+    },
+    {
+     "word": "auf",
+     "start": 1.321
+    },
+    {
+     "word": "den",
+     "start": 1.441
+    },
+    {
+     "word": "Hügel",
+     "start": 1.661
+    },
+    {
+     "word": "*Marwa*.",
+     "start": 2.121
+    },
+    {
+     "word": "Wieder",
+     "start": 3.477
+    },
+    {
+     "word": "...",
+     "start": 3.961
+    },
+    {
+     "word": "niemand.",
+     "start": 4.554
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-11.wav",
+   "seconds": 4.081,
+   "words": [
+    {
+     "word": "Zwei.",
+     "start": 0.273
+    },
+    {
+     "word": "Drei.",
+     "start": 1.134
+    },
+    {
+     "word": "Vier.",
+     "start": 1.654
+    },
+    {
+     "word": "Fünf.",
+     "start": 2.234
+    },
+    {
+     "word": "Sechs.",
+     "start": 2.667
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-12.wav",
+   "seconds": 3.948,
+   "words": [
+    {
+     "word": "Beim",
+     "start": 0.263
+    },
+    {
+     "word": "*siebten*",
+     "start": 0.296
+    },
+    {
+     "word": "Mal",
+     "start": 1.496
+    },
+    {
+     "word": "...",
+     "start": 1.496
+    },
+    {
+     "word": "hört",
+     "start": 2.078
+    },
+    {
+     "word": "sie",
+     "start": 2.078
+    },
+    {
+     "word": "eine",
+     "start": 2.078
+    },
+    {
+     "word": "Stimme.",
+     "start": 2.828
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-13.wav",
+   "seconds": 8.56,
+   "words": [
+    {
+     "word": "Dort,",
+     "start": 0.168
+    },
+    {
+     "word": "wo",
+     "start": 0.168
+    },
+    {
+     "word": "ihr",
+     "start": 0.62
+    },
+    {
+     "word": "Baby",
+     "start": 0.88
+    },
+    {
+     "word": "liegt,",
+     "start": 1.28
+    },
+    {
+     "word": "steht",
+     "start": 1.987
+    },
+    {
+     "word": "ein",
+     "start": 2.061
+    },
+    {
+     "word": "*Engel*.",
+     "start": 2.64
+    },
+    {
+     "word": "Er",
+     "start": 3.787
+    },
+    {
+     "word": "scharrt",
+     "start": 4.075
+    },
+    {
+     "word": "im",
+     "start": 4.72
+    },
+    {
+     "word": "Boden",
+     "start": 4.98
+    },
+    {
+     "word": "...",
+     "start": 5.5
+    },
+    {
+     "word": "und",
+     "start": 6.038
+    },
+    {
+     "word": "*Wasser*",
+     "start": 6.038
+    },
+    {
+     "word": "bricht",
+     "start": 6.907
+    },
+    {
+     "word": "hervor.",
+     "start": 7.148
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-14.wav",
+   "seconds": 8.126,
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.264
+    },
+    {
+     "word": "baut",
+     "start": 0.32
+    },
+    {
+     "word": "schnell",
+     "start": 0.877
+    },
+    {
+     "word": "einen",
+     "start": 1.21
+    },
+    {
+     "word": "Wall",
+     "start": 1.541
+    },
+    {
+     "word": "um",
+     "start": 1.877
+    },
+    {
+     "word": "das",
+     "start": 2.077
+    },
+    {
+     "word": "Wasser.",
+     "start": 2.254
+    },
+    {
+     "word": "Der",
+     "start": 3.548
+    },
+    {
+     "word": "Prophet",
+     "start": 3.614
+    },
+    {
+     "word": "Muhammad,",
+     "start": 4.261
+    },
+    {
+     "word": "Friede",
+     "start": 5.07
+    },
+    {
+     "word": "sei",
+     "start": 5.357
+    },
+    {
+     "word": "mit",
+     "start": 5.537
+    },
+    {
+     "word": "ihm,",
+     "start": 5.797
+    },
+    {
+     "word": "sagte",
+     "start": 6.317
+    },
+    {
+     "word": "später:",
+     "start": 6.586
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-2-0.wav",
+   "seconds": 7.503,
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "erbarme",
+     "start": 0.38
+    },
+    {
+     "word": "sich",
+     "start": 0.82
+    },
+    {
+     "word": "der",
+     "start": 1.11
+    },
+    {
+     "word": "Mutter",
+     "start": 1.35
+    },
+    {
+     "word": "Ismails.",
+     "start": 1.73
+    },
+    {
+     "word": "Hätte",
+     "start": 2.97
+    },
+    {
+     "word": "sie",
+     "start": 3.26
+    },
+    {
+     "word": "Zamzam",
+     "start": 3.47
+    },
+    {
+     "word": "fließen",
+     "start": 3.81
+    },
+    {
+     "word": "lassen,",
+     "start": 4.19
+    },
+    {
+     "word": "wäre",
+     "start": 4.53
+    },
+    {
+     "word": "es",
+     "start": 5.05
+    },
+    {
+     "word": "eine",
+     "start": 5.22
+    },
+    {
+     "word": "Quelle,",
+     "start": 5.48
+    },
+    {
+     "word": "die",
+     "start": 5.82
+    },
+    {
+     "word": "über",
+     "start": 6.03
+    },
+    {
+     "word": "die",
+     "start": 6.28
+    },
+    {
+     "word": "Erde",
+     "start": 6.49
+    },
+    {
+     "word": "fließt.",
+     "start": 6.75
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_zamzam/line-0-15.wav",
+   "seconds": 2.407,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.196
+    },
+    {
+     "word": "der",
+     "start": 0.216
+    },
+    {
+     "word": "Engel",
+     "start": 0.216
+    },
+    {
+     "word": "sagt",
+     "start": 0.915
+    },
+    {
+     "word": "zu",
+     "start": 1.224
+    },
+    {
+     "word": "ihr:",
+     "start": 1.411
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-3-0.wav",
+   "seconds": 8.91,
+   "words": [
+    {
+     "word": "Habt",
+     "start": 0.05
+    },
+    {
+     "word": "keine",
+     "start": 0.34
+    },
+    {
+     "word": "Angst.",
+     "start": 0.69
+    },
+    {
+     "word": "Hier",
+     "start": 1.56
+    },
+    {
+     "word": "wird",
+     "start": 1.82
+    },
+    {
+     "word": "das",
+     "start": 2.08
+    },
+    {
+     "word": "Haus",
+     "start": 2.3
+    },
+    {
+     "word": "Allahs",
+     "start": 2.56
+    },
+    {
+     "word": "stehen,",
+     "start": 2.91
+    },
+    {
+     "word": "das",
+     "start": 3.25
+    },
+    {
+     "word": "dieser",
+     "start": 3.47
+    },
+    {
+     "word": "Junge",
+     "start": 3.98
+    },
+    {
+     "word": "und",
+     "start": 4.29
+    },
+    {
+     "word": "sein",
+     "start": 4.5
+    },
+    {
+     "word": "Vater",
+     "start": 4.77
+    },
+    {
+     "word": "bauen.",
+     "start": 5.07
+    },
+    {
+     "word": "Und",
+     "start": 5.86
+    },
+    {
+     "word": "Allah",
+     "start": 6.11
+    },
+    {
+     "word": "lässt",
+     "start": 6.46
+    },
+    {
+     "word": "die",
+     "start": 6.81
+    },
+    {
+     "word": "Seinen",
+     "start": 7.06
+    },
+    {
+     "word": "nicht",
+     "start": 7.46
+    },
+    {
+     "word": "im",
+     "start": 7.93
+    },
+    {
+     "word": "Stich.",
+     "start": 8.13
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_zamzam/line-0-16.wav",
+   "seconds": 3.347,
+   "words": [
+    {
+     "word": "Eines",
+     "start": 0.076
+    },
+    {
+     "word": "Tages",
+     "start": 0.362
+    },
+    {
+     "word": "zieht",
+     "start": 0.962
+    },
+    {
+     "word": "eine",
+     "start": 1.346
+    },
+    {
+     "word": "*Karawane*",
+     "start": 1.642
+    },
+    {
+     "word": "vorbei.",
+     "start": 2.222
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-4-0.wav",
+   "seconds": 4.507,
+   "words": [
+    {
+     "word": "Seht",
+     "start": 0.05
+    },
+    {
+     "word": "ihr",
+     "start": 0.66
+    },
+    {
+     "word": "die",
+     "start": 1.17
+    },
+    {
+     "word": "Vögel?",
+     "start": 1.69
+    },
+    {
+     "word": "Sie",
+     "start": 2.6
+    },
+    {
+     "word": "kreisen!",
+     "start": 2.75
+    },
+    {
+     "word": "Das",
+     "start": 3.03
+    },
+    {
+     "word": "tun",
+     "start": 3.18
+    },
+    {
+     "word": "sie",
+     "start": 3.34
+    },
+    {
+     "word": "nur",
+     "start": 3.5
+    },
+    {
+     "word": "über",
+     "start": 3.65
+    },
+    {
+     "word": "Wasser.",
+     "start": 3.84
+    }
+   ]
+  },
+  {
+   "file": "qissa_zamzam/line-4-1.wav",
+   "seconds": 4.403,
+   "words": [
+    {
+     "word": "Unmöglich.",
+     "start": 0.05
+    },
+    {
+     "word": "In",
+     "start": 1.53
+    },
+    {
+     "word": "diesem",
+     "start": 1.74
+    },
+    {
+     "word": "Tal",
+     "start": 2.18
+    },
+    {
+     "word": "gab",
+     "start": 2.45
+    },
+    {
+     "word": "es",
+     "start": 2.73
+    },
+    {
+     "word": "noch",
+     "start": 2.95
+    },
+    {
+     "word": "nie",
+     "start": 3.27
+    },
+    {
+     "word": "Wasser.",
+     "start": 3.55
+    }
+   ]
+  },
+  {
+   "file": "qissa_zamzam/line-0-17.wav",
+   "seconds": 8.797,
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.32
+    },
+    {
+     "word": "schicken",
+     "start": 0.32
+    },
+    {
+     "word": "Späher",
+     "start": 0.32
+    },
+    {
+     "word": "los.",
+     "start": 1.166
+    },
+    {
+     "word": "Und",
+     "start": 1.706
+    },
+    {
+     "word": "die",
+     "start": 2.246
+    },
+    {
+     "word": "finden",
+     "start": 2.517
+    },
+    {
+     "word": "...",
+     "start": 3.246
+    },
+    {
+     "word": "eine",
+     "start": 3.89
+    },
+    {
+     "word": "*Mutter*.",
+     "start": 3.89
+    },
+    {
+     "word": "Ein",
+     "start": 4.706
+    },
+    {
+     "word": "*Baby*.",
+     "start": 5.231
+    },
+    {
+     "word": "Und",
+     "start": 6.346
+    },
+    {
+     "word": "eine",
+     "start": 6.986
+    },
+    {
+     "word": "*Quelle*.",
+     "start": 7.49
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-18.wav",
+   "seconds": 5.548,
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.277
+    },
+    {
+     "word": "lässt",
+     "start": 0.32
+    },
+    {
+     "word": "sie",
+     "start": 1.05
+    },
+    {
+     "word": "bleiben.",
+     "start": 1.22
+    },
+    {
+     "word": "Und",
+     "start": 2.088
+    },
+    {
+     "word": "aus",
+     "start": 2.57
+    },
+    {
+     "word": "dem",
+     "start": 2.57
+    },
+    {
+     "word": "leeren",
+     "start": 2.743
+    },
+    {
+     "word": "Tal",
+     "start": 3.23
+    },
+    {
+     "word": "...",
+     "start": 3.79
+    },
+    {
+     "word": "wird",
+     "start": 4.29
+    },
+    {
+     "word": "*Mekka*.",
+     "start": 4.296
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-19.wav",
+   "seconds": 11.074,
+   "words": [
+    {
+     "word": "Heute",
+     "start": 0.133
+    },
+    {
+     "word": "laufen",
+     "start": 0.144
+    },
+    {
+     "word": "Millionen",
+     "start": 0.944
+    },
+    {
+     "word": "Pilger",
+     "start": 1.6
+    },
+    {
+     "word": "genau",
+     "start": 2.187
+    },
+    {
+     "word": "ihren",
+     "start": 2.84
+    },
+    {
+     "word": "Weg.",
+     "start": 3.116
+    },
+    {
+     "word": "*Siebenmal*.",
+     "start": 4.44
+    },
+    {
+     "word": "Und",
+     "start": 5.929
+    },
+    {
+     "word": "wo",
+     "start": 6.38
+    },
+    {
+     "word": "sie",
+     "start": 6.527
+    },
+    {
+     "word": "damals",
+     "start": 6.727
+    },
+    {
+     "word": "im",
+     "start": 7.367
+    },
+    {
+     "word": "Tal",
+     "start": 7.627
+    },
+    {
+     "word": "rannte",
+     "start": 7.987
+    },
+    {
+     "word": "...",
+     "start": 8.627
+    },
+    {
+     "word": "rennen",
+     "start": 9.327
+    },
+    {
+     "word": "sie",
+     "start": 9.335
+    },
+    {
+     "word": "bis",
+     "start": 9.767
+    },
+    {
+     "word": "heute.",
+     "start": 10.06
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-20.wav",
+   "seconds": 3.966,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.32
+    },
+    {
+     "word": "*Zamzam*?",
+     "start": 0.32
+    },
+    {
+     "word": "Fließt",
+     "start": 1.192
+    },
+    {
+     "word": "bis",
+     "start": 1.758
+    },
+    {
+     "word": "heute.",
+     "start": 2.202
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_zamzam/line-0-21.wav",
+   "seconds": 4.212,
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.053
+    },
+    {
+     "word": "begann",
+     "start": 0.084
+    },
+    {
+     "word": "...",
+     "start": 0.866
+    },
+    {
+     "word": "mit",
+     "start": 0.866
+    },
+    {
+     "word": "einer",
+     "start": 1.375
+    },
+    {
+     "word": "*Mutter*,",
+     "start": 1.434
+    },
+    {
+     "word": "die",
+     "start": 2.195
+    },
+    {
+     "word": "Allah",
+     "start": 2.408
+    },
+    {
+     "word": "vertraute.",
+     "start": 2.935
+    }
+   ],
+   "flow": 0
+  }
+ ]
+}

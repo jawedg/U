@@ -493,6 +493,21 @@ def person(name, loc=(0, 0, 0), yaw=0.0, robe=None, skin=None, wrap=None, head="
               scale=(1.03, 1.1, 1))
     elif head == "cap":
         ball(f"{name}_cap", (0, 0.0, 0.18), (0.1, 0.11, 0.07), mw, parent=headE)
+    elif head == "khimar":  # Frauen: Tuch über Kopf und Schultern bis zur Brust (Gesicht frei – es ist ohnehin leer)
+        kh = loft(f"{name}_khimar", [(-0.36, 0.25, 0.2, 0, 0.03), (-0.25, 0.235, 0.185, 0, 0.025), (-0.12, 0.17, 0.16, 0, 0.02),
+                                     (-0.02, 0.122, 0.13, 0, 0.012), (0.1, 0.112, 0.122), (0.19, 0.104, 0.114), (0.245, 0.06, 0.068)],
+                  mw, parent=headE, cap_bot=False, seg=32, folds=(6, 0.05, 0.004, seed + 5))
+        me = kh.data
+        bm = bmesh.new()
+        bm.from_mesh(me)
+        dels = [f for f in bm.faces if f.calc_center_median().y < -0.07 and -0.05 < f.calc_center_median().z < 0.17
+                and abs(f.calc_center_median().x) < 0.08]
+        bmesh.ops.delete(bm, geom=dels, context="FACES")
+        bm.to_mesh(me)
+        bm.free()
+        kh.modifiers.new("solid", "SOLIDIFY").thickness = 0.01
+    elif head == "bare":  # kurzes Haar (z. B. Pilger im Ihram)
+        ball(f"{name}_hair", (0, 0.004, 0.135), (0.1, 0.11, 0.11), pbr("hair", (0.05, 0.04, 0.035), 0.7), parent=headE)
     # Arme (Ärmel + Hände), Schultern außen am Körper
     for s_, nm in ((-1, "L"), (1, "R")):
         sh = empty(f"{name}_sh.{nm}", (0.215 * s_, 0.0, 0.36), chest)
@@ -1032,7 +1047,7 @@ def point(name, loc, energy, color=(1.0, 0.6, 0.3), radius=0.1, shadow=False, pa
 
 
 def render_setup(pct=50, samples=12, mist_col=(0.05, 0.06, 0.1), mist_amt=0.6, bloom=0.6, exposure=0.0, look="AgX - Punchy",
-                 shadow_res=0.5):
+                 shadow_res=0.5, sky_sep=False):
     sc.render.engine = "BLENDER_EEVEE"
     e = sc.eevee
     e.taa_render_samples = samples
@@ -1062,6 +1077,37 @@ def render_setup(pct=50, samples=12, mist_col=(0.05, 0.06, 0.1), mist_amt=0.6, b
     out = N.new("NodeGroupOutput")
     ng.interface.new_socket("Image", in_out="OUTPUT", socket_type="NodeSocketColor")
     img = rl.outputs["Image"]
+    if sky_sep and mist_amt > 0:
+        # Folge 2: durchsichtige Licht-Säulen schrieben Tiefe in den Dunst-Kanal -> Himmel dahinter ohne Dunst (Ellipse).
+        # Lösung: Bild ohne Himmel (transparent), Dunst nur auf Undurchsichtiges (× Alpha), Himmel (Environment) separat
+        # mit gleichem Dunst-Anteil, dann darunterlegen.
+        sc.render.film_transparent = True
+        vl.use_pass_environment = True
+        rl = N.new("CompositorNodeRLayers")
+        img = rl.outputs["Image"]
+        mm = N.new("ShaderNodeMath")
+        mm.operation = "MULTIPLY"
+        L.new(rl.outputs["Mist"], mm.inputs[0])
+        L.new(rl.outputs["Alpha"], mm.inputs[1])
+        mm2 = N.new("ShaderNodeMath")
+        mm2.operation = "MULTIPLY"
+        L.new(mm.outputs[0], mm2.inputs[0])
+        mm2.inputs[1].default_value = mist_amt
+        mix = N.new("ShaderNodeMix")
+        mix.data_type = "RGBA"
+        L.new(mm2.outputs[0], mix.inputs["Factor"])
+        L.new(img, mix.inputs[6])
+        mix.inputs[7].default_value = (*mist_col, 1)
+        skym = N.new("ShaderNodeMix")
+        skym.data_type = "RGBA"
+        skym.inputs["Factor"].default_value = mist_amt
+        L.new(rl.outputs["Environment"], skym.inputs[6])
+        skym.inputs[7].default_value = (*mist_col, 1)
+        ao = N.new("CompositorNodeAlphaOver")
+        L.new(skym.outputs[2], ao.inputs["Background"])
+        L.new(mix.outputs[2], ao.inputs["Foreground"])
+        img = ao.outputs["Image"]
+        mist_amt = 0
     if mist_amt > 0:
         mm = N.new("ShaderNodeMath")
         mm.operation = "MULTIPLY"

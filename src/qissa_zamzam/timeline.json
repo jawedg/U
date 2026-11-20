@@ -1,0 +1,2594 @@
+{
+ "fps": 60,
+ "render_fps": 30,
+ "voiced": true,
+ "total": 181.934,
+ "frames": 10916,
+ "segments": [
+  {
+   "id": "hook_a",
+   "kind": "clip",
+   "src": "heute",
+   "at": 3.0,
+   "start": 0.0,
+   "dur": 5.42
+  },
+  {
+   "id": "hook_b",
+   "kind": "clip",
+   "src": "wall",
+   "at": 8.3,
+   "start": 5.42,
+   "dur": 6.17
+  },
+  {
+   "id": "hook_c",
+   "kind": "clip",
+   "src": "durst",
+   "at": 1.0,
+   "start": 11.59,
+   "dur": 4.652
+  },
+  {
+   "id": "tal",
+   "kind": "shot",
+   "label": "TAL VON MEKKA · VOR TAUSENDEN JAHREN",
+   "start": 16.242,
+   "dur": 19.537,
+   "frames": 586,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     19.537,
+     19.537
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 586,
+   "src_dur": 19.537
+  },
+  {
+   "id": "abschied",
+   "kind": "shot",
+   "label": null,
+   "start": 35.779,
+   "dur": 14.683,
+   "frames": 440,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.683,
+     14.683
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 440,
+   "src_dur": 14.683
+  },
+  {
+   "id": "frage",
+   "kind": "shot",
+   "label": null,
+   "start": 50.462,
+   "dur": 16.871,
+   "frames": 506,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     16.871,
+     16.871
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 506,
+   "src_dur": 16.871
+  },
+  {
+   "id": "durst",
+   "kind": "shot",
+   "label": "EINIGE TAGE SPÄTER",
+   "start": 67.333,
+   "dur": 7.842,
+   "frames": 235,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     7.842,
+     7.842
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 235,
+   "src_dur": 7.842
+  },
+  {
+   "id": "safa",
+   "kind": "shot",
+   "label": null,
+   "start": 75.175,
+   "dur": 7.513,
+   "frames": 225,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     7.513,
+     7.513
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 225,
+   "src_dur": 7.513
+  },
+  {
+   "id": "marwa",
+   "kind": "shot",
+   "label": null,
+   "start": 82.688,
+   "dur": 5.407,
+   "frames": 162,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     5.407,
+     5.407
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 162,
+   "src_dur": 5.407
+  },
+  {
+   "id": "lauf0",
+   "kind": "clip",
+   "src": "marwa",
+   "at": 1.0,
+   "start": 88.095,
+   "dur": 1.074
+  },
+  {
+   "id": "lauf1",
+   "kind": "clip",
+   "src": "safa",
+   "at": 1.4,
+   "start": 89.169,
+   "dur": 0.52
+  },
+  {
+   "id": "lauf2",
+   "kind": "clip",
+   "src": "marwa",
+   "at": 2.6,
+   "start": 89.689,
+   "dur": 0.58
+  },
+  {
+   "id": "lauf3",
+   "kind": "clip",
+   "src": "safa",
+   "at": 2.6,
+   "start": 90.269,
+   "dur": 0.433
+  },
+  {
+   "id": "lauf4",
+   "kind": "clip",
+   "src": "marwa",
+   "at": 0.3,
+   "start": 90.702,
+   "dur": 1.174
+  },
+  {
+   "id": "stimme",
+   "kind": "shot",
+   "label": null,
+   "start": 91.876,
+   "dur": 3.648,
+   "frames": 109,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     3.648,
+     3.648
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 109,
+   "src_dur": 3.648
+  },
+  {
+   "id": "quelle",
+   "kind": "shot",
+   "label": null,
+   "start": 95.524,
+   "dur": 8.26,
+   "frames": 248,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     8.26,
+     8.26
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 248,
+   "src_dur": 8.26
+  },
+  {
+   "id": "wall",
+   "kind": "shot",
+   "label": null,
+   "start": 103.784,
+   "dur": 15.429,
+   "frames": 463,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     15.429,
+     15.429
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 463,
+   "src_dur": 15.429
+  },
+  {
+   "id": "engel",
+   "kind": "shot",
+   "label": null,
+   "start": 119.213,
+   "dur": 11.467,
+   "frames": 344,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     11.467,
+     11.467
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 344,
+   "src_dur": 11.467
+  },
+  {
+   "id": "karawane",
+   "kind": "shot",
+   "label": null,
+   "start": 130.68,
+   "dur": 12.357,
+   "frames": 371,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     12.357,
+     12.357
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 371,
+   "src_dur": 12.357
+  },
+  {
+   "id": "finden",
+   "kind": "shot",
+   "label": null,
+   "start": 143.037,
+   "dur": 14.845,
+   "frames": 445,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.845,
+     14.845
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 445,
+   "src_dur": 14.845
+  },
+  {
+   "id": "heute_karte",
+   "kind": "card",
+   "text": "HEUTE",
+   "start": 157.882,
+   "dur": 1.2
+  },
+  {
+   "id": "heute",
+   "kind": "shot",
+   "label": "MEKKA · HEUTE",
+   "start": 159.082,
+   "dur": 14.74,
+   "frames": 442,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.74,
+     14.74
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 442,
+   "src_dur": 14.74
+  },
+  {
+   "id": "ende",
+   "kind": "shot",
+   "label": null,
+   "start": 173.822,
+   "dur": 5.312,
+   "frames": 159,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     5.312,
+     5.312
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 159,
+   "src_dur": 5.312
+  },
+  {
+   "id": "logo",
+   "kind": "card",
+   "text": "QISSAH",
+   "start": 179.134,
+   "dur": 2.8
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "shot": "hook_a",
+   "start": 0.25,
+   "dur": 5.17,
+   "file": "qissa_zamzam/line-0-0.wav",
+   "text": "Jedes Jahr laufen Millionen Menschen diesen Weg. *Siebenmal*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Jedes",
+     "start": 0.072
+    },
+    {
+     "word": "Jahr",
+     "start": 0.072
+    },
+    {
+     "word": "laufen",
+     "start": 0.4
+    },
+    {
+     "word": "Millionen",
+     "start": 0.773
+    },
+    {
+     "word": "Menschen",
+     "start": 1.742
+    },
+    {
+     "word": "diesen",
+     "start": 2.297
+    },
+    {
+     "word": "Weg.",
+     "start": 2.74
+    },
+    {
+     "word": "*Siebenmal*.",
+     "start": 3.69
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h2",
+   "shot": "hook_b",
+   "start": 5.42,
+   "dur": 6.17,
+   "file": "qissa_zamzam/line-0-1.wav",
+   "text": "Und sie trinken aus einer *Quelle* ... mitten in der Wüste. Aber woher kommt sie?",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.284
+    },
+    {
+     "word": "sie",
+     "start": 0.32
+    },
+    {
+     "word": "trinken",
+     "start": 0.32
+    },
+    {
+     "word": "aus",
+     "start": 0.864
+    },
+    {
+     "word": "einer",
+     "start": 1.024
+    },
+    {
+     "word": "*Quelle*",
+     "start": 1.277
+    },
+    {
+     "word": "...",
+     "start": 1.784
+    },
+    {
+     "word": "mitten",
+     "start": 2.304
+    },
+    {
+     "word": "in",
+     "start": 2.346
+    },
+    {
+     "word": "der",
+     "start": 2.864
+    },
+    {
+     "word": "Wüste.",
+     "start": 3.024
+    },
+    {
+     "word": "Aber",
+     "start": 4.623
+    },
+    {
+     "word": "woher",
+     "start": 4.623
+    },
+    {
+     "word": "kommt",
+     "start": 5.283
+    },
+    {
+     "word": "sie?",
+     "start": 5.61
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h3",
+   "shot": "hook_c",
+   "start": 11.59,
+   "dur": 4.652,
+   "file": "qissa_zamzam/line-0-2.wav",
+   "text": "Alles begann ... mit einer *Mutter*. Und einem durstigen Baby.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.269
+    },
+    {
+     "word": "begann",
+     "start": 0.32
+    },
+    {
+     "word": "...",
+     "start": 1.096
+    },
+    {
+     "word": "mit",
+     "start": 1.096
+    },
+    {
+     "word": "einer",
+     "start": 1.376
+    },
+    {
+     "word": "*Mutter*.",
+     "start": 1.386
+    },
+    {
+     "word": "Und",
+     "start": 2.9
+    },
+    {
+     "word": "einem",
+     "start": 2.9
+    },
+    {
+     "word": "durstigen",
+     "start": 3.336
+    },
+    {
+     "word": "Baby.",
+     "start": 3.896
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e1",
+   "shot": "tal",
+   "start": 16.242,
+   "dur": 8.015,
+   "file": "qissa_zamzam/line-0-3.wav",
+   "text": "Ein Tal in Arabien. Kein *Wasser*. Kein Mensch. Nur Stein ... und Sand.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.218
+    },
+    {
+     "word": "Tal",
+     "start": 0.218
+    },
+    {
+     "word": "in",
+     "start": 0.218
+    },
+    {
+     "word": "Arabien.",
+     "start": 0.853
+    },
+    {
+     "word": "Kein",
+     "start": 1.056
+    },
+    {
+     "word": "*Wasser*.",
+     "start": 1.88
+    },
+    {
+     "word": "Kein",
+     "start": 2.587
+    },
+    {
+     "word": "Mensch.",
+     "start": 3.467
+    },
+    {
+     "word": "Nur",
+     "start": 5.728
+    },
+    {
+     "word": "Stein",
+     "start": 5.728
+    },
+    {
+     "word": "...",
+     "start": 6.623
+    },
+    {
+     "word": "und",
+     "start": 7.083
+    },
+    {
+     "word": "Sand.",
+     "start": 7.083
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e2",
+   "shot": "tal",
+   "start": 24.257,
+   "dur": 11.522,
+   "file": "qissa_zamzam/line-0-4.wav",
+   "text": "Hier lässt der Prophet *Ibrahim*, Friede sei mit ihm, seine Frau *Hadschar* zurück. Mit ihrem Baby *Ismail*. Nur ein paar Datteln ... und etwas Wasser.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Hier",
+     "start": 0.32
+    },
+    {
+     "word": "lässt",
+     "start": 0.813
+    },
+    {
+     "word": "der",
+     "start": 1.12
+    },
+    {
+     "word": "Prophet",
+     "start": 1.3
+    },
+    {
+     "word": "*Ibrahim*,",
+     "start": 1.8
+    },
+    {
+     "word": "Friede",
+     "start": 2.653
+    },
+    {
+     "word": "sei",
+     "start": 3.04
+    },
+    {
+     "word": "mit",
+     "start": 3.22
+    },
+    {
+     "word": "ihm,",
+     "start": 3.46
+    },
+    {
+     "word": "seine",
+     "start": 4.013
+    },
+    {
+     "word": "Frau",
+     "start": 4.328
+    },
+    {
+     "word": "*Hadschar*",
+     "start": 4.6
+    },
+    {
+     "word": "zurück.",
+     "start": 5.137
+    },
+    {
+     "word": "Mit",
+     "start": 6.095
+    },
+    {
+     "word": "ihrem",
+     "start": 6.115
+    },
+    {
+     "word": "Baby",
+     "start": 6.115
+    },
+    {
+     "word": "*Ismail*.",
+     "start": 7.005
+    },
+    {
+     "word": "Nur",
+     "start": 8.065
+    },
+    {
+     "word": "ein",
+     "start": 8.755
+    },
+    {
+     "word": "paar",
+     "start": 8.755
+    },
+    {
+     "word": "Datteln",
+     "start": 9.365
+    },
+    {
+     "word": "...",
+     "start": 9.945
+    },
+    {
+     "word": "und",
+     "start": 10.385
+    },
+    {
+     "word": "etwas",
+     "start": 10.456
+    },
+    {
+     "word": "Wasser.",
+     "start": 10.456
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e3",
+   "shot": "abschied",
+   "start": 35.779,
+   "dur": 6.238,
+   "file": "qissa_zamzam/line-0-5.wav",
+   "text": "Dann dreht Ibrahim sich um ... und *geht*. Hadschar läuft ihm nach:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.32
+    },
+    {
+     "word": "dreht",
+     "start": 0.32
+    },
+    {
+     "word": "Ibrahim",
+     "start": 0.945
+    },
+    {
+     "word": "sich",
+     "start": 1.633
+    },
+    {
+     "word": "um",
+     "start": 1.932
+    },
+    {
+     "word": "...",
+     "start": 2.345
+    },
+    {
+     "word": "und",
+     "start": 3.005
+    },
+    {
+     "word": "*geht*.",
+     "start": 3.066
+    },
+    {
+     "word": "Hadschar",
+     "start": 4.689
+    },
+    {
+     "word": "läuft",
+     "start": 4.689
+    },
+    {
+     "word": "ihm",
+     "start": 5.305
+    },
+    {
+     "word": "nach:",
+     "start": 5.489
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q1",
+   "shot": "abschied",
+   "start": 42.067,
+   "dur": 8.145,
+   "file": "qissa_zamzam/line-1-0.wav",
+   "text": "Ibrahim! Wohin gehst du? Du lässt uns in diesem Tal, in dem es nichts gibt?",
+   "speaker": "Hadschar",
+   "words": [
+    {
+     "word": "Ibrahim!",
+     "start": 0.22
+    },
+    {
+     "word": "Wohin",
+     "start": 1.65
+    },
+    {
+     "word": "gehst",
+     "start": 2.08
+    },
+    {
+     "word": "du?",
+     "start": 2.52
+    },
+    {
+     "word": "Du",
+     "start": 3.25
+    },
+    {
+     "word": "lässt",
+     "start": 3.47
+    },
+    {
+     "word": "uns",
+     "start": 3.86
+    },
+    {
+     "word": "in",
+     "start": 4.14
+    },
+    {
+     "word": "diesem",
+     "start": 4.37
+    },
+    {
+     "word": "Tal,",
+     "start": 4.82
+    },
+    {
+     "word": "in",
+     "start": 5.1
+    },
+    {
+     "word": "dem",
+     "start": 5.32
+    },
+    {
+     "word": "es",
+     "start": 5.6
+    },
+    {
+     "word": "nichts",
+     "start": 5.83
+    },
+    {
+     "word": "gibt?",
+     "start": 6.28
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Hadschar · Bukhari 3364"
+  },
+  {
+   "id": "e4",
+   "shot": "frage",
+   "start": 50.562,
+   "dur": 5.013,
+   "file": "qissa_zamzam/line-0-6.wav",
+   "text": "Er antwortet nicht. Er dreht sich nicht um. Da fragt sie:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.183
+    },
+    {
+     "word": "antwortet",
+     "start": 0.183
+    },
+    {
+     "word": "nicht.",
+     "start": 0.683
+    },
+    {
+     "word": "Er",
+     "start": 1.43
+    },
+    {
+     "word": "dreht",
+     "start": 1.608
+    },
+    {
+     "word": "sich",
+     "start": 1.608
+    },
+    {
+     "word": "nicht",
+     "start": 2.19
+    },
+    {
+     "word": "um.",
+     "start": 2.47
+    },
+    {
+     "word": "Da",
+     "start": 3.897
+    },
+    {
+     "word": "fragt",
+     "start": 3.902
+    },
+    {
+     "word": "sie:",
+     "start": 4.46
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q2",
+   "shot": "frage",
+   "start": 55.625,
+   "dur": 4.462,
+   "file": "qissa_zamzam/line-1-1.wav",
+   "text": "Hat Allah dir das befohlen?",
+   "speaker": "Hadschar",
+   "words": [
+    {
+     "word": "Hat",
+     "start": 1.04
+    },
+    {
+     "word": "Allah",
+     "start": 1.28
+    },
+    {
+     "word": "dir",
+     "start": 1.62
+    },
+    {
+     "word": "das",
+     "start": 1.87
+    },
+    {
+     "word": "befohlen?",
+     "start": 2.11
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Hadschar · Bukhari 3364"
+  },
+  {
+   "id": "e5",
+   "shot": "frage",
+   "start": 60.237,
+   "dur": 3.348,
+   "file": "qissa_zamzam/line-0-7.wav",
+   "text": "Und er sagt nur ein Wort ... *Ja*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.128
+    },
+    {
+     "word": "er",
+     "start": 0.128
+    },
+    {
+     "word": "sagt",
+     "start": 0.128
+    },
+    {
+     "word": "nur",
+     "start": 0.877
+    },
+    {
+     "word": "ein",
+     "start": 1.117
+    },
+    {
+     "word": "Wort",
+     "start": 1.377
+    },
+    {
+     "word": "...",
+     "start": 2.017
+    },
+    {
+     "word": "*Ja*.",
+     "start": 3.048
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q3",
+   "shot": "frage",
+   "start": 63.685,
+   "dur": 2.548,
+   "file": "qissa_zamzam/line-1-2.wav",
+   "text": "Dann wird Er uns nicht im Stich lassen.",
+   "speaker": "Hadschar",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.46
+    },
+    {
+     "word": "wird",
+     "start": 0.68
+    },
+    {
+     "word": "Er",
+     "start": 0.91
+    },
+    {
+     "word": "uns",
+     "start": 1.06
+    },
+    {
+     "word": "nicht",
+     "start": 1.25
+    },
+    {
+     "word": "im",
+     "start": 1.51
+    },
+    {
+     "word": "Stich",
+     "start": 1.66
+    },
+    {
+     "word": "lassen.",
+     "start": 1.92
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Hadschar · Bukhari 3364"
+  },
+  {
+   "id": "e6",
+   "shot": "durst",
+   "start": 67.633,
+   "dur": 7.542,
+   "file": "qissa_zamzam/line-0-8.wav",
+   "text": "Doch bald ist das Wasser leer. Die Sonne brennt. Das Baby weint ... und windet sich vor *Durst*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.128
+    },
+    {
+     "word": "bald",
+     "start": 0.224
+    },
+    {
+     "word": "ist",
+     "start": 0.54
+    },
+    {
+     "word": "das",
+     "start": 0.78
+    },
+    {
+     "word": "Wasser",
+     "start": 1.006
+    },
+    {
+     "word": "leer.",
+     "start": 1.344
+    },
+    {
+     "word": "Die",
+     "start": 1.86
+    },
+    {
+     "word": "Sonne",
+     "start": 2.395
+    },
+    {
+     "word": "brennt.",
+     "start": 2.395
+    },
+    {
+     "word": "Das",
+     "start": 3.982
+    },
+    {
+     "word": "Baby",
+     "start": 3.982
+    },
+    {
+     "word": "weint",
+     "start": 4.48
+    },
+    {
+     "word": "...",
+     "start": 5.04
+    },
+    {
+     "word": "und",
+     "start": 5.56
+    },
+    {
+     "word": "windet",
+     "start": 5.622
+    },
+    {
+     "word": "sich",
+     "start": 6.224
+    },
+    {
+     "word": "vor",
+     "start": 6.54
+    },
+    {
+     "word": "*Durst*.",
+     "start": 6.8
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e7",
+   "shot": "safa",
+   "start": 75.175,
+   "dur": 7.513,
+   "file": "qissa_zamzam/line-0-9.wav",
+   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *Safa*. Schaut ins Tal ... niemand.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.32
+    },
+    {
+     "word": "kann",
+     "start": 1.037
+    },
+    {
+     "word": "nicht",
+     "start": 1.192
+    },
+    {
+     "word": "mehr",
+     "start": 1.357
+    },
+    {
+     "word": "hinsehen.",
+     "start": 1.545
+    },
+    {
+     "word": "Sie",
+     "start": 2.165
+    },
+    {
+     "word": "rennt",
+     "start": 2.194
+    },
+    {
+     "word": "auf",
+     "start": 2.785
+    },
+    {
+     "word": "den",
+     "start": 2.885
+    },
+    {
+     "word": "Hügel",
+     "start": 3.085
+    },
+    {
+     "word": "*Safa*.",
+     "start": 3.517
+    },
+    {
+     "word": "Schaut",
+     "start": 4.673
+    },
+    {
+     "word": "ins",
+     "start": 4.681
+    },
+    {
+     "word": "Tal",
+     "start": 5.285
+    },
+    {
+     "word": "...",
+     "start": 5.885
+    },
+    {
+     "word": "niemand.",
+     "start": 6.711
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e8",
+   "shot": "marwa",
+   "start": 82.688,
+   "dur": 5.407,
+   "file": "qissa_zamzam/line-0-10.wav",
+   "text": "Sie rennt hinüber auf den Hügel *Marwa*. Wieder ... niemand.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.32
+    },
+    {
+     "word": "rennt",
+     "start": 0.32
+    },
+    {
+     "word": "hinüber",
+     "start": 0.881
+    },
+    {
+     "word": "auf",
+     "start": 1.321
+    },
+    {
+     "word": "den",
+     "start": 1.441
+    },
+    {
+     "word": "Hügel",
+     "start": 1.661
+    },
+    {
+     "word": "*Marwa*.",
+     "start": 2.121
+    },
+    {
+     "word": "Wieder",
+     "start": 3.477
+    },
+    {
+     "word": "...",
+     "start": 3.961
+    },
+    {
+     "word": "niemand.",
+     "start": 4.554
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e9",
+   "shot": "lauf",
+   "start": 88.095,
+   "dur": 3.781,
+   "file": "qissa_zamzam/line-0-11.wav",
+   "text": "Zwei. Drei. Vier. Fünf. Sechs.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Zwei.",
+     "start": 0.273
+    },
+    {
+     "word": "Drei.",
+     "start": 1.134
+    },
+    {
+     "word": "Vier.",
+     "start": 1.654
+    },
+    {
+     "word": "Fünf.",
+     "start": 2.234
+    },
+    {
+     "word": "Sechs.",
+     "start": 2.667
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e10",
+   "shot": "stimme",
+   "start": 91.876,
+   "dur": 3.648,
+   "file": "qissa_zamzam/line-0-12.wav",
+   "text": "Beim *siebten* Mal ... hört sie eine Stimme.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Beim",
+     "start": 0.263
+    },
+    {
+     "word": "*siebten*",
+     "start": 0.296
+    },
+    {
+     "word": "Mal",
+     "start": 1.496
+    },
+    {
+     "word": "...",
+     "start": 1.496
+    },
+    {
+     "word": "hört",
+     "start": 2.078
+    },
+    {
+     "word": "sie",
+     "start": 2.078
+    },
+    {
+     "word": "eine",
+     "start": 2.078
+    },
+    {
+     "word": "Stimme.",
+     "start": 2.828
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e11",
+   "shot": "quelle",
+   "start": 95.524,
+   "dur": 8.26,
+   "file": "qissa_zamzam/line-0-13.wav",
+   "text": "Dort, wo ihr Baby liegt, steht ein *Engel*. Er scharrt im Boden ... und *Wasser* bricht hervor.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dort,",
+     "start": 0.168
+    },
+    {
+     "word": "wo",
+     "start": 0.168
+    },
+    {
+     "word": "ihr",
+     "start": 0.62
+    },
+    {
+     "word": "Baby",
+     "start": 0.88
+    },
+    {
+     "word": "liegt,",
+     "start": 1.28
+    },
+    {
+     "word": "steht",
+     "start": 1.987
+    },
+    {
+     "word": "ein",
+     "start": 2.061
+    },
+    {
+     "word": "*Engel*.",
+     "start": 2.64
+    },
+    {
+     "word": "Er",
+     "start": 3.787
+    },
+    {
+     "word": "scharrt",
+     "start": 4.075
+    },
+    {
+     "word": "im",
+     "start": 4.72
+    },
+    {
+     "word": "Boden",
+     "start": 4.98
+    },
+    {
+     "word": "...",
+     "start": 5.5
+    },
+    {
+     "word": "und",
+     "start": 6.038
+    },
+    {
+     "word": "*Wasser*",
+     "start": 6.038
+    },
+    {
+     "word": "bricht",
+     "start": 6.907
+    },
+    {
+     "word": "hervor.",
+     "start": 7.148
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e12",
+   "shot": "wall",
+   "start": 103.784,
+   "dur": 7.826,
+   "file": "qissa_zamzam/line-0-14.wav",
+   "text": "Hadschar baut schnell einen Wall um das Wasser. Der Prophet Muhammad, Friede sei mit ihm, sagte später:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.264
+    },
+    {
+     "word": "baut",
+     "start": 0.32
+    },
+    {
+     "word": "schnell",
+     "start": 0.877
+    },
+    {
+     "word": "einen",
+     "start": 1.21
+    },
+    {
+     "word": "Wall",
+     "start": 1.541
+    },
+    {
+     "word": "um",
+     "start": 1.877
+    },
+    {
+     "word": "das",
+     "start": 2.077
+    },
+    {
+     "word": "Wasser.",
+     "start": 2.254
+    },
+    {
+     "word": "Der",
+     "start": 3.548
+    },
+    {
+     "word": "Prophet",
+     "start": 3.614
+    },
+    {
+     "word": "Muhammad,",
+     "start": 4.261
+    },
+    {
+     "word": "Friede",
+     "start": 5.07
+    },
+    {
+     "word": "sei",
+     "start": 5.357
+    },
+    {
+     "word": "mit",
+     "start": 5.537
+    },
+    {
+     "word": "ihm,",
+     "start": 5.797
+    },
+    {
+     "word": "sagte",
+     "start": 6.317
+    },
+    {
+     "word": "später:",
+     "start": 6.586
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q4",
+   "shot": "wall",
+   "start": 111.66,
+   "dur": 7.203,
+   "file": "qissa_zamzam/line-2-0.wav",
+   "text": "Allah erbarme sich der Mutter Ismails. Hätte sie Zamzam fließen lassen, wäre es eine Quelle, die über die Erde fließt.",
+   "speaker": "Zitat",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "erbarme",
+     "start": 0.38
+    },
+    {
+     "word": "sich",
+     "start": 0.82
+    },
+    {
+     "word": "der",
+     "start": 1.11
+    },
+    {
+     "word": "Mutter",
+     "start": 1.35
+    },
+    {
+     "word": "Ismails.",
+     "start": 1.73
+    },
+    {
+     "word": "Hätte",
+     "start": 2.97
+    },
+    {
+     "word": "sie",
+     "start": 3.26
+    },
+    {
+     "word": "Zamzam",
+     "start": 3.47
+    },
+    {
+     "word": "fließen",
+     "start": 3.81
+    },
+    {
+     "word": "lassen,",
+     "start": 4.19
+    },
+    {
+     "word": "wäre",
+     "start": 4.53
+    },
+    {
+     "word": "es",
+     "start": 5.05
+    },
+    {
+     "word": "eine",
+     "start": 5.22
+    },
+    {
+     "word": "Quelle,",
+     "start": 5.48
+    },
+    {
+     "word": "die",
+     "start": 5.82
+    },
+    {
+     "word": "über",
+     "start": 6.03
+    },
+    {
+     "word": "die",
+     "start": 6.28
+    },
+    {
+     "word": "Erde",
+     "start": 6.49
+    },
+    {
+     "word": "fließt.",
+     "start": 6.75
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Prophet ﷺ · Bukhari 3364"
+  },
+  {
+   "id": "e13",
+   "shot": "engel",
+   "start": 119.313,
+   "dur": 2.107,
+   "file": "qissa_zamzam/line-0-15.wav",
+   "text": "Und der Engel sagt zu ihr:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.196
+    },
+    {
+     "word": "der",
+     "start": 0.216
+    },
+    {
+     "word": "Engel",
+     "start": 0.216
+    },
+    {
+     "word": "sagt",
+     "start": 0.915
+    },
+    {
+     "word": "zu",
+     "start": 1.224
+    },
+    {
+     "word": "ihr:",
+     "start": 1.411
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q5",
+   "shot": "engel",
+   "start": 121.47,
+   "dur": 8.61,
+   "file": "qissa_zamzam/line-3-0.wav",
+   "text": "Habt keine Angst. Hier wird das Haus Allahs stehen, das dieser Junge und sein Vater bauen. Und Allah lässt die Seinen nicht im Stich.",
+   "speaker": "Engel",
+   "words": [
+    {
+     "word": "Habt",
+     "start": 0.05
+    },
+    {
+     "word": "keine",
+     "start": 0.34
+    },
+    {
+     "word": "Angst.",
+     "start": 0.69
+    },
+    {
+     "word": "Hier",
+     "start": 1.56
+    },
+    {
+     "word": "wird",
+     "start": 1.82
+    },
+    {
+     "word": "das",
+     "start": 2.08
+    },
+    {
+     "word": "Haus",
+     "start": 2.3
+    },
+    {
+     "word": "Allahs",
+     "start": 2.56
+    },
+    {
+     "word": "stehen,",
+     "start": 2.91
+    },
+    {
+     "word": "das",
+     "start": 3.25
+    },
+    {
+     "word": "dieser",
+     "start": 3.47
+    },
+    {
+     "word": "Junge",
+     "start": 3.98
+    },
+    {
+     "word": "und",
+     "start": 4.29
+    },
+    {
+     "word": "sein",
+     "start": 4.5
+    },
+    {
+     "word": "Vater",
+     "start": 4.77
+    },
+    {
+     "word": "bauen.",
+     "start": 5.07
+    },
+    {
+     "word": "Und",
+     "start": 5.86
+    },
+    {
+     "word": "Allah",
+     "start": 6.11
+    },
+    {
+     "word": "lässt",
+     "start": 6.46
+    },
+    {
+     "word": "die",
+     "start": 6.81
+    },
+    {
+     "word": "Seinen",
+     "start": 7.06
+    },
+    {
+     "word": "nicht",
+     "start": 7.46
+    },
+    {
+     "word": "im",
+     "start": 7.93
+    },
+    {
+     "word": "Stich.",
+     "start": 8.13
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Engel · Bukhari 3364"
+  },
+  {
+   "id": "e14",
+   "shot": "karawane",
+   "start": 130.98,
+   "dur": 3.047,
+   "file": "qissa_zamzam/line-0-16.wav",
+   "text": "Eines Tages zieht eine *Karawane* vorbei.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Eines",
+     "start": 0.076
+    },
+    {
+     "word": "Tages",
+     "start": 0.362
+    },
+    {
+     "word": "zieht",
+     "start": 0.962
+    },
+    {
+     "word": "eine",
+     "start": 1.346
+    },
+    {
+     "word": "*Karawane*",
+     "start": 1.642
+    },
+    {
+     "word": "vorbei.",
+     "start": 2.222
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "k1",
+   "shot": "karawane",
+   "start": 134.227,
+   "dur": 4.207,
+   "file": "qissa_zamzam/line-4-0.wav",
+   "text": "Seht ihr die Vögel? Sie kreisen! Das tun sie nur über Wasser.",
+   "speaker": "Mann1",
+   "words": [
+    {
+     "word": "Seht",
+     "start": 0.05
+    },
+    {
+     "word": "ihr",
+     "start": 0.66
+    },
+    {
+     "word": "die",
+     "start": 1.17
+    },
+    {
+     "word": "Vögel?",
+     "start": 1.69
+    },
+    {
+     "word": "Sie",
+     "start": 2.6
+    },
+    {
+     "word": "kreisen!",
+     "start": 2.75
+    },
+    {
+     "word": "Das",
+     "start": 3.03
+    },
+    {
+     "word": "tun",
+     "start": 3.18
+    },
+    {
+     "word": "sie",
+     "start": 3.34
+    },
+    {
+     "word": "nur",
+     "start": 3.5
+    },
+    {
+     "word": "über",
+     "start": 3.65
+    },
+    {
+     "word": "Wasser.",
+     "start": 3.84
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "k2",
+   "shot": "karawane",
+   "start": 138.634,
+   "dur": 4.103,
+   "file": "qissa_zamzam/line-4-1.wav",
+   "text": "Unmöglich. In diesem Tal gab es noch nie Wasser.",
+   "speaker": "Mann2",
+   "words": [
+    {
+     "word": "Unmöglich.",
+     "start": 0.05
+    },
+    {
+     "word": "In",
+     "start": 1.53
+    },
+    {
+     "word": "diesem",
+     "start": 1.74
+    },
+    {
+     "word": "Tal",
+     "start": 2.18
+    },
+    {
+     "word": "gab",
+     "start": 2.45
+    },
+    {
+     "word": "es",
+     "start": 2.73
+    },
+    {
+     "word": "noch",
+     "start": 2.95
+    },
+    {
+     "word": "nie",
+     "start": 3.27
+    },
+    {
+     "word": "Wasser.",
+     "start": 3.55
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "e15",
+   "shot": "finden",
+   "start": 143.237,
+   "dur": 8.497,
+   "file": "qissa_zamzam/line-0-17.wav",
+   "text": "Sie schicken Späher los. Und die finden ... eine *Mutter*. Ein *Baby*. Und eine *Quelle*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.32
+    },
+    {
+     "word": "schicken",
+     "start": 0.32
+    },
+    {
+     "word": "Späher",
+     "start": 0.32
+    },
+    {
+     "word": "los.",
+     "start": 1.166
+    },
+    {
+     "word": "Und",
+     "start": 1.706
+    },
+    {
+     "word": "die",
+     "start": 2.246
+    },
+    {
+     "word": "finden",
+     "start": 2.517
+    },
+    {
+     "word": "...",
+     "start": 3.246
+    },
+    {
+     "word": "eine",
+     "start": 3.89
+    },
+    {
+     "word": "*Mutter*.",
+     "start": 3.89
+    },
+    {
+     "word": "Ein",
+     "start": 4.706
+    },
+    {
+     "word": "*Baby*.",
+     "start": 5.231
+    },
+    {
+     "word": "Und",
+     "start": 6.346
+    },
+    {
+     "word": "eine",
+     "start": 6.986
+    },
+    {
+     "word": "*Quelle*.",
+     "start": 7.49
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e16",
+   "shot": "finden",
+   "start": 151.734,
+   "dur": 5.248,
+   "file": "qissa_zamzam/line-0-18.wav",
+   "text": "Hadschar lässt sie bleiben. Und aus dem leeren Tal ... wird *Mekka*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Hadschar",
+     "start": 0.277
+    },
+    {
+     "word": "lässt",
+     "start": 0.32
+    },
+    {
+     "word": "sie",
+     "start": 1.05
+    },
+    {
+     "word": "bleiben.",
+     "start": 1.22
+    },
+    {
+     "word": "Und",
+     "start": 2.088
+    },
+    {
+     "word": "aus",
+     "start": 2.57
+    },
+    {
+     "word": "dem",
+     "start": 2.57
+    },
+    {
+     "word": "leeren",
+     "start": 2.743
+    },
+    {
+     "word": "Tal",
+     "start": 3.23
+    },
+    {
+     "word": "...",
+     "start": 3.79
+    },
+    {
+     "word": "wird",
+     "start": 4.29
+    },
+    {
+     "word": "*Mekka*.",
+     "start": 4.296
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e17",
+   "shot": "heute",
+   "start": 159.382,
+   "dur": 10.774,
+   "file": "qissa_zamzam/line-0-19.wav",
+   "text": "Heute laufen Millionen Pilger genau ihren Weg. *Siebenmal*. Und wo sie damals im Tal rannte ... rennen sie bis heute.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Heute",
+     "start": 0.133
+    },
+    {
+     "word": "laufen",
+     "start": 0.144
+    },
+    {
+     "word": "Millionen",
+     "start": 0.944
+    },
+    {
+     "word": "Pilger",
+     "start": 1.6
+    },
+    {
+     "word": "genau",
+     "start": 2.187
+    },
+    {
+     "word": "ihren",
+     "start": 2.84
+    },
+    {
+     "word": "Weg.",
+     "start": 3.116
+    },
+    {
+     "word": "*Siebenmal*.",
+     "start": 4.44
+    },
+    {
+     "word": "Und",
+     "start": 5.929
+    },
+    {
+     "word": "wo",
+     "start": 6.38
+    },
+    {
+     "word": "sie",
+     "start": 6.527
+    },
+    {
+     "word": "damals",
+     "start": 6.727
+    },
+    {
+     "word": "im",
+     "start": 7.367
+    },
+    {
+     "word": "Tal",
+     "start": 7.627
+    },
+    {
+     "word": "rannte",
+     "start": 7.987
+    },
+    {
+     "word": "...",
+     "start": 8.627
+    },
+    {
+     "word": "rennen",
+     "start": 9.327
+    },
+    {
+     "word": "sie",
+     "start": 9.335
+    },
+    {
+     "word": "bis",
+     "start": 9.767
+    },
+    {
+     "word": "heute.",
+     "start": 10.06
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e18",
+   "shot": "heute",
+   "start": 170.156,
+   "dur": 3.666,
+   "file": "qissa_zamzam/line-0-20.wav",
+   "text": "Und *Zamzam*? Fließt bis heute.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.32
+    },
+    {
+     "word": "*Zamzam*?",
+     "start": 0.32
+    },
+    {
+     "word": "Fließt",
+     "start": 1.192
+    },
+    {
+     "word": "bis",
+     "start": 1.758
+    },
+    {
+     "word": "heute.",
+     "start": 2.202
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e19",
+   "shot": "ende",
+   "start": 173.822,
+   "dur": 3.912,
+   "file": "qissa_zamzam/line-0-21.wav",
+   "text": "Alles begann ... mit einer *Mutter*, die Allah vertraute.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Alles",
+     "start": 0.053
+    },
+    {
+     "word": "begann",
+     "start": 0.084
+    },
+    {
+     "word": "...",
+     "start": 0.866
+    },
+    {
+     "word": "mit",
+     "start": 0.866
+    },
+    {
+     "word": "einer",
+     "start": 1.375
+    },
+    {
+     "word": "*Mutter*,",
+     "start": 1.434
+    },
+    {
+     "word": "die",
+     "start": 2.195
+    },
+    {
+     "word": "Allah",
+     "start": 2.408
+    },
+    {
+     "word": "vertraute.",
+     "start": 2.935
+    }
+   ],
+   "tail": 0
+  }
+ ],
+ "quotes": [
+  {
+   "id": "q1",
+   "shot": "abschied",
+   "start": 42.067,
+   "dur": 8.145,
+   "text": "Ibrahim! Wohin gehst du? Du lässt uns in diesem Tal, in dem es nichts gibt?",
+   "by": "Hadschar · Bukhari 3364",
+   "words": [
+    {
+     "word": "Ibrahim!",
+     "start": 0.22
+    },
+    {
+     "word": "Wohin",
+     "start": 1.65
+    },
+    {
+     "word": "gehst",
+     "start": 2.08
+    },
+    {
+     "word": "du?",
+     "start": 2.52
+    },
+    {
+     "word": "Du",
+     "start": 3.25
+    },
+    {
+     "word": "lässt",
+     "start": 3.47
+    },
+    {
+     "word": "uns",
+     "start": 3.86
+    },
+    {
+     "word": "in",
+     "start": 4.14
+    },
+    {
+     "word": "diesem",
+     "start": 4.37
+    },
+    {
+     "word": "Tal,",
+     "start": 4.82
+    },
+    {
+     "word": "in",
+     "start": 5.1
+    },
+    {
+     "word": "dem",
+     "start": 5.32
+    },
+    {
+     "word": "es",
+     "start": 5.6
+    },
+    {
+     "word": "nichts",
+     "start": 5.83
+    },
+    {
+     "word": "gibt?",
+     "start": 6.28
+    }
+   ]
+  },
+  {
+   "id": "q2",
+   "shot": "frage",
+   "start": 55.625,
+   "dur": 4.462,
+   "text": "Hat Allah dir das befohlen?",
+   "by": "Hadschar · Bukhari 3364",
+   "words": [
+    {
+     "word": "Hat",
+     "start": 1.04
+    },
+    {
+     "word": "Allah",
+     "start": 1.28
+    },
+    {
+     "word": "dir",
+     "start": 1.62
+    },
+    {
+     "word": "das",
+     "start": 1.87
+    },
+    {
+     "word": "befohlen?",
+     "start": 2.11
+    }
+   ]
+  },
+  {
+   "id": "q3",
+   "shot": "frage",
+   "start": 63.685,
+   "dur": 2.548,
+   "text": "Dann wird Er uns nicht im Stich lassen.",
+   "by": "Hadschar · Bukhari 3364",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.46
+    },
+    {
+     "word": "wird",
+     "start": 0.68
+    },
+    {
+     "word": "Er",
+     "start": 0.91
+    },
+    {
+     "word": "uns",
+     "start": 1.06
+    },
+    {
+     "word": "nicht",
+     "start": 1.25
+    },
+    {
+     "word": "im",
+     "start": 1.51
+    },
+    {
+     "word": "Stich",
+     "start": 1.66
+    },
+    {
+     "word": "lassen.",
+     "start": 1.92
+    }
+   ]
+  },
+  {
+   "id": "q4",
+   "shot": "wall",
+   "start": 111.66,
+   "dur": 7.203,
+   "text": "Allah erbarme sich der Mutter Ismails. Hätte sie Zamzam fließen lassen, wäre es eine Quelle, die über die Erde fließt.",
+   "by": "der Prophet ﷺ · Bukhari 3364",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "erbarme",
+     "start": 0.38
+    },
+    {
+     "word": "sich",
+     "start": 0.82
+    },
+    {
+     "word": "der",
+     "start": 1.11
+    },
+    {
+     "word": "Mutter",
+     "start": 1.35
+    },
+    {
+     "word": "Ismails.",
+     "start": 1.73
+    },
+    {
+     "word": "Hätte",
+     "start": 2.97
+    },
+    {
+     "word": "sie",
+     "start": 3.26
+    },
+    {
+     "word": "Zamzam",
+     "start": 3.47
+    },
+    {
+     "word": "fließen",
+     "start": 3.81
+    },
+    {
+     "word": "lassen,",
+     "start": 4.19
+    },
+    {
+     "word": "wäre",
+     "start": 4.53
+    },
+    {
+     "word": "es",
+     "start": 5.05
+    },
+    {
+     "word": "eine",
+     "start": 5.22
+    },
+    {
+     "word": "Quelle,",
+     "start": 5.48
+    },
+    {
+     "word": "die",
+     "start": 5.82
+    },
+    {
+     "word": "über",
+     "start": 6.03
+    },
+    {
+     "word": "die",
+     "start": 6.28
+    },
+    {
+     "word": "Erde",
+     "start": 6.49
+    },
+    {
+     "word": "fließt.",
+     "start": 6.75
+    }
+   ]
+  },
+  {
+   "id": "q5",
+   "shot": "engel",
+   "start": 121.47,
+   "dur": 8.61,
+   "text": "Habt keine Angst. Hier wird das Haus Allahs stehen, das dieser Junge und sein Vater bauen. Und Allah lässt die Seinen nicht im Stich.",
+   "by": "der Engel · Bukhari 3364",
+   "words": [
+    {
+     "word": "Habt",
+     "start": 0.05
+    },
+    {
+     "word": "keine",
+     "start": 0.34
+    },
+    {
+     "word": "Angst.",
+     "start": 0.69
+    },
+    {
+     "word": "Hier",
+     "start": 1.56
+    },
+    {
+     "word": "wird",
+     "start": 1.82
+    },
+    {
+     "word": "das",
+     "start": 2.08
+    },
+    {
+     "word": "Haus",
+     "start": 2.3
+    },
+    {
+     "word": "Allahs",
+     "start": 2.56
+    },
+    {
+     "word": "stehen,",
+     "start": 2.91
+    },
+    {
+     "word": "das",
+     "start": 3.25
+    },
+    {
+     "word": "dieser",
+     "start": 3.47
+    },
+    {
+     "word": "Junge",
+     "start": 3.98
+    },
+    {
+     "word": "und",
+     "start": 4.29
+    },
+    {
+     "word": "sein",
+     "start": 4.5
+    },
+    {
+     "word": "Vater",
+     "start": 4.77
+    },
+    {
+     "word": "bauen.",
+     "start": 5.07
+    },
+    {
+     "word": "Und",
+     "start": 5.86
+    },
+    {
+     "word": "Allah",
+     "start": 6.11
+    },
+    {
+     "word": "lässt",
+     "start": 6.46
+    },
+    {
+     "word": "die",
+     "start": 6.81
+    },
+    {
+     "word": "Seinen",
+     "start": 7.06
+    },
+    {
+     "word": "nicht",
+     "start": 7.46
+    },
+    {
+     "word": "im",
+     "start": 7.93
+    },
+    {
+     "word": "Stich.",
+     "start": 8.13
+    }
+   ]
+  }
+ ],
+ "choice": null,
+ "events": {
+  "quelle_h2": 6.697,
+  "mutter_h3": 12.976,
+  "baby_h3": 15.486,
+  "wasser_e1": 18.122,
+  "baby_e2": 30.372,
+  "wasser_e2": 34.713,
+  "geht_e3": 38.845,
+  "ja_e5": 63.285,
+  "wasser_e6": 68.639,
+  "sonne_e6": 70.028,
+  "baby_e6": 71.615,
+  "durst_e6": 74.433,
+  "safa_e7": 78.692,
+  "niemand_e7": 81.886,
+  "marwa_e8": 84.809,
+  "niemand_e8": 87.242,
+  "siebten_e10": 92.172,
+  "stimme_e10": 94.704,
+  "baby_e11": 96.404,
+  "engel_e11": 98.164,
+  "wasser_e11": 101.562,
+  "wall_e12": 105.325,
+  "wasser_e12": 106.038,
+  "mutter_q4": 113.01,
+  "zamzam_q4": 115.13,
+  "quelle_q4": 117.14,
+  "engel_e13": 119.529,
+  "haus_q5": 123.77,
+  "vögel_k1": 135.917,
+  "kreisen_k1": 136.977,
+  "wasser_k1": 138.067,
+  "wasser_k2": 142.184,
+  "späher_e15": 143.557,
+  "mutter_e15": 147.127,
+  "baby_e15": 148.468,
+  "quelle_e15": 150.727,
+  "bleiben_e16": 152.954,
+  "mekka_e16": 156.03,
+  "heute_e17": 159.515,
+  "zamzam_e18": 170.476,
+  "heute_e18": 172.358,
+  "mutter_e19": 175.256,
+  "count": [
+   [
+    84.459,
+    1
+   ],
+   [
+    88.368,
+    2
+   ],
+   [
+    89.229,
+    3
+   ],
+   [
+    89.749,
+    4
+   ],
+   [
+    90.329,
+    5
+   ],
+   [
+    90.762,
+    6
+   ],
+   [
+    92.172,
+    7
+   ]
+  ]
+ }
+}

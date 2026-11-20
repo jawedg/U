@@ -1,0 +1,292 @@
+{
+ "title": "Der Ursprung von Zamzam – QISSAH Folge 2 (POV)",
+ "series": "QISSAH",
+ "note": "Folge 2 (Nutzer 19.11.2026): gleicher Ablauf wie Folge 1. Erzähler ElevenLabs (Helmut Stieglbauer, eleven_v3, Regie-Tags im Feld el, arabische Namen in arabischer Schrift). Worte von Hadschar, dem Propheten ﷺ und dem Engel als ZITAT (eigene Stimme mit Hall + goldene Schrift), wörtlich nach Sahih al-Bukhari 3364. Erfundene Sprecher nur die zwei Männer der Karawane (Dialog, kursiv). Ibrahim, Ismail (Propheten) und der Engel NUR als Licht; Hadschar ohne Gesicht.",
+ "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
+ "voiceParts": {
+  "0": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
+   },
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "h1",
+    "e1",
+    "e6",
+    "e11",
+    "e14",
+    "e17"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag",
+   "cutmode": "latest",
+   "snap": true
+  },
+  "1": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Hadschar": "Sulafat"
+   },
+   "notes": "# AUDIO PROFILE\nHadschar: a young mother, alone with her baby in an empty desert valley, thousands of years ago. Warm, clear, natural female voice, never theatrical.\n## THE SCENE\nHer husband is walking away and leaves her and the baby behind in the valley.\n### DIRECTOR'S NOTES\nFirst line: she calls after him, desperate and breathless, her voice breaking. Second line: very quiet, trembling, almost a whisper. Third line: calm and firm, full of trust, a soft strength. Leave a clear pause of about one second between the lines."
+  },
+  "2": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Zitat": "Charon"
+   },
+   "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1)."
+  },
+  "3": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Engel": "Enceladus"
+   },
+   "notes": "Worte des Engels – Zitat mit Hall."
+  },
+  "4": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Mann1": "Fenrir",
+    "Mann2": "Algenib"
+   },
+   "notes": "# AUDIO PROFILE\nMann1: a young caravan trader riding a camel, amazed and excited, pointing at the sky.\nMann2: the old leader of the caravan, gravelly, calm and sceptical, a little grumpy.\n## THE SCENE\nArabian desert, thousands of years ago. A caravan passes a dry valley. Birds are circling above it.\n### DIRECTOR'S NOTES\nNatural, lively, like real people talking outdoors in the wind. Leave a clear short pause between the lines."
+  }
+ },
+ "sentences": [
+  {
+   "id": "h1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Jedes Jahr laufen Millionen Menschen diesen Weg. *Siebenmal*.",
+   "el": "[softly] Jedes Jahr laufen Millionen Menschen diesen Weg. ... Siebenmal."
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und sie trinken aus einer *Quelle* ... mitten in der Wüste. Aber woher kommt sie?",
+   "el": "[curious] Und sie trinken aus einer Quelle ... mitten in der Wüste. [whispers] Aber woher kommt sie?"
+  },
+  {
+   "id": "h3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Alles begann ... mit einer *Mutter*. Und einem durstigen Baby.",
+   "el": "[mysterious] Alles begann ... mit einer Mutter. [softly] Und einem durstigen Baby. ..."
+  },
+  {
+   "id": "e1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ein Tal in Arabien. Kein *Wasser*. Kein Mensch. Nur Stein ... und Sand.",
+   "el": "[calm, storytelling] Ein Tal in Arabien. ... Kein Wasser. Kein Mensch. [quietly] Nur Stein ... und Sand."
+  },
+  {
+   "id": "e2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Hier lässt der Prophet *Ibrahim*, Friede sei mit ihm, seine Frau *Hadschar* zurück. Mit ihrem Baby *Ismail*. Nur ein paar Datteln ... und etwas Wasser.",
+   "say": "Hier lässt der Prophet إبراهيم, Friede sei mit ihm, seine Frau هاجر zurück. Mit ihrem Baby إسماعيل. Nur ein paar Datteln ... und etwas Wasser.",
+   "el": "[warm, reverent] Hier lässt der Prophet إبراهيم, Friede sei mit ihm, seine Frau هاجر zurück. [softly] Mit ihrem Baby إسماعيل. Nur ein paar Datteln ... und etwas Wasser."
+  },
+  {
+   "id": "e3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dann dreht Ibrahim sich um ... und *geht*. Hadschar läuft ihm nach:",
+   "say": "Dann dreht إبراهيم sich um ... und geht. هاجر läuft ihm nach:",
+   "el": "[slow, heavy] Dann dreht إبراهيم sich um ... und geht. [urgent] هاجر läuft ihm nach:"
+  },
+  {
+   "id": "q1",
+   "part": 1,
+   "speaker": "Hadschar",
+   "quote": true,
+   "fx": "hall",
+   "by": "Hadschar · Bukhari 3364",
+   "text": "Ibrahim! Wohin gehst du? Du lässt uns in diesem Tal, in dem es nichts gibt?",
+   "say": "إبراهيم! Wohin gehst du? Du lässt uns in diesem Tal, in dem es nichts gibt?"
+  },
+  {
+   "id": "e4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er antwortet nicht. Er dreht sich nicht um. Da fragt sie:",
+   "el": "[quietly] Er antwortet nicht. Er dreht sich nicht um. [hesitant] Da fragt sie:"
+  },
+  {
+   "id": "q2",
+   "part": 1,
+   "speaker": "Hadschar",
+   "quote": true,
+   "fx": "hall",
+   "by": "Hadschar · Bukhari 3364",
+   "text": "Hat Allah dir das befohlen?"
+  },
+  {
+   "id": "e5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und er sagt nur ein Wort ... *Ja*.",
+   "el": "[softly] Und er sagt nur ein Wort ... [whispers] Ja. ..."
+  },
+  {
+   "id": "q3",
+   "part": 1,
+   "speaker": "Hadschar",
+   "quote": true,
+   "fx": "hall",
+   "by": "Hadschar · Bukhari 3364",
+   "text": "Dann wird Er uns nicht im Stich lassen."
+  },
+  {
+   "id": "e6",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Doch bald ist das Wasser leer. Die Sonne brennt. Das Baby weint ... und windet sich vor *Durst*.",
+   "el": "[tense] Doch bald ist das Wasser leer. Die Sonne brennt. [sad, quiet] Das Baby weint ... und windet sich vor Durst."
+  },
+  {
+   "id": "e7",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *Safa*. Schaut ins Tal ... niemand.",
+   "say": "هاجر kann nicht mehr hinsehen. Sie rennt auf den Hügel الصفا. Schaut ins Tal ... niemand.",
+   "el": "[urgent] هاجر kann nicht mehr hinsehen. Sie rennt auf den Hügel الصفا. [breathless] Schaut ins Tal ... [whispers] niemand."
+  },
+  {
+   "id": "e8",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Sie rennt hinüber auf den Hügel *Marwa*. Wieder ... niemand.",
+   "say": "Sie rennt hinüber auf den Hügel المروة. Wieder ... niemand.",
+   "el": "[fast, breathless] Sie rennt hinüber auf den Hügel المروة. [whispers] Wieder ... niemand."
+  },
+  {
+   "id": "e9",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Zwei. Drei. Vier. Fünf. Sechs.",
+   "el": "[breathless, urgent] Zwei. Drei. Vier. Fünf. Sechs."
+  },
+  {
+   "id": "e10",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Beim *siebten* Mal ... hört sie eine Stimme.",
+   "el": "[slow, hushed] Beim siebten Mal ... [whispers] hört sie eine Stimme. ..."
+  },
+  {
+   "id": "e11",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dort, wo ihr Baby liegt, steht ein *Engel*. Er scharrt im Boden ... und *Wasser* bricht hervor.",
+   "el": "[awed, softly] Dort, wo ihr Baby liegt, steht ein Engel. Er scharrt im Boden ... [excited] und Wasser bricht hervor!"
+  },
+  {
+   "id": "e12",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Hadschar baut schnell einen Wall um das Wasser. Der Prophet Muhammad, Friede sei mit ihm, sagte später:",
+   "say": "هاجر baut schnell einen Wall um das Wasser. Der Prophet محمد, Friede sei mit ihm, sagte später:",
+   "el": "[fast] هاجر baut schnell einen Wall um das Wasser. [calm, reverent] Der Prophet محمد, Friede sei mit ihm, sagte später:"
+  },
+  {
+   "id": "q4",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3364",
+   "text": "Allah erbarme sich der Mutter Ismails. Hätte sie Zamzam fließen lassen, wäre es eine Quelle, die über die Erde fließt.",
+   "say": "Allah erbarme sich der Mutter إسماعيل. Hätte sie زمزم fließen lassen, wäre es eine Quelle, die über die Erde fließt."
+  },
+  {
+   "id": "e13",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und der Engel sagt zu ihr:",
+   "el": "[hushed] Und der Engel sagt zu ihr: ..."
+  },
+  {
+   "id": "q5",
+   "part": 3,
+   "speaker": "Engel",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Engel · Bukhari 3364",
+   "text": "Habt keine Angst. Hier wird das Haus Allahs stehen, das dieser Junge und sein Vater bauen. Und Allah lässt die Seinen nicht im Stich."
+  },
+  {
+   "id": "e14",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Eines Tages zieht eine *Karawane* vorbei.",
+   "el": "[calm, storytelling] Eines Tages zieht eine Karawane vorbei."
+  },
+  {
+   "id": "k1",
+   "part": 4,
+   "speaker": "Mann1",
+   "dialog": true,
+   "text": "Seht ihr die Vögel? Sie kreisen! Das tun sie nur über Wasser."
+  },
+  {
+   "id": "k2",
+   "part": 4,
+   "speaker": "Mann2",
+   "dialog": true,
+   "text": "Unmöglich. In diesem Tal gab es noch nie Wasser."
+  },
+  {
+   "id": "e15",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Sie schicken Späher los. Und die finden ... eine *Mutter*. Ein *Baby*. Und eine *Quelle*.",
+   "el": "[curious] Sie schicken Späher los. Und die finden ... [awed] eine Mutter. Ein Baby. Und eine Quelle."
+  },
+  {
+   "id": "e16",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Hadschar lässt sie bleiben. Und aus dem leeren Tal ... wird *Mekka*.",
+   "say": "هاجر lässt sie bleiben. Und aus dem leeren Tal ... wird Mekka.",
+   "el": "[warm] هاجر lässt sie bleiben. [proudly] Und aus dem leeren Tal ... wird Mekka. ..."
+  },
+  {
+   "id": "e17",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Heute laufen Millionen Pilger genau ihren Weg. *Siebenmal*. Und wo sie damals im Tal rannte ... rennen sie bis heute.",
+   "el": "[warm, slow] Heute laufen Millionen Pilger genau ihren Weg. Siebenmal. [softly] Und wo sie damals im Tal rannte ... rennen sie bis heute."
+  },
+  {
+   "id": "e18",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und *Zamzam*? Fließt bis heute.",
+   "say": "Und زمزم? Fließt bis heute.",
+   "el": "[curious] Und زمزم? ... [warm] Fließt bis heute."
+  },
+  {
+   "id": "e19",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Alles begann ... mit einer *Mutter*, die Allah vertraute.",
+   "el": "[softly] Alles begann ... [whispers] mit einer Mutter, die Allah vertraute. ..."
+  }
+ ],
+ "choice": null,
+ "sources": [
+  "Sahih al-Bukhari 3364 (Ibn Abbas, ganze Geschichte: Ibrahim bringt Hadschar und Ismail an den Ort des Hauses, ohne Wasser und Menschen; Datteln und Wasserschlauch; „Hat Allah dir das befohlen?“ – „Ja.“ – „Dann wird Er uns nicht im Stich lassen.“; Durst, sie läuft siebenmal zwischen Safa und Marwa – „Deshalb laufen die Menschen zwischen den beiden“; der Engel scharrt, Wasser kommt hervor, sie baut einen Wall; „Allah erbarme sich der Mutter Ismails …“; „Habt keine Angst … Hier ist das Haus Allahs, das dieser Junge und sein Vater bauen werden, und Allah lässt die Seinen nicht im Stich“; Dschurhum sehen kreisende Vögel, schicken Späher, Hadschar lässt sie bleiben)",
+  "Sahih al-Bukhari 3365 (zweite Überlieferung derselben Geschichte)",
+  "Koran, Sure 2:158 (Safa und Marwa gehören zu den Kultzeichen Allahs)",
+  "Koran, Sure 14:37 (Ibrahims Gebet für seine Familie im Tal ohne Pflanzen beim Haus Allahs)"
+ ],
+ "retime": "rate1"
+}
