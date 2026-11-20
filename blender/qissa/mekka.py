@@ -23,6 +23,7 @@ def mats():
     M["sand"] = Q.pbr("z_sand", (0.62, 0.49, 0.35), 1.0, var=0.22, scale=0.25, bump=0.15, bscale=5, spec=0.12)
     M["rock"] = Q.pbr("z_rock", (0.28, 0.22, 0.18), 0.9, var=0.4, scale=1.2, bump=0.6, bscale=6, spec=0.25)
     M["rock2"] = Q.pbr("z_rock2", (0.38, 0.3, 0.23), 0.9, var=0.35, scale=1.5, bump=0.6, bscale=8, spec=0.25)
+    M["hillrock"] = Q.pbr("z_hillrock", (0.27, 0.21, 0.17), 0.92, var=0.5, scale=0.9, bump=0.9, bscale=3.0, spec=0.2, plaster=0.35)
     M["stone"] = Q.pbr("z_stone", (0.33, 0.26, 0.2), 0.9, var=0.45, scale=9, bump=0.4, bscale=30)
     M["bark"] = Q.pbr("z_bark", (0.24, 0.18, 0.13), 0.95, var=0.3, scale=6, bump=0.6, bscale=30)
     M["leaf"] = Q.pbr("z_leaf", (0.16, 0.19, 0.08), 0.8, var=0.4, scale=3, two=((0.3, 0.29, 0.13), 2.5), bump=0.6, bscale=25)
@@ -41,7 +42,7 @@ def mats():
     M["blanket_b"] = Q.pbr("z_blanket_b", (0.12, 0.13, 0.3), 0.9, var=0.2, scale=6, bump=0.1, bscale=50)
     M["sack"] = Q.pbr("z_sack", (0.62, 0.55, 0.42), 1.0, var=0.18, scale=5, bump=0.4, bscale=60)
     M["tent"] = Q.pbr("z_tent", (0.16, 0.12, 0.1), 0.95, var=0.3, scale=3, bump=0.3, bscale=40)
-    M["tent2"] = Q.pbr("z_tent2", (0.42, 0.34, 0.24), 0.95, var=0.2, scale=3, bump=0.2, bscale=40)
+    M["tent2"] = Q.pbr("z_tent2", (0.55, 0.45, 0.32), 0.95, var=0.25, scale=3, bump=0.3, bscale=40)
     M["wood"] = Q.pbr("z_wood", (0.27, 0.17, 0.1), 0.75, var=0.25, scale=8, bump=0.2, bscale=40)
     M["bird"] = Q.pbr("z_bird", (0.08, 0.07, 0.06), 0.8)
     return M
@@ -82,10 +83,10 @@ def water_mat(name="z_water", col=(0.06, 0.1, 0.1), alpha=0.92):
     return m
 
 
-def terrain_mat():
+def terrain_mat(force_rock=False):
     """Talboden: Sand mit großen hellen/dunklen Flecken, Kies-Sprenkeln und feinen Rippeln; steile und hohe Stellen
     dunkler, verwitterter Granit (wie die Berge um Mekka) mit großen Rissen."""
-    m = bpy.data.materials.new("z_terrain")
+    m = bpy.data.materials.new("z_rockmat" if force_rock else "z_terrain")
     m.use_nodes = True
     nt = m.node_tree
     N, L = nt.nodes, nt.links
@@ -154,6 +155,8 @@ def terrain_mat():
     # Fels-Anteil: Höhe + Steilheit + Rauschen (unregelmäßige Grenze)
     rockf = math_("MAXIMUM", mr(sz.outputs["Z"], 3.0, 14.0), mr(sn.outputs["Z"], 0.9, 0.7))
     rockf = math_("ADD", rockf, math_("MULTIPLY", noise_(0.06, 4), 0.5))
+    if force_rock:  # Hügel Safa/Marwa: ganz Fels, kleine Sandflecken
+        rockf = math_("ADD", 0.62, math_("MULTIPLY", noise_(0.5, 4), 0.25))
     rk = ramp(rockf, [(0.5, (0, 0, 0)), (0.68, (1, 1, 1))])
     # Sand: große Flecken + mittlere Variation + Kies-Sprenkel
     sand = ramp(noise_(0.025, 3), [(0.3, (0.45, 0.34, 0.23)), (0.55, (0.6, 0.47, 0.33)), (0.75, (0.68, 0.55, 0.4))])
@@ -180,10 +183,11 @@ def terrain_mat():
     # Relief: große Risse im Fels (Voronoi-Kanten) + feines Korn
     vc = N.new("ShaderNodeTexVoronoi")
     vc.feature = "DISTANCE_TO_EDGE"
-    vc.inputs["Scale"].default_value = 0.35
+    vc.inputs["Scale"].default_value = 0.6 if force_rock else 0.35
     L.new(tc.outputs["Object"], vc.inputs["Vector"])
     crack = mr(vc.outputs["Distance"], 0.0, 0.08)
-    hgt = math_("ADD", math_("MULTIPLY", crack, math_("MULTIPLY", rk, 1.0)), math_("MULTIPLY", noise_(1.2, 8), 0.6))
+    hgt = math_("ADD", math_("MULTIPLY", crack, math_("MULTIPLY", rk, 0.22 if force_rock else 1.0)),
+                math_("MULTIPLY", noise_(1.2, 8), 0.9 if force_rock else 0.6))
     hgt = math_("ADD", hgt, math_("MULTIPLY", grav, 0.3))
     bp = N.new("ShaderNodeBump")
     bp.inputs["Strength"].default_value = 0.45
@@ -633,8 +637,10 @@ def rock_hill(name, loc, r, h, seed=0, clear=()):
             rr = r * (1 - u) ** 0.8 + 0.4
             d = Vector((math.cos(a), math.sin(a), 0))
             k = 1 + 0.18 * noise.noise(d * 2 + Vector((seed, u * 3, 0)))
-            z = h * (1 - (1 - u) ** 1.6) + 0.9 * noise.noise(Vector((a * 2, u * 4, seed))) + 0.45 * noise.noise(Vector((a * 9, u * 14, seed)))
-            row.append(bm.verts.new((loc.x + d.x * rr * k, loc.y + d.y * rr * k, z - 0.4)))
+            z = h * (1 - (1 - u) ** 1.6) + 0.5 * noise.noise(Vector((a * 2, u * 4, seed))) + 0.25 * noise.noise(Vector((a * 9, u * 14, seed)))
+            px, py = loc.x + d.x * rr * k, loc.y + d.y * rr * k
+            z += (0.15 * noise.noise(Vector((px * 0.9, py * 0.9, seed))) + 0.08 * noise.noise(Vector((px * 2.6, py * 2.6, seed + 3)))) * min(1.0, u * 4)
+            row.append(bm.verts.new((px, py, z - 0.4)))
         vs.append(row)
     for j in range(rings):
         for i in range(n):
@@ -645,16 +651,18 @@ def rock_hill(name, loc, r, h, seed=0, clear=()):
     bm.free()
     for p in me.polygons:
         p.use_smooth = True
-    me.materials.append(M["rock2"])
+    if "rock_m" not in M:
+        M["rock_m"] = terrain_mat(force_rock=True)
+    me.materials.append(M["rock_m"])
     o = bpy.data.objects.new(name, me)
     Q.link(o)
     _templates()
-    for k in range(150):
+    for k in range(340):
         a = rnd.uniform(0, 2 * math.pi)
-        u = rnd.uniform(0.0, 0.85)
+        u = rnd.uniform(0.0, 0.92)
         rr = r * (1 - u) ** 0.8
         z = h * (1 - (1 - u) ** 1.6)
-        s = rnd.uniform(0.5, 2.4) * (1.25 - 0.55 * u)
+        s = (rnd.uniform(0.35, 1.2) if k % 3 else rnd.uniform(1.0, 2.4)) * (1.25 - 0.55 * u)
         bx, by = loc.x + rr * math.cos(a), loc.y + rr * math.sin(a)
         if any((bx - cx) ** 2 + (by - cy) ** 2 < cr * cr for cx, cy, cr in clear):
             continue
@@ -731,13 +739,23 @@ def valley(seed=3, keep=(), tree=True, hills=True):
             acacia(f"tree_far{i}", Vector((x, y, ground_z(x, y))), h=4.0 * s / 0.7, spread=3.4 * s / 0.7, seed=10 + i)
     if hills:
         def line(a, b, n=10):
-            return [(a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n, 2.4) for k in range(n + 1)]
+            return [(a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n, 1.3) for k in range(n + 1)]
         rock_hill("safa", SAFA, 12.0, SAFA_H, seed=1, clear=line((SAFA.x + 1.2, SAFA.y - 1.0), (-31.5, 11.5)))
         rock_hill("marwa", MARWA, 11.0, MARWA_H, seed=2, clear=line((MARWA.x - 1.0, MARWA.y - 0.4), (27.0, 18.5)))
         hill_pebbles("peb_safa", SAFA, 12.0, SAFA_H, seed=3)
         hill_pebbles("peb_marwa", MARWA, 11.0, MARWA_H, seed=4)
     hillock()
     keep = list(keep) + [(TREE.x, TREE.y, 5.5), (SAFA.x, SAFA.y, 13), (MARWA.x, MARWA.y, 12), (HILLOCK.x, HILLOCK.y, 8)]
+
+    def seg_keep(pts, r=2.6):
+        out = []
+        for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+            n = max(1, int(math.hypot(bx - ax, by - ay) / 1.5))
+            out += [(ax + (bx - ax) * k / n, ay + (by - ay) * k / n, r) for k in range(n + 1)]
+        return out
+    keep += seg_keep([(6.4, -9.0), (2.5, 0.0), (-3.0, 10.0), (-8.5, 22.0), (-12.0, 34.0), (-16.0, 50.0), (-18.0, 64.0)])
+    keep += seg_keep([(-3.5, 7.6), (3.3, -8.0)]) + seg_keep([(11.5, -3.2), (7.6, -8.4)]) + seg_keep([(-15.5, -7.0), (-4.6, -10.8)])
+    keep += seg_keep([(-31.5, 11.5), (-44.8, 17.0)]) + seg_keep([(27.0, 18.5), (45.0, 21.6)])
     scatter(seed, keep=keep)
     pebbles("peb_tree", (TREE.x - 2, TREE.y + 1), (16, 14), 900, seed=1)
     pebbles("peb_wadi", (2, 12), (14, 30), 900, seed=2, rmax=0.09)
@@ -1197,43 +1215,48 @@ def birds_circle(center, radius, height, n, t1, seed=0, scale=2.2, speed=0.22):
     return out
 
 
-def tent(name, loc, yaw=0.0, w=4.0, d=2.6, h=1.7, mat=None, seed=0):
-    """Beduinenzelt: Stoffbahn über Stangen, vorne offen."""
+def tent(name, loc, yaw=0.0, w=4.0, d=2.6, h=1.9, mat=None, seed=0):
+    """Zelt (A-Form): zwei schräge, leicht durchhängende Stoffbahnen über einer Firststange, Giebel hinten zu, vorn offen."""
     rnd = random.Random(seed)
     root = Q.empty(name, loc, rot=(0, 0, yaw))
+    mt = mat or M["tent"]
     bm = bmesh.new()
-    nx, ny = 12, 8
-    g = []
-    for j in range(ny + 1):
-        row = []
-        for i in range(nx + 1):
-            x = -w / 2 + w * i / nx
-            y = -d / 2 + d * j / ny
-            peak = h - 0.35 * abs(math.sin(math.pi * i / nx * 3))  # drei Stangen -> wellige Dachlinie
-            z = peak * (1 - 0.85 * (abs(y) / (d / 2)) ** 1.3) + rnd.uniform(-0.03, 0.03)
-            row.append(bm.verts.new((x, y, max(0.05, z))))
-        g.append(row)
-    for j in range(ny):
-        for i in range(nx):
-            bm.faces.new((g[j][i], g[j][i + 1], g[j + 1][i + 1], g[j + 1][i]))
+    nx, ny = 10, 6
+    for side in (-1, 1):
+        g = []
+        for j in range(ny + 1):
+            row = []
+            for i in range(nx + 1):
+                x = -w / 2 + w * i / nx
+                v = j / ny
+                y = side * (d / 2) * v
+                z = h * (1 - v) - 0.12 * math.sin(math.pi * v) * (0.6 + 0.4 * math.sin(math.pi * i / nx)) + rnd.uniform(-0.015, 0.015)
+                row.append(bm.verts.new((x, y, max(0.03, z))))
+            g.append(row)
+        for j in range(ny):
+            for i in range(nx):
+                q = (g[j][i], g[j][i + 1], g[j + 1][i + 1], g[j + 1][i])
+                bm.faces.new(q if side > 0 else tuple(reversed(q)))
+    # Giebel hinten (Dreieck)
+    v0, v1, v2 = bm.verts.new((w / 2, -d / 2, 0.03)), bm.verts.new((w / 2, d / 2, 0.03)), bm.verts.new((w / 2, 0, h))
+    bm.faces.new((v0, v1, v2))
     me = bpy.data.meshes.new(f"{name}_me")
     bm.to_mesh(me)
     bm.free()
     for p in me.polygons:
         p.use_smooth = True
-    me.materials.append(mat or M["tent"])
+    me.materials.append(mt)
     o = bpy.data.objects.new(f"{name}_cloth", me)
     Q.link(o)
     o.parent = root
     o.modifiers.new("solid", "SOLIDIFY").thickness = 0.02
-    for k, x in enumerate((-w / 2 + 0.2, 0, w / 2 - 0.2)):
-        Q.limb(f"{name}_pole{k}", (x, 0, 0), (x, 0, h), 0.03, 0.025, M["wood"], parent=root, seg=6)
-    Q.box(f"{name}_back", (0, d / 2 - 0.05, h * 0.3), (w * 0.95, 0.04, h * 0.6), mat or M["tent"], parent=root)
+    Q.limb(f"{name}_ridge", (-w / 2 - 0.1, 0, h + 0.02), (w / 2 + 0.1, 0, h + 0.02), 0.03, 0.03, M["wood"], parent=root, seg=6)
+    for k, x in enumerate((-w / 2, w / 2)):
+        Q.limb(f"{name}_pole{k}", (x, 0, 0), (x, 0, h + 0.05), 0.03, 0.025, M["wood"], parent=root, seg=6)
     for k in range(4):  # Spannseile
         sx = -1 if k < 2 else 1
         sy = -1 if k % 2 else 1
-        Q.limb(f"{name}_rope{k}", (sx * w / 2, sy * d / 2 * 0.15, 0.25), (sx * (w / 2 + 0.9), sy * d / 2 * 0.6, 0.0), 0.006, 0.006,
-               M["rope"], parent=root, seg=4)
+        Q.limb(f"{name}_rope{k}", (sx * w / 2, 0, h), (sx * (w / 2 + 0.8), sy * 0.6, 0.0), 0.006, 0.006, M["rope"], parent=root, seg=4)
     return root
 
 
