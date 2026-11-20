@@ -1127,7 +1127,7 @@
    "start": 75.175,
    "dur": 7.513,
    "file": "qissa_zamzam/line-0-9.wav",
-   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *Safa*. Schaut ins Tal ... niemand.",
+   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *as-Safa*. Schaut ins Tal ... niemand.",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -1171,7 +1171,7 @@
      "start": 3.334
     },
     {
-     "word": "*Safa*.",
+     "word": "*as-Safa*.",
      "start": 3.693
     },
     {
@@ -1203,7 +1203,7 @@
    "start": 82.688,
    "dur": 5.407,
    "file": "qissa_zamzam/line-0-10.wav",
-   "text": "Sie rennt hinüber auf den Hügel *Marwa*. Wieder ... niemand.",
+   "text": "Sie rennt hinüber auf den Hügel *al-Marwa*. Wieder ... niemand.",
    "speaker": "Erzaehler",
    "words": [
     {
@@ -1231,7 +1231,7 @@
      "start": 1.661
     },
     {
-     "word": "*Marwa*.",
+     "word": "*al-Marwa*.",
      "start": 2.121
     },
     {

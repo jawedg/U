@@ -155,7 +155,7 @@
    "id": "e7",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *Safa*. Schaut ins Tal ... niemand.",
+   "text": "Hadschar kann nicht mehr hinsehen. Sie rennt auf den Hügel *as-Safa*. Schaut ins Tal ... niemand.",
    "say": "هاجر kann nicht mehr hinsehen. Sie rennt auf den Hügel الصفا. Schaut ins Tal ... niemand.",
    "el": "[urgent] هاجر kann nicht mehr hinsehen. Sie rennt auf den Hügel الصفا. [breathless] Schaut ins Tal ... [whispers] niemand."
   },
@@ -163,7 +163,7 @@
    "id": "e8",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Sie rennt hinüber auf den Hügel *Marwa*. Wieder ... niemand.",
+   "text": "Sie rennt hinüber auf den Hügel *al-Marwa*. Wieder ... niemand.",
    "say": "Sie rennt hinüber auf den Hügel المروة. Wieder ... niemand.",
    "el": "[fast, breathless] Sie rennt hinüber auf den Hügel المروة. [whispers] Wieder ... niemand."
   },

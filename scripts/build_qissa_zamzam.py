@@ -79,7 +79,8 @@ def word_times(text: str, dur: float) -> list:
 
 
 def norm(w: str) -> str:
-    return re.sub(r"[^\wäöüÄÖÜß]", "", w.replace("*", "")).lower()
+    w = re.sub(r"^a[lsdnrtz]-", "", w.replace("*", ""), flags=re.I)  # arabischer Artikel: „al-Marwa“ -> marwa (Ereignis-Schlüssel)
+    return re.sub(r"[^\wäöüÄÖÜß]", "", w).lower()
 
 
 def shot_times(tl: dict, sid: str) -> dict:
