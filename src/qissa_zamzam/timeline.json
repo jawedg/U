@@ -46,7 +46,7 @@
      19.537
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 586,
    "src_dur": 19.537
   },
@@ -67,7 +67,7 @@
      14.683
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 440,
    "src_dur": 14.683
   },
@@ -88,7 +88,7 @@
      16.871
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 506,
    "src_dur": 16.871
   },
@@ -109,7 +109,7 @@
      7.842
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 235,
    "src_dur": 7.842
   },
@@ -130,7 +130,7 @@
      7.513
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 225,
    "src_dur": 7.513
   },
@@ -151,7 +151,7 @@
      5.407
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 162,
    "src_dur": 5.407
   },
@@ -212,7 +212,7 @@
      3.648
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 109,
    "src_dur": 3.648
   },
@@ -233,7 +233,7 @@
      8.26
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 248,
    "src_dur": 8.26
   },
@@ -254,7 +254,7 @@
      15.429
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 463,
    "src_dur": 15.429
   },
@@ -275,7 +275,7 @@
      11.467
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 344,
    "src_dur": 11.467
   },
@@ -296,7 +296,7 @@
      12.357
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 371,
    "src_dur": 12.357
   },
@@ -317,7 +317,7 @@
      14.845
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 445,
    "src_dur": 14.845
   },
@@ -345,7 +345,7 @@
      14.74
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 442,
    "src_dur": 14.74
   },
@@ -366,7 +366,7 @@
      5.312
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 159,
    "src_dur": 5.312
   },
