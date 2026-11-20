@@ -211,3 +211,18 @@ Lokal reicht `npm run render:3d`.
   verschmilzt alles Unbewegte (halbiert die Renderzeit). Schatten nur von Mond/Sonne (weiche Punktlicht-Schatten rauschen und sind teuer).
 - Schriften lokal in `public/fonts/` (EB Garamond, Amiri; OFL), Untertitel-Serifenschrift wie im Vorbild.
 - TikTok-Beschreibung + Quellen: `videos/qissa-erster-adhan.md`.
+
+## QISSAH Folge 2 „Der Ursprung von Zamzam“ (Nov. 2026)
+- Titel im Video „WOHER KOMMT ZAMZAM?“, Folgen-Name „Der Ursprung von Zamzam“ (Nutzer wählte). Quelle: Bukhari 3364/3365.
+  Ich-Sicht Hadschar. Ibrahim, Ismail (Baby-Bündel mit Licht statt Kopf) und der Engel NUR als Licht.
+- Dateien: `src/qissa_zamzam/` (script.json, timeline.json, QissaZamzam.tsx, Komposition `QissaZamzam`), `scripts/build_qissa_zamzam.py`
+  (PLAN, `montage` = schnelle Schnitte je Wort beim Zählen „Zwei … Sechs“, Zähler-Overlay „SAFA ⇄ MARWA n/7“),
+  Blender `blender/qissa/zamzam.py` (Einstellungen) + `blender/qissa/mekka.py` (Tal mit einzelnen Granitgipfeln, Trockenbett,
+  Akazie, Safa/Marwa als Felshügel, Quelle mit Strahl + Wall aus Sandklumpen, Engel-Licht, Kamele, Vögel, Zelte, Mas'a-Halle mit Pilgern).
+  Ablauf: `scripts/render_qissa_zamzam.sh` → `scripts/v1_qissa_zamzam.sh` (wartet, Ton `scripts/sfx_qissa_zamzam.py`, `finish_qissa_zamzam.sh`)
+  → `out/qissah-zamzam-klein.mp4`. TikTok-Text: `videos/qissah-zamzam.md`.
+- Erzähler-Schnitte: voicePart `"cutmode": "latest", "snap": true` (sonst landete „… [whispers] niemand.“ im nächsten Stück, Untertitel zu spät).
+- Durchsichtige Licht-Säulen schrieben Tiefe in den Dunst-Kanal (blaue Ellipse am Himmel) → `render_setup(..., sky_sep=True)`:
+  Himmel getrennt (Environment-Pass), Dunst nur auf Undurchsichtiges. Licht-Gestalten werfen keinen Schatten (`MK.no_glow_shadows()`).
+- SFXMint-Downloads brauchen jetzt einen API-Schlüssel (anonym 0/Tag) → nicht nutzbar; Ersatz: synthetische Klänge, Wikimedia Commons (langsam).
+- Text-Änderung (vom Nutzer genehmigter Text): „Kein Baum“ → „Nur Stein … und Sand“, weil der Hadith einen großen Baum nennt.
