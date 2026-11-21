@@ -20,7 +20,7 @@ PATH_N = [(-18.0, 64.0), (-16.0, 50.0), (-12.0, 34.0), (-8.5, 22.0), (-3.0, 10.0
 def mats():
     MK.mats()
     M["drystone"] = Q.pbr("k_drystone", (0.34, 0.28, 0.23), 0.95, var=0.5, scale=2.5, bump=0.8, bscale=5, brick=0.13, grime=0.45)
-    M["thresh"] = Q.pbr("k_thresh", (0.5, 0.43, 0.35), 0.75, var=0.35, scale=4, bump=0.35, bscale=12, spec=0.45)
+    M["thresh"] = Q.pbr("k_thresh", (0.62, 0.53, 0.41), 0.6, var=0.4, scale=3, bump=0.5, bscale=9, spec=0.5)
     M["earth"] = Q.pbr("k_earth", (0.42, 0.32, 0.23), 1.0, var=0.25, scale=3, bump=0.25, bscale=20)
     M["beam"] = Q.pbr("k_beam", (0.22, 0.15, 0.09), 0.8, var=0.3, scale=6, bump=0.35, bscale=30, rings=12)
     M["frond"] = Q.pbr("k_frond", (0.42, 0.34, 0.2), 0.9, var=0.3, scale=8, rings=70)
@@ -39,6 +39,7 @@ def mats():
     M["feather"] = Q.pbr("k_feather", (0.85, 0.82, 0.75), 0.9, var=0.2, scale=20)
     M["water"] = MK.water_mat("k_water", (0.05, 0.09, 0.1), 0.95)
     M["ash"] = Q.pbr("k_ash", (0.12, 0.11, 0.1), 1.0, var=0.3, scale=8)
+    M["tent3"] = Q.pbr("k_tent3", (0.28, 0.19, 0.12), 0.95, var=0.3, scale=3, bump=0.3, bscale=40)
     M["dough"] = Q.pbr("k_cushion", (0.45, 0.16, 0.1), 0.95, var=0.25, scale=6, bump=0.2, bscale=40)
     return M
 
@@ -77,8 +78,8 @@ def hut(name="hut", loc=HUT, look=HUT_LOOK, lamp=False, door_open=1.0, tidy=True
               bevel=0.012)
     Q.box(f"{name}_lintel", (0, -d / 2 + t / 2, dh + 0.12), (dw + 0.5, t + 0.06, 0.16), M["beam"], parent=root, bevel=0.015)
     # DIE SCHWELLE: abgetretene Steinplatte quer in der Türöffnung
-    th = Q.box(f"{name}_threshold", (0, -d / 2 + t / 2 - 0.02, 0.065), (dw + 0.22, t + 0.16, 0.15), M["thresh"], parent=root, bevel=0.035,
-               jitter=0.008, seed=seed + 13)
+    th = Q.box(f"{name}_threshold", (0, -d / 2 + t / 2 - 0.03, 0.08), (dw + 0.26, t + 0.2, 0.18), M["thresh"], parent=root, bevel=0.05,
+               jitter=0.012, seed=seed + 13)
     # Holztür (nach innen offen, Angel links)
     hinge = Q.empty(f"{name}_hinge", (-dw / 2 + 0.02, -d / 2 + t - 0.02, 0.16), root, rot=(0, 0, math.radians(-100 * door_open)))
     Q.box(f"{name}_door", (dw / 2 - 0.03, 0.025, (dh - 0.1) / 2), (dw - 0.06, 0.05, dh - 0.12), M["beam"], parent=hinge, bevel=0.01)
@@ -294,11 +295,14 @@ def grave(name="grave", loc=GRAVE, yaw=0.4):
 def cook_fire(name, loc, energy=45.0, pot=True):
     F = MK.campfire(name, loc, energy=energy)
     if pot:
+        F["flame"].scale = (0.7, 0.7, 0.45)
         for k in range(3):
             a = k * 2.094
-            Q.ball(f"{name}_ps{k}", (0.22 * math.cos(a), 0.22 * math.sin(a), 0.07), (0.09, 0.08, 0.07), M["granite"], parent=F["root"], seg=8)
-        Q.loft(f"{name}_pot", [(0.0, 0.05, 0.05), (0.05, 0.16, 0.16), (0.16, 0.19, 0.19), (0.28, 0.15, 0.15), (0.32, 0.13, 0.13)],
-               M["clay"], parent=F["root"], seg=20).location = (0, 0, 0.12)
+            Q.box(f"{name}_ps{k}", (0.24 * math.cos(a), 0.24 * math.sin(a), 0.13), (0.14, 0.12, 0.26), M["granite"], parent=F["root"],
+                  rot=(0, 0, a), bevel=0.02, jitter=0.02, seed=k)
+        Q.loft(f"{name}_pot", [(0.0, 0.06, 0.06), (0.05, 0.16, 0.16), (0.16, 0.2, 0.2), (0.27, 0.16, 0.16), (0.31, 0.14, 0.14)],
+               M["clay"], parent=F["root"], seg=20, cap_top=False).location = (0, 0, 0.27)
+        Q.cyl(f"{name}_broth", (0, 0, 0.53), 0.135, 0.01, Q.pbr("k_broth", (0.3, 0.17, 0.08), 0.2, spec=0.6), seg=20, parent=F["root"])
     return F
 
 
@@ -325,7 +329,7 @@ def tents(n=16, seed=21, avoid=()):
             spots.append((x, y, a))
     for k, (x, y, a) in enumerate(spots):
         T_ = MK.tent(f"tent{k}", (x, y, gz(x, y)), yaw=a + math.pi / 2 + rnd.uniform(-0.4, 0.4), w=rnd.uniform(3.4, 5.2),
-                     d=rnd.uniform(2.3, 3.1), mat=MK.M["tent"] if k % 3 else MK.M["tent2"], seed=k)
+                     d=rnd.uniform(2.3, 3.1), mat=MK.M["tent"] if k % 3 else M["tent3"], seed=k)
         if k % 2 == 0:
             cook_fire(f"fire{k}", (x + 2.6 * math.cos(a), y + 2.6 * math.sin(a), gz(x, y)), energy=30.0, pot=k % 4 == 0)
         if k % 3 == 1:
@@ -406,14 +410,14 @@ def path_life(t1, seed=41, n_down=3, n_up=3, camel=True, kids=True):
     return out
 
 
-def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30.0, seed=21, extra_keep=(), life=True):
+def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30.0, seed=21, extra_keep=(), life=True, tent_avoid=()):
     """Das Tal Jahre später: Gelände + Baum + Safa/Marwa + Hügel (aus Folge 2), Zamzam-Brunnen, Zelte, Leute, Ziegen."""
     L = MK.light(mode, stars=stars)
     mats()
     keep = [(HUT.x, HUT.y, 6.0), (GRAVE.x, GRAVE.y, 3.0), (SP.x, SP.y, 4.0)] + list(extra_keep)
     MK.valley(keep=keep)
     well()
-    spots = tents(tents_n, seed=seed)
+    spots = tents(tents_n, seed=seed, avoid=tent_avoid)
     vl = villagers(spots, t1, n=people) if people else []
     if life:
         path_life(t1)
@@ -511,6 +515,13 @@ def walls(name="ka", t_of=None, n_courses=N_COURSES, chunks_per_side=3, built_to
                     o.keyframe_insert("scale", frame=max(1, Q.T(tk)))
                     o.scale = (1, 1, 1)
                     o.keyframe_insert("scale", frame=max(2, Q.T(tk + 0.35)))
+                    # vorher unsichtbar (flach gedrückte Lagen sonst als dünne Platten sichtbar)
+                    if Q.T(tk) > 1:
+                        o.hide_render = True
+                        o.keyframe_insert("hide_render", frame=1)
+                        o.keyframe_insert("hide_render", frame=Q.T(tk) - 1)
+                        o.hide_render = False
+                        o.keyframe_insert("hide_render", frame=Q.T(tk))
                 elif built_to is not None and c >= built_to:
                     bpy.data.objects.remove(o)
                     k += 1
@@ -589,7 +600,7 @@ MAQAM_T = Vector((0.0, -K_D / 2 - 11.0, 0.0))   # vor der Tür (Seite -Y)
 
 def today_mats():
     M["kiswa"] = Q.pbr("k_kiswa", (0.012, 0.012, 0.014), 0.55, var=0.08, scale=3, bump=0.25, bscale=18, spec=0.35)
-    M["gold"] = Q.pbr("k_gold", (0.88, 0.66, 0.3), 0.28, metal=0.95, var=0.12, scale=40, bump=0.35, bscale=120)
+    M["gold"] = Q.pbr("k_gold", (0.88, 0.66, 0.3), 0.32, metal=0.95, var=0.06, scale=8, bump=0.06, bscale=30)
     M["marble"] = Q.pbr("k_marble", (0.9, 0.89, 0.87), 0.22, var=0.05, scale=1.0, bump=0.01, bscale=8, spec=0.55)
     M["marble_d"] = Q.pbr("k_marble_d", (0.62, 0.6, 0.57), 0.2, var=0.08, scale=2.0, spec=0.6)
     M["glass"] = Q.pbr("k_glass", (0.85, 0.9, 0.92), 0.04, alpha=0.18, spec=0.8)

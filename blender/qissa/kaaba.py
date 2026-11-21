@@ -127,9 +127,9 @@ def motes_burst(name, center, t0, n=40, radius=0.5, rise_h=1.6, dur=4.0, seed=0,
 # ---------------------------------------------------------------- Hände (Ich-Sicht der Frauen) und gehaltene Dinge
 POSES = {
     "lap": {"L": ((-0.16, -0.52, -0.33), (-85, 0, -15)), "R": ((0.16, -0.52, -0.33), (-85, 0, 15))},
-    "complain": {"L": ((-0.15, -0.3, -0.42), (-68, 180, 18)), "R": ((0.15, -0.3, -0.42), (-68, 180, -18))},
-    "complain2": {"L": ((-0.19, -0.24, -0.44), (-60, 180, 30)), "R": ((0.19, -0.24, -0.44), (-60, 180, -30))},
-    "tell": {"L": ((-0.2, -0.5, -0.34), (-85, 0, -15)), "R": ((0.12, -0.26, -0.44), (-65, 160, -10))},
+    "complain": {"L": ((-0.15, -0.17, -0.45), (-62, 180, 18)), "R": ((0.15, -0.17, -0.45), (-62, 180, -18))},
+    "complain2": {"L": ((-0.2, -0.13, -0.46), (-55, 180, 30)), "R": ((0.2, -0.13, -0.46), (-55, 180, -30))},
+    "tell": {"L": ((-0.2, -0.5, -0.34), (-85, 0, -15)), "R": ((0.12, -0.16, -0.46), (-62, 160, -10))},
     "bowl": {"L": ((-0.07, -0.3, -0.44), (-80, 180, -28)), "R": ((0.07, -0.3, -0.44), (-80, 180, 28))},
     "offer": {"L": ((-0.07, -0.2, -0.56), (-75, 180, -25)), "R": ((0.07, -0.2, -0.56), (-75, 180, 25))},
     "cup": {"L": ((-0.2, -0.5, -0.34), (-85, 0, -15)), "R": ((0.05, -0.2, -0.56), (-70, 180, 10))},
@@ -224,9 +224,9 @@ def shot_zelte():
 def shot_ismail():
     """Goldene Stunde am Feuer: Ismail (Licht) sitzt bei den Männern des Stammes; sie reden mit ihm.
     „… verheiraten ihn mit einer Frau aus ihrem Stamm“: eine Frau kommt mit ihrer Mutter dazu."""
-    L, spots, vl = KW.settle_world("golden", t1=D + 1, people=8)
-    make_hut()
     fc = Vector((-12.0, -4.0, 0.0))
+    L, spots, vl = KW.settle_world("golden", t1=D + 1, people=8, tent_avoid=[(fc.x, fc.y, 9.0)])
+    make_hut()
     KW.cook_fire("gfire", (fc.x, fc.y, gz(fc.x, fc.y)), energy=70.0, pot=False)
     MK.rug("grug", (fc.x, fc.y, gz(fc.x, fc.y)), (4.6, 3.6), rot=0.2, mat=MK.M["blanket_r"])
     men = []
@@ -292,24 +292,20 @@ def shot_ankunft():
     make_hut()
     rig, shake, cam, H = wife_cam(wife=WIFE1)
     seat = HUTD["world"](0.15, 0.55, SIT)
-    ws = MK.waterskin("mend", (0, -0.36, -0.52), full=False, rot=0)
-    ws.parent = cam
-    ws.rotation_euler = (math.radians(70), 0, math.radians(10))
-    pose(H, 0, "bowl")
-    gesture(H, 0, 3.2, amp=0.012, hz=1.8)
-    pose(H, 3.4, "lap")
-    ws.keyframe_insert("location", frame=1)
-    ws.keyframe_insert("location", frame=Q.T(3.2))
-    ws.location = (0.0, -0.75, -0.45)
-    ws.keyframe_insert("location", frame=Q.T(3.9))
-    start, stop = (-3.2, 11.8), HUTD["front"]
+    pose(H, 0, "lap")
+    stop = HUTD["world"](0.1, -KW.HUT_D / 2 - 1.5)
+    start = (-3.2, 11.8)
     Ib = prophet("ibrahim", (start[0], start[1], gz(*start)))
-    t_end = MK.glide(Ib, [start, (1.5, 6.8), (stop[0] - 1.6, stop[1] + 1.2)], 0.3, speed=1.25)
-    door = HUTD["world"](0, -KW.HUT_D / 2, 1.2)
-    ibz = lambda t: (Ib["root"].location.x, Ib["root"].location.y, 1.2)  # noqa: E731
-    Q.cam_keys(rig, [(0, seat, look(seat, (seat[0] + 0.1, seat[1] - 0.2, 0.0))), (2.9, None, look(seat, (seat[0], seat[1] - 0.6, 0.1))),
-                     (3.9, None, look(seat, door)), (ev("ibrahim_e6") - 0.2, None, look(seat, (start[0] + 2.0, start[1] - 2.2, 1.6))),
-                     (D, None, look(seat, (stop[0] - 1.2, stop[1] + 0.9, 1.2)))])
+    path = [start, (1.5, 6.8), (stop[0], stop[1])]
+    L_ = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(path, path[1:]))
+    t0 = D - 0.2 - L_ / 1.25
+    MK.hold_at(Ib, 0, start)
+    MK.glide(Ib, path, t0, speed=1.25)
+    th = threshold_pt()
+    ibz = (stop[0], stop[1], gz(stop[0], stop[1]) + 1.2)
+    Q.cam_keys(rig, [(0, seat, look(seat, (th[0], th[1], th[2] + 0.4))), (ev("ibrahim_e6") - 1.2, None, look(seat, (th[0], th[1], th[2] + 0.6))),
+                     (ev("ibrahim_e6") - 0.1, None, look(seat, (start[0] + 1.0, start[1] - 1.0, 1.6))),
+                     (D, None, look(seat, ibz))])
     Q.handheld(shake, 0, D, amp=0.3)
     return L
 
@@ -352,6 +348,9 @@ def shot_abend1():
     st = HUTD["world"](-2.6, -KW.HUT_D / 2 - 4.5)
     Is = prophet("ismail", (st[0], st[1], gz(st[0], st[1])), strength=0.85, day=False)
     MK.glide(Is, [(st[0], st[1]), (fr[0], fr[1])], ev("ismail_e8") - 0.4, speed=1.3)
+    side = HUTD["world"](1.4, -KW.HUT_D / 2 - 1.6)
+    MK.hold_at(Is, ev("trennen_q2") + 0.8, (fr[0], fr[1]))
+    MK.glide(Is, [(fr[0], fr[1]), (side[0], side[1])], ev("trennen_q2") + 0.8, speed=0.9)
     pose(H, 0, "lap")
     pose(H, ls("f2"), "lap")
     pose(H, ls("f2") + 0.4, "tell")
@@ -361,8 +360,8 @@ def shot_abend1():
     pose(H, ev("trennen_q2") + 1.6, "hidden")
     isz = (fr[0], fr[1], gz(fr[0], fr[1]) + 1.25)
     door = HUTD["world"](0.05, -KW.HUT_D / 2 + 0.45, EYE)
-    out1 = HUTD["world"](-0.45, -KW.HUT_D / 2 - 0.35, EYE)
-    away = HUTD["world"](-3.5, -KW.HUT_D / 2 - 3.0, EYE - 0.1)
+    out1 = HUTD["world"](-0.35, -KW.HUT_D / 2 - 1.1, EYE)
+    away = HUTD["world"](-3.0, -KW.HUT_D / 2 - 6.0, EYE - 0.2)
     stand = HUTD["world"](0.15, 0.4, EYE)
     tu = ev("trennen_q2")
     tf = ev("familie_q2")
@@ -385,7 +384,7 @@ def shot_besuch2():
     fp = HUTD["world"](-1.6, -KW.HUT_D / 2 - 1.2)
     F = KW.cook_fire("hfire", fp, energy=35.0, pot=True)
     for k in range(6):  # Fleisch im Topf
-        Q.ball(f"potmeat{k}", (fp[0] + 0.07 * math.cos(k), fp[1] + 0.07 * math.sin(k), fp[2] + 0.42), (0.05, 0.04, 0.03), KW.M["meat"], seg=10)
+        Q.ball(f"potmeat{k}", (fp[0] + 0.07 * math.cos(k), fp[1] + 0.07 * math.sin(k), fp[2] + 0.555), (0.05, 0.04, 0.03), KW.M["meat"], seg=10)
     G = KW.goat("tied", HUTD["world"](1.9, -KW.HUT_D / 2 - 0.6), yaw=0.8, seed=2)
     KW.goat_graze(G, 0, D)
     rig, shake, cam, H = wife_cam(wife=WIFE2)
@@ -400,7 +399,7 @@ def shot_besuch2():
     start = (-4.6, 14.0)
     Ib = prophet("ibrahim", (start[0], start[1], gz(*start)))
     MK.glide(Ib, [start, (0.5, 8.4), (3.5, 6.6)], ev("ibrahim_e9") - 1.6, speed=1.25)
-    pot = (fp[0], fp[1], fp[2] + 0.35)
+    pot = (fp[0], fp[1], fp[2] + 0.5)
     Q.cam_keys(rig, [(0, crouch, look(crouch, pot)), (ev("ibrahim_e9") - 0.6, None, look(crouch, (pot[0], pot[1], pot[2] + 0.05))),
                      (ev("ibrahim_e9") + 0.6, None, look(crouch, (start[0] + 2.0, start[1] - 2.5, 1.7))),
                      (D, None, look(crouch, (2.6, 7.2, 1.3)))])
@@ -417,7 +416,7 @@ def wife2_scene(bowl_t=None, cup_t=None):
     G = KW.goat("tied", HUTD["world"](1.9, -KW.HUT_D / 2 - 0.6), yaw=0.8, seed=2)
     KW.goat_graze(G, 0, D)
     me = HUTD["world"](0.0, -KW.HUT_D / 2 - 0.55, EYE - 0.07)
-    ib = HUTD["world"](0.15, -KW.HUT_D / 2 - 2.3)
+    ib = HUTD["world"](0.15, -KW.HUT_D / 2 - 3.3)
     Ib = prophet("ibrahim", ib)
     MK.hold_at(Ib, 0)
     return L, me, ib, Ib
@@ -432,7 +431,7 @@ def shot_tuer2():
     tb = ev("fleisch_f4")
     tw = ev("wasser_f5")
     B = KW.bowl("bowl", (0, -0.26, -0.47), parent=cam, seed=3)
-    B.rotation_euler = (math.radians(70), 0, 0)
+    B.rotation_euler = (math.radians(-70), 0, 0)
     B.location = (0.0, -0.8, -0.34)
     B.keyframe_insert("location", frame=1)
     B.keyframe_insert("location", frame=Q.T(tb - 0.6))
@@ -444,7 +443,7 @@ def shot_tuer2():
     B.location = (-0.09, -0.27, -0.5)
     B.keyframe_insert("location", frame=Q.T(tw - 0.2))
     C = KW.cup("cup", (0.2, -0.6, -0.4), parent=cam)
-    C.rotation_euler = (math.radians(70), 0, 0)
+    C.rotation_euler = (math.radians(-70), 0, 0)
     C.keyframe_insert("location", frame=Q.T(tw - 0.6))
     C.location = (0.1, -0.15, -0.56)
     C.keyframe_insert("location", frame=Q.T(tw + 0.2))
@@ -464,7 +463,7 @@ def shot_tuer2():
                      (tsg - 0.2, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.2))), (D, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.95)))])
     Q.handheld(shake, 0, D, amp=0.3)
     # Segen: Lichtpunkte über Schale und Becher (in Weltkoordinaten nahe vor der Kamera)
-    hd = Vector(HUTD["world"](0.0, -KW.HUT_D / 2 - 1.05, EYE - 0.5))
+    hd = Vector(HUTD["world"](0.0, -KW.HUT_D / 2 - 1.0, EYE - 0.4))
     motes_burst("bless", tuple(hd), tsg + 0.2, n=60, radius=0.35, rise_h=1.2, dur=D - tsg, seed=4)
     return L
 
@@ -475,9 +474,9 @@ def shot_segen():
     L, me, ib, Ib = wife2_scene()
     rig, shake, cam, H = wife_cam(wife=WIFE2)
     B = KW.bowl("bowl", (-0.09, -0.27, -0.5), parent=cam, seed=3)
-    B.rotation_euler = (math.radians(70), 0, 0)
+    B.rotation_euler = (math.radians(-70), 0, 0)
     C = KW.cup("cup", (0.1, -0.15, -0.56), parent=cam)
-    C.rotation_euler = (math.radians(70), 0, 0)
+    C.rotation_euler = (math.radians(-70), 0, 0)
     pose(H, 0, "bowl", only="L")
     pose(H, 0, "cup", only="R")
     hd = Vector(HUTD["world"](0.0, -KW.HUT_D / 2 - 0.95, EYE - 0.55))
@@ -536,7 +535,8 @@ MEET = ((MEET_S[0] + MEET_I[0]) / 2, (MEET_S[1] + MEET_I[1]) / 2)
 
 
 def tree_scene(mode="day"):
-    L, spots, vl = KW.settle_world(mode, t1=D + 1, people=10, extra_keep=[(TREE.x, TREE.y, 6.0)])
+    L, spots, vl = KW.settle_world(mode, t1=D + 1, people=10, extra_keep=[(TREE.x, TREE.y, 6.0)],
+                                   tent_avoid=[(ISP[0] + 6.0, ISP[1] + 2.4, 5.0), (ISP[0] + 3.5, ISP[1] + 1.5, 4.0)])
     make_hut()
     isp = ISP
     cz = gz(*isp)
@@ -573,9 +573,9 @@ def shot_baum():
     glow_pulse(Is, tb, peak=2.0)
     glow_pulse(Ib, tb, peak=2.0)
     rig, shake, cam = Q.pov_camera(lens=17)
-    c0 = P(isp[0] - 6.5, isp[1] + 5.0, 1.35)
-    c1 = P(isp[0] - 4.2, isp[1] + 3.6, 1.35)
-    c2 = P(isp[0] - 5.0, isp[1] + 5.4, 1.4)
+    c0 = P(isp[0] + 6.8, isp[1] + 2.6, 1.35)
+    c1 = P(isp[0] + 2.4, isp[1] + 0.9, 1.3)
+    c2 = P(isp[0] + 4.6, isp[1] + 2.8, 1.4)
     arrows = (isp[0] - 0.55, isp[1] - 0.45, gz(*isp) + 0.05)
     mz = (meet[0], meet[1], gz(*meet) + 1.1)
     Q.cam_keys(rig, [(0, c0, look(c0, (TREE.x, TREE.y, 3.0))), (ev("ismail_e12") - 0.4, None, look(c0, (isp[0], isp[1], gz(*isp) + 0.7))),
@@ -599,7 +599,7 @@ def shot_befehl():
     th = ev("haus_q13")
     rig, shake, cam = Q.pov_camera(lens=17)
     mz = (meet[0], meet[1], gz(*meet) + 1.15)
-    a0, a1 = 2.3, 2.95
+    a0, a1 = 0.15, -0.35
     c = lambda a, r=4.6: (meet[0] + r * math.cos(a), meet[1] + r * math.sin(a), gz(*meet) + 1.35)  # noqa: E731
     hill = (HILL.x, HILL.y, 1.3)
     Q.cam_keys(rig, [(0, c(a0), look(c(a0), mz)), (th - 0.4, c(a1, 4.2), look(c(a1, 4.2), mz)), (D, c(a1 + 0.05, 4.1), look(c(a1 + 0.05, 4.1),
@@ -618,10 +618,10 @@ def shot_huegel():
     MK.hold_at(Is, 0)
     MK.kaaba_ghost(ev("engel_e14") + 0.1, loc=HILL, size=(KW.KA_W + KW.KA_T, KW.KA_D + KW.KA_T, 4.6))
     rig, shake, cam = Q.pov_camera(lens=17)
-    c = (meet[0] + 4.1 * math.cos(3.0), meet[1] + 4.1 * math.sin(3.0), gz(*meet) + 1.35)
+    c = (meet[0] + 4.1 * math.cos(-0.3), meet[1] + 4.1 * math.sin(-0.3), gz(*meet) + 1.35)
     hill = (HILL.x, HILL.y, 1.6)
     mz = (meet[0], meet[1], gz(*meet) + 1.15)
-    c2 = (c[0] - 1.2, c[1] - 1.6, c[2])
+    c2 = (c[0] - 0.6, c[1] - 1.4, c[2])
     Q.cam_keys(rig, [(0, c, look(c, (mz[0] + (hill[0] - mz[0]) * 0.35, mz[1] + (hill[1] - mz[1]) * 0.35, 1.1))),
                      (ev("hügel_e14") + 0.4, None, look(c, hill)), (D, c2, look(c2, (hill[0], hill[1], 2.6)))])
     Q.handheld(shake, 0, D, amp=0.45, walk_from=ev("hügel_e14"), walk_to=D, walk_amp=0.5)
@@ -637,7 +637,7 @@ def build_scene(mode="day", complete=False):
     spots = KW.tents(12, seed=21)
     KW.villagers(spots, D + 1, n=6)
     # Steinhaufen (Ismail bringt Steine von hier)
-    pile = Vector((HILL.x + 6.8, HILL.y + 4.2, 0))
+    pile = Vector((HILL.x + 8.0, HILL.y - 3.0, 0))
     rnd = random.Random(2)
     for k in range(26):
         a, r = rnd.uniform(0, 6.28), rnd.uniform(0, 1.3)
@@ -767,8 +767,8 @@ def shot_heute():
     """Nacht, heute: die Kaaba, rundherum gehen Pilger (gegen den Uhrzeigersinn). Blick vom oberen Umgang."""
     cfg = today_world(D + 1)
     rig, shake, cam = Q.pov_camera(lens=20)
-    c0 = (34.0, -30.0, 9.0)
-    c1 = (30.0, -33.5, 8.8)
+    c0 = (40.0, -36.0, 15.5)
+    c1 = (36.0, -39.5, 15.0)
     Q.cam_keys(rig, [(0, c0, look(c0, (0, 0, 6.0))), (D, c1, look(c1, (0, 0, 6.5)))], interp="BEZIER")
     Q.handheld(shake, 0, D, amp=0.25)
     return cfg
