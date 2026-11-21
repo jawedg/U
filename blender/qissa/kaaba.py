@@ -649,7 +649,7 @@ def build_scene(mode="day", complete=False):
     MK.valley(keep=[(KW.GRAVE.x, KW.GRAVE.y, 3.0), (SP.x, SP.y, 4.0), (HILL.x, HILL.y, 10.0)])
     KW.well()
     KW.grave()
-    spots = KW.tents(12, seed=21)
+    spots = KW.tents(12, seed=21, fire_lights=mode in ("dusk", "golden"))
     KW.villagers(spots, D + 1, n=6)
     # Steinhaufen (Ismail bringt Steine von hier)
     pile = Vector((HILL.x + 8.0, HILL.y - 3.0, 0))
@@ -926,16 +926,26 @@ if os.environ.get("BENCH"):
           "ANIM", sum(1 for o in bpy.data.objects if o.animation_data))
     for f in (100, 101, 102):
         t0 = _time.time(); sc.frame_set(f); print("FRAMESET", f, round(_time.time() - t0, 2))
-    sc.render.resolution_percentage = 10
+    sc.render.resolution_percentage = int(os.environ.get("BENCH_PCT", "10"))
     for f in (100, 101, 102):
         sc.frame_set(f)
         t0 = _time.time(); sc.render.filepath = os.path.join(OUT, f"b{f}.png"); bpy.ops.render.render(write_still=True)
         print("RENDER10", f, round(_time.time() - t0, 2))
-    sc.eevee.taa_render_samples = 1
+    sc.render.use_compositing = False
     for f in (103, 104):
         sc.frame_set(f)
         t0 = _time.time(); bpy.ops.render.render(write_still=False)
-        print("RENDER10_S1", f, round(_time.time() - t0, 2))
+        print("RENDER_NOCOMP", f, round(_time.time() - t0, 2))
+    sc.render.use_compositing = True
+    for m in bpy.data.materials:
+        if m.node_tree:
+            for n in m.node_tree.nodes:
+                if n.type == "TEX_NOISE":
+                    n.inputs["Detail"].default_value = min(n.inputs["Detail"].default_value, 2.0)
+    for f in (105, 106):
+        sc.frame_set(f)
+        t0 = _time.time(); bpy.ops.render.render(write_still=False)
+        print("RENDER_DETAIL2", f, round(_time.time() - t0, 2))
     sys.exit(0)
 os.makedirs(OUT, exist_ok=True)
 if os.environ.get("MID") == "1":

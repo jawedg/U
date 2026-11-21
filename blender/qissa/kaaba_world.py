@@ -306,7 +306,7 @@ def cook_fire(name, loc, energy=45.0, pot=True):
     return F
 
 
-def tents(n=16, seed=21, avoid=()):
+def tents(n=16, seed=21, avoid=(), fire_lights=True):
     """Zelte der Dschurhum rings um Zamzam (schwarze Ziegenhaar-Zelte + helle), mit Feuern, sitzenden Kamelen, Holz, Säcken."""
     rnd = random.Random(seed)
     spots = []
@@ -331,7 +331,9 @@ def tents(n=16, seed=21, avoid=()):
         T_ = MK.tent(f"tent{k}", (x, y, gz(x, y)), yaw=a + math.pi / 2 + rnd.uniform(-0.4, 0.4), w=rnd.uniform(3.4, 5.2),
                      d=rnd.uniform(2.3, 3.1), mat=MK.M["tent"] if k % 3 else M["tent3"], seed=k)
         if k % 2 == 0:
-            cook_fire(f"fire{k}", (x + 2.6 * math.cos(a), y + 2.6 * math.sin(a), gz(x, y)), energy=30.0, pot=k % 4 == 0)
+            F = cook_fire(f"fire{k}", (x + 2.6 * math.cos(a), y + 2.6 * math.sin(a), gz(x, y)), energy=30.0, pot=k % 4 == 0)
+            if not fire_lights:  # am Tag unsichtbar, kostet aber je Bildpunkt Rechenzeit
+                bpy.data.objects.remove(F["light"])
         if k % 3 == 1:
             MK.camel(f"cm{k}", (x - 2.6 * math.sin(a), y + 2.6 * math.cos(a), gz(x, y)), yaw=a + 1.2, seed=k, load=False, sit=True)
         if k % 3 == 2:
@@ -420,7 +422,7 @@ def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30
     keep = [(HUT.x, HUT.y, 6.0), (GRAVE.x, GRAVE.y, 3.0), (SP.x, SP.y, 4.0)] + list(extra_keep)
     MK.valley(keep=keep)
     well()
-    spots = tents(tents_n, seed=seed, avoid=tent_avoid)
+    spots = tents(tents_n, seed=seed, avoid=tent_avoid, fire_lights=mode in ("dusk", "golden"))
     vl = villagers(spots, t1, n=people) if people else []
     if life:
         path_life(t1)
