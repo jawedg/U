@@ -29,48 +29,24 @@ fi
 mkdir -p out/kb_frames public/qissa_kaaba/shots
 frames() { python3 -c "import json; print({x['id']: x for x in json.load(open('$TLF'))['segments']}['$1']['frames'])"; }
 dir_of() { if [ "$2" = mid ]; then echo "out/kb_frames/$1_mid"; else echo "out/kb_frames/$1"; fi; }
-open_frames() {  # offene Bilder einer Einstellung im Durchgang $2
+needs_mid() { [ "$MID60" = 1 ] && { [ -z "$MID_SHOTS" ] || [[ " $MID_SHOTS " == *" $1 "* ]]; }; }
+open_frames() {  # offene Bilder einer Einstellung im Durchgang $2 (fertiges Video = nichts mehr offen)
+  [ -s "public/qissa_kaaba/shots/$1.mp4" ] && { echo 0; return; }
   local n d; n=$(frames "$1"); [ "$2" = mid ] && n=$((n - 1)); d=$(dir_of "$1" "$2"); mkdir -p "$d"
   echo $((n - $(ls "$d"/*.png 2>/dev/null | wc -l)))
 }
 pick() {
   local best="" bf=0 f
   for s in "${SHOTS[@]}"; do
-    if [ "$1" = mid ] && [ -n "$MID_SHOTS" ] && [[ " $MID_SHOTS " != *" $s "* ]]; then continue; fi
+    if [ "$1" = mid ] && ! needs_mid "$s"; then continue; fi
     f=$(open_frames "$s" "$1"); if [ "$f" -gt "$bf" ]; then best=$s; bf=$f; fi
   done
   echo "$best"
 }
-worker() {
-  local k=$1 pass=$2 s
-  while true; do
-    s=$(pick "$pass")
-    [ -z "$s" ] && break
-    echo "▶ [$pass] Prozess $k: $s ($(open_frames "$s" "$pass") offen) $(date +%H:%M:%S)"
-    if [ "$pass" = mid ]; then
-      MID=1 blender -b --factory-startup --python blender/qissa/kaaba.py -- "$s" "$(dir_of "$s" mid)" "$PCT" "$SAMPLES" \
-        > "out/kb_frames/$s.mid$k.log" 2>&1
-    else
-      blender -b --factory-startup --python blender/qissa/kaaba.py -- "$s" "$(dir_of "$s" main)" "$PCT" "$SAMPLES" \
-        > "out/kb_frames/$s.$k.log" 2>&1
-    fi
-    sleep 2
-  done
-}
-echo "🎬 ${SHOTS[*]} · ${PCT}% · ${SAMPLES} Samples · ${RFPS} Bilder/s + Zwischenbilder → 60 fps · $(date +%H:%M:%S)"
-for pass in $PASSES; do
-  [ "$pass" = mid ] && [ "$MID60" != 1 ] && continue
-  for k in $(seq 1 "$JOBS"); do
-    worker "$k" "$pass" &
-    sleep 20   # versetzt starten: die Platzhalter des vorigen Prozesses sind dann schon da
-  done
-  wait
-  echo "🖼  Durchgang $pass fertig $(date +%H:%M:%S)"
-done
 enc() {
-  s=$1
+  local s=$1 n have mid
   n=$(frames "$s")
-  have=$(find "out/kb_frames/$s" -name '*.png' -size +1k | wc -l)
+  have=$(find "out/kb_frames/$s" -name '*.png' -size +1k 2>/dev/null | wc -l)
   if [ "$have" -lt "$n" ]; then echo "❌ $s: nur $have/$n Bilder (siehe out/kb_frames/$s.*.log)"; return 1; fi
   mid=$(find "out/kb_frames/${s}_mid" -name '*.png' -size +1k 2>/dev/null | wc -l)
   if [ "$mid" -ge $((n - 1)) ]; then
@@ -87,14 +63,56 @@ for k in range(1, n + 1):
         j += 1
 PY
     ffmpeg -loglevel error -y -framerate 60 -i "out/kb_frames/${s}_60/%05d.png" -c:v libx264 -preset slow -crf 15 -pix_fmt yuv420p \
-      "public/qissa_kaaba/shots/$s.mp4" && echo "✅ $s (echte 60 fps) $(date +%H:%M:%S)"
+      "public/qissa_kaaba/shots/$s.tmp.mp4" && mv "public/qissa_kaaba/shots/$s.tmp.mp4" "public/qissa_kaaba/shots/$s.mp4" \
+      && echo "✅ $s (echte 60 fps) $(date +%H:%M:%S)"
   else
     ffmpeg -loglevel error -y -framerate "$RFPS" -i "out/kb_frames/$s/%04d.png" \
       -vf "minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" \
-      -c:v libx264 -preset slow -crf 15 -pix_fmt yuv420p "public/qissa_kaaba/shots/$s.mp4" && echo "✅ $s (60 fps interpoliert) $(date +%H:%M:%S)"
+      -c:v libx264 -preset slow -crf 15 -pix_fmt yuv420p "public/qissa_kaaba/shots/$s.tmp.mp4" \
+      && mv "public/qissa_kaaba/shots/$s.tmp.mp4" "public/qissa_kaaba/shots/$s.mp4" && echo "✅ $s (60 fps interpoliert) $(date +%H:%M:%S)"
   fi
 }
-export -f enc frames
-export TLF RFPS
-printf "%s\n" "${SHOTS[@]}" | xargs -P "$JOBS" -I{} bash -c 'enc {}'
+try_enc() {  # komplette Einstellung sofort zu MP4, dann Einzelbilder löschen (Plattenplatz reicht nicht für alle PNGs)
+  local s=$1 n have mid
+  [ -s "public/qissa_kaaba/shots/$s.mp4" ] && return 0
+  n=$(frames "$s")
+  have=$(find "out/kb_frames/$s" -name '*.png' -size +1k 2>/dev/null | wc -l)
+  [ "$have" -lt "$n" ] && return 0
+  if needs_mid "$s"; then
+    mid=$(find "out/kb_frames/${s}_mid" -name '*.png' -size +1k 2>/dev/null | wc -l)
+    [ "$mid" -lt $((n - 1)) ] && return 0
+  fi
+  mkdir "out/kb_frames/$s.enclock" 2>/dev/null || return 0
+  if enc "$s"; then rm -rf "out/kb_frames/$s" "out/kb_frames/${s}_mid" "out/kb_frames/${s}_60"; echo "🧹 $s: Einzelbilder gelöscht"; fi
+  rmdir "out/kb_frames/$s.enclock" 2>/dev/null
+}
+worker() {
+  local k=$1 pass=$2 s
+  while true; do
+    s=$(pick "$pass")
+    [ -z "$s" ] && break
+    echo "▶ [$pass] Prozess $k: $s ($(open_frames "$s" "$pass") offen) $(date +%H:%M:%S)"
+    if [ "$pass" = mid ]; then
+      MID=1 blender -b --factory-startup --python blender/qissa/kaaba.py -- "$s" "$(dir_of "$s" mid)" "$PCT" "$SAMPLES" \
+        > "out/kb_frames/$s.mid$k.log" 2>&1
+    else
+      blender -b --factory-startup --python blender/qissa/kaaba.py -- "$s" "$(dir_of "$s" main)" "$PCT" "$SAMPLES" \
+        > "out/kb_frames/$s.$k.log" 2>&1
+    fi
+    sleep 2
+    try_enc "$s"
+  done
+}
+echo "🎬 ${SHOTS[*]} · ${PCT}% · ${SAMPLES} Samples · ${RFPS} Bilder/s + Zwischenbilder → 60 fps · $(date +%H:%M:%S)"
+for pass in $PASSES; do
+  [ "$pass" = mid ] && [ "$MID60" != 1 ] && continue
+  for k in $(seq 1 "$JOBS"); do
+    worker "$k" "$pass" &
+    sleep 20   # versetzt starten: die Platzhalter des vorigen Prozesses sind dann schon da
+  done
+  wait
+  echo "🖼  Durchgang $pass fertig $(date +%H:%M:%S)"
+done
+for s in "${SHOTS[@]}"; do [ -s "public/qissa_kaaba/shots/$s.mp4" ] || try_enc "$s"; done
+for s in "${SHOTS[@]}"; do [ -s "public/qissa_kaaba/shots/$s.mp4" ] || enc "$s"; done
 echo "🏁 alle Einstellungen fertig $(date +%H:%M:%S)"
