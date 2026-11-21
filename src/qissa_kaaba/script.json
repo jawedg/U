@@ -1,0 +1,430 @@
+{
+ "title": "Die Erbauer der Kaaba – QISSAH Folge 3 (POV)",
+ "series": "QISSAH",
+ "note": "Folge 3 (Nutzer 21.11.2026, Text genehmigt): Fortsetzung von Folge 2, gleicher Ablauf. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift, Hadschar = هاجَر). Worte von Ibrahim, Ismail und dem Propheten ﷺ als ZITAT (Hall + goldene Schrift), wörtlich nach Sahih al-Bukhari 3364. Die zwei Frauen Ismails als Dialog (kursiv). Ibrahim und Ismail NUR als Licht; Frauen ohne Gesicht. Koran 2:127 nur auf Deutsch (keine KI-Rezitation).",
+ "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
+ "voiceParts": {
+  "0": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
+   },
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "h1",
+    "e1",
+    "e3",
+    "e6",
+    "e8",
+    "e9",
+    "e10",
+    "e11",
+    "e12",
+    "e14",
+    "e18"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag",
+   "cutmode": "latest",
+   "snap": true
+  },
+  "1": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Ibrahim": "Orus"
+   },
+   "notes": "# AUDIO PROFILE\nIbrahim: a very old, wise and gentle man from the ancient Near East, thousands of years ago. Deep, warm, calm, dignified voice with a little age in it. Never theatrical, never loud.\n## THE SCENE\nHe visits the tent of his grown-up son in a desert valley and talks quietly to his son's wife, later to his son.\n### DIRECTOR'S NOTES\nSpeak slowly, softly and kindly, like a loving grandfather. Short questions sound simple and friendly. The prayer lines are quiet and humble. Leave a clear pause of about one second between the lines."
+  },
+  "2": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Ismail": "Achird"
+   },
+   "notes": "# AUDIO PROFILE\nIsmail: a young man in his twenties from an Arab desert tribe, thousands of years ago. Clear, warm, calm and respectful voice.\n## THE SCENE\nHe talks to his wife about a visitor, and later to his old father.\n### DIRECTOR'S NOTES\nNatural and sincere. When he realises the visitor was his father, he speaks quietly and seriously. Towards his father he is loving, obedient and ready. The prayer line is quiet and humble. Leave a clear pause of about one second between the lines."
+  },
+  "3": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Frau1": "Kore",
+    "Frau2": "Despina"
+   },
+   "notes": "# AUDIO PROFILE\nFrau1: a young Arab woman in a desert tent, thousands of years ago. Tired, unhappy and complaining, a little bitter.\nFrau2: another young Arab woman in the same tent. Warm, friendly, content and grateful, hospitable to an old guest.\n## THE SCENE\nAn old visitor asks each of them how they live.\n### DIRECTOR'S NOTES\nNatural, like real people talking quietly inside a tent. Frau1 sighs and complains. Frau2 smiles while she speaks; her one-word answers are simple and kind. Leave a clear pause of about one second between the lines."
+  },
+  "4": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Zitat": "Charon"
+   },
+   "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1)."
+  }
+ },
+ "sentences": [
+  {
+   "id": "h1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Jeden Tag laufen Millionen Menschen um dieses *Haus*. Aber wer hat es gebaut?",
+   "el": "[softly] Jeden Tag laufen Millionen Menschen um dieses Haus. ... [curious] Aber wer hat es gebaut?"
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ein *Engel* hat es versprochen: Hier wird ein Haus stehen.",
+   "el": "[mysterious] Ein Engel hat es versprochen: ... [whispers] Hier wird ein Haus stehen."
+  },
+  {
+   "id": "h3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Gebaut von einem Jungen ... und seinem *Vater*.",
+   "el": "[softly] Gebaut von einem Jungen ... und seinem Vater. ..."
+  },
+  {
+   "id": "e1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Mekka, viele Jahre später. Wo einst nur Stein und Sand war ... stehen jetzt *Zelte*.",
+   "say": "مكة, viele Jahre später. Wo einst nur Stein und Sand war ... stehen jetzt Zelte.",
+   "el": "[calm, storytelling] مكة, viele Jahre später. ... Wo einst nur Stein und Sand war ... [warm] stehen jetzt Zelte."
+  },
+  {
+   "id": "e2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Stamm *Dschurhum* lebt hier. Wegen einer Quelle: *Zamzam*.",
+   "say": "Der Stamm جُرهُم lebt hier. Wegen einer Quelle: زمزم.",
+   "el": "Der Stamm جُرهُم lebt hier. ... Wegen einer Quelle: [reverent] زمزم. ..."
+  },
+  {
+   "id": "e3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und das Baby von damals? Ist ein junger Mann geworden: *Ismail*, Friede sei mit ihm.",
+   "say": "Und das Baby von damals? Ist ein junger Mann geworden: إسماعيل, Friede sei mit ihm.",
+   "el": "[curious] Und das Baby von damals? ... [warm] Ist ein junger Mann geworden: إسماعيل, Friede sei mit ihm."
+  },
+  {
+   "id": "e4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er lernt Arabisch von den Leuten des Stammes. Sie mögen ihn ... und verheiraten ihn mit einer Frau aus ihrem Stamm.",
+   "el": "[storytelling] Er lernt Arabisch von den Leuten des Stammes. [warm] Sie mögen ihn ... und verheiraten ihn mit einer Frau aus ihrem Stamm."
+  },
+  {
+   "id": "e5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Seine Mutter Hadschar ... ist inzwischen gestorben.",
+   "say": "Seine Mutter هاجَر ... ist inzwischen gestorben.",
+   "el": "[softly, sad] Seine Mutter هاجَر ... ist inzwischen gestorben. ..."
+  },
+  {
+   "id": "e6",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Eines Tages kommt ein alter Mann ins Tal: *Ibrahim*, Friede sei mit ihm. Er will nach seinem Sohn sehen.",
+   "say": "Eines Tages kommt ein alter Mann ins Tal: إبراهيم, Friede sei mit ihm. Er will nach seinem Sohn sehen.",
+   "el": "[mysterious] Eines Tages kommt ein alter Mann ins Tal: [reverent] إبراهيم, Friede sei mit ihm. [softly] Er will nach seinem Sohn sehen."
+  },
+  {
+   "id": "e7",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Doch Ismail ist nicht da. Er ist unterwegs, um Essen zu holen. Ibrahim fragt seine Frau, wie sie leben.",
+   "say": "Doch إسماعيل ist nicht da. Er ist unterwegs, um Essen zu holen. إبراهيم fragt seine Frau, wie sie leben.",
+   "el": "[calm] Doch إسماعيل ist nicht da. Er ist unterwegs, um Essen zu holen. ... [curious] إبراهيم fragt seine Frau, wie sie leben. ..."
+  },
+  {
+   "id": "f1",
+   "part": 3,
+   "speaker": "Frau1",
+   "dialog": true,
+   "text": "Schlecht. Wir leben in Not ... und Enge."
+  },
+  {
+   "id": "q1",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Wenn dein Mann kommt, grüß ihn von mir. Und sag ihm: Er soll die *Schwelle* seiner Tür wechseln."
+  },
+  {
+   "id": "e8",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Am Abend kommt Ismail zurück. Und er spürt: Jemand war hier.",
+   "say": "Am Abend kommt إسماعيل zurück. Und er spürt: Jemand war hier.",
+   "el": "[slow] Am Abend kommt إسماعيل zurück. ... [whispers] Und er spürt: Jemand war hier. ..."
+  },
+  {
+   "id": "f2",
+   "part": 3,
+   "speaker": "Frau1",
+   "dialog": true,
+   "text": "Ein alter Mann war hier. Er lässt dich grüßen. Du sollst die Schwelle deiner Tür wechseln."
+  },
+  {
+   "id": "q2",
+   "part": 2,
+   "speaker": "Ismail",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ismail · Bukhari 3364",
+   "text": "Das war mein Vater. Er hat mir befohlen, mich von dir zu trennen. Geh zurück zu deiner Familie."
+  },
+  {
+   "id": "e9",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ismail heiratet eine andere Frau aus dem Stamm. Zeit vergeht ... dann kommt Ibrahim wieder. Und wieder ist Ismail nicht da.",
+   "say": "إسماعيل heiratet eine andere Frau aus dem Stamm. Zeit vergeht ... dann kommt إبراهيم wieder. Und wieder ist إسماعيل nicht da.",
+   "el": "[calm, storytelling] إسماعيل heiratet eine andere Frau aus dem Stamm. ... Zeit vergeht ... [mysterious] dann kommt إبراهيم wieder. [softly] Und wieder ist إسماعيل nicht da. ..."
+  },
+  {
+   "id": "f3",
+   "part": 3,
+   "speaker": "Frau2",
+   "dialog": true,
+   "text": "Uns geht es gut. Wir haben genug. Alhamdulillah.",
+   "say": "Uns geht es gut. Wir haben genug. الحمد لله."
+  },
+  {
+   "id": "q3",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Was esst ihr?"
+  },
+  {
+   "id": "f4",
+   "part": 3,
+   "speaker": "Frau2",
+   "dialog": true,
+   "text": "Fleisch."
+  },
+  {
+   "id": "q4",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Und was trinkt ihr?"
+  },
+  {
+   "id": "f5",
+   "part": 3,
+   "speaker": "Frau2",
+   "dialog": true,
+   "text": "Wasser."
+  },
+  {
+   "id": "q5",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "O Allah, segne ihnen das *Fleisch* und das *Wasser*."
+  },
+  {
+   "id": "e10",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Prophet Muhammad, Friede sei mit ihm, sagte später:",
+   "say": "Der Prophet محمد, Friede sei mit ihm, sagte später:",
+   "el": "[calm, reverent] Der Prophet محمد, Friede sei mit ihm, sagte später: ..."
+  },
+  {
+   "id": "q6",
+   "part": 4,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3364",
+   "text": "Sie hatten damals kein Getreide. Hätten sie welches gehabt, hätte er auch dafür um Segen gebeten."
+  },
+  {
+   "id": "q7",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Grüß deinen Mann. Und sag ihm: Er soll die Schwelle seiner Tür *festhalten*."
+  },
+  {
+   "id": "e11",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Als Ismail zurückkommt, erzählt sie ihm alles.",
+   "say": "Als إسماعيل zurückkommt, erzählt sie ihm alles.",
+   "el": "[softly] Als إسماعيل zurückkommt, erzählt sie ihm alles. ..."
+  },
+  {
+   "id": "q8",
+   "part": 2,
+   "speaker": "Ismail",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ismail · Bukhari 3364",
+   "text": "Das war mein Vater. Und die Schwelle ... bist du. Er hat mir gesagt: Behalte dich."
+  },
+  {
+   "id": "e12",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dann ... ein dritter Besuch. Ismail sitzt unter einem großen Baum nahe Zamzam ... und schnitzt Pfeile.",
+   "say": "Dann ... ein dritter Besuch. إسماعيل sitzt unter einem großen Baum nahe زمزم ... und schnitzt Pfeile.",
+   "el": "[mysterious] Dann ... ein dritter Besuch. ... [calm] إسماعيل sitzt unter einem großen Baum nahe زمزم ... und schnitzt Pfeile."
+  },
+  {
+   "id": "e13",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Als er seinen Vater sieht, steht er auf. Und sie begrüßen sich ... wie ein Vater seinen Sohn. Und ein Sohn seinen Vater.",
+   "el": "[warm] Als er seinen Vater sieht, steht er auf. ... [softly, moved] Und sie begrüßen sich ... wie ein Vater seinen Sohn. Und ein Sohn seinen Vater. ..."
+  },
+  {
+   "id": "q9",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Ismail, Allah hat mir etwas befohlen.",
+   "say": "إسماعيل, Allah hat mir etwas befohlen."
+  },
+  {
+   "id": "q10",
+   "part": 2,
+   "speaker": "Ismail",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ismail · Bukhari 3364",
+   "text": "Dann tu, was dein Herr dir befohlen hat."
+  },
+  {
+   "id": "q11",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Hilfst du mir?"
+  },
+  {
+   "id": "q12",
+   "part": 2,
+   "speaker": "Ismail",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ismail · Bukhari 3364",
+   "text": "Ich helfe dir."
+  },
+  {
+   "id": "q13",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Bukhari 3364",
+   "text": "Allah hat mir befohlen, hier ein *Haus* zu bauen."
+  },
+  {
+   "id": "e14",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er zeigt auf einen kleinen Hügel. Genau dort, wo der Engel es versprochen hatte.",
+   "el": "[hushed] Er zeigt auf einen kleinen Hügel. ... [reverent] Genau dort, wo der Engel es versprochen hatte. ..."
+  },
+  {
+   "id": "e15",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ismail bringt die Steine. Ibrahim baut. Stein ... auf Stein.",
+   "say": "إسماعيل bringt die Steine. إبراهيم baut. Stein ... auf Stein.",
+   "el": "[calm, rhythmic] إسماعيل bringt die Steine. إبراهيم baut. ... Stein ... auf Stein."
+  },
+  {
+   "id": "e16",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Die Mauern wachsen ... bis Ibrahim nicht mehr hinaufreicht. Da bringt Ismail einen großen *Stein*. Ibrahim stellt sich darauf ... und baut weiter.",
+   "say": "Die Mauern wachsen ... bis إبراهيم nicht mehr hinaufreicht. Da bringt إسماعيل einen großen Stein. إبراهيم stellt sich darauf ... und baut weiter.",
+   "el": "Die Mauern wachsen ... bis إبراهيم nicht mehr hinaufreicht. ... [curious] Da bringt إسماعيل einen großen Stein. [warm] إبراهيم stellt sich darauf ... und baut weiter."
+  },
+  {
+   "id": "e17",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und während sie bauen, beten beide:",
+   "el": "[softly, reverent] Und während sie bauen, beten beide: ..."
+  },
+  {
+   "id": "q14",
+   "part": 1,
+   "speaker": "Ibrahim",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ibrahim · Koran 2:127",
+   "text": "Unser Herr, nimm es von uns an."
+  },
+  {
+   "id": "q15",
+   "part": 2,
+   "speaker": "Ismail",
+   "quote": true,
+   "fx": "hall",
+   "by": "Ismail · Koran 2:127",
+   "text": "Du bist der Allhörende, der Allwissende."
+  },
+  {
+   "id": "e18",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dieses Haus ... ist die *Kaaba*.",
+   "say": "Dieses Haus ... ist die الكعبة.",
+   "el": "[reverent] Dieses Haus ... ist die الكعبة."
+  },
+  {
+   "id": "e19",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und der Stein, auf dem Ibrahim stand? Den gibt es bis heute. Direkt neben der Kaaba: der *Maqam Ibrahim*.",
+   "say": "Und der Stein, auf dem إبراهيم stand? Den gibt es bis heute. Direkt neben der الكعبة: der مقام إبراهيم.",
+   "el": "[curious] Und der Stein, auf dem إبراهيم stand? ... [warm] Den gibt es bis heute. Direkt neben der الكعبة: der مقام إبراهيم."
+  },
+  {
+   "id": "e20",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und darin sieht man ... die Abdrücke von zwei *Füßen*.",
+   "el": "[whispers] Und darin sieht man ... die Abdrücke von zwei Füßen. ..."
+  },
+  {
+   "id": "e21",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Millionen beten heute genau dort. Und alles begann ... mit einem *Vater* und einem *Sohn*, die Allah gehorchten.",
+   "el": "[warm, slow] Millionen beten heute genau dort. ... [softly] Und alles begann ... [whispers] mit einem Vater und einem Sohn, die Allah gehorchten. ..."
+  }
+ ],
+ "choice": null,
+ "sources": [
+  "Sahih al-Bukhari 3364 (Ibn Abbas, lange Überlieferung, Fortsetzung der Zamzam-Geschichte: Ismail wächst bei den Dschurhum auf, lernt Arabisch, heiratet eine Frau von ihnen; Hadschar stirbt; Ibrahim besucht zweimal, Ismail ist nicht da – „Er soll die Schwelle seiner Tür wechseln“ / „… festhalten“; „Was esst ihr?“ – „Fleisch.“ „Was trinkt ihr?“ – „Wasser.“ – „O Allah, segne ihnen Fleisch und Wasser“; der Prophet ﷺ: „Sie hatten damals kein Getreide …“; dritter Besuch: Ismail schnitzt Pfeile unter einem großen Baum nahe Zamzam; „Allah hat mir etwas befohlen“ – „Dann tu, was dein Herr dir befohlen hat“ – „Hilfst du mir?“ – „Ich helfe dir“; Ibrahim zeigt auf einen Hügel; Ismail bringt Steine, Ibrahim baut, steht auf dem Stein; beide beten Koran 2:127)",
+  "Koran, Sure 2:125–127 (der Standort Ibrahims als Gebetsplatz; Ibrahim und Ismail errichten die Grundmauern des Hauses: „Unser Herr, nimm es von uns an …“)",
+  "Koran, Sure 3:96–97 (das erste Haus für die Menschen in Bakka; darin klare Zeichen: der Standort Ibrahims)",
+  "Sahih al-Bukhari 395 (der Prophet ﷺ umrundete die Kaaba siebenmal und betete hinter dem Maqam zwei Rak'a)",
+  "Fußabdrücke im Maqam-Stein: heute sichtbar; Überlieferung zu den Abdrücken Ibrahims bei at-Tabari, Tafsir zu 2:125 (kein Hadith mit Nummer)"
+ ],
+ "retime": "rate1"
+}

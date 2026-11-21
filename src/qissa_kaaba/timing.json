@@ -1,0 +1,2319 @@
+{
+ "lines": [
+  {
+   "file": "qissa_kaaba/line-0-0.wav",
+   "seconds": 6.634,
+   "words": [
+    {
+     "word": "Jeden",
+     "start": 0.144
+    },
+    {
+     "word": "Tag",
+     "start": 0.52
+    },
+    {
+     "word": "laufen",
+     "start": 0.52
+    },
+    {
+     "word": "Millionen",
+     "start": 1.584
+    },
+    {
+     "word": "Menschen",
+     "start": 2.213
+    },
+    {
+     "word": "um",
+     "start": 2.869
+    },
+    {
+     "word": "dieses",
+     "start": 3.36
+    },
+    {
+     "word": "*Haus*.",
+     "start": 4.28
+    },
+    {
+     "word": "Aber",
+     "start": 4.692
+    },
+    {
+     "word": "wer",
+     "start": 4.692
+    },
+    {
+     "word": "hat",
+     "start": 5.16
+    },
+    {
+     "word": "es",
+     "start": 5.333
+    },
+    {
+     "word": "gebaut?",
+     "start": 5.333
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-1.wav",
+   "seconds": 4.861,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.753
+    },
+    {
+     "word": "*Engel*",
+     "start": 0.753
+    },
+    {
+     "word": "hat",
+     "start": 1.143
+    },
+    {
+     "word": "es",
+     "start": 1.143
+    },
+    {
+     "word": "versprochen:",
+     "start": 1.316
+    },
+    {
+     "word": "Hier",
+     "start": 2.383
+    },
+    {
+     "word": "wird",
+     "start": 2.395
+    },
+    {
+     "word": "ein",
+     "start": 2.952
+    },
+    {
+     "word": "Haus",
+     "start": 3.182
+    },
+    {
+     "word": "stehen.",
+     "start": 3.182
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-2.wav",
+   "seconds": 3.856,
+   "words": [
+    {
+     "word": "Gebaut",
+     "start": 0.297
+    },
+    {
+     "word": "von",
+     "start": 0.991
+    },
+    {
+     "word": "einem",
+     "start": 1.151
+    },
+    {
+     "word": "Jungen",
+     "start": 1.431
+    },
+    {
+     "word": "...",
+     "start": 1.871
+    },
+    {
+     "word": "und",
+     "start": 2.271
+    },
+    {
+     "word": "seinem",
+     "start": 2.353
+    },
+    {
+     "word": "*Vater*.",
+     "start": 2.791
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-3.wav",
+   "seconds": 8.118,
+   "words": [
+    {
+     "word": "Mekka,",
+     "start": 0.236
+    },
+    {
+     "word": "viele",
+     "start": 1.073
+    },
+    {
+     "word": "Jahre",
+     "start": 1.177
+    },
+    {
+     "word": "später.",
+     "start": 1.829
+    },
+    {
+     "word": "Wo",
+     "start": 3.733
+    },
+    {
+     "word": "einst",
+     "start": 3.733
+    },
+    {
+     "word": "nur",
+     "start": 3.765
+    },
+    {
+     "word": "Stein",
+     "start": 4.3
+    },
+    {
+     "word": "und",
+     "start": 4.56
+    },
+    {
+     "word": "Sand",
+     "start": 5.02
+    },
+    {
+     "word": "war",
+     "start": 5.264
+    },
+    {
+     "word": "...",
+     "start": 5.58
+    },
+    {
+     "word": "stehen",
+     "start": 5.58
+    },
+    {
+     "word": "jetzt",
+     "start": 6.245
+    },
+    {
+     "word": "*Zelte*.",
+     "start": 6.245
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-4.wav",
+   "seconds": 5.602,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.222
+    },
+    {
+     "word": "Stamm",
+     "start": 0.222
+    },
+    {
+     "word": "*Dschurhum*",
+     "start": 0.3
+    },
+    {
+     "word": "lebt",
+     "start": 1.595
+    },
+    {
+     "word": "hier.",
+     "start": 1.91
+    },
+    {
+     "word": "Wegen",
+     "start": 2.452
+    },
+    {
+     "word": "einer",
+     "start": 2.702
+    },
+    {
+     "word": "Quelle:",
+     "start": 2.771
+    },
+    {
+     "word": "*Zamzam*.",
+     "start": 4.166
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-5.wav",
+   "seconds": 7.675,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.195
+    },
+    {
+     "word": "das",
+     "start": 0.195
+    },
+    {
+     "word": "Baby",
+     "start": 0.34
+    },
+    {
+     "word": "von",
+     "start": 0.506
+    },
+    {
+     "word": "damals?",
+     "start": 1.08
+    },
+    {
+     "word": "Ist",
+     "start": 1.28
+    },
+    {
+     "word": "ein",
+     "start": 2.41
+    },
+    {
+     "word": "junger",
+     "start": 2.922
+    },
+    {
+     "word": "Mann",
+     "start": 2.922
+    },
+    {
+     "word": "geworden:",
+     "start": 3.5
+    },
+    {
+     "word": "*Ismail*,",
+     "start": 4.04
+    },
+    {
+     "word": "Friede",
+     "start": 6.053
+    },
+    {
+     "word": "sei",
+     "start": 6.08
+    },
+    {
+     "word": "mit",
+     "start": 6.62
+    },
+    {
+     "word": "ihm.",
+     "start": 6.84
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-6.wav",
+   "seconds": 7.874,
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.32
+    },
+    {
+     "word": "lernt",
+     "start": 0.32
+    },
+    {
+     "word": "Arabisch",
+     "start": 1.046
+    },
+    {
+     "word": "von",
+     "start": 1.486
+    },
+    {
+     "word": "den",
+     "start": 1.646
+    },
+    {
+     "word": "Leuten",
+     "start": 1.819
+    },
+    {
+     "word": "des",
+     "start": 2.126
+    },
+    {
+     "word": "Stammes.",
+     "start": 2.299
+    },
+    {
+     "word": "Sie",
+     "start": 3.266
+    },
+    {
+     "word": "mögen",
+     "start": 3.366
+    },
+    {
+     "word": "ihn",
+     "start": 3.746
+    },
+    {
+     "word": "...",
+     "start": 4.086
+    },
+    {
+     "word": "und",
+     "start": 4.606
+    },
+    {
+     "word": "verheiraten",
+     "start": 4.702
+    },
+    {
+     "word": "ihn",
+     "start": 5.506
+    },
+    {
+     "word": "mit",
+     "start": 5.726
+    },
+    {
+     "word": "einer",
+     "start": 5.873
+    },
+    {
+     "word": "Frau",
+     "start": 6.086
+    },
+    {
+     "word": "aus",
+     "start": 6.466
+    },
+    {
+     "word": "ihrem",
+     "start": 6.686
+    },
+    {
+     "word": "Stamm.",
+     "start": 6.939
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-7.wav",
+   "seconds": 3.406,
+   "words": [
+    {
+     "word": "Seine",
+     "start": 0.32
+    },
+    {
+     "word": "Mutter",
+     "start": 0.32
+    },
+    {
+     "word": "Hadschar",
+     "start": 0.87
+    },
+    {
+     "word": "...",
+     "start": 1.55
+    },
+    {
+     "word": "ist",
+     "start": 1.95
+    },
+    {
+     "word": "inzwischen",
+     "start": 1.95
+    },
+    {
+     "word": "gestorben.",
+     "start": 2.518
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-8.wav",
+   "seconds": 9.472,
+   "words": [
+    {
+     "word": "Eines",
+     "start": 0.07
+    },
+    {
+     "word": "Tages",
+     "start": 0.4
+    },
+    {
+     "word": "kommt",
+     "start": 1.027
+    },
+    {
+     "word": "ein",
+     "start": 1.42
+    },
+    {
+     "word": "alter",
+     "start": 1.667
+    },
+    {
+     "word": "Mann",
+     "start": 2.064
+    },
+    {
+     "word": "ins",
+     "start": 2.42
+    },
+    {
+     "word": "Tal:",
+     "start": 2.575
+    },
+    {
+     "word": "*Ibrahim*,",
+     "start": 4.392
+    },
+    {
+     "word": "Friede",
+     "start": 5.333
+    },
+    {
+     "word": "sei",
+     "start": 5.375
+    },
+    {
+     "word": "mit",
+     "start": 5.96
+    },
+    {
+     "word": "ihm.",
+     "start": 6.14
+    },
+    {
+     "word": "Er",
+     "start": 7.347
+    },
+    {
+     "word": "will",
+     "start": 7.386
+    },
+    {
+     "word": "nach",
+     "start": 7.386
+    },
+    {
+     "word": "seinem",
+     "start": 7.386
+    },
+    {
+     "word": "Sohn",
+     "start": 8.16
+    },
+    {
+     "word": "sehen.",
+     "start": 8.533
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-9.wav",
+   "seconds": 8.94,
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.32
+    },
+    {
+     "word": "Ismail",
+     "start": 0.32
+    },
+    {
+     "word": "ist",
+     "start": 1.255
+    },
+    {
+     "word": "nicht",
+     "start": 1.475
+    },
+    {
+     "word": "da.",
+     "start": 1.755
+    },
+    {
+     "word": "Er",
+     "start": 2.182
+    },
+    {
+     "word": "ist",
+     "start": 2.182
+    },
+    {
+     "word": "unterwegs,",
+     "start": 2.595
+    },
+    {
+     "word": "um",
+     "start": 3.435
+    },
+    {
+     "word": "Essen",
+     "start": 3.662
+    },
+    {
+     "word": "zu",
+     "start": 4.048
+    },
+    {
+     "word": "holen.",
+     "start": 4.195
+    },
+    {
+     "word": "Ibrahim",
+     "start": 5.355
+    },
+    {
+     "word": "fragt",
+     "start": 5.956
+    },
+    {
+     "word": "seine",
+     "start": 6.742
+    },
+    {
+     "word": "Frau,",
+     "start": 6.955
+    },
+    {
+     "word": "wie",
+     "start": 7.495
+    },
+    {
+     "word": "sie",
+     "start": 7.574
+    },
+    {
+     "word": "leben.",
+     "start": 7.574
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-3-0.wav",
+   "seconds": 4.049,
+   "words": [
+    {
+     "word": "Schlecht.",
+     "start": 0.05
+    },
+    {
+     "word": "Wir",
+     "start": 1.53
+    },
+    {
+     "word": "leben",
+     "start": 1.83
+    },
+    {
+     "word": "in",
+     "start": 2.27
+    },
+    {
+     "word": "Not",
+     "start": 2.51
+    },
+    {
+     "word": "...",
+     "start": 2.82
+    },
+    {
+     "word": "und",
+     "start": 2.95
+    },
+    {
+     "word": "Enge.",
+     "start": 3.25
+    }
+   ]
+  },
+  {
+   "file": "qissa_kaaba/line-1-0.wav",
+   "seconds": 8.968,
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.05
+    },
+    {
+     "word": "dein",
+     "start": 0.42
+    },
+    {
+     "word": "Mann",
+     "start": 0.8
+    },
+    {
+     "word": "kommt,",
+     "start": 1.18
+    },
+    {
+     "word": "grüß",
+     "start": 1.63
+    },
+    {
+     "word": "ihn",
+     "start": 2.55
+    },
+    {
+     "word": "von",
+     "start": 2.86
+    },
+    {
+     "word": "mir.",
+     "start": 3.18
+    },
+    {
+     "word": "Und",
+     "start": 4.56
+    },
+    {
+     "word": "sag",
+     "start": 4.87
+    },
+    {
+     "word": "ihm:",
+     "start": 5.18
+    },
+    {
+     "word": "Er",
+     "start": 6.02
+    },
+    {
+     "word": "soll",
+     "start": 6.23
+    },
+    {
+     "word": "die",
+     "start": 6.54
+    },
+    {
+     "word": "*Schwelle*",
+     "start": 6.81
+    },
+    {
+     "word": "seiner",
+     "start": 7.33
+    },
+    {
+     "word": "Tür",
+     "start": 7.75
+    },
+    {
+     "word": "wechseln.",
+     "start": 8.02
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-10.wav",
+   "seconds": 6.157,
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.2
+    },
+    {
+     "word": "Abend",
+     "start": 0.2
+    },
+    {
+     "word": "kommt",
+     "start": 0.32
+    },
+    {
+     "word": "Ismail",
+     "start": 1.04
+    },
+    {
+     "word": "zurück.",
+     "start": 1.577
+    },
+    {
+     "word": "Und",
+     "start": 2.935
+    },
+    {
+     "word": "er",
+     "start": 2.935
+    },
+    {
+     "word": "spürt:",
+     "start": 2.935
+    },
+    {
+     "word": "Jemand",
+     "start": 4.12
+    },
+    {
+     "word": "war",
+     "start": 4.371
+    },
+    {
+     "word": "hier.",
+     "start": 5.056
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-3-1.wav",
+   "seconds": 6.133,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.05
+    },
+    {
+     "word": "alter",
+     "start": 0.56
+    },
+    {
+     "word": "Mann",
+     "start": 1.29
+    },
+    {
+     "word": "war",
+     "start": 2.05
+    },
+    {
+     "word": "hier.",
+     "start": 2.57
+    },
+    {
+     "word": "Er",
+     "start": 3.43
+    },
+    {
+     "word": "lässt",
+     "start": 3.55
+    },
+    {
+     "word": "dich",
+     "start": 3.76
+    },
+    {
+     "word": "grüßen.",
+     "start": 3.94
+    },
+    {
+     "word": "Du",
+     "start": 4.19
+    },
+    {
+     "word": "sollst",
+     "start": 4.31
+    },
+    {
+     "word": "die",
+     "start": 4.55
+    },
+    {
+     "word": "Schwelle",
+     "start": 4.71
+    },
+    {
+     "word": "deiner",
+     "start": 5.01
+    },
+    {
+     "word": "Tür",
+     "start": 5.26
+    },
+    {
+     "word": "wechseln.",
+     "start": 5.41
+    }
+   ]
+  },
+  {
+   "file": "qissa_kaaba/line-2-0.wav",
+   "seconds": 6.366,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.29
+    },
+    {
+     "word": "mein",
+     "start": 0.54
+    },
+    {
+     "word": "Vater.",
+     "start": 0.83
+    },
+    {
+     "word": "Er",
+     "start": 1.7
+    },
+    {
+     "word": "hat",
+     "start": 1.85
+    },
+    {
+     "word": "mir",
+     "start": 2.05
+    },
+    {
+     "word": "befohlen,",
+     "start": 2.24
+    },
+    {
+     "word": "mich",
+     "start": 2.64
+    },
+    {
+     "word": "von",
+     "start": 2.87
+    },
+    {
+     "word": "dir",
+     "start": 3.07
+    },
+    {
+     "word": "zu",
+     "start": 3.26
+    },
+    {
+     "word": "trennen.",
+     "start": 3.42
+    },
+    {
+     "word": "Geh",
+     "start": 4.35
+    },
+    {
+     "word": "zurück",
+     "start": 4.58
+    },
+    {
+     "word": "zu",
+     "start": 4.96
+    },
+    {
+     "word": "deiner",
+     "start": 5.15
+    },
+    {
+     "word": "Familie.",
+     "start": 5.52
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-11.wav",
+   "seconds": 11.494,
+   "words": [
+    {
+     "word": "Ismail",
+     "start": 0.076
+    },
+    {
+     "word": "heiratet",
+     "start": 0.626
+    },
+    {
+     "word": "eine",
+     "start": 1.25
+    },
+    {
+     "word": "andere",
+     "start": 1.499
+    },
+    {
+     "word": "Frau",
+     "start": 2.142
+    },
+    {
+     "word": "aus",
+     "start": 2.362
+    },
+    {
+     "word": "dem",
+     "start": 2.362
+    },
+    {
+     "word": "Stamm.",
+     "start": 2.535
+    },
+    {
+     "word": "Zeit",
+     "start": 3.162
+    },
+    {
+     "word": "vergeht",
+     "start": 4.029
+    },
+    {
+     "word": "...",
+     "start": 5.102
+    },
+    {
+     "word": "dann",
+     "start": 6.122
+    },
+    {
+     "word": "kommt",
+     "start": 6.122
+    },
+    {
+     "word": "Ibrahim",
+     "start": 6.682
+    },
+    {
+     "word": "wieder.",
+     "start": 7.248
+    },
+    {
+     "word": "Und",
+     "start": 8.644
+    },
+    {
+     "word": "wieder",
+     "start": 8.644
+    },
+    {
+     "word": "ist",
+     "start": 9.682
+    },
+    {
+     "word": "Ismail",
+     "start": 9.682
+    },
+    {
+     "word": "nicht",
+     "start": 10.615
+    },
+    {
+     "word": "da.",
+     "start": 10.894
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-3-2.wav",
+   "seconds": 4.629,
+   "words": [
+    {
+     "word": "Uns",
+     "start": 0.05
+    },
+    {
+     "word": "geht",
+     "start": 0.42
+    },
+    {
+     "word": "es",
+     "start": 0.87
+    },
+    {
+     "word": "gut.",
+     "start": 1.17
+    },
+    {
+     "word": "Wir",
+     "start": 1.54
+    },
+    {
+     "word": "haben",
+     "start": 1.92
+    },
+    {
+     "word": "genug.",
+     "start": 2.44
+    },
+    {
+     "word": "Alhamdulillah.",
+     "start": 3.08
+    }
+   ]
+  },
+  {
+   "file": "qissa_kaaba/line-1-1.wav",
+   "seconds": 1.375,
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.05
+    },
+    {
+     "word": "esst",
+     "start": 0.33
+    },
+    {
+     "word": "ihr?",
+     "start": 0.67
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-3-3.wav",
+   "seconds": 1.053,
+   "words": [
+    {
+     "word": "Fleisch.",
+     "start": 0.05
+    }
+   ]
+  },
+  {
+   "file": "qissa_kaaba/line-1-2.wav",
+   "seconds": 1.674,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.05
+    },
+    {
+     "word": "was",
+     "start": 0.31
+    },
+    {
+     "word": "trinkt",
+     "start": 0.57
+    },
+    {
+     "word": "ihr?",
+     "start": 0.99
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-3-4.wav",
+   "seconds": 0.896,
+   "words": [
+    {
+     "word": "Wasser.",
+     "start": 0.05
+    }
+   ]
+  },
+  {
+   "file": "qissa_kaaba/line-1-3.wav",
+   "seconds": 4.931,
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.25
+    },
+    {
+     "word": "segne",
+     "start": 0.71
+    },
+    {
+     "word": "ihnen",
+     "start": 1.9
+    },
+    {
+     "word": "das",
+     "start": 2.37
+    },
+    {
+     "word": "*Fleisch*",
+     "start": 2.7
+    },
+    {
+     "word": "und",
+     "start": 3.3
+    },
+    {
+     "word": "das",
+     "start": 3.64
+    },
+    {
+     "word": "*Wasser*.",
+     "start": 3.97
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-12.wav",
+   "seconds": 4.582,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.145
+    },
+    {
+     "word": "Prophet",
+     "start": 0.145
+    },
+    {
+     "word": "Muhammad,",
+     "start": 0.88
+    },
+    {
+     "word": "Friede",
+     "start": 1.88
+    },
+    {
+     "word": "sei",
+     "start": 2.44
+    },
+    {
+     "word": "mit",
+     "start": 2.44
+    },
+    {
+     "word": "ihm,",
+     "start": 2.64
+    },
+    {
+     "word": "sagte",
+     "start": 3.16
+    },
+    {
+     "word": "später:",
+     "start": 3.429
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-4-0.wav",
+   "seconds": 5.322,
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.05
+    },
+    {
+     "word": "hatten",
+     "start": 0.25
+    },
+    {
+     "word": "damals",
+     "start": 0.58
+    },
+    {
+     "word": "kein",
+     "start": 0.91
+    },
+    {
+     "word": "Getreide.",
+     "start": 1.15
+    },
+    {
+     "word": "Hätten",
+     "start": 2.01
+    },
+    {
+     "word": "sie",
+     "start": 2.32
+    },
+    {
+     "word": "welches",
+     "start": 2.51
+    },
+    {
+     "word": "gehabt,",
+     "start": 2.87
+    },
+    {
+     "word": "hätte",
+     "start": 3.18
+    },
+    {
+     "word": "er",
+     "start": 3.46
+    },
+    {
+     "word": "auch",
+     "start": 3.61
+    },
+    {
+     "word": "dafür",
+     "start": 3.85
+    },
+    {
+     "word": "um",
+     "start": 4.12
+    },
+    {
+     "word": "Segen",
+     "start": 4.28
+    },
+    {
+     "word": "gebeten.",
+     "start": 4.55
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-1-4.wav",
+   "seconds": 6.35,
+   "words": [
+    {
+     "word": "Grüß",
+     "start": 0.05
+    },
+    {
+     "word": "deinen",
+     "start": 0.38
+    },
+    {
+     "word": "Mann.",
+     "start": 0.82
+    },
+    {
+     "word": "Und",
+     "start": 1.91
+    },
+    {
+     "word": "sag",
+     "start": 2.2
+    },
+    {
+     "word": "ihm:",
+     "start": 2.49
+    },
+    {
+     "word": "Er",
+     "start": 3.24
+    },
+    {
+     "word": "soll",
+     "start": 3.45
+    },
+    {
+     "word": "die",
+     "start": 3.77
+    },
+    {
+     "word": "Schwelle",
+     "start": 4.04
+    },
+    {
+     "word": "seiner",
+     "start": 4.58
+    },
+    {
+     "word": "Tür",
+     "start": 5.01
+    },
+    {
+     "word": "*festhalten*.",
+     "start": 5.28
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-13.wav",
+   "seconds": 3.359,
+   "words": [
+    {
+     "word": "Als",
+     "start": 0.158
+    },
+    {
+     "word": "Ismail",
+     "start": 0.158
+    },
+    {
+     "word": "zurückkommt,",
+     "start": 0.158
+    },
+    {
+     "word": "erzählt",
+     "start": 1.96
+    },
+    {
+     "word": "sie",
+     "start": 2.14
+    },
+    {
+     "word": "ihm",
+     "start": 2.373
+    },
+    {
+     "word": "alles.",
+     "start": 2.373
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-2-1.wav",
+   "seconds": 6.237,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "mein",
+     "start": 0.52
+    },
+    {
+     "word": "Vater.",
+     "start": 0.81
+    },
+    {
+     "word": "Und",
+     "start": 1.82
+    },
+    {
+     "word": "die",
+     "start": 2.12
+    },
+    {
+     "word": "Schwelle",
+     "start": 2.42
+    },
+    {
+     "word": "...",
+     "start": 3.19
+    },
+    {
+     "word": "bist",
+     "start": 4.02
+    },
+    {
+     "word": "du.",
+     "start": 4.24
+    },
+    {
+     "word": "Er",
+     "start": 4.4
+    },
+    {
+     "word": "hat",
+     "start": 4.55
+    },
+    {
+     "word": "mir",
+     "start": 4.74
+    },
+    {
+     "word": "gesagt:",
+     "start": 4.93
+    },
+    {
+     "word": "Behalte",
+     "start": 5.24
+    },
+    {
+     "word": "dich.",
+     "start": 5.59
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-14.wav",
+   "seconds": 8.988,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.256
+    },
+    {
+     "word": "...",
+     "start": 0.256
+    },
+    {
+     "word": "ein",
+     "start": 0.46
+    },
+    {
+     "word": "dritter",
+     "start": 0.94
+    },
+    {
+     "word": "Besuch.",
+     "start": 0.987
+    },
+    {
+     "word": "Ismail",
+     "start": 2.4
+    },
+    {
+     "word": "sitzt",
+     "start": 3.672
+    },
+    {
+     "word": "unter",
+     "start": 4.22
+    },
+    {
+     "word": "einem",
+     "start": 4.6
+    },
+    {
+     "word": "großen",
+     "start": 4.84
+    },
+    {
+     "word": "Baum",
+     "start": 5.097
+    },
+    {
+     "word": "nahe",
+     "start": 5.52
+    },
+    {
+     "word": "Zamzam",
+     "start": 5.947
+    },
+    {
+     "word": "...",
+     "start": 6.427
+    },
+    {
+     "word": "und",
+     "start": 6.98
+    },
+    {
+     "word": "schnitzt",
+     "start": 7.3
+    },
+    {
+     "word": "Pfeile.",
+     "start": 7.362
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-15.wav",
+   "seconds": 9.042,
+   "words": [
+    {
+     "word": "Als",
+     "start": 0.302
+    },
+    {
+     "word": "er",
+     "start": 0.302
+    },
+    {
+     "word": "seinen",
+     "start": 0.32
+    },
+    {
+     "word": "Vater",
+     "start": 0.32
+    },
+    {
+     "word": "sieht,",
+     "start": 1.102
+    },
+    {
+     "word": "steht",
+     "start": 1.422
+    },
+    {
+     "word": "er",
+     "start": 1.675
+    },
+    {
+     "word": "auf.",
+     "start": 1.882
+    },
+    {
+     "word": "Und",
+     "start": 2.382
+    },
+    {
+     "word": "sie",
+     "start": 2.813
+    },
+    {
+     "word": "begrüßen",
+     "start": 2.813
+    },
+    {
+     "word": "sich",
+     "start": 2.813
+    },
+    {
+     "word": "...",
+     "start": 4.096
+    },
+    {
+     "word": "wie",
+     "start": 4.096
+    },
+    {
+     "word": "ein",
+     "start": 4.556
+    },
+    {
+     "word": "Vater",
+     "start": 4.588
+    },
+    {
+     "word": "seinen",
+     "start": 5.076
+    },
+    {
+     "word": "Sohn.",
+     "start": 5.956
+    },
+    {
+     "word": "Und",
+     "start": 6.516
+    },
+    {
+     "word": "ein",
+     "start": 6.691
+    },
+    {
+     "word": "Sohn",
+     "start": 7.316
+    },
+    {
+     "word": "seinen",
+     "start": 7.716
+    },
+    {
+     "word": "Vater.",
+     "start": 7.988
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-1-5.wav",
+   "seconds": 3.846,
+   "words": [
+    {
+     "word": "Ismail,",
+     "start": 0.05
+    },
+    {
+     "word": "Allah",
+     "start": 0.57
+    },
+    {
+     "word": "hat",
+     "start": 1.64
+    },
+    {
+     "word": "mir",
+     "start": 1.97
+    },
+    {
+     "word": "etwas",
+     "start": 2.3
+    },
+    {
+     "word": "befohlen.",
+     "start": 2.77
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-2-2.wav",
+   "seconds": 2.453,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.05
+    },
+    {
+     "word": "tu,",
+     "start": 0.3
+    },
+    {
+     "word": "was",
+     "start": 0.47
+    },
+    {
+     "word": "dein",
+     "start": 0.68
+    },
+    {
+     "word": "Herr",
+     "start": 0.93
+    },
+    {
+     "word": "dir",
+     "start": 1.19
+    },
+    {
+     "word": "befohlen",
+     "start": 1.4
+    },
+    {
+     "word": "hat.",
+     "start": 1.82
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-1-6.wav",
+   "seconds": 1.217,
+   "words": [
+    {
+     "word": "Hilfst",
+     "start": 0.05
+    },
+    {
+     "word": "du",
+     "start": 0.4
+    },
+    {
+     "word": "mir?",
+     "start": 0.57
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-2-3.wav",
+   "seconds": 1.237,
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.05
+    },
+    {
+     "word": "helfe",
+     "start": 0.27
+    },
+    {
+     "word": "dir.",
+     "start": 0.59
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-1-7.wav",
+   "seconds": 3.81,
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "hat",
+     "start": 0.42
+    },
+    {
+     "word": "mir",
+     "start": 0.7
+    },
+    {
+     "word": "befohlen,",
+     "start": 0.97
+    },
+    {
+     "word": "hier",
+     "start": 1.51
+    },
+    {
+     "word": "ein",
+     "start": 2.19
+    },
+    {
+     "word": "*Haus*",
+     "start": 2.46
+    },
+    {
+     "word": "zu",
+     "start": 2.79
+    },
+    {
+     "word": "bauen.",
+     "start": 3.01
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-16.wav",
+   "seconds": 6.726,
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.142
+    },
+    {
+     "word": "zeigt",
+     "start": 0.142
+    },
+    {
+     "word": "auf",
+     "start": 0.169
+    },
+    {
+     "word": "einen",
+     "start": 0.169
+    },
+    {
+     "word": "kleinen",
+     "start": 0.68
+    },
+    {
+     "word": "Hügel.",
+     "start": 1.32
+    },
+    {
+     "word": "Genau",
+     "start": 1.9
+    },
+    {
+     "word": "dort,",
+     "start": 2.648
+    },
+    {
+     "word": "wo",
+     "start": 3.653
+    },
+    {
+     "word": "der",
+     "start": 3.653
+    },
+    {
+     "word": "Engel",
+     "start": 3.721
+    },
+    {
+     "word": "es",
+     "start": 4.307
+    },
+    {
+     "word": "versprochen",
+     "start": 4.773
+    },
+    {
+     "word": "hatte.",
+     "start": 5.733
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-17.wav",
+   "seconds": 6.093,
+   "words": [
+    {
+     "word": "Ismail",
+     "start": 0.273
+    },
+    {
+     "word": "bringt",
+     "start": 0.803
+    },
+    {
+     "word": "die",
+     "start": 1.104
+    },
+    {
+     "word": "Steine.",
+     "start": 1.223
+    },
+    {
+     "word": "Ibrahim",
+     "start": 2.264
+    },
+    {
+     "word": "baut.",
+     "start": 3.583
+    },
+    {
+     "word": "Stein",
+     "start": 4.071
+    },
+    {
+     "word": "...",
+     "start": 4.604
+    },
+    {
+     "word": "auf",
+     "start": 4.874
+    },
+    {
+     "word": "Stein.",
+     "start": 4.874
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-18.wav",
+   "seconds": 11.769,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.0
+    },
+    {
+     "word": "Mauern",
+     "start": 0.0
+    },
+    {
+     "word": "wachsen",
+     "start": 0.308
+    },
+    {
+     "word": "...",
+     "start": 1.67
+    },
+    {
+     "word": "bis",
+     "start": 1.67
+    },
+    {
+     "word": "Ibrahim",
+     "start": 2.13
+    },
+    {
+     "word": "nicht",
+     "start": 2.163
+    },
+    {
+     "word": "mehr",
+     "start": 2.943
+    },
+    {
+     "word": "hinaufreicht.",
+     "start": 3.226
+    },
+    {
+     "word": "Da",
+     "start": 4.64
+    },
+    {
+     "word": "bringt",
+     "start": 5.038
+    },
+    {
+     "word": "Ismail",
+     "start": 5.038
+    },
+    {
+     "word": "einen",
+     "start": 5.49
+    },
+    {
+     "word": "großen",
+     "start": 6.143
+    },
+    {
+     "word": "*Stein*.",
+     "start": 6.467
+    },
+    {
+     "word": "Ibrahim",
+     "start": 8.152
+    },
+    {
+     "word": "stellt",
+     "start": 8.698
+    },
+    {
+     "word": "sich",
+     "start": 9.02
+    },
+    {
+     "word": "darauf",
+     "start": 9.269
+    },
+    {
+     "word": "...",
+     "start": 9.752
+    },
+    {
+     "word": "und",
+     "start": 10.212
+    },
+    {
+     "word": "baut",
+     "start": 10.212
+    },
+    {
+     "word": "weiter.",
+     "start": 10.245
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-19.wav",
+   "seconds": 2.615,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.313
+    },
+    {
+     "word": "während",
+     "start": 0.313
+    },
+    {
+     "word": "sie",
+     "start": 0.762
+    },
+    {
+     "word": "bauen,",
+     "start": 0.922
+    },
+    {
+     "word": "beten",
+     "start": 1.532
+    },
+    {
+     "word": "beide:",
+     "start": 1.829
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-1-8.wav",
+   "seconds": 3.216,
+   "words": [
+    {
+     "word": "Unser",
+     "start": 0.05
+    },
+    {
+     "word": "Herr,",
+     "start": 0.42
+    },
+    {
+     "word": "nimm",
+     "start": 0.74
+    },
+    {
+     "word": "es",
+     "start": 1.83
+    },
+    {
+     "word": "von",
+     "start": 2.05
+    },
+    {
+     "word": "uns",
+     "start": 2.31
+    },
+    {
+     "word": "an.",
+     "start": 2.58
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-2-4.wav",
+   "seconds": 3.397,
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.05
+    },
+    {
+     "word": "bist",
+     "start": 0.26
+    },
+    {
+     "word": "der",
+     "start": 0.58
+    },
+    {
+     "word": "Allhörende,",
+     "start": 0.85
+    },
+    {
+     "word": "der",
+     "start": 2.02
+    },
+    {
+     "word": "Allwissende.",
+     "start": 2.28
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_kaaba/line-0-20.wav",
+   "seconds": 4.712,
+   "words": [
+    {
+     "word": "Dieses",
+     "start": 0.153
+    },
+    {
+     "word": "Haus",
+     "start": 0.784
+    },
+    {
+     "word": "...",
+     "start": 1.52
+    },
+    {
+     "word": "ist",
+     "start": 2.06
+    },
+    {
+     "word": "die",
+     "start": 2.076
+    },
+    {
+     "word": "*Kaaba*.",
+     "start": 2.6
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-21.wav",
+   "seconds": 9.053,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.083
+    },
+    {
+     "word": "der",
+     "start": 0.083
+    },
+    {
+     "word": "Stein,",
+     "start": 0.083
+    },
+    {
+     "word": "auf",
+     "start": 0.083
+    },
+    {
+     "word": "dem",
+     "start": 0.888
+    },
+    {
+     "word": "Ibrahim",
+     "start": 1.028
+    },
+    {
+     "word": "stand?",
+     "start": 1.348
+    },
+    {
+     "word": "Den",
+     "start": 2.808
+    },
+    {
+     "word": "gibt",
+     "start": 2.808
+    },
+    {
+     "word": "es",
+     "start": 3.201
+    },
+    {
+     "word": "bis",
+     "start": 3.201
+    },
+    {
+     "word": "heute.",
+     "start": 3.201
+    },
+    {
+     "word": "Direkt",
+     "start": 3.648
+    },
+    {
+     "word": "neben",
+     "start": 3.881
+    },
+    {
+     "word": "der",
+     "start": 4.404
+    },
+    {
+     "word": "Kaaba:",
+     "start": 5.321
+    },
+    {
+     "word": "der",
+     "start": 5.828
+    },
+    {
+     "word": "*Maqam",
+     "start": 5.828
+    },
+    {
+     "word": "Ibrahim*.",
+     "start": 6.882
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-22.wav",
+   "seconds": 4.909,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.32
+    },
+    {
+     "word": "darin",
+     "start": 0.32
+    },
+    {
+     "word": "sieht",
+     "start": 0.817
+    },
+    {
+     "word": "man",
+     "start": 1.144
+    },
+    {
+     "word": "...",
+     "start": 1.524
+    },
+    {
+     "word": "die",
+     "start": 1.524
+    },
+    {
+     "word": "Abdrücke",
+     "start": 2.144
+    },
+    {
+     "word": "von",
+     "start": 3.124
+    },
+    {
+     "word": "zwei",
+     "start": 3.324
+    },
+    {
+     "word": "*Füßen*.",
+     "start": 3.764
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_kaaba/line-0-23.wav",
+   "seconds": 10.189,
+   "words": [
+    {
+     "word": "Millionen",
+     "start": 0.32
+    },
+    {
+     "word": "beten",
+     "start": 0.929
+    },
+    {
+     "word": "heute",
+     "start": 1.302
+    },
+    {
+     "word": "genau",
+     "start": 1.636
+    },
+    {
+     "word": "dort.",
+     "start": 2.065
+    },
+    {
+     "word": "Und",
+     "start": 3.607
+    },
+    {
+     "word": "alles",
+     "start": 3.607
+    },
+    {
+     "word": "begann",
+     "start": 3.607
+    },
+    {
+     "word": "...",
+     "start": 4.889
+    },
+    {
+     "word": "mit",
+     "start": 4.889
+    },
+    {
+     "word": "einem",
+     "start": 5.797
+    },
+    {
+     "word": "*Vater*",
+     "start": 5.821
+    },
+    {
+     "word": "und",
+     "start": 5.821
+    },
+    {
+     "word": "einem",
+     "start": 6.889
+    },
+    {
+     "word": "*Sohn*,",
+     "start": 6.993
+    },
+    {
+     "word": "die",
+     "start": 8.489
+    },
+    {
+     "word": "Allah",
+     "start": 8.489
+    },
+    {
+     "word": "gehorchten.",
+     "start": 8.587
+    }
+   ],
+   "flow": 0
+  }
+ ]
+}
