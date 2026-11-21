@@ -244,3 +244,7 @@ Lokal reicht `npm run render:3d`.
 - WICHTIG Cloud: Läuft in der Sitzung kein Prozess mehr (Antwort beendet, kein Hintergrund-Befehl), wird der Rechner nach wenigen Minuten
   pausiert und `setsid nohup`-Renderjobs sterben. Bei langen Renderläufen daher immer einen Hintergrund-Warter laufen lassen
   (Bash run_in_background, timeout 7200000, until-Schleife) und nach Ablauf neu starten; zusätzlich Check-ins per send_later.
+- Plattenplatz Cloud: Einzelbilder (~2 MB/PNG) füllen die Sitzung (Folge 3 lief voll) → `render_qissa_kaaba.sh` kodiert jede fertige
+  Einstellung sofort zu MP4 und löscht ihre PNGs (`try_enc`). Alte Einzelbilder fertiger Folgen (out/*_frames) löschen, Videos behalten.
+- Nutzer (21.11.2026): Ablauf und Qualität GENAU so lassen wie bei Folge 1–3 (volle Auflösung, 2 Samples, 30 fps → 60 fps, CPU-Rendern
+  in der Cloud). Keine Grafikkarte/Miet-GPU, keine Qualitätsabstriche vorschlagen. Pannen (Pause ohne Warter, volle Platte) vermeiden.
