@@ -146,8 +146,8 @@ def motes_burst(name, center, t0, n=40, radius=0.5, rise_h=1.6, dur=4.0, seed=0,
 # ---------------------------------------------------------------- Hände (Ich-Sicht der Frauen) und gehaltene Dinge
 POSES = {
     "lap": {"L": ((-0.16, -0.52, -0.33), (-85, 0, -15)), "R": ((0.16, -0.52, -0.33), (-85, 0, 15))},
-    "complain": {"L": ((-0.17, -0.2, -0.56), (-55, 180, 25)), "R": ((0.17, -0.2, -0.56), (-55, 180, -25))},
-    "complain2": {"L": ((-0.21, -0.15, -0.55), (-50, 180, 32)), "R": ((0.21, -0.15, -0.55), (-50, 180, -32))},
+    "complain": {"L": ((-0.14, -0.11, -0.64), (-42, 180, 18)), "R": ((0.14, -0.11, -0.64), (-42, 180, -18))},
+    "complain2": {"L": ((-0.18, -0.08, -0.63), (-38, 180, 26)), "R": ((0.18, -0.08, -0.63), (-38, 180, -26))},
     "tell": {"L": ((-0.2, -0.5, -0.34), (-85, 0, -15)), "R": ((0.12, -0.16, -0.46), (-62, 160, -10))},
     "bowl": {"L": ((-0.07, -0.3, -0.44), (-80, 180, -28)), "R": ((0.07, -0.3, -0.44), (-80, 180, 28))},
     "offer": {"L": ((-0.07, -0.2, -0.56), (-75, 180, -25)), "R": ((0.07, -0.2, -0.56), (-75, 180, 25))},
@@ -585,6 +585,11 @@ def shot_baum():
     MK.hold_at(Is, tst + 0.5, isp)
     MK.glide(Is, [isp, MEET_S], tst + 0.5, speed=0.85)
     meet = MEET
+
+    def ib_at(t):  # wo Ibrahims Licht zur Zeit t ist (für den Blick)
+        u = min(1.0, max(0.0, (t - t_go) * 1.25 / max(1e-6, dvec.length)))
+        x, y = start[0] + (MEET_I[0] - start[0]) * u, start[1] + (MEET_I[1] - start[1]) * u
+        return (x, y, gz(x, y) + 1.2)
     glow_pulse(Is, tb, peak=2.0)
     glow_pulse(Ib, tb, peak=2.0)
     rig, shake, cam = Q.pov_camera(lens=17)
@@ -595,7 +600,7 @@ def shot_baum():
     mz = (meet[0], meet[1], gz(*meet) + 1.1)
     Q.cam_keys(rig, [(0, c0, look(c0, (TREE.x, TREE.y, 3.0))), (ev("ismail_e12") - 0.4, None, look(c0, (isp[0], isp[1], gz(*isp) + 0.7))),
                      (ev("zamzam_e12") - 0.4, None, look(c0, (SP.x, SP.y, 0.6))), (ev("pfeile_e12") - 0.6, c1, look(c1, arrows)),
-                     (tv - 0.6, None, look(c1, (isp[0], isp[1], gz(*isp) + 0.6))), (tv + 0.5, None, look(c1, (start[0] + 3.0, start[1] - 4.0, 1.4))),
+                     (tv - 0.6, None, look(c1, (isp[0], isp[1], gz(*isp) + 0.6))), (tv + 0.5, None, look(c1, ib_at(tv + 0.5))),
                      (tst + 0.2, None, look(c1, (isp[0], isp[1], gz(*isp) + 1.1))), (tb - 0.3, c2, look(c2, mz)), (D, None, look(c2, mz))])
     Q.handheld(shake, 0, D, amp=0.5, walk_from=ev("pfeile_e12") - 2.0, walk_to=ev("pfeile_e12") - 0.6, walk_amp=0.6)
     return L
