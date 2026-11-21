@@ -470,7 +470,7 @@ def _shrub_mesh(name, seed, green=False):
                 twig(q, nd, L_ * rnd.uniform(0.55, 0.75), r * 0.6, depth - 1)
         else:
             for _ in range(2):
-                g = bmesh.ops.create_icosphere(bm, subdivisions=1, radius=rnd.uniform(0.04, 0.08))
+                g = bmesh.ops.create_icosphere(bm, subdivisions=SHRUB_SUB, radius=rnd.uniform(0.04, 0.08))
                 c = q + Vector((rnd.uniform(-0.05, 0.05), rnd.uniform(-0.05, 0.05), rnd.uniform(-0.03, 0.05)))
                 for v in g["verts"]:
                     v.co = Vector((v.co.x * 1.4, v.co.y * 1.4, v.co.z * 0.7)) + c
@@ -527,6 +527,8 @@ def scatter(seed=3, n_rocks=620, n_shrubs=None, keep=()):
 
 
 PEB_SUB = 2       # Kiesel-Unterteilung (Folge 3: 1 = schneller)
+SHRUB_SUB = 1     # Blattbüschel der Dornbüsche
+FAR_LEAVES = 2600  # Blattbüschel der fernen Akazien
 N_SHRUBS = 170
 
 
@@ -595,7 +597,7 @@ def acacia(name, loc, h=5.2, spread=4.2, seed=1):
     o.parent = root
     # Krone: flacher Schirm aus sehr vielen kleinen Blattbüscheln (spitzenartig, Lücken zum Himmel)
     bm = bmesh.new()
-    for i in range(2600):
+    for i in range(FAR_LEAVES if name.startswith("tree_far") else 2600):
         a = rnd.uniform(0, 2 * math.pi)
         rr = spread * (rnd.random() ** 0.6) * 1.1
         if noise.noise(Vector((math.cos(a) * rr * 0.8, math.sin(a) * rr * 0.8, seed))) > 0.25:

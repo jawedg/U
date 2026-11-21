@@ -20,7 +20,24 @@ LINE = {l["id"]: l for l in TL["lines"]}
 EV = TL["events"]
 Q.FPS = TL.get("render_fps", 30)
 MK.PEB_SUB = 1      # Kiesel einfacher (Rechner ohne Grafikkarte: jedes Dreieck kostet je Sample)
-MK.N_SHRUBS = 110
+MK.N_SHRUBS = 100
+MK.FAR_LEAVES = 700
+MK.SHRUB_SUB = 0
+
+
+def _fast_templates():
+    """Felsbrocken mit weniger Dreiecken (Unterteilung 2 statt 3) – gleiche Formen, viel schneller."""
+    if MK._TPL:
+        return
+    for k in range(7):
+        me = MK._rock_mesh(f"tpl_rock{k}", 100 + k, sub=2)
+        me.materials.append(MK.M["rock"] if k % 3 else MK.M["rock2"])
+        MK._TPL[f"rock{k}"] = me
+    for k in range(4):
+        MK._TPL[f"shrub{k}"] = MK._shrub_mesh(f"tpl_shrub{k}", 200 + k, green=(k == 3))
+
+
+MK._templates = _fast_templates
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 SHOT = argv[0] if argv else "zelte"
