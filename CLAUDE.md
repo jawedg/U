@@ -228,3 +228,16 @@ Lokal reicht `npm run render:3d`.
   `POST /v1/sound-generation` {text, duration_seconds, prompt_influence 0.6}, ~11 Credits/s, Ergebnis `assets/sfx/el_*.flac` (auf -20 LUFS);
   Prompts immer mit „no music“.
 - Text-Änderung (vom Nutzer genehmigter Text): „Kein Baum“ → „Nur Stein … und Sand“, weil der Hadith einen großen Baum nennt.
+
+## QISSAH Folge 3 „Die Erbauer der Kaaba“ (Nov. 2026)
+- Titel im Video „WER HAT DIE KAABA GEBAUT?“, Fortsetzung von Folge 2 (gleicher Hadith Bukhari 3364: drei Besuche Ibrahims, die Türschwelle,
+  Fleisch und Wasser, Bau des Hauses, Maqam-Stein; Ende heute: Kaaba + Maqam Ibrahim mit Fußabdrücken). Text vom Nutzer genehmigt.
+- Stimmen: Erzähler ElevenLabs (Helmut), Ibrahim = Orus, Ismail = Achird, Frauen = Kore/Despina (gemini-2.5-flash mit Regie), Prophet ﷺ = Charon (3.8 + Hall).
+  Koran 2:127 nur auf Deutsch. Gemini-Schnitte von Hand geprüft (`out/stimmproben/qissa_kaaba-p*.cuts.json`).
+- Dateien: `src/qissa_kaaba/`, `scripts/build_qissa_kaaba.py`, Blender `blender/qissa/kaaba.py` (18 Einstellungen) + `kaaba_world.py`
+  (Ismails Haus mit Steinschwelle, Ziegen, Zamzam-Brunnen, Grab, Pfeile/Bogen, Schale/Becher, Mauern Lage für Lage, Maqam-Stein,
+  Kaaba heute mit Hijr, Maqam-Glocke, Mataf, Pilger-Ringe), Ton `scripts/sfx_qissa_kaaba.py`, Geräusche per `scripts/el_sfx.py`.
+  Ablauf: `JOBS=2 setsid nohup ./scripts/v1_qissa_kaaba.sh > out/kb_v1.log 2>&1 &` → `out/qissah-kaaba-klein.mp4`. TikTok-Text: `videos/qissah-kaaba.md`.
+- Renderzeit (CPU, kein GPU): Kosten hängen an der Dreieckszahl je Sample. Daher: Kiesel/Büsche/ferne Bäume/kleine Steine OHNE Schatten
+  zu einem Objekt (`join_noshadow`), Felsen-Vorlagen Unterteilung 2, Büsche-Blätter Ikosaeder 0, 100 Büsche, ferne Akazien 700 Blattbüschel,
+  am Tag keine Feuer-Lichter → ~7 Bilder/min mit 2 Prozessen (3 Prozesse bringen nichts, Speicher wird knapp).
