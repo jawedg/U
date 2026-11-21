@@ -484,10 +484,11 @@ def _shrub_mesh(name, seed, green=False):
     return me
 
 
-def scatter(seed=3, n_rocks=620, n_shrubs=170, keep=()):
+def scatter(seed=3, n_rocks=620, n_shrubs=None, keep=()):
     """Felsbrocken am Rand der Berge und im Tal, Dornbüsche im Talboden. keep = [(x, y, r)] frei lassen (Wege, Szenen)."""
     _templates()
     rnd = random.Random(seed)
+    n_shrubs = N_SHRUBS if n_shrubs is None else n_shrubs
 
     def free(x, y):
         return all((x - a) ** 2 + (y - b) ** 2 > r * r for a, b, r in keep)
@@ -525,6 +526,10 @@ def scatter(seed=3, n_rocks=620, n_shrubs=170, keep=()):
         k += 1
 
 
+PEB_SUB = 2       # Kiesel-Unterteilung (Folge 3: 1 = schneller)
+N_SHRUBS = 170
+
+
 def pebbles(name, center, size, n, seed=0, rmin=0.015, rmax=0.06):
     rnd = random.Random(seed)
     bm = bmesh.new()
@@ -532,7 +537,7 @@ def pebbles(name, center, size, n, seed=0, rmin=0.015, rmax=0.06):
         r = rnd.uniform(rmin, rmax)
         x, y = center[0] + rnd.uniform(-size[0] / 2, size[0] / 2), center[1] + rnd.uniform(-size[1] / 2, size[1] / 2)
         c = Vector((x, y, ground_z(x, y) + r * 0.25))
-        g = bmesh.ops.create_icosphere(bm, subdivisions=2, radius=r)
+        g = bmesh.ops.create_icosphere(bm, subdivisions=PEB_SUB, radius=r)
         sc = Vector((rnd.uniform(0.7, 1.3), rnd.uniform(0.7, 1.3), rnd.uniform(0.4, 0.7)))
         for v in g["verts"]:
             v.co = Vector((v.co.x * sc.x, v.co.y * sc.y, v.co.z * sc.z)) + c

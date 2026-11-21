@@ -19,6 +19,8 @@ SEG = {s["id"]: s for s in TL["segments"]}
 LINE = {l["id"]: l for l in TL["lines"]}
 EV = TL["events"]
 Q.FPS = TL.get("render_fps", 30)
+MK.PEB_SUB = 1      # Kiesel einfacher (Rechner ohne Grafikkarte: jedes Dreieck kostet je Sample)
+MK.N_SHRUBS = 110
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 SHOT = argv[0] if argv else "zelte"
