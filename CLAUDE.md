@@ -241,3 +241,6 @@ Lokal reicht `npm run render:3d`.
 - Renderzeit (CPU, kein GPU): Kosten hängen an der Dreieckszahl je Sample. Daher: Kiesel/Büsche/ferne Bäume/kleine Steine OHNE Schatten
   zu einem Objekt (`join_noshadow`), Felsen-Vorlagen Unterteilung 2, Büsche-Blätter Ikosaeder 0, 100 Büsche, ferne Akazien 700 Blattbüschel,
   am Tag keine Feuer-Lichter → ~7 Bilder/min mit 2 Prozessen (3 Prozesse bringen nichts, Speicher wird knapp).
+- WICHTIG Cloud: Läuft in der Sitzung kein Prozess mehr (Antwort beendet, kein Hintergrund-Befehl), wird der Rechner nach wenigen Minuten
+  pausiert und `setsid nohup`-Renderjobs sterben. Bei langen Renderläufen daher immer einen Hintergrund-Warter laufen lassen
+  (Bash run_in_background, timeout 7200000, until-Schleife) und nach Ablauf neu starten; zusätzlich Check-ins per send_later.
