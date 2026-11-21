@@ -107,11 +107,11 @@ def glow_pulse(H, t, peak=2.2):
 def motes_burst(name, center, t0, n=40, radius=0.5, rise_h=1.6, dur=4.0, seed=0, col=(1.0, 0.85, 0.5)):
     """Goldene Lichtpunkte steigen auf (Segen)."""
     rnd = random.Random(seed)
-    m = Q.glow_mat(f"{name}_m", col, 18.0)
+    m = Q.glow_mat(f"{name}_m", col, 9.0)
     for k in range(n):
         a, r = rnd.uniform(0, 6.28), rnd.uniform(0.05, radius)
         p0 = Vector((center[0] + r * math.cos(a), center[1] + r * math.sin(a), center[2] + rnd.uniform(-0.05, 0.1)))
-        o = Q.ball(f"{name}{k}", p0, 0.006 + rnd.random() * 0.007, m, seg=8)
+        o = Q.ball(f"{name}{k}", p0, 0.0035 + rnd.random() * 0.004, m, seg=8)
         o.scale = (0.001, 0.001, 0.001)
         ts = t0 + rnd.uniform(0, dur * 0.5)
         o.keyframe_insert("scale", frame=max(1, Q.T(ts)))
@@ -127,8 +127,8 @@ def motes_burst(name, center, t0, n=40, radius=0.5, rise_h=1.6, dur=4.0, seed=0,
 # ---------------------------------------------------------------- Hände (Ich-Sicht der Frauen) und gehaltene Dinge
 POSES = {
     "lap": {"L": ((-0.16, -0.52, -0.33), (-85, 0, -15)), "R": ((0.16, -0.52, -0.33), (-85, 0, 15))},
-    "complain": {"L": ((-0.15, -0.17, -0.45), (-62, 180, 18)), "R": ((0.15, -0.17, -0.45), (-62, 180, -18))},
-    "complain2": {"L": ((-0.2, -0.13, -0.46), (-55, 180, 30)), "R": ((0.2, -0.13, -0.46), (-55, 180, -30))},
+    "complain": {"L": ((-0.17, -0.2, -0.56), (-55, 180, 25)), "R": ((0.17, -0.2, -0.56), (-55, 180, -25))},
+    "complain2": {"L": ((-0.21, -0.15, -0.55), (-50, 180, 32)), "R": ((0.21, -0.15, -0.55), (-50, 180, -32))},
     "tell": {"L": ((-0.2, -0.5, -0.34), (-85, 0, -15)), "R": ((0.12, -0.16, -0.46), (-62, 160, -10))},
     "bowl": {"L": ((-0.07, -0.3, -0.44), (-80, 180, -28)), "R": ((0.07, -0.3, -0.44), (-80, 180, 28))},
     "offer": {"L": ((-0.07, -0.2, -0.56), (-75, 180, -25)), "R": ((0.07, -0.2, -0.56), (-75, 180, 25))},
@@ -230,7 +230,7 @@ def shot_ismail():
     KW.cook_fire("gfire", (fc.x, fc.y, gz(fc.x, fc.y)), energy=70.0, pot=False)
     MK.rug("grug", (fc.x, fc.y, gz(fc.x, fc.y)), (4.6, 3.6), rot=0.2, mat=MK.M["blanket_r"])
     men = []
-    for k, a in enumerate((0.6, 1.5, 2.5, 3.6, 4.6)):
+    for k, a in enumerate((0.6, 1.45, 3.55, 4.4, 6.25)):
         x, y = fc.x + 1.7 * math.cos(a), fc.y + 1.7 * math.sin(a)
         m = Q.person(f"man{k}", (x, y, gz(x, y)), yaw=Q.face_yaw((x, y), (fc.x, fc.y)), sit=True, seed=400 + k,
                      head=["turban", "scarf", "turban", "scarf", "turban"][k])
@@ -252,9 +252,9 @@ def shot_ismail():
     Q.walk(bride, [(fc.x + 7.5, fc.y - 6.0), (ip[0] + 1.6, ip[1] - 1.2)], t_w, speed=0.9)
     Q.walk(mother, [(fc.x + 8.2, fc.y - 6.8), (ip[0] + 2.4, ip[1] - 1.9)], t_w + 0.2, speed=0.9)
     rig, shake, cam = Q.pov_camera(lens=17)
-    sa = 2.2
-    c0 = (fc.x + 2.6 * math.cos(sa), fc.y + 2.6 * math.sin(sa), gz(fc.x, fc.y) + 1.0)
-    c1 = (fc.x + 2.9 * math.cos(sa + 0.35), fc.y + 2.9 * math.sin(sa + 0.35), gz(fc.x, fc.y) + 1.05)
+    sa = 2.5
+    c0 = (fc.x + 1.95 * math.cos(sa), fc.y + 1.95 * math.sin(sa), gz(fc.x, fc.y) + 1.02)
+    c1 = (fc.x + 2.05 * math.cos(sa + 0.12), fc.y + 2.05 * math.sin(sa + 0.12), gz(fc.x, fc.y) + 1.05)
     ipz = (ip[0], ip[1], gz(*ip) + 0.9)
     Q.cam_keys(rig, [(0, c0, look(c0, (fc.x, fc.y, 0.4))), (ev("ismail_e3") - 0.4, None, look(c0, ipz)),
                      (ls("e4") + 2.0, None, look(c0, (fc.x - 0.4, fc.y, 1.0))),
@@ -390,12 +390,7 @@ def shot_besuch2():
     rig, shake, cam, H = wife_cam(wife=WIFE2)
     crouch = (fp[0] + 0.55 * math.cos(HUTD["yaw"] + 0.3), fp[1] + 0.55 * math.sin(HUTD["yaw"] + 0.3), fp[2] + 0.95)
     crouch = HUTD["world"](-1.3, -KW.HUT_D / 2 - 0.45, 0.95)
-    spoon = Q.limb("spoon", (0, 0, 0), (0, 0.42, 0), 0.012, 0.012, MK.M["wood"], seg=6, parent=H["R"])
-    pose(H, 0, "stir")
-    for k in range(int(ev("ibrahim_e9"))):
-        H["R"].location = (0.1 + 0.03 * math.sin(k * 1.7), -0.34, -0.46 + 0.03 * math.cos(k * 1.7))
-        H["R"].keyframe_insert("location", frame=max(1, Q.T(k * 0.9)))
-    pose(H, ev("ibrahim_e9") + 0.3, "lap")
+    pose(H, 0, "lap")
     start = (-4.6, 14.0)
     Ib = prophet("ibrahim", (start[0], start[1], gz(*start)))
     MK.glide(Ib, [start, (0.5, 8.4), (3.5, 6.6)], ev("ibrahim_e9") - 1.6, speed=1.25)
@@ -485,7 +480,8 @@ def shot_segen():
     tq7 = ls("q7")
     tsw = ev("schwelle_q7")
     th = threshold_pt()
-    near = (me[0], me[1], me[2] - 0.62)
+    fw = Vector((ib[0] - me[0], ib[1] - me[1], 0)).normalized()
+    near = (me[0] + fw.x * 0.5, me[1] + fw.y * 0.5, me[2] - 0.75)
     # Hände legen Schale + Becher ab (vor q7), dann Blick zur Tür
     for o, dz in ((B, -0.5), (C, -0.5)):
         o.keyframe_insert("location", frame=Q.T(tq7 - 0.8))
@@ -494,7 +490,7 @@ def shot_segen():
     pose(H, tq7 - 0.8, "bowl", only="L")
     pose(H, tq7 - 0.8, "cup", only="R")
     pose(H, tq7 + 0.2, "lap")
-    Q.cam_keys(rig, [(0, me, look(me, (near[0] + 0.0, near[1] - 0.2, near[2] - 0.4))), (4.2, None, look(me, (near[0], near[1] - 0.3, near[2] - 0.3))),
+    Q.cam_keys(rig, [(0, me, look(me, near)), (4.2, None, look(me, (near[0] + fw.x * 0.1, near[1] + fw.y * 0.1, near[2] + 0.05))),
                      (tq7 - 0.4, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.6))), (tq7 + 0.6, None, look(me, ibz)),
                      (tsw - 0.7, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.2))), (tsw + 0.5, None, look(me, th)),
                      (D, None, look(me, (th[0], th[1], th[2] - 0.02)))])
@@ -540,13 +536,13 @@ def tree_scene(mode="day"):
     make_hut()
     isp = ISP
     cz = gz(*isp)
-    MK.rug("arug", (isp[0] - 0.5, isp[1] - 0.7, cz), (1.3, 0.9), rot=0.5, mat=MK.M["blanket_b"])
+    MK.rug("arug", (isp[0] + 0.75, isp[1] - 0.2, cz), (1.0, 1.2), rot=0.3, mat=MK.M["blanket_b"])
     for k in range(7):
-        KW.arrow(f"arr{k}", (isp[0] - 0.8 + 0.06 * k, isp[1] - 0.75 + 0.03 * k, cz + 0.035), rot=(0, 0, 0.5 + 0.05 * k), done=k < 5)
+        KW.arrow(f"arr{k}", (isp[0] + 0.5 + 0.07 * k, isp[1] - 0.45 + 0.03 * k, cz + 0.035), rot=(0, 0, 0.2 + 0.05 * k), done=k < 5)
     KW.bow("abow", (TREE.x + 0.35, TREE.y + 0.35, cz + 0.62), rot=(math.radians(80), 0, math.radians(30)))
     rnd = random.Random(3)
     for k in range(30):  # Holzspäne
-        Q.ball(f"shav{k}", (isp[0] - 0.4 + rnd.uniform(-0.3, 0.3), isp[1] - 0.35 + rnd.uniform(-0.3, 0.3), cz + 0.01),
+        Q.ball(f"shav{k}", (isp[0] + 0.45 + rnd.uniform(-0.3, 0.3), isp[1] + 0.3 + rnd.uniform(-0.3, 0.3), cz + 0.01),
                (0.012, 0.004, 0.003), KW.M["shaft"], seg=6).rotation_euler = (0, 0, rnd.uniform(0, 6.28))
     return L, isp
 
@@ -576,7 +572,7 @@ def shot_baum():
     c0 = P(isp[0] + 6.8, isp[1] + 2.6, 1.35)
     c1 = P(isp[0] + 2.4, isp[1] + 0.9, 1.3)
     c2 = P(isp[0] + 4.6, isp[1] + 2.8, 1.4)
-    arrows = (isp[0] - 0.55, isp[1] - 0.45, gz(*isp) + 0.05)
+    arrows = (isp[0] + 0.75, isp[1] - 0.25, gz(*isp) + 0.05)
     mz = (meet[0], meet[1], gz(*meet) + 1.1)
     Q.cam_keys(rig, [(0, c0, look(c0, (TREE.x, TREE.y, 3.0))), (ev("ismail_e12") - 0.4, None, look(c0, (isp[0], isp[1], gz(*isp) + 0.7))),
                      (ev("zamzam_e12") - 0.4, None, look(c0, (SP.x, SP.y, 0.6))), (ev("pfeile_e12") - 0.6, c1, look(c1, arrows)),
@@ -740,7 +736,7 @@ def shot_gebet():
     MD.dust("gdust", (HILL.x, HILL.y, 3.0), (14, 14, 6), n=500, seed=3, dur=D + 1, col=(1.0, 0.8, 0.5), strength=0.8)
     rig, shake, cam = Q.pov_camera(lens=17)
     c0 = P(HILL.x + 10.5, HILL.y + 7.0, 1.4)
-    c1 = (HILL.x + 15.0, HILL.y + 12.0, gz(0, 0) + 9.0)
+    c1 = (HILL.x + 13.0, HILL.y - 7.0, gz(0, 0) + 9.0)
     Q.cam_keys(rig, [(0, c0, look(c0, (HILL.x, HILL.y, 2.6))), (D, c1, look(c1, (HILL.x, HILL.y, 1.8)))], interp="BEZIER")
     Q.handheld(shake, 0, D, amp=0.3)
     return L

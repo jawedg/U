@@ -26,14 +26,14 @@ def mats():
     M["frond"] = Q.pbr("k_frond", (0.42, 0.34, 0.2), 0.9, var=0.3, scale=8, rings=70)
     M["clay"] = Q.pbr("k_clay", (0.55, 0.32, 0.19), 0.8, var=0.2, scale=6, bump=0.15, bscale=25)
     M["clay2"] = Q.pbr("k_clay2", (0.66, 0.5, 0.36), 0.85, var=0.2, scale=6, bump=0.15, bscale=25)
-    M["meat"] = Q.pbr("k_meat", (0.34, 0.12, 0.07), 0.45, var=0.3, scale=18, bump=0.4, bscale=60, spec=0.5)
-    M["meat2"] = Q.pbr("k_meat2", (0.45, 0.24, 0.12), 0.5, var=0.3, scale=18, bump=0.4, bscale=60, spec=0.4)
+    M["meat"] = Q.pbr("k_meat", (0.24, 0.12, 0.06), 0.5, var=0.35, scale=14, bump=0.6, bscale=50, spec=0.45)
+    M["meat2"] = Q.pbr("k_meat2", (0.36, 0.21, 0.11), 0.55, var=0.35, scale=14, bump=0.6, bscale=50, spec=0.4)
     M["goat"] = Q.pbr("k_goat", (0.08, 0.065, 0.055), 0.9, var=0.2, scale=6, bump=0.3, bscale=60)
     M["goat2"] = Q.pbr("k_goat2", (0.36, 0.25, 0.16), 0.9, var=0.25, scale=6, bump=0.3, bscale=60)
     M["goat3"] = Q.pbr("k_goat3", (0.62, 0.57, 0.5), 0.9, var=0.2, scale=6, bump=0.3, bscale=60)
     M["horn"] = Q.pbr("k_horn", (0.25, 0.22, 0.18), 0.5, var=0.2, scale=10)
-    M["granite"] = Q.pbr("k_granite", (0.26, 0.24, 0.23), 0.85, var=0.45, scale=6, bump=0.45, bscale=14, spec=0.35)
-    M["granite2"] = Q.pbr("k_granite2", (0.34, 0.3, 0.27), 0.85, var=0.45, scale=6, bump=0.45, bscale=14, spec=0.35)
+    M["granite"] = Q.pbr("k_granite", (0.31, 0.27, 0.24), 0.85, var=0.4, scale=6, bump=0.45, bscale=14, spec=0.3)
+    M["granite2"] = Q.pbr("k_granite2", (0.39, 0.33, 0.28), 0.85, var=0.4, scale=6, bump=0.45, bscale=14, spec=0.3)
     M["maqam"] = Q.pbr("k_maqam", (0.66, 0.56, 0.42), 0.8, var=0.3, scale=5, bump=0.35, bscale=16)
     M["shaft"] = Q.pbr("k_shaft", (0.62, 0.5, 0.33), 0.6, var=0.15, scale=20)
     M["feather"] = Q.pbr("k_feather", (0.85, 0.82, 0.75), 0.9, var=0.2, scale=20)
@@ -146,8 +146,8 @@ def bowl(name, loc, parent=None, meat=True, r=0.17, seed=0):
         for k in range(9):
             a = rnd.uniform(0, 6.28)
             rr = rnd.uniform(0, r * 0.62)
-            Q.ball(f"{name}_m{k}", (rr * math.cos(a), rr * math.sin(a), 0.055 + rnd.uniform(0, 0.03)),
-                   (rnd.uniform(0.035, 0.06), rnd.uniform(0.025, 0.045), rnd.uniform(0.02, 0.03)), M["meat"] if k % 3 else M["meat2"],
+            Q.ball(f"{name}_m{k}", (rr * math.cos(a), rr * math.sin(a), 0.05 + rnd.uniform(0, 0.025)),
+                   (rnd.uniform(0.04, 0.065), rnd.uniform(0.022, 0.035), rnd.uniform(0.014, 0.02)), M["meat"] if k % 3 else M["meat2"],
                    parent=root, seg=10).rotation_euler = (rnd.uniform(-0.4, 0.4), rnd.uniform(-0.4, 0.4), a)
     return root
 

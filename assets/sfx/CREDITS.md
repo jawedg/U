@@ -10,6 +10,6 @@ Gekürzt und auf 48 kHz Stereo/FLAC umgewandelt.
 | whoosh, whoosh_slow, whoosh_rev, impact, rumble, riser, shimmer, sparkle | SFX Kit (wyzowl, Hugging Face `wyzowl/sfx-kit`): whoosh-medium-soft, whoosh-slow-soft, reverse-whoosh-medium-soft, impact-deep-soft, bass-rumble-medium, riser-4s-soft, shimmer-long-soft, shimmer-medium-sparkle | CC0 1.0 |
 | shofar | Wikimedia Commons, „4 sjofar tonen.ogg“ (Urheber: Tfursten), https://commons.wikimedia.org/wiki/File:4_sjofar_tonen.ogg, Ausschnitt 3,95–6,55 s | CC BY-SA 3.0 |
 
-| el_baby_cry, el_breath_run, el_breath_tired, el_camel_walk, el_camp, el_hall_crowd, el_hawk, el_sand_dig, el_spring_bubble, el_spring_burst, el_steps_run, el_wind_hot | Mit dem ElevenLabs-Soundeffekt-Generator erzeugt (Konto des Nutzers, Creator-Plan, Nov. 2026), auf -20 LUFS angeglichen | kommerziell nutzbar laut ElevenLabs-Bedingungen für bezahlte Pläne |
+| el_baby_cry, el_breath_run, el_breath_tired, el_camel_walk, el_camp, el_hall_crowd, el_hawk, el_sand_dig, el_spring_bubble, el_spring_burst, el_steps_run, el_wind_hot; Folge 3: el_goats, el_stone_place, el_carving, el_well, el_tawaf, el_cooking, el_children, el_camp_evening (`scripts/el_sfx.py`) | Mit dem ElevenLabs-Soundeffekt-Generator erzeugt (Konto des Nutzers, Creator-Plan, Nov. 2026), auf -20 LUFS angeglichen | kommerziell nutzbar laut ElevenLabs-Bedingungen für bezahlte Pläne |
 
 Fehlt eine Datei (z. B. `shofar.flac`), nimmt `scripts/sfx_qissa_adhan.py` einen synthetischen Ersatz.
