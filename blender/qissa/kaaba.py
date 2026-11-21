@@ -818,13 +818,45 @@ SHOTS = {"zelte": shot_zelte, "ismail": shot_ismail, "grab": shot_grab, "ankunft
          "besuch2": shot_besuch2, "tuer2": shot_tuer2, "segen": shot_segen, "abend2": shot_abend2, "baum": shot_baum, "befehl": shot_befehl,
          "huegel": shot_huegel, "bau": shot_bau, "gebet": shot_gebet, "heute": shot_heute, "maqam": shot_maqam, "ende": shot_ende}
 
+def join_noshadow(prefixes=("peb", "sb", "tree_far"), small_rocks=0.55):
+    """Kleinkram (Kiesel, Büsche, ferne Bäume, kleine Steine) wirft keinen Schatten und wird zu EINEM Objekt verschmolzen:
+    auf dem Rechner ohne Grafikkarte kostet jedes Dreieck im Schatten-Durchgang (je Sample) Zeit."""
+    objs = []
+    for o in bpy.data.objects:
+        if o.type != "MESH" or o.animation_data or (o.parent and o.parent.animation_data):
+            continue
+        top = o
+        while top.parent is not None:
+            top = top.parent
+        if top.get("person") or top.animation_data:
+            continue
+        nm = o.name
+        if nm.startswith(prefixes) or (nm.startswith("rk") and max(o.scale) < small_rocks):
+            objs.append(o)
+    if len(objs) < 2:
+        return
+    for o in bpy.data.objects:
+        o.select_set(False)
+    with bpy.context.temp_override(selected_objects=objs, selected_editable_objects=objs, active_object=objs[0], object=objs[0]):
+        bpy.ops.object.parent_clear(type="CLEAR_KEEP_TRANSFORM")
+        bpy.ops.object.make_single_user(object=True, obdata=True)
+        bpy.ops.object.convert(target="MESH")
+        bpy.ops.object.join()
+    o = bpy.context.view_layer.objects.active or objs[0]
+    o.name = "noshadow_static"
+    o.visible_shadow = False
+    print("join_noshadow:", len(objs))
+
+
 Q.reset()
 cfg = SHOTS[SHOT]()
 MK.no_glow_shadows()
+if os.environ.get("NOSH", "1") == "1":
+    join_noshadow()
 if os.environ.get("JOIN", "1") == "1":
     MD.join_static(keep=("ibrahim", "ismail", "ka_", "maqam", "kaaba_ghost", "ghost", "cm", "vl", "man", "pl", "pcm", "kid",
                          "bride", "bmother", "wellw", "tied", "pov", "mend", "spoon", "bowl", "cup", "bless", "potmeat", "cr", "tw", "pr",
-                         "hut_hinge", "hut_lamp", "carry", "gdust"))
+                         "hut_hinge", "hut_lamp", "carry", "gdust", "noshadow"))
 SHADOW_HI = set()
 TODAY = SHOT in ("heute", "maqam", "ende")
 Q.render_setup(pct=PCT, samples=SAMPLES, mist_col=cfg["mist_col"], mist_amt=cfg["mist_amt"], shadow_res=1.0 if SHOT in SHADOW_HI else 0.5,
@@ -838,11 +870,54 @@ if os.environ.get("LIST"):
 for o in bpy.data.objects:
     if o.type == "CAMERA":
         o.data.clip_end = 900
+if os.environ.get("NOCOMP"):
+    sc.render.use_compositing = False
+if os.environ.get("BENCH_SHADOW"):
+    sc.eevee.shadow_resolution_scale = float(os.environ["BENCH_SHADOW"])
+if os.environ.get("BENCH_DETAIL"):  # Rauschen mit weniger Oktaven (schneller)
+    cap = float(os.environ["BENCH_DETAIL"])
+    for m in bpy.data.materials:
+        if m.node_tree:
+            for n in m.node_tree.nodes:
+                if n.type == "TEX_NOISE":
+                    n.inputs["Detail"].default_value = min(n.inputs["Detail"].default_value, cap)
 sc.frame_start, sc.frame_end = 1, SEG[SHOT]["frames"]
 if os.environ.get("FRAMES"):
     sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
 import time as _time
 print("SETUP_DONE", _time.time())
+if os.environ.get("TRIS"):
+    import re as _re
+    dg = bpy.context.evaluated_depsgraph_get()
+    cnt = {}
+    for o in bpy.data.objects:
+        if o.type != "MESH":
+            continue
+        k = _re.split(r"[_.0-9]", o.name)[0]
+        ev_ = o.evaluated_get(dg)
+        n = sum(len(pg.vertices) - 2 for pg in ev_.data.polygons)
+        cnt[k] = cnt.get(k, 0) + n
+    for k, v in sorted(cnt.items(), key=lambda x: -x[1])[:25]:
+        print("TRIS", k, v)
+    print("TRIS_TOTAL", sum(cnt.values()))
+    sys.exit(0)
+if os.environ.get("BENCH"):
+    print("OBJECTS", len(bpy.data.objects), "MESH", sum(1 for o in bpy.data.objects if o.type == "MESH"),
+          "LIGHTS", sum(1 for o in bpy.data.objects if o.type == "LIGHT"),
+          "ANIM", sum(1 for o in bpy.data.objects if o.animation_data))
+    for f in (100, 101, 102):
+        t0 = _time.time(); sc.frame_set(f); print("FRAMESET", f, round(_time.time() - t0, 2))
+    sc.render.resolution_percentage = 10
+    for f in (100, 101, 102):
+        sc.frame_set(f)
+        t0 = _time.time(); sc.render.filepath = os.path.join(OUT, f"b{f}.png"); bpy.ops.render.render(write_still=True)
+        print("RENDER10", f, round(_time.time() - t0, 2))
+    sc.eevee.taa_render_samples = 1
+    for f in (103, 104):
+        sc.frame_set(f)
+        t0 = _time.time(); bpy.ops.render.render(write_still=False)
+        print("RENDER10_S1", f, round(_time.time() - t0, 2))
+    sys.exit(0)
 os.makedirs(OUT, exist_ok=True)
 if os.environ.get("MID") == "1":
     for k in range(sc.frame_start, sc.frame_end):

@@ -12,7 +12,7 @@ for attempt in 1 2 3 4; do
   [ -z "$missing" ] && break
   echo "🎬 Durchgang $attempt:$missing $(date -u +%T)"
   find out/kb_frames -name '*.png' -size -1k -delete 2>/dev/null
-  JOBS=2 SAMPLES=2 MID_SHOTS="segen" ./scripts/render_qissa_kaaba.sh $missing
+  JOBS=${JOBS:-2} SAMPLES=2 MID_SHOTS="segen" ./scripts/render_qissa_kaaba.sh $missing
 done
 for s in $SH; do [ -s "public/qissa_kaaba/shots/$s.mp4" ] || { echo "❌ fehlt: $s"; exit 1; }; done
 python3 scripts/build_qissa_kaaba.py --mark-rendered $SH | tail -2
