@@ -27,6 +27,7 @@ QUOTES = {q["id"]: q for q in TL["quotes"]}
 TOTAL = TL["total"] + 0.5
 buf = np.zeros((int(TOTAL * SR), 2))   # Atmo (wird unter der Stimme leiser)
 fxb = np.zeros((int(TOTAL * SR), 2))   # Effekte
+bedb = np.zeros((int(TOTAL * SR), 2))  # Hintergrund-Stimmen (Talbiya): leise, unter der Erzählung stark abgesenkt
 rng = np.random.default_rng(21)
 
 
@@ -49,7 +50,7 @@ def st(x):
     return x if x.ndim == 2 else np.stack([x, x], axis=1)
 
 
-def add(t0, x, g=1.0, pan=0.0, fade_in=0.0, fade_out=0.0, dur=None, fx=False):
+def add(t0, x, g=1.0, pan=0.0, fade_in=0.0, fade_out=0.0, dur=None, fx=False, bed=False):
     if x is None:
         return
     x = st(x)
@@ -75,7 +76,7 @@ def add(t0, x, g=1.0, pan=0.0, fade_in=0.0, fade_out=0.0, dur=None, fx=False):
     i = int(max(0, t0) * SR)
     j = min(len(buf), i + len(x))
     if j > i:
-        (fxb if fx else buf)[i:j] += x[: j - i]
+        (bedb if bed else fxb if fx else buf)[i:j] += x[: j - i]
 
 
 def seg(i):
@@ -334,8 +335,8 @@ def main():
     a, b = seg("hook_a")
     add(a, tawaf, 1.0, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
     add(a, hall, 0.35, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
-    if talb is not None:  # „Labbaika Allahumma labbaik“ (erste Zeile, 0–3,2 s)
-        add(a + 0.1, talb[: int(3.3 * SR)], 0.75, fade_in=0.1, fade_out=0.35, fx=True)
+    if talb is not None:  # erste zwei Zeilen (0–7,25 s, endet an einer natürlichen Atempause), sanft ein- und ausgeblendet
+        add(a, talb[: int(7.25 * SR)], 1.0, fade_in=0.6, fade_out=1.2, bed=True)
     a, b = seg("hook_b")
     add(a - 0.45, Wr(), 0.8, fx=True)
     add(a, B(), 0.5, fx=True)
@@ -469,8 +470,8 @@ def main():
     t_end = SEG["ende"]["start"] + SEG["ende"]["dur"]
     add(a - 0.2, tawaf, 1.0, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
     add(a - 0.2, hall, 0.3, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
-    if talb is not None:  # ganze Talbiya, beginnt mit der Tafel „HEUTE“ (dort spricht niemand)
-        add(SEG["heute_karte"]["start"] - 0.25, talb, 0.85, fade_in=0.12, fade_out=0.8, fx=True)
+    if talb is not None:  # ganze Talbiya im Hintergrund, beginnt mit der Tafel „HEUTE“, am Ende lang ausgeblendet
+        add(SEG["heute_karte"]["start"] - 0.4, talb, 1.0, fade_in=0.5, fade_out=1.8, bed=True)
     a, b = seg("maqam")
     walk_steps(a, LINES["e20"]["start"] + 3.0, 0.18)
     add(EV["maqam_e19"] - 0.1, shim, 0.45, fx=True)
@@ -520,6 +521,9 @@ def main():
         return np.repeat(out, hop)[: len(x)]
     dv = np.clip(follower(voice) / (2.5 * v_ref), 0, 1)
     mix = voice + atmo * (1 - 0.55 * dv)[:, None] + fx * (1 - 0.25 * dv)[:, None]
+    if np.abs(bedb).max() > 0:  # Talbiya: Hintergrund (~ -14 dB unter der Stimme), unter der Erzählung noch einmal deutlich leiser
+        bed = bedb * (0.2 * v_ref / active_rms(bedb))
+        mix += bed * (1 - 0.7 * dv)[:, None]
 
     tmp = ROOT / "out" / "kb_mix_tmp.wav"
     with wave.open(str(tmp), "wb") as w:
