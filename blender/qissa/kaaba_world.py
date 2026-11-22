@@ -412,11 +412,14 @@ def path_life(t1, seed=41, n_down=3, n_up=3, camel=True, kids=True):
     return out
 
 
-def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30.0, seed=21, extra_keep=(), life=True, tent_avoid=()):
+def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30.0, seed=21, extra_keep=(), life=True, tent_avoid=(),
+                 life_kids=False):
     """Das Tal Jahre später: Gelände + Baum + Safa/Marwa + Hügel (aus Folge 2), Zamzam-Brunnen, Zelte, Leute, Ziegen."""
     import os
     if os.environ.get("LITE"):  # Test: ohne bewegte Leute/Tiere
         people, life, goats = 0, False, False
+    if os.environ.get("KIDS_ALL"):  # Test: Kinder überall (Prüfung der alten Fassung)
+        life_kids = True
     L = MK.light(mode, stars=stars)
     mats()
     keep = [(HUT.x, HUT.y, 6.0), (GRAVE.x, GRAVE.y, 3.0), (SP.x, SP.y, 4.0)] + list(extra_keep)
@@ -425,7 +428,7 @@ def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30
     spots = tents(tents_n, seed=seed, avoid=tent_avoid, fire_lights=mode in ("dusk", "golden"))
     vl = villagers(spots, t1, n=people) if people else []
     if life:
-        path_life(t1)
+        path_life(t1, kids=life_kids)  # Kinder nur, wo es passt (Nutzer: Kind rannte sinnlos vor die Tür)
     if goats:
         herd("gA", (SP.x + 16, SP.y + 14), 6, seed=1, t1=t1)
         herd("gB", (SP.x - 18, SP.y + 22), 5, seed=7, t1=t1)

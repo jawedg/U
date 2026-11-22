@@ -23,7 +23,7 @@ RATE_MIN, RATE_MAX = 0.75, 1.33
 #   ("clip", id, quelle, at, schritte)   Ausschnitt einer anderen Einstellung ab Sekunde `at`
 #   ("montage", id, schritte, [(quelle, at), …])   schnelle Schnitte, je Wort des Satzes ein Ausschnitt (Zählen beim Laufen)
 PLAN = [
-    ("clip", "hook_a", "heute", 2.0, [("p", 0.25), ("l", "h1"), ("p", 0.1)]),
+    ("clip", "hook_a", "ende", 4.4, [("p", 0.25), ("l", "h1"), ("p", 0.1)]),
     ("clip", "hook_b", "zz:engel", None, [("p", 0.05), ("l", "h2"), ("p", 0.05)]),
     ("clip", "hook_c", "bau", 6.0, [("p", 0.05), ("l", "h3"), ("p", 0.25)]),
     ("shot", "zelte", "TAL VON MEKKA · VIELE JAHRE SPÄTER", [("p", 0.3), ("l", "e1"), ("p", 0.2), ("l", "e2"), ("p", 0.2)]),
@@ -31,21 +31,21 @@ PLAN = [
     ("shot", "grab", None, [("p", 0.2), ("l", "e5"), ("p", 0.5)]),
     ("card", "k1", "DER ERSTE BESUCH", 1.3),
     ("shot", "ankunft", None, [("p", 0.25), ("l", "e6"), ("p", 0.1)]),
-    ("shot", "tuer1", None, [("p", 0.05), ("l", "e7"), ("p", 0.15), ("l", "f1"), ("p", 0.35), ("q", "q1"), ("p", 0.35)]),
-    ("shot", "abend1", "AM ABEND", [("p", 0.25), ("l", "e8"), ("p", 0.15), ("l", "f2"), ("p", 0.35), ("q", "q2"), ("p", 0.7)]),
+    ("shot", "tuer1", None, [("p", 0.05), ("l", "e7"), ("p", 0.5), ("l", "f1"), ("p", 0.75), ("q", "q1"), ("p", 0.35)]),
+    ("shot", "abend1", "AM ABEND", [("p", 0.25), ("l", "e8"), ("p", 0.5), ("l", "f2"), ("p", 0.75), ("q", "q2"), ("p", 0.7)]),
     ("card", "k2", "DER ZWEITE BESUCH", 1.3),
     ("shot", "besuch2", None, [("p", 0.25), ("l", "e9"), ("p", 0.2)]),
-    ("shot", "tuer2", None, [("p", 0.05), ("l", "f3"), ("p", 0.3), ("q", "q3"), ("p", 0.15), ("l", "f4"), ("p", 0.3), ("q", "q4"),
-                             ("p", 0.15), ("l", "f5"), ("p", 0.35), ("q", "q5"), ("p", 0.3)]),
-    ("shot", "segen", None, [("p", 0.1), ("l", "e10"), ("p", 0.05), ("q", "q6"), ("p", 0.3), ("q", "q7"), ("p", 0.3)]),
-    ("shot", "abend2", "AM ABEND", [("p", 0.25), ("l", "e11"), ("p", 0.1), ("q", "q8"), ("p", 0.7)]),
+    ("shot", "tuer2", None, [("p", 0.05), ("l", "f3"), ("p", 0.75), ("q", "q3"), ("p", 0.6), ("l", "f4"), ("p", 0.65), ("q", "q4"),
+                             ("p", 0.6), ("l", "f5"), ("p", 0.75), ("q", "q5"), ("p", 0.3)]),
+    ("shot", "segen", None, [("p", 0.1), ("l", "e10"), ("p", 0.25), ("q", "q6"), ("p", 0.8), ("q", "q7"), ("p", 0.3)]),
+    ("shot", "abend2", "AM ABEND", [("p", 0.25), ("l", "e11"), ("p", 0.45), ("q", "q8"), ("p", 0.7)]),
     ("card", "k3", "DER DRITTE BESUCH", 1.3),
     ("shot", "baum", None, [("p", 0.25), ("l", "e12"), ("p", 0.15), ("l", "e13"), ("p", 0.1)]),
-    ("shot", "befehl", None, [("p", 0.05), ("q", "q9"), ("p", 0.15), ("q", "q10"), ("p", 0.15), ("q", "q11"), ("p", 0.1), ("q", "q12"),
-                              ("p", 0.2), ("q", "q13"), ("p", 0.15)]),
+    ("shot", "befehl", None, [("p", 0.05), ("q", "q9"), ("p", 0.85), ("q", "q10"), ("p", 0.85), ("q", "q11"), ("p", 0.7), ("q", "q12"),
+                              ("p", 0.85), ("q", "q13"), ("p", 0.15)]),
     ("shot", "huegel", None, [("p", 0.05), ("l", "e14"), ("p", 0.3)]),
     ("shot", "bau", None, [("p", 0.1), ("l", "e15"), ("p", 0.15), ("l", "e16"), ("p", 0.2)]),
-    ("shot", "gebet", None, [("p", 0.1), ("l", "e17"), ("p", 0.05), ("q", "q14"), ("p", 0.2), ("q", "q15"), ("p", 0.7)]),
+    ("shot", "gebet", None, [("p", 0.1), ("l", "e17"), ("p", 0.25), ("q", "q14"), ("p", 0.7), ("q", "q15"), ("p", 0.7)]),
     ("card", "heute_karte", "HEUTE", 1.2),
     ("shot", "heute", "MEKKA · HEUTE", [("p", 0.3), ("l", "e18"), ("p", 0.2)]),
     ("shot", "maqam", None, [("p", 0.1), ("l", "e19"), ("p", 0.15), ("l", "e20"), ("p", 0.4)]),
@@ -56,7 +56,13 @@ PLAN = [
 KEYS = {"haus", "engel", "vater", "zelte", "zamzam", "ismail", "ibrahim", "schwelle", "tür", "jemand", "fleisch", "wasser", "segne",
         "festhalten", "pfeile", "steht", "begrüßen", "hügel", "steine", "stein", "baut", "mauern", "darauf", "beten", "kaaba",
         "maqam", "füßen", "millionen", "vater", "sohn", "gestorben", "abend", "trennen", "familie", "dich", "zeigt", "haus"}
-ANCHORS = {}
+ANCHORS = {  # schon gerenderte Einstellungen an neue Sprech-Zeiten anpassen (längere Pausen zwischen den Sprechern)
+    "tuer1": ["l:e7", "l:f1", "q:q1", "e:schwelle_q1"],
+    "abend1": ["l:e8", "e:jemand_e8", "l:f2", "q:q2", "e:trennen_q2", "e:familie_q2"],
+    "abend2": ["l:e11", "q:q8", "e:schwelle_q8", "e:dich_q8"],
+    "befehl": ["q:q9", "q:q10", "q:q11", "q:q12", "q:q13", "e:haus_q13"],
+    "gebet": ["l:e17", "q:q14", "q:q15"],
+}
 NUM = {"zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6}
 
 

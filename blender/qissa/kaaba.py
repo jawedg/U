@@ -206,7 +206,7 @@ def threshold_pt():
 # ============================================================ Einstellungen
 def shot_zelte():
     """Morgen: Ich gehe den Weg vom Norden hinunter ins Tal – Zelte der Dschurhum, Leute, Ziegen, Rauch; am Ende Zamzam (Brunnen)."""
-    L, spots, vl = KW.settle_world("morning", t1=D + 1)
+    L, spots, vl = KW.settle_world("morning", t1=D + 1, life_kids=True)
     make_hut()
     # zwei Frauen am Brunnen: eine zieht den Eimer hoch, eine wartet mit Krug
     w1 = Q.person("wellw1", (SP.x + 1.3, SP.y + 0.6, gz(SP.x, SP.y)), yaw=Q.face_yaw((SP.x + 1.3, SP.y + 0.6), (SP.x, SP.y)), seed=71,
@@ -421,9 +421,10 @@ def shot_besuch2():
     return L
 
 
-def wife2_scene(bowl_t=None, cup_t=None):
-    """Zweite Frau steht draußen vor der Tür, Ibrahim (Licht) vor ihr; Feuer mit Topf, Ziege."""
-    L, spots, vl = KW.settle_world("morning", t1=D + 1, people=8)
+def wife2_scene():
+    """Zweite Frau steht draußen vor der Tür, Ibrahim (Licht) vor ihr; Feuer mit Topf, Ziege.
+    Zwischen ihnen auf einer Matte: Holztablett mit Schale Fleisch, Wasserkrug und Becher (sie bewirtet den Gast)."""
+    L, spots, vl = KW.settle_world("morning", t1=D + 1, people=8, life_kids=False)
     make_hut()
     fp = HUTD["world"](-1.6, -KW.HUT_D / 2 - 1.2)
     KW.cook_fire("hfire", fp, energy=35.0, pot=True)
@@ -433,88 +434,59 @@ def wife2_scene(bowl_t=None, cup_t=None):
     ib = HUTD["world"](0.15, -KW.HUT_D / 2 - 3.3)
     Ib = prophet("ibrahim", ib)
     MK.hold_at(Ib, 0)
-    return L, me, ib, Ib
+    # Tablett auf einer Matte vor ihr (Welt), Schale + Krug + Becher
+    tc = HUTD["world"](0.05, -KW.HUT_D / 2 - 1.45)
+    z = gz(tc[0], tc[1])
+    root = Q.empty("tray", (tc[0], tc[1], z), rot=(0, 0, HUTD["yaw"]))
+    MK.rug("tray_mat", (0, 0, 0), (1.3, 0.9), rot=0.0, mat=MK.M["blanket_r"]).parent = root
+    Q.cyl("tray_wood", (0, 0, 0.045), 0.42, 0.03, MK.M["wood"], seg=40, parent=root)
+    Q.torus("tray_rim", (0, 0, 0.06), 0.42, 0.012, MK.M["wood"], parent=root, seg=40, rseg=6)
+    KW.bowl("bowl", (-0.13, 0.04, 0.06), parent=root, seed=3, r=0.15)
+    KW.jug("tjug", (0.2, 0.12, 0.06), parent=root, scale=0.62)
+    KW.cup("cup", (0.17, -0.16, 0.06), parent=root)
+    spots_ = {"bowl": HUTD["world"](-0.08, -KW.HUT_D / 2 - 1.41, 0.12), "cup": HUTD["world"](0.22, -KW.HUT_D / 2 - 1.27, 0.12),
+              "tray": HUTD["world"](0.05, -KW.HUT_D / 2 - 1.45, 0.1)}
+    spots_ = {k: (v[0], v[1], gz(v[0], v[1]) + 0.12) for k, v in spots_.items()}
+    return L, me, ib, Ib, spots_
 
 
 def shot_tuer2():
-    """Sie empfängt ihn draußen: „Uns geht es gut …“ – „Was esst ihr?“ – „Fleisch.“ (Schale) – „… trinkt ihr?“ – „Wasser.“ (Becher)
-    – „O Allah, segne ihnen das Fleisch und das Wasser“: goldene Lichtpunkte steigen auf."""
-    L, me, ib, Ib = wife2_scene()
+    """Sie empfängt ihn draußen: „Uns geht es gut …“ – „Was esst ihr?“ – „Fleisch.“ (Blick zur Schale) – „… trinkt ihr?“ – „Wasser.“
+    (Blick zu Krug und Becher) – „O Allah, segne ihnen das Fleisch und das Wasser“: goldene Lichtpunkte steigen vom Tablett auf."""
+    L, me, ib, Ib, sp = wife2_scene()
     rig, shake, cam, H = wife_cam(wife=WIFE2)
+    pose(H, 0, "hidden")
     ibz = (ib[0], ib[1], gz(ib[0], ib[1]) + 1.25)
     tb = ev("fleisch_f4")
     tw = ev("wasser_f5")
-    B = KW.bowl("bowl", (0, -0.26, -0.47), parent=cam, seed=3)
-    B.rotation_euler = (math.radians(-70), 0, 0)
-    B.location = (0.0, -0.8, -0.34)
-    B.keyframe_insert("location", frame=1)
-    B.keyframe_insert("location", frame=Q.T(tb - 0.6))
-    B.location = (0, -0.26, -0.47)
-    B.keyframe_insert("location", frame=Q.T(tb - 0.25))
-    B.location = (0, -0.18, -0.6)
-    B.keyframe_insert("location", frame=Q.T(tb + 0.4))
-    B.keyframe_insert("location", frame=Q.T(tw - 0.6))
-    B.location = (-0.09, -0.27, -0.5)
-    B.keyframe_insert("location", frame=Q.T(tw - 0.2))
-    C = KW.cup("cup", (0.2, -0.6, -0.4), parent=cam)
-    C.rotation_euler = (math.radians(-70), 0, 0)
-    C.keyframe_insert("location", frame=Q.T(tw - 0.6))
-    C.location = (0.1, -0.15, -0.56)
-    C.keyframe_insert("location", frame=Q.T(tw + 0.2))
-    pose(H, 0, "lap")
-    gesture(H, ls("f3"), le("f3"), amp=0.02, hz=0.9)
-    pose(H, tb - 0.6, "lap")
-    pose(H, tb - 0.25, "bowl")
-    pose(H, tb + 0.4, "offer")
-    pose(H, tw - 0.6, "offer", only="L")
-    pose(H, tw - 0.2, "bowl", only="L")
-    pose(H, tw - 0.6, "lap", only="R")
-    pose(H, tw + 0.2, "cup", only="R")
     tsg = ev("segne_q5")
     glow_pulse(Ib, tsg, peak=1.8)
-    Q.cam_keys(rig, [(0, me, look(me, ibz)), (tb - 0.5, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.35))),
-                     (tb + 0.5, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.6))), (tw + 0.5, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.55))),
-                     (tsg - 0.2, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.2))), (D, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.95)))])
+    Q.cam_keys(rig, [(0, me, look(me, ibz)), (ls("q3") + 0.3, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.15))),
+                     (tb - 0.2, None, look(me, sp["bowl"])), (le("q4") - 0.2, None, look(me, (sp["bowl"][0], sp["bowl"][1], sp["bowl"][2] + 0.05))),
+                     (tw - 0.1, None, look(me, sp["cup"])), (tsg - 0.5, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.2))),
+                     (tsg + 1.4, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.5))), (D, None, look(me, sp["tray"]))])
     Q.handheld(shake, 0, D, amp=0.3)
-    # Segen: Lichtpunkte über Schale und Becher (in Weltkoordinaten nahe vor der Kamera)
-    hd = Vector(HUTD["world"](0.0, -KW.HUT_D / 2 - 1.0, EYE - 0.4))
-    motes_burst("bless", tuple(hd), tsg + 0.2, n=60, radius=0.35, rise_h=1.2, dur=D - tsg, seed=4)
+    motes_burst("bless", sp["tray"], tsg + 0.2, n=70, radius=0.4, rise_h=1.3, dur=D - tsg + 4.0, seed=4)
     return L
 
 
 def shot_segen():
-    """Nah: Schale mit Fleisch und Becher Wasser, goldene Lichtpunkte (Segen). Dann „Grüß deinen Mann … die Schwelle … festhalten“:
-    Blick zum Haus, auf die Schwelle."""
-    L, me, ib, Ib = wife2_scene()
+    """Nah: Tablett mit Fleisch und Wasser, goldene Lichtpunkte (Segen). Dann „Grüß deinen Mann … die Schwelle … festhalten“:
+    Blick zu Ibrahim, dann zum Haus, auf die Schwelle."""
+    L, me, ib, Ib, sp = wife2_scene()
     rig, shake, cam, H = wife_cam(wife=WIFE2)
-    B = KW.bowl("bowl", (-0.09, -0.27, -0.5), parent=cam, seed=3)
-    B.rotation_euler = (math.radians(-70), 0, 0)
-    C = KW.cup("cup", (0.1, -0.15, -0.56), parent=cam)
-    C.rotation_euler = (math.radians(-70), 0, 0)
-    pose(H, 0, "bowl", only="L")
-    pose(H, 0, "cup", only="R")
-    hd = Vector(HUTD["world"](0.0, -KW.HUT_D / 2 - 0.95, EYE - 0.55))
-    motes_burst("bless", tuple(hd), 0.0, n=90, radius=0.3, rise_h=1.1, dur=8.0, seed=5)
+    pose(H, 0, "hidden")
+    motes_burst("bless", sp["tray"], 0.0, n=100, radius=0.4, rise_h=1.2, dur=9.0, seed=5)
     ibz = (ib[0], ib[1], gz(ib[0], ib[1]) + 1.25)
     tq7 = ls("q7")
     tsw = ev("schwelle_q7")
     th = threshold_pt()
-    fw = Vector((ib[0] - me[0], ib[1] - me[1], 0)).normalized()
-    near = (me[0] + fw.x * 0.5, me[1] + fw.y * 0.5, me[2] - 0.75)
-    # Hände legen Schale + Becher ab (vor q7), dann Blick zur Tür
-    for o, dz in ((B, -0.5), (C, -0.5)):
-        o.keyframe_insert("location", frame=Q.T(tq7 - 0.8))
-        o.location = (o.location.x, -0.9, o.location.z + 0.1)
-        o.keyframe_insert("location", frame=Q.T(tq7 + 0.2))
-    pose(H, tq7 - 0.8, "bowl", only="L")
-    pose(H, tq7 - 0.8, "cup", only="R")
-    pose(H, tq7 + 0.2, "lap")
-    Q.cam_keys(rig, [(0, me, look(me, near)), (4.2, None, look(me, (near[0] + fw.x * 0.1, near[1] + fw.y * 0.1, near[2] + 0.05))),
+    tr = sp["tray"]
+    Q.cam_keys(rig, [(0, me, look(me, tr)), (4.2, None, look(me, (tr[0], tr[1], tr[2] + 0.15))),
                      (tq7 - 0.4, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.6))), (tq7 + 0.6, None, look(me, ibz)),
                      (tsw - 0.7, None, look(me, (ibz[0], ibz[1], ibz[2] - 0.2))), (tsw + 0.5, None, look(me, th)),
                      (D, None, look(me, (th[0], th[1], th[2] - 0.02)))])
     Q.handheld(shake, 0, D, amp=0.3)
-    # Ibrahim geht nach dem Satz (Ende der Einstellung) – nur Licht leuchtet kurz
     glow_pulse(Ib, ev("festhalten_q7"), peak=1.6)
     return L
 
@@ -706,18 +678,28 @@ def shot_bau():
         add = smooth(td - 0.3, td + 0.5, t) * 0.48
         Ib["root"].location = (x, y, zfun(x, y) + add)
         Ib["root"].keyframe_insert("location", frame=f)
-    # Ismail: Hin und Her (echte Zeit bis tm, dann schneller im Zeitraffer)
+    # Ismail: Hin und Her (echte Zeit bis tm, dann schneller im Zeitraffer) – IMMER außen um die Mauern herum (nie hindurch)
+    OUT_W = 1.5
+    a = (pile.x - 0.8, pile.y - 0.6)
+    u_pile = min((k_ / 400.0 for k_ in range(400)), key=lambda u: math.dist(KW.side_point(u, out=OUT_W), a))
+
+    def around(u0, u1, out=OUT_W):
+        """Punkte entlang des Umfangs von u0 nach u1 (kürzerer Weg)."""
+        du = ((u1 - u0 + 0.5) % 1.0) - 0.5
+        n = max(1, int(abs(du) * 40))
+        return [KW.side_point(u0 + du * j / n, out=out) for j in range(n + 1)]
     t = 0.0
     k = 0
     while t < D:
         spd = 1.3 if t < tm else 4.5
         u_tgt = (0.06 + 0.04 * k) if t < tm else 0.13 + (t - tm) / max(1.0, ts - 1.6 - tm) * 2.6
+        if tm < t < td + 0.7 and t > ts - 2.0:
+            u_tgt = U_ST + 0.05
+        u_tgt %= 1.0
         wx, wy = KW.side_point(u_tgt, out=0.6)
-        if tm + 0.0 < t < td + 0.7 and t > ts - 2.0:
-            wx, wy = KW.side_point(U_ST + 0.05, out=1.1)
-        a = (pile.x - 0.8, pile.y - 0.6)
-        t = MK.glide(Is, [a, (wx, wy)], t, speed=spd)
-        t = MK.glide(Is, [(wx, wy), a], t + 0.25, speed=spd) + 0.2
+        go = [a] + around(u_pile, u_tgt) + [(wx, wy)]
+        t = MK.glide(Is, go, t, speed=spd)
+        t = MK.glide(Is, list(reversed(go)), t + 0.25, speed=spd) + 0.2
         k += 1
     # Maqam-Stein: Ismail bringt ihn (erscheint), Ibrahim steht darauf
     St = KW.maqam_stone("maqam", (sx, sy, KW.hillock_z(sx, sy) - 0.02), t_on=ts + 0.2)
@@ -910,6 +892,23 @@ if os.environ.get("FRAMES"):
     sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
 import time as _time
 print("SETUP_DONE", _time.time())
+if os.environ.get("KIDS_CHECK"):  # Test: in welchen Bildern sind rennende Kinder zu sehen?
+    from bpy_extras.object_utils import world_to_camera_view
+    kids = [o for o in bpy.data.objects if o.name.startswith("kid") and o.name.endswith("_root")]
+    camo = sc.camera
+    vis = []
+    for f in range(1, SEG[SHOT]["frames"] + 1, 2):
+        sc.frame_set(f)
+        for o in kids:
+            for dz in (0.3, 0.9):
+                co = o.matrix_world.translation + Vector((0, 0, dz))
+                v = world_to_camera_view(sc, camo, co)
+                if -0.05 < v.x < 1.05 and -0.05 < v.y < 1.05 and 0 < v.z < 70:
+                    vis.append((f, o.name, round(v.z, 1)))
+                    break
+    fr = sorted(set(f for f, _, _ in vis))
+    print("KIDS_VISIBLE", SHOT, len(fr), (fr[0], fr[-1]) if fr else None, sorted(set(n for _, n, _ in vis)), min((d for _, _, d in vis), default=None))
+    sys.exit(0)
 if os.environ.get("TRIS"):
     import re as _re
     dg = bpy.context.evaluated_depsgraph_get()
