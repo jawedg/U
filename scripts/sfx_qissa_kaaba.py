@@ -302,8 +302,8 @@ def main():
     sparkle = real("sparkle")
     shim = real("shimmer")
     tawaf = el("tawaf")
-    # echte Aufnahme beim Tawaf (Wikimedia Commons, CC BY 3.0, Amm Salim) – falls vorhanden: über die KI-Menge legen
-    tw_real = real("tawaf_real")
+    # echte Aufnahme vom Nutzer: Pilgermenge ruft die Talbiya (14,5 s, keine Musik) – einmal ganz bei „HEUTE“, Anfang im Einstieg
+    talb = real("talbiya_user")
     hall = el("hall_crowd")
     camp = el("camp")
     goats = el("goats")
@@ -332,9 +332,10 @@ def main():
 
     # --- Einstieg: Kaaba heute (Menge) – Engel (Folge 2) – Bau
     a, b = seg("hook_a")
-    add(a, tawaf, 1.0 if tw_real is None else 0.55, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
+    add(a, tawaf, 1.0, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
     add(a, hall, 0.35, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
-    add(a, tw_real, 1.0, dur=b - a + 0.3, fade_in=0.2, fade_out=0.3)
+    if talb is not None:  # „Labbaika Allahumma labbaik“ (erste Zeile, 0–3,2 s)
+        add(a + 0.1, talb[: int(3.3 * SR)], 0.75, fade_in=0.1, fade_out=0.35, fx=True)
     a, b = seg("hook_b")
     add(a - 0.45, Wr(), 0.8, fx=True)
     add(a, B(), 0.5, fx=True)
@@ -466,9 +467,10 @@ def main():
     card("heute_karte")
     a, b = seg("heute")
     t_end = SEG["ende"]["start"] + SEG["ende"]["dur"]
-    add(a - 0.2, tawaf, 1.0 if tw_real is None else 0.55, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
+    add(a - 0.2, tawaf, 1.0, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
     add(a - 0.2, hall, 0.3, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
-    add(a - 0.2, tw_real, 1.0, dur=t_end - a + 2.8, fade_in=0.4, fade_out=2.5)
+    if talb is not None:  # ganze Talbiya, beginnt mit der Tafel „HEUTE“ (dort spricht niemand)
+        add(SEG["heute_karte"]["start"] - 0.25, talb, 0.85, fade_in=0.12, fade_out=0.8, fx=True)
     a, b = seg("maqam")
     walk_steps(a, LINES["e20"]["start"] + 3.0, 0.18)
     add(EV["maqam_e19"] - 0.1, shim, 0.45, fx=True)

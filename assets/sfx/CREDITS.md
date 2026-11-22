@@ -12,4 +12,6 @@ Gekürzt und auf 48 kHz Stereo/FLAC umgewandelt.
 
 | el_baby_cry, el_breath_run, el_breath_tired, el_camel_walk, el_camp, el_hall_crowd, el_hawk, el_sand_dig, el_spring_bubble, el_spring_burst, el_steps_run, el_wind_hot; Folge 3: el_goats, el_stone_place, el_carving, el_well, el_tawaf, el_cooking, el_children, el_camp_evening (`scripts/el_sfx.py`) | Mit dem ElevenLabs-Soundeffekt-Generator erzeugt (Konto des Nutzers, Creator-Plan, Nov. 2026), auf -20 LUFS angeglichen | kommerziell nutzbar laut ElevenLabs-Bedingungen für bezahlte Pläne |
 
+| talbiya_user | Vom Nutzer bereitgestellte Aufnahme (Pilgermenge ruft die Talbiya, 14,5 s, ohne Musik), Folge 3 | Nutzung auf Verantwortung des Nutzers |
+
 Fehlt eine Datei (z. B. `shofar.flac`), nimmt `scripts/sfx_qissa_adhan.py` einen synthetischen Ersatz.
