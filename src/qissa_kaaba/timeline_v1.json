@@ -1,0 +1,3809 @@
+{
+ "fps": 60,
+ "render_fps": 30,
+ "voiced": true,
+ "total": 248.985,
+ "frames": 14939,
+ "segments": [
+  {
+   "id": "hook_a",
+   "kind": "clip",
+   "src": "heute",
+   "at": 2.0,
+   "start": 0.0,
+   "dur": 6.584
+  },
+  {
+   "id": "hook_b",
+   "kind": "clip",
+   "src": "zz:engel",
+   "at": 2.957,
+   "start": 6.584,
+   "dur": 4.561
+  },
+  {
+   "id": "hook_c",
+   "kind": "clip",
+   "src": "bau",
+   "at": 6.0,
+   "start": 11.145,
+   "dur": 3.556
+  },
+  {
+   "id": "zelte",
+   "kind": "shot",
+   "label": "TAL VON MEKKA · VIELE JAHRE SPÄTER",
+   "start": 14.701,
+   "dur": 13.12,
+   "frames": 394,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     13.12,
+     13.12
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 394,
+   "src_dur": 13.12
+  },
+  {
+   "id": "ismail",
+   "kind": "shot",
+   "label": null,
+   "start": 27.821,
+   "dur": 14.949,
+   "frames": 448,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.949,
+     14.949
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 448,
+   "src_dur": 14.949
+  },
+  {
+   "id": "grab",
+   "kind": "shot",
+   "label": null,
+   "start": 42.77,
+   "dur": 3.606,
+   "frames": 108,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     3.606,
+     3.606
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 108,
+   "src_dur": 3.606
+  },
+  {
+   "id": "k1",
+   "kind": "card",
+   "text": "DER ERSTE BESUCH",
+   "start": 46.376,
+   "dur": 1.3
+  },
+  {
+   "id": "ankunft",
+   "kind": "shot",
+   "label": null,
+   "start": 47.676,
+   "dur": 9.422,
+   "frames": 283,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     9.422,
+     9.422
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 283,
+   "src_dur": 9.422
+  },
+  {
+   "id": "tuer1",
+   "kind": "shot",
+   "label": null,
+   "start": 57.098,
+   "dur": 21.907,
+   "frames": 657,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     21.907,
+     21.907
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 657,
+   "src_dur": 21.907
+  },
+  {
+   "id": "abend1",
+   "kind": "shot",
+   "label": "AM ABEND",
+   "start": 79.005,
+   "dur": 19.206,
+   "frames": 576,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     19.206,
+     19.206
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 576,
+   "src_dur": 19.206
+  },
+  {
+   "id": "k2",
+   "kind": "card",
+   "text": "DER ZWEITE BESUCH",
+   "start": 98.211,
+   "dur": 1.3
+  },
+  {
+   "id": "besuch2",
+   "kind": "shot",
+   "label": null,
+   "start": 99.511,
+   "dur": 11.644,
+   "frames": 349,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     11.644,
+     11.644
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 349,
+   "src_dur": 11.644
+  },
+  {
+   "id": "tuer2",
+   "kind": "shot",
+   "label": null,
+   "start": 111.155,
+   "dur": 14.358,
+   "frames": 431,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.358,
+     14.358
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 431,
+   "src_dur": 14.358
+  },
+  {
+   "id": "segen",
+   "kind": "shot",
+   "label": null,
+   "start": 125.513,
+   "dur": 16.104,
+   "frames": 483,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     16.104,
+     16.104
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 483,
+   "src_dur": 16.104
+  },
+  {
+   "id": "abend2",
+   "kind": "shot",
+   "label": "AM ABEND",
+   "start": 141.617,
+   "dur": 10.046,
+   "frames": 301,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     10.046,
+     10.046
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 301,
+   "src_dur": 10.046
+  },
+  {
+   "id": "k3",
+   "kind": "card",
+   "text": "DER DRITTE BESUCH",
+   "start": 151.663,
+   "dur": 1.3
+  },
+  {
+   "id": "baum",
+   "kind": "shot",
+   "label": null,
+   "start": 152.963,
+   "dur": 17.78,
+   "frames": 533,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     17.78,
+     17.78
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 533,
+   "src_dur": 17.78
+  },
+  {
+   "id": "befehl",
+   "kind": "shot",
+   "label": null,
+   "start": 170.743,
+   "dur": 11.863,
+   "frames": 356,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     11.863,
+     11.863
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 356,
+   "src_dur": 11.863
+  },
+  {
+   "id": "huegel",
+   "kind": "shot",
+   "label": null,
+   "start": 182.606,
+   "dur": 6.476,
+   "frames": 194,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     6.476,
+     6.476
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 194,
+   "src_dur": 6.476
+  },
+  {
+   "id": "bau",
+   "kind": "shot",
+   "label": null,
+   "start": 189.082,
+   "dur": 17.262,
+   "frames": 518,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     17.262,
+     17.262
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 518,
+   "src_dur": 17.262
+  },
+  {
+   "id": "gebet",
+   "kind": "shot",
+   "label": null,
+   "start": 206.344,
+   "dur": 9.278,
+   "frames": 278,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     9.278,
+     9.278
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 278,
+   "src_dur": 9.278
+  },
+  {
+   "id": "heute_karte",
+   "kind": "card",
+   "text": "HEUTE",
+   "start": 215.622,
+   "dur": 1.2
+  },
+  {
+   "id": "heute",
+   "kind": "shot",
+   "label": "MEKKA · HEUTE",
+   "start": 216.822,
+   "dur": 4.712,
+   "frames": 141,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     4.712,
+     4.712
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 141,
+   "src_dur": 4.712
+  },
+  {
+   "id": "maqam",
+   "kind": "shot",
+   "label": null,
+   "start": 221.534,
+   "dur": 13.362,
+   "frames": 401,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     13.362,
+     13.362
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 401,
+   "src_dur": 13.362
+  },
+  {
+   "id": "ende",
+   "kind": "shot",
+   "label": null,
+   "start": 234.896,
+   "dur": 11.289,
+   "frames": 339,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     11.289,
+     11.289
+    ]
+   ],
+   "rerender": false,
+   "src_frames": 339,
+   "src_dur": 11.289
+  },
+  {
+   "id": "logo",
+   "kind": "card",
+   "text": "QISSAH",
+   "start": 246.185,
+   "dur": 2.8
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "shot": "hook_a",
+   "start": 0.25,
+   "dur": 6.334,
+   "file": "qissa_kaaba/line-0-0.wav",
+   "text": "Jeden Tag laufen Millionen Menschen um dieses *Haus*. Aber wer hat es gebaut?",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Jeden",
+     "start": 0.144
+    },
+    {
+     "word": "Tag",
+     "start": 0.52
+    },
+    {
+     "word": "laufen",
+     "start": 0.52
+    },
+    {
+     "word": "Millionen",
+     "start": 1.584
+    },
+    {
+     "word": "Menschen",
+     "start": 2.213
+    },
+    {
+     "word": "um",
+     "start": 2.869
+    },
+    {
+     "word": "dieses",
+     "start": 3.36
+    },
+    {
+     "word": "*Haus*.",
+     "start": 4.28
+    },
+    {
+     "word": "Aber",
+     "start": 4.692
+    },
+    {
+     "word": "wer",
+     "start": 4.692
+    },
+    {
+     "word": "hat",
+     "start": 5.16
+    },
+    {
+     "word": "es",
+     "start": 5.333
+    },
+    {
+     "word": "gebaut?",
+     "start": 5.333
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h2",
+   "shot": "hook_b",
+   "start": 6.584,
+   "dur": 4.561,
+   "file": "qissa_kaaba/line-0-1.wav",
+   "text": "Ein *Engel* hat es versprochen: Hier wird ein Haus stehen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.753
+    },
+    {
+     "word": "*Engel*",
+     "start": 0.753
+    },
+    {
+     "word": "hat",
+     "start": 1.143
+    },
+    {
+     "word": "es",
+     "start": 1.143
+    },
+    {
+     "word": "versprochen:",
+     "start": 1.316
+    },
+    {
+     "word": "Hier",
+     "start": 2.383
+    },
+    {
+     "word": "wird",
+     "start": 2.395
+    },
+    {
+     "word": "ein",
+     "start": 2.952
+    },
+    {
+     "word": "Haus",
+     "start": 3.182
+    },
+    {
+     "word": "stehen.",
+     "start": 3.182
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h3",
+   "shot": "hook_c",
+   "start": 11.145,
+   "dur": 3.556,
+   "file": "qissa_kaaba/line-0-2.wav",
+   "text": "Gebaut von einem Jungen ... und seinem *Vater*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Gebaut",
+     "start": 0.297
+    },
+    {
+     "word": "von",
+     "start": 0.991
+    },
+    {
+     "word": "einem",
+     "start": 1.151
+    },
+    {
+     "word": "Jungen",
+     "start": 1.431
+    },
+    {
+     "word": "...",
+     "start": 1.871
+    },
+    {
+     "word": "und",
+     "start": 2.271
+    },
+    {
+     "word": "seinem",
+     "start": 2.353
+    },
+    {
+     "word": "*Vater*.",
+     "start": 2.791
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e1",
+   "shot": "zelte",
+   "start": 14.701,
+   "dur": 7.818,
+   "file": "qissa_kaaba/line-0-3.wav",
+   "text": "Mekka, viele Jahre später. Wo einst nur Stein und Sand war ... stehen jetzt *Zelte*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Mekka,",
+     "start": 0.236
+    },
+    {
+     "word": "viele",
+     "start": 1.073
+    },
+    {
+     "word": "Jahre",
+     "start": 1.177
+    },
+    {
+     "word": "später.",
+     "start": 1.829
+    },
+    {
+     "word": "Wo",
+     "start": 3.733
+    },
+    {
+     "word": "einst",
+     "start": 3.733
+    },
+    {
+     "word": "nur",
+     "start": 3.765
+    },
+    {
+     "word": "Stein",
+     "start": 4.3
+    },
+    {
+     "word": "und",
+     "start": 4.56
+    },
+    {
+     "word": "Sand",
+     "start": 5.02
+    },
+    {
+     "word": "war",
+     "start": 5.264
+    },
+    {
+     "word": "...",
+     "start": 5.58
+    },
+    {
+     "word": "stehen",
+     "start": 5.58
+    },
+    {
+     "word": "jetzt",
+     "start": 6.245
+    },
+    {
+     "word": "*Zelte*.",
+     "start": 6.245
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e2",
+   "shot": "zelte",
+   "start": 22.519,
+   "dur": 5.302,
+   "file": "qissa_kaaba/line-0-4.wav",
+   "text": "Der Stamm *Dschurhum* lebt hier. Wegen einer Quelle: *Zamzam*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.222
+    },
+    {
+     "word": "Stamm",
+     "start": 0.222
+    },
+    {
+     "word": "*Dschurhum*",
+     "start": 0.3
+    },
+    {
+     "word": "lebt",
+     "start": 1.595
+    },
+    {
+     "word": "hier.",
+     "start": 1.91
+    },
+    {
+     "word": "Wegen",
+     "start": 2.452
+    },
+    {
+     "word": "einer",
+     "start": 2.702
+    },
+    {
+     "word": "Quelle:",
+     "start": 2.771
+    },
+    {
+     "word": "*Zamzam*.",
+     "start": 4.166
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e3",
+   "shot": "ismail",
+   "start": 27.821,
+   "dur": 7.375,
+   "file": "qissa_kaaba/line-0-5.wav",
+   "text": "Und das Baby von damals? Ist ein junger Mann geworden: *Ismail*, Friede sei mit ihm.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.195
+    },
+    {
+     "word": "das",
+     "start": 0.195
+    },
+    {
+     "word": "Baby",
+     "start": 0.34
+    },
+    {
+     "word": "von",
+     "start": 0.506
+    },
+    {
+     "word": "damals?",
+     "start": 1.08
+    },
+    {
+     "word": "Ist",
+     "start": 1.28
+    },
+    {
+     "word": "ein",
+     "start": 2.41
+    },
+    {
+     "word": "junger",
+     "start": 2.922
+    },
+    {
+     "word": "Mann",
+     "start": 2.922
+    },
+    {
+     "word": "geworden:",
+     "start": 3.5
+    },
+    {
+     "word": "*Ismail*,",
+     "start": 4.04
+    },
+    {
+     "word": "Friede",
+     "start": 6.053
+    },
+    {
+     "word": "sei",
+     "start": 6.08
+    },
+    {
+     "word": "mit",
+     "start": 6.62
+    },
+    {
+     "word": "ihm.",
+     "start": 6.84
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e4",
+   "shot": "ismail",
+   "start": 35.196,
+   "dur": 7.574,
+   "file": "qissa_kaaba/line-0-6.wav",
+   "text": "Er lernt Arabisch von den Leuten des Stammes. Sie mögen ihn ... und verheiraten ihn mit einer Frau aus ihrem Stamm.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.32
+    },
+    {
+     "word": "lernt",
+     "start": 0.32
+    },
+    {
+     "word": "Arabisch",
+     "start": 1.046
+    },
+    {
+     "word": "von",
+     "start": 1.486
+    },
+    {
+     "word": "den",
+     "start": 1.646
+    },
+    {
+     "word": "Leuten",
+     "start": 1.819
+    },
+    {
+     "word": "des",
+     "start": 2.126
+    },
+    {
+     "word": "Stammes.",
+     "start": 2.299
+    },
+    {
+     "word": "Sie",
+     "start": 3.266
+    },
+    {
+     "word": "mögen",
+     "start": 3.366
+    },
+    {
+     "word": "ihn",
+     "start": 3.746
+    },
+    {
+     "word": "...",
+     "start": 4.086
+    },
+    {
+     "word": "und",
+     "start": 4.606
+    },
+    {
+     "word": "verheiraten",
+     "start": 4.702
+    },
+    {
+     "word": "ihn",
+     "start": 5.506
+    },
+    {
+     "word": "mit",
+     "start": 5.726
+    },
+    {
+     "word": "einer",
+     "start": 5.873
+    },
+    {
+     "word": "Frau",
+     "start": 6.086
+    },
+    {
+     "word": "aus",
+     "start": 6.466
+    },
+    {
+     "word": "ihrem",
+     "start": 6.686
+    },
+    {
+     "word": "Stamm.",
+     "start": 6.939
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e5",
+   "shot": "grab",
+   "start": 42.77,
+   "dur": 3.106,
+   "file": "qissa_kaaba/line-0-7.wav",
+   "text": "Seine Mutter Hadschar ... ist inzwischen gestorben.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Seine",
+     "start": 0.32
+    },
+    {
+     "word": "Mutter",
+     "start": 0.32
+    },
+    {
+     "word": "Hadschar",
+     "start": 0.87
+    },
+    {
+     "word": "...",
+     "start": 1.55
+    },
+    {
+     "word": "ist",
+     "start": 1.95
+    },
+    {
+     "word": "inzwischen",
+     "start": 1.95
+    },
+    {
+     "word": "gestorben.",
+     "start": 2.518
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e6",
+   "shot": "ankunft",
+   "start": 47.926,
+   "dur": 9.172,
+   "file": "qissa_kaaba/line-0-8.wav",
+   "text": "Eines Tages kommt ein alter Mann ins Tal: *Ibrahim*, Friede sei mit ihm. Er will nach seinem Sohn sehen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Eines",
+     "start": 0.07
+    },
+    {
+     "word": "Tages",
+     "start": 0.4
+    },
+    {
+     "word": "kommt",
+     "start": 1.027
+    },
+    {
+     "word": "ein",
+     "start": 1.42
+    },
+    {
+     "word": "alter",
+     "start": 1.667
+    },
+    {
+     "word": "Mann",
+     "start": 2.064
+    },
+    {
+     "word": "ins",
+     "start": 2.42
+    },
+    {
+     "word": "Tal:",
+     "start": 2.575
+    },
+    {
+     "word": "*Ibrahim*,",
+     "start": 4.392
+    },
+    {
+     "word": "Friede",
+     "start": 5.333
+    },
+    {
+     "word": "sei",
+     "start": 5.375
+    },
+    {
+     "word": "mit",
+     "start": 5.96
+    },
+    {
+     "word": "ihm.",
+     "start": 6.14
+    },
+    {
+     "word": "Er",
+     "start": 7.347
+    },
+    {
+     "word": "will",
+     "start": 7.386
+    },
+    {
+     "word": "nach",
+     "start": 7.386
+    },
+    {
+     "word": "seinem",
+     "start": 7.386
+    },
+    {
+     "word": "Sohn",
+     "start": 8.16
+    },
+    {
+     "word": "sehen.",
+     "start": 8.533
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e7",
+   "shot": "tuer1",
+   "start": 57.098,
+   "dur": 8.64,
+   "file": "qissa_kaaba/line-0-9.wav",
+   "text": "Doch Ismail ist nicht da. Er ist unterwegs, um Essen zu holen. Ibrahim fragt seine Frau, wie sie leben.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.32
+    },
+    {
+     "word": "Ismail",
+     "start": 0.32
+    },
+    {
+     "word": "ist",
+     "start": 1.255
+    },
+    {
+     "word": "nicht",
+     "start": 1.475
+    },
+    {
+     "word": "da.",
+     "start": 1.755
+    },
+    {
+     "word": "Er",
+     "start": 2.182
+    },
+    {
+     "word": "ist",
+     "start": 2.182
+    },
+    {
+     "word": "unterwegs,",
+     "start": 2.595
+    },
+    {
+     "word": "um",
+     "start": 3.435
+    },
+    {
+     "word": "Essen",
+     "start": 3.662
+    },
+    {
+     "word": "zu",
+     "start": 4.048
+    },
+    {
+     "word": "holen.",
+     "start": 4.195
+    },
+    {
+     "word": "Ibrahim",
+     "start": 5.355
+    },
+    {
+     "word": "fragt",
+     "start": 5.956
+    },
+    {
+     "word": "seine",
+     "start": 6.742
+    },
+    {
+     "word": "Frau,",
+     "start": 6.955
+    },
+    {
+     "word": "wie",
+     "start": 7.495
+    },
+    {
+     "word": "sie",
+     "start": 7.574
+    },
+    {
+     "word": "leben.",
+     "start": 7.574
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "f1",
+   "shot": "tuer1",
+   "start": 65.888,
+   "dur": 3.749,
+   "file": "qissa_kaaba/line-3-0.wav",
+   "text": "Schlecht. Wir leben in Not ... und Enge.",
+   "speaker": "Frau1",
+   "words": [
+    {
+     "word": "Schlecht.",
+     "start": 0.05
+    },
+    {
+     "word": "Wir",
+     "start": 1.53
+    },
+    {
+     "word": "leben",
+     "start": 1.83
+    },
+    {
+     "word": "in",
+     "start": 2.27
+    },
+    {
+     "word": "Not",
+     "start": 2.51
+    },
+    {
+     "word": "...",
+     "start": 2.82
+    },
+    {
+     "word": "und",
+     "start": 2.95
+    },
+    {
+     "word": "Enge.",
+     "start": 3.25
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "q1",
+   "shot": "tuer1",
+   "start": 69.987,
+   "dur": 8.668,
+   "file": "qissa_kaaba/line-1-0.wav",
+   "text": "Wenn dein Mann kommt, grüß ihn von mir. Und sag ihm: Er soll die *Schwelle* seiner Tür wechseln.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.05
+    },
+    {
+     "word": "dein",
+     "start": 0.42
+    },
+    {
+     "word": "Mann",
+     "start": 0.8
+    },
+    {
+     "word": "kommt,",
+     "start": 1.18
+    },
+    {
+     "word": "grüß",
+     "start": 1.63
+    },
+    {
+     "word": "ihn",
+     "start": 2.55
+    },
+    {
+     "word": "von",
+     "start": 2.86
+    },
+    {
+     "word": "mir.",
+     "start": 3.18
+    },
+    {
+     "word": "Und",
+     "start": 4.56
+    },
+    {
+     "word": "sag",
+     "start": 4.87
+    },
+    {
+     "word": "ihm:",
+     "start": 5.18
+    },
+    {
+     "word": "Er",
+     "start": 6.02
+    },
+    {
+     "word": "soll",
+     "start": 6.23
+    },
+    {
+     "word": "die",
+     "start": 6.54
+    },
+    {
+     "word": "*Schwelle*",
+     "start": 6.81
+    },
+    {
+     "word": "seiner",
+     "start": 7.33
+    },
+    {
+     "word": "Tür",
+     "start": 7.75
+    },
+    {
+     "word": "wechseln.",
+     "start": 8.02
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "e8",
+   "shot": "abend1",
+   "start": 79.255,
+   "dur": 5.857,
+   "file": "qissa_kaaba/line-0-10.wav",
+   "text": "Am Abend kommt Ismail zurück. Und er spürt: Jemand war hier.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.2
+    },
+    {
+     "word": "Abend",
+     "start": 0.2
+    },
+    {
+     "word": "kommt",
+     "start": 0.32
+    },
+    {
+     "word": "Ismail",
+     "start": 1.04
+    },
+    {
+     "word": "zurück.",
+     "start": 1.577
+    },
+    {
+     "word": "Und",
+     "start": 2.935
+    },
+    {
+     "word": "er",
+     "start": 2.935
+    },
+    {
+     "word": "spürt:",
+     "start": 2.935
+    },
+    {
+     "word": "Jemand",
+     "start": 4.12
+    },
+    {
+     "word": "war",
+     "start": 4.371
+    },
+    {
+     "word": "hier.",
+     "start": 5.056
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "f2",
+   "shot": "abend1",
+   "start": 85.262,
+   "dur": 5.833,
+   "file": "qissa_kaaba/line-3-1.wav",
+   "text": "Ein alter Mann war hier. Er lässt dich grüßen. Du sollst die Schwelle deiner Tür wechseln.",
+   "speaker": "Frau1",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.05
+    },
+    {
+     "word": "alter",
+     "start": 0.56
+    },
+    {
+     "word": "Mann",
+     "start": 1.29
+    },
+    {
+     "word": "war",
+     "start": 2.05
+    },
+    {
+     "word": "hier.",
+     "start": 2.57
+    },
+    {
+     "word": "Er",
+     "start": 3.43
+    },
+    {
+     "word": "lässt",
+     "start": 3.55
+    },
+    {
+     "word": "dich",
+     "start": 3.76
+    },
+    {
+     "word": "grüßen.",
+     "start": 3.94
+    },
+    {
+     "word": "Du",
+     "start": 4.19
+    },
+    {
+     "word": "sollst",
+     "start": 4.31
+    },
+    {
+     "word": "die",
+     "start": 4.55
+    },
+    {
+     "word": "Schwelle",
+     "start": 4.71
+    },
+    {
+     "word": "deiner",
+     "start": 5.01
+    },
+    {
+     "word": "Tür",
+     "start": 5.26
+    },
+    {
+     "word": "wechseln.",
+     "start": 5.41
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "q2",
+   "shot": "abend1",
+   "start": 91.445,
+   "dur": 6.066,
+   "file": "qissa_kaaba/line-2-0.wav",
+   "text": "Das war mein Vater. Er hat mir befohlen, mich von dir zu trennen. Geh zurück zu deiner Familie.",
+   "speaker": "Ismail",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.29
+    },
+    {
+     "word": "mein",
+     "start": 0.54
+    },
+    {
+     "word": "Vater.",
+     "start": 0.83
+    },
+    {
+     "word": "Er",
+     "start": 1.7
+    },
+    {
+     "word": "hat",
+     "start": 1.85
+    },
+    {
+     "word": "mir",
+     "start": 2.05
+    },
+    {
+     "word": "befohlen,",
+     "start": 2.24
+    },
+    {
+     "word": "mich",
+     "start": 2.64
+    },
+    {
+     "word": "von",
+     "start": 2.87
+    },
+    {
+     "word": "dir",
+     "start": 3.07
+    },
+    {
+     "word": "zu",
+     "start": 3.26
+    },
+    {
+     "word": "trennen.",
+     "start": 3.42
+    },
+    {
+     "word": "Geh",
+     "start": 4.35
+    },
+    {
+     "word": "zurück",
+     "start": 4.58
+    },
+    {
+     "word": "zu",
+     "start": 4.96
+    },
+    {
+     "word": "deiner",
+     "start": 5.15
+    },
+    {
+     "word": "Familie.",
+     "start": 5.52
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ismail · Bukhari 3364"
+  },
+  {
+   "id": "e9",
+   "shot": "besuch2",
+   "start": 99.761,
+   "dur": 11.194,
+   "file": "qissa_kaaba/line-0-11.wav",
+   "text": "Ismail heiratet eine andere Frau aus dem Stamm. Zeit vergeht ... dann kommt Ibrahim wieder. Und wieder ist Ismail nicht da.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ismail",
+     "start": 0.076
+    },
+    {
+     "word": "heiratet",
+     "start": 0.626
+    },
+    {
+     "word": "eine",
+     "start": 1.25
+    },
+    {
+     "word": "andere",
+     "start": 1.499
+    },
+    {
+     "word": "Frau",
+     "start": 2.142
+    },
+    {
+     "word": "aus",
+     "start": 2.362
+    },
+    {
+     "word": "dem",
+     "start": 2.362
+    },
+    {
+     "word": "Stamm.",
+     "start": 2.535
+    },
+    {
+     "word": "Zeit",
+     "start": 3.162
+    },
+    {
+     "word": "vergeht",
+     "start": 4.029
+    },
+    {
+     "word": "...",
+     "start": 5.102
+    },
+    {
+     "word": "dann",
+     "start": 6.122
+    },
+    {
+     "word": "kommt",
+     "start": 6.122
+    },
+    {
+     "word": "Ibrahim",
+     "start": 6.682
+    },
+    {
+     "word": "wieder.",
+     "start": 7.248
+    },
+    {
+     "word": "Und",
+     "start": 8.644
+    },
+    {
+     "word": "wieder",
+     "start": 8.644
+    },
+    {
+     "word": "ist",
+     "start": 9.682
+    },
+    {
+     "word": "Ismail",
+     "start": 9.682
+    },
+    {
+     "word": "nicht",
+     "start": 10.615
+    },
+    {
+     "word": "da.",
+     "start": 10.894
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "f3",
+   "shot": "tuer2",
+   "start": 111.205,
+   "dur": 4.329,
+   "file": "qissa_kaaba/line-3-2.wav",
+   "text": "Uns geht es gut. Wir haben genug. Alhamdulillah.",
+   "speaker": "Frau2",
+   "words": [
+    {
+     "word": "Uns",
+     "start": 0.05
+    },
+    {
+     "word": "geht",
+     "start": 0.42
+    },
+    {
+     "word": "es",
+     "start": 0.87
+    },
+    {
+     "word": "gut.",
+     "start": 1.17
+    },
+    {
+     "word": "Wir",
+     "start": 1.54
+    },
+    {
+     "word": "haben",
+     "start": 1.92
+    },
+    {
+     "word": "genug.",
+     "start": 2.44
+    },
+    {
+     "word": "Alhamdulillah.",
+     "start": 3.08
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "q3",
+   "shot": "tuer2",
+   "start": 115.834,
+   "dur": 1.075,
+   "file": "qissa_kaaba/line-1-1.wav",
+   "text": "Was esst ihr?",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.05
+    },
+    {
+     "word": "esst",
+     "start": 0.33
+    },
+    {
+     "word": "ihr?",
+     "start": 0.67
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "f4",
+   "shot": "tuer2",
+   "start": 117.059,
+   "dur": 0.753,
+   "file": "qissa_kaaba/line-3-3.wav",
+   "text": "Fleisch.",
+   "speaker": "Frau2",
+   "words": [
+    {
+     "word": "Fleisch.",
+     "start": 0.05
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "q4",
+   "shot": "tuer2",
+   "start": 118.112,
+   "dur": 1.374,
+   "file": "qissa_kaaba/line-1-2.wav",
+   "text": "Und was trinkt ihr?",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.05
+    },
+    {
+     "word": "was",
+     "start": 0.31
+    },
+    {
+     "word": "trinkt",
+     "start": 0.57
+    },
+    {
+     "word": "ihr?",
+     "start": 0.99
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "f5",
+   "shot": "tuer2",
+   "start": 119.636,
+   "dur": 0.596,
+   "file": "qissa_kaaba/line-3-4.wav",
+   "text": "Wasser.",
+   "speaker": "Frau2",
+   "words": [
+    {
+     "word": "Wasser.",
+     "start": 0.05
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "q5",
+   "shot": "tuer2",
+   "start": 120.582,
+   "dur": 4.631,
+   "file": "qissa_kaaba/line-1-3.wav",
+   "text": "O Allah, segne ihnen das *Fleisch* und das *Wasser*.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.25
+    },
+    {
+     "word": "segne",
+     "start": 0.71
+    },
+    {
+     "word": "ihnen",
+     "start": 1.9
+    },
+    {
+     "word": "das",
+     "start": 2.37
+    },
+    {
+     "word": "*Fleisch*",
+     "start": 2.7
+    },
+    {
+     "word": "und",
+     "start": 3.3
+    },
+    {
+     "word": "das",
+     "start": 3.64
+    },
+    {
+     "word": "*Wasser*.",
+     "start": 3.97
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "e10",
+   "shot": "segen",
+   "start": 125.613,
+   "dur": 4.282,
+   "file": "qissa_kaaba/line-0-12.wav",
+   "text": "Der Prophet Muhammad, Friede sei mit ihm, sagte später:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.145
+    },
+    {
+     "word": "Prophet",
+     "start": 0.145
+    },
+    {
+     "word": "Muhammad,",
+     "start": 0.88
+    },
+    {
+     "word": "Friede",
+     "start": 1.88
+    },
+    {
+     "word": "sei",
+     "start": 2.44
+    },
+    {
+     "word": "mit",
+     "start": 2.44
+    },
+    {
+     "word": "ihm,",
+     "start": 2.64
+    },
+    {
+     "word": "sagte",
+     "start": 3.16
+    },
+    {
+     "word": "später:",
+     "start": 3.429
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q6",
+   "shot": "segen",
+   "start": 129.945,
+   "dur": 5.022,
+   "file": "qissa_kaaba/line-4-0.wav",
+   "text": "Sie hatten damals kein Getreide. Hätten sie welches gehabt, hätte er auch dafür um Segen gebeten.",
+   "speaker": "Zitat",
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.05
+    },
+    {
+     "word": "hatten",
+     "start": 0.25
+    },
+    {
+     "word": "damals",
+     "start": 0.58
+    },
+    {
+     "word": "kein",
+     "start": 0.91
+    },
+    {
+     "word": "Getreide.",
+     "start": 1.15
+    },
+    {
+     "word": "Hätten",
+     "start": 2.01
+    },
+    {
+     "word": "sie",
+     "start": 2.32
+    },
+    {
+     "word": "welches",
+     "start": 2.51
+    },
+    {
+     "word": "gehabt,",
+     "start": 2.87
+    },
+    {
+     "word": "hätte",
+     "start": 3.18
+    },
+    {
+     "word": "er",
+     "start": 3.46
+    },
+    {
+     "word": "auch",
+     "start": 3.61
+    },
+    {
+     "word": "dafür",
+     "start": 3.85
+    },
+    {
+     "word": "um",
+     "start": 4.12
+    },
+    {
+     "word": "Segen",
+     "start": 4.28
+    },
+    {
+     "word": "gebeten.",
+     "start": 4.55
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Prophet ﷺ · Bukhari 3364"
+  },
+  {
+   "id": "q7",
+   "shot": "segen",
+   "start": 135.267,
+   "dur": 6.05,
+   "file": "qissa_kaaba/line-1-4.wav",
+   "text": "Grüß deinen Mann. Und sag ihm: Er soll die Schwelle seiner Tür *festhalten*.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Grüß",
+     "start": 0.05
+    },
+    {
+     "word": "deinen",
+     "start": 0.38
+    },
+    {
+     "word": "Mann.",
+     "start": 0.82
+    },
+    {
+     "word": "Und",
+     "start": 1.91
+    },
+    {
+     "word": "sag",
+     "start": 2.2
+    },
+    {
+     "word": "ihm:",
+     "start": 2.49
+    },
+    {
+     "word": "Er",
+     "start": 3.24
+    },
+    {
+     "word": "soll",
+     "start": 3.45
+    },
+    {
+     "word": "die",
+     "start": 3.77
+    },
+    {
+     "word": "Schwelle",
+     "start": 4.04
+    },
+    {
+     "word": "seiner",
+     "start": 4.58
+    },
+    {
+     "word": "Tür",
+     "start": 5.01
+    },
+    {
+     "word": "*festhalten*.",
+     "start": 5.28
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "e11",
+   "shot": "abend2",
+   "start": 141.867,
+   "dur": 3.059,
+   "file": "qissa_kaaba/line-0-13.wav",
+   "text": "Als Ismail zurückkommt, erzählt sie ihm alles.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Als",
+     "start": 0.158
+    },
+    {
+     "word": "Ismail",
+     "start": 0.158
+    },
+    {
+     "word": "zurückkommt,",
+     "start": 0.158
+    },
+    {
+     "word": "erzählt",
+     "start": 1.96
+    },
+    {
+     "word": "sie",
+     "start": 2.14
+    },
+    {
+     "word": "ihm",
+     "start": 2.373
+    },
+    {
+     "word": "alles.",
+     "start": 2.373
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q8",
+   "shot": "abend2",
+   "start": 145.026,
+   "dur": 5.937,
+   "file": "qissa_kaaba/line-2-1.wav",
+   "text": "Das war mein Vater. Und die Schwelle ... bist du. Er hat mir gesagt: Behalte dich.",
+   "speaker": "Ismail",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "mein",
+     "start": 0.52
+    },
+    {
+     "word": "Vater.",
+     "start": 0.81
+    },
+    {
+     "word": "Und",
+     "start": 1.82
+    },
+    {
+     "word": "die",
+     "start": 2.12
+    },
+    {
+     "word": "Schwelle",
+     "start": 2.42
+    },
+    {
+     "word": "...",
+     "start": 3.19
+    },
+    {
+     "word": "bist",
+     "start": 4.02
+    },
+    {
+     "word": "du.",
+     "start": 4.24
+    },
+    {
+     "word": "Er",
+     "start": 4.4
+    },
+    {
+     "word": "hat",
+     "start": 4.55
+    },
+    {
+     "word": "mir",
+     "start": 4.74
+    },
+    {
+     "word": "gesagt:",
+     "start": 4.93
+    },
+    {
+     "word": "Behalte",
+     "start": 5.24
+    },
+    {
+     "word": "dich.",
+     "start": 5.59
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ismail · Bukhari 3364"
+  },
+  {
+   "id": "e12",
+   "shot": "baum",
+   "start": 153.213,
+   "dur": 8.688,
+   "file": "qissa_kaaba/line-0-14.wav",
+   "text": "Dann ... ein dritter Besuch. Ismail sitzt unter einem großen Baum nahe Zamzam ... und schnitzt Pfeile.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.256
+    },
+    {
+     "word": "...",
+     "start": 0.256
+    },
+    {
+     "word": "ein",
+     "start": 0.46
+    },
+    {
+     "word": "dritter",
+     "start": 0.94
+    },
+    {
+     "word": "Besuch.",
+     "start": 0.987
+    },
+    {
+     "word": "Ismail",
+     "start": 2.4
+    },
+    {
+     "word": "sitzt",
+     "start": 3.672
+    },
+    {
+     "word": "unter",
+     "start": 4.22
+    },
+    {
+     "word": "einem",
+     "start": 4.6
+    },
+    {
+     "word": "großen",
+     "start": 4.84
+    },
+    {
+     "word": "Baum",
+     "start": 5.097
+    },
+    {
+     "word": "nahe",
+     "start": 5.52
+    },
+    {
+     "word": "Zamzam",
+     "start": 5.947
+    },
+    {
+     "word": "...",
+     "start": 6.427
+    },
+    {
+     "word": "und",
+     "start": 6.98
+    },
+    {
+     "word": "schnitzt",
+     "start": 7.3
+    },
+    {
+     "word": "Pfeile.",
+     "start": 7.362
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e13",
+   "shot": "baum",
+   "start": 161.901,
+   "dur": 8.742,
+   "file": "qissa_kaaba/line-0-15.wav",
+   "text": "Als er seinen Vater sieht, steht er auf. Und sie begrüßen sich ... wie ein Vater seinen Sohn. Und ein Sohn seinen Vater.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Als",
+     "start": 0.302
+    },
+    {
+     "word": "er",
+     "start": 0.302
+    },
+    {
+     "word": "seinen",
+     "start": 0.32
+    },
+    {
+     "word": "Vater",
+     "start": 0.32
+    },
+    {
+     "word": "sieht,",
+     "start": 1.102
+    },
+    {
+     "word": "steht",
+     "start": 1.422
+    },
+    {
+     "word": "er",
+     "start": 1.675
+    },
+    {
+     "word": "auf.",
+     "start": 1.882
+    },
+    {
+     "word": "Und",
+     "start": 2.382
+    },
+    {
+     "word": "sie",
+     "start": 2.813
+    },
+    {
+     "word": "begrüßen",
+     "start": 2.813
+    },
+    {
+     "word": "sich",
+     "start": 2.813
+    },
+    {
+     "word": "...",
+     "start": 4.096
+    },
+    {
+     "word": "wie",
+     "start": 4.096
+    },
+    {
+     "word": "ein",
+     "start": 4.556
+    },
+    {
+     "word": "Vater",
+     "start": 4.588
+    },
+    {
+     "word": "seinen",
+     "start": 5.076
+    },
+    {
+     "word": "Sohn.",
+     "start": 5.956
+    },
+    {
+     "word": "Und",
+     "start": 6.516
+    },
+    {
+     "word": "ein",
+     "start": 6.691
+    },
+    {
+     "word": "Sohn",
+     "start": 7.316
+    },
+    {
+     "word": "seinen",
+     "start": 7.716
+    },
+    {
+     "word": "Vater.",
+     "start": 7.988
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q9",
+   "shot": "befehl",
+   "start": 170.793,
+   "dur": 3.546,
+   "file": "qissa_kaaba/line-1-5.wav",
+   "text": "Ismail, Allah hat mir etwas befohlen.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Ismail,",
+     "start": 0.05
+    },
+    {
+     "word": "Allah",
+     "start": 0.57
+    },
+    {
+     "word": "hat",
+     "start": 1.64
+    },
+    {
+     "word": "mir",
+     "start": 1.97
+    },
+    {
+     "word": "etwas",
+     "start": 2.3
+    },
+    {
+     "word": "befohlen.",
+     "start": 2.77
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "q10",
+   "shot": "befehl",
+   "start": 174.489,
+   "dur": 2.153,
+   "file": "qissa_kaaba/line-2-2.wav",
+   "text": "Dann tu, was dein Herr dir befohlen hat.",
+   "speaker": "Ismail",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.05
+    },
+    {
+     "word": "tu,",
+     "start": 0.3
+    },
+    {
+     "word": "was",
+     "start": 0.47
+    },
+    {
+     "word": "dein",
+     "start": 0.68
+    },
+    {
+     "word": "Herr",
+     "start": 0.93
+    },
+    {
+     "word": "dir",
+     "start": 1.19
+    },
+    {
+     "word": "befohlen",
+     "start": 1.4
+    },
+    {
+     "word": "hat.",
+     "start": 1.82
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ismail · Bukhari 3364"
+  },
+  {
+   "id": "q11",
+   "shot": "befehl",
+   "start": 176.792,
+   "dur": 0.917,
+   "file": "qissa_kaaba/line-1-6.wav",
+   "text": "Hilfst du mir?",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Hilfst",
+     "start": 0.05
+    },
+    {
+     "word": "du",
+     "start": 0.4
+    },
+    {
+     "word": "mir?",
+     "start": 0.57
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "q12",
+   "shot": "befehl",
+   "start": 177.809,
+   "dur": 0.937,
+   "file": "qissa_kaaba/line-2-3.wav",
+   "text": "Ich helfe dir.",
+   "speaker": "Ismail",
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.05
+    },
+    {
+     "word": "helfe",
+     "start": 0.27
+    },
+    {
+     "word": "dir.",
+     "start": 0.59
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ismail · Bukhari 3364"
+  },
+  {
+   "id": "q13",
+   "shot": "befehl",
+   "start": 178.946,
+   "dur": 3.51,
+   "file": "qissa_kaaba/line-1-7.wav",
+   "text": "Allah hat mir befohlen, hier ein *Haus* zu bauen.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "hat",
+     "start": 0.42
+    },
+    {
+     "word": "mir",
+     "start": 0.7
+    },
+    {
+     "word": "befohlen,",
+     "start": 0.97
+    },
+    {
+     "word": "hier",
+     "start": 1.51
+    },
+    {
+     "word": "ein",
+     "start": 2.19
+    },
+    {
+     "word": "*Haus*",
+     "start": 2.46
+    },
+    {
+     "word": "zu",
+     "start": 2.79
+    },
+    {
+     "word": "bauen.",
+     "start": 3.01
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Bukhari 3364"
+  },
+  {
+   "id": "e14",
+   "shot": "huegel",
+   "start": 182.656,
+   "dur": 6.426,
+   "file": "qissa_kaaba/line-0-16.wav",
+   "text": "Er zeigt auf einen kleinen Hügel. Genau dort, wo der Engel es versprochen hatte.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.142
+    },
+    {
+     "word": "zeigt",
+     "start": 0.142
+    },
+    {
+     "word": "auf",
+     "start": 0.169
+    },
+    {
+     "word": "einen",
+     "start": 0.169
+    },
+    {
+     "word": "kleinen",
+     "start": 0.68
+    },
+    {
+     "word": "Hügel.",
+     "start": 1.32
+    },
+    {
+     "word": "Genau",
+     "start": 1.9
+    },
+    {
+     "word": "dort,",
+     "start": 2.648
+    },
+    {
+     "word": "wo",
+     "start": 3.653
+    },
+    {
+     "word": "der",
+     "start": 3.653
+    },
+    {
+     "word": "Engel",
+     "start": 3.721
+    },
+    {
+     "word": "es",
+     "start": 4.307
+    },
+    {
+     "word": "versprochen",
+     "start": 4.773
+    },
+    {
+     "word": "hatte.",
+     "start": 5.733
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e15",
+   "shot": "bau",
+   "start": 189.082,
+   "dur": 5.793,
+   "file": "qissa_kaaba/line-0-17.wav",
+   "text": "Ismail bringt die Steine. Ibrahim baut. Stein ... auf Stein.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ismail",
+     "start": 0.273
+    },
+    {
+     "word": "bringt",
+     "start": 0.803
+    },
+    {
+     "word": "die",
+     "start": 1.104
+    },
+    {
+     "word": "Steine.",
+     "start": 1.223
+    },
+    {
+     "word": "Ibrahim",
+     "start": 2.264
+    },
+    {
+     "word": "baut.",
+     "start": 3.583
+    },
+    {
+     "word": "Stein",
+     "start": 4.071
+    },
+    {
+     "word": "...",
+     "start": 4.604
+    },
+    {
+     "word": "auf",
+     "start": 4.874
+    },
+    {
+     "word": "Stein.",
+     "start": 4.874
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e16",
+   "shot": "bau",
+   "start": 194.875,
+   "dur": 11.469,
+   "file": "qissa_kaaba/line-0-18.wav",
+   "text": "Die Mauern wachsen ... bis Ibrahim nicht mehr hinaufreicht. Da bringt Ismail einen großen *Stein*. Ibrahim stellt sich darauf ... und baut weiter.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.0
+    },
+    {
+     "word": "Mauern",
+     "start": 0.0
+    },
+    {
+     "word": "wachsen",
+     "start": 0.308
+    },
+    {
+     "word": "...",
+     "start": 1.67
+    },
+    {
+     "word": "bis",
+     "start": 1.67
+    },
+    {
+     "word": "Ibrahim",
+     "start": 2.13
+    },
+    {
+     "word": "nicht",
+     "start": 2.163
+    },
+    {
+     "word": "mehr",
+     "start": 2.943
+    },
+    {
+     "word": "hinaufreicht.",
+     "start": 3.226
+    },
+    {
+     "word": "Da",
+     "start": 4.64
+    },
+    {
+     "word": "bringt",
+     "start": 5.038
+    },
+    {
+     "word": "Ismail",
+     "start": 5.038
+    },
+    {
+     "word": "einen",
+     "start": 5.49
+    },
+    {
+     "word": "großen",
+     "start": 6.143
+    },
+    {
+     "word": "*Stein*.",
+     "start": 6.467
+    },
+    {
+     "word": "Ibrahim",
+     "start": 8.152
+    },
+    {
+     "word": "stellt",
+     "start": 8.698
+    },
+    {
+     "word": "sich",
+     "start": 9.02
+    },
+    {
+     "word": "darauf",
+     "start": 9.269
+    },
+    {
+     "word": "...",
+     "start": 9.752
+    },
+    {
+     "word": "und",
+     "start": 10.212
+    },
+    {
+     "word": "baut",
+     "start": 10.212
+    },
+    {
+     "word": "weiter.",
+     "start": 10.245
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e17",
+   "shot": "gebet",
+   "start": 206.344,
+   "dur": 2.315,
+   "file": "qissa_kaaba/line-0-19.wav",
+   "text": "Und während sie bauen, beten beide:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.313
+    },
+    {
+     "word": "während",
+     "start": 0.313
+    },
+    {
+     "word": "sie",
+     "start": 0.762
+    },
+    {
+     "word": "bauen,",
+     "start": 0.922
+    },
+    {
+     "word": "beten",
+     "start": 1.532
+    },
+    {
+     "word": "beide:",
+     "start": 1.829
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q14",
+   "shot": "gebet",
+   "start": 208.709,
+   "dur": 2.916,
+   "file": "qissa_kaaba/line-1-8.wav",
+   "text": "Unser Herr, nimm es von uns an.",
+   "speaker": "Ibrahim",
+   "words": [
+    {
+     "word": "Unser",
+     "start": 0.05
+    },
+    {
+     "word": "Herr,",
+     "start": 0.42
+    },
+    {
+     "word": "nimm",
+     "start": 0.74
+    },
+    {
+     "word": "es",
+     "start": 1.83
+    },
+    {
+     "word": "von",
+     "start": 2.05
+    },
+    {
+     "word": "uns",
+     "start": 2.31
+    },
+    {
+     "word": "an.",
+     "start": 2.58
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ibrahim · Koran 2:127"
+  },
+  {
+   "id": "q15",
+   "shot": "gebet",
+   "start": 211.825,
+   "dur": 3.097,
+   "file": "qissa_kaaba/line-2-4.wav",
+   "text": "Du bist der Allhörende, der Allwissende.",
+   "speaker": "Ismail",
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.05
+    },
+    {
+     "word": "bist",
+     "start": 0.26
+    },
+    {
+     "word": "der",
+     "start": 0.58
+    },
+    {
+     "word": "Allhörende,",
+     "start": 0.85
+    },
+    {
+     "word": "der",
+     "start": 2.02
+    },
+    {
+     "word": "Allwissende.",
+     "start": 2.28
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Ismail · Koran 2:127"
+  },
+  {
+   "id": "e18",
+   "shot": "heute",
+   "start": 217.122,
+   "dur": 4.412,
+   "file": "qissa_kaaba/line-0-20.wav",
+   "text": "Dieses Haus ... ist die *Kaaba*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dieses",
+     "start": 0.153
+    },
+    {
+     "word": "Haus",
+     "start": 0.784
+    },
+    {
+     "word": "...",
+     "start": 1.52
+    },
+    {
+     "word": "ist",
+     "start": 2.06
+    },
+    {
+     "word": "die",
+     "start": 2.076
+    },
+    {
+     "word": "*Kaaba*.",
+     "start": 2.6
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e19",
+   "shot": "maqam",
+   "start": 221.534,
+   "dur": 8.753,
+   "file": "qissa_kaaba/line-0-21.wav",
+   "text": "Und der Stein, auf dem Ibrahim stand? Den gibt es bis heute. Direkt neben der Kaaba: der *Maqam Ibrahim*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.083
+    },
+    {
+     "word": "der",
+     "start": 0.083
+    },
+    {
+     "word": "Stein,",
+     "start": 0.083
+    },
+    {
+     "word": "auf",
+     "start": 0.083
+    },
+    {
+     "word": "dem",
+     "start": 0.888
+    },
+    {
+     "word": "Ibrahim",
+     "start": 1.028
+    },
+    {
+     "word": "stand?",
+     "start": 1.348
+    },
+    {
+     "word": "Den",
+     "start": 2.808
+    },
+    {
+     "word": "gibt",
+     "start": 2.808
+    },
+    {
+     "word": "es",
+     "start": 3.201
+    },
+    {
+     "word": "bis",
+     "start": 3.201
+    },
+    {
+     "word": "heute.",
+     "start": 3.201
+    },
+    {
+     "word": "Direkt",
+     "start": 3.648
+    },
+    {
+     "word": "neben",
+     "start": 3.881
+    },
+    {
+     "word": "der",
+     "start": 4.404
+    },
+    {
+     "word": "Kaaba:",
+     "start": 5.321
+    },
+    {
+     "word": "der",
+     "start": 5.828
+    },
+    {
+     "word": "*Maqam",
+     "start": 5.828
+    },
+    {
+     "word": "Ibrahim*.",
+     "start": 6.882
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e20",
+   "shot": "maqam",
+   "start": 230.287,
+   "dur": 4.609,
+   "file": "qissa_kaaba/line-0-22.wav",
+   "text": "Und darin sieht man ... die Abdrücke von zwei *Füßen*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.32
+    },
+    {
+     "word": "darin",
+     "start": 0.32
+    },
+    {
+     "word": "sieht",
+     "start": 0.817
+    },
+    {
+     "word": "man",
+     "start": 1.144
+    },
+    {
+     "word": "...",
+     "start": 1.524
+    },
+    {
+     "word": "die",
+     "start": 1.524
+    },
+    {
+     "word": "Abdrücke",
+     "start": 2.144
+    },
+    {
+     "word": "von",
+     "start": 3.124
+    },
+    {
+     "word": "zwei",
+     "start": 3.324
+    },
+    {
+     "word": "*Füßen*.",
+     "start": 3.764
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e21",
+   "shot": "ende",
+   "start": 234.896,
+   "dur": 9.889,
+   "file": "qissa_kaaba/line-0-23.wav",
+   "text": "Millionen beten heute genau dort. Und alles begann ... mit einem *Vater* und einem *Sohn*, die Allah gehorchten.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Millionen",
+     "start": 0.32
+    },
+    {
+     "word": "beten",
+     "start": 0.929
+    },
+    {
+     "word": "heute",
+     "start": 1.302
+    },
+    {
+     "word": "genau",
+     "start": 1.636
+    },
+    {
+     "word": "dort.",
+     "start": 2.065
+    },
+    {
+     "word": "Und",
+     "start": 3.607
+    },
+    {
+     "word": "alles",
+     "start": 3.607
+    },
+    {
+     "word": "begann",
+     "start": 3.607
+    },
+    {
+     "word": "...",
+     "start": 4.889
+    },
+    {
+     "word": "mit",
+     "start": 4.889
+    },
+    {
+     "word": "einem",
+     "start": 5.797
+    },
+    {
+     "word": "*Vater*",
+     "start": 5.821
+    },
+    {
+     "word": "und",
+     "start": 5.821
+    },
+    {
+     "word": "einem",
+     "start": 6.889
+    },
+    {
+     "word": "*Sohn*,",
+     "start": 6.993
+    },
+    {
+     "word": "die",
+     "start": 8.489
+    },
+    {
+     "word": "Allah",
+     "start": 8.489
+    },
+    {
+     "word": "gehorchten.",
+     "start": 8.587
+    }
+   ],
+   "tail": 0
+  }
+ ],
+ "quotes": [
+  {
+   "id": "q1",
+   "shot": "tuer1",
+   "start": 69.987,
+   "dur": 8.668,
+   "text": "Wenn dein Mann kommt, grüß ihn von mir. Und sag ihm: Er soll die *Schwelle* seiner Tür wechseln.",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.05
+    },
+    {
+     "word": "dein",
+     "start": 0.42
+    },
+    {
+     "word": "Mann",
+     "start": 0.8
+    },
+    {
+     "word": "kommt,",
+     "start": 1.18
+    },
+    {
+     "word": "grüß",
+     "start": 1.63
+    },
+    {
+     "word": "ihn",
+     "start": 2.55
+    },
+    {
+     "word": "von",
+     "start": 2.86
+    },
+    {
+     "word": "mir.",
+     "start": 3.18
+    },
+    {
+     "word": "Und",
+     "start": 4.56
+    },
+    {
+     "word": "sag",
+     "start": 4.87
+    },
+    {
+     "word": "ihm:",
+     "start": 5.18
+    },
+    {
+     "word": "Er",
+     "start": 6.02
+    },
+    {
+     "word": "soll",
+     "start": 6.23
+    },
+    {
+     "word": "die",
+     "start": 6.54
+    },
+    {
+     "word": "*Schwelle*",
+     "start": 6.81
+    },
+    {
+     "word": "seiner",
+     "start": 7.33
+    },
+    {
+     "word": "Tür",
+     "start": 7.75
+    },
+    {
+     "word": "wechseln.",
+     "start": 8.02
+    }
+   ]
+  },
+  {
+   "id": "q2",
+   "shot": "abend1",
+   "start": 91.445,
+   "dur": 6.066,
+   "text": "Das war mein Vater. Er hat mir befohlen, mich von dir zu trennen. Geh zurück zu deiner Familie.",
+   "by": "Ismail · Bukhari 3364",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.29
+    },
+    {
+     "word": "mein",
+     "start": 0.54
+    },
+    {
+     "word": "Vater.",
+     "start": 0.83
+    },
+    {
+     "word": "Er",
+     "start": 1.7
+    },
+    {
+     "word": "hat",
+     "start": 1.85
+    },
+    {
+     "word": "mir",
+     "start": 2.05
+    },
+    {
+     "word": "befohlen,",
+     "start": 2.24
+    },
+    {
+     "word": "mich",
+     "start": 2.64
+    },
+    {
+     "word": "von",
+     "start": 2.87
+    },
+    {
+     "word": "dir",
+     "start": 3.07
+    },
+    {
+     "word": "zu",
+     "start": 3.26
+    },
+    {
+     "word": "trennen.",
+     "start": 3.42
+    },
+    {
+     "word": "Geh",
+     "start": 4.35
+    },
+    {
+     "word": "zurück",
+     "start": 4.58
+    },
+    {
+     "word": "zu",
+     "start": 4.96
+    },
+    {
+     "word": "deiner",
+     "start": 5.15
+    },
+    {
+     "word": "Familie.",
+     "start": 5.52
+    }
+   ]
+  },
+  {
+   "id": "q3",
+   "shot": "tuer2",
+   "start": 115.834,
+   "dur": 1.075,
+   "text": "Was esst ihr?",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Was",
+     "start": 0.05
+    },
+    {
+     "word": "esst",
+     "start": 0.33
+    },
+    {
+     "word": "ihr?",
+     "start": 0.67
+    }
+   ]
+  },
+  {
+   "id": "q4",
+   "shot": "tuer2",
+   "start": 118.112,
+   "dur": 1.374,
+   "text": "Und was trinkt ihr?",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.05
+    },
+    {
+     "word": "was",
+     "start": 0.31
+    },
+    {
+     "word": "trinkt",
+     "start": 0.57
+    },
+    {
+     "word": "ihr?",
+     "start": 0.99
+    }
+   ]
+  },
+  {
+   "id": "q5",
+   "shot": "tuer2",
+   "start": 120.582,
+   "dur": 4.631,
+   "text": "O Allah, segne ihnen das *Fleisch* und das *Wasser*.",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.25
+    },
+    {
+     "word": "segne",
+     "start": 0.71
+    },
+    {
+     "word": "ihnen",
+     "start": 1.9
+    },
+    {
+     "word": "das",
+     "start": 2.37
+    },
+    {
+     "word": "*Fleisch*",
+     "start": 2.7
+    },
+    {
+     "word": "und",
+     "start": 3.3
+    },
+    {
+     "word": "das",
+     "start": 3.64
+    },
+    {
+     "word": "*Wasser*.",
+     "start": 3.97
+    }
+   ]
+  },
+  {
+   "id": "q6",
+   "shot": "segen",
+   "start": 129.945,
+   "dur": 5.022,
+   "text": "Sie hatten damals kein Getreide. Hätten sie welches gehabt, hätte er auch dafür um Segen gebeten.",
+   "by": "der Prophet ﷺ · Bukhari 3364",
+   "words": [
+    {
+     "word": "Sie",
+     "start": 0.05
+    },
+    {
+     "word": "hatten",
+     "start": 0.25
+    },
+    {
+     "word": "damals",
+     "start": 0.58
+    },
+    {
+     "word": "kein",
+     "start": 0.91
+    },
+    {
+     "word": "Getreide.",
+     "start": 1.15
+    },
+    {
+     "word": "Hätten",
+     "start": 2.01
+    },
+    {
+     "word": "sie",
+     "start": 2.32
+    },
+    {
+     "word": "welches",
+     "start": 2.51
+    },
+    {
+     "word": "gehabt,",
+     "start": 2.87
+    },
+    {
+     "word": "hätte",
+     "start": 3.18
+    },
+    {
+     "word": "er",
+     "start": 3.46
+    },
+    {
+     "word": "auch",
+     "start": 3.61
+    },
+    {
+     "word": "dafür",
+     "start": 3.85
+    },
+    {
+     "word": "um",
+     "start": 4.12
+    },
+    {
+     "word": "Segen",
+     "start": 4.28
+    },
+    {
+     "word": "gebeten.",
+     "start": 4.55
+    }
+   ]
+  },
+  {
+   "id": "q7",
+   "shot": "segen",
+   "start": 135.267,
+   "dur": 6.05,
+   "text": "Grüß deinen Mann. Und sag ihm: Er soll die Schwelle seiner Tür *festhalten*.",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Grüß",
+     "start": 0.05
+    },
+    {
+     "word": "deinen",
+     "start": 0.38
+    },
+    {
+     "word": "Mann.",
+     "start": 0.82
+    },
+    {
+     "word": "Und",
+     "start": 1.91
+    },
+    {
+     "word": "sag",
+     "start": 2.2
+    },
+    {
+     "word": "ihm:",
+     "start": 2.49
+    },
+    {
+     "word": "Er",
+     "start": 3.24
+    },
+    {
+     "word": "soll",
+     "start": 3.45
+    },
+    {
+     "word": "die",
+     "start": 3.77
+    },
+    {
+     "word": "Schwelle",
+     "start": 4.04
+    },
+    {
+     "word": "seiner",
+     "start": 4.58
+    },
+    {
+     "word": "Tür",
+     "start": 5.01
+    },
+    {
+     "word": "*festhalten*.",
+     "start": 5.28
+    }
+   ]
+  },
+  {
+   "id": "q8",
+   "shot": "abend2",
+   "start": 145.026,
+   "dur": 5.937,
+   "text": "Das war mein Vater. Und die Schwelle ... bist du. Er hat mir gesagt: Behalte dich.",
+   "by": "Ismail · Bukhari 3364",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "mein",
+     "start": 0.52
+    },
+    {
+     "word": "Vater.",
+     "start": 0.81
+    },
+    {
+     "word": "Und",
+     "start": 1.82
+    },
+    {
+     "word": "die",
+     "start": 2.12
+    },
+    {
+     "word": "Schwelle",
+     "start": 2.42
+    },
+    {
+     "word": "...",
+     "start": 3.19
+    },
+    {
+     "word": "bist",
+     "start": 4.02
+    },
+    {
+     "word": "du.",
+     "start": 4.24
+    },
+    {
+     "word": "Er",
+     "start": 4.4
+    },
+    {
+     "word": "hat",
+     "start": 4.55
+    },
+    {
+     "word": "mir",
+     "start": 4.74
+    },
+    {
+     "word": "gesagt:",
+     "start": 4.93
+    },
+    {
+     "word": "Behalte",
+     "start": 5.24
+    },
+    {
+     "word": "dich.",
+     "start": 5.59
+    }
+   ]
+  },
+  {
+   "id": "q9",
+   "shot": "befehl",
+   "start": 170.793,
+   "dur": 3.546,
+   "text": "Ismail, Allah hat mir etwas befohlen.",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Ismail,",
+     "start": 0.05
+    },
+    {
+     "word": "Allah",
+     "start": 0.57
+    },
+    {
+     "word": "hat",
+     "start": 1.64
+    },
+    {
+     "word": "mir",
+     "start": 1.97
+    },
+    {
+     "word": "etwas",
+     "start": 2.3
+    },
+    {
+     "word": "befohlen.",
+     "start": 2.77
+    }
+   ]
+  },
+  {
+   "id": "q10",
+   "shot": "befehl",
+   "start": 174.489,
+   "dur": 2.153,
+   "text": "Dann tu, was dein Herr dir befohlen hat.",
+   "by": "Ismail · Bukhari 3364",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.05
+    },
+    {
+     "word": "tu,",
+     "start": 0.3
+    },
+    {
+     "word": "was",
+     "start": 0.47
+    },
+    {
+     "word": "dein",
+     "start": 0.68
+    },
+    {
+     "word": "Herr",
+     "start": 0.93
+    },
+    {
+     "word": "dir",
+     "start": 1.19
+    },
+    {
+     "word": "befohlen",
+     "start": 1.4
+    },
+    {
+     "word": "hat.",
+     "start": 1.82
+    }
+   ]
+  },
+  {
+   "id": "q11",
+   "shot": "befehl",
+   "start": 176.792,
+   "dur": 0.917,
+   "text": "Hilfst du mir?",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Hilfst",
+     "start": 0.05
+    },
+    {
+     "word": "du",
+     "start": 0.4
+    },
+    {
+     "word": "mir?",
+     "start": 0.57
+    }
+   ]
+  },
+  {
+   "id": "q12",
+   "shot": "befehl",
+   "start": 177.809,
+   "dur": 0.937,
+   "text": "Ich helfe dir.",
+   "by": "Ismail · Bukhari 3364",
+   "words": [
+    {
+     "word": "Ich",
+     "start": 0.05
+    },
+    {
+     "word": "helfe",
+     "start": 0.27
+    },
+    {
+     "word": "dir.",
+     "start": 0.59
+    }
+   ]
+  },
+  {
+   "id": "q13",
+   "shot": "befehl",
+   "start": 178.946,
+   "dur": 3.51,
+   "text": "Allah hat mir befohlen, hier ein *Haus* zu bauen.",
+   "by": "Ibrahim · Bukhari 3364",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.05
+    },
+    {
+     "word": "hat",
+     "start": 0.42
+    },
+    {
+     "word": "mir",
+     "start": 0.7
+    },
+    {
+     "word": "befohlen,",
+     "start": 0.97
+    },
+    {
+     "word": "hier",
+     "start": 1.51
+    },
+    {
+     "word": "ein",
+     "start": 2.19
+    },
+    {
+     "word": "*Haus*",
+     "start": 2.46
+    },
+    {
+     "word": "zu",
+     "start": 2.79
+    },
+    {
+     "word": "bauen.",
+     "start": 3.01
+    }
+   ]
+  },
+  {
+   "id": "q14",
+   "shot": "gebet",
+   "start": 208.709,
+   "dur": 2.916,
+   "text": "Unser Herr, nimm es von uns an.",
+   "by": "Ibrahim · Koran 2:127",
+   "words": [
+    {
+     "word": "Unser",
+     "start": 0.05
+    },
+    {
+     "word": "Herr,",
+     "start": 0.42
+    },
+    {
+     "word": "nimm",
+     "start": 0.74
+    },
+    {
+     "word": "es",
+     "start": 1.83
+    },
+    {
+     "word": "von",
+     "start": 2.05
+    },
+    {
+     "word": "uns",
+     "start": 2.31
+    },
+    {
+     "word": "an.",
+     "start": 2.58
+    }
+   ]
+  },
+  {
+   "id": "q15",
+   "shot": "gebet",
+   "start": 211.825,
+   "dur": 3.097,
+   "text": "Du bist der Allhörende, der Allwissende.",
+   "by": "Ismail · Koran 2:127",
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.05
+    },
+    {
+     "word": "bist",
+     "start": 0.26
+    },
+    {
+     "word": "der",
+     "start": 0.58
+    },
+    {
+     "word": "Allhörende,",
+     "start": 0.85
+    },
+    {
+     "word": "der",
+     "start": 2.02
+    },
+    {
+     "word": "Allwissende.",
+     "start": 2.28
+    }
+   ]
+  }
+ ],
+ "choice": null,
+ "events": {
+  "millionen_h1": 1.834,
+  "haus_h1": 4.53,
+  "engel_h2": 7.337,
+  "haus_h2": 9.766,
+  "vater_h3": 13.936,
+  "stein_e1": 19.001,
+  "zelte_e1": 20.946,
+  "zamzam_e2": 26.685,
+  "ismail_e3": 31.861,
+  "gestorben_e5": 45.288,
+  "ibrahim_e6": 52.318,
+  "sohn_e6": 56.086,
+  "ismail_e7": 57.418,
+  "ibrahim_e7": 62.453,
+  "schwelle_q1": 76.797,
+  "tür_q1": 77.737,
+  "abend_e8": 79.455,
+  "ismail_e8": 80.295,
+  "jemand_e8": 83.375,
+  "dich_f2": 89.022,
+  "schwelle_f2": 89.972,
+  "tür_f2": 90.522,
+  "vater_q2": 92.275,
+  "trennen_q2": 94.865,
+  "familie_q2": 96.965,
+  "ismail_e9": 99.837,
+  "ibrahim_e9": 106.443,
+  "fleisch_f4": 117.109,
+  "wasser_f5": 119.686,
+  "segne_q5": 121.292,
+  "fleisch_q5": 123.282,
+  "wasser_q5": 124.552,
+  "schwelle_q7": 139.307,
+  "tür_q7": 140.277,
+  "festhalten_q7": 140.547,
+  "ismail_e11": 142.025,
+  "vater_q8": 145.836,
+  "schwelle_q8": 147.446,
+  "dich_q8": 150.616,
+  "ismail_e12": 155.613,
+  "zamzam_e12": 159.16,
+  "pfeile_e12": 160.575,
+  "vater_e13": 162.221,
+  "steht_e13": 163.323,
+  "begrüßen_e13": 164.714,
+  "sohn_e13": 167.857,
+  "ismail_q9": 170.843,
+  "haus_q13": 181.406,
+  "zeigt_e14": 182.798,
+  "hügel_e14": 183.976,
+  "engel_e14": 186.377,
+  "ismail_e15": 189.355,
+  "steine_e15": 190.305,
+  "ibrahim_e15": 191.346,
+  "baut_e15": 192.665,
+  "stein_e15": 193.153,
+  "mauern_e16": 194.875,
+  "ibrahim_e16": 197.005,
+  "ismail_e16": 199.913,
+  "stein_e16": 201.342,
+  "darauf_e16": 204.144,
+  "baut_e16": 205.087,
+  "beten_e17": 207.876,
+  "haus_e18": 217.906,
+  "kaaba_e18": 219.722,
+  "stein_e19": 221.617,
+  "ibrahim_e19": 222.562,
+  "kaaba_e19": 226.855,
+  "maqam_e19": 227.362,
+  "füßen_e20": 234.051,
+  "millionen_e21": 235.216,
+  "beten_e21": 235.825,
+  "vater_e21": 240.717,
+  "sohn_e21": 241.889,
+  "count": []
+ }
+}

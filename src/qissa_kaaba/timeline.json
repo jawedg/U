@@ -2,8 +2,8 @@
  "fps": 60,
  "render_fps": 30,
  "voiced": true,
- "total": 256.985,
- "frames": 15419,
+ "total": 257.315,
+ "frames": 15439,
  "segments": [
   {
    "id": "hook_a",
@@ -125,8 +125,8 @@
    "kind": "shot",
    "label": null,
    "start": 57.098,
-   "dur": 22.657,
-   "frames": 680,
+   "dur": 23.275,
+   "frames": 698,
    "map": [
     [
      0.0,
@@ -137,15 +137,15 @@
      8.79
     ],
     [
-     13.639,
+     14.257,
      12.889
     ],
     [
-     20.449,
+     21.067,
      19.699
     ],
     [
-     22.657,
+     23.275,
      21.907
     ]
    ],
@@ -157,9 +157,9 @@
    "id": "abend1",
    "kind": "shot",
    "label": "AM ABEND",
-   "start": 79.755,
-   "dur": 19.956,
-   "frames": 599,
+   "start": 80.373,
+   "dur": 19.67,
+   "frames": 590,
    "map": [
     [
      0.0,
@@ -178,19 +178,19 @@
      6.257
     ],
     [
-     13.19,
+     12.904,
      12.44
     ],
     [
-     16.61,
+     16.324,
      15.86
     ],
     [
-     18.71,
+     18.424,
      17.96
     ],
     [
-     19.956,
+     19.67,
      19.206
     ]
    ],
@@ -202,14 +202,14 @@
    "id": "k2",
    "kind": "card",
    "text": "DER ZWEITE BESUCH",
-   "start": 99.711,
+   "start": 100.043,
    "dur": 1.3
   },
   {
    "id": "besuch2",
    "kind": "shot",
    "label": null,
-   "start": 101.011,
+   "start": 101.343,
    "dur": 11.644,
    "frames": 349,
    "map": [
@@ -230,8 +230,8 @@
    "id": "tuer2",
    "kind": "shot",
    "label": null,
-   "start": 112.655,
-   "dur": 16.458,
+   "start": 112.987,
+   "dur": 16.456,
    "frames": 494,
    "map": [
     [
@@ -239,7 +239,7 @@
      0.0
     ],
     [
-     16.458,
+     16.456,
      14.358
     ]
    ],
@@ -251,7 +251,7 @@
    "id": "segen",
    "kind": "shot",
    "label": null,
-   "start": 129.113,
+   "start": 129.443,
    "dur": 16.804,
    "frames": 504,
    "map": [
@@ -272,7 +272,7 @@
    "id": "abend2",
    "kind": "shot",
    "label": "AM ABEND",
-   "start": 145.917,
+   "start": 146.247,
    "dur": 10.396,
    "frames": 312,
    "map": [
@@ -309,14 +309,14 @@
    "id": "k3",
    "kind": "card",
    "text": "DER DRITTE BESUCH",
-   "start": 156.313,
+   "start": 156.643,
    "dur": 1.3
   },
   {
    "id": "baum",
    "kind": "shot",
    "label": null,
-   "start": 157.613,
+   "start": 157.943,
    "dur": 17.78,
    "frames": 533,
    "map": [
@@ -337,7 +337,7 @@
    "id": "befehl",
    "kind": "shot",
    "label": null,
-   "start": 175.393,
+   "start": 175.723,
    "dur": 14.513,
    "frames": 435,
    "map": [
@@ -370,7 +370,7 @@
    "id": "huegel",
    "kind": "shot",
    "label": null,
-   "start": 189.906,
+   "start": 190.236,
    "dur": 6.476,
    "frames": 194,
    "map": [
@@ -391,7 +391,7 @@
    "id": "bau",
    "kind": "shot",
    "label": null,
-   "start": 196.382,
+   "start": 196.712,
    "dur": 17.262,
    "frames": 518,
    "map": [
@@ -412,7 +412,7 @@
    "id": "gebet",
    "kind": "shot",
    "label": null,
-   "start": 213.644,
+   "start": 213.974,
    "dur": 9.978,
    "frames": 299,
    "map": [
@@ -441,14 +441,14 @@
    "id": "heute_karte",
    "kind": "card",
    "text": "HEUTE",
-   "start": 223.622,
+   "start": 223.952,
    "dur": 1.2
   },
   {
    "id": "heute",
    "kind": "shot",
    "label": "MEKKA · HEUTE",
-   "start": 224.822,
+   "start": 225.152,
    "dur": 4.712,
    "frames": 141,
    "map": [
@@ -469,7 +469,7 @@
    "id": "maqam",
    "kind": "shot",
    "label": null,
-   "start": 229.534,
+   "start": 229.864,
    "dur": 13.362,
    "frames": 401,
    "map": [
@@ -490,7 +490,7 @@
    "id": "ende",
    "kind": "shot",
    "label": null,
-   "start": 242.896,
+   "start": 243.226,
    "dur": 11.289,
    "frames": 339,
    "map": [
@@ -511,7 +511,7 @@
    "id": "logo",
    "kind": "card",
    "text": "QISSAH",
-   "start": 254.185,
+   "start": 254.515,
    "dur": 2.8
   }
  ],
@@ -1184,42 +1184,42 @@
    "id": "f1",
    "shot": "tuer1",
    "start": 66.238,
-   "dur": 3.749,
+   "dur": 4.367,
    "file": "qissa_kaaba/line-3-0.wav",
    "text": "Schlecht. Wir leben in Not ... und Enge.",
    "speaker": "Frau1",
    "words": [
     {
      "word": "Schlecht.",
-     "start": 0.05
+     "start": 0.33
     },
     {
      "word": "Wir",
-     "start": 1.53
+     "start": 1.7
     },
     {
      "word": "leben",
-     "start": 1.83
+     "start": 2.03
     },
     {
      "word": "in",
-     "start": 2.27
+     "start": 2.5
     },
     {
      "word": "Not",
-     "start": 2.51
+     "start": 2.77
     },
     {
      "word": "...",
-     "start": 2.82
+     "start": 3.1
     },
     {
      "word": "und",
-     "start": 2.95
+     "start": 3.56
     },
     {
      "word": "Enge.",
-     "start": 3.25
+     "start": 3.87
     }
    ],
    "tail": 0,
@@ -1228,7 +1228,7 @@
   {
    "id": "q1",
    "shot": "tuer1",
-   "start": 70.737,
+   "start": 71.355,
    "dur": 8.668,
    "file": "qissa_kaaba/line-1-0.wav",
    "text": "Wenn dein Mann kommt, grüß ihn von mir. Und sag ihm: Er soll die *Schwelle* seiner Tür wechseln.",
@@ -1314,7 +1314,7 @@
   {
    "id": "e8",
    "shot": "abend1",
-   "start": 80.005,
+   "start": 80.623,
    "dur": 5.857,
    "file": "qissa_kaaba/line-0-10.wav",
    "text": "Am Abend kommt Ismail zurück. Und er spürt: Jemand war hier.",
@@ -1370,8 +1370,8 @@
   {
    "id": "f2",
    "shot": "abend1",
-   "start": 86.362,
-   "dur": 5.833,
+   "start": 86.98,
+   "dur": 5.547,
    "file": "qissa_kaaba/line-3-1.wav",
    "text": "Ein alter Mann war hier. Er lässt dich grüßen. Du sollst die Schwelle deiner Tür wechseln.",
    "speaker": "Frau1",
@@ -1382,63 +1382,63 @@
     },
     {
      "word": "alter",
-     "start": 0.56
+     "start": 0.27
     },
     {
      "word": "Mann",
-     "start": 1.29
+     "start": 0.58
     },
     {
      "word": "war",
-     "start": 2.05
+     "start": 0.85
     },
     {
      "word": "hier.",
-     "start": 2.57
+     "start": 1.08
     },
     {
      "word": "Er",
-     "start": 3.43
+     "start": 1.94
     },
     {
      "word": "lässt",
-     "start": 3.55
+     "start": 2.09
     },
     {
      "word": "dich",
-     "start": 3.76
+     "start": 2.36
     },
     {
      "word": "grüßen.",
-     "start": 3.94
+     "start": 2.59
     },
     {
      "word": "Du",
-     "start": 4.19
+     "start": 3.58
     },
     {
      "word": "sollst",
-     "start": 4.31
+     "start": 3.72
     },
     {
      "word": "die",
-     "start": 4.55
+     "start": 4.02
     },
     {
      "word": "Schwelle",
-     "start": 4.71
+     "start": 4.2
     },
     {
      "word": "deiner",
-     "start": 5.01
+     "start": 4.57
     },
     {
      "word": "Tür",
-     "start": 5.26
+     "start": 4.87
     },
     {
      "word": "wechseln.",
-     "start": 5.41
+     "start": 5.06
     }
    ],
    "tail": 0,
@@ -1447,7 +1447,7 @@
   {
    "id": "q2",
    "shot": "abend1",
-   "start": 92.945,
+   "start": 93.277,
    "dur": 6.066,
    "file": "qissa_kaaba/line-2-0.wav",
    "text": "Das war mein Vater. Er hat mir befohlen, mich von dir zu trennen. Geh zurück zu deiner Familie.",
@@ -1533,7 +1533,7 @@
   {
    "id": "e9",
    "shot": "besuch2",
-   "start": 101.261,
+   "start": 101.593,
    "dur": 11.194,
    "file": "qissa_kaaba/line-0-11.wav",
    "text": "Ismail heiratet eine andere Frau aus dem Stamm. Zeit vergeht ... dann kommt Ibrahim wieder. Und wieder ist Ismail nicht da.",
@@ -1629,8 +1629,8 @@
   {
    "id": "f3",
    "shot": "tuer2",
-   "start": 112.705,
-   "dur": 4.329,
+   "start": 113.037,
+   "dur": 3.904,
    "file": "qissa_kaaba/line-3-2.wav",
    "text": "Uns geht es gut. Wir haben genug. Alhamdulillah.",
    "speaker": "Frau2",
@@ -1641,31 +1641,31 @@
     },
     {
      "word": "geht",
-     "start": 0.42
+     "start": 0.31
     },
     {
      "word": "es",
-     "start": 0.87
+     "start": 0.62
     },
     {
      "word": "gut.",
-     "start": 1.17
+     "start": 0.83
     },
     {
      "word": "Wir",
-     "start": 1.54
+     "start": 1.44
     },
     {
      "word": "haben",
-     "start": 1.92
+     "start": 1.72
     },
     {
      "word": "genug.",
-     "start": 2.44
+     "start": 2.11
     },
     {
      "word": "Alhamdulillah.",
-     "start": 3.08
+     "start": 2.9
     }
    ],
    "tail": 0,
@@ -1674,7 +1674,7 @@
   {
    "id": "q3",
    "shot": "tuer2",
-   "start": 117.784,
+   "start": 117.691,
    "dur": 1.075,
    "file": "qissa_kaaba/line-1-1.wav",
    "text": "Was esst ihr?",
@@ -1700,15 +1700,15 @@
   {
    "id": "f4",
    "shot": "tuer2",
-   "start": 119.459,
-   "dur": 0.753,
+   "start": 119.366,
+   "dur": 1.028,
    "file": "qissa_kaaba/line-3-3.wav",
    "text": "Fleisch.",
    "speaker": "Frau2",
    "words": [
     {
      "word": "Fleisch.",
-     "start": 0.05
+     "start": 0.26
     }
    ],
    "tail": 0,
@@ -1717,7 +1717,7 @@
   {
    "id": "q4",
    "shot": "tuer2",
-   "start": 120.862,
+   "start": 121.044,
    "dur": 1.374,
    "file": "qissa_kaaba/line-1-2.wav",
    "text": "Und was trinkt ihr?",
@@ -1747,15 +1747,15 @@
   {
    "id": "f5",
    "shot": "tuer2",
-   "start": 122.836,
-   "dur": 0.596,
+   "start": 123.018,
+   "dur": 0.744,
    "file": "qissa_kaaba/line-3-4.wav",
    "text": "Wasser.",
    "speaker": "Frau2",
    "words": [
     {
      "word": "Wasser.",
-     "start": 0.05
+     "start": 0.19
     }
    ],
    "tail": 0,
@@ -1764,7 +1764,7 @@
   {
    "id": "q5",
    "shot": "tuer2",
-   "start": 124.182,
+   "start": 124.512,
    "dur": 4.631,
    "file": "qissa_kaaba/line-1-3.wav",
    "text": "O Allah, segne ihnen das *Fleisch* und das *Wasser*.",
@@ -1814,7 +1814,7 @@
   {
    "id": "e10",
    "shot": "segen",
-   "start": 129.213,
+   "start": 129.543,
    "dur": 4.282,
    "file": "qissa_kaaba/line-0-12.wav",
    "text": "Der Prophet Muhammad, Friede sei mit ihm, sagte später:",
@@ -1862,7 +1862,7 @@
   {
    "id": "q6",
    "shot": "segen",
-   "start": 133.745,
+   "start": 134.075,
    "dur": 5.022,
    "file": "qissa_kaaba/line-4-0.wav",
    "text": "Sie hatten damals kein Getreide. Hätten sie welches gehabt, hätte er auch dafür um Segen gebeten.",
@@ -1940,7 +1940,7 @@
   {
    "id": "q7",
    "shot": "segen",
-   "start": 139.567,
+   "start": 139.897,
    "dur": 6.05,
    "file": "qissa_kaaba/line-1-4.wav",
    "text": "Grüß deinen Mann. Und sag ihm: Er soll die Schwelle seiner Tür *festhalten*.",
@@ -2006,7 +2006,7 @@
   {
    "id": "e11",
    "shot": "abend2",
-   "start": 146.167,
+   "start": 146.497,
    "dur": 3.059,
    "file": "qissa_kaaba/line-0-13.wav",
    "text": "Als Ismail zurückkommt, erzählt sie ihm alles.",
@@ -2046,7 +2046,7 @@
   {
    "id": "q8",
    "shot": "abend2",
-   "start": 149.676,
+   "start": 150.006,
    "dur": 5.937,
    "file": "qissa_kaaba/line-2-1.wav",
    "text": "Das war mein Vater. Und die Schwelle ... bist du. Er hat mir gesagt: Behalte dich.",
@@ -2124,7 +2124,7 @@
   {
    "id": "e12",
    "shot": "baum",
-   "start": 157.863,
+   "start": 158.193,
    "dur": 8.688,
    "file": "qissa_kaaba/line-0-14.wav",
    "text": "Dann ... ein dritter Besuch. Ismail sitzt unter einem großen Baum nahe Zamzam ... und schnitzt Pfeile.",
@@ -2132,71 +2132,71 @@
    "words": [
     {
      "word": "Dann",
-     "start": 0.256
+     "start": 0.25
     },
     {
      "word": "...",
-     "start": 0.256
+     "start": 0.25
     },
     {
      "word": "ein",
-     "start": 0.46
+     "start": 0.467
     },
     {
      "word": "dritter",
-     "start": 0.94
+     "start": 0.972
     },
     {
      "word": "Besuch.",
-     "start": 0.987
+     "start": 1.166
     },
     {
      "word": "Ismail",
-     "start": 2.4
+     "start": 2.594
     },
     {
      "word": "sitzt",
-     "start": 3.672
+     "start": 3.217
     },
     {
      "word": "unter",
-     "start": 4.22
+     "start": 3.632
     },
     {
      "word": "einem",
-     "start": 4.6
+     "start": 4.001
     },
     {
      "word": "großen",
-     "start": 4.84
+     "start": 4.222
     },
     {
      "word": "Baum",
-     "start": 5.097
+     "start": 4.406
     },
     {
      "word": "nahe",
-     "start": 5.52
+     "start": 4.817
     },
     {
      "word": "Zamzam",
-     "start": 5.947
+     "start": 5.257
     },
     {
      "word": "...",
-     "start": 6.427
+     "start": 5.749
     },
     {
      "word": "und",
-     "start": 6.98
+     "start": 6.37
     },
     {
      "word": "schnitzt",
-     "start": 7.3
+     "start": 6.623
     },
     {
      "word": "Pfeile.",
-     "start": 7.362
+     "start": 6.727
     }
    ],
    "tail": 0
@@ -2204,7 +2204,7 @@
   {
    "id": "e13",
    "shot": "baum",
-   "start": 166.551,
+   "start": 166.881,
    "dur": 8.742,
    "file": "qissa_kaaba/line-0-15.wav",
    "text": "Als er seinen Vater sieht, steht er auf. Und sie begrüßen sich ... wie ein Vater seinen Sohn. Und ein Sohn seinen Vater.",
@@ -2308,7 +2308,7 @@
   {
    "id": "q9",
    "shot": "befehl",
-   "start": 175.443,
+   "start": 175.773,
    "dur": 3.546,
    "file": "qissa_kaaba/line-1-5.wav",
    "text": "Ismail, Allah hat mir etwas befohlen.",
@@ -2346,7 +2346,7 @@
   {
    "id": "q10",
    "shot": "befehl",
-   "start": 179.839,
+   "start": 180.169,
    "dur": 2.153,
    "file": "qissa_kaaba/line-2-2.wav",
    "text": "Dann tu, was dein Herr dir befohlen hat.",
@@ -2392,7 +2392,7 @@
   {
    "id": "q11",
    "shot": "befehl",
-   "start": 182.842,
+   "start": 183.172,
    "dur": 0.917,
    "file": "qissa_kaaba/line-1-6.wav",
    "text": "Hilfst du mir?",
@@ -2418,7 +2418,7 @@
   {
    "id": "q12",
    "shot": "befehl",
-   "start": 184.459,
+   "start": 184.789,
    "dur": 0.937,
    "file": "qissa_kaaba/line-2-3.wav",
    "text": "Ich helfe dir.",
@@ -2444,7 +2444,7 @@
   {
    "id": "q13",
    "shot": "befehl",
-   "start": 186.246,
+   "start": 186.576,
    "dur": 3.51,
    "file": "qissa_kaaba/line-1-7.wav",
    "text": "Allah hat mir befohlen, hier ein *Haus* zu bauen.",
@@ -2494,7 +2494,7 @@
   {
    "id": "e14",
    "shot": "huegel",
-   "start": 189.956,
+   "start": 190.286,
    "dur": 6.426,
    "file": "qissa_kaaba/line-0-16.wav",
    "text": "Er zeigt auf einen kleinen Hügel. Genau dort, wo der Engel es versprochen hatte.",
@@ -2562,7 +2562,7 @@
   {
    "id": "e15",
    "shot": "bau",
-   "start": 196.382,
+   "start": 196.712,
    "dur": 5.793,
    "file": "qissa_kaaba/line-0-17.wav",
    "text": "Ismail bringt die Steine. Ibrahim baut. Stein ... auf Stein.",
@@ -2614,7 +2614,7 @@
   {
    "id": "e16",
    "shot": "bau",
-   "start": 202.175,
+   "start": 202.505,
    "dur": 11.469,
    "file": "qissa_kaaba/line-0-18.wav",
    "text": "Die Mauern wachsen ... bis Ibrahim nicht mehr hinaufreicht. Da bringt Ismail einen großen *Stein*. Ibrahim stellt sich darauf ... und baut weiter.",
@@ -2718,7 +2718,7 @@
   {
    "id": "e17",
    "shot": "gebet",
-   "start": 213.644,
+   "start": 213.974,
    "dur": 2.315,
    "file": "qissa_kaaba/line-0-19.wav",
    "text": "Und während sie bauen, beten beide:",
@@ -2754,7 +2754,7 @@
   {
    "id": "q14",
    "shot": "gebet",
-   "start": 216.209,
+   "start": 216.539,
    "dur": 2.916,
    "file": "qissa_kaaba/line-1-8.wav",
    "text": "Unser Herr, nimm es von uns an.",
@@ -2796,7 +2796,7 @@
   {
    "id": "q15",
    "shot": "gebet",
-   "start": 219.825,
+   "start": 220.155,
    "dur": 3.097,
    "file": "qissa_kaaba/line-2-4.wav",
    "text": "Du bist der Allhörende, der Allwissende.",
@@ -2834,7 +2834,7 @@
   {
    "id": "e18",
    "shot": "heute",
-   "start": 225.122,
+   "start": 225.452,
    "dur": 4.412,
    "file": "qissa_kaaba/line-0-20.wav",
    "text": "Dieses Haus ... ist die *Kaaba*.",
@@ -2870,7 +2870,7 @@
   {
    "id": "e19",
    "shot": "maqam",
-   "start": 229.534,
+   "start": 229.864,
    "dur": 8.753,
    "file": "qissa_kaaba/line-0-21.wav",
    "text": "Und der Stein, auf dem Ibrahim stand? Den gibt es bis heute. Direkt neben der Kaaba: der *Maqam Ibrahim*.",
@@ -2958,7 +2958,7 @@
   {
    "id": "e20",
    "shot": "maqam",
-   "start": 238.287,
+   "start": 238.617,
    "dur": 4.609,
    "file": "qissa_kaaba/line-0-22.wav",
    "text": "Und darin sieht man ... die Abdrücke von zwei *Füßen*.",
@@ -3010,7 +3010,7 @@
   {
    "id": "e21",
    "shot": "ende",
-   "start": 242.896,
+   "start": 243.226,
    "dur": 9.889,
    "file": "qissa_kaaba/line-0-23.wav",
    "text": "Millionen beten heute genau dort. Und alles begann ... mit einem *Vater* und einem *Sohn*, die Allah gehorchten.",
@@ -3096,7 +3096,7 @@
   {
    "id": "q1",
    "shot": "tuer1",
-   "start": 70.737,
+   "start": 71.355,
    "dur": 8.668,
    "text": "Wenn dein Mann kommt, grüß ihn von mir. Und sag ihm: Er soll die *Schwelle* seiner Tür wechseln.",
    "by": "Ibrahim · Bukhari 3364",
@@ -3178,7 +3178,7 @@
   {
    "id": "q2",
    "shot": "abend1",
-   "start": 92.945,
+   "start": 93.277,
    "dur": 6.066,
    "text": "Das war mein Vater. Er hat mir befohlen, mich von dir zu trennen. Geh zurück zu deiner Familie.",
    "by": "Ismail · Bukhari 3364",
@@ -3260,7 +3260,7 @@
   {
    "id": "q3",
    "shot": "tuer2",
-   "start": 117.784,
+   "start": 117.691,
    "dur": 1.075,
    "text": "Was esst ihr?",
    "by": "Ibrahim · Bukhari 3364",
@@ -3282,7 +3282,7 @@
   {
    "id": "q4",
    "shot": "tuer2",
-   "start": 120.862,
+   "start": 121.044,
    "dur": 1.374,
    "text": "Und was trinkt ihr?",
    "by": "Ibrahim · Bukhari 3364",
@@ -3308,7 +3308,7 @@
   {
    "id": "q5",
    "shot": "tuer2",
-   "start": 124.182,
+   "start": 124.512,
    "dur": 4.631,
    "text": "O Allah, segne ihnen das *Fleisch* und das *Wasser*.",
    "by": "Ibrahim · Bukhari 3364",
@@ -3354,7 +3354,7 @@
   {
    "id": "q6",
    "shot": "segen",
-   "start": 133.745,
+   "start": 134.075,
    "dur": 5.022,
    "text": "Sie hatten damals kein Getreide. Hätten sie welches gehabt, hätte er auch dafür um Segen gebeten.",
    "by": "der Prophet ﷺ · Bukhari 3364",
@@ -3428,7 +3428,7 @@
   {
    "id": "q7",
    "shot": "segen",
-   "start": 139.567,
+   "start": 139.897,
    "dur": 6.05,
    "text": "Grüß deinen Mann. Und sag ihm: Er soll die Schwelle seiner Tür *festhalten*.",
    "by": "Ibrahim · Bukhari 3364",
@@ -3490,7 +3490,7 @@
   {
    "id": "q8",
    "shot": "abend2",
-   "start": 149.676,
+   "start": 150.006,
    "dur": 5.937,
    "text": "Das war mein Vater. Und die Schwelle ... bist du. Er hat mir gesagt: Behalte dich.",
    "by": "Ismail · Bukhari 3364",
@@ -3564,7 +3564,7 @@
   {
    "id": "q9",
    "shot": "befehl",
-   "start": 175.443,
+   "start": 175.773,
    "dur": 3.546,
    "text": "Ismail, Allah hat mir etwas befohlen.",
    "by": "Ibrahim · Bukhari 3364",
@@ -3598,7 +3598,7 @@
   {
    "id": "q10",
    "shot": "befehl",
-   "start": 179.839,
+   "start": 180.169,
    "dur": 2.153,
    "text": "Dann tu, was dein Herr dir befohlen hat.",
    "by": "Ismail · Bukhari 3364",
@@ -3640,7 +3640,7 @@
   {
    "id": "q11",
    "shot": "befehl",
-   "start": 182.842,
+   "start": 183.172,
    "dur": 0.917,
    "text": "Hilfst du mir?",
    "by": "Ibrahim · Bukhari 3364",
@@ -3662,7 +3662,7 @@
   {
    "id": "q12",
    "shot": "befehl",
-   "start": 184.459,
+   "start": 184.789,
    "dur": 0.937,
    "text": "Ich helfe dir.",
    "by": "Ismail · Bukhari 3364",
@@ -3684,7 +3684,7 @@
   {
    "id": "q13",
    "shot": "befehl",
-   "start": 186.246,
+   "start": 186.576,
    "dur": 3.51,
    "text": "Allah hat mir befohlen, hier ein *Haus* zu bauen.",
    "by": "Ibrahim · Bukhari 3364",
@@ -3730,7 +3730,7 @@
   {
    "id": "q14",
    "shot": "gebet",
-   "start": 216.209,
+   "start": 216.539,
    "dur": 2.916,
    "text": "Unser Herr, nimm es von uns an.",
    "by": "Ibrahim · Koran 2:127",
@@ -3768,7 +3768,7 @@
   {
    "id": "q15",
    "shot": "gebet",
-   "start": 219.825,
+   "start": 220.155,
    "dur": 3.097,
    "text": "Du bist der Allhörende, der Allwissende.",
    "by": "Ismail · Koran 2:127",
@@ -3816,66 +3816,66 @@
   "sohn_e6": 56.086,
   "ismail_e7": 57.418,
   "ibrahim_e7": 62.453,
-  "schwelle_q1": 77.547,
-  "tür_q1": 78.487,
-  "abend_e8": 80.205,
-  "ismail_e8": 81.045,
-  "jemand_e8": 84.125,
-  "dich_f2": 90.122,
-  "schwelle_f2": 91.072,
-  "tür_f2": 91.622,
-  "vater_q2": 93.775,
-  "trennen_q2": 96.365,
-  "familie_q2": 98.465,
-  "ismail_e9": 101.337,
-  "ibrahim_e9": 107.943,
-  "fleisch_f4": 119.509,
-  "wasser_f5": 122.886,
-  "segne_q5": 124.892,
-  "fleisch_q5": 126.882,
-  "wasser_q5": 128.152,
-  "schwelle_q7": 143.607,
-  "tür_q7": 144.577,
-  "festhalten_q7": 144.847,
-  "ismail_e11": 146.325,
-  "vater_q8": 150.486,
-  "schwelle_q8": 152.096,
-  "dich_q8": 155.266,
-  "ismail_e12": 160.263,
-  "zamzam_e12": 163.81,
-  "pfeile_e12": 165.225,
-  "vater_e13": 166.871,
-  "steht_e13": 167.973,
-  "begrüßen_e13": 169.364,
-  "sohn_e13": 172.507,
-  "ismail_q9": 175.493,
-  "haus_q13": 188.706,
-  "zeigt_e14": 190.098,
-  "hügel_e14": 191.276,
-  "engel_e14": 193.677,
-  "ismail_e15": 196.655,
-  "steine_e15": 197.605,
-  "ibrahim_e15": 198.646,
-  "baut_e15": 199.965,
-  "stein_e15": 200.453,
-  "mauern_e16": 202.175,
-  "ibrahim_e16": 204.305,
-  "ismail_e16": 207.213,
-  "stein_e16": 208.642,
-  "darauf_e16": 211.444,
-  "baut_e16": 212.387,
-  "beten_e17": 215.176,
-  "haus_e18": 225.906,
-  "kaaba_e18": 227.722,
-  "stein_e19": 229.617,
-  "ibrahim_e19": 230.562,
-  "kaaba_e19": 234.855,
-  "maqam_e19": 235.362,
-  "füßen_e20": 242.051,
-  "millionen_e21": 243.216,
-  "beten_e21": 243.825,
-  "vater_e21": 248.717,
-  "sohn_e21": 249.889,
+  "schwelle_q1": 78.165,
+  "tür_q1": 79.105,
+  "abend_e8": 80.823,
+  "ismail_e8": 81.663,
+  "jemand_e8": 84.743,
+  "dich_f2": 89.34,
+  "schwelle_f2": 91.18,
+  "tür_f2": 91.85,
+  "vater_q2": 94.107,
+  "trennen_q2": 96.697,
+  "familie_q2": 98.797,
+  "ismail_e9": 101.669,
+  "ibrahim_e9": 108.275,
+  "fleisch_f4": 119.626,
+  "wasser_f5": 123.208,
+  "segne_q5": 125.222,
+  "fleisch_q5": 127.212,
+  "wasser_q5": 128.482,
+  "schwelle_q7": 143.937,
+  "tür_q7": 144.907,
+  "festhalten_q7": 145.177,
+  "ismail_e11": 146.655,
+  "vater_q8": 150.816,
+  "schwelle_q8": 152.426,
+  "dich_q8": 155.596,
+  "ismail_e12": 160.787,
+  "zamzam_e12": 163.45,
+  "pfeile_e12": 164.92,
+  "vater_e13": 167.201,
+  "steht_e13": 168.303,
+  "begrüßen_e13": 169.694,
+  "sohn_e13": 172.837,
+  "ismail_q9": 175.823,
+  "haus_q13": 189.036,
+  "zeigt_e14": 190.428,
+  "hügel_e14": 191.606,
+  "engel_e14": 194.007,
+  "ismail_e15": 196.985,
+  "steine_e15": 197.935,
+  "ibrahim_e15": 198.976,
+  "baut_e15": 200.295,
+  "stein_e15": 200.783,
+  "mauern_e16": 202.505,
+  "ibrahim_e16": 204.635,
+  "ismail_e16": 207.543,
+  "stein_e16": 208.972,
+  "darauf_e16": 211.774,
+  "baut_e16": 212.717,
+  "beten_e17": 215.506,
+  "haus_e18": 226.236,
+  "kaaba_e18": 228.052,
+  "stein_e19": 229.947,
+  "ibrahim_e19": 230.892,
+  "kaaba_e19": 235.185,
+  "maqam_e19": 235.692,
+  "füßen_e20": 242.381,
+  "millionen_e21": 243.546,
+  "beten_e21": 244.155,
+  "vater_e21": 249.047,
+  "sohn_e21": 250.219,
   "count": []
  }
 }

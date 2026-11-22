@@ -14,7 +14,7 @@ import medina as MD
 import mekka as MK
 import kaaba_world as KW
 
-TL = json.load(open(os.path.join(ROOT, "src", "qissa_kaaba", "timeline.json"), encoding="utf-8"))
+TL = json.load(open(os.environ.get("TL_FILE") or os.path.join(ROOT, "src", "qissa_kaaba", "timeline.json"), encoding="utf-8"))  # TL_FILE: alter Zeitplan für Teil-Neurender
 SEG = {s["id"]: s for s in TL["segments"]}
 LINE = {l["id"]: l for l in TL["lines"]}
 EV = TL["events"]

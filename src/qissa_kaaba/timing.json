@@ -616,39 +616,39 @@
   },
   {
    "file": "qissa_kaaba/line-3-0.wav",
-   "seconds": 4.049,
+   "seconds": 4.667,
    "words": [
     {
      "word": "Schlecht.",
-     "start": 0.05
+     "start": 0.33
     },
     {
      "word": "Wir",
-     "start": 1.53
+     "start": 1.7
     },
     {
      "word": "leben",
-     "start": 1.83
+     "start": 2.03
     },
     {
      "word": "in",
-     "start": 2.27
+     "start": 2.5
     },
     {
      "word": "Not",
-     "start": 2.51
+     "start": 2.77
     },
     {
      "word": "...",
-     "start": 2.82
+     "start": 3.1
     },
     {
      "word": "und",
-     "start": 2.95
+     "start": 3.56
     },
     {
      "word": "Enge.",
-     "start": 3.25
+     "start": 3.87
     }
    ]
   },
@@ -784,7 +784,7 @@
   },
   {
    "file": "qissa_kaaba/line-3-1.wav",
-   "seconds": 6.133,
+   "seconds": 5.847,
    "words": [
     {
      "word": "Ein",
@@ -792,63 +792,63 @@
     },
     {
      "word": "alter",
-     "start": 0.56
+     "start": 0.27
     },
     {
      "word": "Mann",
-     "start": 1.29
+     "start": 0.58
     },
     {
      "word": "war",
-     "start": 2.05
+     "start": 0.85
     },
     {
      "word": "hier.",
-     "start": 2.57
+     "start": 1.08
     },
     {
      "word": "Er",
-     "start": 3.43
+     "start": 1.94
     },
     {
      "word": "lässt",
-     "start": 3.55
+     "start": 2.09
     },
     {
      "word": "dich",
-     "start": 3.76
+     "start": 2.36
     },
     {
      "word": "grüßen.",
-     "start": 3.94
+     "start": 2.59
     },
     {
      "word": "Du",
-     "start": 4.19
+     "start": 3.58
     },
     {
      "word": "sollst",
-     "start": 4.31
+     "start": 3.72
     },
     {
      "word": "die",
-     "start": 4.55
+     "start": 4.02
     },
     {
      "word": "Schwelle",
-     "start": 4.71
+     "start": 4.2
     },
     {
      "word": "deiner",
-     "start": 5.01
+     "start": 4.57
     },
     {
      "word": "Tür",
-     "start": 5.26
+     "start": 4.87
     },
     {
      "word": "wechseln.",
-     "start": 5.41
+     "start": 5.06
     }
    ]
   },
@@ -1024,7 +1024,7 @@
   },
   {
    "file": "qissa_kaaba/line-3-2.wav",
-   "seconds": 4.629,
+   "seconds": 4.204,
    "words": [
     {
      "word": "Uns",
@@ -1032,31 +1032,31 @@
     },
     {
      "word": "geht",
-     "start": 0.42
+     "start": 0.31
     },
     {
      "word": "es",
-     "start": 0.87
+     "start": 0.62
     },
     {
      "word": "gut.",
-     "start": 1.17
+     "start": 0.83
     },
     {
      "word": "Wir",
-     "start": 1.54
+     "start": 1.44
     },
     {
      "word": "haben",
-     "start": 1.92
+     "start": 1.72
     },
     {
      "word": "genug.",
-     "start": 2.44
+     "start": 2.11
     },
     {
      "word": "Alhamdulillah.",
-     "start": 3.08
+     "start": 2.9
     }
    ]
   },
@@ -1081,11 +1081,11 @@
   },
   {
    "file": "qissa_kaaba/line-3-3.wav",
-   "seconds": 1.053,
+   "seconds": 1.328,
    "words": [
     {
      "word": "Fleisch.",
-     "start": 0.05
+     "start": 0.26
     }
    ]
   },
@@ -1114,11 +1114,11 @@
   },
   {
    "file": "qissa_kaaba/line-3-4.wav",
-   "seconds": 0.896,
+   "seconds": 1.044,
    "words": [
     {
      "word": "Wasser.",
-     "start": 0.05
+     "start": 0.19
     }
    ]
   },
@@ -1450,71 +1450,71 @@
    "words": [
     {
      "word": "Dann",
-     "start": 0.256
+     "start": 0.25
     },
     {
      "word": "...",
-     "start": 0.256
+     "start": 0.25
     },
     {
      "word": "ein",
-     "start": 0.46
+     "start": 0.467
     },
     {
      "word": "dritter",
-     "start": 0.94
+     "start": 0.972
     },
     {
      "word": "Besuch.",
-     "start": 0.987
+     "start": 1.166
     },
     {
      "word": "Ismail",
-     "start": 2.4
+     "start": 2.594
     },
     {
      "word": "sitzt",
-     "start": 3.672
+     "start": 3.217
     },
     {
      "word": "unter",
-     "start": 4.22
+     "start": 3.632
     },
     {
      "word": "einem",
-     "start": 4.6
+     "start": 4.001
     },
     {
      "word": "großen",
-     "start": 4.84
+     "start": 4.222
     },
     {
      "word": "Baum",
-     "start": 5.097
+     "start": 4.406
     },
     {
      "word": "nahe",
-     "start": 5.52
+     "start": 4.817
     },
     {
      "word": "Zamzam",
-     "start": 5.947
+     "start": 5.257
     },
     {
      "word": "...",
-     "start": 6.427
+     "start": 5.749
     },
     {
      "word": "und",
-     "start": 6.98
+     "start": 6.37
     },
     {
      "word": "schnitzt",
-     "start": 7.3
+     "start": 6.623
     },
     {
      "word": "Pfeile.",
-     "start": 7.362
+     "start": 6.727
     }
    ],
    "flow": 0

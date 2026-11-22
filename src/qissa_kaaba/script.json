@@ -47,8 +47,8 @@
   "3": {
    "model": "gemini-2.5-flash-preview-tts",
    "speakers": {
-    "Frau1": "Kore",
-    "Frau2": "Despina"
+    "Frau1": "Callirrhoe",
+    "Frau2": "Sulafat"
    },
    "notes": "# AUDIO PROFILE\nFrau1: a young Arab woman in a desert tent, thousands of years ago. Tired, unhappy and complaining, a little bitter.\nFrau2: another young Arab woman in the same tent. Warm, friendly, content and grateful, hospitable to an old guest.\n## THE SCENE\nAn old visitor asks each of them how they live.\n### DIRECTOR'S NOTES\nNatural, like real people talking quietly inside a tent. Frau1 sighs and complains. Frau2 smiles while she speaks; her one-word answers are simple and kind. Leave a clear pause of about one second between the lines."
   },
@@ -425,5 +425,13 @@
   "Koran, Sure 3:96–97 (das erste Haus für die Menschen in Bakka; darin klare Zeichen: der Standort Ibrahims)",
   "Sahih al-Bukhari 395 (der Prophet ﷺ umrundete die Kaaba siebenmal und betete hinter dem Maqam zwei Rak'a)",
   "Fußabdrücke im Maqam-Stein: heute sichtbar; Überlieferung zu den Abdrücken Ibrahims bei at-Tabari, Tafsir zu 2:125 (kein Hadith mit Nummer)"
- ]
+ ],
+ "nameFix": {
+  "old": "زمزم",
+  "new": "زَمْزَم",
+  "ids": [
+   "e12"
+  ],
+  "note": "nach voice_gemini.py: python3 scripts/fix_names_kaaba.py old new ids…"
+ }
 }
