@@ -240,12 +240,12 @@
     ],
     [
      16.456,
-     14.358
+     16.456
     ]
    ],
    "rerender": false,
-   "src_frames": 431,
-   "src_dur": 14.358
+   "src_frames": 494,
+   "src_dur": 16.456
   },
   {
    "id": "segen",
@@ -261,12 +261,12 @@
     ],
     [
      16.804,
-     16.104
+     16.804
     ]
    ],
    "rerender": false,
-   "src_frames": 483,
-   "src_dur": 16.104
+   "src_frames": 504,
+   "src_dur": 16.804
   },
   {
    "id": "abend2",
