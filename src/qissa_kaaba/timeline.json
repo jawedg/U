@@ -46,7 +46,7 @@
      13.12
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 394,
    "src_dur": 13.12
   },
@@ -67,7 +67,7 @@
      14.949
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 448,
    "src_dur": 14.949
   },
@@ -88,7 +88,7 @@
      3.606
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 108,
    "src_dur": 3.606
   },
@@ -116,7 +116,7 @@
      9.422
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 283,
    "src_dur": 9.422
   },
@@ -137,7 +137,7 @@
      21.907
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 657,
    "src_dur": 21.907
   },
@@ -158,7 +158,7 @@
      19.206
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 576,
    "src_dur": 19.206
   },
@@ -186,7 +186,7 @@
      11.644
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 349,
    "src_dur": 11.644
   },
@@ -207,7 +207,7 @@
      14.358
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 431,
    "src_dur": 14.358
   },
@@ -228,7 +228,7 @@
      16.104
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 483,
    "src_dur": 16.104
   },
@@ -249,7 +249,7 @@
      10.046
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 301,
    "src_dur": 10.046
   },
@@ -277,7 +277,7 @@
      17.78
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 533,
    "src_dur": 17.78
   },
@@ -298,7 +298,7 @@
      11.863
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 356,
    "src_dur": 11.863
   },
@@ -319,7 +319,7 @@
      6.476
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 194,
    "src_dur": 6.476
   },
@@ -340,7 +340,7 @@
      17.262
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 518,
    "src_dur": 17.262
   },
@@ -361,7 +361,7 @@
      9.278
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 278,
    "src_dur": 9.278
   },
@@ -389,7 +389,7 @@
      4.712
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 141,
    "src_dur": 4.712
   },
@@ -410,7 +410,7 @@
      13.362
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 401,
    "src_dur": 13.362
   },
@@ -431,7 +431,7 @@
      11.289
     ]
    ],
-   "rerender": true,
+   "rerender": false,
    "src_frames": 339,
    "src_dur": 11.289
   },
