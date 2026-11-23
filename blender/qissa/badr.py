@@ -433,12 +433,12 @@ def shot_rat():
 
 def shot_regen():
     """Nacht vor der Schlacht: Regen. Ich liege am Boden, ringsum Schlafende; der Sand wird dunkel und fest. Augen fallen zu."""
-    cfg = BW.night(overcast=True, moon=1.8)
+    cfg = BW.night(overcast=True, moon=2.6)
     BW.valley()
     rnd = random.Random(31)
     c = Vector((4.0, 44.0, 0))
-    spots = [(1.5, 1.8, 0.4), (-1.8, 2.6, 2.2), (2.6, 4.6, -0.6), (-0.4, 5.8, 1.4), (4.6, 2.2, 1.0), (-3.6, 5.0, -1.0), (1.0, 8.6, 0.3),
-             (5.2, 7.4, 2.8), (-2.2, 9.6, 1.9), (3.6, 11.5, -0.4), (-5.4, 8.0, 0.8)]
+    spots = [(0.2, 1.6, 1.57), (1.0, 3.0, 1.45), (-0.9, 4.4, 1.7), (0.6, 5.9, 1.5), (-0.3, 7.4, 1.62), (1.4, 8.9, 1.4), (-1.2, 10.3, 1.75),
+             (2.8, 2.2, 0.2), (3.4, 5.2, 0.1), (-2.6, 2.4, 3.0), (-3.0, 6.0, 2.9)]
     for k, (dx, dy, yw) in enumerate(spots):
         BW.sleeper(f"sl{k}", (c.x + dx, c.y + dy), yw, seed=600 + k, side=rnd.choice((-1, 1)))
     for k, (x, y) in enumerate(((12, 52), (16, 47), (-4, 58))):
@@ -448,7 +448,7 @@ def shot_regen():
     BW.rain("rain", (c.x, c.y + 6, 0), c0, size=(22.0, 24.0, 12.0), n=1500, speed=9.5, t1=D + 1, seed=2, alpha=0.32)
     BW.wet_ground(ls("e6") + 2.0, ls("e6") + 6.5, amount=0.55)
     ts = ev("schlafen_e6") if "schlafen_e6" in EV else le("e6") - 1.0
-    ck(rig, [(0, c0, (8, 3, -18)), (ls("e6") + 2.5, None, (2, 1, -20)), (ts - 1.0, None, (-6, 5, -23)), (D, None, (-8, 7, -25))])
+    ck(rig, [(0, c0, (6, 2, -10)), (ls("e6") + 2.5, None, (2, 0, -12)), (ts - 1.0, None, (-4, 3, -14)), (D, None, (-6, 5, -16))])
     Q.handheld(shake, 0, D, amp=0.15)
     vs = Q.sc.view_settings
     vs.exposure = 0.0
@@ -860,8 +860,10 @@ def shot_jagd():
         a0 = rnd.uniform(-1.0, D * 0.6)
         BW.dust_card(f"jd{k}", (x, y, gz(x, y) + rnd.uniform(0.8, 2.2)), (rnd.uniform(5, 9), rnd.uniform(2.5, 4)), cam, a0, a0 + rnd.uniform(3, 5),
                      rnd.uniform(0.3, 0.5), grow=1.6, drift=(rnd.uniform(-0.5, 0.5), rnd.uniform(-0.5, 0.5), 0.3))
-    BW.dust_card("fall_puff", (3.4, yf + 0.6, gz(3.4, yf) + 0.5), (2.4, 1.4), cam, tf + 0.3, tf + 2.8, 0.6, grow=2.2, drift=(0.2, 0, 0.3),
-                 fade_in=0.2, fade_out=1.4)
+    BW.dust_card("fall_puff", (3.4, yf + 1.0, gz(3.4, yf) + 0.6), (4.2, 2.6), cam, tf + 0.12, tf + 3.2, 0.9, grow=2.0, drift=(0.2, 0, 0.3),
+                 fade_in=0.25, fade_out=1.4)
+    BW.dust_card("fall_puff2", (2.6, yf + 1.6, gz(3.4, yf) + 0.9), (3.6, 2.2), cam, tf + 0.2, tf + 3.0, 0.7, grow=2.2, drift=(-0.2, 0, 0.3),
+                 fade_in=0.3, fade_out=1.4)
     # das Licht auf der Anhöhe (weit hinten), Gefährten davor
     lp = Vector((ARISH.x, ARISH.y + 0.3, 0))
     H = prophet("nur", (lp.x, lp.y, gz(lp.x, lp.y)), height=2.2, strength=1.0)
@@ -871,8 +873,8 @@ def shot_jagd():
     c0 = P(3.0, 1.6)
     cs = P(3.2, yf + 4.6)
     ck(rig, [(0, c0, (182, -2, 0)), (tp - 0.3, None, (182, 0, 0)), (tp + 0.1, None, (184, 14, 0)), (tp + 0.7, None, (182, 2, 0)),
-                     (tf - 0.3, None, None), (tf + 0.4, cs, (182, -4, 0)), (te - 0.6, None, (178, -2, 0)),
-                     (te + 0.9, None, (look(cs, (lp.x, lp.y, gz(lp.x, lp.y) + 1.4))[0], -1, 0)),
+                     (tf - 0.3, None, None), (tf + 0.4, cs, (182, 0, 0)), (tf + 0.9, None, (170, 1, 0)),
+                     (tf + 2.4, None, (look(cs, (lp.x, lp.y, gz(lp.x, lp.y) + 1.4))[0], -1, 0)),
                      (D, P(2.6, yf + 6.4), (look(cs, (lp.x, lp.y, gz(lp.x, lp.y) + 1.4))[0], 0, 0))])
     # Position bis zum Sturz linear (Rennen), danach ruhig
     r = rig
@@ -938,7 +940,7 @@ def shot_abend():
     cfg = BW.daylight("golden")
     BW.valley()
     rnd = random.Random(111)
-    lp = Vector((0.0, 22.0, 0))
+    lp = Vector((0.0, 12.0, 0))
     H = prophet("nur", (lp.x, lp.y, gz(lp.x, lp.y)), height=2.2, strength=0.95)
     rows = []
     for r_ in range(4):
@@ -951,10 +953,8 @@ def shot_abend():
                 Q.arm_pose(Pp, 0, s_, -40, -100, sh_y=(20 if s_ == "L" else -20))
             Pp["head"].rotation_euler = (math.radians(12), 0, 0)
             rows.append(Pp)
-    av = [(19.5, lp.y + 12.0, 7.0), (17.0, lp.y + 13.5, 7.0), (25.0, lp.y + 22.0, 8.0), (34.0, lp.y + 36.0, 8.0)]
-    BW.far_army("prfar", -60.0, -14.5, lp.y + 2.0, lp.y + 7.0, 110, side="m", seed=23, banners=0, avoid=av, spears=False)
-    BW.far_army("prfar2", 14.5, 60.0, lp.y + 2.0, lp.y + 7.0, 110, side="m", seed=24, banners=0, avoid=av, spears=False)
-    BW.far_army("prfar3", -60.0, 60.0, lp.y + 7.6, lp.y + 12.0, 160, side="m", seed=25, banners=0, avoid=av, spears=False)
+    BW.far_army("prfar", -70.0, -19.0, lp.y + 2.0, lp.y + 7.0, 110, side="m", seed=23, banners=0, spears=False)
+    BW.far_army("prfar2", 19.0, 70.0, lp.y + 2.0, lp.y + 7.0, 110, side="m", seed=24, banners=0, spears=False)
     # Verneigung (Ruku): bei „geholfen“ – Oberkörper neigt sich, Hände auf die Knie
     tr = ev("geholfen_e16") if "geholfen_e16" in EV else ls("e16") + 2.4
     for Pp in rows:
@@ -972,10 +972,10 @@ def shot_abend():
     scale_h(H, tr + 2.6, 1.45)
     scale_h(H, tr + 3.3, 2.2)
     rig, shake, cam = Q.pov_camera(lens=17)
-    c0 = P(19.5, lp.y + 12.0)
-    c1 = (34.0, lp.y + 36.0, gz(0, 0) + 30.0)
+    c0 = P(9.0, lp.y + 10.5)
+    c1 = (30.0, lp.y + 40.0, gz(0, 0) + 30.0)
     tk = ls("e17")
-    ck(rig, [(0, c0, look(c0, (0, lp.y + 3, 1.2))), (tk - 1.0, P(17.0, lp.y + 13.5), look(P(17.0, lp.y + 13.5), (0, lp.y + 2, 1.0))),
+    ck(rig, [(0, c0, look(c0, (0, lp.y + 1, 1.2))), (tk - 1.0, P(7.0, lp.y + 12.0), look(P(7.0, lp.y + 12.0), (0, lp.y + 1, 1.0))),
                      (D, c1, look(c1, (-10, -60, 0.0)))], interp="BEZIER")
     Q.handheld(shake, 0, D, amp=0.25)
     return cfg

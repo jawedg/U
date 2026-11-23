@@ -118,11 +118,13 @@ def daylight(mode, dust=0.0, stars=0.0):
     """Tageslicht aus mekka.py; dust > 0: dichter Staub in der Luft (Dunst näher, wärmer)."""
     cfg = MK.light(mode, stars=stars)
     w = Q.sc.world
-    if dust > 0:
+    if dust >= 0.3:   # Schlacht: dichter Staub
         w.mist_settings.start = 2.0 + 30.0 * (1 - dust)
         w.mist_settings.depth = 60.0 + 500.0 * (1 - dust)
         cfg["mist_col"] = (0.6, 0.48, 0.36) if mode != "golden" else (0.78, 0.54, 0.34)
         cfg["mist_amt"] = 0.45 + 0.35 * dust
+    elif dust > 0:    # Morgen vor der Schlacht: nur leichter Dunst, Himmel bleibt blau
+        cfg["mist_amt"] = 0.25 + 0.3 * dust
     return cfg
 
 
@@ -903,7 +905,7 @@ def sleeper(name, loc, yaw, seed=0, side=1):
     P = Q.person(name, (loc[0], loc[1], gz(loc[0], loc[1]) + 0.16), yaw=0.0, seed=seed, head=rnd.choice(["turban", "scarf"]),
                  robe=rnd.choice(MROBES), wrap=rnd.choice(MWRAPS), cloak=rnd.choice([(0.3, 0.24, 0.18), (0.42, 0.35, 0.26), (0.2, 0.17, 0.14)]))
     P["root"].rotation_euler = (math.radians(-90), math.radians(6 * side), yaw)
-    Q.arm_pose(P, 0, "L", -25, -100, sh_y=15)
-    Q.arm_pose(P, 0, "R", -25, -100, sh_y=-15)
+    Q.arm_pose(P, 0, "L", -4, -12, sh_y=-4)
+    Q.arm_pose(P, 0, "R", -4, -12, sh_y=4)
     P["neck"].rotation_euler = (math.radians(-12), 0, math.radians(20 * side))
     return P
