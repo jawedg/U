@@ -265,3 +265,14 @@ Lokal reicht `npm run render:3d`.
   Flaches Gelände bei tiefer Sonne warf Schatten auf sich selbst (großes Vieleck-Muster) → Gelände `visible_shadow = False`, nicht mit
   join_static verschmelzen. Fahnen/ferne Heere/Mondsichel mit `["person"] = 1` markieren (sonst friert join_static den Wellen-Modifikator ein).
   Ferne Kegel-Figuren nur weit weg (> 20 m) – nah sehen sie aus wie Grabsteine.
+- **v2 (Nutzer, 23.11.2026: „gut aber langweilig, wenig los, Schlafende wie tot, Kampf robotik – mehr Action“):**
+  neuer Text (genehmigt) mit Zweikampf Hamza/Ali/Ubaida (Abu Dawud 2665, Bukhari 3969) und Abu Jahl + zwei Jungen „wie Falken“
+  (Bukhari 3141/3988), Miqdad-Zitat gekürzt, 2:52. Einstieg mit Kampf-Ausschnitten statt Marsch.
+  Kampf mit ganzem Körper: `BW.brawl()` (Bild-für-Bild: ausholen mit Oberkörper-Drehung, schneller Hieb + Ausfallschritt,
+  Block/Rückstoß, Umkreisen, Füße), `swing_at`, `stagger`, `charge`, `arrows`, `dust_puff`; Kamera-Ruck `Q.handheld(hits=…)`.
+  Schlafende NICHT auf dem Rücken: `BW.dozer` (sitzt, Hände im Schoß, nickt ein, atmet, z. T. Kapuze), `BW.curled` (eingerollt
+  unter Decke, atmet), `BW.tarp` (Regendach + Lampe). Weniger Dunst (`BW.daylight`). Harte Schnitte in einer Einstellung:
+  zwei Schlüsselbilder in aufeinanderfolgenden Bildern, das erste CONSTANT (duell, abujahl). Hochformat ist schmal (±18°):
+  Action muss nahe der Blickrichtung liegen. Positionen von Figuren immer per `BW.pos_at(P, t)` lesen (frame_set setzt
+  root.location zurück – sonst teleportieren Figuren). Erzähler: zu lange Pausen per `capPause` (0,72 s) gekürzt.
+  Ablauf: `setsid nohup ./scripts/v2_qissa_badr.sh > out/bd_v2.log 2>&1 &` → `out/qissah-badr-klein.mp4`.

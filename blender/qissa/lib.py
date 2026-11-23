@@ -834,8 +834,8 @@ def hold(P, t0, t1):
         r.keyframe_insert("rotation_euler", frame=T(t))
 
 
-def handheld(shake, t0, t1, amp=1.0, walk_from=None, walk_to=None, walk_amp=1.0, seed=1):
-    """Handkamera: weiches Zittern (Summe von Sinus) + Geh-Wippen."""
+def handheld(shake, t0, t1, amp=1.0, walk_from=None, walk_to=None, walk_amp=1.0, seed=1, hits=(), run_hz=0.95):
+    """Handkamera: weiches Zittern (Summe von Sinus) + Geh-Wippen. hits = [(t, stärke), …]: kurzer harter Ruck (Aufprall)."""
     for f in range(T(t0), T(t1) + 1):
         t = (f - 1) / FPS
         a = amp
@@ -844,9 +844,16 @@ def handheld(shake, t0, t1, amp=1.0, walk_from=None, walk_to=None, walk_amp=1.0,
         ry = math.sin(t * 1.1 + seed) * math.radians(0.6) * a
         dz = 0.0
         if walk_from is not None and walk_from <= t <= walk_to:
-            ph = (t - walk_from) * 2 * math.pi * 0.95
+            ph = (t - walk_from) * 2 * math.pi * run_hz
             dz = abs(math.sin(ph)) * 0.035 * walk_amp
             ry += math.sin(ph) * math.radians(0.9) * walk_amp
+        for k_, (th, st) in enumerate(hits):
+            if 0.0 <= t - th < 0.6:
+                e = math.exp(-(t - th) * 8.0) * st
+                rx += math.sin((t - th) * 52 + k_) * math.radians(2.6) * e
+                rz += math.sin((t - th) * 41 + 2 * k_) * math.radians(2.0) * e
+                ry += math.sin((t - th) * 37 + 3 * k_) * math.radians(1.4) * e
+                dz -= 0.03 * e * math.cos((t - th) * 30)
         shake.rotation_euler = (rx, ry, rz)
         shake.location = (0, 0, dz)
         shake.keyframe_insert("rotation_euler", frame=f)

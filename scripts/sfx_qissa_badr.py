@@ -312,21 +312,54 @@ def main():
         u = src_t - s["at"]
         return s["start"] + u if 0 <= u <= s["dur"] else None
 
+    def clangs(t0, t1, every=0.38, g=0.55, seed=0):
+        """viele Klingen/Schilde ringsum (Zweikampf, Gedränge)"""
+        r_ = np.random.default_rng(seed)
+        t = t0
+        k = 0
+        while t < t1:
+            add(t, el("sword_clang") if k % 3 else el("sword_shield"), g * r_.uniform(0.45, 0.9), pan=float(r_.uniform(-0.6, 0.6)), fx=True)
+            t += every * r_.uniform(0.6, 1.4)
+            k += 1
+
+    def arrows_whoosh(t, n=6, g=0.35):
+        for k in range(n):
+            add(t + 0.07 * k + rng.uniform(0, 0.05), whoosh(0.45, 0.45), g * rng.uniform(0.6, 1.0), pan=rng.uniform(-0.7, 0.7), fx=True)
+
+    def kampf_fx(cid):
+        """Geräusche der Kampf-Einstellung (12 s) für einen Ausschnitt daraus."""
+        for src_t, key, g in ((2.55, "sword_shield", 1.0), (5.3, "sword_shield", 1.0), (5.95, "sword_clang", 0.9), (3.25, "horse_neigh", 0.8)):
+            t_ = clip_t(cid, src_t)
+            if t_:
+                add(t_ - 0.03, el(key), g, fx=True)
+        t_ = clip_t(cid, 6.55)
+        if t_:
+            arrows_whoosh(t_)
+        for src_t in (7.6, 11.0):
+            t_ = clip_t(cid, src_t)
+            if t_:
+                add(t_ - 0.5, el("horses_gallop") if src_t < 10 else el("charge_shout"), 0.8, dur=1.6, fade_in=0.2, fade_out=0.4, fx=True)
+        s_ = SEG[cid]
+        clangs(s_["start"] + 0.1, s_["start"] + s_["dur"], every=0.45, g=0.35, seed=int(s_["at"] * 10))
+
     # ================= Einstieg (Ausschnitte)
+    a, b = seg("hook_0")
+    add(a, battle, 1.1, dur=b - a, fade_in=0.01, fade_out=0.05)
+    kampf_fx("hook_0")
+    add(b - 0.1, B(), 0.4, fx=True)
     a, b = seg("hook_a")
     desert(a, b, 0.7, fade_in=0.3)
     add(a, el("caravan"), 0.9, dur=b - a, fade_in=0.3, fade_out=0.2)
     walk_steps(a, b, 0.22)
     a, b = seg("hook_b")
     add(a - 0.3, W(), 0.5, fx=True)
-    add(a, march, 1.1, dur=b - a, fade_in=0.15, fade_out=0.15)
+    add(a, el("charge_shout"), 0.9, dur=b - a, fade_in=0.05, fade_out=0.15, fx=True)
+    add(a, el("horses_gallop"), 0.9, dur=b - a, fade_in=0.2, fade_out=0.15, fx=True)
+    add(a, march, 0.6, dur=b - a, fade_in=0.15, fade_out=0.15)
     add(a + 0.1, B(), 0.35, fx=True)
     a, b = seg("hook_c")
-    add(a - 0.3, W(), 0.5, fx=True)
-    add(a, battle, 1.0, dur=b - a, fade_in=0.1, fade_out=0.5)
-    t_ = clip_t("hook_c", 3.88)
-    if t_:
-        add(t_ - 0.02, el("sword_shield"), 0.9, fx=True)
+    add(a, battle, 1.0, dur=b - a, fade_in=0.05, fade_out=0.5)
+    kampf_fx("hook_c")
     add(b - 0.25, B(), 0.45, fx=True)
 
     # ================= Medina, Auszug, Heer
@@ -337,7 +370,7 @@ def main():
     desert(a, b, 0.8, fade_in=0.3)
     add(a, far(el("caravan")), 0.8, dur=b - a, fade_in=0.4, fade_out=0.3)
     camel_steps(a, b, g=0.15)
-    walk_steps(ev("prophet_e3", a + 3.0), b, 0.2)
+    walk_steps(a + 0.3, b, 0.2)
     a, b = seg("heer")
     desert(a, b, 0.9, hot=True)
     th = ev("heer_e4", a + 3.0)
@@ -386,6 +419,33 @@ def main():
     add(a - 0.1, lw, 0.45, fx=True)
     add(a, shimmer(b - a + 0.8, 1.0), 0.9, fade_in=0.3, fade_out=0.8)
 
+    # ================= Zweikampf (Hamza, Ali, Ubaida)
+    a, b = seg("duell")
+    desert(a, b, 0.5)
+    add(a, far(march, 120, 2000), 0.5, dur=b - a, fade_in=0.3)
+    add(a, el("camp_murmur"), 0.4, dur=b - a, fade_in=0.3)
+    steps(a + 0.3, a + 3.4, gap=0.42, g=0.12)
+    tr = ev("rufen_d1", a + 3.3)
+    add(tr - 0.1, far(el("charge_shout"), 200, 3000), 0.5, dur=1.4, fade_out=0.5, fx=True)
+    tu = ev("uns_d1", a + 5.4)
+    for k in range(2):
+        add(tu - 0.15 + 0.32 * k, far(el("sword_shield"), 150, 5000), 0.6, fx=True)
+    add(ev("prophet_d2", a + 6.4) - 0.2, shim, 0.55, fx=True)
+    th0 = ev("hamza_d2", a + 9.3)
+    walk_steps(th0 - 1.2, th0 + 2.6, 0.32)
+    walk_steps(th0 + 1.4, ev("hiebe_d3", a + 12.4), 0.25, run=True)
+    thb = ev("hiebe_d3", a + 12.4)
+    add(thb - 0.38, B(), 0.45, fx=True)
+    add(thb - 0.36, battle, 0.7, dur=b - thb + 0.4, fade_in=0.02, fade_out=0.4)
+    clangs(thb - 0.2, b - 0.4, every=0.3, g=0.7, seed=4)
+    add(ev("staub_d3", thb + 0.5) - 0.1, whoosh(0.8, 0.6), 0.6, fx=True)
+    thz = ev("herausforderer_d3", a + 14.9)
+    tfa = ev("fallen_d3", a + 16.7)
+    for k, t_ in enumerate((thz + 0.6, thz + 1.15, tfa)):
+        add(t_, el("fall_sand"), 0.85, pan=(-0.4, 0.0, 0.4)[k], fx=True)
+        add(t_, thud(0.3, 60), 0.5, fx=True)
+    add(thz + 1.0, el("charge_shout"), 0.6, dur=b - thz + 0.3, fade_in=0.3, fade_out=0.4, fx=True)
+
     # ================= Schlacht
     a, b = seg("sturm")
     add(a, el("charge_shout"), 1.0, dur=b - a + 0.1, fade_in=0.05, fx=True)
@@ -397,14 +457,8 @@ def main():
         a, b = seg(sid)
         add(a, battle, 1.2, dur=b - a, fade_in=0.02, fade_out=0.05, fx=True) if k else add(a, battle, 1.2, dur=b - a, fade_in=0.02, fx=True)
         add(a, B(), 0.35, fx=True) if k == 0 else None
-    t_ = clip_t("schlacht1", 3.88)
-    if t_:
-        add(t_ - 0.02, el("sword_shield"), 1.0, fx=True)
-    t_ = clip_t("schlacht2", 5.15)
-    add((t_ if t_ else SEG["schlacht2"]["start"]) - 0.05, el("horse_neigh"), 0.8, fx=True)
-    t_ = clip_t("schlacht2", 5.6)
-    if t_:
-        add(t_ - 0.02, el("sword_clang"), 0.9, fx=True)
+        kampf_fx(sid)
+        add(a + 0.05, el("sword_clang"), 0.8, pan=(-0.3, 0.3, 0.0)[k], fx=True)
     a, b = seg("jagd")
     tp = ev("peitschenknall_e13", a + 4.0)
     tf = ev("stürzt_e14", a + 11.5)
@@ -416,7 +470,28 @@ def main():
     add(tp - 0.05, el("whip_crack"), 1.0, fx=True)
     add(tf + 0.15, el("fall_sand"), 0.8, fx=True)
     add(tf + 0.2, el("after_wind"), 0.6, dur=b - tf, fade_in=0.8)
-    steps(ev("erzählt_e14", tf + 1.5) + 0.8, b, gap=0.55, g=0.2)
+    steps(ev("prophet_e14", tf + 1.5) + 0.3, b, gap=0.55, g=0.2)
+    add(LINES["q4"]["start"] - 0.6 if "q4" in LINES else b - 0.5, lw, 0.4, fx=True)
+
+    # ================= Abu Jahl
+    a, b = seg("abujahl")
+    desert(a, b, 0.4)
+    add(a, battle, 0.55, dur=b - a, fade_in=0.2, fade_out=0.6)
+    clangs(a + 0.3, b - 0.5, every=0.6, g=0.3, seed=7)
+    tz = ev("zeigt_a2", a + 7.3)
+    ts = ev("stürzen_a2", a + 8.9)
+    tf2 = ev("fällt_a3", a + 13.1)
+    add(tz - 0.1, whoosh(0.4, 0.4), 0.3, fx=True)
+    add(ts - 0.05, whoosh(0.9, 0.7), 0.7, fx=True)
+    walk_steps(ts + 0.1, ts + 1.6, 0.35, run=True)
+    steps(ts + 0.1, tf2 - 0.3, gap=0.16, g=0.18, run=True)
+    add(ev("falken_a2", ts + 2.0) - 0.2, whoosh(0.7, 0.6), 0.5, fx=True)
+    add(tf2 - 0.38, el("sword_clang"), 0.9, fx=True)
+    add(tf2 - 0.24, el("sword_shield"), 0.8, fx=True)
+    add(tf2 + 0.05, el("horse_neigh"), 0.4, fx=True)
+    add(tf2 + 0.1, el("fall_sand"), 1.0, fx=True)
+    add(tf2 + 0.1, B(), 0.5, fx=True)
+    add(tf2 + 0.3, el("after_wind"), 0.6, dur=b - tf2, fade_in=0.6)
 
     # ================= Ende, Abend
     a, b = seg("ende")

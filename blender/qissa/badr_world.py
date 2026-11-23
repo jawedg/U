@@ -118,13 +118,14 @@ def daylight(mode, dust=0.0, stars=0.0):
     """Tageslicht aus mekka.py; dust > 0: dichter Staub in der Luft (Dunst näher, wärmer)."""
     cfg = MK.light(mode, stars=stars)
     w = Q.sc.world
-    if dust >= 0.3:   # Schlacht: dichter Staub
-        w.mist_settings.start = 2.0 + 30.0 * (1 - dust)
-        w.mist_settings.depth = 60.0 + 500.0 * (1 - dust)
-        cfg["mist_col"] = (0.6, 0.48, 0.36) if mode != "golden" else (0.78, 0.54, 0.34)
-        cfg["mist_amt"] = 0.45 + 0.35 * dust
-    elif dust > 0:    # Morgen vor der Schlacht: nur leichter Dunst, Himmel bleibt blau
-        cfg["mist_amt"] = 0.25 + 0.3 * dust
+    # v2 (Nutzer: „langweilig“ – Bild wirkte grau/verwaschen): deutlich weniger Dunst, Staub nur im Kampf
+    if dust >= 0.3:   # Schlacht: Staub
+        w.mist_settings.start = 8.0 + 30.0 * (1 - dust)
+        w.mist_settings.depth = 140.0 + 500.0 * (1 - dust)
+        cfg["mist_col"] = (0.62, 0.48, 0.34) if mode != "golden" else (0.78, 0.54, 0.34)
+        cfg["mist_amt"] = 0.26 + 0.26 * dust
+    else:             # klare Luft
+        cfg["mist_amt"] = 0.14 + 0.3 * dust
     return cfg
 
 
@@ -367,6 +368,7 @@ def run_to(P, path, t0, speed=4.2):
 def fall_back(P, t, dur=0.7, side=1):
     """Gegner stürzt rückwärts in den Sand (kein Blut; Schnitt kurz danach)."""
     r = P["root"]
+    Q.sc.frame_set(max(1, Q.T(t)))
     r.keyframe_insert("rotation_euler", frame=max(1, Q.T(t)))
     r.keyframe_insert("location", frame=max(1, Q.T(t)))
     e = r.rotation_euler.copy()
@@ -378,6 +380,7 @@ def fall_back(P, t, dur=0.7, side=1):
     r.keyframe_insert("location", frame=Q.T(t + dur))
     Q.arm_pose(P, t + 0.1, "L", -120, -20, sh_y=-40)
     Q.arm_pose(P, t + 0.1, "R", -120, -20, sh_y=40)
+    Q.sc.frame_set(1)
 
 
 # ---------------------------------------------------------------- Pferd
@@ -909,3 +912,349 @@ def sleeper(name, loc, yaw, seed=0, side=1):
     Q.arm_pose(P, 0, "R", -4, -12, sh_y=4)
     P["neck"].rotation_euler = (math.radians(-12), 0, math.radians(20 * side))
     return P
+
+
+# ================================================================ v2 (Nutzer: „langweilig, Kampf robotik, Schlafende wie tot“)
+def pos_at(P, t):
+    """Position + Gierwinkel der Figur zur Zeit t (ausgewertet; danach wieder Bild 1)."""
+    Q.sc.frame_set(Q.T(t))
+    r = P["root"]
+    loc, yaw = r.matrix_world.translation.copy(), r.rotation_euler.z
+    Q.sc.frame_set(1)
+    return loc, yaw
+
+def _sm(x):
+    x = max(0.0, min(1.0, x))
+    return x * x * (3 - 2 * x)
+
+
+def _bump(t, a, b, c):
+    """0 vor a, steigt bis b glatt auf 1, fällt bis c wieder auf 0."""
+    if t <= a or t >= c:
+        return 0.0
+    if t <= b:
+        return _sm((t - a) / max(1e-4, b - a))
+    return 1.0 - _sm((t - b) / max(1e-4, c - b))
+
+
+def _eval(keys, t):
+    """keys [(t, werte, ease)] – ease gilt für das Stück, das an diesem Schlüssel endet: s glatt, in beschleunigt (Hieb), out bremst."""
+    if t <= keys[0][0]:
+        return keys[0][1]
+    for (t0, v0, _), (t1, v1, e) in zip(keys, keys[1:]):
+        if t <= t1:
+            u = (t - t0) / max(1e-4, t1 - t0)
+            u = u ** 2.2 if e == "in" else (1 - (1 - u) ** 2 if e == "out" else u * u * (3 - 2 * u))
+            return tuple(a + (b - a) * u for a, b in zip(v0, v1))
+    return keys[-1][1]
+
+
+def _push(keys, t_from, seq):
+    """Neue Bewegung ab t_from anhängen: alles danach verwerfen, an der aktuellen Haltung glatt anschließen."""
+    cur = _eval(keys, t_from)
+    while len(keys) > 1 and keys[-1][0] >= t_from:
+        keys.pop()
+    keys.append((t_from, cur, "s"))
+    keys.extend(seq)
+
+
+GUARD_R = (-128.0, -40.0, 8.0, 0.0)          # Schwertarm: sh_x, el_x, sh_y, el_y
+GUARD_L = (-62.0, -58.0, -12.0, 0.0)         # Schildarm
+ATK = {  # (ausholen, Treffer, durchziehen)
+    "over": ((-178.0, -78.0, 18.0, 0.0), (-58.0, -8.0, 4.0, 0.0), (-34.0, -12.0, -6.0, 0.0)),
+    "side": ((-100.0, -30.0, -82.0, 0.0), (-86.0, -8.0, 26.0, 0.0), (-70.0, -16.0, 46.0, 0.0)),
+    "thrust": ((-72.0, -118.0, 12.0, 0.0), (-93.0, -4.0, 2.0, 0.0), (-86.0, -10.0, 2.0, 0.0)),
+    "low": ((-152.0, -62.0, -42.0, 0.0), (-42.0, -10.0, 30.0, 0.0), (-26.0, -10.0, 42.0, 0.0)),
+}
+BLOCK_L = (-108.0, -72.0, -24.0, 0.0)
+PARRY_R = (-152.0, -72.0, -26.0, 0.0)
+
+
+def _arm(P, f, side, v):
+    sh, el = P[f"sh.{side}"], P[f"el.{side}"]
+    sh.rotation_euler = (math.radians(v[0]), math.radians(v[2]), 0)
+    el.rotation_euler = (math.radians(v[1]), math.radians(v[3]), 0)
+    sh.keyframe_insert("rotation_euler", frame=f)
+    el.keyframe_insert("rotation_euler", frame=f)
+
+
+def brawl(A, B, t0, t1, seed=0, tempo=1.0, gap=None, stop=None, first=None, kinds=None, n_max=None, sway=1.0, final=None, pa=None,
+          pb=None):
+    """Zwei Kämpfer mit ganzem Körper: ausholen (Oberkörper dreht zurück), schneller Hieb mit Ausfallschritt, durchziehen;
+    der andere blockt mit dem Schild (oder pariert), wird zurückgestoßen; beide umkreisen sich, federn, Füße setzen nach.
+    Treffer nur auf Schild/Klinge. stop = {Figur: Zeit}: ab da nicht mehr animieren (z. B. Sturz).
+    Rückgabe: [(t, Angreifer, Verteidiger, Treffpunkt)]."""
+    rnd = random.Random(seed)
+    stop = stop or {}
+    pa = Vector(pa) if pa is not None else pos_at(A, t0)[0]
+    pb = Vector(pb) if pb is not None else pos_at(B, t0)[0]
+    c = (pa + pb) / 2
+    d0 = max(1.25, min(1.7, (pb - pa).xy.length))
+    th0 = math.atan2(pb.y - pa.y, pb.x - pa.x)
+    ph = rnd.uniform(0, 6.28)
+    # Ablauf der Hiebe
+    ev_ = []
+    t = t0 + (first if first is not None else rnd.uniform(0.15, 0.5))
+    who = rnd.random() < 0.5
+    while t < t1 - 0.3 and (n_max is None or len(ev_) < n_max):
+        kd = rnd.choice(kinds or ["over", "side", "thrust", "over", "low", "side"])
+        ev_.append((t, who, kd))
+        if rnd.random() < 0.3:  # Doppelschlag
+            t2 = t + rnd.uniform(0.4, 0.5) / tempo
+            if t2 < t1 - 0.3:
+                ev_.append((t2, who, rnd.choice(["side", "over", "low"])))
+                t = t2
+        t += (gap or rnd.uniform(0.55, 0.95)) / tempo
+        if rnd.random() < 0.7:
+            who = not who
+    if final:  # letzter, entscheidender Hieb des Siegers (final = (Zeit, Sieger))
+        ev_ = [e for e in ev_ if e[0] < final[0] - 0.5] + [(final[0], final[1] is A, "over")]
+    ev_ = [e for e in ev_ if e[0] < min(stop.get(A["name"], 1e9), stop.get(B["name"], 1e9)) - 0.05]
+    arms = {}
+    for P_ in (A, B):
+        has_shield = "shield" in P_
+        arms[(id(P_), "R")] = [(t0 - 1, GUARD_R, "s")]
+        arms[(id(P_), "L")] = [(t0 - 1, GUARD_L if has_shield else (-50.0, -70.0, -10.0, 0.0), "s")]
+    for th, w, kd in ev_:
+        at_, de = (A, B) if w else (B, A)
+        wnd, hit, fol = ATK[kd]
+        _push(arms[(id(at_), "R")], th - 0.42 / tempo, [(th - 0.14 / tempo, wnd, "out"), (th, hit, "in"), (th + 0.1, fol, "out"),
+                                                         (th + 0.5 / tempo, GUARD_R, "s")])
+        if "shield" in de:
+            b = BLOCK_L
+            _push(arms[(id(de), "L")], th - 0.32 / tempo, [(th - 0.08, b, "out"), (th + 0.06, (b[0] + 12, b[1] + 8, b[2] - 6, 0.0), "out"),
+                                                          (th + 0.5 / tempo, GUARD_L, "s")])
+        else:
+            _push(arms[(id(de), "R")], th - 0.3 / tempo, [(th - 0.06, PARRY_R, "out"), (th + 0.08, (-140.0, -60.0, -30.0, 0.0), "out"),
+                                                         (th + 0.5 / tempo, GUARD_R, "s")])
+    hits = []
+    for th, w, kd in ev_:
+        at_, de = (A, B) if w else (B, A)
+        hits.append((th, at_, de, kd))
+    f0, f1 = Q.T(t0), Q.T(t1)
+    for f in range(f0, f1 + 1):
+        t = (f - 1) / Q.FPS
+        th = th0 + 0.35 * sway * math.sin(0.55 * t + ph)
+        d = d0 + 0.12 * math.sin(1.7 * t + ph * 2)
+        u = Vector((math.cos(th), math.sin(th), 0))
+        lunge = {id(A): 0.0, id(B): 0.0}
+        lean = {id(A): 0.0, id(B): 0.0}
+        twist = {id(A): 0.0, id(B): 0.0}
+        for th_, w, kd in ev_:
+            at_, de = (A, B) if w else (B, A)
+            wind = _bump(t, th_ - 0.42 / tempo, th_ - 0.14 / tempo, th_ + 0.02)
+            hitb = _bump(t, th_ - 0.14 / tempo, th_ + 0.03, th_ + 0.62 / tempo)
+            rec = _bump(t, th_, th_ + 0.1, th_ + 0.7 / tempo)
+            k_tw = 1.5 if kd == "side" else 1.0
+            lunge[id(at_)] += 0.4 * hitb - 0.08 * wind
+            lean[id(at_)] += -10 * wind + 20 * hitb
+            twist[id(at_)] += (-30 * wind + 24 * hitb) * k_tw
+            lunge[id(de)] -= 0.3 * rec
+            lean[id(de)] += -13 * rec
+            twist[id(de)] += 12 * rec
+        for P_, sgn in ((A, -1), (B, 1)):
+            if P_["name"] in stop and t > stop[P_["name"]]:
+                continue
+            me = id(P_)
+            pos = c + u * (sgn * d / 2) - u * (sgn * lunge[me])
+            pos.z = gz(pos.x, pos.y)
+            r = P_["root"]
+            r.location = pos
+            r.keyframe_insert("location", frame=f)
+            other = (c - u * (sgn * d / 2))
+            r.rotation_euler = (0, 0, math.atan2(other.x - pos.x, -(other.y - pos.y)))
+            r.keyframe_insert("rotation_euler", frame=f)
+            hp = P_["hips"]
+            hz_ = 0.95 - 0.06 - 0.025 * abs(math.sin(3.1 * t + me % 7))
+            hp.location.z = hz_
+            hp.rotation_euler = (math.radians(4 + 0.15 * lean[me]), 0, math.radians(0.4 * twist[me]))
+            hp.keyframe_insert("location", index=2, frame=f)
+            hp.keyframe_insert("rotation_euler", frame=f)
+            ch = P_["chest"]
+            ch.rotation_euler = (math.radians(6 + 0.85 * lean[me]), math.radians(0.15 * twist[me]), math.radians(0.6 * twist[me]))
+            ch.keyframe_insert("rotation_euler", frame=f)
+            hd = P_["head"]
+            hd.rotation_euler = (math.radians(-0.4 * lean[me]), 0, math.radians(-0.5 * twist[me]))
+            hd.keyframe_insert("rotation_euler", frame=f)
+            for nm, s_ in (("L", -1), ("R", 1)):
+                ft = P_.get(f"foot.{nm}")
+                if ft is not None:
+                    st = lunge[me] * (0.9 if nm == "R" else -0.35)
+                    ft.location = (0.12 * s_, -0.02 - st, -hz_ + 0.035 + 0.04 * max(0.0, math.sin(6.2 * t + 1.6 * s_ + me % 5)))
+                    ft.keyframe_insert("location", frame=f)
+                _arm(P_, f, nm, _eval(arms[(me, nm)], t))
+    out = []
+    for th_, at_, de, kd in hits:
+        Q.sc.frame_set(Q.T(th_))
+        p = (at_["root"].matrix_world.translation * 0.4 + de["root"].matrix_world.translation * 0.6)
+        out.append((th_, at_, de, p + Vector((0, 0, 1.45))))
+    Q.sc.frame_set(1)
+    return out
+
+
+def charge(P, path, t0, speed=5.5):
+    """Anstürmen mit erhobenem Schwert (Lauf auf dem Gelände)."""
+    t_end = Q.walk(P, path, t0, speed=speed, run=True)
+    for fc in Q.fcurves(P["root"]):
+        if fc.data_path == "location" and fc.array_index == 2:
+            xs = [f for f in Q.fcurves(P["root"]) if f.data_path == "location" and f.array_index == 0][0]
+            ys = [f for f in Q.fcurves(P["root"]) if f.data_path == "location" and f.array_index == 1][0]
+            for kp in fc.keyframe_points:
+                kp.co.y = gz(xs.evaluate(kp.co.x), ys.evaluate(kp.co.x))
+    return t_end
+
+
+def swing_at(P, th, kind="over", tempo=1.0, shield_up=True):
+    """Einzelner wuchtiger Hieb (z. B. auf die Kamera zu): ausholen, zuschlagen, durchziehen; Oberkörper geht mit."""
+    wnd, hit, fol = ATK[kind]
+    for t, v in ((th - 0.5 / tempo, GUARD_R), (th - 0.15 / tempo, wnd), (th, hit), (th + 0.12, fol), (th + 0.6 / tempo, GUARD_R)):
+        Q.arm_pose(P, t, "R", v[0], v[1], sh_y=v[2])
+    ch = P["chest"]
+    for t, lx, tz in ((th - 0.5, 4, 0), (th - 0.15, -10, -30), (th + 0.02, 22, 22), (th + 0.6, 6, 0)):
+        ch.rotation_euler = (math.radians(lx), 0, math.radians(tz))
+        ch.keyframe_insert("rotation_euler", frame=max(1, Q.T(t)))
+    if shield_up and "shield" in P:
+        Q.arm_pose(P, th - 0.5, "L", *GUARD_L[:2], sh_y=GUARD_L[2])
+
+
+def stagger(P, t, back=0.7, dur=0.55):
+    """Zurücktaumeln nach einem Treffer auf den Schild (Wucht)."""
+    r = P["root"]
+    Q.sc.frame_set(max(1, Q.T(t)))
+    r.keyframe_insert("location", frame=max(1, Q.T(t)))
+    yaw = r.rotation_euler.z
+    bk = Vector((-math.sin(yaw), math.cos(yaw), 0))
+    p = r.location + bk * back
+    r.location = (p.x, p.y, gz(p.x, p.y))
+    r.keyframe_insert("location", frame=Q.T(t + dur))
+    Q.sc.frame_set(1)
+    ch = P["chest"]
+    for tt, lx in ((t, 4), (t + 0.15, -22), (t + dur + 0.3, 2)):
+        ch.rotation_euler = (math.radians(lx), 0, math.radians(8))
+        ch.keyframe_insert("rotation_euler", frame=Q.T(tt))
+
+
+def dust_puff(name, loc, t, cam, size=1.4, alpha=0.65, n=3, seed=0):
+    """Kurzer Staubstoß (Fußtritt, Aufprall, Sturz)."""
+    rnd = random.Random(seed)
+    for k in range(n):
+        p = Vector(loc) + Vector((rnd.uniform(-0.4, 0.4), rnd.uniform(-0.4, 0.4), rnd.uniform(0.0, 0.3)))
+        dust_card(f"{name}{k}", p, (size * rnd.uniform(0.8, 1.2), size * 0.7), cam, t + 0.03 * k, t + rnd.uniform(1.4, 2.2),
+                  alpha * rnd.uniform(0.7, 1.0), grow=2.6, drift=(rnd.uniform(-0.5, 0.5), rnd.uniform(-0.5, 0.5), 0.4),
+                  fade_in=0.08, fade_out=1.0)
+
+
+def arrows(name, src, dst, t0, n=14, spread=(6.0, 6.0), flight=1.3, peak=9.0, seed=0):
+    """Pfeilhagel: Pfeile fliegen im Bogen von src nach dst (zeigen in Flugrichtung)."""
+    rnd = random.Random(seed)
+    m_sh = M.get("shaft") or Q.pbr("b_shaft2", (0.35, 0.25, 0.15), 0.7)
+    m_fl = Q.pbr("b_fletch", (0.85, 0.82, 0.75), 0.9)
+    for k in range(n):
+        a = Vector(src) + Vector((rnd.uniform(-spread[0], spread[0]), rnd.uniform(-spread[1], spread[1]), 0))
+        b = Vector(dst) + Vector((rnd.uniform(-spread[0], spread[0]), rnd.uniform(-spread[1], spread[1]), 0))
+        a.z = gz(a.x, a.y) + 1.8
+        b.z = gz(b.x, b.y) + 0.2
+        ts = t0 + rnd.uniform(0, 0.5)
+        fl = flight * rnd.uniform(0.9, 1.1)
+        root = Q.empty(f"{name}{k}", a)
+        Q.cyl(f"{name}{k}_s", (0, -0.35, 0), 0.008, 0.8, m_sh, seg=5, rot=(math.pi / 2, 0, 0), parent=root)
+        Q.cyl(f"{name}{k}_h", (0, -0.78, 0), 0.016, 0.07, M["steel"], seg=5, rot=(-math.pi / 2, 0, 0), r2=0.001, parent=root)
+        Q.box(f"{name}{k}_f", (0, 0.02, 0), (0.002, 0.12, 0.05), m_fl, parent=root)
+        root.scale = (0.001, 0.001, 0.001)
+        root.keyframe_insert("scale", frame=max(1, Q.T(ts) - 1))
+        root.scale = (1, 1, 1)
+        root.keyframe_insert("scale", frame=max(1, Q.T(ts)))
+        hp = peak * rnd.uniform(0.8, 1.2)
+        for f in range(max(1, Q.T(ts)), Q.T(ts + fl) + 1):
+            u = ((f - 1) / Q.FPS - ts) / fl
+            p = a + (b - a) * u + Vector((0, 0, 4 * hp * u * (1 - u)))
+            u2 = min(1.0, u + 0.02)
+            p2 = a + (b - a) * u2 + Vector((0, 0, 4 * hp * u2 * (1 - u2)))
+            root.location = p
+            root.rotation_euler = (p2 - p).to_track_quat("-Y", "Z").to_euler()
+            root.keyframe_insert("location", frame=f)
+            root.keyframe_insert("rotation_euler", frame=f)
+        root.keyframe_insert("scale", frame=Q.T(ts + fl))
+        root.scale = (0.001, 0.001, 0.001)
+        root.keyframe_insert("scale", frame=Q.T(ts + fl) + 1)
+
+
+# ---------------------------------------------------------------- Schlafende v2 (sitzend/eingerollt, atmen – nicht wie Tote)
+CLOAKS = [(0.3, 0.24, 0.18), (0.42, 0.35, 0.26), (0.2, 0.17, 0.14), (0.5, 0.42, 0.3), (0.26, 0.22, 0.2)]
+
+
+def hood(P, name, col):
+    """Umhang über den Kopf gezogen (gegen den Regen)."""
+    m = Q.pbr(f"hood_{name}", col, 0.95, var=0.08, scale=5, bump=0.06, bscale=25)
+    Q.ball(f"{name}_hood", (0, 0.025, 0.12), (0.135, 0.15, 0.16), m, parent=P["head"], seg=18)
+    Q.ball(f"{name}_hoodb", (0, 0.07, 0.0), (0.2, 0.14, 0.16), m, parent=P["head"], seg=14)
+
+
+def dozer(name, loc, yaw, seed=0, t_sleep=None, t1=30.0, hooded=None, lean_back=0.0):
+    """Sitzt in den Umhang gehüllt, Arme verschränkt; nickt ein: Kopf sinkt, zuckt einmal hoch, sinkt ganz (t_sleep);
+    danach ruhiges, tiefes Atmen. t_sleep None = schläft schon."""
+    rnd = random.Random(seed)
+    cl = rnd.choice(CLOAKS)
+    P = Q.person(name, (loc[0], loc[1], gz(loc[0], loc[1])), yaw=yaw, seed=seed, sit=True, head=rnd.choice(["turban", "scarf"]),
+                 robe=rnd.choice(MROBES), wrap=rnd.choice(MWRAPS), cloak=cl)
+    if hooded if hooded is not None else rnd.random() < 0.45:
+        hood(P, name, cl)
+    for s_, nm in ((-1, "L"), (1, "R")):  # Hände ruhen im Schoß
+        Q.arm_pose(P, 0, nm, 16, -62, sh_y=10 * s_)
+    hd, ch = P["head"], P["chest"]
+    awake = (6.0, 0.0)
+    asleep = (48.0, 16.0)
+    keys = []
+    if t_sleep is None:
+        keys = [(0.0, asleep)]
+    else:
+        keys = [(0.0, awake), (t_sleep - 2.2, (10.0, 2.0)), (t_sleep - 1.5, (34.0, 9.0)), (t_sleep - 1.2, (8.0, 1.0)),
+                (t_sleep - 0.2, (22.0, 6.0)), (t_sleep + 1.2, asleep)]
+    keys = [(t, v) for t, v in keys if t >= 0] or [(0.0, asleep)]
+    ph = rnd.uniform(0, 6.28)
+    for f in range(1, Q.T(t1) + 1, 3):
+        t = (f - 1) / Q.FPS
+        v = _eval([(k[0], k[1], "s") for k in keys], t)
+        sl = max(0.0, min(1.0, (v[0] - 6) / 42))
+        br = math.sin(t * (1.9 - 0.6 * sl) + ph) * (1.2 + 1.4 * sl)
+        hd.rotation_euler = (math.radians(v[0] + 0.5 * br), 0, math.radians(8 * sl * (1 if seed % 2 else -1)))
+        ch.rotation_euler = (math.radians(v[1] + br - lean_back), 0, 0)
+        hd.keyframe_insert("rotation_euler", frame=f)
+        ch.keyframe_insert("rotation_euler", frame=f)
+    return P
+
+
+def curled(name, loc, yaw, seed=0, t1=30.0, side=1):
+    """Liegt eingerollt auf der Seite unter einer Decke (Knie angezogen), Kopf auf dem Arm; die Decke hebt und senkt sich."""
+    rnd = random.Random(seed)
+    cl = rnd.choice(CLOAKS)
+    P = Q.person(name, (loc[0], loc[1], gz(loc[0], loc[1]) + 0.2), yaw=0.0, seed=seed, sit=True, head=rnd.choice(["turban", "scarf"]),
+                 robe=rnd.choice(MROBES), wrap=rnd.choice(MWRAPS))
+    P["root"].rotation_euler = (0, math.radians(84 * side), yaw)
+    Q.arm_pose(P, 0, "L" if side > 0 else "R", -150, -120, sh_y=-20 * side)
+    Q.arm_pose(P, 0, "R" if side > 0 else "L", -60, -90, sh_y=10 * side)
+    P["head"].rotation_euler = (math.radians(25), 0, math.radians(-10 * side))
+    m = Q.pbr(f"blanket_{name}", cl, 0.95, var=0.1, scale=4, bump=0.08, bscale=20)
+    bl = Q.ball(f"{name}_blanket", (0, -0.12, -0.02), (0.34, 0.36, 0.42), m, parent=P["hips"], seg=22)
+    Q.ball(f"{name}_blanket2", (0, -0.02, 0.28), (0.3, 0.26, 0.26), m, parent=P["chest"], seg=18)
+    ph = rnd.uniform(0, 6.28)
+    for f in range(1, Q.T(t1) + 1, 3):
+        t = (f - 1) / Q.FPS
+        b = math.sin(t * 1.3 + ph)
+        bl.scale = (1.0 + 0.025 * b, 1.0 + 0.04 * b, 1.0)
+        bl.keyframe_insert("scale", frame=f)
+    return P
+
+
+def tarp(name, loc, yaw, size=(2.6, 1.8), h=(1.5, 0.5), col=(0.42, 0.34, 0.24)):
+    """Schräges Tuch auf zwei Stangen (Regenschutz)."""
+    root = Q.empty(name, (loc[0], loc[1], gz(loc[0], loc[1])), rot=(0, 0, yaw))
+    root["person"] = 1
+    m = Q.pbr(f"{name}_m", col, 0.9, var=0.12, scale=3, bump=0.1, bscale=15)
+    ang = math.atan2(h[0] - h[1], size[1])
+    Q.box(f"{name}_cloth", (0, 0, (h[0] + h[1]) / 2), (size[0], math.hypot(size[1], h[0] - h[1]), 0.02), m, rot=(-ang, 0, 0),
+          parent=root)
+    for s_ in (-1, 1):
+        Q.cyl(f"{name}_pole{s_}", (s_ * size[0] * 0.46, -size[1] / 2, h[0] / 2), 0.025, h[0], M["shaft"], seg=6, parent=root)
+        Q.cyl(f"{name}_poleb{s_}", (s_ * size[0] * 0.46, size[1] / 2, h[1] / 2), 0.025, h[1], M["shaft"], seg=6, parent=root)
+    return root

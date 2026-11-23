@@ -24,27 +24,30 @@ RATE_MIN, RATE_MAX = 0.75, 1.33
 #   ("montage", id, schritte, [(quelle, at), …])   schnelle Schnitte, je Wort des Satzes ein Ausschnitt
 #   ("extra", id, sekunden)   Einstellung nur als Quelle für Ausschnitte (wird gerendert, aber nicht selbst gezeigt)
 PLAN = [
-    ("clip", "hook_a", "kolonne", 0.2, [("p", 0.25), ("l", "h1"), ("p", 0.1)]),
-    ("clip", "hook_b", "heer", 2.8, [("p", 0.05), ("l", "h2"), ("p", 0.05)]),
-    ("clip", "hook_c", "kampf", 0.4, [("p", 0.05), ("l", "h3"), ("p", 0.25)]),
-    ("shot", "medina", "MEDINA · RAMADAN, 2 N. H.", [("p", 0.3), ("l", "e1"), ("p", 0.2), ("l", "e2"), ("p", 0.2)]),
-    ("shot", "auszug", None, [("p", 0.1), ("l", "e3"), ("p", 0.2)]),
-    ("shot", "heer", None, [("p", 0.1), ("l", "e4"), ("p", 0.2)]),
-    ("shot", "rat", "BADR", [("p", 0.2), ("l", "e5"), ("p", 0.45), ("q", "q1"), ("p", 0.4)]),
+    ("clip", "hook_0", "kampf", 2.0, [("p", 0.6)]),
+    ("clip", "hook_a", "kolonne", 0.2, [("l", "h1"), ("p", 0.1)]),
+    ("clip", "hook_b", "sturm", 0.2, [("p", 0.05), ("l", "h2"), ("p", 0.05)]),
+    ("clip", "hook_c", "kampf", 4.2, [("p", 0.05), ("l", "h3"), ("p", 0.25)]),
+    ("shot", "medina", "MEDINA · RAMADAN, 2 N. H.", [("p", 0.2), ("l", "e1"), ("p", 0.15)]),
+    ("shot", "auszug", None, [("p", 0.1), ("l", "e3"), ("p", 0.1)]),
+    ("shot", "heer", None, [("p", 0.05), ("l", "e4"), ("p", 0.15)]),
+    ("shot", "rat", "BADR", [("p", 0.15), ("l", "e5"), ("p", 0.35), ("q", "q1"), ("p", 0.35)]),
     ("shot", "regen", None, [("p", 0.2), ("l", "e6"), ("p", 0.2)]),
-    ("shot", "baum", None, [("p", 0.1), ("l", "e7"), ("p", 0.3)]),
-    ("shot", "reihen", "BADR · MORGEN", [("p", 0.25), ("l", "e8"), ("p", 0.3)]),
-    ("shot", "gebet", None, [("p", 0.1), ("q", "q2"), ("p", 0.5), ("l", "e9"), ("p", 0.45), ("q", "q3"), ("p", 0.4)]),
-    ("shot", "engel", None, [("p", 0.1), ("l", "e10"), ("p", 0.3)]),
-    ("shot", "sturm", None, [("p", 0.1), ("l", "e11"), ("p", 0.05)]),
-    ("montage", "schlacht", [("p", 0.0), ("l", "e12"), ("p", 0.2)], [("kampf", 1.2), ("kampf", 3.4), ("kampf", 5.2)]),
-    ("shot", "jagd", None, [("p", 0.2), ("l", "e13"), ("p", 0.3), ("l", "e14"), ("p", 0.3)]),
-    ("clip", "himmel", "engel", 3.0, [("p", 0.05), ("q", "q4"), ("p", 0.45)]),
+    ("shot", "baum", None, [("p", 0.1), ("l", "e7"), ("p", 0.25)]),
+    ("shot", "reihen", "BADR · MORGEN", [("p", 0.2), ("l", "e8"), ("p", 0.25)]),
+    ("shot", "gebet", None, [("p", 0.1), ("q", "q2"), ("p", 0.45), ("l", "e9"), ("p", 0.4), ("q", "q3"), ("p", 0.35)]),
+    ("shot", "engel", None, [("p", 0.1), ("l", "e10"), ("p", 0.25)]),
+    ("shot", "duell", None, [("p", 0.2), ("l", "d1"), ("p", 0.3), ("l", "d2"), ("p", 0.2), ("l", "d3"), ("p", 0.7)]),
+    ("shot", "sturm", None, [("p", 0.05), ("l", "e11"), ("p", 0.05)]),
+    ("montage", "schlacht", [("p", 0.0), ("l", "e12"), ("p", 0.2)], [("kampf", 8.6), ("kampf", 9.7), ("kampf", 10.8)]),
+    ("shot", "jagd", None, [("p", 0.15), ("l", "e13"), ("p", 0.25), ("l", "e14"), ("p", 0.2)]),
+    ("clip", "himmel", "engel", 2.3, [("p", 0.05), ("q", "q4"), ("p", 0.4)]),
+    ("shot", "abujahl", None, [("p", 0.2), ("l", "a1"), ("p", 0.25), ("l", "a2"), ("p", 0.2), ("l", "a3"), ("p", 0.35)]),
     ("shot", "ende", None, [("p", 0.2), ("l", "e15"), ("p", 0.2)]),
-    ("shot", "abend", None, [("p", 0.2), ("l", "e16"), ("p", 0.3), ("l", "e17"), ("p", 1.4)]),
+    ("shot", "abend", None, [("p", 0.2), ("l", "e16"), ("p", 0.3), ("l", "e17"), ("p", 0.9)]),
     ("card", "logo", "QISSAH", 2.8),
-    ("extra", "kampf", 7.0),
-    ("extra", "kolonne", 8.4),
+    ("extra", "kampf", 12.0),
+    ("extra", "kolonne", 7.0),
 ]
 # Wörter, an denen in Blender etwas passiert (Ereignis „wort_satz“, z. B. regen_e6)
 KEYS = {"medina", "ramadan", "häuser", "besitz", "karawane", "prophet", "abfangen", "krieg", "entkommt", "mekka", "heer", "tausend",
@@ -52,7 +55,8 @@ KEYS = {"medina", "ramadan", "häuser", "besitz", "karawane", "prophet", "abfang
         "weint", "morgen", "heere", "qibla", "hände", "schar", "untergeht", "umhang", "zurück", "genug", "versprochen", "engeln",
         "anderen", "aufeinander", "staub", "schreie", "schwerter", "muslim", "gegner", "peitschenknall", "stimme", "haizum",
         "stürzt", "erzählt", "sagt", "himmel", "fliehen", "siebzig", "gefangen", "dreihundert", "geholfen", "schwach", "koran",
-        "furqan", "unterscheidung"}
+        "furqan", "unterscheidung", "krieger", "rufen", "uns", "hamza", "ali", "ubaida", "hiebe",
+        "herausforderer", "fallen", "los", "gedränge", "jungen", "jahl", "zeigt", "stürzen", "falken", "fällt", "umkehren", "steht", "schläft", "später"}
 ANCHORS = {}
 NUM = {"zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6}
 

@@ -223,9 +223,8 @@ def shot_medina():
     c0 = (0.3, 1.5, EYE)
     c1 = (0.5, 7.0, EYE)
     c2 = (0.8, 8.6, EYE)
-    tb = ev("besitz_e2") if "besitz_e2" in EV else ls("e2") + 3.0
-    ck(rig, [(0, c0, (16, 7, 0)), (2.6, None, (14, 4, 0)), (ls("e2") - 0.2, c1, (8, -6, 0)), (tb - 0.6, None, (-10, -12, 0)),
-             (D, c2, (-2, -10, 0))])
+    tb = ev("besitz_e1") if "besitz_e1" in EV else D - 1.5
+    ck(rig, [(0, c0, (16, 4, 0)), (tb - 1.2, c1, (6, -6, 0)), (D, c2, (-8, -11, 0))])
     Q.handheld(shake, 0, D, amp=0.6, walk_from=0, walk_to=D, walk_amp=0.6)
     cfg["mist_amt"] = 0.18
     return cfg
@@ -320,11 +319,11 @@ def shot_auszug():
     c0 = P(45.5, 171.0)
     c1 = P(44.5, 168.5)
     tk = ev("karawane_e3")
-    tp = ev("prophet_e3")
+    te = ev("entkommt_e3") if "entkommt_e3" in EV else D - 1.2
     car = (40.0, 98.0, 1.5)
-    ck(rig, [(0, c0, look(c0, (38, 150, 1.5))), (tk - 0.2, None, look(c0, car)), (tp - 0.5, None, look(c0, (20, 98, 1.0))),
-                     (tp + 0.9, c1, look(c1, (lx, ly - 4, 1.8))), (D, None, look(c1, (lx - 1.5, ly - 10, 1.6)))])
-    Q.handheld(shake, 0, D, amp=0.5, walk_from=tp, walk_to=D, walk_amp=0.5)
+    ck(rig, [(0, c0, look(c0, (lx, ly - 4, 1.8))), (max(0.8, tk - 0.9), None, look(c0, (lx - 1, ly - 8, 1.6))),
+             (tk + 0.2, None, look(c0, car)), (te - 0.2, None, look(c0, (22, 98, 1.0))), (D, c1, look(c1, (-5, 98, 1.0)))])
+    Q.handheld(shake, 0, D, amp=0.5, walk_from=0, walk_to=D, walk_amp=0.4)
     return cfg
 
 
@@ -357,10 +356,10 @@ def shot_heer():
     c0 = (-92.0, -152.0, gz(-92.0, -152.0) + 4.2)
     MK._inst("rock3", "rk_view", (-92.0, -151.6, gz(-92.0, -152.0) - 0.4), rot=(0.1, 0.05, 0.6), scale=(2.6, 2.4, 2.4))
     te = ev("heer_e4")
-    ck(rig, [(0, c0, look(c0, (-300, -92, 2))), (max(0.6, te - 1.3), None, look(c0, (-290, -96, 2))),
-                     (te - 0.3, None, look(c0, (-40, -205, 4))), (D, None, look(c0, (-35, -190, 4)))])
-    Q.handheld(shake, 0, D, amp=0.45)
-    cfg["mist_amt"] = 0.42
+    ck(rig, [(0, c0, look(c0, (-75, -230, 6))), (te - 0.2, None, look(c0, (-48, -212, 4))), (D, (c0[0] + 1.2, c0[1] + 0.6, c0[2]),
+                                                                                           look(c0, (-38, -196, 4)))])
+    Q.handheld(shake, 0, D, amp=0.5)
+    cfg["mist_amt"] = 0.26
     return cfg
 
 
@@ -432,28 +431,54 @@ def shot_rat():
 
 
 def shot_regen():
-    """Nacht vor der Schlacht: Regen. Ich liege am Boden, ringsum Schlafende; der Sand wird dunkel und fest. Augen fallen zu."""
-    cfg = BW.night(overcast=True, moon=2.6)
+    """Nacht vor der Schlacht, Regen (v2): ich sitze unter den Männern; sie sitzen in ihre Umhänge gehüllt, manche unter einem
+    Tuch mit einer kleinen Lampe, andere liegen eingerollt unter Decken. Einer nach dem anderen nickt ein. Dann fallen mir die Augen zu."""
+    cfg = BW.night(overcast=True, moon=1.9)
     BW.valley()
     rnd = random.Random(31)
-    c = Vector((4.0, 44.0, 0))
-    spots = [(0.2, 1.6, 1.57), (1.0, 3.0, 1.45), (-0.9, 4.4, 1.7), (0.6, 5.9, 1.5), (-0.3, 7.4, 1.62), (1.4, 8.9, 1.4), (-1.2, 10.3, 1.75),
-             (2.8, 2.2, 0.2), (3.4, 5.2, 0.1), (-2.6, 2.4, 3.0), (-3.0, 6.0, 2.9)]
-    for k, (dx, dy, yw) in enumerate(spots):
-        BW.sleeper(f"sl{k}", (c.x + dx, c.y + dy), yw, seed=600 + k, side=rnd.choice((-1, 1)))
-    for k, (x, y) in enumerate(((12, 52), (16, 47), (-4, 58))):
+    cx, cy = 3.6, 42.8
+    tr = ev("ruhe_e6") if "ruhe_e6" in EV else ls("e6") + 5.0
+    tsl = ev("schläft_e6") if "schläft_e6" in EV else le("e6") - 0.6
+    t1 = D + 1
+    # Regenschutz mit kleiner Lampe, darunter drei Männer
+    BW.tarp("tarp", (4.3, 46.7), math.radians(4), size=(3.3, 2.3), h=(1.8, 1.3))
+    Lp = Q.oil_lamp("tlamp", (4.1, 45.55, gz(4.1, 45.55) + 0.04), energy=0.0)
+    Lp["light"].data.energy = 13
+    Q.flicker(Lp["light"], 0, t1, 13, seed=4)
+    step = max(0.7, (tsl - tr) / 5.0)
+    seq = [tr + 0.3 + step * k for k in range(6)]
+    cam_xy = (cx, cy)
+    for k, (x, y) in enumerate(((3.3, 46.3), (4.6, 47.0), (5.5, 46.2))):
+        BW.dozer(f"dz{k}", (x, y), Q.face_yaw((x, y), (4.4, 44.0)), seed=600 + k, t_sleep=seq[[1, 2, 3][k]], t1=t1, hooded=(k == 1))
+    # Rücken an Rücken (links)
+    BW.dozer("bb0", (2.0, 45.2), Q.face_yaw((2.0, 45.2), (1.4, 42.4)), seed=611, t_sleep=seq[0], t1=t1, lean_back=9, hooded=True)
+    BW.dozer("bb1", (2.1, 45.75), Q.face_yaw((2.1, 45.75), (2.6, 48.6)), seed=612, t_sleep=None, t1=t1, lean_back=9)
+    # rechts: einer sitzt noch, einer liegt eingerollt
+    BW.dozer("dzr", (7.4, 47.6), Q.face_yaw((7.4, 47.6), cam_xy), seed=614, t_sleep=seq[4], t1=t1)
+    BW.curled("cu0", (6.3, 44.6), math.radians(70), seed=615, t1=t1, side=1)
+    # weiter hinten: Sitzende (schlafen schon) und Eingerollte
+    for k, (x, y, kind) in enumerate(((0.0, 48.2, "d"), (2.0, 49.7, "c"), (6.8, 49.4, "d"), (8.7, 47.3, "c"), (-0.9, 46.4, "c"),
+                                      (5.0, 51.2, "d"), (9.6, 50.6, "d"), (-2.4, 50.2, "c"), (3.4, 53.0, "d"), (11.0, 48.6, "c"))):
+        if kind == "d":
+            BW.dozer(f"bg{k}", (x, y), rnd.uniform(0, 6.28), seed=620 + k, t_sleep=None, t1=t1)
+        else:
+            BW.curled(f"bg{k}", (x, y), rnd.uniform(0, 6.28), seed=620 + k, t1=t1, side=rnd.choice((-1, 1)))
+    for k, (x, y) in enumerate(((12, 52), (16, 47), (-4, 58), (9.5, 55.5))):
         MK.camel(f"nc{k}", (x, y, gz(x, y)), yaw=rnd.uniform(0, 6.28), seed=330 + k, sit=True, load=False)
-    rig, shake, cam = Q.pov_camera(lens=17)
-    c0 = (c.x - 0.4, c.y - 1.2, gz(c.x, c.y) + 0.34)
-    BW.rain("rain", (c.x, c.y + 6, 0), c0, size=(22.0, 24.0, 12.0), n=1500, speed=9.5, t1=D + 1, seed=2, alpha=0.32)
-    BW.wet_ground(ls("e6") + 2.0, ls("e6") + 6.5, amount=0.55)
-    ts = ev("schlafen_e6") if "schlafen_e6" in EV else le("e6") - 1.0
-    ck(rig, [(0, c0, (6, 2, -10)), (ls("e6") + 2.5, None, (2, 0, -12)), (ts - 1.0, None, (-4, 3, -14)), (D, None, (-6, 5, -16))])
-    Q.handheld(shake, 0, D, amp=0.15)
+    for k, (x, y) in enumerate(((2.4, 45.6), (6.0, 47.4))):
+        BW.shield(f"rshd{k}", Q.empty(f"rshe{k}", (x, y, gz(x, y) + 0.05), rot=(math.radians(-75), 0, rnd.uniform(0, 3))), loc=(0, 0, 0))
+    rig, shake, cam = Q.pov_camera(lens=18)
+    c0 = (cx, cy, gz(cx, cy) + 1.02)
+    BW.rain("rain", (cx, cy + 6, 0), c0, size=(22.0, 24.0, 12.0), n=1700, speed=9.5, t1=t1, seed=2, alpha=0.34)
+    BW.wet_ground(ls("e6") + 1.5, ls("e6") + 5.5, amount=0.55)
+    tg = ev("regen_e6") if "regen_e6" in EV else ls("e6") + 2.0
+    ck(rig, [(0, c0, (4, 18, 0)), (tg + 0.4, None, (2, -10, 0)), (tr - 0.4, None, (30, -6, 0)), (seq[1] - 0.3, None, (6, -6, 0)),
+             (seq[2] - 0.2, None, (-10, -7, 0)), (seq[3], None, (-26, -7, 0)), (tsl + 0.2, None, (-33, -9, 0)), (D, None, (-30, -24, 3))])
+    Q.handheld(shake, 0, D, amp=0.22)
     vs = Q.sc.view_settings
     vs.exposure = 0.0
-    vs.keyframe_insert("exposure", frame=max(1, Q.T(ts - 0.6)))
-    vs.exposure = -4.0
+    vs.keyframe_insert("exposure", frame=max(1, Q.T(tsl + 0.1)))
+    vs.exposure = -4.5
     vs.keyframe_insert("exposure", frame=Q.T(D))
     return cfg
 
@@ -467,7 +492,10 @@ def shot_baum():
         x, y = rnd.uniform(-8, 22), rnd.uniform(36, 56)
         if (Vector((x, y)) - TREE.xy).length < 4 or any((Vector((x, y)) - w.xy).length < 2.2 for w in WELLS):
             continue
-        BW.sleeper(f"sl{k}", (x, y), rnd.uniform(0, 6.28), seed=640 + k, side=rnd.choice((-1, 1)))
+        if k % 3 == 0:
+            BW.curled(f"sl{k}", (x, y), rnd.uniform(0, 6.28), seed=640 + k, t1=D + 1, side=rnd.choice((-1, 1)))
+        else:
+            BW.dozer(f"sl{k}", (x, y), rnd.uniform(0, 6.28), seed=640 + k, t1=D + 1)
     lp = Vector((TREE.x - 0.4, TREE.y - 1.6, 0))
     H = prophet("nur", (lp.x, lp.y, gz(lp.x, lp.y)), height=2.2, strength=1.0, day=False)
     # Gebet: stehen – sich verneigen – niederwerfen – sitzen (die Säule wird niedriger/höher)
@@ -554,7 +582,7 @@ def shot_reihen():
     glow_pulse(H, th, peak=2.2)
     rig, shake, cam = Q.pov_camera(lens=21)
     c0 = P(0.4, BW.LINE_M - 0.2)
-    tq = ev("qibla_e8") if "qibla_e8" in EV else ls("e8") + 2.6
+    tq = (ev("hände_e8") - 0.9) if "hände_e8" in EV else ls("e8") + 2.0
     lpz = (lp.x, lp.y, gz(lp.x, lp.y) + 1.5)
     ck(rig, [(0, c0, look(c0, (-6.0, BW.LINE_Q, 2.0))), (tq - 1.6, None, look(c0, (6.0, BW.LINE_Q, 2.0))),
                      (tq + 0.2, None, look(c0, lpz)), (D, None, look(c0, (lp.x + 0.3, lp.y, gz(lp.x, lp.y) + 1.7)))])
@@ -671,7 +699,7 @@ def shot_engel():
 
 def pov_fighter(cam, sword_=False, shield_=True):
     """Eigene Hände (Ich-Sicht) mit Schwert rechts und Schild links (unten am Bildrand)."""
-    Hh = MK.pov_arms(cam, skin=(0.42, 0.28, 0.19), sleeve=(0.72, 0.66, 0.55))
+    Hh = MK.pov_arms(cam, skin=(0.42, 0.28, 0.19), sleeve=(0.46, 0.38, 0.28))
     if sword_:
         BW.sword("pov_sword", Hh["R"], rot=(math.radians(-90), 0, 0), loc=(0, 0.05, -0.02))
     if shield_:
@@ -735,9 +763,11 @@ def shot_sturm():
 
 
 def shot_kampf():
-    """Mitten im Kampf, dichter Staub im Gegenlicht: Silhouetten, ein Gegner schlägt zu – mein Schild fängt den Hieb (Funken);
-    ein Pferd bäumt sich auf, Klingen kreuzen sich. Nur Schild und Klinge werden getroffen."""
-    cfg = BW.daylight("morning", dust=0.85)
+    """Mitten im Kampf (v2, 12 s, Quelle für Einstieg + Montage): Kämpfer ringsum mit ganzem Körper; ein Gegner stürmt heran und
+    schlägt zu – mein Schild fängt den Hieb (Ruck, Funken); ein Pferd bäumt sich neben mir auf; zweiter Hieb, ich schlage zurück,
+    er taumelt in den Staub; Pfeile fliegen über uns; ein Reiter galoppiert vorbei; Gefährten stürmen an mir vorbei.
+    Nur Schild und Klinge werden getroffen."""
+    cfg = BW.daylight("morning", dust=0.55)
     BW.valley()
     rnd = random.Random(81)
     t1 = D + 1
@@ -749,75 +779,110 @@ def shot_kampf():
     def at(f, s):
         p = c + fwd * f + side * s
         return (p.x, p.y)
+
+    def W(name, fs, side_, seed, **kw):
+        p = at(*fs)
+        return BW.warrior(name, (p[0], p[1], gz(*p)), side=side_, seed=seed, **kw)
     rig, shake, cam = Q.pov_camera(lens=17)
-    # Kampfpaare im Staub
-    pairs = [(5.0, -3.0), (8.0, 2.5), (11.0, -6.0), (13.0, 5.0), (6.5, 6.5), (16.0, 0.0)]
+    spark_hits = []
+    # Kampfpaare ringsum (ganzer Körper, schnell)
+    pairs = [(3.2, 2.6), (6.0, -3.2), (8.5, 3.6), (11.0, -6.0), (13.5, 5.0), (16.0, 0.0), (7.2, 7.4), (10.0, -1.2)]
     for k, (f, s) in enumerate(pairs):
-        pa = at(f, s - 0.75)
-        pb = at(f + 0.3, s + 0.75)
-        A = BW.warrior(f"da{k}", (pa[0], pa[1], gz(*pa)), yaw=Q.face_yaw(pa, pb), side="m", seed=1200 + k, weapon="sword")
-        B = BW.warrior(f"db{k}", (pb[0], pb[1], gz(*pb)), yaw=Q.face_yaw(pb, pa), side="q", seed=1220 + k, weapon="sword")
-        BW.duel(A, B, 0.0, t1, seed=k, period=1.0 + 0.2 * (k % 3))
-        Q.idle(A, 0, t1, seed=k)
-        Q.idle(B, 0, t1, seed=k + 50)
-    # Gegner stürmt auf mich zu und schlägt zu (3,4–4,0 s): mein Schild fängt den Hieb
-    e0 = at(8.0, 1.2)
-    e1 = at(2.1, 0.3)
-    En = BW.warrior("enemy", (e0[0], e0[1], gz(*e0)), yaw=Q.face_yaw(e0, at(0, 0)), side="q", seed=1300, weapon="sword", helmet=True, mail=True)
-    BW.guard_pose(En, 0.0)
-    ground_walk(En, [e0, e1], 2.4, 5.5, run=True)
-    Q.arm_pose(En, 3.3, "R", -170, -60, sh_y=8)
-    Q.arm_pose(En, 3.85, "R", -60, -10, sh_y=4)
-    Q.arm_pose(En, 4.5, "R", -140, -40, sh_y=8)
-    # Pferd bäumt sich auf (rechts, ~5,2 s)
-    hp = at(5.0, 3.6)
-    Hr = BW.horse("hr", (hp[0], hp[1], gz(*hp)), yaw=Q.face_yaw(hp, at(5.0, -2)), seed=1310, colour=2)
+        A = W(f"da{k}", (f, s - 0.75), "m", 1200 + k, weapon="sword")
+        B = W(f"db{k}", (f + 0.3, s + 0.75), "q", 1220 + k, weapon=rnd.choice(["sword", "sword", "spear"]) if k > 1 else "sword")
+        hits = BW.brawl(A, B, 0.0, t1, seed=k, tempo=1.1 + 0.1 * (k % 3))
+        if k == 0:
+            spark_hits += hits
+    # Gegner 1 stürmt heran, Hieb auf meinen Schild (2,55 s), taumelt; zweiter Hieb (5,3 s), ich schlage zurück (5,95 s)
+    E = W("enemy", (9.0, 1.5), "q", 1300, weapon="sword", helmet=True, mail=True)
+    E["root"].rotation_euler.z = Q.face_yaw(at(9.0, 1.5), at(0, 0))
+    BW.guard_pose(E, 0.0)
+    BW.charge(E, [at(9.0, 1.5), at(2.2, 0.25)], 0.7, speed=5.5)
+    BW.swing_at(E, 2.55, "over")
+    BW.stagger(E, 2.75, back=0.6, dur=0.5)
+    r = E["root"]
+    p_st, _ = BW.pos_at(E, 4.5)
+    r.location = p_st
+    r.keyframe_insert("location", frame=Q.T(4.55))
+    p = at(2.2, 0.2)
+    r.location = (p[0], p[1], gz(*p))
+    r.keyframe_insert("location", frame=Q.T(5.0))
+    BW.swing_at(E, 5.3, "side")
+    BW.stagger(E, 5.98, back=1.3, dur=0.6)
+    p_e, _ = BW.pos_at(E, 7.0)
+    BW.dust_puff("ep", (p_e.x, p_e.y, gz(p_e.x, p_e.y) + 0.3), 6.2, cam, size=1.6, alpha=0.6, seed=3)
+    # ein Gefährte springt ein und kämpft mit ihm (Montage 8,6 s)
+    M9 = W("m9", (1.0, -3.6), "m", 1330, weapon="sword")
+    pm = at(p_e.x * 0 + 3.2, -1.0)
+    BW.charge(M9, [at(1.0, -3.6), pm], 6.3, speed=5.0)
+    spark_hits += BW.brawl(M9, E, 7.2, t1, seed=9, tempo=1.35, first=0.35, pa=(pm[0], pm[1], gz(*pm)), pb=p_e)
+    # Pferd bäumt sich links neben mir auf (3,3 s)
+    hp = at(4.2, -3.6)
+    Hr = BW.horse("hr", (hp[0], hp[1], gz(*hp)), yaw=Q.face_yaw(hp, at(4.2, 2)), seed=1310, colour=2)
     Rr = BW.mounted("hrr", Hr, side="q", seed=1311, weapon="sword", helmet=True)
-    Q.arm_pose(Rr, 4.8, "R", -165, -40)
-    Q.arm_pose(Rr, 5.7, "R", -60, -10)
-    BW.horse_rear(Hr, 5.15, dur=1.5)
-    # Klingen kreuzen sich vorn (Funken)
-    fa = at(3.2, 1.9)
-    fb = at(3.4, 3.0)
-    A = BW.warrior("fa", (fa[0], fa[1], gz(*fa)), yaw=Q.face_yaw(fa, fb), side="m", seed=1320, weapon="sword")
-    B = BW.warrior("fb", (fb[0], fb[1], gz(*fb)), yaw=Q.face_yaw(fb, fa), side="q", seed=1321, weapon="sword")
-    BW.guard_pose(A, 0)
-    BW.guard_pose(B, 0)
-    for t_ in (5.6, 6.3):
-        BW.strike(A, t_)
-        BW.block(B, t_)
-    mid = Vector(((fa[0] + fb[0]) / 2, (fa[1] + fb[1]) / 2, gz(*fa) + 1.55))
-    BW.sparks("spk_a", mid, 5.6, seed=1)
-    BW.sparks("spk_b", mid, 6.3, seed=2)
-    # Staub: Karten im Gegenlicht
-    for k in range(26):
-        f, s = rnd.uniform(2.0, 22.0), rnd.uniform(-10.0, 10.0)
+    Q.arm_pose(Rr, 2.9, "R", -165, -40)
+    Q.arm_pose(Rr, 3.9, "R", -60, -10)
+    BW.horse_rear(Hr, 3.25, dur=1.5)
+    BW.dust_puff("hrp", (hp[0], hp[1], gz(*hp) + 0.2), 4.5, cam, size=2.2, alpha=0.55, seed=4)
+    # Reiter galoppiert quer vor mir vorbei (~8,4 s)
+    Hg = BW.horse("hg", (*at(5.6, -15), gz(*at(5.6, -15))), yaw=0, seed=1340, colour=1)
+    BW.mounted("hgr", Hg, side="q", seed=1341, weapon="spear", helmet=True, mail=True)
+    BW.horse_run(Hg, [at(5.6, -15), at(5.4, 16)], 6.8, speed=9.5)
+    BW.hoof_dust("hgd", Hg, 7.2, 10.0, cam, every=0.18, alpha=0.45, seed=7)
+    # Pfeile unserer Bogenschützen fliegen über uns hinweg (6,6 s)
+    a0 = at(-12, 0)
+    a1 = at(24, 0)
+    BW.arrows("arr", (a0[0], a0[1], 0), (a1[0], a1[1], 0), 6.45, n=18, spread=(3.0, 3.0), flight=1.15, peak=4.2, seed=2)
+    # Gefährten stürmen an mir vorbei (10,8 s)
+    for k, sx in enumerate((-1.3, 1.2, -2.4, 2.3)):
+        Rn = W(f"run{k}", (-3.0 - 0.8 * k, sx), "m", 1360 + k, weapon="sword", shield_=(k % 2 == 0))
+        Q.arm_pose(Rn, 0, "R", -165, -45)
+        BW.charge(Rn, [at(-3.0 - 0.8 * k, sx), at(14.0, sx * 1.6)], 10.3 + 0.15 * k, speed=5.6)
+    # Staub
+    for k in range(24):
+        f, s = rnd.uniform(2.5, 22.0), rnd.uniform(-10.0, 10.0)
         p = at(f, s)
-        pz = gz(*p) + rnd.uniform(0.8, 2.4)
-        a0 = rnd.uniform(-1.0, D * 0.7)
-        BW.dust_card(f"kd{k}", (p[0], p[1], pz), (rnd.uniform(4, 8), rnd.uniform(2.5, 4.5)), cam, a0, a0 + rnd.uniform(2.5, 4.5),
-                     rnd.uniform(0.35, 0.6), grow=1.6, drift=(rnd.uniform(-0.6, 0.6), rnd.uniform(-0.6, 0.6), 0.35), fade_in=0.6, fade_out=1.2)
+        a0_ = rnd.uniform(-1.0, D * 0.8)
+        BW.dust_card(f"kd{k}", (p[0], p[1], gz(*p) + rnd.uniform(0.8, 2.2)), (rnd.uniform(4, 7), rnd.uniform(2.5, 4.0)), cam, a0_,
+                     a0_ + rnd.uniform(2.5, 4.5), rnd.uniform(0.25, 0.45), grow=1.6, drift=(rnd.uniform(-0.6, 0.6), rnd.uniform(-0.6, 0.6), 0.35),
+                     fade_in=0.6, fade_out=1.2)
     BW.far_army("kfar", -70.0, 70.0, -40.0, -20.0, 300, n_horse=30, side="q", seed=15, banners=5)
-    # Ich: Schwert + Schild; Schild hoch beim Hieb, Ruck
-    Hh = pov_fighter(cam)
-    hand_pose(Hh, 0, "R", (0.3, -0.9, -0.3), (-80, 0, 10))
+    # Ich: Schild links, kleines Schwert rechts (nur beim Gegenschlag im Bild)
+    Hh = pov_fighter(cam, sword_=True)
+    hide_r = ((0.32, -0.95, -0.3), (-80, 0, 10))
+    hand_pose(Hh, 0, "R", *hide_r)
     hand_pose(Hh, 0, "L", *POV_REST["L"])
-    hand_pose(Hh, 3.45, "L", *POV_REST["L"])
-    hand_pose(Hh, 3.72, "L", *POV_BLOCK["L"])
-    hand_pose(Hh, 3.95, "L", (-0.1, -0.13, -0.44), (-16, -8, -12))
-    hand_pose(Hh, 4.7, "L", *POV_REST["L"])
-    imp = 3.88
-    # Funken am Rand meines Schildes (Welt-Position zur Zeit des Treffers)
+    for tb in (2.55, 5.3):
+        hand_pose(Hh, tb - 0.3, "L", *POV_REST["L"])
+        hand_pose(Hh, tb - 0.08, "L", *POV_BLOCK["L"])
+        hand_pose(Hh, tb + 0.06, "L", (-0.1, -0.15, -0.42), (-18, -8, -14))
+        hand_pose(Hh, tb + 0.7, "L", *POV_REST["L"])
+    hand_pose(Hh, 5.5, "R", *hide_r)
+    hand_pose(Hh, 5.78, "R", (0.4, 0.08, -0.4), (20, 30, -60))
+    hand_pose(Hh, 5.95, "R", (-0.12, -0.3, -0.62), (-60, -20, 40))
+    hand_pose(Hh, 6.12, "R", (-0.34, -0.5, -0.5), (-80, -30, 60))
+    hand_pose(Hh, 6.6, "R", *hide_r)
     c0 = P(*at(-0.6, 0.0))
     cm = P(*at(0.6, 0.15))
-    yaw0 = Q.yaw_to(c0, (*at(10, 0), 0))
-    ck(rig, [(0, c0, (yaw0 + 8, 2, 0)), (2.3, None, (yaw0 - 4, 3, 0)), (3.2, cm, (yaw0 - 2, 4, 0)), (imp, None, (yaw0 - 3, 7, -4)),
-                     (imp + 0.25, None, (yaw0 - 1, 2, 2)), (4.8, None, (yaw0 - 26, 6, 0)), (D, None, (yaw0 - 18, 3, 0))])
-    Q.handheld(shake, 0, D, amp=1.2, walk_from=0, walk_to=3.2, walk_amp=1.0)
-    Q.sc.frame_set(Q.T(imp))
-    sp = (cam.matrix_world @ Vector((-0.06, 0.1, -0.62)))
+    y0 = Q.yaw_to(c0, (*at(10, 0), 0))
+    ck(rig, [(0, c0, (y0 + 6, 2, 0)), (1.0, None, (y0 - 24, 3, 0)), (1.6, cm, (y0 - 3, 3, 0)), (2.55, None, (y0 - 3, 7, -4)),
+             (2.8, None, (y0 - 1, 2, 2)), (3.0, None, (y0 + 10, 2, 0)), (3.25, None, (y0 + 36, 7, 0)), (4.1, None, (y0 + 32, 9, 0)),
+             (4.6, None, (y0 - 2, 3, 0)), (5.3, None, (y0 - 3, 6, -3)), (5.95, None, (y0 + 5, 1, 4)), (6.4, None, (y0, 3, 0)),
+             (6.9, None, (y0 + 2, 12, 0)), (7.5, None, (y0 - 4, 4, 0)), (8.6, None, (y0 - 6, 3, 0)), (9.6, None, (y0 - 8, 2, 0)),
+             (9.9, None, (y0 - 30, 3, 0)), (10.7, None, (y0 - 28, 2, 0)), (11.0, None, (y0 - 6, 1, 0)), (D, None, (y0 + 4, 2, 0))],
+       loc_interp="LINEAR")
+    Q.handheld(shake, 0, D, amp=1.1, walk_from=0, walk_to=1.6, walk_amp=1.0, hits=[(2.55, 1.0), (5.3, 1.0), (5.95, 0.6)])
+    # Funken: Schildrand (Welt-Position zur Zeit des Treffers) + nahe Klingen
+    for k, tb in enumerate((2.55, 5.3)):
+        Q.sc.frame_set(Q.T(tb))
+        sp = cam.matrix_world @ Vector((-0.1, 0.12, -0.85))
+        BW.sparks(f"spk_s{k}", sp, tb, n=30, seed=3 + k, lamp=70.0)
+    Q.sc.frame_set(Q.T(5.95))
+    pe = E["root"].matrix_world.translation + Vector((0, 0, 1.25))
+    BW.sparks("spk_c", pe, 5.96, n=26, seed=6, lamp=200.0)
     Q.sc.frame_set(1)
-    BW.sparks("spk_s", sp, imp, n=34, seed=3, lamp=260.0)
+    for k, (th, a_, b_, pt) in enumerate(spark_hits):
+        BW.sparks(f"spk_h{k}", pt, th, n=14, seed=20 + k, lamp=90.0)
     return cfg
 
 
@@ -831,7 +896,7 @@ def shot_jagd():
     rig, shake, cam = Q.pov_camera(lens=17)
     tp = ev("peitschenknall_e13") if "peitschenknall_e13" in EV else ls("e13") + 3.5
     tf = ev("stürzt_e14") if "stürzt_e14" in EV else ls("e14") + 0.6
-    te = ev("erzählt_e14") if "erzählt_e14" in EV else ls("e14") + 2.0
+    te = ev("prophet_e14") if "prophet_e14" in EV else ls("e14") + 2.0
     sp = 4.2
     y_stop = 2.0 - sp * (tf - 0.3)
     en_path = [(3.0, -2.0), (3.6, -2.0 - 5.0 * t1)]
@@ -843,10 +908,10 @@ def shot_jagd():
     Q.head_to(En, 2.2, (3.4, -40.0, 1.6))
     BW.fall_back(En, tf, dur=0.65)
     # andere Kämpfe im Staub ringsum
-    for k, (x, y) in enumerate(((-6, -10), (11, -16), (-9, -26), (13, -34), (-4, -40), (9, -48))):
+    for k, (x, y) in enumerate(((-0.4, -8), (5.6, -13), (-0.6, -20), (6.0, -26), (-0.8, -33), (6.4, -38), (-0.2, -46), (5.8, -55))):
         A = BW.warrior(f"ja{k}", (x, y, gz(x, y)), yaw=Q.face_yaw((x, y), (x + 1.4, y)), side="m", seed=1410 + k, weapon="sword")
         B = BW.warrior(f"jb{k}", (x + 1.5, y, gz(x + 1.5, y)), yaw=Q.face_yaw((x + 1.5, y), (x, y)), side="q", seed=1430 + k, weapon="sword")
-        BW.duel(A, B, 0.0, t1, seed=k)
+        BW.brawl(A, B, 0.0, t1, seed=40 + k, tempo=1.15)
     for k in range(4):  # fliehende Reiter
         x, y = rnd.uniform(-20, 20), -30.0 - k * 6
         Hh = BW.horse(f"jh{k}", (x, y, gz(x, y)), yaw=0.0, seed=1450 + k)
@@ -981,9 +1046,240 @@ def shot_abend():
     return cfg
 
 
+def shot_duell():
+    """Zweikampf vor der Schlacht (Abu Dawud 2665): drei Krieger der Quraisch treten vor und rufen „Wer stellt sich uns?“;
+    hinter mir schickt das Licht drei Gefährten (Hamza, Ali, Ubaida – mit Licht über dem Kopf): sie gehen dicht an mir vorbei
+    und stürmen los. Schnitt nah heran: Hiebe, Staub – die drei Herausforderer fallen in den Staub (kein Blut)."""
+    cfg = BW.daylight("morning", dust=0.18)
+    BW.valley()
+    lines = battle_lines(D + 1, avoid=[(0.0, -8.0, 9.0)])
+    rnd = random.Random(55)
+    lp = Vector((ARISH.x, ARISH.y + 0.3, 0))
+    H = prophet("nur", (lp.x, lp.y, gz(lp.x, lp.y)), height=2.2, strength=0.95)
+    tk = ev("krieger_d1") if "krieger_d1" in EV else ls("d1") + 1.0
+    tr = ev("rufen_d1") if "rufen_d1" in EV else ls("d1") + 3.2
+    tu = ev("uns_d1") if "uns_d1" in EV else le("d1") - 0.4
+    tp = ev("prophet_d2") if "prophet_d2" in EV else ls("d2") + 0.2
+    th_ = [ev(k) if k in EV else ls("d2") + 2.5 + i for i, k in enumerate(("hamza_d2", "ali_d2", "ubaida_d2"))]
+    thb = ev("hiebe_d3") if "hiebe_d3" in EV else ls("d3") + 0.2
+    tst = ev("staub_d3") if "staub_d3" in EV else thb + 1.0
+    tfa = ev("fallen_d3") if "fallen_d3" in EV else le("d3") - 0.6
+    thz = ev("herausforderer_d3") if "herausforderer_d3" in EV else tfa - 1.6
+    tfs = [thz + 0.55, thz + 1.1, tfa - 0.05]   # die drei fallen nacheinander
+    ymeet = 3.5
+    xs = (-2.2, 0.4, 3.0)
+    # die drei Herausforderer (Kettenhemd, Helm, rote Umhänge) treten aus ihrer Reihe vor
+    Q3 = []
+    for i, x in enumerate(xs):
+        y0 = -5.0
+        Qp = BW.warrior(f"qd{i}", (x + 0.3, y0, gz(x, y0)), yaw=math.pi, side="q", seed=1700 + i, weapon="sword", helmet=True, mail=True,
+                        cloak=[(0.5, 0.08, 0.06), (0.35, 0.06, 0.05), (0.42, 0.18, 0.08)][i])
+        BW.guard_pose(Qp, 0.0)
+        ground_walk(Qp, [(x + 0.3, y0), (x, ymeet - 1.4)], 0.2 + 0.25 * i, 3.4)
+        # Herausforderung: Schwert hoch, Schild weit – dann Schwert gegen den Schild schlagen
+        Q.arm_pose(Qp, tr - 0.2 + 0.1 * i, "R", -175, -30, sh_y=10)
+        Q.arm_pose(Qp, tr - 0.2 + 0.1 * i, "L", -80, -20, sh_y=-40)
+        for k in range(2):
+            t_ = tu - 0.15 + 0.32 * k + 0.07 * i
+            Q.arm_pose(Qp, t_ - 0.14, "R", -150, -70, sh_y=-30)
+            Q.arm_pose(Qp, t_, "R", -75, -40, sh_y=40)
+        Q.arm_pose(Qp, tu + 0.9, "R", *BW.GUARD_R[:2], sh_y=BW.GUARD_R[2])
+        Q.arm_pose(Qp, tu + 0.9, "L", *BW.GUARD_L[:2], sh_y=BW.GUARD_L[2])
+        Q.head_to(Qp, tr, (x, BW.LINE_M, 2.6))
+        Q3.append(Qp)
+    # Hamza, Ali, Ubaida: kommen von hinten, gehen dicht an mir vorbei, stürmen los
+    M3 = []
+    cx = 0.4
+    for i, x in enumerate(xs):
+        sx = (1.05, -0.25, 1.15)[i]
+        y0 = BW.LINE_M + 7.0
+        Mp = BW.warrior(f"md{i}", (sx, y0, gz(sx, y0)), yaw=math.pi, side="m", seed=1750 + i, weapon="sword", glow=True,
+                        mail=(i == 0), cloak=[(0.86, 0.84, 0.78), (0.7, 0.62, 0.5), (0.8, 0.76, 0.66)][i])
+        t_pass = th_[i] - 0.15
+        t0w = t_pass - 6.5 / 2.2
+        ground_walk(Mp, [(sx, y0), (sx, BW.LINE_M - 0.5)], t0w, 2.2)
+        t_run = t0w + 7.5 / 2.2
+        tend = ground_walk(Mp, [(sx, BW.LINE_M - 0.5), (x, ymeet + 1.4)], t_run, 5.2, run=True)
+        Q.arm_pose(Mp, tend + 0.1, "R", *BW.GUARD_R[:2], sh_y=BW.GUARD_R[2])
+        Q.arm_pose(Mp, tend + 0.1, "L", *BW.GUARD_L[:2], sh_y=BW.GUARD_L[2])
+        M3.append(Mp)
+    rig, shake, cam = Q.pov_camera(lens=22)
+    # Kampf: schnell, wuchtig; die drei Herausforderer fallen nacheinander
+    hits = []
+    for i in range(3):
+        tf_ = tfs[i]
+        x = xs[i]
+        hits += BW.brawl(M3[i], Q3[i], thb - 0.35, tf_ + 0.7, seed=60 + i, tempo=1.35, first=0.25 + 0.12 * i,
+                         final=(tf_, M3[i]), stop={Q3[i]["name"]: tf_ + 0.06}, pa=(x, ymeet + 0.85, gz(x, ymeet)),
+                         pb=(x, ymeet - 0.85, gz(x, ymeet)))
+        BW.fall_back(Q3[i], tf_ + 0.06, dur=0.6, side=(-1) ** i)
+        Q.sc.frame_set(Q.T(tf_ + 0.5))
+        pq = Q3[i]["root"].matrix_world.translation
+        Q.sc.frame_set(1)
+        BW.dust_puff(f"fp{i}", (pq.x, pq.y, gz(pq.x, pq.y) + 0.35), tf_ + 0.25, cam, size=2.6, alpha=0.85, n=4, seed=10 + i)
+    for k, (th, a_, b_, pt) in enumerate(hits):
+        BW.sparks(f"spk{k}", pt, th, n=16, seed=30 + k, lamp=110.0)
+    # Staubstöße bei „Staub“
+    for i, x in enumerate(xs):
+        BW.dust_puff(f"sp{i}", (x, ymeet, gz(x, ymeet) + 0.3), tst - 0.1 + 0.1 * i, cam, size=2.4, alpha=0.6, n=3, seed=20 + i)
+    # unsere Reihe jubelt am Ende (Schwerter hoch)
+    for k, Pp in enumerate(lines["m"]):
+        Q.arm_pose(Pp, tfs[0] + 0.3 + 0.04 * k, "R", 0, -14, sh_y=6)
+        Q.arm_pose(Pp, tfs[0] + 0.9 + 0.04 * k, "R", -170, -25, sh_y=8)
+    glow_pulse(H, tp, peak=2.0)
+    # Kamera 1: in der vordersten Reihe; Kamera 2 (Schnitt bei „Hiebe“): nah am Kampf
+    c0 = P(cx, BW.LINE_M - 0.3)
+    c0b = P(cx, BW.LINE_M - 1.2)
+    lpz = (lp.x, lp.y, gz(lp.x, lp.y) + 1.4)
+    meet = (0.4, ymeet, gz(0.4, ymeet) + 1.3)
+    c2 = P(5.2, ymeet + 4.6, eye=1.5)   # schräg von der Seite, nah
+    fcut = Q.T(thb - 0.35)
+    ta, tb_ = (fcut - 2) / Q.FPS, (fcut - 1) / Q.FPS   # zwei aufeinanderfolgende Bilder: vor / nach dem Schnitt
+    keys = [(0, c0, look(c0, (0.4, BW.LINE_Q, 1.6))), (tr - 0.3, None, look(c0, (0.6, ymeet - 2, 1.6))), (tu + 0.4, c0b, look(c0b, meet)),
+            (tp - 0.45, None, look(c0b, (cx + 2, BW.LINE_M + 6, 1.6))), (tp + 0.35, None, look(c0b, (cx + 0.6, BW.LINE_M + 7, 1.7))),
+            (th_[0] - 0.35, None, look(c0b, (cx + 0.9, BW.LINE_M + 3, 1.7))), (th_[1] + 0.3, None, look(c0b, (cx, BW.LINE_M - 6, 1.6))),
+            (ta, c0b, look(c0b, meet)), (tb_, c2, look(c2, meet)), (tst, None, look(c2, (-0.4, ymeet, 1.2))),
+            (tfa, None, look(c2, (0.6, ymeet - 0.5, 1.1))), (D, P(4.6, ymeet + 4.0, eye=1.5), look(c2, (0.2, ymeet - 1.0, 1.0)))]
+    ck(rig, keys)
+    for fc in Q.fcurves(rig):  # harter Schnitt zu Kamera 2
+        for kp in fc.keyframe_points:
+            if int(round(kp.co.x)) == fcut - 1:
+                kp.interpolation = "CONSTANT"
+    cd = cam.data   # Kamera 2 weiter (alle drei Paare im Bild)
+    cd.keyframe_insert("lens", frame=fcut - 1)
+    cd.lens = 16.0
+    cd.keyframe_insert("lens", frame=fcut)
+    for fc in Q.fcurves(cd):
+        for kp in fc.keyframe_points:
+            kp.interpolation = "CONSTANT"
+    Q.handheld(shake, 0, D, amp=0.6, hits=[(h[0], 0.5) for h in hits] + [(tf_ + 0.06, 0.8) for tf_ in tfs])
+    return cfg
+
+
+def shot_abujahl():
+    """Abu Jahl (Bukhari 3141, 3988): ich (Abdurrahman ibn Auf) stehe in der Reihe, links und rechts zwei junge Burschen
+    (Licht über dem Kopf); jeder fragt mich leise nach Abu Jahl. Ich zeige ihn ihnen – er steht hinter einem Ring aus Speeren.
+    Sie stürzen los wie zwei Falken; er fällt rückwärts in eine Staubwolke (kein Blut)."""
+    cfg = BW.daylight("morning", dust=0.42)
+    BW.valley()
+    rnd = random.Random(121)
+    t1 = D + 1
+    rig, shake, cam = Q.pov_camera(lens=20)
+    tj = ev("jungen_a1") if "jungen_a1" in EV else ls("a1") + 2.0
+    tq = ev("jahl_a1") if "jahl_a1" in EV else tj + 1.2
+    tz = ev("zeigt_a2") if "zeigt_a2" in EV else ls("a2") + 0.4
+    ts = ev("stürzen_a2") if "stürzen_a2" in EV else ls("a2") + 2.4
+    tf = ev("fällt_a3") if "fällt_a3" in EV else ls("a3") + 0.9
+    cx, cy = 2.0, 6.0
+    c0 = P(cx, cy)
+    # Reihe der Muslime (ich in der Mitte), zwei Burschen direkt neben mir
+    for k in range(12):
+        x = cx - 7.5 + k * 1.3
+        if abs(x - cx) < 2.2:
+            continue
+        Pp = BW.warrior(f"rw{k}", (x, cy + rnd.uniform(-0.3, 0.3), gz(x, cy)), yaw=math.pi, side="m", seed=1800 + k,
+                        weapon=rnd.choice(["sword", "spear"]))
+        Q.idle(Pp, 0, t1, seed=k)
+    boys = []
+    for i, dx in enumerate((-0.9, 0.9)):
+        b = BW.warrior(f"boy{i}", (cx + dx, cy - 0.5, gz(cx + dx, cy)), yaw=math.pi, side="m", seed=1830 + i, weapon="sword",
+                       shield_=False, height=0.86, glow=True, helmet=False, mail=False, head=("cap", "turban")[i])
+        Q.arm_pose(b, 0, "R", -20, -30, sh_y=4)
+        boys.append(b)
+    # fragen (Kopf zu mir geneigt, Oberkörper lehnt herüber)
+    for i, (b, t_) in enumerate(zip(boys, (tj, tq))):
+        Q.idle(b, 0, t_ - 0.6, seed=40 + i)
+        ch = b["chest"]
+        sgn = 1 if i == 0 else -1
+        for tt, lz, lx in ((t_ - 0.5, 0, 2), (t_ - 0.1, -18 * sgn, 10), (t_ + 1.3, -18 * sgn, 10), (t_ + 1.8, 0, 3)):
+            ch.rotation_euler = (math.radians(lx), math.radians(-8 * sgn * (lz != 0)), math.radians(lz))
+            ch.keyframe_insert("rotation_euler", frame=max(1, Q.T(tt)))
+        Q.head_to(b, t_ - 0.1, (cx, cy, gz(cx, cy) + 1.7))
+        Q.head_to(b, tz + 0.3, (3.2, cy - 22, 1.8))
+    # Abu Jahl hinter einem Ring aus Speeren (rote Fahne neben ihm)
+    ax, ay = 3.2, cy - 22.0
+    AJ = BW.warrior("abujahl", (ax, ay, gz(ax, ay)), yaw=math.pi, side="q", seed=1850, weapon="sword", helmet=True, mail=True,
+                    cloak=(0.55, 0.06, 0.05), height=1.04)
+    BW.banner("aj_flag", (ax - 1.0, ay - 0.8, gz(ax - 1.0, ay - 0.8)), BW.M["flag_r"], pole_h=4.0, size=(1.3, 0.9), wind=1.3)
+    for k, t_ in enumerate((tz - 1.0, tz + 0.6, ts + 1.2)):
+        Q.arm_pose(AJ, t_, "R", -165 if k % 2 == 0 else -100, -40, sh_y=10)
+    guards = []
+    for k in range(7):
+        a = math.radians(-160 + k * 46)
+        gx, gy = ax + 1.9 * math.cos(a), ay + 1.9 * math.sin(a)
+        g = BW.warrior(f"ajg{k}", (gx, gy, gz(gx, gy)), yaw=Q.face_yaw((gx, gy), (gx + (gx - ax), gy + (gy - ay))), side="q", seed=1860 + k,
+                       weapon="spear", helmet=True, mail=(k % 2 == 0))
+        Q.arm_pose(g, 0, "R", -70, -20)
+        Q.idle(g, 0, t1, seed=k + 70)
+        guards.append(g)
+    # Kämpfe ringsum (ganzer Körper)
+    for k, (x, y) in enumerate(((-2.0, -2.5), (5.2, -5.0), (-1.2, -9.5), (8.6, -8.8), (-4.0, -13.5), (0.2, -24.0), (7.8, -21.0),
+                                (-0.6, 1.5))):
+        A = BW.warrior(f"fa{k}", (x, y + 0.75, gz(x, y)), side="m", seed=1880 + k, weapon="sword")
+        B = BW.warrior(f"fb{k}", (x + 0.2, y - 0.75, gz(x, y)), side="q", seed=1900 + k, weapon=rnd.choice(["sword", "spear"]))
+        BW.brawl(A, B, 0.0, t1, seed=80 + k, tempo=1.15)
+    # die Burschen stürzen los (wie Falken), schlagen zu; Abu Jahl fällt rückwärts in den Staub
+    hit_t = tf - 0.35
+    for i, b in enumerate(boys):
+        sx = b["root"].location.x
+        th_end = math.radians(130 if i == 0 else 95)
+        path = [(sx, cy - 0.5), (sx + (0.6 if i == 0 else -0.4), cy - 8.0), (ax + 1.0 * math.cos(th_end), ay + 1.0 * math.sin(th_end))]
+        L_ = sum(math.hypot(q[0] - p[0], q[1] - p[1]) for p, q in zip(path, path[1:]))
+        sp = L_ / max(1.0, hit_t - 0.25 - ts - 0.1 * i)
+        BW.charge(b, path, ts + 0.1 * i, speed=sp)
+        BW.hoof_dust(f"bd{i}_", b, ts + 0.4, hit_t, cam, every=0.22, alpha=0.32, seed=i)
+        Q.arm_pose(b, ts + 0.2, "R", -160, -50)
+        BW.swing_at(b, hit_t + 0.12 * i, "over")
+    g = guards[6]  # der Wächter im Weg weicht seitlich aus
+    r = g["root"]
+    r.keyframe_insert("location", frame=Q.T(hit_t - 0.8))
+    a6 = math.radians(160)
+    r.location = (ax + 2.0 * math.cos(a6), ay + 2.0 * math.sin(a6), r.location.z)
+    r.keyframe_insert("location", frame=Q.T(hit_t - 0.2))
+    BW.fall_back(AJ, tf, dur=0.65)
+    BW.dust_puff("ajp", (ax, ay + 0.6, gz(ax, ay) + 0.4), tf + 0.15, cam, size=3.2, alpha=0.9, n=5, seed=9)
+    BW.sparks("ajs", (ax, ay + 0.5, gz(ax, ay) + 1.4), hit_t, n=20, seed=8, lamp=160.0)
+    # Staub
+    for k in range(20):
+        x, y = rnd.uniform(-14, 18), rnd.uniform(-34, -2)
+        a0 = rnd.uniform(-1.0, D * 0.8)
+        BW.dust_card(f"ad{k}", (x, y, gz(x, y) + rnd.uniform(0.8, 2.0)), (rnd.uniform(4, 7), rnd.uniform(2.5, 4)), cam, a0, a0 + rnd.uniform(3, 5),
+                     rnd.uniform(0.25, 0.45), grow=1.6, drift=(rnd.uniform(-0.5, 0.5), rnd.uniform(-0.5, 0.5), 0.3))
+    BW.far_army("ajfar", -80.0, 80.0, -70.0, -45.0, 300, n_horse=30, side="q", seed=25, banners=5)
+    # meine Hand zeigt auf ihn
+    Hh = MK.pov_arms(cam, skin=(0.42, 0.28, 0.19), sleeve=(0.72, 0.66, 0.55))
+    hide = ((0.3, -0.95, -0.3), (-80, 0, 10))
+    hand_pose(Hh, 0, "R", *hide)
+    hand_pose(Hh, 0, "L", (-0.3, -0.95, -0.3), (-80, 0, -10))
+    hand_pose(Hh, tz - 0.35, "R", *hide)
+    hand_pose(Hh, tz, "R", (0.12, -0.14, -0.58), (-78, 4, -6))
+    hand_pose(Hh, ts - 0.1, "R", (0.12, -0.14, -0.58), (-78, 4, -6))
+    hand_pose(Hh, ts + 0.35, "R", *hide)
+    ajz = (ax, ay, gz(ax, ay) + 1.6)
+    bl = boys[0]["root"].location
+    keys = [(0, c0, look(c0, (cx - 2, cy - 20, 1.5))), (tj - 0.6, None, look(c0, (cx + 1, cy - 18, 1.5))),
+            (tj - 0.1, None, look(c0, (cx - 1.4, cy - 0.6, gz(cx, cy) + 1.35))), (tq - 0.3, None, look(c0, (cx - 1.2, cy - 0.8, gz(cx, cy) + 1.4))),
+            (tq + 0.1, None, look(c0, (cx + 1.4, cy - 0.6, gz(cx, cy) + 1.35))), (tq + 1.2, None, look(c0, (cx + 1.3, cy - 0.9, gz(cx, cy) + 1.4))),
+            (tz - 1.4, None, look(c0, (ax - 6, ay + 2, 1.6))), (tz - 0.2, None, look(c0, ajz)), (ts, c0, look(c0, ajz))]
+    c1 = P(cx + 0.3, cy - 3.2)
+    tc = (ev("falken_a2") if "falken_a2" in EV else ts + 2.0) - 0.15   # Schnitt: nah bei Abu Jahl
+    fcut = Q.T(tc)
+    ta, tb_ = (fcut - 2) / Q.FPS, (fcut - 1) / Q.FPS
+    c2 = P(ax + 4.1, ay + 4.4, eye=1.85)
+    keys += [(ts + 1.6, c1, look(c1, ajz)), (ta, c1, look(c1, ajz)), (tb_, c2, look(c2, (ax - 0.3, ay + 0.6, gz(ax, ay) + 1.3))),
+             (tf, None, look(c2, (ax - 0.2, ay + 0.4, gz(ax, ay) + 1.0))), (D, P(ax + 3.7, ay + 4.0, eye=1.85), look(c2, (ax, ay, gz(ax, ay) + 0.7)))]
+    ck(rig, keys)
+    for fc in Q.fcurves(rig):
+        for kp in fc.keyframe_points:
+            if int(round(kp.co.x)) == fcut - 1:
+                kp.interpolation = "CONSTANT"
+    Q.handheld(shake, 0, D, amp=0.7, walk_from=ts + 0.1, walk_to=ts + 1.6, walk_amp=1.4, hits=[(tf, 0.5)])
+    return cfg
+
+
 SHOTS = {"medina": shot_medina, "kolonne": shot_kolonne, "auszug": shot_auszug, "heer": shot_heer, "rat": shot_rat, "regen": shot_regen,
          "baum": shot_baum, "reihen": shot_reihen, "gebet": shot_gebet, "engel": shot_engel, "sturm": shot_sturm, "kampf": shot_kampf,
-         "jagd": shot_jagd, "ende": shot_ende, "abend": shot_abend}
+         "jagd": shot_jagd, "ende": shot_ende, "abend": shot_abend, "duell": shot_duell, "abujahl": shot_abujahl}
 
 
 def join_noshadow(prefixes=("peb", "sb", "tree_far"), small_rocks=0.55):
@@ -1046,6 +1342,18 @@ if os.environ.get("FRAMES"):
     sc.frame_start, sc.frame_end = map(int, os.environ["FRAMES"].split("-"))
 import time as _time
 print("SETUP_DONE", _time.time())
+if os.environ.get("CAMDBG"):
+    camo = sc.camera
+    for t_ in map(float, os.environ["CAMDBG"].split(",")):
+        sc.frame_set(Q.T(t_))
+        fw = camo.matrix_world.to_3x3() @ Vector((0, 0, -1))
+        extra = ""
+        for nm in os.environ.get("OBJS", "").split(","):
+            o = bpy.data.objects.get(nm)
+            if o:
+                extra += f" {nm}={tuple(round(v, 1) for v in o.matrix_world.translation)}"
+        print("CAMDBG", t_, tuple(round(v, 2) for v in camo.matrix_world.translation), "fwd", tuple(round(v, 2) for v in fw), extra)
+    sys.exit(0)
 if os.environ.get("PRINT"):
     sc.frame_set(int(os.environ.get("PFRAME", "30")))
     cams = [o for o in bpy.data.objects if o.type == "CAMERA"]

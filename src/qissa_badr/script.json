@@ -1,72 +1,273 @@
 {
  "title": "Die Schlacht von Badr – QISSAH Folge 4 (POV)",
  "series": "QISSAH",
- "note": "Folge 4 (Nutzer 23.11.2026, Text genehmigt): Überblick über die Schlacht von Badr, höchstens 3 min. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift OHNE Artikel, wo der Untertitel keinen hat). Worte von al-Miqdad, Abu Bakr und dem Propheten ﷺ als ZITAT (Hall + goldene Schrift). Der Prophet ﷺ und die Engel NUR als Licht, Menschen ohne Gesicht, Kampf ohne Blut (Staub, Schild/Schwert, Schnitt vor jedem Treffer).",
+ "note": "Folge 4 v2 (Nutzer 23.11.2026: v1 „langweilig“ → spannender: Zweikampf, Abu Jahl, mehr Action; neuer Text genehmigt): Überblick über die Schlacht von Badr, höchstens 3 min. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift OHNE Artikel, wo der Untertitel keinen hat). Worte von al-Miqdad, Abu Bakr und dem Propheten ﷺ als ZITAT (Hall + goldene Schrift). Der Prophet ﷺ und die Engel NUR als Licht, Menschen ohne Gesicht, Kampf ohne Blut (Staub, Schild/Schwert, Schnitt vor jedem Treffer).",
  "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
  "voiceParts": {
-  "0": {"engine": "eleven", "model": "eleven_v3", "speakers": {"Erzaehler": "JiW03c2Gt43XNUQAumRP"},
-        "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
-        "chunks": ["h1", "e1", "e3", "e5", "e6", "e8", "e9", "e10", "e11", "e13", "e15"],
-        "flow": true, "edge": 0.3, "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag", "cutmode": "latest", "snap": true},
-  "1": {"model": "gemini-2.5-flash-preview-tts", "speakers": {"Miqdad": "Algenib", "AbuBakr": "Sadaltager"},
-        "notes": "# AUDIO PROFILE\nMiqdad: a brave Arab warrior in his thirties, 1400 years ago, on the eve of a battle. Deep, firm, passionate voice full of loyalty.\nAbuBakr: a gentle, wise man in his fifties, the closest friend of the Prophet. Soft, warm, calm and reassuring voice, a little moved.\n## THE SCENE\nA small army camp in the desert before a battle.\n### DIRECTOR'S NOTES\nMiqdad speaks with conviction and growing strength, never shouting; the second sentence firm and proud. AbuBakr speaks quietly and tenderly, as if comforting someone he loves. Leave a clear pause of about one second between the lines."},
-  "2": {"model": "gemini-3.8-flash-tts", "plain": true, "speakers": {"Zitat": "Charon"},
-        "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1–3)."}
+  "0": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
+   },
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "h1",
+    "e1",
+    "e5",
+    "e6",
+    "e8",
+    "e9",
+    "e10",
+    "d1",
+    "e11",
+    "e13",
+    "a1",
+    "e15"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag",
+   "cutmode": "latest",
+   "snap": true,
+   "capPause": 0.72
+  },
+  "1": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Miqdad": "Algenib",
+    "AbuBakr": "Sadaltager"
+   },
+   "notes": "# AUDIO PROFILE\nMiqdad: a brave Arab warrior in his thirties, 1400 years ago, on the eve of a battle. Deep, firm, passionate voice full of loyalty.\nAbuBakr: a gentle, wise man in his fifties, the closest friend of the Prophet. Soft, warm, calm and reassuring voice, a little moved.\n## THE SCENE\nA small army camp in the desert before a battle.\n### DIRECTOR'S NOTES\nMiqdad speaks with conviction and growing strength, never shouting; the second sentence firm and proud. AbuBakr speaks quietly and tenderly, as if comforting someone he loves. Leave a clear pause of about one second between the lines."
+  },
+  "2": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Zitat": "Charon"
+   },
+   "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1–3)."
+  }
  },
  "sentences": [
-  {"id": "h1", "part": 0, "speaker": "Erzaehler", "text": "Etwas mehr als *dreihundert* Männer. Kaum Pferde. Drei teilen sich ein Kamel.",
-   "el": "[serious] Etwas mehr als dreihundert Männer. ... Kaum Pferde. ... [softly] Drei teilen sich ein Kamel."},
-  {"id": "h2", "part": 0, "speaker": "Erzaehler", "text": "Gegen sie: *tausend* Kämpfer.",
-   "el": "[ominous] Gegen sie: ... tausend Kämpfer."},
-  {"id": "h3", "part": 0, "speaker": "Erzaehler", "text": "Und trotzdem ... gewinnen sie. *Wie?*",
-   "el": "[curious] Und trotzdem ... gewinnen sie. ... [whispers] Wie? ..."},
-  {"id": "e1", "part": 0, "speaker": "Erzaehler", "text": "Medina. Ramadan, im zweiten Jahr nach der Hidschra.",
-   "el": "[calm, storytelling] مدينة. ... رمضان, im zweiten Jahr nach der هِجرة."},
-  {"id": "e2", "part": 0, "speaker": "Erzaehler", "text": "Die Quraisch haben die Muslime aus Mekka vertrieben. Ihre Häuser ... ihren *Besitz* genommen.",
-   "el": "[sad] Die قُرَيش haben die Muslime aus مكة vertrieben. ... [softly] Ihre Häuser ... ihren Besitz genommen. ..."},
-  {"id": "e3", "part": 0, "speaker": "Erzaehler", "text": "Jetzt zieht eine reiche *Karawane* der Quraisch vorbei. Der Prophet, Friede sei mit ihm, will sie abfangen. Keinen Krieg.",
-   "el": "[storytelling] Jetzt zieht eine reiche Karawane der قُرَيش vorbei. ... [reverent] Der Prophet, Friede sei mit ihm, [calm] will sie abfangen. ... Keinen Krieg."},
-  {"id": "e4", "part": 0, "speaker": "Erzaehler", "text": "Doch die Karawane entkommt. Und aus Mekka marschiert ein *Heer* heran. Tausend Mann.",
-   "el": "[tense] Doch die Karawane entkommt. ... [ominous] Und aus مكة marschiert ein Heer heran. ... Tausend Mann. ..."},
-  {"id": "e5", "part": 0, "speaker": "Erzaehler", "text": "Die Gefährten stehen hinter ihm. *Al-Miqdad* sagt:",
-   "el": "[warm] Die Gefährten stehen hinter ihm. ... المِقداد sagt: ..."},
-  {"id": "q1", "part": 1, "speaker": "Miqdad", "quote": true, "fx": "hall", "by": "al-Miqdad · Bukhari 3952",
-   "text": "Wir sagen nicht wie das Volk von Musa: Geh du und dein Herr und kämpft! Wir kämpfen *rechts* und *links* von dir, vor dir und hinter dir."},
-  {"id": "e6", "part": 0, "speaker": "Erzaehler", "text": "Die Nacht vor der Schlacht, bei Badr. *Regen* fällt und festigt den Sand. Eine tiefe Ruhe legt sich über alle. Sie *schlafen*.",
-   "el": "[softly] Die Nacht vor der Schlacht, bei بدر. ... Regen fällt und festigt den Sand. ... [calm, slow] Eine tiefe Ruhe legt sich über alle. ... [whispers] Sie schlafen."},
-  {"id": "e7", "part": 0, "speaker": "Erzaehler", "text": "Nur einer ist *wach*: der Prophet, Friede sei mit ihm. Unter einem *Baum* betet er ... und weint ... bis zum Morgen.",
-   "el": "[softly] Nur einer ist wach: [reverent] der Prophet, Friede sei mit ihm. ... [whispers] Unter einem Baum betet er ... und weint ... bis zum Morgen. ..."},
-  {"id": "e8", "part": 0, "speaker": "Erzaehler", "text": "Am Morgen stehen sich die *Heere* gegenüber. Er wendet sich zur Qibla und hebt die *Hände*:",
-   "el": "[tense] Am Morgen stehen sich die Heere gegenüber. ... [reverent] Er wendet sich zur قِبلة und hebt die Hände: ..."},
-  {"id": "q2", "part": 2, "speaker": "Zitat", "quote": true, "fx": "hall", "by": "der Prophet ﷺ · Muslim 1763",
-   "text": "O Allah, erfülle mir, was Du mir versprochen hast. O Allah, wenn diese kleine *Schar* untergeht ... wird Dich niemand mehr auf der Erde anbeten."},
-  {"id": "e9", "part": 0, "speaker": "Erzaehler", "text": "Er betet, bis ihm der *Umhang* von den Schultern fällt. Abu Bakr legt ihn zurück:",
-   "el": "[emotional] Er betet, bis ihm der Umhang von den Schultern fällt. ... [softly] أبو بكر legt ihn zurück: ..."},
-  {"id": "q3", "part": 1, "speaker": "AbuBakr", "quote": true, "fx": "hall", "by": "Abu Bakr · Muslim 1763",
-   "text": "Genug, o Prophet Allahs. Er wird erfüllen, was Er dir *versprochen* hat."},
-  {"id": "e10", "part": 0, "speaker": "Erzaehler", "text": "Und Allah antwortet: Ich helfe euch mit tausend *Engeln* ... einer nach dem anderen.",
-   "el": "[reverent, awe] Und Allah antwortet: ... Ich helfe euch mit tausend Engeln ... einer nach dem anderen. ..."},
-  {"id": "e11", "part": 0, "speaker": "Erzaehler", "text": "Dann prallen die Heere *aufeinander*.",
-   "el": "[intense] Dann prallen die Heere aufeinander."},
-  {"id": "e12", "part": 0, "speaker": "Erzaehler", "text": "Staub. Schreie. Schwerter.",
-   "el": "[intense] Staub. ... Schreie. ... Schwerter. ..."},
-  {"id": "e13", "part": 0, "speaker": "Erzaehler", "text": "Ein Muslim jagt einem Gegner nach. Da hört er über sich einen *Peitschenknall*. Und eine Stimme: Vorwärts, *Haizum*!",
-   "el": "[tense] Ein Muslim jagt einem Gegner nach. ... [whispers] Da hört er über sich einen Peitschenknall. ... [awed] Und eine Stimme: ... Vorwärts, حَيزوم!"},
-  {"id": "e14", "part": 0, "speaker": "Erzaehler", "text": "Vor ihm *stürzt* der Gegner zu Boden. Er erzählt es dem Propheten, Friede sei mit ihm. Der sagt:",
-   "el": "[surprised] Vor ihm stürzt der Gegner zu Boden. ... [calm] Er erzählt es dem Propheten, Friede sei mit ihm. ... Der sagt: ..."},
-  {"id": "q4", "part": 2, "speaker": "Zitat", "quote": true, "fx": "hall", "by": "der Prophet ﷺ · Muslim 1763",
-   "text": "Das war Hilfe aus dem dritten *Himmel*."},
-  {"id": "e15", "part": 0, "speaker": "Erzaehler", "text": "Am Ende *fliehen* die Quraisch. Siebzig von ihnen fallen. Siebzig werden gefangen.",
-   "el": "[calm] Am Ende fliehen die قُرَيش. ... Siebzig von ihnen fallen. ... Siebzig werden gefangen."},
-  {"id": "e16", "part": 0, "speaker": "Erzaehler", "text": "Dreihundert ... gegen tausend. Allah hat ihnen geholfen, als sie *schwach* waren.",
-   "el": "[softly] Dreihundert ... gegen tausend. ... [warm] Allah hat ihnen geholfen, als sie schwach waren."},
-  {"id": "e17", "part": 0, "speaker": "Erzaehler", "text": "Der Koran nennt diesen Tag: *Yaum al-Furqan*. Den Tag der Unterscheidung.",
-   "el": "[reverent, slow] Der Koran nennt diesen Tag: ... يوم الفرقان. ... [whispers] Den Tag der Unterscheidung. ..."}
+  {
+   "id": "h1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "*Dreihundert* Männer. Kaum Pferde. Drei teilen sich ein Kamel.",
+   "el": "[serious] Dreihundert Männer. ... Kaum Pferde. ... [softly] Drei teilen sich ein Kamel."
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Gegen sie: *tausend* Krieger.",
+   "el": "[ominous] Gegen sie: ... tausend Krieger."
+  },
+  {
+   "id": "h3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und trotzdem ... gewinnen sie. *Wie?*",
+   "el": "[curious] Und trotzdem ... gewinnen sie. ... [whispers] Wie? ..."
+  },
+  {
+   "id": "e1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Die Quraisch haben die Muslime aus Mekka vertrieben ... und ihren *Besitz* genommen.",
+   "el": "[sad, storytelling] Die قُرَيش haben die Muslime aus مكة vertrieben ... [softly] und ihren Besitz genommen. ..."
+  },
+  {
+   "id": "e3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Prophet, Friede sei mit ihm, will nur ihre reiche *Karawane* abfangen. Doch sie entkommt.",
+   "el": "[reverent] Der Prophet, Friede sei mit ihm, [storytelling] will nur ihre reiche Karawane abfangen. ... [tense] Doch sie entkommt."
+  },
+  {
+   "id": "e4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und aus Mekka marschiert ein *Heer* heran.",
+   "el": "[ominous] Und aus مكة ... marschiert ein Heer heran. ..."
+  },
+  {
+   "id": "e5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Umkehren ... oder kämpfen? *Al-Miqdad* steht auf:",
+   "el": "[tense, questioning] Umkehren ... oder kämpfen? ... [determined] المِقداد steht auf: ..."
+  },
+  {
+   "id": "q1",
+   "part": 1,
+   "speaker": "Miqdad",
+   "quote": true,
+   "fx": "hall",
+   "by": "al-Miqdad · Bukhari 3952",
+   "text": "Wir kämpfen *rechts* und *links* von dir, vor dir und hinter dir!"
+  },
+  {
+   "id": "e6",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Die Nacht vor der Schlacht. *Regen* fällt und festigt den Sand. Eine tiefe Ruhe legt sich über die Männer ... einer nach dem anderen *schläft* ein.",
+   "el": "[softly] Die Nacht vor der Schlacht. ... Regen fällt und festigt den Sand. ... [calm, slow] Eine tiefe Ruhe legt sich über die Männer ... [whispers] einer nach dem anderen schläft ein. ..."
+  },
+  {
+   "id": "e7",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Nur einer ist *wach*: der Prophet, Friede sei mit ihm. Unter einem *Baum* betet er ... und weint ... bis zum Morgen.",
+   "el": "[softly] Nur einer ist wach: [reverent] der Prophet, Friede sei mit ihm. ... [whispers] Unter einem Baum betet er ... und weint ... bis zum Morgen. ..."
+  },
+  {
+   "id": "e8",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Am Morgen stehen sich die *Heere* gegenüber. Er hebt die *Hände*:",
+   "el": "[tense] Am Morgen stehen sich die Heere gegenüber. ... [reverent] Er hebt die Hände: ..."
+  },
+  {
+   "id": "q2",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Muslim 1763",
+   "text": "O Allah, erfülle mir, was Du mir versprochen hast. O Allah, wenn diese kleine *Schar* untergeht ... wird Dich niemand mehr auf der Erde anbeten."
+  },
+  {
+   "id": "e9",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er betet, bis ihm der *Umhang* von den Schultern fällt. Abu Bakr legt ihn zurück:",
+   "el": "[emotional] Er betet, bis ihm der Umhang von den Schultern fällt. ... [softly] أبو بكر legt ihn zurück: ..."
+  },
+  {
+   "id": "q3",
+   "part": 1,
+   "speaker": "AbuBakr",
+   "quote": true,
+   "fx": "hall",
+   "by": "Abu Bakr · Muslim 1763",
+   "text": "Genug, o Prophet Allahs. Er wird erfüllen, was Er dir *versprochen* hat."
+  },
+  {
+   "id": "e10",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und Allah antwortet: Ich helfe euch mit tausend *Engeln*.",
+   "el": "[reverent, awe] Und Allah antwortet: ... Ich helfe euch mit tausend Engeln. ..."
+  },
+  {
+   "id": "d1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Da treten drei Krieger der Quraisch vor. Sie rufen: Wer stellt sich *uns*?",
+   "el": "[tense] Da treten drei Krieger der قُرَيش vor. ... [loud, challenging] Sie rufen: Wer stellt sich uns? ..."
+  },
+  {
+   "id": "d2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Prophet, Friede sei mit ihm, schickt *Hamza*, *Ali* und *Ubaida*.",
+   "el": "[reverent] Der Prophet, Friede sei mit ihm, [determined] schickt حمزة, علي ... und عُبيدة. ..."
+  },
+  {
+   "id": "d3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Hiebe. Staub. ... Und alle drei Herausforderer *fallen*.",
+   "el": "[intense] Hiebe. ... Staub. ... [dramatic pause] ... [serious] Und alle drei Herausforderer fallen. ..."
+  },
+  {
+   "id": "e11",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Jetzt stürmt das ganze Heer der Quraisch *los*.",
+   "el": "[intense, building] Jetzt stürmt das ganze Heer der قُرَيش los."
+  },
+  {
+   "id": "e12",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Staub. Schreie. *Schwerter*.",
+   "el": "[intense] Staub. ... Schreie. ... Schwerter. ..."
+  },
+  {
+   "id": "e13",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ein Muslim jagt einem Gegner nach. Da hört er über sich einen *Peitschenknall*. Und eine Stimme: Vorwärts, *Haizum*!",
+   "el": "[tense] Ein Muslim jagt einem Gegner nach. ... [whispers] Da hört er über sich einen Peitschenknall. ... [awed] Und eine Stimme: ... Vorwärts, حَيزوم!"
+  },
+  {
+   "id": "e14",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Vor ihm *stürzt* der Gegner zu Boden. Der Prophet, Friede sei mit ihm, sagt später:",
+   "el": "[surprised] Vor ihm stürzt der Gegner zu Boden. ... [calm, reverent] Der Prophet, Friede sei mit ihm, sagt später: ..."
+  },
+  {
+   "id": "q4",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Muslim 1763",
+   "text": "Das war Hilfe aus dem dritten *Himmel*."
+  },
+  {
+   "id": "a1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Mitten im Gedränge fragen zwei *Jungen*: Wo ist Abu Jahl? Der schlimmste Feind der Muslime.",
+   "el": "[tense] Mitten im Gedränge fragen zwei Jungen: ... [whispers] Wo ist أبو جهل? ... [ominous] Der schlimmste Feind der Muslime. ..."
+  },
+  {
+   "id": "a2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Man zeigt ihn ihnen. Und sie stürzen auf ihn ... wie zwei *Falken*.",
+   "el": "[tense] Man zeigt ihn ihnen. ... [intense, fast] Und sie stürzen auf ihn ... wie zwei Falken. ..."
+  },
+  {
+   "id": "a3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Abu Jahl *fällt* ... durch zwei Jungen.",
+   "el": "[serious, slow] أبو جهل fällt ... [softly] durch zwei Jungen. ..."
+  },
+  {
+   "id": "e15",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Am Ende *fliehen* die Quraisch. Siebzig fallen. Siebzig werden gefangen.",
+   "el": "[calm] Am Ende fliehen die قُرَيش. ... Siebzig fallen. ... Siebzig werden gefangen."
+  },
+  {
+   "id": "e16",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dreihundert ... gegen tausend. Allah hat ihnen geholfen, als sie *schwach* waren.",
+   "el": "[softly] Dreihundert ... gegen tausend. ... [warm] Allah hat ihnen geholfen, als sie schwach waren."
+  },
+  {
+   "id": "e17",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Koran nennt diesen Tag: *Yaum al-Furqan*. Den Tag der Unterscheidung.",
+   "el": "[reverent, slow] Der Koran nennt diesen Tag: ... يوم الفرقان. ... [whispers] Den Tag der Unterscheidung. ..."
+  }
  ],
  "choice": null,
  "sources": [
   "Sahih Muslim 1763 (Umar ibn al-Khattab: am Tag von Badr waren die Götzendiener tausend, die Gefährten 319; der Prophet ﷺ wandte sich zur Qibla, streckte die Hände aus: „O Allah, erfülle mir, was Du mir versprochen hast … wenn diese Schar der Muslime untergeht, wirst Du auf der Erde nicht mehr angebetet“; der Umhang fiel ihm von den Schultern, Abu Bakr legte ihn zurück: „… Er wird dir erfüllen, was Er dir versprochen hat“; darauf Koran 8:9; ein Muslim hörte über sich einen Peitschenhieb und „Vorwärts, Haizum!“, der Gegner stürzte, der Prophet ﷺ: „Das war von der Hilfe des dritten Himmels“; an diesem Tag fielen siebzig, siebzig wurden gefangen)",
   "Sahih al-Bukhari 3952 (Ibn Mas'ud: al-Miqdad sagte: „Wir sagen nicht wie das Volk von Musa: Geh du und dein Herr und kämpft – sondern wir kämpfen rechts und links von dir, vor dir und hinter dir“; das Gesicht des Propheten ﷺ strahlte)",
+  "Sunan Abi Dawud 2665 (Ali: Utba ibn Rabi'a trat vor, gefolgt von seinem Sohn und seinem Bruder, und rief: „Wer tritt gegen uns an?“; der Prophet ﷺ: „Steh auf, Hamza! Steh auf, Ali! Steh auf, Ubaida ibn al-Harith!“; Utba, Schaiba und al-Walid fielen) und Sahih al-Bukhari 3965–3969 (Koran 22:19 wurde über diese Zweikämpfer von Badr offenbart: Hamza, Ali und Ubaida gegen Schaiba, Utba und al-Walid)",
+  "Sahih al-Bukhari 3141 und 3988 (Abdurrahman ibn Auf: in der Reihe standen zwei junge Burschen der Ansar neben mir; jeder fragte heimlich: „Onkel, kennst du Abu Jahl?“ … ich zeigte ihn ihnen, sie stürzten auf ihn wie zwei Falken und schlugen ihn nieder; der Prophet ﷺ: „Ihr beide habt ihn getötet“)",
   "Sahih al-Bukhari 3951 (Ka'b ibn Malik: der Prophet ﷺ zog nur aus, um die Karawane der Quraisch zu erreichen, bis Allah sie ohne Verabredung mit ihren Feinden zusammenbrachte)",
   "Sahih al-Bukhari 3957 (al-Bara': die Kämpfer von Badr waren dreihundertzehn und einige mehr, so viele wie die Gefährten Taluts)",
   "Sahih al-Bukhari 3995 (der Prophet ﷺ am Tag von Badr: „Das ist Dschibril, er hält den Kopf seines Pferdes, gerüstet für den Kampf“)",

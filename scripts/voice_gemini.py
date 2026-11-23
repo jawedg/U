@@ -592,6 +592,52 @@ def tighten(path: Path, max_pause: float = 0.38, tempo: float = 1.0, dots: bool 
 
 
 
+def cap_pauses(path: Path, cap: float) -> list:
+    """Fluss-Modus: zu lange Sprechpausen IM Satz auf `cap` s kürzen (Mitte der Pause herausschneiden, 12 ms Überblendung).
+    Gibt [(Zeit im Original, entfernte Sekunden), …] zurück, damit die Wortzeiten nachgezogen werden können."""
+    import wave
+    import numpy as np
+    with wave.open(str(path)) as w:
+        sr, ch, sw = w.getframerate(), w.getnchannels(), w.getsampwidth()
+        x = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, ch).astype(float)
+    hop = int(0.01 * sr)
+    n = len(x) // hop
+    rms = np.array([np.sqrt(np.mean(x[i * hop:(i + 1) * hop] ** 2)) for i in range(n)]) + 1e-9
+    quiet = 20 * np.log10(rms / rms.max()) < -38
+    runs, i = [], 0
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            if i > 0 and j < n:
+                runs.append((i * hop, j * hop))
+            i = j
+        else:
+            i += 1
+    lim, keep, last, cuts, xf = int(cap * sr), [], 0, [], int(0.012 * sr)
+    for a, b in runs:
+        if b - a <= lim:
+            continue
+        h = lim // 2
+        keep.append(x[last:a + h])
+        last = b - h
+        cuts.append(((a + h) / sr, (b - a - lim) / sr))
+    if not cuts:
+        return []
+    keep.append(x[last:])
+    y = keep[0]
+    for k in keep[1:]:
+        r = np.linspace(0, 1, xf)[:, None]
+        y = np.concatenate([y[:-xf], y[-xf:] * (1 - r) + k[:xf] * r, k[xf:]])
+    with wave.open(str(path), "wb") as w:
+        w.setnchannels(ch)
+        w.setsampwidth(sw)
+        w.setframerate(sr)
+        w.writeframes(np.clip(y, -32768, 32767).astype(np.int16).tobytes())
+    return cuts
+
+
 def _speech_span(path: Path) -> tuple[float, float]:
     """(Beginn, Ende) der Sprache in einer Datei in Sekunden (alles über -45 dB unter dem Maximum)."""
     import numpy as np
@@ -1038,6 +1084,12 @@ def main() -> None:
             continue
         f = fmap[i]
         if f in flow_files:  # schon fertig (Fluss-Modus): nicht kürzen, nicht einzeln angleichen
+            cap = (vparts.get(str(s.get("part", 0))) or {}).get("capPause")
+            if cap and s.get("fx") != "hall":  # nur zu lange Pausen kürzen, Wortzeiten nachziehen
+                cuts = cap_pauses(f, float(cap))
+                if cuts and el_words.get(f):
+                    el_words[f] = [dict(w, start=round(w["start"] - sum(r for t_, r in cuts if t_ < w["start"]), 3))
+                                   for w in el_words[f]]
             dur = duration(f)
         else:
             tg = script.get("tighten")
