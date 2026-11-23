@@ -250,3 +250,18 @@ Lokal reicht `npm run render:3d`.
   Einstellung sofort zu MP4 und löscht ihre PNGs (`try_enc`). Alte Einzelbilder fertiger Folgen (out/*_frames) löschen, Videos behalten.
 - Nutzer (21.11.2026): Ablauf und Qualität GENAU so lassen wie bei Folge 1–3 (volle Auflösung, 2 Samples, 30 fps → 60 fps, CPU-Rendern
   in der Cloud). Keine Grafikkarte/Miet-GPU, keine Qualitätsabstriche vorschlagen. Pannen (Pause ohne Warter, volle Platte) vermeiden.
+
+## QISSAH Folge 4 „Die Schlacht von Badr“ (Nov. 2026)
+- Titel im Video „WAS GESCHAH BEI BADR?“, Überblick über die ganze Schlacht (Nutzerwunsch), 2:42 min, Text vom Nutzer genehmigt.
+  Quellen: Muslim 1763 (Bittgebet, Umhang/Abu Bakr, Haizum, 70/70), Bukhari 3951/3952 (al-Miqdad)/3957/3995, Ahmad 1023/3901, Koran 8:7–11, 8:41, 3:123.
+- Kampf OHNE Blut (Nutzer einverstanden): Hiebe treffen nur Schild/Klinge, Staub, Schnitt; der stürzende Gegner wird von einer Staubwolke verdeckt.
+  Prophet ﷺ = Licht-Säule, Engel = Lichtstreifen (`BW.light_rider`), Sahaba mit Namen (al-Miqdad, Abu Bakr) mit Licht über dem Kopf.
+- Stimmen: Erzähler ElevenLabs (Helmut), al-Miqdad = Algenib, Abu Bakr = Sadaltager (2.5-flash, Hall), Prophet ﷺ = Charon (3.8 + Hall).
+- Dateien: `src/qissa_badr/`, `scripts/build_qissa_badr.py` (PLAN-Typ `extra` = Einstellung nur als Quelle für Ausschnitte: `kampf`, `kolonne`),
+  Blender `blender/qissa/badr.py` (15 Einstellungen) + `badr_world.py` (Tal von Badr über `MK.height`-Austausch, Pferd mit Galopp/Aufbäumen,
+  Kämpfer mit Schwert/Schild/Kettenhemd/Helm, ferne Heere als ein Objekt, Staubkarten, Regen, nasser Sand, Fahnen mit Wellen-Modifikator),
+  Ton `scripts/sfx_qissa_badr.py` (+15 ElevenLabs-Geräusche), Gesamtablauf fortsetzbar: `setsid nohup ./scripts/v1_qissa_badr.sh > out/bd_v1.log 2>&1 &`.
+- Gelernt: Kamera-Gierwinkel zwischen Schlüsselbildern über ±180° → Kamera dreht den langen Weg (`ck()` in badr.py entfaltet die Winkel).
+  Flaches Gelände bei tiefer Sonne warf Schatten auf sich selbst (großes Vieleck-Muster) → Gelände `visible_shadow = False`, nicht mit
+  join_static verschmelzen. Fahnen/ferne Heere/Mondsichel mit `["person"] = 1` markieren (sonst friert join_static den Wellen-Modifikator ein).
+  Ferne Kegel-Figuren nur weit weg (> 20 m) – nah sehen sie aus wie Grabsteine.
