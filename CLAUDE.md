@@ -54,6 +54,8 @@ Lokal reicht `npm run render:3d`.
 - Erstes Video: `src/athan2d/` (Komposition `ErsterAdhan2D`) – „Der erste Adhan“, ca. 1:55 min.
   Neue Videos: Ordner kopieren, `script.json` + `scenes.tsx` anpassen, `art.tsx` wiederverwenden.
 - Zielänge: **1:30–2:00 min** (über 1 min für Creator Rewards, nicht gehetzt, max. ~2:30).
+- **QISSAH-Folgen (Nutzer, 23.11.2026): höchstens 3:00 min** – Folge 3 (4:17) war zu lang. Vorbild Folge 1 „Der erste Adhan“
+  (2:41 = „irgendwie perfekt“). Ziel ~2:30–2:50; Text vorher auf die Länge kürzen (ElevenLabs-Erzähler ≈ 2,3 Wörter/s inkl. Pausen).
 - **Menschen dürfen gezeigt werden, aber NIE mit Gesicht** (leerer Kopf). Sahaba/wichtige Personen zusätzlich mit
   Licht über dem Kopf (`glow`). **Den Propheten ﷺ nie darstellen** – nur als Licht (`HolyLight`).
 - **Immer Sound:** Atmo in jeder Szene (nie Stille) + passende Effekte (`scripts/sfx.py`, synthetisch erzeugt,
