@@ -1,0 +1,1460 @@
+{
+ "lines": [
+  {
+   "file": "qissa_badr/line-0-0.wav",
+   "seconds": 8.116,
+   "words": [
+    {
+     "word": "Etwas",
+     "start": 0.147
+    },
+    {
+     "word": "mehr",
+     "start": 0.544
+    },
+    {
+     "word": "als",
+     "start": 0.544
+    },
+    {
+     "word": "*dreihundert*",
+     "start": 0.92
+    },
+    {
+     "word": "Männer.",
+     "start": 2.95
+    },
+    {
+     "word": "Kaum",
+     "start": 3.333
+    },
+    {
+     "word": "Pferde.",
+     "start": 3.37
+    },
+    {
+     "word": "Drei",
+     "start": 4.42
+    },
+    {
+     "word": "teilen",
+     "start": 5.247
+    },
+    {
+     "word": "sich",
+     "start": 5.898
+    },
+    {
+     "word": "ein",
+     "start": 6.507
+    },
+    {
+     "word": "Kamel.",
+     "start": 6.507
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-1.wav",
+   "seconds": 3.654,
+   "words": [
+    {
+     "word": "Gegen",
+     "start": 0.32
+    },
+    {
+     "word": "sie:",
+     "start": 0.964
+    },
+    {
+     "word": "*tausend*",
+     "start": 0.964
+    },
+    {
+     "word": "Kämpfer.",
+     "start": 2.031
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-2.wav",
+   "seconds": 4.517,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.198
+    },
+    {
+     "word": "trotzdem",
+     "start": 0.198
+    },
+    {
+     "word": "...",
+     "start": 1.47
+    },
+    {
+     "word": "gewinnen",
+     "start": 1.874
+    },
+    {
+     "word": "sie.",
+     "start": 2.87
+    },
+    {
+     "word": "*Wie?*",
+     "start": 3.623
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-3.wav",
+   "seconds": 4.509,
+   "words": [
+    {
+     "word": "Medina.",
+     "start": 0.153
+    },
+    {
+     "word": "Ramadan,",
+     "start": 0.86
+    },
+    {
+     "word": "im",
+     "start": 1.6
+    },
+    {
+     "word": "zweiten",
+     "start": 2.213
+    },
+    {
+     "word": "Jahr",
+     "start": 2.4
+    },
+    {
+     "word": "nach",
+     "start": 2.864
+    },
+    {
+     "word": "der",
+     "start": 3.168
+    },
+    {
+     "word": "Hidschra.",
+     "start": 3.4
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-4.wav",
+   "seconds": 6.659,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.174
+    },
+    {
+     "word": "Quraisch",
+     "start": 0.174
+    },
+    {
+     "word": "haben",
+     "start": 1.192
+    },
+    {
+     "word": "die",
+     "start": 1.412
+    },
+    {
+     "word": "Muslime",
+     "start": 1.412
+    },
+    {
+     "word": "aus",
+     "start": 2.072
+    },
+    {
+     "word": "Mekka",
+     "start": 2.072
+    },
+    {
+     "word": "vertrieben.",
+     "start": 2.272
+    },
+    {
+     "word": "Ihre",
+     "start": 3.486
+    },
+    {
+     "word": "Häuser",
+     "start": 3.486
+    },
+    {
+     "word": "...",
+     "start": 4.552
+    },
+    {
+     "word": "ihren",
+     "start": 4.552
+    },
+    {
+     "word": "*Besitz*",
+     "start": 4.952
+    },
+    {
+     "word": "genommen.",
+     "start": 5.612
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-5.wav",
+   "seconds": 8.775,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.276
+    },
+    {
+     "word": "zieht",
+     "start": 0.38
+    },
+    {
+     "word": "eine",
+     "start": 0.688
+    },
+    {
+     "word": "reiche",
+     "start": 0.688
+    },
+    {
+     "word": "*Karawane*",
+     "start": 1.26
+    },
+    {
+     "word": "der",
+     "start": 2.16
+    },
+    {
+     "word": "Quraisch",
+     "start": 2.16
+    },
+    {
+     "word": "vorbei.",
+     "start": 3.75
+    },
+    {
+     "word": "Der",
+     "start": 4.145
+    },
+    {
+     "word": "Prophet,",
+     "start": 4.17
+    },
+    {
+     "word": "Friede",
+     "start": 4.938
+    },
+    {
+     "word": "sei",
+     "start": 5.485
+    },
+    {
+     "word": "mit",
+     "start": 5.485
+    },
+    {
+     "word": "ihm,",
+     "start": 5.665
+    },
+    {
+     "word": "will",
+     "start": 6.065
+    },
+    {
+     "word": "sie",
+     "start": 6.126
+    },
+    {
+     "word": "abfangen.",
+     "start": 6.126
+    },
+    {
+     "word": "Keinen",
+     "start": 7.006
+    },
+    {
+     "word": "Krieg.",
+     "start": 7.393
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-6.wav",
+   "seconds": 6.749,
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.32
+    },
+    {
+     "word": "die",
+     "start": 0.32
+    },
+    {
+     "word": "Karawane",
+     "start": 0.32
+    },
+    {
+     "word": "entkommt.",
+     "start": 1.179
+    },
+    {
+     "word": "Und",
+     "start": 2.435
+    },
+    {
+     "word": "aus",
+     "start": 2.519
+    },
+    {
+     "word": "Mekka",
+     "start": 2.519
+    },
+    {
+     "word": "marschiert",
+     "start": 2.779
+    },
+    {
+     "word": "ein",
+     "start": 3.719
+    },
+    {
+     "word": "*Heer*",
+     "start": 3.979
+    },
+    {
+     "word": "heran.",
+     "start": 4.899
+    },
+    {
+     "word": "Tausend",
+     "start": 4.979
+    },
+    {
+     "word": "Mann.",
+     "start": 5.787
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-7.wav",
+   "seconds": 5.05,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.13
+    },
+    {
+     "word": "Gefährten",
+     "start": 0.13
+    },
+    {
+     "word": "stehen",
+     "start": 0.789
+    },
+    {
+     "word": "hinter",
+     "start": 1.246
+    },
+    {
+     "word": "ihm.",
+     "start": 1.6
+    },
+    {
+     "word": "*Al-Miqdad*",
+     "start": 2.74
+    },
+    {
+     "word": "sagt:",
+     "start": 4.0
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-1-0.wav",
+   "seconds": 8.679,
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.05
+    },
+    {
+     "word": "sagen",
+     "start": 0.28
+    },
+    {
+     "word": "nicht",
+     "start": 0.6
+    },
+    {
+     "word": "wie",
+     "start": 0.93
+    },
+    {
+     "word": "das",
+     "start": 1.16
+    },
+    {
+     "word": "Volk",
+     "start": 1.39
+    },
+    {
+     "word": "von",
+     "start": 1.67
+    },
+    {
+     "word": "Musa:",
+     "start": 1.91
+    },
+    {
+     "word": "Geh",
+     "start": 2.6
+    },
+    {
+     "word": "du",
+     "start": 2.8
+    },
+    {
+     "word": "und",
+     "start": 2.97
+    },
+    {
+     "word": "dein",
+     "start": 3.17
+    },
+    {
+     "word": "Herr",
+     "start": 3.42
+    },
+    {
+     "word": "und",
+     "start": 3.67
+    },
+    {
+     "word": "kämpft!",
+     "start": 3.87
+    },
+    {
+     "word": "Wir",
+     "start": 4.76
+    },
+    {
+     "word": "kämpfen",
+     "start": 4.98
+    },
+    {
+     "word": "*rechts*",
+     "start": 5.4
+    },
+    {
+     "word": "und",
+     "start": 5.76
+    },
+    {
+     "word": "*links*",
+     "start": 5.99
+    },
+    {
+     "word": "von",
+     "start": 6.31
+    },
+    {
+     "word": "dir,",
+     "start": 6.54
+    },
+    {
+     "word": "vor",
+     "start": 6.97
+    },
+    {
+     "word": "dir",
+     "start": 7.2
+    },
+    {
+     "word": "und",
+     "start": 7.43
+    },
+    {
+     "word": "hinter",
+     "start": 7.66
+    },
+    {
+     "word": "dir.",
+     "start": 8.03
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_badr/line-0-8.wav",
+   "seconds": 11.66,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.136
+    },
+    {
+     "word": "Nacht",
+     "start": 0.136
+    },
+    {
+     "word": "vor",
+     "start": 0.213
+    },
+    {
+     "word": "der",
+     "start": 0.54
+    },
+    {
+     "word": "Schlacht,",
+     "start": 0.76
+    },
+    {
+     "word": "bei",
+     "start": 1.94
+    },
+    {
+     "word": "Badr.",
+     "start": 2.17
+    },
+    {
+     "word": "*Regen*",
+     "start": 3.67
+    },
+    {
+     "word": "fällt",
+     "start": 4.331
+    },
+    {
+     "word": "und",
+     "start": 5.2
+    },
+    {
+     "word": "festigt",
+     "start": 5.504
+    },
+    {
+     "word": "den",
+     "start": 5.9
+    },
+    {
+     "word": "Sand.",
+     "start": 6.144
+    },
+    {
+     "word": "Eine",
+     "start": 6.66
+    },
+    {
+     "word": "tiefe",
+     "start": 7.039
+    },
+    {
+     "word": "Ruhe",
+     "start": 7.039
+    },
+    {
+     "word": "legt",
+     "start": 7.84
+    },
+    {
+     "word": "sich",
+     "start": 8.24
+    },
+    {
+     "word": "über",
+     "start": 8.592
+    },
+    {
+     "word": "alle.",
+     "start": 8.752
+    },
+    {
+     "word": "Sie",
+     "start": 8.944
+    },
+    {
+     "word": "*schlafen*.",
+     "start": 9.85
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-9.wav",
+   "seconds": 10.073,
+   "words": [
+    {
+     "word": "Nur",
+     "start": 0.32
+    },
+    {
+     "word": "einer",
+     "start": 0.32
+    },
+    {
+     "word": "ist",
+     "start": 0.881
+    },
+    {
+     "word": "*wach*:",
+     "start": 0.881
+    },
+    {
+     "word": "der",
+     "start": 2.169
+    },
+    {
+     "word": "Prophet,",
+     "start": 2.186
+    },
+    {
+     "word": "Friede",
+     "start": 3.416
+    },
+    {
+     "word": "sei",
+     "start": 3.901
+    },
+    {
+     "word": "mit",
+     "start": 4.081
+    },
+    {
+     "word": "ihm.",
+     "start": 4.541
+    },
+    {
+     "word": "Unter",
+     "start": 4.93
+    },
+    {
+     "word": "einem",
+     "start": 5.421
+    },
+    {
+     "word": "*Baum*",
+     "start": 5.685
+    },
+    {
+     "word": "betet",
+     "start": 6.528
+    },
+    {
+     "word": "er",
+     "start": 6.761
+    },
+    {
+     "word": "...",
+     "start": 7.001
+    },
+    {
+     "word": "und",
+     "start": 7.001
+    },
+    {
+     "word": "weint",
+     "start": 7.515
+    },
+    {
+     "word": "...",
+     "start": 8.201
+    },
+    {
+     "word": "bis",
+     "start": 8.781
+    },
+    {
+     "word": "zum",
+     "start": 8.838
+    },
+    {
+     "word": "Morgen.",
+     "start": 8.838
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-10.wav",
+   "seconds": 6.189,
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.133
+    },
+    {
+     "word": "Morgen",
+     "start": 0.133
+    },
+    {
+     "word": "stehen",
+     "start": 0.2
+    },
+    {
+     "word": "sich",
+     "start": 0.992
+    },
+    {
+     "word": "die",
+     "start": 1.16
+    },
+    {
+     "word": "*Heere*",
+     "start": 1.333
+    },
+    {
+     "word": "gegenüber.",
+     "start": 1.747
+    },
+    {
+     "word": "Er",
+     "start": 3.093
+    },
+    {
+     "word": "wendet",
+     "start": 3.093
+    },
+    {
+     "word": "sich",
+     "start": 3.792
+    },
+    {
+     "word": "zur",
+     "start": 3.96
+    },
+    {
+     "word": "Qibla",
+     "start": 4.12
+    },
+    {
+     "word": "und",
+     "start": 4.56
+    },
+    {
+     "word": "hebt",
+     "start": 4.848
+    },
+    {
+     "word": "die",
+     "start": 5.06
+    },
+    {
+     "word": "*Hände*:",
+     "start": 5.16
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-2-0.wav",
+   "seconds": 9.34,
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.2
+    },
+    {
+     "word": "erfülle",
+     "start": 0.55
+    },
+    {
+     "word": "mir,",
+     "start": 1.3
+    },
+    {
+     "word": "was",
+     "start": 1.55
+    },
+    {
+     "word": "Du",
+     "start": 1.8
+    },
+    {
+     "word": "mir",
+     "start": 2.0
+    },
+    {
+     "word": "versprochen",
+     "start": 2.25
+    },
+    {
+     "word": "hast.",
+     "start": 2.9
+    },
+    {
+     "word": "O",
+     "start": 3.72
+    },
+    {
+     "word": "Allah,",
+     "start": 3.86
+    },
+    {
+     "word": "wenn",
+     "start": 4.21
+    },
+    {
+     "word": "diese",
+     "start": 4.51
+    },
+    {
+     "word": "kleine",
+     "start": 5.06
+    },
+    {
+     "word": "*Schar*",
+     "start": 5.45
+    },
+    {
+     "word": "untergeht",
+     "start": 5.8
+    },
+    {
+     "word": "...",
+     "start": 6.35
+    },
+    {
+     "word": "wird",
+     "start": 6.84
+    },
+    {
+     "word": "Dich",
+     "start": 7.08
+    },
+    {
+     "word": "niemand",
+     "start": 7.32
+    },
+    {
+     "word": "mehr",
+     "start": 7.68
+    },
+    {
+     "word": "auf",
+     "start": 7.92
+    },
+    {
+     "word": "der",
+     "start": 8.12
+    },
+    {
+     "word": "Erde",
+     "start": 8.32
+    },
+    {
+     "word": "anbeten.",
+     "start": 8.56
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_badr/line-0-11.wav",
+   "seconds": 6.393,
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.142
+    },
+    {
+     "word": "betet,",
+     "start": 0.142
+    },
+    {
+     "word": "bis",
+     "start": 0.92
+    },
+    {
+     "word": "ihm",
+     "start": 0.92
+    },
+    {
+     "word": "der",
+     "start": 1.1
+    },
+    {
+     "word": "*Umhang*",
+     "start": 1.3
+    },
+    {
+     "word": "von",
+     "start": 1.98
+    },
+    {
+     "word": "den",
+     "start": 2.18
+    },
+    {
+     "word": "Schultern",
+     "start": 2.293
+    },
+    {
+     "word": "fällt.",
+     "start": 3.4
+    },
+    {
+     "word": "Abu",
+     "start": 4.327
+    },
+    {
+     "word": "Bakr",
+     "start": 4.327
+    },
+    {
+     "word": "legt",
+     "start": 4.866
+    },
+    {
+     "word": "ihn",
+     "start": 5.166
+    },
+    {
+     "word": "zurück:",
+     "start": 5.343
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-1-1.wav",
+   "seconds": 4.908,
+   "words": [
+    {
+     "word": "Genug,",
+     "start": 0.05
+    },
+    {
+     "word": "o",
+     "start": 0.52
+    },
+    {
+     "word": "Prophet",
+     "start": 0.72
+    },
+    {
+     "word": "Allahs.",
+     "start": 1.33
+    },
+    {
+     "word": "Er",
+     "start": 2.4
+    },
+    {
+     "word": "wird",
+     "start": 2.56
+    },
+    {
+     "word": "erfüllen,",
+     "start": 2.8
+    },
+    {
+     "word": "was",
+     "start": 3.2
+    },
+    {
+     "word": "Er",
+     "start": 3.4
+    },
+    {
+     "word": "dir",
+     "start": 3.56
+    },
+    {
+     "word": "*versprochen*",
+     "start": 3.76
+    },
+    {
+     "word": "hat.",
+     "start": 4.28
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_badr/line-0-12.wav",
+   "seconds": 7.456,
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.218
+    },
+    {
+     "word": "Allah",
+     "start": 0.218
+    },
+    {
+     "word": "antwortet:",
+     "start": 0.333
+    },
+    {
+     "word": "Ich",
+     "start": 1.82
+    },
+    {
+     "word": "helfe",
+     "start": 2.184
+    },
+    {
+     "word": "euch",
+     "start": 2.704
+    },
+    {
+     "word": "mit",
+     "start": 3.12
+    },
+    {
+     "word": "tausend",
+     "start": 3.52
+    },
+    {
+     "word": "*Engeln*",
+     "start": 4.38
+    },
+    {
+     "word": "...",
+     "start": 4.98
+    },
+    {
+     "word": "einer",
+     "start": 5.303
+    },
+    {
+     "word": "nach",
+     "start": 5.888
+    },
+    {
+     "word": "dem",
+     "start": 6.12
+    },
+    {
+     "word": "anderen.",
+     "start": 6.3
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-13.wav",
+   "seconds": 3.454,
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.32
+    },
+    {
+     "word": "prallen",
+     "start": 0.587
+    },
+    {
+     "word": "die",
+     "start": 0.874
+    },
+    {
+     "word": "Heere",
+     "start": 1.44
+    },
+    {
+     "word": "*aufeinander*.",
+     "start": 2.0
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-14.wav",
+   "seconds": 4.514,
+   "words": [
+    {
+     "word": "Staub.",
+     "start": 0.32
+    },
+    {
+     "word": "Schreie.",
+     "start": 1.003
+    },
+    {
+     "word": "Schwerter.",
+     "start": 2.843
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-15.wav",
+   "seconds": 10.5,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.14
+    },
+    {
+     "word": "Muslim",
+     "start": 0.14
+    },
+    {
+     "word": "jagt",
+     "start": 0.159
+    },
+    {
+     "word": "einem",
+     "start": 0.92
+    },
+    {
+     "word": "Gegner",
+     "start": 1.127
+    },
+    {
+     "word": "nach.",
+     "start": 2.224
+    },
+    {
+     "word": "Da",
+     "start": 3.23
+    },
+    {
+     "word": "hört",
+     "start": 3.23
+    },
+    {
+     "word": "er",
+     "start": 3.804
+    },
+    {
+     "word": "über",
+     "start": 3.804
+    },
+    {
+     "word": "sich",
+     "start": 3.804
+    },
+    {
+     "word": "einen",
+     "start": 4.32
+    },
+    {
+     "word": "*Peitschenknall*.",
+     "start": 4.72
+    },
+    {
+     "word": "Und",
+     "start": 6.38
+    },
+    {
+     "word": "eine",
+     "start": 6.895
+    },
+    {
+     "word": "Stimme:",
+     "start": 6.895
+    },
+    {
+     "word": "Vorwärts,",
+     "start": 6.895
+    },
+    {
+     "word": "*Haizum*!",
+     "start": 8.319
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-16.wav",
+   "seconds": 7.349,
+   "words": [
+    {
+     "word": "Vor",
+     "start": 0.32
+    },
+    {
+     "word": "ihm",
+     "start": 0.32
+    },
+    {
+     "word": "*stürzt*",
+     "start": 0.32
+    },
+    {
+     "word": "der",
+     "start": 1.236
+    },
+    {
+     "word": "Gegner",
+     "start": 1.356
+    },
+    {
+     "word": "zu",
+     "start": 1.916
+    },
+    {
+     "word": "Boden.",
+     "start": 1.916
+    },
+    {
+     "word": "Er",
+     "start": 2.752
+    },
+    {
+     "word": "erzählt",
+     "start": 2.752
+    },
+    {
+     "word": "es",
+     "start": 3.563
+    },
+    {
+     "word": "dem",
+     "start": 3.656
+    },
+    {
+     "word": "Propheten,",
+     "start": 3.846
+    },
+    {
+     "word": "Friede",
+     "start": 4.966
+    },
+    {
+     "word": "sei",
+     "start": 5.276
+    },
+    {
+     "word": "mit",
+     "start": 5.276
+    },
+    {
+     "word": "ihm.",
+     "start": 5.656
+    },
+    {
+     "word": "Der",
+     "start": 6.056
+    },
+    {
+     "word": "sagt:",
+     "start": 6.107
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-2-1.wav",
+   "seconds": 2.493,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "Hilfe",
+     "start": 0.51
+    },
+    {
+     "word": "aus",
+     "start": 0.83
+    },
+    {
+     "word": "dem",
+     "start": 1.06
+    },
+    {
+     "word": "dritten",
+     "start": 1.29
+    },
+    {
+     "word": "*Himmel*.",
+     "start": 1.71
+    }
+   ],
+   "tail": 2.4
+  },
+  {
+   "file": "qissa_badr/line-0-17.wav",
+   "seconds": 6.595,
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.069
+    },
+    {
+     "word": "Ende",
+     "start": 0.069
+    },
+    {
+     "word": "*fliehen*",
+     "start": 0.144
+    },
+    {
+     "word": "die",
+     "start": 0.92
+    },
+    {
+     "word": "Quraisch.",
+     "start": 0.92
+    },
+    {
+     "word": "Siebzig",
+     "start": 1.88
+    },
+    {
+     "word": "von",
+     "start": 2.52
+    },
+    {
+     "word": "ihnen",
+     "start": 3.0
+    },
+    {
+     "word": "fallen.",
+     "start": 3.173
+    },
+    {
+     "word": "Siebzig",
+     "start": 3.509
+    },
+    {
+     "word": "werden",
+     "start": 4.68
+    },
+    {
+     "word": "gefangen.",
+     "start": 5.166
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-18.wav",
+   "seconds": 6.737,
+   "words": [
+    {
+     "word": "Dreihundert",
+     "start": 0.32
+    },
+    {
+     "word": "...",
+     "start": 1.027
+    },
+    {
+     "word": "gegen",
+     "start": 1.499
+    },
+    {
+     "word": "tausend.",
+     "start": 1.567
+    },
+    {
+     "word": "Allah",
+     "start": 2.667
+    },
+    {
+     "word": "hat",
+     "start": 3.53
+    },
+    {
+     "word": "ihnen",
+     "start": 3.53
+    },
+    {
+     "word": "geholfen,",
+     "start": 3.983
+    },
+    {
+     "word": "als",
+     "start": 5.06
+    },
+    {
+     "word": "sie",
+     "start": 5.06
+    },
+    {
+     "word": "*schwach*",
+     "start": 5.14
+    },
+    {
+     "word": "waren.",
+     "start": 5.14
+    }
+   ],
+   "flow": 0
+  },
+  {
+   "file": "qissa_badr/line-0-19.wav",
+   "seconds": 6.697,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.287
+    },
+    {
+     "word": "Koran",
+     "start": 0.287
+    },
+    {
+     "word": "nennt",
+     "start": 0.32
+    },
+    {
+     "word": "diesen",
+     "start": 1.13
+    },
+    {
+     "word": "Tag:",
+     "start": 1.456
+    },
+    {
+     "word": "*Yaum",
+     "start": 2.166
+    },
+    {
+     "word": "al-Furqan*.",
+     "start": 2.43
+    },
+    {
+     "word": "Den",
+     "start": 3.996
+    },
+    {
+     "word": "Tag",
+     "start": 4.638
+    },
+    {
+     "word": "der",
+     "start": 4.638
+    },
+    {
+     "word": "Unterscheidung.",
+     "start": 4.638
+    }
+   ],
+   "flow": 0
+  }
+ ]
+}

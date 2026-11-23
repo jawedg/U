@@ -1,0 +1,2378 @@
+{
+ "fps": 60,
+ "render_fps": 30,
+ "voiced": true,
+ "total": 162.216,
+ "frames": 9733,
+ "segments": [
+  {
+   "id": "hook_a",
+   "kind": "clip",
+   "src": "kolonne",
+   "at": 0.2,
+   "start": 0.0,
+   "dur": 8.066
+  },
+  {
+   "id": "hook_b",
+   "kind": "clip",
+   "src": "heer",
+   "at": 2.8,
+   "start": 8.066,
+   "dur": 3.354
+  },
+  {
+   "id": "hook_c",
+   "kind": "clip",
+   "src": "kampf",
+   "at": 0.4,
+   "start": 11.42,
+   "dur": 4.217
+  },
+  {
+   "id": "medina",
+   "kind": "shot",
+   "label": "MEDINA · RAMADAN, 2 N. H.",
+   "start": 15.637,
+   "dur": 10.568,
+   "frames": 317,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     10.568,
+     10.568
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 317,
+   "src_dur": 10.568
+  },
+  {
+   "id": "auszug",
+   "kind": "shot",
+   "label": null,
+   "start": 26.205,
+   "dur": 8.475,
+   "frames": 254,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     8.475,
+     8.475
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 254,
+   "src_dur": 8.475
+  },
+  {
+   "id": "heer",
+   "kind": "shot",
+   "label": null,
+   "start": 34.68,
+   "dur": 6.449,
+   "frames": 193,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     6.449,
+     6.449
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 193,
+   "src_dur": 6.449
+  },
+  {
+   "id": "rat",
+   "kind": "shot",
+   "label": "BADR",
+   "start": 41.129,
+   "dur": 13.979,
+   "frames": 419,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     13.979,
+     13.979
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 419,
+   "src_dur": 13.979
+  },
+  {
+   "id": "regen",
+   "kind": "shot",
+   "label": null,
+   "start": 55.108,
+   "dur": 11.56,
+   "frames": 347,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     11.56,
+     11.56
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 347,
+   "src_dur": 11.56
+  },
+  {
+   "id": "baum",
+   "kind": "shot",
+   "label": null,
+   "start": 66.668,
+   "dur": 9.773,
+   "frames": 293,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     9.773,
+     9.773
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 293,
+   "src_dur": 9.773
+  },
+  {
+   "id": "reihen",
+   "kind": "shot",
+   "label": "BADR · MORGEN",
+   "start": 76.441,
+   "dur": 6.189,
+   "frames": 186,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     6.189,
+     6.189
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 186,
+   "src_dur": 6.189
+  },
+  {
+   "id": "gebet",
+   "kind": "shot",
+   "label": null,
+   "start": 82.63,
+   "dur": 21.191,
+   "frames": 636,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     21.191,
+     21.191
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 636,
+   "src_dur": 21.191
+  },
+  {
+   "id": "engel",
+   "kind": "shot",
+   "label": null,
+   "start": 103.821,
+   "dur": 7.256,
+   "frames": 218,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     7.256,
+     7.256
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 218,
+   "src_dur": 7.256
+  },
+  {
+   "id": "sturm",
+   "kind": "shot",
+   "label": null,
+   "start": 111.077,
+   "dur": 3.154,
+   "frames": 95,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     3.154,
+     3.154
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 95,
+   "src_dur": 3.154
+  },
+  {
+   "id": "schlacht0",
+   "kind": "clip",
+   "src": "kampf",
+   "at": 1.2,
+   "start": 114.231,
+   "dur": 0.943
+  },
+  {
+   "id": "schlacht1",
+   "kind": "clip",
+   "src": "kampf",
+   "at": 3.4,
+   "start": 115.174,
+   "dur": 1.84
+  },
+  {
+   "id": "schlacht2",
+   "kind": "clip",
+   "src": "kampf",
+   "at": 5.2,
+   "start": 117.014,
+   "dur": 1.431
+  },
+  {
+   "id": "jagd",
+   "kind": "shot",
+   "label": null,
+   "start": 118.445,
+   "dur": 17.549,
+   "frames": 526,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     17.549,
+     17.549
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 526,
+   "src_dur": 17.549
+  },
+  {
+   "id": "himmel",
+   "kind": "clip",
+   "src": "engel",
+   "at": 3.0,
+   "start": 135.994,
+   "dur": 2.693
+  },
+  {
+   "id": "ende",
+   "kind": "shot",
+   "label": null,
+   "start": 138.687,
+   "dur": 6.495,
+   "frames": 195,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     6.495,
+     6.495
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 195,
+   "src_dur": 6.495
+  },
+  {
+   "id": "abend",
+   "kind": "shot",
+   "label": null,
+   "start": 145.182,
+   "dur": 14.234,
+   "frames": 427,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     14.234,
+     14.234
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 427,
+   "src_dur": 14.234
+  },
+  {
+   "id": "logo",
+   "kind": "card",
+   "text": "QISSAH",
+   "start": 159.416,
+   "dur": 2.8
+  },
+  {
+   "id": "kampf",
+   "kind": "shot",
+   "hidden": true,
+   "label": null,
+   "start": 162.216,
+   "dur": 7.0,
+   "frames": 210,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     7.0,
+     7.0
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 210,
+   "src_dur": 7.0
+  },
+  {
+   "id": "kolonne",
+   "kind": "shot",
+   "hidden": true,
+   "label": null,
+   "start": 162.216,
+   "dur": 8.4,
+   "frames": 252,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     8.4,
+     8.4
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 252,
+   "src_dur": 8.4
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "shot": "hook_a",
+   "start": 0.25,
+   "dur": 7.816,
+   "file": "qissa_badr/line-0-0.wav",
+   "text": "Etwas mehr als *dreihundert* Männer. Kaum Pferde. Drei teilen sich ein Kamel.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Etwas",
+     "start": 0.147
+    },
+    {
+     "word": "mehr",
+     "start": 0.544
+    },
+    {
+     "word": "als",
+     "start": 0.544
+    },
+    {
+     "word": "*dreihundert*",
+     "start": 0.92
+    },
+    {
+     "word": "Männer.",
+     "start": 2.95
+    },
+    {
+     "word": "Kaum",
+     "start": 3.333
+    },
+    {
+     "word": "Pferde.",
+     "start": 3.37
+    },
+    {
+     "word": "Drei",
+     "start": 4.42
+    },
+    {
+     "word": "teilen",
+     "start": 5.247
+    },
+    {
+     "word": "sich",
+     "start": 5.898
+    },
+    {
+     "word": "ein",
+     "start": 6.507
+    },
+    {
+     "word": "Kamel.",
+     "start": 6.507
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h2",
+   "shot": "hook_b",
+   "start": 8.066,
+   "dur": 3.354,
+   "file": "qissa_badr/line-0-1.wav",
+   "text": "Gegen sie: *tausend* Kämpfer.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Gegen",
+     "start": 0.32
+    },
+    {
+     "word": "sie:",
+     "start": 0.964
+    },
+    {
+     "word": "*tausend*",
+     "start": 0.964
+    },
+    {
+     "word": "Kämpfer.",
+     "start": 2.031
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "h3",
+   "shot": "hook_c",
+   "start": 11.42,
+   "dur": 4.217,
+   "file": "qissa_badr/line-0-2.wav",
+   "text": "Und trotzdem ... gewinnen sie. *Wie?*",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.198
+    },
+    {
+     "word": "trotzdem",
+     "start": 0.198
+    },
+    {
+     "word": "...",
+     "start": 1.47
+    },
+    {
+     "word": "gewinnen",
+     "start": 1.874
+    },
+    {
+     "word": "sie.",
+     "start": 2.87
+    },
+    {
+     "word": "*Wie?*",
+     "start": 3.623
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e1",
+   "shot": "medina",
+   "start": 15.637,
+   "dur": 4.209,
+   "file": "qissa_badr/line-0-3.wav",
+   "text": "Medina. Ramadan, im zweiten Jahr nach der Hidschra.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Medina.",
+     "start": 0.153
+    },
+    {
+     "word": "Ramadan,",
+     "start": 0.86
+    },
+    {
+     "word": "im",
+     "start": 1.6
+    },
+    {
+     "word": "zweiten",
+     "start": 2.213
+    },
+    {
+     "word": "Jahr",
+     "start": 2.4
+    },
+    {
+     "word": "nach",
+     "start": 2.864
+    },
+    {
+     "word": "der",
+     "start": 3.168
+    },
+    {
+     "word": "Hidschra.",
+     "start": 3.4
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e2",
+   "shot": "medina",
+   "start": 19.846,
+   "dur": 6.359,
+   "file": "qissa_badr/line-0-4.wav",
+   "text": "Die Quraisch haben die Muslime aus Mekka vertrieben. Ihre Häuser ... ihren *Besitz* genommen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.174
+    },
+    {
+     "word": "Quraisch",
+     "start": 0.174
+    },
+    {
+     "word": "haben",
+     "start": 1.192
+    },
+    {
+     "word": "die",
+     "start": 1.412
+    },
+    {
+     "word": "Muslime",
+     "start": 1.412
+    },
+    {
+     "word": "aus",
+     "start": 2.072
+    },
+    {
+     "word": "Mekka",
+     "start": 2.072
+    },
+    {
+     "word": "vertrieben.",
+     "start": 2.272
+    },
+    {
+     "word": "Ihre",
+     "start": 3.486
+    },
+    {
+     "word": "Häuser",
+     "start": 3.486
+    },
+    {
+     "word": "...",
+     "start": 4.552
+    },
+    {
+     "word": "ihren",
+     "start": 4.552
+    },
+    {
+     "word": "*Besitz*",
+     "start": 4.952
+    },
+    {
+     "word": "genommen.",
+     "start": 5.612
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e3",
+   "shot": "auszug",
+   "start": 26.205,
+   "dur": 8.475,
+   "file": "qissa_badr/line-0-5.wav",
+   "text": "Jetzt zieht eine reiche *Karawane* der Quraisch vorbei. Der Prophet, Friede sei mit ihm, will sie abfangen. Keinen Krieg.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.276
+    },
+    {
+     "word": "zieht",
+     "start": 0.38
+    },
+    {
+     "word": "eine",
+     "start": 0.688
+    },
+    {
+     "word": "reiche",
+     "start": 0.688
+    },
+    {
+     "word": "*Karawane*",
+     "start": 1.26
+    },
+    {
+     "word": "der",
+     "start": 2.16
+    },
+    {
+     "word": "Quraisch",
+     "start": 2.16
+    },
+    {
+     "word": "vorbei.",
+     "start": 3.75
+    },
+    {
+     "word": "Der",
+     "start": 4.145
+    },
+    {
+     "word": "Prophet,",
+     "start": 4.17
+    },
+    {
+     "word": "Friede",
+     "start": 4.938
+    },
+    {
+     "word": "sei",
+     "start": 5.485
+    },
+    {
+     "word": "mit",
+     "start": 5.485
+    },
+    {
+     "word": "ihm,",
+     "start": 5.665
+    },
+    {
+     "word": "will",
+     "start": 6.065
+    },
+    {
+     "word": "sie",
+     "start": 6.126
+    },
+    {
+     "word": "abfangen.",
+     "start": 6.126
+    },
+    {
+     "word": "Keinen",
+     "start": 7.006
+    },
+    {
+     "word": "Krieg.",
+     "start": 7.393
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e4",
+   "shot": "heer",
+   "start": 34.68,
+   "dur": 6.449,
+   "file": "qissa_badr/line-0-6.wav",
+   "text": "Doch die Karawane entkommt. Und aus Mekka marschiert ein *Heer* heran. Tausend Mann.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Doch",
+     "start": 0.32
+    },
+    {
+     "word": "die",
+     "start": 0.32
+    },
+    {
+     "word": "Karawane",
+     "start": 0.32
+    },
+    {
+     "word": "entkommt.",
+     "start": 1.179
+    },
+    {
+     "word": "Und",
+     "start": 2.435
+    },
+    {
+     "word": "aus",
+     "start": 2.519
+    },
+    {
+     "word": "Mekka",
+     "start": 2.519
+    },
+    {
+     "word": "marschiert",
+     "start": 2.779
+    },
+    {
+     "word": "ein",
+     "start": 3.719
+    },
+    {
+     "word": "*Heer*",
+     "start": 3.979
+    },
+    {
+     "word": "heran.",
+     "start": 4.899
+    },
+    {
+     "word": "Tausend",
+     "start": 4.979
+    },
+    {
+     "word": "Mann.",
+     "start": 5.787
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e5",
+   "shot": "rat",
+   "start": 41.129,
+   "dur": 4.75,
+   "file": "qissa_badr/line-0-7.wav",
+   "text": "Die Gefährten stehen hinter ihm. *Al-Miqdad* sagt:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.13
+    },
+    {
+     "word": "Gefährten",
+     "start": 0.13
+    },
+    {
+     "word": "stehen",
+     "start": 0.789
+    },
+    {
+     "word": "hinter",
+     "start": 1.246
+    },
+    {
+     "word": "ihm.",
+     "start": 1.6
+    },
+    {
+     "word": "*Al-Miqdad*",
+     "start": 2.74
+    },
+    {
+     "word": "sagt:",
+     "start": 4.0
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q1",
+   "shot": "rat",
+   "start": 46.329,
+   "dur": 8.379,
+   "file": "qissa_badr/line-1-0.wav",
+   "text": "Wir sagen nicht wie das Volk von Musa: Geh du und dein Herr und kämpft! Wir kämpfen *rechts* und *links* von dir, vor dir und hinter dir.",
+   "speaker": "Miqdad",
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.05
+    },
+    {
+     "word": "sagen",
+     "start": 0.28
+    },
+    {
+     "word": "nicht",
+     "start": 0.6
+    },
+    {
+     "word": "wie",
+     "start": 0.93
+    },
+    {
+     "word": "das",
+     "start": 1.16
+    },
+    {
+     "word": "Volk",
+     "start": 1.39
+    },
+    {
+     "word": "von",
+     "start": 1.67
+    },
+    {
+     "word": "Musa:",
+     "start": 1.91
+    },
+    {
+     "word": "Geh",
+     "start": 2.6
+    },
+    {
+     "word": "du",
+     "start": 2.8
+    },
+    {
+     "word": "und",
+     "start": 2.97
+    },
+    {
+     "word": "dein",
+     "start": 3.17
+    },
+    {
+     "word": "Herr",
+     "start": 3.42
+    },
+    {
+     "word": "und",
+     "start": 3.67
+    },
+    {
+     "word": "kämpft!",
+     "start": 3.87
+    },
+    {
+     "word": "Wir",
+     "start": 4.76
+    },
+    {
+     "word": "kämpfen",
+     "start": 4.98
+    },
+    {
+     "word": "*rechts*",
+     "start": 5.4
+    },
+    {
+     "word": "und",
+     "start": 5.76
+    },
+    {
+     "word": "*links*",
+     "start": 5.99
+    },
+    {
+     "word": "von",
+     "start": 6.31
+    },
+    {
+     "word": "dir,",
+     "start": 6.54
+    },
+    {
+     "word": "vor",
+     "start": 6.97
+    },
+    {
+     "word": "dir",
+     "start": 7.2
+    },
+    {
+     "word": "und",
+     "start": 7.43
+    },
+    {
+     "word": "hinter",
+     "start": 7.66
+    },
+    {
+     "word": "dir.",
+     "start": 8.03
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "al-Miqdad · Bukhari 3952"
+  },
+  {
+   "id": "e6",
+   "shot": "regen",
+   "start": 55.308,
+   "dur": 11.36,
+   "file": "qissa_badr/line-0-8.wav",
+   "text": "Die Nacht vor der Schlacht, bei Badr. *Regen* fällt und festigt den Sand. Eine tiefe Ruhe legt sich über alle. Sie *schlafen*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.136
+    },
+    {
+     "word": "Nacht",
+     "start": 0.136
+    },
+    {
+     "word": "vor",
+     "start": 0.213
+    },
+    {
+     "word": "der",
+     "start": 0.54
+    },
+    {
+     "word": "Schlacht,",
+     "start": 0.76
+    },
+    {
+     "word": "bei",
+     "start": 1.94
+    },
+    {
+     "word": "Badr.",
+     "start": 2.17
+    },
+    {
+     "word": "*Regen*",
+     "start": 3.67
+    },
+    {
+     "word": "fällt",
+     "start": 4.331
+    },
+    {
+     "word": "und",
+     "start": 5.2
+    },
+    {
+     "word": "festigt",
+     "start": 5.504
+    },
+    {
+     "word": "den",
+     "start": 5.9
+    },
+    {
+     "word": "Sand.",
+     "start": 6.144
+    },
+    {
+     "word": "Eine",
+     "start": 6.66
+    },
+    {
+     "word": "tiefe",
+     "start": 7.039
+    },
+    {
+     "word": "Ruhe",
+     "start": 7.039
+    },
+    {
+     "word": "legt",
+     "start": 7.84
+    },
+    {
+     "word": "sich",
+     "start": 8.24
+    },
+    {
+     "word": "über",
+     "start": 8.592
+    },
+    {
+     "word": "alle.",
+     "start": 8.752
+    },
+    {
+     "word": "Sie",
+     "start": 8.944
+    },
+    {
+     "word": "*schlafen*.",
+     "start": 9.85
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e7",
+   "shot": "baum",
+   "start": 66.668,
+   "dur": 9.773,
+   "file": "qissa_badr/line-0-9.wav",
+   "text": "Nur einer ist *wach*: der Prophet, Friede sei mit ihm. Unter einem *Baum* betet er ... und weint ... bis zum Morgen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Nur",
+     "start": 0.32
+    },
+    {
+     "word": "einer",
+     "start": 0.32
+    },
+    {
+     "word": "ist",
+     "start": 0.881
+    },
+    {
+     "word": "*wach*:",
+     "start": 0.881
+    },
+    {
+     "word": "der",
+     "start": 2.169
+    },
+    {
+     "word": "Prophet,",
+     "start": 2.186
+    },
+    {
+     "word": "Friede",
+     "start": 3.416
+    },
+    {
+     "word": "sei",
+     "start": 3.901
+    },
+    {
+     "word": "mit",
+     "start": 4.081
+    },
+    {
+     "word": "ihm.",
+     "start": 4.541
+    },
+    {
+     "word": "Unter",
+     "start": 4.93
+    },
+    {
+     "word": "einem",
+     "start": 5.421
+    },
+    {
+     "word": "*Baum*",
+     "start": 5.685
+    },
+    {
+     "word": "betet",
+     "start": 6.528
+    },
+    {
+     "word": "er",
+     "start": 6.761
+    },
+    {
+     "word": "...",
+     "start": 7.001
+    },
+    {
+     "word": "und",
+     "start": 7.001
+    },
+    {
+     "word": "weint",
+     "start": 7.515
+    },
+    {
+     "word": "...",
+     "start": 8.201
+    },
+    {
+     "word": "bis",
+     "start": 8.781
+    },
+    {
+     "word": "zum",
+     "start": 8.838
+    },
+    {
+     "word": "Morgen.",
+     "start": 8.838
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e8",
+   "shot": "reihen",
+   "start": 76.441,
+   "dur": 5.889,
+   "file": "qissa_badr/line-0-10.wav",
+   "text": "Am Morgen stehen sich die *Heere* gegenüber. Er wendet sich zur Qibla und hebt die *Hände*:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.133
+    },
+    {
+     "word": "Morgen",
+     "start": 0.133
+    },
+    {
+     "word": "stehen",
+     "start": 0.2
+    },
+    {
+     "word": "sich",
+     "start": 0.992
+    },
+    {
+     "word": "die",
+     "start": 1.16
+    },
+    {
+     "word": "*Heere*",
+     "start": 1.333
+    },
+    {
+     "word": "gegenüber.",
+     "start": 1.747
+    },
+    {
+     "word": "Er",
+     "start": 3.093
+    },
+    {
+     "word": "wendet",
+     "start": 3.093
+    },
+    {
+     "word": "sich",
+     "start": 3.792
+    },
+    {
+     "word": "zur",
+     "start": 3.96
+    },
+    {
+     "word": "Qibla",
+     "start": 4.12
+    },
+    {
+     "word": "und",
+     "start": 4.56
+    },
+    {
+     "word": "hebt",
+     "start": 4.848
+    },
+    {
+     "word": "die",
+     "start": 5.06
+    },
+    {
+     "word": "*Hände*:",
+     "start": 5.16
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q2",
+   "shot": "gebet",
+   "start": 82.73,
+   "dur": 9.04,
+   "file": "qissa_badr/line-2-0.wav",
+   "text": "O Allah, erfülle mir, was Du mir versprochen hast. O Allah, wenn diese kleine *Schar* untergeht ... wird Dich niemand mehr auf der Erde anbeten.",
+   "speaker": "Zitat",
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.2
+    },
+    {
+     "word": "erfülle",
+     "start": 0.55
+    },
+    {
+     "word": "mir,",
+     "start": 1.3
+    },
+    {
+     "word": "was",
+     "start": 1.55
+    },
+    {
+     "word": "Du",
+     "start": 1.8
+    },
+    {
+     "word": "mir",
+     "start": 2.0
+    },
+    {
+     "word": "versprochen",
+     "start": 2.25
+    },
+    {
+     "word": "hast.",
+     "start": 2.9
+    },
+    {
+     "word": "O",
+     "start": 3.72
+    },
+    {
+     "word": "Allah,",
+     "start": 3.86
+    },
+    {
+     "word": "wenn",
+     "start": 4.21
+    },
+    {
+     "word": "diese",
+     "start": 4.51
+    },
+    {
+     "word": "kleine",
+     "start": 5.06
+    },
+    {
+     "word": "*Schar*",
+     "start": 5.45
+    },
+    {
+     "word": "untergeht",
+     "start": 5.8
+    },
+    {
+     "word": "...",
+     "start": 6.35
+    },
+    {
+     "word": "wird",
+     "start": 6.84
+    },
+    {
+     "word": "Dich",
+     "start": 7.08
+    },
+    {
+     "word": "niemand",
+     "start": 7.32
+    },
+    {
+     "word": "mehr",
+     "start": 7.68
+    },
+    {
+     "word": "auf",
+     "start": 7.92
+    },
+    {
+     "word": "der",
+     "start": 8.12
+    },
+    {
+     "word": "Erde",
+     "start": 8.32
+    },
+    {
+     "word": "anbeten.",
+     "start": 8.56
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Prophet ﷺ · Muslim 1763"
+  },
+  {
+   "id": "e9",
+   "shot": "gebet",
+   "start": 92.27,
+   "dur": 6.093,
+   "file": "qissa_badr/line-0-11.wav",
+   "text": "Er betet, bis ihm der *Umhang* von den Schultern fällt. Abu Bakr legt ihn zurück:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Er",
+     "start": 0.142
+    },
+    {
+     "word": "betet,",
+     "start": 0.142
+    },
+    {
+     "word": "bis",
+     "start": 0.92
+    },
+    {
+     "word": "ihm",
+     "start": 0.92
+    },
+    {
+     "word": "der",
+     "start": 1.1
+    },
+    {
+     "word": "*Umhang*",
+     "start": 1.3
+    },
+    {
+     "word": "von",
+     "start": 1.98
+    },
+    {
+     "word": "den",
+     "start": 2.18
+    },
+    {
+     "word": "Schultern",
+     "start": 2.293
+    },
+    {
+     "word": "fällt.",
+     "start": 3.4
+    },
+    {
+     "word": "Abu",
+     "start": 4.327
+    },
+    {
+     "word": "Bakr",
+     "start": 4.327
+    },
+    {
+     "word": "legt",
+     "start": 4.866
+    },
+    {
+     "word": "ihn",
+     "start": 5.166
+    },
+    {
+     "word": "zurück:",
+     "start": 5.343
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q3",
+   "shot": "gebet",
+   "start": 98.813,
+   "dur": 4.608,
+   "file": "qissa_badr/line-1-1.wav",
+   "text": "Genug, o Prophet Allahs. Er wird erfüllen, was Er dir *versprochen* hat.",
+   "speaker": "AbuBakr",
+   "words": [
+    {
+     "word": "Genug,",
+     "start": 0.05
+    },
+    {
+     "word": "o",
+     "start": 0.52
+    },
+    {
+     "word": "Prophet",
+     "start": 0.72
+    },
+    {
+     "word": "Allahs.",
+     "start": 1.33
+    },
+    {
+     "word": "Er",
+     "start": 2.4
+    },
+    {
+     "word": "wird",
+     "start": 2.56
+    },
+    {
+     "word": "erfüllen,",
+     "start": 2.8
+    },
+    {
+     "word": "was",
+     "start": 3.2
+    },
+    {
+     "word": "Er",
+     "start": 3.4
+    },
+    {
+     "word": "dir",
+     "start": 3.56
+    },
+    {
+     "word": "*versprochen*",
+     "start": 3.76
+    },
+    {
+     "word": "hat.",
+     "start": 4.28
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "Abu Bakr · Muslim 1763"
+  },
+  {
+   "id": "e10",
+   "shot": "engel",
+   "start": 103.921,
+   "dur": 7.156,
+   "file": "qissa_badr/line-0-12.wav",
+   "text": "Und Allah antwortet: Ich helfe euch mit tausend *Engeln* ... einer nach dem anderen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Und",
+     "start": 0.218
+    },
+    {
+     "word": "Allah",
+     "start": 0.218
+    },
+    {
+     "word": "antwortet:",
+     "start": 0.333
+    },
+    {
+     "word": "Ich",
+     "start": 1.82
+    },
+    {
+     "word": "helfe",
+     "start": 2.184
+    },
+    {
+     "word": "euch",
+     "start": 2.704
+    },
+    {
+     "word": "mit",
+     "start": 3.12
+    },
+    {
+     "word": "tausend",
+     "start": 3.52
+    },
+    {
+     "word": "*Engeln*",
+     "start": 4.38
+    },
+    {
+     "word": "...",
+     "start": 4.98
+    },
+    {
+     "word": "einer",
+     "start": 5.303
+    },
+    {
+     "word": "nach",
+     "start": 5.888
+    },
+    {
+     "word": "dem",
+     "start": 6.12
+    },
+    {
+     "word": "anderen.",
+     "start": 6.3
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e11",
+   "shot": "sturm",
+   "start": 111.077,
+   "dur": 3.154,
+   "file": "qissa_badr/line-0-13.wav",
+   "text": "Dann prallen die Heere *aufeinander*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dann",
+     "start": 0.32
+    },
+    {
+     "word": "prallen",
+     "start": 0.587
+    },
+    {
+     "word": "die",
+     "start": 0.874
+    },
+    {
+     "word": "Heere",
+     "start": 1.44
+    },
+    {
+     "word": "*aufeinander*.",
+     "start": 2.0
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e12",
+   "shot": "schlacht",
+   "start": 114.231,
+   "dur": 4.214,
+   "file": "qissa_badr/line-0-14.wav",
+   "text": "Staub. Schreie. Schwerter.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Staub.",
+     "start": 0.32
+    },
+    {
+     "word": "Schreie.",
+     "start": 1.003
+    },
+    {
+     "word": "Schwerter.",
+     "start": 2.843
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e13",
+   "shot": "jagd",
+   "start": 118.445,
+   "dur": 10.2,
+   "file": "qissa_badr/line-0-15.wav",
+   "text": "Ein Muslim jagt einem Gegner nach. Da hört er über sich einen *Peitschenknall*. Und eine Stimme: Vorwärts, *Haizum*!",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.14
+    },
+    {
+     "word": "Muslim",
+     "start": 0.14
+    },
+    {
+     "word": "jagt",
+     "start": 0.159
+    },
+    {
+     "word": "einem",
+     "start": 0.92
+    },
+    {
+     "word": "Gegner",
+     "start": 1.127
+    },
+    {
+     "word": "nach.",
+     "start": 2.224
+    },
+    {
+     "word": "Da",
+     "start": 3.23
+    },
+    {
+     "word": "hört",
+     "start": 3.23
+    },
+    {
+     "word": "er",
+     "start": 3.804
+    },
+    {
+     "word": "über",
+     "start": 3.804
+    },
+    {
+     "word": "sich",
+     "start": 3.804
+    },
+    {
+     "word": "einen",
+     "start": 4.32
+    },
+    {
+     "word": "*Peitschenknall*.",
+     "start": 4.72
+    },
+    {
+     "word": "Und",
+     "start": 6.38
+    },
+    {
+     "word": "eine",
+     "start": 6.895
+    },
+    {
+     "word": "Stimme:",
+     "start": 6.895
+    },
+    {
+     "word": "Vorwärts,",
+     "start": 6.895
+    },
+    {
+     "word": "*Haizum*!",
+     "start": 8.319
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e14",
+   "shot": "jagd",
+   "start": 128.645,
+   "dur": 7.049,
+   "file": "qissa_badr/line-0-16.wav",
+   "text": "Vor ihm *stürzt* der Gegner zu Boden. Er erzählt es dem Propheten, Friede sei mit ihm. Der sagt:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Vor",
+     "start": 0.32
+    },
+    {
+     "word": "ihm",
+     "start": 0.32
+    },
+    {
+     "word": "*stürzt*",
+     "start": 0.32
+    },
+    {
+     "word": "der",
+     "start": 1.236
+    },
+    {
+     "word": "Gegner",
+     "start": 1.356
+    },
+    {
+     "word": "zu",
+     "start": 1.916
+    },
+    {
+     "word": "Boden.",
+     "start": 1.916
+    },
+    {
+     "word": "Er",
+     "start": 2.752
+    },
+    {
+     "word": "erzählt",
+     "start": 2.752
+    },
+    {
+     "word": "es",
+     "start": 3.563
+    },
+    {
+     "word": "dem",
+     "start": 3.656
+    },
+    {
+     "word": "Propheten,",
+     "start": 3.846
+    },
+    {
+     "word": "Friede",
+     "start": 4.966
+    },
+    {
+     "word": "sei",
+     "start": 5.276
+    },
+    {
+     "word": "mit",
+     "start": 5.276
+    },
+    {
+     "word": "ihm.",
+     "start": 5.656
+    },
+    {
+     "word": "Der",
+     "start": 6.056
+    },
+    {
+     "word": "sagt:",
+     "start": 6.107
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q4",
+   "shot": "himmel",
+   "start": 136.044,
+   "dur": 2.193,
+   "file": "qissa_badr/line-2-1.wav",
+   "text": "Das war Hilfe aus dem dritten *Himmel*.",
+   "speaker": "Zitat",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "Hilfe",
+     "start": 0.51
+    },
+    {
+     "word": "aus",
+     "start": 0.83
+    },
+    {
+     "word": "dem",
+     "start": 1.06
+    },
+    {
+     "word": "dritten",
+     "start": 1.29
+    },
+    {
+     "word": "*Himmel*.",
+     "start": 1.71
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Prophet ﷺ · Muslim 1763"
+  },
+  {
+   "id": "e15",
+   "shot": "ende",
+   "start": 138.887,
+   "dur": 6.295,
+   "file": "qissa_badr/line-0-17.wav",
+   "text": "Am Ende *fliehen* die Quraisch. Siebzig von ihnen fallen. Siebzig werden gefangen.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Am",
+     "start": 0.069
+    },
+    {
+     "word": "Ende",
+     "start": 0.069
+    },
+    {
+     "word": "*fliehen*",
+     "start": 0.144
+    },
+    {
+     "word": "die",
+     "start": 0.92
+    },
+    {
+     "word": "Quraisch.",
+     "start": 0.92
+    },
+    {
+     "word": "Siebzig",
+     "start": 1.88
+    },
+    {
+     "word": "von",
+     "start": 2.52
+    },
+    {
+     "word": "ihnen",
+     "start": 3.0
+    },
+    {
+     "word": "fallen.",
+     "start": 3.173
+    },
+    {
+     "word": "Siebzig",
+     "start": 3.509
+    },
+    {
+     "word": "werden",
+     "start": 4.68
+    },
+    {
+     "word": "gefangen.",
+     "start": 5.166
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e16",
+   "shot": "abend",
+   "start": 145.182,
+   "dur": 6.437,
+   "file": "qissa_badr/line-0-18.wav",
+   "text": "Dreihundert ... gegen tausend. Allah hat ihnen geholfen, als sie *schwach* waren.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Dreihundert",
+     "start": 0.32
+    },
+    {
+     "word": "...",
+     "start": 1.027
+    },
+    {
+     "word": "gegen",
+     "start": 1.499
+    },
+    {
+     "word": "tausend.",
+     "start": 1.567
+    },
+    {
+     "word": "Allah",
+     "start": 2.667
+    },
+    {
+     "word": "hat",
+     "start": 3.53
+    },
+    {
+     "word": "ihnen",
+     "start": 3.53
+    },
+    {
+     "word": "geholfen,",
+     "start": 3.983
+    },
+    {
+     "word": "als",
+     "start": 5.06
+    },
+    {
+     "word": "sie",
+     "start": 5.06
+    },
+    {
+     "word": "*schwach*",
+     "start": 5.14
+    },
+    {
+     "word": "waren.",
+     "start": 5.14
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e17",
+   "shot": "abend",
+   "start": 151.619,
+   "dur": 6.397,
+   "file": "qissa_badr/line-0-19.wav",
+   "text": "Der Koran nennt diesen Tag: *Yaum al-Furqan*. Den Tag der Unterscheidung.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.287
+    },
+    {
+     "word": "Koran",
+     "start": 0.287
+    },
+    {
+     "word": "nennt",
+     "start": 0.32
+    },
+    {
+     "word": "diesen",
+     "start": 1.13
+    },
+    {
+     "word": "Tag:",
+     "start": 1.456
+    },
+    {
+     "word": "*Yaum",
+     "start": 2.166
+    },
+    {
+     "word": "al-Furqan*.",
+     "start": 2.43
+    },
+    {
+     "word": "Den",
+     "start": 3.996
+    },
+    {
+     "word": "Tag",
+     "start": 4.638
+    },
+    {
+     "word": "der",
+     "start": 4.638
+    },
+    {
+     "word": "Unterscheidung.",
+     "start": 4.638
+    }
+   ],
+   "tail": 0
+  }
+ ],
+ "quotes": [
+  {
+   "id": "q1",
+   "shot": "rat",
+   "start": 46.329,
+   "dur": 8.379,
+   "text": "Wir sagen nicht wie das Volk von Musa: Geh du und dein Herr und kämpft! Wir kämpfen *rechts* und *links* von dir, vor dir und hinter dir.",
+   "by": "al-Miqdad · Bukhari 3952",
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.05
+    },
+    {
+     "word": "sagen",
+     "start": 0.28
+    },
+    {
+     "word": "nicht",
+     "start": 0.6
+    },
+    {
+     "word": "wie",
+     "start": 0.93
+    },
+    {
+     "word": "das",
+     "start": 1.16
+    },
+    {
+     "word": "Volk",
+     "start": 1.39
+    },
+    {
+     "word": "von",
+     "start": 1.67
+    },
+    {
+     "word": "Musa:",
+     "start": 1.91
+    },
+    {
+     "word": "Geh",
+     "start": 2.6
+    },
+    {
+     "word": "du",
+     "start": 2.8
+    },
+    {
+     "word": "und",
+     "start": 2.97
+    },
+    {
+     "word": "dein",
+     "start": 3.17
+    },
+    {
+     "word": "Herr",
+     "start": 3.42
+    },
+    {
+     "word": "und",
+     "start": 3.67
+    },
+    {
+     "word": "kämpft!",
+     "start": 3.87
+    },
+    {
+     "word": "Wir",
+     "start": 4.76
+    },
+    {
+     "word": "kämpfen",
+     "start": 4.98
+    },
+    {
+     "word": "*rechts*",
+     "start": 5.4
+    },
+    {
+     "word": "und",
+     "start": 5.76
+    },
+    {
+     "word": "*links*",
+     "start": 5.99
+    },
+    {
+     "word": "von",
+     "start": 6.31
+    },
+    {
+     "word": "dir,",
+     "start": 6.54
+    },
+    {
+     "word": "vor",
+     "start": 6.97
+    },
+    {
+     "word": "dir",
+     "start": 7.2
+    },
+    {
+     "word": "und",
+     "start": 7.43
+    },
+    {
+     "word": "hinter",
+     "start": 7.66
+    },
+    {
+     "word": "dir.",
+     "start": 8.03
+    }
+   ]
+  },
+  {
+   "id": "q2",
+   "shot": "gebet",
+   "start": 82.73,
+   "dur": 9.04,
+   "text": "O Allah, erfülle mir, was Du mir versprochen hast. O Allah, wenn diese kleine *Schar* untergeht ... wird Dich niemand mehr auf der Erde anbeten.",
+   "by": "der Prophet ﷺ · Muslim 1763",
+   "words": [
+    {
+     "word": "O",
+     "start": 0.05
+    },
+    {
+     "word": "Allah,",
+     "start": 0.2
+    },
+    {
+     "word": "erfülle",
+     "start": 0.55
+    },
+    {
+     "word": "mir,",
+     "start": 1.3
+    },
+    {
+     "word": "was",
+     "start": 1.55
+    },
+    {
+     "word": "Du",
+     "start": 1.8
+    },
+    {
+     "word": "mir",
+     "start": 2.0
+    },
+    {
+     "word": "versprochen",
+     "start": 2.25
+    },
+    {
+     "word": "hast.",
+     "start": 2.9
+    },
+    {
+     "word": "O",
+     "start": 3.72
+    },
+    {
+     "word": "Allah,",
+     "start": 3.86
+    },
+    {
+     "word": "wenn",
+     "start": 4.21
+    },
+    {
+     "word": "diese",
+     "start": 4.51
+    },
+    {
+     "word": "kleine",
+     "start": 5.06
+    },
+    {
+     "word": "*Schar*",
+     "start": 5.45
+    },
+    {
+     "word": "untergeht",
+     "start": 5.8
+    },
+    {
+     "word": "...",
+     "start": 6.35
+    },
+    {
+     "word": "wird",
+     "start": 6.84
+    },
+    {
+     "word": "Dich",
+     "start": 7.08
+    },
+    {
+     "word": "niemand",
+     "start": 7.32
+    },
+    {
+     "word": "mehr",
+     "start": 7.68
+    },
+    {
+     "word": "auf",
+     "start": 7.92
+    },
+    {
+     "word": "der",
+     "start": 8.12
+    },
+    {
+     "word": "Erde",
+     "start": 8.32
+    },
+    {
+     "word": "anbeten.",
+     "start": 8.56
+    }
+   ]
+  },
+  {
+   "id": "q3",
+   "shot": "gebet",
+   "start": 98.813,
+   "dur": 4.608,
+   "text": "Genug, o Prophet Allahs. Er wird erfüllen, was Er dir *versprochen* hat.",
+   "by": "Abu Bakr · Muslim 1763",
+   "words": [
+    {
+     "word": "Genug,",
+     "start": 0.05
+    },
+    {
+     "word": "o",
+     "start": 0.52
+    },
+    {
+     "word": "Prophet",
+     "start": 0.72
+    },
+    {
+     "word": "Allahs.",
+     "start": 1.33
+    },
+    {
+     "word": "Er",
+     "start": 2.4
+    },
+    {
+     "word": "wird",
+     "start": 2.56
+    },
+    {
+     "word": "erfüllen,",
+     "start": 2.8
+    },
+    {
+     "word": "was",
+     "start": 3.2
+    },
+    {
+     "word": "Er",
+     "start": 3.4
+    },
+    {
+     "word": "dir",
+     "start": 3.56
+    },
+    {
+     "word": "*versprochen*",
+     "start": 3.76
+    },
+    {
+     "word": "hat.",
+     "start": 4.28
+    }
+   ]
+  },
+  {
+   "id": "q4",
+   "shot": "himmel",
+   "start": 136.044,
+   "dur": 2.193,
+   "text": "Das war Hilfe aus dem dritten *Himmel*.",
+   "by": "der Prophet ﷺ · Muslim 1763",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.05
+    },
+    {
+     "word": "war",
+     "start": 0.28
+    },
+    {
+     "word": "Hilfe",
+     "start": 0.51
+    },
+    {
+     "word": "aus",
+     "start": 0.83
+    },
+    {
+     "word": "dem",
+     "start": 1.06
+    },
+    {
+     "word": "dritten",
+     "start": 1.29
+    },
+    {
+     "word": "*Himmel*.",
+     "start": 1.71
+    }
+   ]
+  }
+ ],
+ "choice": null,
+ "events": {
+  "dreihundert_h1": 1.17,
+  "tausend_h2": 9.03,
+  "medina_e1": 15.79,
+  "ramadan_e1": 16.497,
+  "mekka_e2": 21.918,
+  "häuser_e2": 23.332,
+  "besitz_e2": 24.798,
+  "karawane_e3": 27.465,
+  "prophet_e3": 30.375,
+  "abfangen_e3": 32.331,
+  "krieg_e3": 33.598,
+  "karawane_e4": 35.0,
+  "entkommt_e4": 35.859,
+  "mekka_e4": 37.199,
+  "heer_e4": 38.659,
+  "tausend_e4": 39.659,
+  "gefährten_e5": 41.259,
+  "miqdad_e5": 43.869,
+  "sagt_e5": 45.129,
+  "musa_q1": 48.239,
+  "kämpfen_q1": 51.309,
+  "rechts_q1": 51.729,
+  "links_q1": 52.319,
+  "nacht_e6": 55.444,
+  "regen_e6": 58.978,
+  "sand_e6": 61.452,
+  "ruhe_e6": 62.347,
+  "schlafen_e6": 65.158,
+  "wach_e7": 67.549,
+  "prophet_e7": 68.854,
+  "baum_e7": 72.353,
+  "weint_e7": 74.183,
+  "morgen_e7": 75.506,
+  "morgen_e8": 76.574,
+  "heere_e8": 77.774,
+  "qibla_e8": 80.561,
+  "hände_e8": 81.601,
+  "versprochen_q2": 84.98,
+  "schar_q2": 88.18,
+  "untergeht_q2": 88.53,
+  "umhang_e9": 93.57,
+  "zurück_e9": 97.613,
+  "genug_q3": 98.863,
+  "prophet_q3": 99.533,
+  "versprochen_q3": 102.573,
+  "tausend_e10": 107.441,
+  "engeln_e10": 108.301,
+  "anderen_e10": 110.221,
+  "heere_e11": 112.517,
+  "aufeinander_e11": 113.077,
+  "staub_e12": 114.551,
+  "schreie_e12": 115.234,
+  "schwerter_e12": 117.074,
+  "muslim_e13": 118.585,
+  "gegner_e13": 119.572,
+  "peitschenknall_e13": 123.165,
+  "stimme_e13": 125.34,
+  "haizum_e13": 126.764,
+  "stürzt_e14": 128.965,
+  "gegner_e14": 130.001,
+  "erzählt_e14": 131.397,
+  "sagt_e14": 134.752,
+  "himmel_q4": 137.754,
+  "fliehen_e15": 139.031,
+  "siebzig_e15": 140.767,
+  "gefangen_e15": 144.053,
+  "dreihundert_e16": 145.502,
+  "tausend_e16": 146.749,
+  "geholfen_e16": 149.165,
+  "schwach_e16": 150.322,
+  "koran_e17": 151.906,
+  "furqan_e17": 154.049,
+  "unterscheidung_e17": 156.257,
+  "count": []
+ }
+}
