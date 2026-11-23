@@ -206,7 +206,7 @@ def threshold_pt():
 # ============================================================ Einstellungen
 def shot_zelte():
     """Morgen: Ich gehe den Weg vom Norden hinunter ins Tal – Zelte der Dschurhum, Leute, Ziegen, Rauch; am Ende Zamzam (Brunnen)."""
-    L, spots, vl = KW.settle_world("morning", t1=D + 1, life_kids=True)
+    L, spots, vl = KW.settle_world("morning", t1=D + 1, life_kids=True, kid_avoid=[((-6.0, 16.6), (0.9, 2.6), 3.0)])  # Kamera-Weg
     make_hut()
     # zwei Frauen am Brunnen: eine zieht den Eimer hoch, eine wartet mit Krug
     w1 = Q.person("wellw1", (SP.x + 1.3, SP.y + 0.6, gz(SP.x, SP.y)), yaw=Q.face_yaw((SP.x + 1.3, SP.y + 0.6), (SP.x, SP.y)), seed=71,

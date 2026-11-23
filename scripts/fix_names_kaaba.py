@@ -61,10 +61,29 @@ def main():
         o0, o1 = span(xo)
         n0, n1 = span(xn)
         k = (n1 - n0) / (o1 - o0)  # > 1: neuer Satz länger -> schneller abspielen
+        gap_at, extra = None, 0.0
+        if k < 0.93:  # neuer Satz deutlich kürzer: NICHT langsamer sprechen (klingt zäh), sondern die längste Sprechpause verlängern
+            hop = 480
+            xs = xn[int(n0 * SR):int(n1 * SR)]
+            db = 20 * np.log10(np.array([np.sqrt(np.mean(xs[i * hop:(i + 1) * hop] ** 2)) for i in range(len(xs) // hop)]) + 1e-9)
+            best, run, bs = (0, 0), 0, 0
+            for i, q in enumerate(db < -42):
+                run = run + 1 if q else 0
+                if run == 1:
+                    bs = i
+                if run > best[1]:
+                    best = (bs, run)
+            gap_at = n0 + (best[0] + best[1] / 2) * hop / SR if best[1] * hop / SR > 0.12 else n1
+            extra = 0.55 * ((o1 - o0) - (n1 - n0))  # Rest bleibt als Atempause am Satzende
+            k = 1.0
         seg = ROOT / "out" / f"zz_fix_{s['id']}.wav"
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{max(0, n0 - 0.02):.4f}", "-t", f"{n1 - n0 + 0.04:.4f}", "-i", str(wav),
                         "-af", f"atempo={k:.5f}", "-ar", str(SR), "-ac", "1", str(seg)], check=True)
         y = pcm(seg)
+        if gap_at is not None:
+            g = int((gap_at - max(0, n0 - 0.02)) * SR)
+            y = np.concatenate([y[:g], np.zeros(int(extra * SR)), y[g:]])
+            print(f"   {s['id']}: Pause bei {gap_at - n0:.2f}s um {extra:.2f}s verlängert (Tempo bleibt)")
         out = np.zeros_like(xo)
         a = int(max(0, o0 - 0.02) * SR)
         m = min(len(y), len(out) - a)
@@ -97,7 +116,9 @@ def main():
         disp = s["text"].split()
         if len(sp) > len(disp) and sp[-1][1] == "...":
             sp = sp[:-1]  # angehängter Ausklang
-        t_of = lambda t: round(max(0.0, (o0 - 0.02) + (t - (n0 - 0.02)) / k), 3)  # noqa: E731
+        if len(sp) != len(disp) and "..." not in disp:
+            sp = [x for x in sp if x[1] != "..."]  # Sprechpausen „...“ nur im el-Text
+        t_of = lambda t: round(max(0.0, (o0 - 0.02) + (t - (n0 - 0.02)) / k + (extra if gap_at is not None and t > gap_at else 0.0)), 3)  # noqa: E731
         if len(sp) == len(disp):
             ln["words"] = [{"word": w, "start": t_of(t)} for w, (t, _) in zip(disp, sp)]
         else:  # andere Wortzahl: nach Position im Satz
@@ -111,7 +132,11 @@ def main():
     (D / "timing.json").write_text(json.dumps(timing, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     # Hinweis im Skript (el bleibt, damit der ElevenLabs-Cache passt): nach voice_gemini.py dieses Skript erneut ausführen
     script_new = json.loads((D / "script.json").read_text(encoding="utf-8"))
-    script_new["nameFix"] = {"old": old, "new": new, "ids": sorted(only), "note": "nach voice_gemini.py: python3 scripts/fix_names_kaaba.py old new ids…"}
+    fixes = script_new.pop("nameFix", None)
+    fixes = script_new.get("nameFixes", [fixes] if fixes else [])
+    fixes = [f for f in fixes if not (f["old"] == old and f["new"] == new)] + [{"old": old, "new": new, "ids": sorted(only)}]
+    script_new["nameFixes"] = fixes
+    script_new["nameFixNote"] = "nach voice_gemini.py alle nameFixes der Reihe nach: python3 scripts/fix_names_kaaba.py old new ids…"
     (D / "script.json").write_text(json.dumps(script_new, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print("✅ Namen ersetzt; jetzt build_qissa_zamzam.py + sfx_qissa_zamzam.py + Video zusammenfügen")
 

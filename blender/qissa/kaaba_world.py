@@ -367,7 +367,7 @@ def villagers(spots, t1, seed=31, n=14, near=None):
     return out
 
 
-def path_life(t1, seed=41, n_down=3, n_up=3, camel=True, kids=True):
+def path_life(t1, seed=41, n_down=3, n_up=3, camel=True, kids=True, tent_spots=(), kid_avoid=()):
     """Leben auf dem Weg ins Tal: Leute gehen hinab und herauf (seitlich versetzt), ein Mann führt ein Kamel, Kinder laufen."""
     rnd = random.Random(seed)
     pts = [Vector(p) for p in PATH_N]
@@ -404,16 +404,47 @@ def path_life(t1, seed=41, n_down=3, n_up=3, camel=True, kids=True):
         Q.walk(L_, [(a[0] - 1.6, a[1] - 0.6), (b[0] - 1.6, b[1] - 0.6)], 0.0, speed=0.9)
         Q.limb("pcm_rope", (0, -0.9, 1.6), (0, -1.5, 1.0), 0.008, 0.008, MK.M["rope"], seg=4, parent=C["root"])
     if kids:
+        # Nutzer: ein Kind blieb mitten im Rennen stehen -> Weg so lang, dass alle bis zum Ende der Einstellung laufen
+        # (schon vor Bild 0 im Lauf), nie durch Zelte, das Haus, den Brunnen oder den Weg der Kamera (kid_avoid: Strecken)
+        def far(p):
+            if any(math.dist(p, s[:2]) < 4.2 for s in tent_spots) or math.dist(p, HUT.xy) < 7.5 or math.dist(p, SP.xy) < 3.5:
+                return False
+            for a_, b_, r_ in kid_avoid:
+                ab = Vector((b_[0] - a_[0], b_[1] - a_[1]))
+                u = max(0.0, min(1.0, (Vector(p) - Vector(a_)).dot(ab) / ab.length_squared))
+                if (Vector(p) - (Vector(a_) + ab * u)).length < r_:
+                    return False
+            return True
+
+        def seg_ok(p, q):
+            return all(far((p[0] + (q[0] - p[0]) * j / 10, p[1] + (q[1] - p[1]) * j / 10)) for j in range(11))
         for k in range(3):
             c = (SP.x + rnd.uniform(-14, 10), SP.y + rnd.uniform(10, 22))
+            for _ in range(200):
+                if far(c):
+                    break
+                c = (SP.x + rnd.uniform(-14, 10), SP.y + rnd.uniform(10, 22))
             K_ = Q.person(f"kid{k}", (c[0], c[1], gz(*c)), seed=680 + k, head=rnd.choice(["cap", "bare"]), height=0.62)
-            pts_k = [c] + [(c[0] + rnd.uniform(-7, 7), c[1] + rnd.uniform(-5, 5)) for _ in range(4)]
-            Q.walk(K_, pts_k, rnd.uniform(0, 2), speed=2.4, run=True)
+            t0 = -rnd.uniform(1, 3)
+            need = 2.4 * (t1 - t0 + 2)
+            pts_k, dist = [c], 0.0
+            while dist < need:
+                q = None
+                for _ in range(200):
+                    cand = (c[0] + rnd.uniform(-8, 8), c[1] + rnd.uniform(-6, 6))
+                    if math.dist(cand, pts_k[-1]) > 3.5 and far(cand) and seg_ok(pts_k[-1], cand):
+                        q = cand
+                        break
+                if q is None:  # kein freier Punkt: denselben Weg zurück
+                    q = pts_k[-2] if len(pts_k) > 1 else (c[0] + 4, c[1])
+                dist += math.dist(pts_k[-1], q)
+                pts_k.append(q)
+            Q.walk(K_, pts_k, t0, speed=2.4, run=True)
     return out
 
 
 def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30.0, seed=21, extra_keep=(), life=True, tent_avoid=(),
-                 life_kids=False):
+                 life_kids=False, kid_avoid=()):
     """Das Tal Jahre später: Gelände + Baum + Safa/Marwa + Hügel (aus Folge 2), Zamzam-Brunnen, Zelte, Leute, Ziegen."""
     import os
     if os.environ.get("LITE"):  # Test: ohne bewegte Leute/Tiere
@@ -428,7 +459,7 @@ def settle_world(mode="day", stars=0.0, tents_n=26, people=14, goats=True, t1=30
     spots = tents(tents_n, seed=seed, avoid=tent_avoid, fire_lights=mode in ("dusk", "golden"))
     vl = villagers(spots, t1, n=people) if people else []
     if life:
-        path_life(t1, kids=life_kids)  # Kinder nur, wo es passt (Nutzer: Kind rannte sinnlos vor die Tür)
+        path_life(t1, kids=life_kids, tent_spots=spots, kid_avoid=kid_avoid)  # Kinder nur, wo es passt (Nutzer: Kind rannte sinnlos vor die Tür)
     if goats:
         herd("gA", (SP.x + 16, SP.y + 14), 6, seed=1, t1=t1)
         herd("gB", (SP.x - 18, SP.y + 22), 5, seed=7, t1=t1)
