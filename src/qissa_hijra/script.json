@@ -1,0 +1,364 @@
+{
+ "title": "Die Hidschra – der Jäger in der Wüste – QISSAH Folge 5 (POV)",
+ "series": "QISSAH",
+ "note": "Folge 5 (Nutzer 24.11.2026 hat den Text genehmigt; Spinnennetz rein (Musnad Ahmad 3251, Kette umstritten), Kisra-Armreifen raus): Hidschra des Propheten ﷺ mit Abu Bakr, Höhle Thaur, Suraqa jagt sie. Höchstens 3 min. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift). Worte des Propheten ﷺ und Abu Bakrs als ZITAT (Hall + goldene Schrift); Suraqa (damals noch kein Muslim), Stammesmann und Verfolger als Dialog (kursiv, ohne Hall). Der Prophet ﷺ NUR als Licht, Menschen ohne Gesicht, Abu Bakr (und Suraqa nie sichtbar – er ist die Kamera) mit Licht über dem Kopf. Koran-Rezitation NICHT hörbar (nur erzählt).",
+ "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
+ "voiceParts": {
+  "0": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
+   },
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "h1",
+    "m1",
+    "m3",
+    "c1",
+    "c4",
+    "c5",
+    "c6",
+    "s1",
+    "s3",
+    "s4",
+    "s7",
+    "s9",
+    "s11",
+    "w1",
+    "w2",
+    "w3"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag",
+   "cutmode": "latest",
+   "snap": true,
+   "capPause": 0.6
+  },
+  "1": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "AbuBakr": "Sadaltager",
+    "Suraqa": "Zubenelgenubi"
+   },
+   "notes": "# AUDIO PROFILE\nAbuBakr: a gentle, wise Arab man in his fifties, the closest friend of the Prophet. Soft, warm, humble voice.\nSuraqa: a bold Bedouin horseman in his thirties, proud and quick. Rough, confident voice.\n## THE SCENE\nArabia, 1400 years ago. A secret journey through the desert; a hunter on horseback.\n### DIRECTOR'S NOTES\nAbuBakr's first line is an eager, hopeful question to his dear friend. His second line is a frightened, barely audible WHISPER inside a hidden cave, breathless, with a pause at the dots. Suraqa's first line is casual and dismissive, waving it away, a bit sly. His second line is a loud call across the desert, shouted from a distance, honest and urgent. His last line is calm and flat, a little bored, sending other riders away. Leave a clear pause of about one second between the lines."
+  },
+  "2": {
+   "model": "gemini-3.8-flash-tts",
+   "plain": true,
+   "speakers": {
+    "Zitat": "Charon"
+   },
+   "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1–4)."
+  },
+  "3": {
+   "model": "gemini-2.5-flash-preview-tts",
+   "speakers": {
+    "Stammesmann": "Puck",
+    "Verfolger": "Algenib"
+   },
+   "notes": "# AUDIO PROFILE\nStammesmann: a young Bedouin man who just ran into a tent full of men, out of breath, excited.\nVerfolger: a tough, grumpy hunter from Mecca searching the mountains, gravelly low voice.\n## THE SCENE\nArabia, 1400 years ago, desert and rocky mountains.\n### DIRECTOR'S NOTES\nStammesmann speaks fast and excited, half out of breath, the last word stressed. Verfolger stands in front of a cave and speaks with dismissive certainty, a little annoyed, to his companions. Leave a clear pause of about one second between the lines."
+  }
+ },
+ "sentences": [
+  {
+   "id": "h1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "*Hundert* Kamele ... für jeden der beiden. Tot oder lebendig.",
+   "el": "[ominous] Hundert Kamele ... für jeden der beiden. ... [whispers] Tot oder lebendig."
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ein *Reiter* nimmt die Spur auf.",
+   "el": "[tense] Ein Reiter ... nimmt die Spur auf."
+  },
+  {
+   "id": "h3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Und was er in der Wüste erlebt ... verändert ihn für *immer*.",
+   "el": "[mysterious] Und was er in der Wüste erlebt ... [softly] verändert ihn für immer. ..."
+  },
+  {
+   "id": "m1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Mekka. Die Quraisch schmieden einen *Plan*: den Propheten, Friede sei mit ihm, festhalten, töten oder vertreiben.",
+   "el": "[ominous] مكة. ... Die قُرَيش schmieden einen Plan: ... den Propheten, Friede sei mit ihm, festhalten, ... töten ... oder vertreiben. ..."
+  },
+  {
+   "id": "m2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "In der Mittagshitze kommt er zu *Abu Bakr*:",
+   "el": "[calm, storytelling] In der Mittagshitze ... kommt er zu أبو بكر: ..."
+  },
+  {
+   "id": "q1",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3905",
+   "text": "Mir wurde *erlaubt*, auszuwandern."
+  },
+  {
+   "id": "q2",
+   "part": 1,
+   "speaker": "AbuBakr",
+   "quote": true,
+   "fx": "hall",
+   "by": "Abu Bakr · Bukhari 3905",
+   "text": "Darf ich dich *begleiten*?"
+  },
+  {
+   "id": "q3",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3905",
+   "text": "*Ja*."
+  },
+  {
+   "id": "m3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Nachts verlassen sie Mekka. Doch nicht Richtung Medina ... sondern nach *Süden*. In eine *Höhle* im Berg Thaur.",
+   "el": "[softly, tense] Nachts verlassen sie مكة. Doch nicht Richtung المدينة ... [whispers] sondern nach Süden. ... In eine Höhle im Berg ثَوْر. ..."
+  },
+  {
+   "id": "c1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Drei Nächte verstecken sie sich *dort*.",
+   "el": "[calm, softly] Drei Nächte verstecken sie sich dort. ..."
+  },
+  {
+   "id": "c2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dann ... *Schritte*. Die Verfolger stehen direkt vor der Höhle.",
+   "el": "[whispers] Dann ... [tense] Schritte. ... [whispers] Die Verfolger stehen direkt vor der Höhle. ..."
+  },
+  {
+   "id": "c3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Abu Bakr *flüstert*:",
+   "el": "[whispers] أبو بكر flüstert: ..."
+  },
+  {
+   "id": "q4",
+   "part": 1,
+   "speaker": "AbuBakr",
+   "quote": true,
+   "fx": "hall",
+   "by": "Abu Bakr · Bukhari 3653",
+   "text": "Wenn einer von ihnen auf seine *Füße* schaut ... sieht er uns."
+  },
+  {
+   "id": "c4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Prophet, Friede sei mit ihm, sagt *ruhig*:",
+   "el": "[calm, reverent] Der Prophet, Friede sei mit ihm, ... sagt ruhig: ..."
+  },
+  {
+   "id": "q5",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3653",
+   "text": "Was denkst du von *zweien* ... deren Dritter *Allah* ist?"
+  },
+  {
+   "id": "c5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Draußen sehen die Verfolger ein *Spinnennetz* über dem Eingang.",
+   "el": "[tense, softly] Draußen sehen die Verfolger ... ein Spinnennetz über dem Eingang. ..."
+  },
+  {
+   "id": "v1",
+   "part": 3,
+   "speaker": "Verfolger",
+   "dialog": true,
+   "text": "Wäre er hier drin ... gäbe es kein *Netz*."
+  },
+  {
+   "id": "c6",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Die Schritte ... *entfernen* sich.",
+   "el": "[whispers] Die Schritte ... entfernen sich. ..."
+  },
+  {
+   "id": "s1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Dann reiten sie los, die *Küste* entlang.",
+   "el": "[storytelling] Dann reiten sie los, die Küste entlang. ..."
+  },
+  {
+   "id": "s2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Suraqa sitzt bei seinem *Stamm*, als ein Mann hereinkommt:",
+   "el": "[storytelling] سُراقة sitzt bei seinem Stamm, [tense] als ein Mann hereinkommt: ..."
+  },
+  {
+   "id": "v2",
+   "part": 3,
+   "speaker": "Stammesmann",
+   "dialog": true,
+   "text": "Ich habe Gestalten an der Küste gesehen. Ich glaube, das sind *sie*!"
+  },
+  {
+   "id": "s3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Suraqa *winkt* ab:",
+   "el": "[casual] سُراقة winkt ab: ..."
+  },
+  {
+   "id": "v3",
+   "part": 1,
+   "speaker": "Suraqa",
+   "dialog": true,
+   "text": "Nein ... das sind *andere*."
+  },
+  {
+   "id": "s4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Doch heimlich holt er sein *Pferd*. Den *Speer* hält er tief.",
+   "el": "[whispers, sly] Doch heimlich holt er sein Pferd. ... Den Speer hält er tief. ..."
+  },
+  {
+   "id": "s5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er *galoppiert* los.",
+   "el": "[excited] Er galoppiert los!"
+  },
+  {
+   "id": "s6",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er kommt näher ... da *stolpert* das Pferd. Suraqa stürzt in den Sand.",
+   "el": "[tense] Er kommt näher ... [sudden] da stolpert das Pferd. ... سُراقة stürzt in den Sand. ..."
+  },
+  {
+   "id": "s7",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er zieht seine *Lospfeile*: Soll ich ihnen schaden? Die Antwort: *Nein*. Er reitet trotzdem weiter.",
+   "el": "[curious] Er zieht seine Lospfeile: Soll ich ihnen schaden? ... [ominous] Die Antwort: Nein. ... [determined] Er reitet trotzdem weiter. ..."
+  },
+  {
+   "id": "s8",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "So nah, dass er den Propheten, Friede sei mit ihm, *Koran* lesen hört. Ruhig. Ohne sich *umzudrehen*.",
+   "el": "[awed, softly] So nah, dass er den Propheten, Friede sei mit ihm, Koran lesen hört. ... [whispers] Ruhig. ... Ohne sich umzudrehen. ..."
+  },
+  {
+   "id": "s9",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Da *versinken* die Vorderbeine des Pferdes im Boden. Bis zu den *Knien*.",
+   "el": "[sudden, shocked] Da versinken die Vorderbeine des Pferdes im Boden. ... [whispers] Bis zu den Knien. ..."
+  },
+  {
+   "id": "s10",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Suraqa fällt. Mühsam zieht das Pferd die Beine heraus ... und *Staub* steigt auf wie Rauch.",
+   "el": "[intense] سُراقة fällt. ... Mühsam zieht das Pferd die Beine heraus ... [awed] und Staub steigt auf wie Rauch. ..."
+  },
+  {
+   "id": "s11",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Da begreift Suraqa: Dieser Mann wird *siegen*. Und er ruft:",
+   "el": "[slow, realizing] Da begreift سُراقة: ... Dieser Mann wird siegen. ... Und er ruft: ..."
+  },
+  {
+   "id": "v4",
+   "part": 1,
+   "speaker": "Suraqa",
+   "dialog": true,
+   "text": "Ihr seid *sicher* vor mir!"
+  },
+  {
+   "id": "w1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Er erzählt ihnen alles über das *Kopfgeld*. Der Prophet, Friede sei mit ihm, bittet nur:",
+   "el": "[storytelling] Er erzählt ihnen alles über das Kopfgeld. ... [reverent] Der Prophet, Friede sei mit ihm, bittet nur: ..."
+  },
+  {
+   "id": "q6",
+   "part": 2,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Bukhari 3906",
+   "text": "Verrate nichts über *uns*."
+  },
+  {
+   "id": "w2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Auf dem Rückweg trifft er andere *Verfolger*. Er schickt sie zurück:",
+   "el": "[storytelling] Auf dem Rückweg trifft er andere Verfolger. ... Er schickt sie zurück: ..."
+  },
+  {
+   "id": "v5",
+   "part": 1,
+   "speaker": "Suraqa",
+   "dialog": true,
+   "text": "Hier ist *niemand*."
+  },
+  {
+   "id": "w3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Am Morgen war er ihr *Jäger*. Am Abend ... ihr *Beschützer*.",
+   "el": "[slow, emotional] Am Morgen ... war er ihr Jäger. ... [warm] Am Abend ... ihr Beschützer. ..."
+  },
+  {
+   "id": "w4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Jahre später wird Suraqa selbst *Muslim*.",
+   "el": "[warm, softly] Jahre später ... wird سُراقة selbst Muslim. ..."
+  },
+  {
+   "id": "w5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Tage später erreichen sie *Medina*. Mit dieser Reise beginnt die islamische *Zeitrechnung* ... bis heute.",
+   "el": "[warm, storytelling] Tage später erreichen sie المدينة. ... [reverent] Mit dieser Reise beginnt die islamische Zeitrechnung ... [softly] bis heute. ..."
+  }
+ ],
+ "choice": null,
+ "sources": [
+  "Sahih al-Bukhari 3905 (Aischa: der Prophet ﷺ kam in der Mittagshitze zu Abu Bakr: „Mir wurde erlaubt, auszuwandern“; Abu Bakr: „Die Begleitung, o Gesandter Allahs?“ – „Ja“; Asma band den Proviant mit ihrem Gürtel; sie versteckten sich drei Nächte in einer Höhle im Berg Thaur; Abdullah ibn Abi Bakr brachte nachts die Nachrichten aus Mekka, Amir ibn Fuhaira, der Hirte, brachte abends Milch; ein Führer aus den Banu ad-Dil führte sie nach drei Nächten auf dem Küstenweg)",
+  "Sahih al-Bukhari 3906 (Suraqa ibn Malik ibn Dschu'schum: die Quraisch boten für jeden der beiden das Blutgeld – hundert Kamele – für den, der ihn tötet oder fängt; ein Mann im Kreis seines Stammes: „Ich habe Gestalten an der Küste gesehen, ich glaube, das sind Muhammad und seine Gefährten“; Suraqa: „Nein, das sind andere“; er holte heimlich sein Pferd, den Speer tief gehalten; das Pferd stolperte, er fiel; die Lospfeile sagten Nein; er hörte den Propheten ﷺ Koran lesen, der sich nicht umdrehte, Abu Bakr drehte sich oft um; die Vorderbeine des Pferdes versanken bis zu den Knien, Staub stieg auf wie Rauch; er begriff, dass die Sache des Propheten ﷺ siegen wird, rief ihnen Sicherheit zu, erzählte vom Kopfgeld, bot Proviant an – sie nahmen nichts; der Prophet ﷺ: „Halte unsere Sache verborgen“)",
+  "Sahih al-Bukhari 3615 (Abu Bakr: Suraqa folgte uns, sein Pferd versank bis zum Bauch; auf dem Rückweg schickte er jeden Verfolger zurück: „Hier habt ihr schon gesucht“)",
+  "Sahih al-Bukhari 3653 und Sahih Muslim 2381 (Abu Bakr in der Höhle: „Wenn einer von ihnen auf seine Füße schaut, sieht er uns“; der Prophet ﷺ: „Was denkst du von zweien, deren Dritter Allah ist?“) – vgl. Koran 9:40",
+  "Musnad Ahmad 3251 (Ibn Abbas: die Verfolger kamen zum Berg, sahen ein Spinnennetz über dem Eingang der Höhle und sagten: „Wäre er hier hineingegangen, wäre kein Spinnennetz über dem Eingang“ – Kette laut Ibn Kathir und Ibn Hadschar „hasan“, von anderen als schwach eingestuft)",
+  "Sahih al-Bukhari 3911 (Anas: am Anfang des Tages kämpfte er gegen den Propheten ﷺ, am Ende des Tages war er sein Schutz)",
+  "Sahih al-Bukhari 3902 (Ibn Abbas: der Prophet ﷺ blieb nach der ersten Offenbarung dreizehn Jahre in Mekka, dann wurde ihm die Auswanderung befohlen)",
+  "Koran 8:30 (die Ungläubigen planten, dich festzuhalten, zu töten oder zu vertreiben)",
+  "Sahih Muslim 1218 (Suraqa ibn Malik ibn Dschu'schum als Muslim bei der Abschiedswallfahrt)",
+  "Sahih al-Bukhari 3934 (Sahl ibn Sa'd: die Zeitrechnung wurde ab der Ankunft des Propheten ﷺ in Medina gezählt)"
+ ]
+}
