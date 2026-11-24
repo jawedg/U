@@ -2,9 +2,9 @@
 
 ## TikTok-Beschreibung (zum Kopieren)
 
-Gut dreihundert Männer, kaum Pferde, drei teilen sich ein Kamel – gegen tausend Kämpfer. ⚔️ Was in der Nacht vor Badr geschah, das Bittgebet unter freiem Himmel … und warum der Koran diesen Tag „Yaum al-Furqan“ nennt.
+Dreihundert Männer. Kaum Pferde. Drei teilen sich ein Kamel – gegen tausend Krieger. ⚔️ Der Zweikampf von Hamza, Ali und Ubaida, die Nacht im Regen, das Bittgebet … und zwei Jungen, die sich auf Abu Jahl stürzen wie zwei Falken.
 
-Quellen: Sahih Muslim 1763, Sahih al-Bukhari 3951, 3952, 3957, 3995, Musnad Ahmad 1023 & 3901, Koran 8:7–11, 8:41, 3:123.
+Quellen: Sahih Muslim 1763, Sahih al-Bukhari 3141, 3951, 3952, 3957, 3965–3969, 3988, 3995, Sunan Abi Dawud 2665, Musnad Ahmad 1023 & 3901, Koran 8:7–11, 8:41, 3:123.
 
 #islam #badr #schlachtvonbadr #sahaba #ramadan #prophetmuhammad #islamischegeschichte #pov #wahregeschichte #muslim #qissah #3danimation #fyp
 
@@ -21,6 +21,8 @@ Quellen: Sahih Muslim 1763, Sahih al-Bukhari 3951, 3952, 3957, 3995, Musnad Ahma
 - Regen in der Nacht festigt den Boden, Schläfrigkeit als Ruhe von Allah: Koran 8:11
 - Alle schliefen, nur der Prophet ﷺ betete unter einem Baum und weinte bis zum Morgen: Ali, Musnad Ahmad 1023
 - Bittgebet zur Qibla mit ausgestreckten Händen („O Allah, erfülle mir, was Du mir versprochen hast … wenn diese Schar der Muslime untergeht, wirst Du auf der Erde nicht mehr angebetet“); der Umhang fiel, Abu Bakr legte ihn zurück, hielt ihn von hinten und sagte: „O Prophet Allahs, genug … Er wird dir erfüllen, was Er dir versprochen hat“; darauf Koran 8:9 (tausend Engel, einer nach dem anderen): Sahih Muslim 1763
+- Zweikampf vor der Schlacht: Utba, Schaiba und al-Walid fordern heraus; der Prophet ﷺ schickt Hamza, Ali und Ubaida ibn al-Harith; die drei Herausforderer fallen: Sunan Abi Dawud 2665; Sahih al-Bukhari 3965–3969 (Koran 22:19 über diese Gegner)
+- Zwei junge Ansar (Mu'adh ibn Amr und Mu'adh ibn Afra) fragen nach Abu Jahl, man zeigt ihn ihnen, sie stürzen sich auf ihn „wie zwei Falken“ und schlagen ihn nieder: Sahih al-Bukhari 3141, 3988
 - „Vorwärts, Haizum!“, Peitschenhieb über einem Muslim, der Gegner stürzt; der Prophet ﷺ: „Das war von der Hilfe des dritten Himmels“; siebzig fielen, siebzig wurden gefangen: Sahih Muslim 1763
 - Der Prophet ﷺ: „Das ist Dschibril, er hält den Kopf seines Pferdes, gerüstet für den Kampf“: Sahih al-Bukhari 3995
 - „Allah hat euch bei Badr geholfen, als ihr schwach wart“: Koran 3:123; „der Tag der Unterscheidung (Yaum al-Furqan), der Tag, an dem die beiden Heere aufeinandertrafen“: Koran 8:41
