@@ -276,3 +276,18 @@ Lokal reicht `npm run render:3d`.
   Action muss nahe der Blickrichtung liegen. Positionen von Figuren immer per `BW.pos_at(P, t)` lesen (frame_set setzt
   root.location zurück – sonst teleportieren Figuren). Erzähler: zu lange Pausen per `capPause` (0,72 s) gekürzt.
   Ablauf: `setsid nohup ./scripts/v2_qissa_badr.sh > out/bd_v2.log 2>&1 &` → `out/qissah-badr-klein.mp4`.
+
+## QISSAH Folge 5 „Die Hidschra – der Jäger in der Wüste“ (Nov. 2026)
+- Titel im Video „WER JAGTE DEN PROPHETEN ﷺ?“, Ich-Sicht Suraqa (er ist die Kamera). Text vom Nutzer genehmigt (Spinnennetz rein –
+  Musnad Ahmad 3251, Kette umstritten; Kisra-Armreifen raus, mursal). Wegen Länge gekürzt (erst 3:25 → 2:52). Quellen: Bukhari 3905, 3906,
+  3615, 3653, 3911, 3902, 3934; Muslim 2381, 1218; Koran 8:30, 9:40.
+- Stimmen: Erzähler ElevenLabs (Helmut), Prophet ﷺ = Charon (3.8 + Hall), Abu Bakr = Sadaltager (Hall), Suraqa = Zubenelgenubi (Dialog),
+  Stammesmann = Puck, Verfolger = Algenib (2.5-flash).
+- Dateien: `src/qissa_hijra/`, `scripts/build_qissa_hijra.py`, Blender `blender/qissa/hijra.py` (19 Einstellungen, `jagd` = Quelle für den
+  Einstieg) + `hijra_world.py` (Mekka = Tal aus mekka.py mit ebenem Stadtboden + Lehmhäuser + alte Kaaba; Höhle = Fels mit Hohlraum per
+  Boolean + Spinnennetz; Küstenebene mit Meer im Westen; Beduinenzelt; Medina mit Lavafeld + Palmen), Ton `scripts/sfx_qissa_hijra.py`
+  (+11 ElevenLabs-Geräusche), Ablauf `setsid nohup ./scripts/v1_qissa_hijra.sh >> out/hj_v1.log 2>&1 < /dev/null &` → `out/qissah-hijra-klein.mp4`.
+- Gelernt: `join_noshadow` mit bpy.ops.object.join verwürfelte Objekte mit geteiltem Netz (Sträucher/Bäume schwebten im Himmel) →
+  in hijra.py eigenes Verschmelzen per bmesh (Weltmatrix je Objekt). Ich-Sicht im Sattel: `ride()` setzt Kamera je Bild auf das Pferd
+  (Pferd ohne Sattel, Mähne als glatter Kamm, Fäuste + Zügel, Blick geradeaus – sonst wirkt der Pferdekopf von oben seltsam).
+  Hochformat ist schmal: in der Höhle beide Figuren nahe der Blickachse setzen.

@@ -163,8 +163,9 @@ def caravan(x0, y0, t0, t1, speed=1.5, heading=0.0, stop=None, day=True, seed=0,
             continue
         p = Vector((x0, y0, 0)) - fv * back + sv * side
         C = MK.camel(f"cv{k}", (p.x, p.y, gz(p.x, p.y)), yaw=yaw, seed=50 + k + seed, load=True)
-        q = p + fv * speed * (t_end - t0)
-        MK.camel_walk(C, [(p.x, p.y), (q.x, q.y)], t0, speed=speed, z_of=z_of)
+        if t_end - t0 > 0.05:
+            q = p + fv * speed * (t_end - t0)
+            MK.camel_walk(C, [(p.x, p.y), (q.x, q.y)], t0, speed=speed, z_of=z_of)
         out[k] = C
     out["light"] = light_rider(out[0], day=day)
     out["ab"] = abu_bakr_rider(out[1])
@@ -195,7 +196,7 @@ def path_len(path):
     return path_eval(path, 0)[2]
 
 
-def ride(C, rig, path, t0, t1, speed, stride=2.8, yaw_off=None, pitch=-6.0, trot=False, cam_from=None, run=True):
+def ride(C, rig, path, t0, t1, speed, stride=2.8, yaw_off=None, pitch=0.0, trot=False, cam_from=None, run=True):
     """Pferd läuft path entlang (BW.horse_run); die Kamera sitzt im Sattel (Schlüssel je Bild von cam_from bis t1)."""
     if run:
         BW.horse_run(C, path, t0, speed=speed, stride=stride, trot=trot)
@@ -207,8 +208,8 @@ def ride(C, rig, path, t0, t1, speed, stride=2.8, yaw_off=None, pitch=-6.0, trot
         moving = d < total
         ph = 2 * math.pi * d / stride
         bob = ((0.05 if trot else 0.09) * math.sin(2 * ph if trot else ph)) if moving else 0.0
-        p = pos + dv * 0.1
-        rig.location = (p.x, p.y, gz(pos.x, pos.y) + 1.18 + 0.38 + 0.74 + bob)
+        p = pos + dv * (-0.08)
+        rig.location = (p.x, p.y, gz(pos.x, pos.y) + 1.18 + 0.36 + 0.9 + bob)
         rig.keyframe_insert("location", frame=f)
         yw = math.degrees(math.atan2(-dv.x, dv.y)) + (yaw_off(t) if yaw_off else 0.0)
         pt = pitch - (3.5 * amp * math.sin(ph + 0.8) if moving else 0.0)
@@ -217,7 +218,7 @@ def ride(C, rig, path, t0, t1, speed, stride=2.8, yaw_off=None, pitch=-6.0, trot
     return t0 + path_len(path) / speed
 
 
-RIDE_HANDS = {"L": ((-0.12, -0.34, -0.47), (-72, -6, -18)), "R": ((0.15, -0.32, -0.47), (-72, 6, 16))}
+RIDE_HANDS = {"L": ((-0.11, -0.43, -0.5), (-60, -6, -14)), "R": ((0.13, -0.42, -0.5), (-60, 6, 14))}
 
 
 def hand_pose(Hh, t, side, loc, rot):
@@ -238,9 +239,9 @@ def pose(Hh, t, name, only=None):
 POSES = {
     "reins": RIDE_HANDS,
     "hidden": {"L": ((-0.2, -0.95, -0.3), (-80, 0, -10)), "R": ((0.2, -0.95, -0.3), (-80, 0, 10))},
-    "raise": {"R": ((0.2, -0.02, -0.5), (0, 0, -12))},
-    "wave_a": {"R": ((0.22, -0.01, -0.5), (0, 0, -28))},
-    "wave_b": {"R": ((0.16, -0.02, -0.5), (0, 0, 8))},
+    "raise": {"R": ((0.13, 0.02, -0.62), (8, 0, -10))},
+    "wave_a": {"R": ((0.15, 0.0, -0.6), (8, 0, -28))},
+    "wave_b": {"R": ((0.1, 0.0, -0.6), (8, 0, 10))},
     "dismiss": {"R": ((0.18, -0.2, -0.46), (-40, 0, 40))},
     "dismiss2": {"R": ((0.26, -0.16, -0.42), (-30, 20, -10))},
     "offer": {"L": ((-0.07, -0.2, -0.48), (-80, 0, -10)), "R": ((0.07, -0.2, -0.48), (-80, 0, 10))},
@@ -253,26 +254,50 @@ POSES = {
 }
 
 
+def fists(Hh, reins=True):
+    """Ich-Hände als Fäuste (Finger eingerollt) + Zügel nach vorn."""
+    ms = bpy.data.materials.get("pov_skin_h")
+    for nm in ("L", "R"):
+        for o in list(Hh[nm].children):
+            if o.name.startswith(("pov_f", "pov_ft", "pov_th")):
+                o.hide_render = True
+        Q.ball(f"pov_fist.{nm}", (0, 0.085, -0.012), (0.042, 0.032, 0.03), ms, parent=Hh[nm], seg=16)
+        Q.ball(f"pov_thumbk.{nm}", ((-0.03 if nm == "R" else 0.03), 0.07, 0.012), (0.014, 0.024, 0.013), ms, parent=Hh[nm], seg=10)
+        if reins:
+            Q.limb(f"pov_rein.{nm}", (0, 0.09, -0.03), ((0.08 if nm == "L" else -0.08), 0.75, -0.42), 0.006, 0.006, MK.M["leather"],
+                   parent=Hh[nm], seg=6)
+
+
 def pov_rider(cam, spear_=True):
     Hh = MK.pov_arms(cam, skin=(0.4, 0.26, 0.17), sleeve=(0.42, 0.32, 0.22))
+    fists(Hh)
     if spear_:
-        s = Q.empty("pov_spear_r", (0, 0.02, -0.03), Hh["R"], rot=(0, 0, math.pi))
+        s = Q.empty("pov_spear_r", (0, 0.06, -0.01), Hh["R"], rot=(math.radians(-14), 0, math.radians(150)))
         BW.spear("pov_spear", s, length=2.4)
     return Hh
 
 
 def suraqa_horse(name="sh", loc=(0, 0, 0), yaw=0.0):
-    return BW.horse(name, loc, yaw=yaw, seed=11, colour=2)
+    """Suraqas Pferd (Fuchs, ohne Sattel); Mähne als weicher Kamm statt Klötzchen (sieht man aus dem Sattel)."""
+    C = BW.horse(name, loc, yaw=yaw, seed=11, colour=0, saddle=False)
+    for k in range(9):
+        o = bpy.data.objects.get(f"{name}_mane{k}")
+        if o:
+            bpy.data.objects.remove(o)
+    mh = Q.pbr(f"{name}_manem", (0.07, 0.04, 0.025), 0.8, var=0.25, scale=30, bump=0.3, bscale=120)
+    Q.limb(f"{name}_manes", (0, 0.12, 0.04), (0, -0.2, 0.66), 0.05, 0.032, mh, parent=C["neck"], seg=10)
+    Q.ball(f"{name}_forelock", (0, -0.3, 0.7), (0.04, 0.05, 0.05), mh, parent=C["neck"], seg=10)
+    return C
 
 
-def fall_off(rig, shake, t, start, dv, side=1, back=0.0, lie_look=None, dur=0.55):
+def fall_off(rig, shake, t, start, dv, side=1, back=0.0, lie_look=None, dur=0.55, fwd=2.6, out=2.0):
     """Kamera fällt vom Pferd: kippt zur Seite, schlägt im Sand auf (Ruck). Rückgabe: Liegeposition."""
     sv = Vector((dv.y, -dv.x, 0)) * side
-    land = Vector(start) + dv * (1.4 - back) + sv * 1.3
+    land = Vector(start) + dv * (fwd - back) + sv * out
     land.z = gz(land.x, land.y) + 0.32
     yw = math.degrees(math.atan2(-dv.x, dv.y))
-    ck(rig, [(t, start, (yw, -10, 0)), (t + dur * 0.45, lerp3(start, tuple(land), 0.55), (yw - 20 * side, -35, -45 * side)),
-             (t + dur, tuple(land), (yw - 35 * side, -12, -78 * side))])
+    ck(rig, [(t, start, (yw, -10, 0)), (t + dur * 0.45, lerp3(start, tuple(land), 0.55), (yw - 20 * side, -35, -30 * side)),
+             (t + dur, tuple(land), (yw - 35 * side, -14, -38 * side))])
     return land
 
 
@@ -312,9 +337,10 @@ def horse_idle(C, t0, t1, seed=0):
 def sand_ring(name, loc, t, r=0.5):
     """Sandwulst um die eingesunkenen Beine (erscheint beim Einsinken)."""
     root = Q.empty(name, loc)
-    for k in range(7):
-        a = k * 0.9
-        Q.ball(f"{name}_{k}", (r * math.cos(a) * 0.7, r * math.sin(a), 0.03), (0.32, 0.22, 0.1), MK.M["mound"], parent=root, seg=10)
+    for k in range(10):
+        a = k * 0.63
+        Q.ball(f"{name}_{k}", (r * 1.2 * math.cos(a), r * math.sin(a), 0.0), (0.34, 0.26, 0.09), MK.M["sand"], parent=root, seg=10)
+    Q.cyl(f"{name}_pit", (0, 0, 0.012), r * 0.9, 0.01, Q.pbr(f"{name}_pm", (0.25, 0.19, 0.13), 1.0, var=0.2), parent=root, seg=20)
     root.scale = (0.001, 0.001, 0.001)
     root.keyframe_insert("scale", frame=1)
     root.keyframe_insert("scale", frame=max(1, Q.T(t)))
@@ -328,9 +354,9 @@ def smoke_dust(prefix, loc, cam, t0, dur=6.0, n=16, seed=0, rise=1.4, alpha=0.6)
     rnd = random.Random(seed)
     for k in range(n):
         a0 = t0 + k * 0.12 + rnd.uniform(0, 0.2)
-        p = (loc[0] + rnd.uniform(-1.0, 1.0), loc[1] + rnd.uniform(-1.0, 1.0), loc[2] + rnd.uniform(0.2, 1.2))
-        BW.dust_card(f"{prefix}{k}", p, (rnd.uniform(1.6, 2.8), rnd.uniform(1.8, 3.2)), cam, a0, a0 + dur * rnd.uniform(0.8, 1.1), alpha,
-                     grow=rnd.uniform(2.6, 3.6), drift=(rnd.uniform(-0.25, 0.25), rnd.uniform(-0.25, 0.25), rise * rnd.uniform(0.8, 1.2)),
+        p = (loc[0] + rnd.uniform(-0.6, 0.6), loc[1] + rnd.uniform(-0.6, 0.6), loc[2] + rnd.uniform(0.2, 1.0))
+        BW.dust_card(f"{prefix}{k}", p, (rnd.uniform(1.2, 2.0), rnd.uniform(1.6, 2.6)), cam, a0, a0 + dur * rnd.uniform(0.8, 1.1), alpha,
+                     grow=rnd.uniform(2.0, 2.8), drift=(rnd.uniform(-0.25, 0.25), rnd.uniform(-0.25, 0.25), rise * rnd.uniform(0.8, 1.2)),
                      fade_in=0.35, fade_out=1.8, col=(1.05, 0.95, 0.85))
 
 
@@ -370,6 +396,9 @@ def shot_mekka():
     Q.flicker(fire["light"], 0, D, 260, amt=0.25, seed=1)
     men = []
     for k in range(9):
+        if k == 5:
+            men.append(None)
+            continue
         a = 2 * math.pi * k / 9 + 0.3
         x, y = sq.x + 2.6 * math.cos(a), sq.y + 2.6 * math.sin(a)
         Pp = BW.warrior(f"qm{k}", (x, y, 0), yaw=Q.face_yaw((x, y), (sq.x, sq.y)), side="q", seed=300 + k, weapon="none",
@@ -393,8 +422,8 @@ def shot_mekka():
         L = Q.oil_lamp(f"wl{k}", (sq.x + 6.5 * math.cos(k), sq.y + 6.5 * math.sin(k), 1.7), energy=0.0)
         L["light"].data.energy = 16
     rig, shake, cam = Q.pov_camera(lens=20)
-    c0 = (sq.x - 7.0, sq.y - 5.0, 1.65)
-    c1 = (sq.x - 4.6, sq.y - 3.4, 1.55)
+    c0 = (sq.x - 7.0, sq.y - 5.0, 1.9)
+    c1 = (sq.x - 4.4, sq.y - 3.2, 1.75)
     tgt = (sq.x, sq.y, 0.9)
     ck(rig, [(0, c0, look(c0, tgt)), (tk - 0.4, lerp3(c0, c1, 0.7), look(lerp3(c0, c1, 0.7), (sq.x + 0.6, sq.y + 1.5, 1.0))),
              (D, c1, look(c1, (sq.x + 1.6, sq.y + 2.2, 1.6)))])
@@ -413,7 +442,7 @@ def abu_bakr_house():
 def shot_haus():
     """Mittagshitze, leere Gasse: das Licht kommt zu Abu Bakrs Tür. Die Tür geht auf, Abu Bakr (Licht über dem Kopf) tritt heraus."""
     door = Vector((40.0, -42.5, 0))
-    HW.mecca_town(night=False, keep=[(door.x - 4.0, door.y, 10.0), (door.x + 3.5, door.y, 5.0)])
+    HW.mecca_town(night=False, keep=[(door.x - 4.0, door.y, 10.0), (door.x + 3.5, door.y, 5.0), (door.x - 2.0, door.y + 8.0, 7.0)])
     cfg = MK.light("noon")
     hinge, dp = abu_bakr_house()
     t_open = ls("m2") + 1.0
@@ -422,8 +451,8 @@ def shot_haus():
     hinge.keyframe_insert("rotation_euler", frame=max(1, Q.T(t_open + 0.9)))
     # das Licht kommt von Norden die Gasse herunter zur Tür
     lx = door.x - 1.5
-    H = prophet("nur", (lx, door.y + 14.0, 0.0), height=2.2, strength=0.9)
-    te = MK.glide(H, [(lx, door.y + 14.0), (lx, door.y + 0.4)], 0.0, speed=1.6)
+    H = prophet("nur", (lx, door.y + 7.5, 0.0), height=2.2, strength=0.9)
+    te = MK.glide(H, [(lx, door.y + 7.5), (lx, door.y + 1.1)], 0.0, speed=2.4)
     MK.hold_at(H, D)
     AB = Q.person("abubakr", (door.x + 0.6, door.y, 0), yaw=Q.face_yaw((door.x, door.y), (lx, door.y)), robe=(0.86, 0.82, 0.72),
                   wrap=(0.92, 0.9, 0.84), head="turban", glow=True, seed=901)
@@ -441,7 +470,7 @@ def shot_haus():
     rig, shake, cam = Q.pov_camera(lens=19)
     c0 = (door.x - 6.2, door.y - 1.6, 1.62)
     c1 = (door.x - 5.4, door.y - 1.0, 1.62)
-    ck(rig, [(0, c0, look(c0, (lx, door.y + 8.0, 1.4))), (t_open - 0.4, None, look(c0, (lx + 0.6, door.y + 1.5, 1.4))),
+    ck(rig, [(0, c0, look(c0, (lx, door.y + 6.0, 1.4))), (t_open - 0.4, None, look(c0, (lx + 0.6, door.y + 1.5, 1.4))),
              (ls("q1"), lerp3(c0, c1, 0.6), look(lerp3(c0, c1, 0.6), (door.x - 0.8, door.y + 0.2, 1.4))),
              (D, c1, look(c1, (door.x - 0.9, door.y, 1.35)))])
     Q.handheld(shake, 0, D, amp=0.45)
@@ -452,9 +481,19 @@ def shot_haus():
 def shot_auszug():
     """Nacht: das Licht und Abu Bakr gehen aus der Stadt – nicht nach Norden, sondern nach Süden zum dunklen Berg."""
     cs = HW.cave_spot()
-    path = [(10.0, -60.0), (11.0, -80.0), (13.0, -100.0), (14.0, -118.0)]
-    HW.mecca_town(night=True, keep=[(x, y, 7.0) for x, y in path] + [(9.0, -52.0, 8.0)])
+    path = [(10.0, -44.0), (10.5, -60.0), (11.0, -80.0), (13.0, -100.0), (14.0, -118.0)]
+    HW.mecca_town(night=True, keep=[(x, y, 12.0) for x, y in path] + [(9.0, -36.0, 12.0)])
     cfg = BW.night(moon=0.6)
+    rh = random.Random(4)
+    yy = -32.0
+    while yy > -70.0:
+        d_ = rh.uniform(5.0, 8.0)
+        for side in (-1, 1):
+            w_ = rh.uniform(5.0, 7.0)
+            x0 = 10.2 + side * rh.uniform(2.4, 3.0) - (w_ if side < 0 else 0)
+            MD.house(f"ga{int(-yy)}{side}", x0, yy - d_, w_, d_, rh.choice([3.0, 3.3, 5.4]), seed=rh.randint(0, 999), lit=True,
+                     door_side=("E" if side < 0 else "W") if rh.random() < 0.5 else None)
+        yy -= d_ + rh.uniform(0.2, 1.2)
     t0 = 0.0
     H = prophet("nur", (path[0][0], path[0][1], gz(*path[0])), height=2.1, strength=0.75, day=False)
     MK.glide(H, path, t0 + 0.4, speed=1.05)
@@ -462,12 +501,12 @@ def shot_auszug():
     Q.walk(AB, [(x + 1.0, y + 1.6) for x, y in path], t0 + 0.4, speed=1.05)
     # der Berg Thaur im Süden: kleiner Lichtschein an der Stelle der Höhle (wird erst später erzählt)
     rig, shake, cam = Q.pov_camera(lens=19)
-    c0 = (9.0, -50.0, 1.62)
-    c1 = (10.5, -58.0, 1.62)
+    c0 = (9.6, -34.0, 1.62)
+    c1 = (10.4, -46.0, 1.62)
     tsd = ev("süden_m3", D * 0.5)
     th = ev("höhle_m3", D * 0.8)
     mtn = (cs.x, cs.y, cs.z + 6.0)
-    ck(rig, [(0, c0, look(c0, (10.0, -60.0, 1.2))), (tsd - 0.8, lerp3(c0, c1, 0.5), look(lerp3(c0, c1, 0.5), (12.0, -80.0, 1.5))),
+    ck(rig, [(0, c0, look(c0, (10.0, -50.0, 1.2))), (tsd - 0.8, lerp3(c0, c1, 0.5), look(lerp3(c0, c1, 0.5), (11.0, -70.0, 1.5))),
              (tsd + 0.6, None, look(lerp3(c0, c1, 0.6), (cs.x, cs.y, cs.z * 0.6))), (D, c1, look(c1, mtn))])
     Q.handheld(shake, 0, D, amp=0.5, walk_from=0, walk_to=D, walk_amp=0.5)
     cfg["mist_amt"] = 0.3
@@ -490,12 +529,12 @@ def cv(local, cs):
 def shot_hoehle():
     """Nacht am Berg Thaur: in der kleinen Felsöffnung ein warmer Schein. Sterne."""
     cs, C = cave_setup(day=False)
-    cfg = BW.night(moon=0.55)
+    cfg = BW.night(moon=1.1)
     H = prophet("nur", cv((0.3, 0.6, 0.0), cs), height=1.4, strength=0.8, day=False)
     rig, shake, cam = Q.pov_camera(lens=22)
     ent = cv((0, -3.6, 0.6), cs)
-    c0 = cv((-3.5, -13.0, 1.4), cs)
-    c1 = cv((-2.6, -10.6, 1.5), cs)
+    c0 = cv((-4.0, -16.0, 1.3), cs)
+    c1 = cv((-3.0, -13.0, 1.4), cs)
     ck(rig, [(0, c0, look(c0, ent)), (D, c1, look(c1, ent))])
     Q.handheld(shake, 0, D, amp=0.35)
     cfg["mist_amt"] = 0.25
@@ -507,10 +546,14 @@ def shot_versteck():
     erscheinen in der Öffnung. Abu Bakr flüstert; das Licht bleibt ruhig und leuchtet warm auf."""
     cs, C = cave_setup(day=True)
     cfg = MK.light("day")
-    H = prophet("nur", cv((0.55, 0.55, 0.0), cs), height=1.35, strength=0.7, day=False)
-    H["light"].data.energy = 60.0
-    AB = Q.person("abubakr", cv((-0.7, -0.4, 0.0), cs), yaw=0.0, robe=(0.78, 0.74, 0.64), head="turban", glow=True, seed=901, sit=True)
-    AB["root"].rotation_euler.z = Q.face_yaw(cv((-0.7, -0.4, 0), cs), cv((0, -3.6, 0), cs))
+    for n_ in Q.sc.world.node_tree.nodes:   # in der Höhle: weniger Himmelslicht (sonst wirkt das Innere hell und milchig)
+        if n_.type == "BACKGROUND":
+            n_.inputs["Strength"].default_value *= 0.35
+    H = prophet("nur", cv((0.55, -1.0, 0.0), cs), height=1.3, strength=0.4, day=False)
+    H["light"].data.energy = 16.0
+    AB = Q.person("abubakr", cv((-0.45, -0.55, 0.0), cs), yaw=0.0, robe=(0.78, 0.74, 0.64), head="turban", glow=True, seed=901, sit=True)
+    AB["root"].rotation_euler.z = Q.face_yaw(cv((-0.45, -0.55, 0), cs), cv((0, -3.6, 0), cs))
+    AB["halo"][2].data.energy = 4.0
     Q.idle(AB, 0, D, seed=4)
     WEB = HW.spider_web("web", cv((0.0, -3.62, 0.48), cs), math.pi, r=0.52)
     # Verfolger draussen: gehen zur Öffnung, stehen, gehen umher
@@ -538,13 +581,13 @@ def shot_versteck():
     AB["chest"].keyframe_insert("rotation_euler", frame=max(1, Q.T(tq4)))
     glow_pulse(H, tq5, 1.9)
     rig, shake, cam = Q.pov_camera(lens=18)
-    c0 = cv((0.9, 1.25, 0.85), cs)
-    c1 = cv((0.5, 0.6, 0.8), cs)
+    c0 = cv((0.0, 1.45, 0.82), cs)
+    c1 = cv((-0.05, 0.95, 0.78), cs)
     ent = cv((0.0, -3.5, 0.55), cs)
-    ck(rig, [(0, c0, look(c0, ent)), (tq4, lerp3(c0, c1, 0.5), look(lerp3(c0, c1, 0.5), cv((-0.6, -1.2, 0.6), cs))),
-             (tq5 - 0.2, None, look(lerp3(c0, c1, 0.6), cv((0.2, -1.0, 0.55), cs))), (D, c1, look(c1, ent))])
+    ck(rig, [(0, c0, look(c0, ent)), (tq4, lerp3(c0, c1, 0.5), look(lerp3(c0, c1, 0.5), cv((-0.3, -1.6, 0.6), cs))),
+             (tq5 - 0.2, None, look(lerp3(c0, c1, 0.6), cv((0.3, -1.5, 0.6), cs))), (D, c1, look(c1, ent))])
     Q.handheld(shake, 0, D, amp=0.35)
-    cfg["mist_amt"] = 0.12
+    cfg["mist_amt"] = 0.05
     return cfg
 
 
@@ -614,8 +657,8 @@ def shot_kueste():
     cfg = MK.light("morning")
     CV = caravan(cx(y0 - 6, 22.0), y0 - 6, 0.0, D + 1, speed=1.5, heading=-4)
     rig, shake, cam = Q.pov_camera(lens=19)
-    c0 = (cx(y0 + 6, 36.0), y0 + 6, gz(cx(y0 + 6, 36.0), y0 + 6) + 2.2)
-    c1 = (cx(y0 + 7, 35.0), y0 + 7.5, gz(cx(y0 + 7, 35.0), y0 + 7.5) + 2.2)
+    c0 = (cx(y0 + 6, 31.0), y0 + 6, gz(cx(y0 + 6, 31.0), y0 + 6) + 1.9)
+    c1 = (cx(y0 + 7, 30.5), y0 + 7.5, gz(cx(y0 + 7, 30.5), y0 + 7.5) + 1.9)
     ck(rig, [(0, c0, look(c0, (cx(y0 - 4, 22.0), y0 - 4, 1.6))), (D, c1, look(c1, (cx(y0 + 1, 22.0), y0 + 1, 1.8)))])
     Q.handheld(shake, 0, D, amp=0.35)
     cfg["mist_amt"] = 0.2
@@ -703,6 +746,10 @@ def shot_pferd():
     # aufsteigen (Kamera hebt sich in den Sattel) und losreiten
     pose(Hh, tm, "spear_low", only="R")
     pose(Hh, tm + 0.6, "reins")
+    for o in [bpy.data.objects["pov_spear_r"]] + list(bpy.data.objects["pov_spear_r"].children_recursive):
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(tm + 0.3)))
+        o.hide_render = True
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(tm + 0.35)))
     pv = Vector(run[1]) - Vector((hx, hy))
     pv.normalize()
     seat = (hx + pv.x * 0.1, hy + pv.y * 0.1, gz(hx, hy) + 2.3)
@@ -727,7 +774,7 @@ def shot_jagd():
     far_caravan(-40.0, D + 1, speed=1.5)
     Hs = suraqa_horse("sh", (pth[0][0], pth[0][1], gz(*pth[0])))
     rig, shake, cam = Q.pov_camera(lens=17)
-    Hh = pov_rider(cam)
+    Hh = pov_rider(cam, spear_=False)
     pose(Hh, 0, "reins")
     ride(Hs, rig, pth, 0.0, D + 0.5, speed=11.5, yaw_off=lambda t: 6 * math.sin(t * 0.7))
     ride_dust(Hs, cam, 0.0, D + 0.5)
@@ -747,7 +794,7 @@ def shot_ritt():
     far_caravan(-20.0, D + 1, speed=1.5)
     Hs = suraqa_horse("sh", (pth[0][0], pth[0][1], gz(*pth[0])))
     rig, shake, cam = Q.pov_camera(lens=17)
-    Hh = pov_rider(cam)
+    Hh = pov_rider(cam, spear_=False)
     pose(Hh, 0, "reins")
     ride(Hs, rig, pth, 0.0, ts, speed=sp)
     stumble(Hs, ts, up=ts + 2.4)
@@ -755,12 +802,13 @@ def shot_ritt():
     pos, dv, _ = path_eval(pth, 1e9)
     start = (rig.location.x, rig.location.y, rig.location.z)
     pose(Hh, ts, "reins")
-    pose(Hh, ts + 0.35, "low")
+    pose(Hh, ts + 0.3, "hidden")
     land = fall_off(rig, shake, ts, start, dv, side=1)
-    ck(rig, [(ts + 1.3, None, (math.degrees(math.atan2(-dv.x, dv.y)) - 20, -2, -70)),
-             (D, tuple(land), (math.degrees(math.atan2(-dv.x, dv.y)) - 40, 4, -55))])
+    sitp = (land.x, land.y, gz(land.x, land.y) + 0.95)
+    hz = (pos.x, pos.y, gz(pos.x, pos.y) + 1.2)
+    ck(rig, [(ts + 1.0, None, None), (ts + 1.9, sitp, look(sitp, hz)), (D, sitp, look(sitp, (pos.x, pos.y, gz(pos.x, pos.y) + 1.5)))])
     ride_dust(Hs, cam, 0.0, ts)
-    BW.dust_card("fall_puff", (land.x + dv.x * 0.6, land.y + dv.y * 0.6, land.z + 0.1), (2.4, 1.4), cam, ts + 0.5, ts + 3.0, 0.75,
+    BW.dust_card("fall_puff", (land.x + dv.x * 1.6, land.y + dv.y * 1.6, land.z + 0.2), (2.0, 1.2), cam, ts + 0.5, ts + 3.0, 0.42,
                  grow=2.0, drift=(0, 0, 0.25), fade_in=0.15, fade_out=1.4)
     Q.handheld(shake, 0, D, amp=0.9, hits=[(ts + 0.05, 0.6), (ts + 0.55, 1.6)])
     cfg["mist_amt"] = 0.2
@@ -830,7 +878,7 @@ def shot_nah():
                           (D - 0.5, 150)])
     Hs = suraqa_horse("sh", (pth[0][0], pth[0][1], gz(*pth[0])))
     rig, shake, cam = Q.pov_camera(lens=17)
-    Hh = pov_rider(cam)
+    Hh = pov_rider(cam, spear_=False)
     pose(Hh, 0, "reins")
     ride(Hs, rig, pth, 0.0, D + 0.5, speed=sp, yaw_off=lambda t: -3 * math.sin(t * 0.6))
     ride_dust(Hs, cam, 0.0, D + 0.5)
@@ -851,7 +899,7 @@ def shot_versinken():
     turn_back(CV["ab"], [(0.2, 0), (0.6, 150), (3.0, 150), (3.8, 0)])
     Hs = suraqa_horse("sh", (pth[0][0], pth[0][1], gz(*pth[0])))
     rig, shake, cam = Q.pov_camera(lens=17)
-    Hh = pov_rider(cam)
+    Hh = pov_rider(cam, spear_=False)
     pose(Hh, 0, "reins")
     ride(Hs, rig, pth, 0.0, tv, speed=sp)
     pos, dv, _ = path_eval(pth, 1e9)
@@ -859,13 +907,13 @@ def shot_versinken():
     body = Hs["body"]
     tm = ev("mühsam_s10", ls("s10") + 1.2)
     ts = ev("staub_s10", ls("s10") + 3.6)
-    for tt, pt, dz in ((tv - 0.04, 0, 0.0), (tv + 0.25, 16, -0.5), (tv + 1.2, 13, -0.48), (tm - 0.2, 15, -0.5), (tm + 0.3, -6, -0.2),
-                       (tm + 0.7, 14, -0.45), (tm + 1.2, -14, -0.05), (ts - 0.2, -30, 0.25), (ts + 0.6, -8, 0.05), (ts + 1.2, 0, 0.0)):
+    for tt, pt, dz in ((tv - 0.04, 0, 0.0), (tv + 0.25, 20, -0.62), (tv + 1.2, 18, -0.6), (tm - 0.2, 19, -0.62), (tm + 0.3, 2, -0.35),
+                       (tm + 0.7, 18, -0.58), (tm + 1.2, -14, -0.05), (ts - 0.2, -30, 0.25), (ts + 0.6, -8, 0.05), (ts + 1.2, 0, 0.0)):
         body.rotation_euler = (math.radians(pt), 0, 0)
         body.location = (0, 0, 1.18 + dz)
         body.keyframe_insert("rotation_euler", frame=max(1, Q.T(tt)))
         body.keyframe_insert("location", frame=max(1, Q.T(tt)))
-    for tt, hip, knee in ((tv - 0.04, 0, 0), (tv + 0.25, -8, 10), (tm + 0.3, -50, 80), (tm + 0.7, -10, 10), (tm + 1.2, -60, 90),
+    for tt, hip, knee in ((tv - 0.04, 0, 0), (tv + 0.25, 12, 0), (tm + 0.3, -50, 80), (tm + 0.7, 12, 0), (tm + 1.2, -60, 90),
                           (ts + 0.6, -20, 30), (ts + 1.2, 0, 0)):
         for nm in ("FL", "FR"):
             Hs[f"leg.{nm}"].rotation_euler = (math.radians(hip), 0, 0)
@@ -878,16 +926,16 @@ def shot_versinken():
     hp = pos + dv * (-0.52)
     sand_ring("sring", (pos.x - dv.x * 0.6, pos.y - dv.y * 0.6, gz(pos.x, pos.y)), tv + 0.1, r=0.42)
     start = (rig.location.x, rig.location.y, rig.location.z)
-    pose(Hh, tv + 0.25, "low")
-    land = fall_off(rig, shake, tv, start, dv, side=-1, back=-0.2)
-    hd = (pos.x, pos.y, gz(pos.x, pos.y) + 1.5)
-    up = (land.x - dv.x * 0.2, land.y - dv.y * 0.2, land.z + 0.55)
+    pose(Hh, tv + 0.2, "hidden")
+    land = fall_off(rig, shake, tv, start, dv, side=-1, fwd=3.6, out=3.2)
+    hd = (pos.x - dv.x * 0.5, pos.y - dv.y * 0.5, gz(pos.x, pos.y) + 0.7)
+    up = (land.x, land.y, gz(land.x, land.y) + 0.95)
     ck(rig, [(tv + 1.1, None, look(tuple(land), hd)), (tm - 0.3, up, look(up, hd)),
              (ts + 0.3, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 3.0))), (D, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 9.0)))])
     for k, t_ in enumerate((tv + 0.1, tm + 0.3, tm + 1.2)):
         BW.dust_card(f"sink{k}", (pos.x - dv.x * 0.6, pos.y - dv.y * 0.6, gz(pos.x, pos.y) + 0.5), (2.0, 1.2), cam, t_, t_ + 2.0, 0.6,
                      grow=2.2, drift=(0, 0, 0.3), fade_in=0.12, fade_out=1.2)
-    smoke_dust("smoke", (pos.x, pos.y, gz(pos.x, pos.y)), cam, ts - 0.1, dur=7.0, n=18, rise=1.6, alpha=0.62)
+    smoke_dust("smoke", (pos.x, pos.y, gz(pos.x, pos.y)), cam, ts - 0.1, dur=7.0, n=16, rise=1.8, alpha=0.45)
     Q.handheld(shake, 0, D, amp=0.8, hits=[(tv + 0.05, 0.8), (tv + 0.55, 1.6), (tm + 0.3, 0.3), (ts, 0.4)])
     cfg["mist_amt"] = 0.2
     return cfg
@@ -900,7 +948,7 @@ def shot_ruf():
     HW.coast_world(keep=[(x0, y0, 8.0)] + line_keep(coast_path(185, 230, 23.0), 5.0))
     cfg = MK.light("day")
     tr = ev("sicher_v4", ls("v4") + 0.3)
-    CV = caravan(cx(196.0, 23.0), 196.0, 0.0, D + 1, speed=1.5, heading=-3, stop=tr + 0.8)
+    CV = caravan(cx(181.0, 23.0), 181.0, 0.0, D + 1, speed=1.5, heading=-3, stop=tr + 0.8)
     turn_back(CV["ab"], [(tr + 0.2, 0), (tr + 0.9, 150)])
     for k in (0, 1, 2):
         C = CV[k]
@@ -924,7 +972,7 @@ def shot_ruf():
     pose(Hh, tr + 2.3, "hidden", only="R")
     c0 = (x0, y0, gz(x0, y0) + EYE)
     c1 = (x0 - 0.3, y0 + 1.2, gz(x0, y0) + EYE)
-    tgt = (cx(204.0, 23.0), 204.0, 2.0)
+    tgt = (cx(188.0, 23.0), 188.0, gz(cx(188.0, 23.0), 188.0) + 1.8)
     ck(rig, [(0, c0, look(c0, tgt)), (tr - 0.4, lerp3(c0, c1, 0.6), look(lerp3(c0, c1, 0.6), tgt)), (D, c1, look(c1, tgt))])
     Q.handheld(shake, 0, D, amp=0.55, walk_from=0.2, walk_to=tr - 0.4, walk_amp=0.5, hits=[(tr, 0.25)])
     cfg["mist_amt"] = 0.18
@@ -938,9 +986,10 @@ def shot_treffen():
     HW.coast_world(keep=[(x0, y0, 10.0)])
     cfg = MK.light("day")
     CV = caravan(x0, y0, 0.0, 0.0, speed=1.0, heading=-3, stop=0.0)
-    for k in (0, 1, 2):
+    for k, (dx, dy, rz) in ((0, (0.0, 0.0, -8)), (1, (3.3, 1.2, -28)), (2, (-3.4, 2.2, 22))):
         C = CV[k]
-        C["root"].rotation_euler.z += math.radians(160 if k == 0 else 150)
+        C["root"].location = (x0 + dx, y0 + dy, gz(x0 + dx, y0 + dy))
+        C["root"].rotation_euler.z = math.radians(rz)
     tq = ls("q6")
     tk = ev("kopfgeld_w1", ls("w1") + 1.6)
     glow_pulse(CV["light"], tq, 1.9)
@@ -951,13 +1000,10 @@ def shot_treffen():
     Q.arm_pose(AB, tk + 3.4, "R", -10, -10)
     rig, shake, cam = Q.pov_camera(lens=18)
     Hh = MK.pov_arms(cam, skin=(0.4, 0.26, 0.17), sleeve=(0.42, 0.32, 0.22))
-    bag = Q.empty("bagp", (0.0, 0.09, 0.05), Hh["L"])
-    MK.dates_bag("bag", (0, 0, 0))
-    for o in bpy.data.objects:
-        if o.name.startswith("bag") and o.parent is None and o.name != "bagp":
-            o.parent = bag
-            o.location = (0.05, 0.0, 0.02)
-            o.scale = (0.8, 0.8, 0.8)
+    bag = Q.empty("bagp", (0.06, 0.1, 0.06), Hh["L"])
+    Q.ball("pouch", (0, 0, 0), (0.07, 0.06, 0.085), MK.M["leather"], parent=bag, seg=16)
+    Q.cyl("pouch_neck", (0, 0, 0.08), 0.025, 0.04, MK.M["leather"], parent=bag, seg=10)
+    Q.torus("pouch_tie", (0, 0, 0.075), 0.028, 0.006, MK.M["rope"], parent=bag, seg=16)
     pose(Hh, 0, "hidden")
     pose(Hh, tk + 0.6, "hidden")
     pose(Hh, tk + 1.2, "offer")
@@ -968,8 +1014,9 @@ def shot_treffen():
     c0 = (x0 - 2.0, y0 - 10.0, gz(x0, y0) + EYE)
     c1 = (x0 - 0.6, y0 - 4.4, gz(x0, y0) + EYE)
     lightpos = (x0, y0, gz(x0, y0) + 2.6)
-    ck(rig, [(0, c0, look(c0, lightpos)), (tk + 0.4, c1, look(c1, (x0 - 0.4, y0 - 4.2 + 3.2, 2.2))),
-             (tq - 0.5, None, look(c1, lightpos)), (D, None, look(c1, (x0, y0, gz(x0, y0) + 2.4)))])
+    abpos = (x0 + 3.3, y0 + 1.2, gz(x0, y0) + 2.5)
+    ck(rig, [(0, c0, look(c0, lightpos)), (tk + 0.4, c1, look(c1, lerp3(lightpos, abpos, 0.5))),
+             (tk + 2.0, None, look(c1, abpos)), (tq - 0.5, None, look(c1, lightpos)), (D, None, look(c1, (x0, y0, gz(x0, y0) + 2.4)))])
     Q.handheld(shake, 0, D, amp=0.45, walk_from=0, walk_to=tk + 0.4, walk_amp=0.7)
     cfg["mist_amt"] = 0.18
     return cfg
@@ -979,7 +1026,8 @@ def shot_rueckweg():
     """Auf dem Rückweg (Abendlicht) kommen mir Reiter entgegen. Ich winke ab: „Hier ist niemand.“ – sie kehren um."""
     y0 = 140.0
     sp = 4.2
-    pth = coast_path(y0, y0 - sp * (D + 1), 30.0, n=3)
+    tn_ = ev("niemand_v5", ls("v5") + 0.3)
+    pth = coast_path(y0, y0 - sp * (tn_ + 0.2), 30.0, n=3)
     HW.coast_world(keep=line_keep(pth, 6.0) + line_keep(coast_path(y0 - 60, y0 - 20, 30.0), 6.0))
     cfg = MK.light("golden")
     tz = ev("zurück_w2", le("w2") - 0.6)
@@ -1015,14 +1063,14 @@ def shot_abend():
     y0 = 150.0
     x0 = cx(y0, 70.0)
     HW.coast_world(keep=[(x0, y0, 8.0)])
-    cfg = MK.light("dusk")
-    CV = caravan(cx(300.0, 24.0), 300.0, 0.0, D + 1, speed=1.4, heading=-3)
+    cfg = MK.light("golden")
+    CV = caravan(cx(235.0, 24.0), 235.0, 0.0, D + 1, speed=1.4, heading=-3)
     Hs = suraqa_horse("sh", (x0 + 1.8, y0 - 1.2, gz(x0 + 1.8, y0 - 1.2)), yaw=Q.face_yaw((x0, y0), (x0 - 10, y0 + 6)))
     horse_idle(Hs, 0, D, seed=6)
     rig, shake, cam = Q.pov_camera(lens=19)
     c0 = (x0, y0, gz(x0, y0) + EYE)
-    car = (cx(306.0, 24.0), 306.0, 2.0)
-    sun_dir = (x0 - 400.0, y0 + 60.0, 30.0)
+    car = (cx(240.0, 24.0), 240.0, gz(cx(240.0, 24.0), 240.0) + 1.6)
+    sun_dir = (x0 - 0.849 * 400.0, y0 - 0.451 * 400.0, gz(x0, y0) + 0.29 * 400.0)
     tm = ls("w4")
     ck(rig, [(0, c0, look(c0, car)), (tm - 0.6, None, look(c0, lerp3(car, sun_dir, 0.25))), (D, None, look(c0, lerp3(car, sun_dir, 0.6)))])
     Q.handheld(shake, 0, D, amp=0.3)
@@ -1047,10 +1095,13 @@ def shot_medina():
         Pp = Q.person(f"md{k}", (x, y, gz(x, y)), yaw=Q.face_yaw((x, y), (1.5, -50)), seed=1000 + k, head=rnd.choice(["turban", "scarf", "cap"]),
                       height=rnd.choice([1.0, 1.0, 1.0, 0.75]))
         Q.idle(Pp, 0, D, seed=k)
-        if k % 3 == 0:
+        if k % 2 == 0:
             Q.arm_pose(Pp, tm - 0.2 + rnd.uniform(0, 0.6), "R", -10, -10)
             Q.arm_pose(Pp, tm + 0.4 + rnd.uniform(0, 0.6), "R", -160, -10)
         ppl.append(Pp)
+    for k, (x, y) in enumerate(((-9.0, -16.0), (-12.5, -22.0), (-8.0, -30.0), (10.5, -18.0), (13.0, -27.0), (-15.0, -12.0), (16.0, -11.0),
+                                (-11.0, -40.0), (12.0, -38.0))):
+        MD.palm(f"palmn{k}", (x, y, gz(x, y)), h=rnd.uniform(6.5, 9.5), lean=(rnd.uniform(-0.05, 0.05), rnd.uniform(-0.05, 0.05)), seed=700 + k)
     CV = caravan(2.0, -42.0, 0.0, D + 1, speed=1.3, heading=0)
     rig, shake, cam = Q.pov_camera(lens=18)
     c0 = (0.6, -2.5, gz(0.6, -2.5) + EYE)

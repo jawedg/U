@@ -119,8 +119,22 @@ def kaaba_old(name, loc):
 # ================================================================ Höhle im Berg Thaur
 def _hollow(name, loc, size, seed, open_dir=(0, -1, 0)):
     """Fels mit Hohlraum und Öffnung: grosser Brocken minus Innenraum minus Durchgang (Boolean)."""
-    MK._templates()
-    rock = MK._rock_mesh(f"{name}_rm", seed, sub=3, rough=0.32)
+    bm = bmesh.new()
+    bmesh.ops.create_icosphere(bm, subdivisions=4, radius=1.0)
+    off = Vector((seed * 1.7, 3.1, 7.3))
+    for v in bm.verts:
+        d = v.co.normalized()
+        k = 1.0 + 0.16 * noise.noise(d * 1.8 + off) + 0.06 * noise.noise(d * 5.0 + off)
+        v.co = d * k
+    # flache Bruchflächen (Granit)
+    for j in range(5):
+        a_ = j * 1.25 + seed
+        nrm = Vector((math.cos(a_), math.sin(a_), 0.35 + 0.15 * j)).normalized()
+        bmesh.ops.bisect_plane(bm, geom=bm.verts[:] + bm.edges[:] + bm.faces[:], plane_co=nrm * 0.93, plane_no=nrm, clear_outer=True)
+        bmesh.ops.contextual_create(bm, geom=[e for e in bm.edges if e.is_boundary])
+    rock = bpy.data.meshes.new(f"{name}_rm")
+    bm.to_mesh(rock)
+    bm.free()
     rock.materials.append(MK.M["rock"])
     o = bpy.data.objects.new(f"{name}_rock", rock)
     Q.link(o)
@@ -142,9 +156,9 @@ def _hollow(name, loc, size, seed, open_dir=(0, -1, 0)):
         e.scale = s
         e.hide_render = True
         return e
-    inner = ell(f"{name}_in", Vector(loc) + Vector((0, 0, 1.0)), (2.3, 1.7, 1.15), seg=4, rough=0.14, sd=seed)
+    inner = ell(f"{name}_in", Vector((0, 0, 0.4)), (2.3, 1.7, 1.15), seg=4, rough=0.14, sd=seed)
     od = Vector(open_dir).normalized()
-    tun = ell(f"{name}_tun", Vector(loc) + Vector((0, 0, 0.95)) + od * 2.4, (0.66 if abs(od.y) > 0.5 else 1.6, 1.6 if abs(od.y) > 0.5 else 0.66, 0.72),
+    tun = ell(f"{name}_tun", Vector((0, 0, 0.35)) + od * 2.4, (0.66 if abs(od.y) > 0.5 else 1.6, 1.6 if abs(od.y) > 0.5 else 0.66, 0.72),
               seg=3, rough=0.1, sd=seed + 3)
     for cut in (inner, tun):
         mo = o.modifiers.new(f"b_{cut.name}", "BOOLEAN")
@@ -164,7 +178,7 @@ def _hollow(name, loc, size, seed, open_dir=(0, -1, 0)):
 def cave(name="cave", loc=(0, 0, 0), yaw=0.0):
     """Die Höhle: Fels mit Hohlraum (Boden aus Sand), Öffnung nach lokal -Y. Rückgabe: Mitte der Öffnung (Welt)."""
     root = Q.empty(name, loc, rot=(0, 0, yaw))
-    o = _hollow(name, (0, 0, -0.6), (4.2, 3.8, 3.0), seed=41)
+    o = _hollow(name, (0, 0.6, 0.4), (4.6, 4.4, 3.4), seed=41)
     o.parent = root
     Q.box(f"{name}_floor", (0, -0.4, -0.02), (5.0, 5.0, 0.06), MK.M["sand"], parent=root)
     MK.pebbles(f"peb_{name}", (loc[0], loc[1]), (3.4, 3.0), 260, seed=3, rmin=0.01, rmax=0.05)
@@ -196,7 +210,7 @@ def spider_web(name, center, normal_yaw, r=0.55, rings=13, spokes=11, parent=Non
     b.inputs["Emission Strength"].default_value = 0.6
     root = Q.empty(name, center, parent=parent, rot=(0, 0, normal_yaw))
     bm = bmesh.new()
-    th = 0.0022
+    th = 0.0013
 
     def strand(p0, p1, w=th):
         d = p1 - p0
