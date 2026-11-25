@@ -1,7 +1,7 @@
 {
  "title": "Die Hidschra – der Jäger in der Wüste – QISSAH Folge 5 (POV)",
  "series": "QISSAH",
- "note": "Folge 5 (Nutzer 24.11.2026 hat den Text genehmigt; Spinnennetz rein (Musnad Ahmad 3251, Kette umstritten), Kisra-Armreifen raus): Hidschra des Propheten ﷺ mit Abu Bakr, Höhle Thaur, Suraqa jagt sie. Höchstens 3 min. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift). Worte des Propheten ﷺ und Abu Bakrs als ZITAT (Hall + goldene Schrift); Suraqa (damals noch kein Muslim), Stammesmann und Verfolger als Dialog (kursiv, ohne Hall). Der Prophet ﷺ NUR als Licht, Menschen ohne Gesicht, Abu Bakr (und Suraqa nie sichtbar – er ist die Kamera) mit Licht über dem Kopf. Koran-Rezitation NICHT hörbar (nur erzählt).",
+ "note": "Folge 5 (Nutzer 24.11.2026 hat den Text genehmigt; Spinnennetz rein (Musnad Ahmad 3251, Kette umstritten), Kisra-Armreifen raus): Hidschra des Propheten ﷺ mit Abu Bakr, Höhle Thaur, Suraqa jagt sie. Höchstens 3 min. Erzähler ElevenLabs (Helmut, eleven_v3, arabische Namen in arabischer Schrift). Worte des Propheten ﷺ und Abu Bakrs als ZITAT (Hall + goldene Schrift); Suraqa (damals noch kein Muslim), Stammesmann und Verfolger als Dialog (kursiv, ohne Hall). Der Prophet ﷺ NUR als Licht, Menschen ohne Gesicht, Abu Bakr (und Suraqa nie sichtbar – er ist die Kamera) mit Licht über dem Kopf. Koran-Rezitation NICHT hörbar (nur erzählt). | v2 (Nutzer 25.11.2026): alle Figuren mit eigener ElevenLabs-Stimme + Gefühl (Hörprobe A), Abu Bakr mit Harakat (STT: vorher „Abubakar“), Untertitel al-Madina wie gesprochen.",
  "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
  "voiceParts": {
   "0": {
@@ -37,28 +37,80 @@
    "capPause": 0.6
   },
   "1": {
-   "model": "gemini-2.5-flash-preview-tts",
+   "engine": "eleven",
+   "model": "eleven_v3",
    "speakers": {
-    "AbuBakr": "Sadaltager",
-    "Suraqa": "Zubenelgenubi"
+    "AbuBakr": "2baru8J0e15nxuG3bzXy"
    },
-   "notes": "# AUDIO PROFILE\nAbuBakr: a gentle, wise Arab man in his fifties, the closest friend of the Prophet. Soft, warm, humble voice.\nSuraqa: a bold Bedouin horseman in his thirties, proud and quick. Rough, confident voice.\n## THE SCENE\nArabia, 1400 years ago. A secret journey through the desert; a hunter on horseback.\n### DIRECTOR'S NOTES\nAbuBakr's first line is an eager, hopeful question to his dear friend. His second line is a frightened, barely audible WHISPER inside a hidden cave, breathless, with a pause at the dots. Suraqa's first line is casual and dismissive, waving it away, a bit sly. His second line is a loud call across the desert, shouted from a distance, honest and urgent. His last line is calm and flat, a little bored, sending other riders away. Leave a clear pause of about one second between the lines."
+   "chunks": [
+    "q2",
+    "q4"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "note": "v2: Abu Bakr = Cornelius (ElevenLabs, Hörprobe A), mit Hall",
+   "capPause": 0.45
   },
   "2": {
-   "model": "gemini-3.8-flash-tts",
-   "plain": true,
+   "engine": "eleven",
+   "model": "eleven_v3",
    "speakers": {
-    "Zitat": "Charon"
+    "Prophet": "bAFkvitDGeDMmqo9gJzO"
    },
-   "notes": "Worte des Propheten (Friede sei mit ihm) – Zitat mit Hall (wie Folge 1–4)."
+   "chunks": [
+    "q1",
+    "q3",
+    "q5",
+    "q6"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "note": "v2: Worte des Propheten ﷺ = Niander (ElevenLabs, Hörprobe A), mit Hall",
+   "capPause": 0.45
   },
   "3": {
-   "model": "gemini-2.5-flash-preview-tts",
+   "engine": "eleven",
+   "model": "eleven_v3",
    "speakers": {
-    "Stammesmann": "Puck",
-    "Verfolger": "Algenib"
+    "Suraqa": "iCEMyUhOwgAy0egMANye"
    },
-   "notes": "# AUDIO PROFILE\nStammesmann: a young Bedouin man who just ran into a tent full of men, out of breath, excited.\nVerfolger: a tough, grumpy hunter from Mecca searching the mountains, gravelly low voice.\n## THE SCENE\nArabia, 1400 years ago, desert and rocky mountains.\n### DIRECTOR'S NOTES\nStammesmann speaks fast and excited, half out of breath, the last word stressed. Verfolger stands in front of a cave and speaks with dismissive certainty, a little annoyed, to his companions. Leave a clear pause of about one second between the lines."
+   "chunks": [
+    "v3",
+    "v4",
+    "v5"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "note": "v2: Suraqa = Torsten (ElevenLabs, Hörprobe A)",
+   "capPause": 0.45
+  },
+  "4": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Stammesmann": "IeQubAjK1ujbppIdhJw4"
+   },
+   "chunks": [
+    "v2"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "note": "v2: Mann im Zelt = Markus (ElevenLabs, Hörprobe A)",
+   "capPause": 0.45
+  },
+  "5": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Verfolger": "BDqe1qZiwPi7xspRxTgh"
+   },
+   "chunks": [
+    "v1"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "note": "v2: Verfolger = Roderich (ElevenLabs, Hörprobe A)",
+   "capPause": 0.45
   }
  },
  "sentences": [
@@ -104,7 +156,8 @@
    "quote": true,
    "fx": "hall",
    "by": "der Prophet ﷺ · Bukhari 3905",
-   "text": "Mir wurde *erlaubt*, auszuwandern."
+   "text": "Mir wurde *erlaubt*, auszuwandern.",
+   "el": "[calm, warm] Mir wurde erlaubt, auszuwandern."
   },
   {
    "id": "q2",
@@ -113,7 +166,8 @@
    "quote": true,
    "fx": "hall",
    "by": "Abu Bakr · Bukhari 3905",
-   "text": "Darf ich dich *begleiten*?"
+   "text": "Darf ich dich *begleiten*?",
+   "el": "[hopeful, eager] Darf ich dich begleiten?"
   },
   {
    "id": "q3",
@@ -122,13 +176,14 @@
    "quote": true,
    "fx": "hall",
    "by": "der Prophet ﷺ · Bukhari 3905",
-   "text": "*Ja*."
+   "text": "*Ja*.",
+   "el": "[gently, warm] Ja."
   },
   {
    "id": "m3",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Nachts verlassen sie Mekka. Doch nicht Richtung Medina ... sondern nach *Süden*. In eine *Höhle* im Berg Thaur.",
+   "text": "Nachts verlassen sie Mekka. Doch nicht Richtung al-Madina ... sondern nach *Süden*. In eine *Höhle* im Berg Thaur.",
    "el": "[softly, tense] Nachts verlassen sie مكة. Doch nicht Richtung المدينة ... [whispers] sondern nach Süden. ... In eine Höhle im Berg ثَوْر. ..."
   },
   {
@@ -150,7 +205,7 @@
    "part": 0,
    "speaker": "Erzaehler",
    "text": "Abu Bakr *flüstert*:",
-   "el": "[whispers] أبو بكر flüstert: ..."
+   "el": "[softly, tense] أَبُو بَكْر flüstert: ..."
   },
   {
    "id": "q4",
@@ -159,7 +214,8 @@
    "quote": true,
    "fx": "hall",
    "by": "Abu Bakr · Bukhari 3653",
-   "text": "Wenn einer von ihnen auf seine *Füße* schaut ... sieht er uns."
+   "text": "Wenn einer von ihnen auf seine *Füße* schaut ... sieht er uns.",
+   "el": "[whispers, frightened] Wenn einer von ihnen auf seine Füße schaut ... sieht er uns."
   },
   {
    "id": "c4",
@@ -175,7 +231,8 @@
    "quote": true,
    "fx": "hall",
    "by": "der Prophet ﷺ · Bukhari 3653",
-   "text": "Was denkst du von *zweien* ... deren Dritter *Allah* ist?"
+   "text": "Was denkst du von *zweien* ... deren Dritter *Allah* ist?",
+   "el": "[calm, reassuring, softly] Was denkst du von zweien ... deren Dritter الله ist?"
   },
   {
    "id": "c5",
@@ -186,10 +243,11 @@
   },
   {
    "id": "v1",
-   "part": 3,
+   "part": 5,
    "speaker": "Verfolger",
    "dialog": true,
-   "text": "Wäre er hier drin ... gäbe es kein *Netz*."
+   "text": "Wäre er hier drin ... gäbe es kein *Netz*.",
+   "el": "[gruff, annoyed] Wäre er hier drin ... gäbe es kein Netz."
   },
   {
    "id": "c6",
@@ -214,10 +272,11 @@
   },
   {
    "id": "v2",
-   "part": 3,
+   "part": 4,
    "speaker": "Stammesmann",
    "dialog": true,
-   "text": "Ich habe Gestalten an der Küste gesehen. Ich glaube, das sind *sie*!"
+   "text": "Ich habe Gestalten an der Küste gesehen. Ich glaube, das sind *sie*!",
+   "el": "[out of breath, excited] Ich habe Gestalten an der Küste gesehen. Ich glaube, das sind sie!"
   },
   {
    "id": "s3",
@@ -228,10 +287,11 @@
   },
   {
    "id": "v3",
-   "part": 1,
+   "part": 3,
    "speaker": "Suraqa",
    "dialog": true,
-   "text": "Nein ... das sind *andere*."
+   "text": "Nein ... das sind *andere*.",
+   "el": "[dismissive, sly] Nein ... das sind andere."
   },
   {
    "id": "s4",
@@ -291,10 +351,11 @@
   },
   {
    "id": "v4",
-   "part": 1,
+   "part": 3,
    "speaker": "Suraqa",
    "dialog": true,
-   "text": "Ihr seid *sicher* vor mir!"
+   "text": "Ihr seid *sicher* vor mir!",
+   "el": "[shouting from far away, desperate] Ihr seid sicher vor mir!"
   },
   {
    "id": "w1",
@@ -310,7 +371,8 @@
    "quote": true,
    "fx": "hall",
    "by": "der Prophet ﷺ · Bukhari 3906",
-   "text": "Verrate nichts über *uns*."
+   "text": "Verrate nichts über *uns*.",
+   "el": "[softly, serious] Verrate nichts über uns."
   },
   {
    "id": "w2",
@@ -321,10 +383,11 @@
   },
   {
    "id": "v5",
-   "part": 1,
+   "part": 3,
    "speaker": "Suraqa",
    "dialog": true,
-   "text": "Hier ist *niemand*."
+   "text": "Hier ist *niemand*.",
+   "el": "[casual, bored] Hier ist niemand."
   },
   {
    "id": "w3",
@@ -344,7 +407,7 @@
    "id": "w5",
    "part": 0,
    "speaker": "Erzaehler",
-   "text": "Tage später erreichen sie *Medina*. Mit dieser Reise beginnt die islamische *Zeitrechnung* ... bis heute.",
+   "text": "Tage später erreichen sie *al-Madina*. Mit dieser Reise beginnt die islamische *Zeitrechnung* ... bis heute.",
    "el": "[warm, storytelling] Tage später erreichen sie المدينة. ... [reverent] Mit dieser Reise beginnt die islamische Zeitrechnung ... [softly] bis heute. ..."
   }
  ],

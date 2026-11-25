@@ -459,6 +459,52 @@ const Choice: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+// ---------------------------------------------------------------- v2: weiche Übergänge (Nutzer: Szenen wechselten „aus dem Nix“)
+// Jede Einstellung ist in Blender XF s länger gerendert (Handle); die nächste blendet über XF s weich darüber ein.
+const XF = TL.xfade ?? 0.4;
+const XF_HOOK = 0.25;
+const FadeIn: React.FC<{ d: number; children: React.ReactNode }> = ({ d, children }) => {
+  const f = useCurrentFrame();
+  const u = d > 0 ? Math.min(1, f / d) : 1;
+  return <AbsoluteFill style={{ opacity: u * u * (3 - 2 * u) }}>{children}</AbsoluteFill>;
+};
+
+// ---------------------------------------------------------------- v2: Einstieg mit Wucht – „KOPFGELD · 100 KAMELE“, dann „TOT ODER LEBENDIG“
+const Stamp: React.FC<{ t: number }> = ({ t }) => {
+  const h1 = TL.lines.find((l: any) => l.id === "h1");
+  if (!h1) return null;
+  const a = TL.events["hundert_h1"] ?? h1.start + 0.3;
+  const b = TL.events["tot_h1"] ?? h1.start + 3.6;
+  const end = h1.start + h1.dur + 0.5;
+  if (t < a - 0.05 || t > end + 0.35) return null;
+  const out = interpolate(t, [end, end + 0.35], [1, 0], clamp);
+  const pop = (t0: number) => {
+    const u = interpolate(t, [t0 - 0.02, t0 + 0.2], [0, 1], { ...clamp, easing: Easing.out(Easing.back(2.2)) });
+    return { opacity: Math.min(1, u * 1.6) * out, transform: `scale(${1.45 - 0.45 * u})` };
+  };
+  const shake = (t0: number) => {
+    const k = Math.max(0, 1 - (t - t0) / 0.25);
+    return k > 0 ? `translate(${Math.sin(t * 90) * 6 * k}px, ${Math.cos(t * 77) * 5 * k}px)` : "none";
+  };
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: 470, textAlign: "center", transform: shake(a) }}>
+      <div style={{ ...pop(a), fontFamily: MONO, fontSize: 34, letterSpacing: 12, color: "#efe2c6", textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>
+        KOPFGELD
+      </div>
+      <div style={{ ...pop(a + 0.05), fontFamily: SERIF, fontWeight: 600, fontSize: 118, lineHeight: 1.05, color: GOLD,
+                    textShadow: "0 3px 18px rgba(0,0,0,0.9), 0 0 30px rgba(232,181,77,0.35)" }}>
+        100 KAMELE
+      </div>
+      {t >= b - 0.03 ? (
+        <div style={{ ...pop(b), marginTop: 18, fontFamily: MONO, fontSize: 44, letterSpacing: 9, color: "#f6d7a0", transform: `${pop(b).transform} ${shake(b)}`,
+                      textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}>
+          TOT ODER LEBENDIG
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
 // ---------------------------------------------------------------- Vignette (kein Filmkorn: Rauschen wird beim Verkleinern zu Klötzchen)
 const Grain: React.FC<{ f: number }> = () => (
   <AbsoluteFill style={{ pointerEvents: "none", background: "radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.5) 100%)" }} />
@@ -472,41 +518,32 @@ export const QissaHijraVideo: React.FC = () => {
   const t = sec(f);
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      {TL.segments
-        .filter((s: any) => s.kind === "shot" && !s.hidden)
-        .flatMap((s: any) => {
-          // Zeit-Anker: zwischen zwei Ankern konstantes Tempo, an den Ankern stimmt das Bild genau (build_qissa_adhan.py)
-          const m: [number, number][] = s.map ?? [[0, 0], [s.dur, s.dur]];
-          const last = fr(s.src_dur ?? s.dur) - 1;
-          return m.slice(0, -1).map(([a0, b0], i) => {
-            const [a1, b1] = m[i + 1];
-            const from = fr(s.start + a0);
-            const dur = fr(s.start + a1) - from;
-            if (dur <= 0) return null;
-            const rate = (b1 - b0) / (a1 - a0);
-            return (
-              <Sequence key={`${s.id}-${i}`} from={from} durationInFrames={dur}>
-                <OffthreadVideo
-                  src={staticFile(`qissa_hijra/shots/${s.id}.mp4`)}
-                  muted
-                  trimBefore={Math.min(last, Math.round(b0 * FPS))}
-                  playbackRate={Math.abs(rate - 1) < 0.002 ? 1 : rate}
-                  style={shotStyle}
-                />
-              </Sequence>
-            );
-          });
-        })}
-      {/* Einstieg: kurze Ausschnitte aus späteren Einstellungen */}
+      {/* Einstieg: kurze Ausschnitte aus späteren Einstellungen (kurze Überblendung, der erste ohne) */}
       {TL.segments
         .filter((s: any) => s.kind === "clip")
-        .map((s: any) => (
-          <Sequence key={s.id} from={fr(s.start)} durationInFrames={fr(s.start + s.dur) - fr(s.start)}>
-            <OffthreadVideo src={staticFile(`qissa_hijra/shots/${s.src}.mp4`)} muted trimBefore={fr(s.at)} style={shotStyle} />
+        .map((s: any, i: number) => (
+          <Sequence key={s.id} from={fr(s.start)} durationInFrames={fr(s.start + s.dur + XF) - fr(s.start)}>
+            <FadeIn d={i === 0 ? 0 : fr(XF_HOOK)}>
+              <OffthreadVideo src={staticFile(`qissa_hijra/shots/${s.src}.mp4`)} muted trimBefore={fr(s.at)} style={shotStyle} />
+            </FadeIn>
           </Sequence>
         ))}
+      {TL.segments
+        .filter((s: any) => s.kind === "shot" && !s.hidden)
+        .map((s: any) => {
+          // v2: alle Einstellungen frisch gerendert (Tempo 1) mit Handle XF am Ende -> blendet weich in die nächste über
+          const last = (s.frames ? Math.round((s.frames / (TL.render_fps ?? 30)) * FPS) : fr(s.dur)) - 2;
+          return (
+            <Sequence key={s.id} from={fr(s.start)} durationInFrames={Math.min(fr(s.start + s.dur + XF), fr(s.start) + last) - fr(s.start)}>
+              <FadeIn d={fr(XF)}>
+                <OffthreadVideo src={staticFile(`qissa_hijra/shots/${s.id}.mp4`)} muted style={shotStyle} />
+              </FadeIn>
+            </Sequence>
+          );
+        })}
       <Grain f={f} />
       <Title t={t} />
+      <Stamp t={t} />
       <Label t={t} />
       <Counter t={t} />
       <Quote t={t} />

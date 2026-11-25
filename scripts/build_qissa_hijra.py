@@ -18,34 +18,35 @@ D = ROOT / "src" / "qissa_hijra"
 FPS = 60
 RFPS = int(os.environ.get("QISSA_RFPS", "30"))
 RATE_MIN, RATE_MAX = 0.75, 1.33
+XF = 0.4   # v2: Überblendung zwischen Einstellungen (s); jede Einstellung wird so viel länger gerendert
 
 # Ablauf. Schritte: ("p", s) Pause · ("l", id) Satz · ("q", id) Zitat (Hall + goldene Schrift)
 #   ("clip", id, quelle, at, schritte)   Ausschnitt einer anderen Einstellung ab Sekunde `at`
 #   ("montage", id, schritte, [(quelle, at), …])   schnelle Schnitte, je Wort des Satzes ein Ausschnitt
 #   ("extra", id, sekunden)   Einstellung nur als Quelle für Ausschnitte (wird gerendert, aber nicht selbst gezeigt)
 PLAN = [
-    ("clip", "hook_a", "jagd", 0.3, [("p", 0.3), ("l", "h1"), ("p", 0.1)]),
+    ("clip", "hook_a", "jagd", 0.3, [("p", 0.2), ("l", "h1"), ("p", 0.1)]),
     ("clip", "hook_b", "nah", 0.6, [("p", 0.05), ("l", "h2"), ("p", 0.05)]),
-    ("clip", "hook_c", "versinken", 7.2, [("p", 0.05), ("l", "h3"), ("p", 0.25)]),
+    ("clip", "hook_c", "versinken", 7.2, [("p", 0.05), ("l", "h3"), ("p", 0.16)]),
     ("shot", "mekka", "MEKKA · 622 N. CHR.", [("p", 0.2), ("l", "m1"), ("p", 0.2)]),
-    ("shot", "haus", None, [("p", 0.1), ("l", "m2"), ("p", 0.3), ("q", "q1"), ("p", 0.4), ("q", "q2"), ("p", 0.3), ("q", "q3"), ("p", 0.4)]),
+    ("shot", "haus", None, [("p", 0.1), ("l", "m2"), ("p", 0.2), ("q", "q1"), ("p", 0.26), ("q", "q2"), ("p", 0.2), ("q", "q3"), ("p", 0.26)]),
     ("shot", "auszug", None, [("p", 0.1), ("l", "m3"), ("p", 0.2)]),
-    ("shot", "hoehle", "BERG THAUR", [("p", 0.2), ("l", "c1"), ("p", 0.3)]),
+    ("shot", "hoehle", "BERG THAUR", [("p", 0.2), ("l", "c1"), ("p", 0.2)]),
     ("shot", "versteck", None, [("p", 0.1), ("l", "c2"), ("p", 0.15), ("l", "c3"), ("p", 0.2),
-                                      ("q", "q4"), ("p", 0.4), ("l", "c4"), ("p", 0.2), ("q", "q5"), ("p", 0.4)]),
+                                      ("q", "q4"), ("p", 0.26), ("l", "c4"), ("p", 0.2), ("q", "q5"), ("p", 0.26)]),
     ("shot", "netz", None, [("p", 0.1), ("l", "c5"), ("p", 0.2), ("l", "v1"), ("p", 0.2), ("l", "c6"), ("p", 0.2)]),
     ("shot", "kueste", None, [("p", 0.1), ("l", "s1"), ("p", 0.2)]),
-    ("shot", "stamm", "QUDAID", [("p", 0.1), ("l", "s2"), ("p", 0.15), ("l", "v2"), ("p", 0.25), ("l", "s3"), ("p", 0.1), ("l", "v3"), ("p", 0.3)]),
+    ("shot", "stamm", "QUDAID", [("p", 0.1), ("l", "s2"), ("p", 0.15), ("l", "v2"), ("p", 0.16), ("l", "s3"), ("p", 0.1), ("l", "v3"), ("p", 0.2)]),
     ("shot", "pferd", None, [("p", 0.1), ("l", "s4"), ("p", 0.1), ("l", "s5"), ("p", 0.1)]),
     ("shot", "ritt", None, [("p", 0.05), ("l", "s6"), ("p", 0.2)]),
     ("shot", "lose", None, [("p", 0.1), ("l", "s7"), ("p", 0.2)]),
     ("shot", "nah", None, [("p", 0.05), ("l", "s8"), ("p", 0.1)]),
     ("shot", "versinken", None, [("p", 0.05), ("l", "s9"), ("p", 0.1), ("l", "s10"), ("p", 0.2)]),
-    ("shot", "ruf", None, [("p", 0.1), ("l", "s11"), ("p", 0.1), ("l", "v4"), ("p", 0.4)]),
-    ("shot", "treffen", None, [("p", 0.1), ("l", "w1"), ("p", 0.3), ("q", "q6"), ("p", 0.4)]),
-    ("shot", "rueckweg", None, [("p", 0.1), ("l", "w2"), ("p", 0.1), ("l", "v5"), ("p", 0.3)]),
-    ("shot", "abend", None, [("p", 0.2), ("l", "w3"), ("p", 0.3), ("l", "w4"), ("p", 0.3)]),
-    ("shot", "medina", "MEDINA", [("p", 0.2), ("l", "w5"), ("p", 0.9)]),
+    ("shot", "ruf", None, [("p", 0.1), ("l", "s11"), ("p", 0.1), ("l", "v4"), ("p", 0.26)]),
+    ("shot", "treffen", None, [("p", 0.1), ("l", "w1"), ("p", 0.2), ("q", "q6"), ("p", 0.26)]),
+    ("shot", "rueckweg", None, [("p", 0.1), ("l", "w2"), ("p", 0.1), ("l", "v5"), ("p", 0.2)]),
+    ("shot", "abend", None, [("p", 0.2), ("l", "w3"), ("p", 0.2), ("l", "w4"), ("p", 0.2)]),
+    ("shot", "medina", "MEDINA", [("p", 0.2), ("l", "w5"), ("p", 0.39)]),
     ("card", "logo", "QISSAH", 2.8),
     ("extra", "jagd", 8.0),
 ]
@@ -57,7 +58,7 @@ KEYS = {"hundert", "kamele", "tot", "reiter", "spur", "wüste", "mekka", "qurais
         "andere", "heimlich", "pferd", "speer", "galoppiert", "näher", "stolpert", "stürzt", "sand", "lospfeile", "schaden",
         "nein", "weiter", "nah", "koran", "ruhig", "umzudrehen", "versinken", "knien", "fällt", "mühsam", "staub", "rauch",
         "begreift", "siegen", "ruft", "sicher", "erzählt", "kopfgeld", "bittet", "rückweg", "zurück", "niemand", "morgen",
-        "jäger", "abend", "beschützer", "jahre", "muslim", "tage", "erreichen", "zeitrechnung", "heute", "bis"}
+        "jäger", "abend", "beschützer", "jahre", "muslim", "tage", "erreichen", "zeitrechnung", "heute", "bis", "madina"}
 ANCHORS = {}
 NUM = {"zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6}
 
@@ -228,7 +229,7 @@ def main() -> None:
             continue
         label = item[2]
         segs.append({"id": sid, "kind": "shot", "label": label, "start": round(t0, 3), "dur": round(t - t0, 3),
-                     "frames": int(round((t - t0) * RFPS))})
+                     "frames": int(round((t - t0 + XF) * RFPS))})   # v2: + Handle für die Überblendung
     total = round(t, 3)
     seg = {s["id"]: s for s in segs}
     ev["count"] = counts
@@ -237,7 +238,7 @@ def main() -> None:
             segs.append({"id": item[1], "kind": "shot", "hidden": True, "label": None, "start": total, "dur": item[2],
                          "frames": int(round(item[2] * RFPS))})
     seg = {s["id"]: s for s in segs}
-    out = {"fps": FPS, "render_fps": RFPS, "voiced": voiced, "total": total, "frames": int(round(total * FPS)), "segments": segs,
+    out = {"fps": FPS, "render_fps": RFPS, "xfade": XF, "voiced": voiced, "total": total, "frames": int(round(total * FPS)), "segments": segs,
            "lines": lines, "quotes": qs, "choice": None, "events": ev}
 
     refp = D / "rendered_ref.json"

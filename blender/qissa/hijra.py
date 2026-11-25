@@ -343,6 +343,11 @@ def horse_go(C, sp, G, t0, t1, trot=False, zf=None, idle_seed=0, d0=0.0):
         C["tail"].rotation_euler = (math.radians(12 * idle + 35 * am + 8 * math.sin(ph * 2) * a), 0,
                                     math.radians(6 * math.sin(ph) * a + 11 * math.sin(t * 2.3 + i2) * idle))
         C["tail"].keyframe_insert("rotation_euler", frame=f)
+        for k, e in enumerate(C.get("mane", ())):   # Mähne flattert mit dem Galopp, weht im Stand leicht
+            u = k / 12
+            e.rotation_euler = (math.radians(-35 + 10 * u - 18 * a + 9 * a * math.sin(ph * 2 - k * 0.55) + 2.5 * idle * math.sin(t * 1.7 + k)),
+                                math.radians(28 + 10 * a * math.sin(ph - k * 0.4)), 0)
+            e.keyframe_insert("rotation_euler", frame=f)
         for nm, off in BW.GALLOP.items():
             if trot:
                 off = {"BL": 0.0, "FR": 0.0, "BR": 0.5, "FL": 0.5}[nm]
@@ -537,8 +542,19 @@ def suraqa_horse(name="sh", loc=(0, 0, 0), yaw=0.0):
         if o:
             bpy.data.objects.remove(o)
     mh = Q.pbr(f"{name}_manem", (0.07, 0.04, 0.025), 0.8, var=0.25, scale=30, bump=0.3, bscale=120)
-    Q.limb(f"{name}_manes", (0, 0.12, 0.04), (0, -0.2, 0.66), 0.05, 0.032, mh, parent=C["neck"], seg=10)
+    Q.limb(f"{name}_manes", (0, 0.12, 0.04), (0, -0.2, 0.66), 0.035, 0.024, mh, parent=C["neck"], seg=10)
     Q.ball(f"{name}_forelock", (0, -0.3, 0.7), (0.04, 0.05, 0.05), mh, parent=C["neck"], seg=10)
+    # v2: Mähne aus Haarbüscheln, die beim Galopp flattern (Nutzer: Pferd zu steif) – aus dem Sattel gut zu sehen
+    a0, a2 = Vector((0, 0.12, 0.04)), Vector((0, -0.2, 0.66))
+    tufts = []
+    rnd = random.Random(7)
+    for k in range(13):
+        u = k / 12
+        e = Q.empty(f"{name}_tuft{k}", tuple(a0 + (a2 - a0) * u + Vector((0, 0.02, 0.02))), C["neck"],
+                    rot=(math.radians(-35 + 10 * u), math.radians(28), 0))
+        Q.ball(f"{name}_tuftm{k}", (0, 0.06, -0.01), (0.018, 0.075 + 0.02 * rnd.random(), 0.05), mh, parent=e, seg=8)
+        tufts.append(e)
+    C["mane"] = tufts
     return C
 
 

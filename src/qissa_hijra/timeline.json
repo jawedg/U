@@ -1,9 +1,10 @@
 {
  "fps": 60,
  "render_fps": 30,
+ "xfade": 0.4,
  "voiced": true,
- "total": 171.797,
- "frames": 10308,
+ "total": 178.468,
+ "frames": 10708,
  "segments": [
   {
    "id": "hook_a",
@@ -11,14 +12,14 @@
    "src": "jagd",
    "at": 0.3,
    "start": 0.0,
-   "dur": 6.828
+   "dur": 6.728
   },
   {
    "id": "hook_b",
    "kind": "clip",
    "src": "nah",
    "at": 0.6,
-   "start": 6.828,
+   "start": 6.728,
    "dur": 2.597
   },
   {
@@ -26,16 +27,16 @@
    "kind": "clip",
    "src": "versinken",
    "at": 7.2,
-   "start": 9.425,
+   "start": 9.325,
    "dur": 4.548
   },
   {
    "id": "mekka",
    "kind": "shot",
    "label": "MEKKA · 622 N. CHR.",
-   "start": 13.973,
+   "start": 13.873,
    "dur": 8.195,
-   "frames": 246,
+   "frames": 258,
    "map": [
     [
      0.0,
@@ -47,37 +48,37 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 246,
+   "src_frames": 258,
    "src_dur": 8.195
   },
   {
    "id": "haus",
    "kind": "shot",
    "label": null,
-   "start": 22.168,
-   "dur": 7.78,
-   "frames": 233,
+   "start": 22.068,
+   "dur": 9.312,
+   "frames": 291,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     7.78,
-     7.78
+     9.312,
+     9.312
     ]
    ],
    "rerender": true,
-   "src_frames": 233,
-   "src_dur": 7.78
+   "src_frames": 291,
+   "src_dur": 9.312
   },
   {
    "id": "auszug",
    "kind": "shot",
    "label": null,
-   "start": 29.948,
+   "start": 31.38,
    "dur": 9.498,
-   "frames": 285,
+   "frames": 297,
    "map": [
     [
      0.0,
@@ -89,79 +90,79 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 285,
+   "src_frames": 297,
    "src_dur": 9.498
   },
   {
    "id": "hoehle",
    "kind": "shot",
    "label": "BERG THAUR",
-   "start": 39.446,
-   "dur": 2.658,
-   "frames": 80,
+   "start": 40.878,
+   "dur": 2.419,
+   "frames": 85,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     2.658,
-     2.658
+     2.419,
+     2.419
     ]
    ],
    "rerender": true,
-   "src_frames": 80,
-   "src_dur": 2.658
+   "src_frames": 85,
+   "src_dur": 2.419
   },
   {
    "id": "versteck",
    "kind": "shot",
    "label": null,
-   "start": 42.104,
-   "dur": 20.491,
-   "frames": 615,
+   "start": 43.297,
+   "dur": 21.874,
+   "frames": 668,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     20.491,
-     20.491
+     21.874,
+     21.874
     ]
    ],
    "rerender": true,
-   "src_frames": 615,
-   "src_dur": 20.491
+   "src_frames": 668,
+   "src_dur": 21.874
   },
   {
    "id": "netz",
    "kind": "shot",
    "label": null,
-   "start": 62.595,
-   "dur": 10.466,
-   "frames": 314,
+   "start": 65.171,
+   "dur": 10.888,
+   "frames": 339,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     10.466,
-     10.466
+     10.888,
+     10.888
     ]
    ],
    "rerender": true,
-   "src_frames": 314,
-   "src_dur": 10.466
+   "src_frames": 339,
+   "src_dur": 10.888
   },
   {
    "id": "kueste",
    "kind": "shot",
    "label": null,
-   "start": 73.061,
+   "start": 76.059,
    "dur": 2.896,
-   "frames": 87,
+   "frames": 99,
    "map": [
     [
      0.0,
@@ -173,79 +174,79 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 87,
+   "src_frames": 99,
    "src_dur": 2.896
   },
   {
    "id": "stamm",
    "kind": "shot",
    "label": "QUDAID",
-   "start": 75.957,
-   "dur": 11.152,
-   "frames": 335,
+   "start": 78.955,
+   "dur": 13.757,
+   "frames": 425,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     11.152,
-     11.152
+     13.757,
+     13.757
     ]
    ],
    "rerender": true,
-   "src_frames": 335,
-   "src_dur": 11.152
+   "src_frames": 425,
+   "src_dur": 13.757
   },
   {
    "id": "pferd",
    "kind": "shot",
    "label": null,
-   "start": 87.109,
-   "dur": 7.706,
-   "frames": 231,
+   "start": 92.712,
+   "dur": 7.077,
+   "frames": 224,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     7.706,
-     7.706
+     7.077,
+     7.077
     ]
    ],
    "rerender": true,
-   "src_frames": 231,
-   "src_dur": 7.706
+   "src_frames": 224,
+   "src_dur": 7.077
   },
   {
    "id": "ritt",
    "kind": "shot",
    "label": null,
-   "start": 94.815,
-   "dur": 4.683,
-   "frames": 140,
+   "start": 99.789,
+   "dur": 5.312,
+   "frames": 171,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     4.683,
-     4.683
+     5.312,
+     5.312
     ]
    ],
    "rerender": true,
-   "src_frames": 140,
-   "src_dur": 4.683
+   "src_frames": 171,
+   "src_dur": 5.312
   },
   {
    "id": "lose",
    "kind": "shot",
    "label": null,
-   "start": 99.498,
+   "start": 105.101,
    "dur": 8.633,
-   "frames": 259,
+   "frames": 271,
    "map": [
     [
      0.0,
@@ -257,16 +258,16 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 259,
+   "src_frames": 271,
    "src_dur": 8.633
   },
   {
    "id": "nah",
    "kind": "shot",
    "label": null,
-   "start": 108.131,
+   "start": 113.734,
    "dur": 8.41,
-   "frames": 252,
+   "frames": 264,
    "map": [
     [
      0.0,
@@ -278,16 +279,16 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 252,
+   "src_frames": 264,
    "src_dur": 8.41
   },
   {
    "id": "versinken",
    "kind": "shot",
    "label": null,
-   "start": 116.541,
+   "start": 122.144,
    "dur": 12.272,
-   "frames": 368,
+   "frames": 380,
    "map": [
     [
      0.0,
@@ -299,36 +300,15 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 368,
+   "src_frames": 380,
    "src_dur": 12.272
   },
   {
    "id": "ruf",
    "kind": "shot",
    "label": null,
-   "start": 128.813,
-   "dur": 7.592,
-   "frames": 228,
-   "map": [
-    [
-     0.0,
-     0.0
-    ],
-    [
-     7.592,
-     7.592
-    ]
-   ],
-   "rerender": true,
-   "src_frames": 228,
-   "src_dur": 7.592
-  },
-  {
-   "id": "treffen",
-   "kind": "shot",
-   "label": null,
-   "start": 136.405,
-   "dur": 8.487,
+   "start": 134.416,
+   "dur": 8.096,
    "frames": 255,
    "map": [
     [
@@ -336,42 +316,63 @@
      0.0
     ],
     [
-     8.487,
-     8.487
+     8.096,
+     8.096
     ]
    ],
    "rerender": true,
    "src_frames": 255,
-   "src_dur": 8.487
+   "src_dur": 8.096
   },
   {
-   "id": "rueckweg",
+   "id": "treffen",
    "kind": "shot",
    "label": null,
-   "start": 144.892,
-   "dur": 5.747,
-   "frames": 172,
+   "start": 142.512,
+   "dur": 8.92,
+   "frames": 280,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     5.747,
-     5.747
+     8.92,
+     8.92
     ]
    ],
    "rerender": true,
-   "src_frames": 172,
-   "src_dur": 5.747
+   "src_frames": 280,
+   "src_dur": 8.92
+  },
+  {
+   "id": "rueckweg",
+   "kind": "shot",
+   "label": null,
+   "start": 151.432,
+   "dur": 6.388,
+   "frames": 204,
+   "map": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     6.388,
+     6.388
+    ]
+   ],
+   "rerender": true,
+   "src_frames": 204,
+   "src_dur": 6.388
   },
   {
    "id": "abend",
    "kind": "shot",
    "label": null,
-   "start": 150.639,
+   "start": 157.82,
    "dur": 10.007,
-   "frames": 300,
+   "frames": 312,
    "map": [
     [
      0.0,
@@ -383,35 +384,35 @@
     ]
    ],
    "rerender": true,
-   "src_frames": 300,
+   "src_frames": 312,
    "src_dur": 10.007
   },
   {
    "id": "medina",
    "kind": "shot",
    "label": "MEDINA",
-   "start": 160.646,
-   "dur": 8.351,
-   "frames": 251,
+   "start": 167.827,
+   "dur": 7.841,
+   "frames": 247,
    "map": [
     [
      0.0,
      0.0
     ],
     [
-     8.351,
-     8.351
+     7.841,
+     7.841
     ]
    ],
    "rerender": true,
-   "src_frames": 251,
-   "src_dur": 8.351
+   "src_frames": 247,
+   "src_dur": 7.841
   },
   {
    "id": "logo",
    "kind": "card",
    "text": "QISSAH",
-   "start": 168.997,
+   "start": 175.668,
    "dur": 2.8
   },
   {
@@ -419,7 +420,7 @@
    "kind": "shot",
    "hidden": true,
    "label": null,
-   "start": 171.797,
+   "start": 178.468,
    "dur": 8.0,
    "frames": 240,
    "map": [
@@ -441,7 +442,7 @@
   {
    "id": "h1",
    "shot": "hook_a",
-   "start": 0.3,
+   "start": 0.2,
    "dur": 6.528,
    "file": "qissa_hijra/line-0-0.wav",
    "text": "*Hundert* Kamele ... für jeden der beiden. Tot oder lebendig.",
@@ -449,43 +450,43 @@
    "words": [
     {
      "word": "*Hundert*",
-     "start": 0.336
+     "start": 0.14
     },
     {
      "word": "Kamele",
-     "start": 0.68
+     "start": 0.82
     },
     {
      "word": "...",
-     "start": 2.099
+     "start": 1.48
     },
     {
      "word": "für",
-     "start": 2.099
+     "start": 2.14
     },
     {
      "word": "jeden",
-     "start": 2.099
+     "start": 2.54
     },
     {
      "word": "der",
-     "start": 2.98
+     "start": 3.1
     },
     {
      "word": "beiden.",
-     "start": 3.24
+     "start": 3.3
     },
     {
      "word": "Tot",
-     "start": 3.88
+     "start": 4.44
     },
     {
      "word": "oder",
-     "start": 4.421
+     "start": 5.4
     },
     {
      "word": "lebendig.",
-     "start": 4.924
+     "start": 5.62
     }
    ],
    "tail": 0
@@ -493,7 +494,7 @@
   {
    "id": "h2",
    "shot": "hook_b",
-   "start": 6.828,
+   "start": 6.728,
    "dur": 2.597,
    "file": "qissa_hijra/line-0-1.wav",
    "text": "Ein *Reiter* nimmt die Spur auf.",
@@ -501,27 +502,27 @@
    "words": [
     {
      "word": "Ein",
-     "start": 0.32
+     "start": 0.34
     },
     {
      "word": "*Reiter*",
-     "start": 0.32
+     "start": 0.58
     },
     {
      "word": "nimmt",
-     "start": 0.963
+     "start": 1.26
     },
     {
      "word": "die",
-     "start": 1.227
+     "start": 1.44
     },
     {
      "word": "Spur",
-     "start": 1.227
+     "start": 1.6
     },
     {
      "word": "auf.",
-     "start": 1.227
+     "start": 2.02
     }
    ],
    "tail": 0
@@ -529,7 +530,7 @@
   {
    "id": "h3",
    "shot": "hook_c",
-   "start": 9.425,
+   "start": 9.325,
    "dur": 4.548,
    "file": "qissa_hijra/line-0-2.wav",
    "text": "Und was er in der Wüste erlebt ... verändert ihn für *immer*.",
@@ -537,51 +538,51 @@
    "words": [
     {
      "word": "Und",
-     "start": 0.32
+     "start": 0.36
     },
     {
      "word": "was",
-     "start": 0.32
+     "start": 0.56
     },
     {
      "word": "er",
-     "start": 0.32
+     "start": 0.8
     },
     {
      "word": "in",
-     "start": 0.32
+     "start": 0.96
     },
     {
      "word": "der",
-     "start": 0.32
+     "start": 1.06
     },
     {
      "word": "Wüste",
-     "start": 0.887
+     "start": 1.24
     },
     {
      "word": "erlebt",
-     "start": 1.14
+     "start": 1.68
     },
     {
      "word": "...",
-     "start": 1.644
+     "start": 2.31
     },
     {
      "word": "verändert",
-     "start": 2.28
+     "start": 2.94
     },
     {
      "word": "ihn",
-     "start": 3.44
+     "start": 3.58
     },
     {
      "word": "für",
-     "start": 3.76
+     "start": 3.86
     },
     {
      "word": "*immer*.",
-     "start": 4.04
+     "start": 4.12
     }
    ],
    "tail": 0
@@ -589,7 +590,7 @@
   {
    "id": "m1",
    "shot": "mekka",
-   "start": 13.973,
+   "start": 13.873,
    "dur": 8.195,
    "file": "qissa_hijra/line-0-3.wav",
    "text": "Mekka. Die Quraisch schmieden einen *Plan*: den Propheten, Friede sei mit ihm, festhalten, töten oder vertreiben.",
@@ -597,67 +598,67 @@
    "words": [
     {
      "word": "Mekka.",
-     "start": 0.144
+     "start": 0.0
     },
     {
      "word": "Die",
-     "start": 0.249
+     "start": 0.24
     },
     {
      "word": "Quraisch",
-     "start": 0.249
+     "start": 0.5
     },
     {
      "word": "schmieden",
-     "start": 0.249
+     "start": 1.08
     },
     {
      "word": "einen",
-     "start": 1.413
+     "start": 1.58
     },
     {
      "word": "*Plan*:",
-     "start": 1.776
+     "start": 1.9
     },
     {
      "word": "den",
-     "start": 2.898
+     "start": 3.16
     },
     {
      "word": "Propheten,",
-     "start": 2.898
+     "start": 3.34
     },
     {
      "word": "Friede",
-     "start": 3.88
+     "start": 3.98
     },
     {
      "word": "sei",
-     "start": 4.38
+     "start": 4.32
     },
     {
      "word": "mit",
-     "start": 4.38
+     "start": 4.48
     },
     {
      "word": "ihm,",
-     "start": 4.6
+     "start": 4.7
     },
     {
      "word": "festhalten,",
-     "start": 4.88
+     "start": 4.94
     },
     {
      "word": "töten",
-     "start": 6.133
+     "start": 6.2
     },
     {
      "word": "oder",
-     "start": 6.6
+     "start": 7.12
     },
     {
      "word": "vertreiben.",
-     "start": 6.992
+     "start": 7.34
     }
    ],
    "tail": 0
@@ -665,7 +666,7 @@
   {
    "id": "m2",
    "shot": "haus",
-   "start": 22.168,
+   "start": 22.068,
    "dur": 2.853,
    "file": "qissa_hijra/line-0-4.wav",
    "text": "In der Mittagshitze kommt er zu *Abu Bakr*:",
@@ -673,35 +674,35 @@
    "words": [
     {
      "word": "In",
-     "start": 0.284
+     "start": 0.34
     },
     {
      "word": "der",
-     "start": 0.284
+     "start": 0.44
     },
     {
      "word": "Mittagshitze",
-     "start": 0.32
+     "start": 0.58
     },
     {
      "word": "kommt",
-     "start": 1.231
+     "start": 1.32
     },
     {
      "word": "er",
-     "start": 1.484
+     "start": 1.58
     },
     {
      "word": "zu",
-     "start": 1.671
+     "start": 1.78
     },
     {
      "word": "*Abu",
-     "start": 1.911
+     "start": 2.04
     },
     {
      "word": "Bakr*:",
-     "start": 2.231
+     "start": 2.3
     }
    ],
    "tail": 0
@@ -709,27 +710,27 @@
   {
    "id": "q1",
    "shot": "haus",
-   "start": 25.321,
-   "dur": 1.786,
+   "start": 25.121,
+   "dur": 2.72,
    "file": "qissa_hijra/line-2-0.wav",
    "text": "Mir wurde *erlaubt*, auszuwandern.",
    "speaker": "Zitat",
    "words": [
     {
      "word": "Mir",
-     "start": 0.05
+     "start": 0.18
     },
     {
      "word": "wurde",
-     "start": 0.28
+     "start": 0.44
     },
     {
      "word": "*erlaubt*,",
-     "start": 0.6
+     "start": 0.72
     },
     {
      "word": "auszuwandern.",
-     "start": 1.02
+     "start": 1.84
     }
    ],
    "tail": 2.4,
@@ -739,27 +740,27 @@
   {
    "id": "q2",
    "shot": "haus",
-   "start": 27.507,
-   "dur": 1.303,
+   "start": 28.101,
+   "dur": 1.68,
    "file": "qissa_hijra/line-1-0.wav",
    "text": "Darf ich dich *begleiten*?",
    "speaker": "AbuBakr",
    "words": [
     {
      "word": "Darf",
-     "start": 0.05
+     "start": 0.32
     },
     {
      "word": "ich",
-     "start": 0.29
+     "start": 0.62
     },
     {
      "word": "dich",
-     "start": 0.49
+     "start": 0.78
     },
     {
      "word": "*begleiten*?",
-     "start": 0.74
+     "start": 1.0
     }
    ],
    "tail": 2.4,
@@ -769,15 +770,15 @@
   {
    "id": "q3",
    "shot": "haus",
-   "start": 29.11,
-   "dur": 0.438,
+   "start": 29.981,
+   "dur": 1.139,
    "file": "qissa_hijra/line-2-1.wav",
    "text": "*Ja*.",
    "speaker": "Zitat",
    "words": [
     {
      "word": "*Ja*.",
-     "start": 0.05
+     "start": 0.26
     }
    ],
    "tail": 2.4,
@@ -787,83 +788,83 @@
   {
    "id": "m3",
    "shot": "auszug",
-   "start": 30.048,
+   "start": 31.48,
    "dur": 9.398,
    "file": "qissa_hijra/line-0-5.wav",
-   "text": "Nachts verlassen sie Mekka. Doch nicht Richtung Medina ... sondern nach *Süden*. In eine *Höhle* im Berg Thaur.",
+   "text": "Nachts verlassen sie Mekka. Doch nicht Richtung al-Madina ... sondern nach *Süden*. In eine *Höhle* im Berg Thaur.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Nachts",
-     "start": 0.201
+     "start": 0.24
     },
     {
      "word": "verlassen",
-     "start": 0.76
+     "start": 1.08
     },
     {
      "word": "sie",
-     "start": 1.6
+     "start": 1.52
     },
     {
      "word": "Mekka.",
-     "start": 1.6
+     "start": 1.66
     },
     {
      "word": "Doch",
-     "start": 2.542
+     "start": 2.84
     },
     {
      "word": "nicht",
-     "start": 2.542
+     "start": 3.04
     },
     {
      "word": "Richtung",
-     "start": 3.253
+     "start": 3.34
     },
     {
-     "word": "Medina",
-     "start": 4.7
+     "word": "al-Madina",
+     "start": 3.88
     },
     {
      "word": "...",
-     "start": 5.215
+     "start": 4.019
     },
     {
      "word": "sondern",
-     "start": 5.215
+     "start": 5.28
     },
     {
      "word": "nach",
-     "start": 5.737
+     "start": 5.6
     },
     {
      "word": "*Süden*.",
-     "start": 6.43
+     "start": 5.86
     },
     {
      "word": "In",
-     "start": 6.857
+     "start": 6.86
     },
     {
      "word": "eine",
-     "start": 6.857
+     "start": 7.0
     },
     {
      "word": "*Höhle*",
-     "start": 6.857
+     "start": 7.26
     },
     {
      "word": "im",
-     "start": 7.886
+     "start": 7.8
     },
     {
      "word": "Berg",
-     "start": 7.886
+     "start": 7.98
     },
     {
      "word": "Thaur.",
-     "start": 8.43
+     "start": 8.62
     }
    ],
    "tail": 0
@@ -871,35 +872,35 @@
   {
    "id": "c1",
    "shot": "hoehle",
-   "start": 39.446,
-   "dur": 2.658,
+   "start": 40.878,
+   "dur": 2.419,
    "file": "qissa_hijra/line-0-6.wav",
    "text": "Drei Nächte verstecken sie sich *dort*.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Drei",
-     "start": 0.074
+     "start": 0.12
     },
     {
      "word": "Nächte",
-     "start": 0.074
+     "start": 0.5
     },
     {
      "word": "verstecken",
-     "start": 0.86
+     "start": 0.98
     },
     {
      "word": "sie",
-     "start": 1.792
+     "start": 1.52
     },
     {
      "word": "sich",
-     "start": 1.792
+     "start": 1.68
     },
     {
      "word": "*dort*.",
-     "start": 1.984
+     "start": 1.86
     }
    ],
    "tail": 0
@@ -907,51 +908,51 @@
   {
    "id": "c2",
    "shot": "versteck",
-   "start": 42.104,
-   "dur": 5.824,
+   "start": 43.297,
+   "dur": 5.377,
    "file": "qissa_hijra/line-0-7.wav",
    "text": "Dann ... *Schritte*. Die Verfolger stehen direkt vor der Höhle.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Dann",
-     "start": 0.32
+     "start": 0.34
     },
     {
      "word": "...",
-     "start": 0.32
+     "start": 0.86
     },
     {
      "word": "*Schritte*.",
-     "start": 0.76
+     "start": 1.38
     },
     {
      "word": "Die",
-     "start": 2.02
+     "start": 2.86
     },
     {
      "word": "Verfolger",
-     "start": 2.377
+     "start": 3.0
     },
     {
      "word": "stehen",
-     "start": 3.317
+     "start": 3.56
     },
     {
      "word": "direkt",
-     "start": 3.751
+     "start": 3.92
     },
     {
      "word": "vor",
-     "start": 4.5
+     "start": 4.44
     },
     {
      "word": "der",
-     "start": 4.5
+     "start": 4.66
     },
     {
      "word": "Höhle.",
-     "start": 4.673
+     "start": 4.86
     }
    ],
    "tail": 0
@@ -959,23 +960,23 @@
   {
    "id": "c3",
    "shot": "versteck",
-   "start": 47.928,
-   "dur": 1.599,
+   "start": 48.674,
+   "dur": 2.056,
    "file": "qissa_hijra/line-0-8.wav",
    "text": "Abu Bakr *flüstert*:",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Abu",
-     "start": 0.089
+     "start": 0.6
     },
     {
      "word": "Bakr",
-     "start": 0.089
+     "start": 0.94
     },
     {
      "word": "*flüstert*:",
-     "start": 0.089
+     "start": 1.28
     }
    ],
    "tail": 0
@@ -983,59 +984,59 @@
   {
    "id": "q4",
    "shot": "versteck",
-   "start": 49.727,
-   "dur": 4.527,
+   "start": 50.93,
+   "dur": 5.12,
    "file": "qissa_hijra/line-1-1.wav",
    "text": "Wenn einer von ihnen auf seine *Füße* schaut ... sieht er uns.",
    "speaker": "AbuBakr",
    "words": [
     {
      "word": "Wenn",
-     "start": 0.05
+     "start": 0.16
     },
     {
      "word": "einer",
-     "start": 0.34
+     "start": 0.5
     },
     {
      "word": "von",
-     "start": 0.69
+     "start": 0.96
     },
     {
      "word": "ihnen",
-     "start": 0.94
+     "start": 1.26
     },
     {
      "word": "auf",
-     "start": 1.29
+     "start": 1.64
     },
     {
      "word": "seine",
-     "start": 1.53
+     "start": 1.84
     },
     {
      "word": "*Füße*",
-     "start": 1.88
+     "start": 2.14
     },
     {
      "word": "schaut",
-     "start": 2.18
+     "start": 2.6
     },
     {
      "word": "...",
-     "start": 2.58
+     "start": 3.44
     },
     {
      "word": "sieht",
-     "start": 3.52
+     "start": 4.28
     },
     {
      "word": "er",
-     "start": 3.9
+     "start": 4.52
     },
     {
      "word": "uns.",
-     "start": 4.13
+     "start": 4.74
     }
    ],
    "tail": 2.4,
@@ -1045,7 +1046,7 @@
   {
    "id": "c4",
    "shot": "versteck",
-   "start": 54.654,
+   "start": 56.31,
    "dur": 4.081,
    "file": "qissa_hijra/line-0-9.wav",
    "text": "Der Prophet, Friede sei mit ihm, sagt *ruhig*:",
@@ -1053,35 +1054,35 @@
    "words": [
     {
      "word": "Der",
-     "start": 0.073
+     "start": 0.1
     },
     {
      "word": "Prophet,",
-     "start": 0.073
+     "start": 0.26
     },
     {
      "word": "Friede",
-     "start": 1.267
+     "start": 1.36
     },
     {
      "word": "sei",
-     "start": 1.96
+     "start": 1.84
     },
     {
      "word": "mit",
-     "start": 2.16
+     "start": 2.04
     },
     {
      "word": "ihm,",
-     "start": 2.16
+     "start": 2.32
     },
     {
      "word": "sagt",
-     "start": 2.984
+     "start": 3.04
     },
     {
      "word": "*ruhig*:",
-     "start": 2.984
+     "start": 3.38
     }
    ],
    "tail": 0
@@ -1089,51 +1090,51 @@
   {
    "id": "q5",
    "shot": "versteck",
-   "start": 58.935,
-   "dur": 3.26,
+   "start": 60.591,
+   "dur": 4.32,
    "file": "qissa_hijra/line-2-2.wav",
    "text": "Was denkst du von *zweien* ... deren Dritter *Allah* ist?",
    "speaker": "Zitat",
    "words": [
     {
      "word": "Was",
-     "start": 0.05
+     "start": 0.16
     },
     {
      "word": "denkst",
-     "start": 0.3
+     "start": 0.32
     },
     {
      "word": "du",
-     "start": 0.71
+     "start": 0.56
     },
     {
      "word": "von",
-     "start": 0.92
+     "start": 0.72
     },
     {
      "word": "*zweien*",
-     "start": 1.18
+     "start": 0.98
     },
     {
      "word": "...",
-     "start": 1.59
+     "start": 1.78
     },
     {
      "word": "deren",
-     "start": 1.69
+     "start": 2.58
     },
     {
      "word": "Dritter",
-     "start": 2.05
+     "start": 2.88
     },
     {
      "word": "*Allah*",
-     "start": 2.52
+     "start": 3.56
     },
     {
      "word": "ist?",
-     "start": 2.88
+     "start": 4.059
     }
    ],
    "tail": 2.4,
@@ -1143,7 +1144,7 @@
   {
    "id": "c5",
    "shot": "netz",
-   "start": 62.695,
+   "start": 65.271,
    "dur": 4.56,
    "file": "qissa_hijra/line-0-10.wav",
    "text": "Draußen sehen die Verfolger ein *Spinnennetz* über dem Eingang.",
@@ -1151,39 +1152,39 @@
    "words": [
     {
      "word": "Draußen",
-     "start": 0.216
+     "start": 0.1
     },
     {
      "word": "sehen",
-     "start": 0.6
+     "start": 0.7
     },
     {
      "word": "die",
-     "start": 0.84
+     "start": 0.94
     },
     {
      "word": "Verfolger",
-     "start": 1.02
+     "start": 1.08
     },
     {
      "word": "ein",
-     "start": 1.78
+     "start": 2.42
     },
     {
      "word": "*Spinnennetz*",
-     "start": 2.36
+     "start": 2.7
     },
     {
      "word": "über",
-     "start": 3.504
+     "start": 3.74
     },
     {
      "word": "dem",
-     "start": 3.724
+     "start": 3.94
     },
     {
      "word": "Eingang.",
-     "start": 3.724
+     "start": 4.18
     }
    ],
    "tail": 0
@@ -1191,47 +1192,47 @@
   {
    "id": "v1",
    "shot": "netz",
-   "start": 67.455,
-   "dur": 2.858,
-   "file": "qissa_hijra/line-3-0.wav",
+   "start": 70.031,
+   "dur": 3.28,
+   "file": "qissa_hijra/line-5-0.wav",
    "text": "Wäre er hier drin ... gäbe es kein *Netz*.",
    "speaker": "Verfolger",
    "words": [
     {
      "word": "Wäre",
-     "start": 0.05
+     "start": 0.2
     },
     {
      "word": "er",
-     "start": 0.36
+     "start": 0.62
     },
     {
      "word": "hier",
-     "start": 0.57
+     "start": 0.86
     },
     {
      "word": "drin",
-     "start": 0.89
+     "start": 1.12
     },
     {
      "word": "...",
-     "start": 1.21
+     "start": 1.6
     },
     {
      "word": "gäbe",
-     "start": 1.55
+     "start": 2.08
     },
     {
      "word": "es",
-     "start": 1.87
+     "start": 2.44
     },
     {
      "word": "kein",
-     "start": 2.09
+     "start": 2.66
     },
     {
      "word": "*Netz*.",
-     "start": 2.41
+     "start": 2.92
     }
    ],
    "tail": 0,
@@ -1240,7 +1241,7 @@
   {
    "id": "c6",
    "shot": "netz",
-   "start": 70.513,
+   "start": 73.511,
    "dur": 2.548,
    "file": "qissa_hijra/line-0-11.wav",
    "text": "Die Schritte ... *entfernen* sich.",
@@ -1248,23 +1249,23 @@
    "words": [
     {
      "word": "Die",
-     "start": 0.068
+     "start": 0.1
     },
     {
      "word": "Schritte",
-     "start": 0.068
+     "start": 0.26
     },
     {
      "word": "...",
-     "start": 0.84
+     "start": 0.86
     },
     {
      "word": "*entfernen*",
-     "start": 0.84
+     "start": 1.46
     },
     {
      "word": "sich.",
-     "start": 2.08
+     "start": 2.16
     }
    ],
    "tail": 0
@@ -1272,7 +1273,7 @@
   {
    "id": "s1",
    "shot": "kueste",
-   "start": 73.061,
+   "start": 76.059,
    "dur": 2.896,
    "file": "qissa_hijra/line-0-12.wav",
    "text": "Dann reiten sie los, die *Küste* entlang.",
@@ -1280,31 +1281,31 @@
    "words": [
     {
      "word": "Dann",
-     "start": 0.272
+     "start": 0.12
     },
     {
      "word": "reiten",
-     "start": 0.272
+     "start": 0.5
     },
     {
      "word": "sie",
-     "start": 0.84
+     "start": 0.94
     },
     {
      "word": "los,",
-     "start": 1.06
+     "start": 1.12
     },
     {
      "word": "die",
-     "start": 1.62
+     "start": 1.7
     },
     {
      "word": "*Küste*",
-     "start": 1.62
+     "start": 1.84
     },
     {
      "word": "entlang.",
-     "start": 2.14
+     "start": 2.2
     }
    ],
    "tail": 0
@@ -1312,7 +1313,7 @@
   {
    "id": "s2",
    "shot": "stamm",
-   "start": 75.957,
+   "start": 78.955,
    "dur": 4.345,
    "file": "qissa_hijra/line-0-13.wav",
    "text": "Suraqa sitzt bei seinem *Stamm*, als ein Mann hereinkommt:",
@@ -1320,39 +1321,39 @@
    "words": [
     {
      "word": "Suraqa",
-     "start": 0.32
+     "start": 0.36
     },
     {
      "word": "sitzt",
-     "start": 0.851
+     "start": 1.0
     },
     {
      "word": "bei",
-     "start": 1.211
+     "start": 1.3
     },
     {
      "word": "seinem",
-     "start": 1.211
+     "start": 1.46
     },
     {
      "word": "*Stamm*,",
-     "start": 1.651
+     "start": 1.76
     },
     {
      "word": "als",
-     "start": 2.609
+     "start": 2.64
     },
     {
      "word": "ein",
-     "start": 2.609
+     "start": 2.86
     },
     {
      "word": "Mann",
-     "start": 2.609
+     "start": 3.08
     },
     {
      "word": "hereinkommt:",
-     "start": 2.609
+     "start": 3.34
     }
    ],
    "tail": 0
@@ -1360,59 +1361,59 @@
   {
    "id": "v2",
    "shot": "stamm",
-   "start": 80.452,
-   "dur": 2.7,
-   "file": "qissa_hijra/line-3-1.wav",
+   "start": 83.45,
+   "dur": 5.44,
+   "file": "qissa_hijra/line-4-0.wav",
    "text": "Ich habe Gestalten an der Küste gesehen. Ich glaube, das sind *sie*!",
    "speaker": "Stammesmann",
    "words": [
     {
      "word": "Ich",
-     "start": 0.05
+     "start": 0.16
     },
     {
      "word": "habe",
-     "start": 0.19
-    },
-    {
-     "word": "Gestalten",
      "start": 0.36
     },
     {
+     "word": "Gestalten",
+     "start": 1.26
+    },
+    {
      "word": "an",
-     "start": 0.68
+     "start": 1.9
     },
     {
      "word": "der",
-     "start": 0.79
+     "start": 2.0
     },
     {
      "word": "Küste",
-     "start": 0.94
+     "start": 2.16
     },
     {
      "word": "gesehen.",
-     "start": 1.14
+     "start": 2.54
     },
     {
      "word": "Ich",
-     "start": 1.74
+     "start": 3.64
     },
     {
      "word": "glaube,",
-     "start": 1.88
+     "start": 3.82
     },
     {
      "word": "das",
-     "start": 2.11
+     "start": 4.56
     },
     {
      "word": "sind",
-     "start": 2.26
+     "start": 4.8
     },
     {
      "word": "*sie*!",
-     "start": 2.43
+     "start": 5.12
     }
    ],
    "tail": 0,
@@ -1421,7 +1422,7 @@
   {
    "id": "s3",
    "shot": "stamm",
-   "start": 83.402,
+   "start": 89.05,
    "dur": 1.554,
    "file": "qissa_hijra/line-0-14.wav",
    "text": "Suraqa *winkt* ab:",
@@ -1429,15 +1430,15 @@
    "words": [
     {
      "word": "Suraqa",
-     "start": 0.15
+     "start": 0.18
     },
     {
      "word": "*winkt*",
-     "start": 0.624
+     "start": 0.74
     },
     {
      "word": "ab:",
-     "start": 1.254
+     "start": 1.08
     }
    ],
    "tail": 0
@@ -1445,31 +1446,31 @@
   {
    "id": "v3",
    "shot": "stamm",
-   "start": 85.056,
-   "dur": 1.753,
-   "file": "qissa_hijra/line-1-2.wav",
+   "start": 90.704,
+   "dur": 1.808,
+   "file": "qissa_hijra/line-3-0.wav",
    "text": "Nein ... das sind *andere*.",
    "speaker": "Suraqa",
    "words": [
     {
      "word": "Nein",
-     "start": 0.05
+     "start": 0.12
     },
     {
      "word": "...",
-     "start": 0.4
+     "start": 0.61
     },
     {
      "word": "das",
-     "start": 0.52
+     "start": 1.1
     },
     {
      "word": "sind",
-     "start": 0.81
+     "start": 1.24
     },
     {
      "word": "*andere*.",
-     "start": 1.16
+     "start": 1.4
     }
    ],
    "tail": 0,
@@ -1478,7 +1479,7 @@
   {
    "id": "s4",
    "shot": "pferd",
-   "start": 87.209,
+   "start": 92.812,
    "dur": 4.947,
    "file": "qissa_hijra/line-0-15.wav",
    "text": "Doch heimlich holt er sein *Pferd*. Den *Speer* hält er tief.",
@@ -1486,47 +1487,47 @@
    "words": [
     {
      "word": "Doch",
-     "start": 0.153
+     "start": 0.16
     },
     {
      "word": "heimlich",
-     "start": 0.153
+     "start": 0.42
     },
     {
      "word": "holt",
-     "start": 1.08
+     "start": 1.3
     },
     {
      "word": "er",
-     "start": 1.247
+     "start": 1.68
     },
     {
      "word": "sein",
-     "start": 1.744
+     "start": 1.9
     },
     {
      "word": "*Pferd*.",
-     "start": 2.08
+     "start": 2.2
     },
     {
      "word": "Den",
-     "start": 3.061
+     "start": 3.38
     },
     {
      "word": "*Speer*",
-     "start": 3.52
+     "start": 3.64
     },
     {
      "word": "hält",
-     "start": 4.213
+     "start": 4.1
     },
     {
      "word": "er",
-     "start": 4.4
+     "start": 4.34
     },
     {
      "word": "tief.",
-     "start": 4.4
+     "start": 4.52
     }
    ],
    "tail": 0
@@ -1534,23 +1535,23 @@
   {
    "id": "s5",
    "shot": "pferd",
-   "start": 92.156,
-   "dur": 2.659,
+   "start": 97.759,
+   "dur": 2.03,
    "file": "qissa_hijra/line-0-16.wav",
    "text": "Er *galoppiert* los.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Er",
-     "start": 0.601
+     "start": 0.44
     },
     {
      "word": "*galoppiert*",
-     "start": 0.63
+     "start": 0.62
     },
     {
      "word": "los.",
-     "start": 1.134
+     "start": 1.16
     }
    ],
    "tail": 0
@@ -1558,63 +1559,63 @@
   {
    "id": "s6",
    "shot": "ritt",
-   "start": 94.815,
-   "dur": 4.683,
+   "start": 99.789,
+   "dur": 5.312,
    "file": "qissa_hijra/line-0-17.wav",
    "text": "Er kommt näher ... da *stolpert* das Pferd. Suraqa stürzt in den Sand.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Er",
-     "start": 0.0
+     "start": 0.04
     },
     {
      "word": "kommt",
-     "start": 0.0
+     "start": 0.34
     },
     {
      "word": "näher",
-     "start": 0.0
+     "start": 0.84
     },
     {
      "word": "...",
-     "start": 0.655
+     "start": 1.38
     },
     {
      "word": "da",
-     "start": 1.278
+     "start": 1.92
     },
     {
      "word": "*stolpert*",
-     "start": 1.278
+     "start": 2.12
     },
     {
      "word": "das",
-     "start": 1.775
+     "start": 2.5
     },
     {
      "word": "Pferd.",
-     "start": 1.975
+     "start": 2.7
     },
     {
      "word": "Suraqa",
-     "start": 2.643
+     "start": 3.58
     },
     {
      "word": "stürzt",
-     "start": 3.495
+     "start": 4.12
     },
     {
      "word": "in",
-     "start": 4.015
+     "start": 4.62
     },
     {
      "word": "den",
-     "start": 4.015
+     "start": 4.72
     },
     {
      "word": "Sand.",
-     "start": 4.183
+     "start": 4.9
     }
    ],
    "tail": 0
@@ -1622,7 +1623,7 @@
   {
    "id": "s7",
    "shot": "lose",
-   "start": 99.498,
+   "start": 105.101,
    "dur": 8.633,
    "file": "qissa_hijra/line-0-18.wav",
    "text": "Er zieht seine *Lospfeile*: Soll ich ihnen schaden? Die Antwort: *Nein*. Er reitet trotzdem weiter.",
@@ -1630,63 +1631,63 @@
    "words": [
     {
      "word": "Er",
-     "start": 0.2
+     "start": 0.18
     },
     {
      "word": "zieht",
-     "start": 0.2
+     "start": 0.44
     },
     {
      "word": "seine",
-     "start": 0.3
+     "start": 0.78
     },
     {
      "word": "*Lospfeile*:",
-     "start": 0.627
+     "start": 1.1
     },
     {
      "word": "Soll",
-     "start": 2.6
+     "start": 2.66
     },
     {
      "word": "ich",
-     "start": 2.6
+     "start": 2.86
     },
     {
      "word": "ihnen",
-     "start": 2.6
+     "start": 3.08
     },
     {
      "word": "schaden?",
-     "start": 3.32
+     "start": 3.42
     },
     {
      "word": "Die",
-     "start": 4.568
+     "start": 4.58
     },
     {
      "word": "Antwort:",
-     "start": 4.607
+     "start": 4.74
     },
     {
      "word": "*Nein*.",
-     "start": 5.487
+     "start": 5.84
     },
     {
      "word": "Er",
-     "start": 6.789
+     "start": 6.82
     },
     {
      "word": "reitet",
-     "start": 6.789
+     "start": 6.98
     },
     {
      "word": "trotzdem",
-     "start": 6.827
+     "start": 7.4
     },
     {
      "word": "weiter.",
-     "start": 7.897
+     "start": 7.98
     }
    ],
    "tail": 0
@@ -1694,7 +1695,7 @@
   {
    "id": "s8",
    "shot": "nah",
-   "start": 108.131,
+   "start": 113.734,
    "dur": 8.41,
    "file": "qissa_hijra/line-0-19.wav",
    "text": "So nah, dass er den Propheten, Friede sei mit ihm, *Koran* lesen hört. Ruhig. Ohne sich *umzudrehen*.",
@@ -1702,71 +1703,71 @@
    "words": [
     {
      "word": "So",
-     "start": 0.32
+     "start": 0.4
     },
     {
      "word": "nah,",
-     "start": 0.32
+     "start": 0.66
     },
     {
      "word": "dass",
-     "start": 0.32
+     "start": 1.08
     },
     {
      "word": "er",
-     "start": 0.868
+     "start": 1.26
     },
     {
      "word": "den",
-     "start": 1.151
+     "start": 1.36
     },
     {
      "word": "Propheten,",
-     "start": 1.151
+     "start": 1.54
     },
     {
      "word": "Friede",
-     "start": 2.257
+     "start": 2.56
     },
     {
      "word": "sei",
-     "start": 2.874
+     "start": 2.9
     },
     {
      "word": "mit",
-     "start": 3.004
+     "start": 3.08
     },
     {
      "word": "ihm,",
-     "start": 3.204
+     "start": 3.34
     },
     {
      "word": "*Koran*",
-     "start": 3.794
+     "start": 3.84
     },
     {
      "word": "lesen",
-     "start": 4.311
+     "start": 4.44
     },
     {
      "word": "hört.",
-     "start": 4.724
+     "start": 4.82
     },
     {
      "word": "Ruhig.",
-     "start": 5.344
+     "start": 5.86
     },
     {
      "word": "Ohne",
-     "start": 6.614
+     "start": 7.06
     },
     {
      "word": "sich",
-     "start": 6.994
+     "start": 7.38
     },
     {
      "word": "*umzudrehen*.",
-     "start": 7.029
+     "start": 7.66
     }
    ],
    "tail": 0
@@ -1774,7 +1775,7 @@
   {
    "id": "s9",
    "shot": "versinken",
-   "start": 116.541,
+   "start": 122.144,
    "dur": 5.084,
    "file": "qissa_hijra/line-0-20.wav",
    "text": "Da *versinken* die Vorderbeine des Pferdes im Boden. Bis zu den *Knien*.",
@@ -1782,51 +1783,51 @@
    "words": [
     {
      "word": "Da",
-     "start": 0.149
+     "start": 0.18
     },
     {
      "word": "*versinken*",
-     "start": 0.149
+     "start": 0.36
     },
     {
      "word": "die",
-     "start": 0.82
+     "start": 0.92
     },
     {
      "word": "Vorderbeine",
-     "start": 0.96
+     "start": 1.1
     },
     {
      "word": "des",
-     "start": 1.84
+     "start": 1.74
     },
     {
      "word": "Pferdes",
-     "start": 2.293
+     "start": 1.96
     },
     {
      "word": "im",
-     "start": 3.04
+     "start": 2.42
     },
     {
      "word": "Boden.",
-     "start": 3.04
+     "start": 2.6
     },
     {
      "word": "Bis",
-     "start": 3.563
+     "start": 3.54
     },
     {
      "word": "zu",
-     "start": 3.563
+     "start": 3.88
     },
     {
      "word": "den",
-     "start": 3.563
+     "start": 4.04
     },
     {
      "word": "*Knien*.",
-     "start": 4.225
+     "start": 4.34
     }
    ],
    "tail": 0
@@ -1834,7 +1835,7 @@
   {
    "id": "s10",
    "shot": "versinken",
-   "start": 121.625,
+   "start": 127.228,
    "dur": 7.188,
    "file": "qissa_hijra/line-0-21.wav",
    "text": "Suraqa fällt. Mühsam zieht das Pferd die Beine heraus ... und *Staub* steigt auf wie Rauch.",
@@ -1842,67 +1843,67 @@
    "words": [
     {
      "word": "Suraqa",
-     "start": 0.32
+     "start": 0.38
     },
     {
      "word": "fällt.",
-     "start": 0.873
+     "start": 0.96
     },
     {
      "word": "Mühsam",
-     "start": 1.483
+     "start": 1.94
     },
     {
      "word": "zieht",
-     "start": 2.413
+     "start": 2.52
     },
     {
      "word": "das",
-     "start": 2.653
+     "start": 2.7
     },
     {
      "word": "Pferd",
-     "start": 2.813
+     "start": 2.9
     },
     {
      "word": "die",
-     "start": 3.133
+     "start": 3.22
     },
     {
      "word": "Beine",
-     "start": 3.306
+     "start": 3.38
     },
     {
      "word": "heraus",
-     "start": 3.642
+     "start": 3.72
     },
     {
      "word": "...",
-     "start": 4.213
+     "start": 4.28
     },
     {
      "word": "und",
-     "start": 4.821
+     "start": 4.84
     },
     {
      "word": "*Staub*",
-     "start": 4.821
+     "start": 5.04
     },
     {
      "word": "steigt",
-     "start": 5.493
+     "start": 5.6
     },
     {
      "word": "auf",
-     "start": 6.253
+     "start": 6.08
     },
     {
      "word": "wie",
-     "start": 6.253
+     "start": 6.32
     },
     {
      "word": "Rauch.",
-     "start": 6.453
+     "start": 6.54
     }
    ],
    "tail": 0
@@ -1910,7 +1911,7 @@
   {
    "id": "s11",
    "shot": "ruf",
-   "start": 128.813,
+   "start": 134.416,
    "dur": 5.816,
    "file": "qissa_hijra/line-0-22.wav",
    "text": "Da begreift Suraqa: Dieser Mann wird *siegen*. Und er ruft:",
@@ -1918,43 +1919,43 @@
    "words": [
     {
      "word": "Da",
-     "start": 0.187
+     "start": 0.2
     },
     {
      "word": "begreift",
-     "start": 0.187
+     "start": 0.46
     },
     {
      "word": "Suraqa:",
-     "start": 0.96
+     "start": 1.04
     },
     {
      "word": "Dieser",
-     "start": 2.264
+     "start": 2.28
     },
     {
      "word": "Mann",
-     "start": 2.289
+     "start": 2.8
     },
     {
      "word": "wird",
-     "start": 3.16
+     "start": 3.58
     },
     {
      "word": "*siegen*.",
-     "start": 4.43
+     "start": 3.98
     },
     {
      "word": "Und",
-     "start": 5.005
+     "start": 4.98
     },
     {
      "word": "er",
-     "start": 5.005
+     "start": 5.14
     },
     {
      "word": "ruft:",
-     "start": 5.005
+     "start": 5.28
     }
    ],
    "tail": 0
@@ -1962,31 +1963,31 @@
   {
    "id": "v4",
    "shot": "ruf",
-   "start": 134.729,
-   "dur": 1.276,
-   "file": "qissa_hijra/line-1-3.wav",
+   "start": 140.332,
+   "dur": 1.92,
+   "file": "qissa_hijra/line-3-1.wav",
    "text": "Ihr seid *sicher* vor mir!",
    "speaker": "Suraqa",
    "words": [
     {
      "word": "Ihr",
-     "start": 0.05
+     "start": 0.12
     },
     {
      "word": "seid",
-     "start": 0.24
+     "start": 0.28
     },
     {
      "word": "*sicher*",
-     "start": 0.47
+     "start": 0.54
     },
     {
      "word": "vor",
-     "start": 0.77
+     "start": 0.96
     },
     {
      "word": "mir!",
-     "start": 0.96
+     "start": 1.18
     }
    ],
    "tail": 0,
@@ -1995,7 +1996,7 @@
   {
    "id": "w1",
    "shot": "treffen",
-   "start": 136.505,
+   "start": 142.612,
    "dur": 6.44,
    "file": "qissa_hijra/line-0-23.wav",
    "text": "Er erzählt ihnen alles über das *Kopfgeld*. Der Prophet, Friede sei mit ihm, bittet nur:",
@@ -2003,39 +2004,39 @@
    "words": [
     {
      "word": "Er",
-     "start": 0.071
+     "start": 0.1
     },
     {
      "word": "erzählt",
-     "start": 0.071
+     "start": 0.26
     },
     {
      "word": "ihnen",
-     "start": 0.68
+     "start": 0.78
     },
     {
      "word": "alles",
-     "start": 0.973
+     "start": 1.2
     },
     {
      "word": "über",
-     "start": 1.488
+     "start": 1.62
     },
     {
      "word": "das",
-     "start": 1.72
+     "start": 1.82
     },
     {
      "word": "*Kopfgeld*.",
-     "start": 1.92
+     "start": 2.06
     },
     {
      "word": "Der",
-     "start": 3.241
+     "start": 3.24
     },
     {
      "word": "Prophet,",
-     "start": 3.241
+     "start": 3.4
     },
     {
      "word": "Friede",
@@ -2043,23 +2044,23 @@
     },
     {
      "word": "sei",
-     "start": 4.58
+     "start": 4.48
     },
     {
      "word": "mit",
-     "start": 4.58
+     "start": 4.64
     },
     {
      "word": "ihm,",
-     "start": 4.76
+     "start": 4.86
     },
     {
      "word": "bittet",
-     "start": 5.18
+     "start": 5.38
     },
     {
      "word": "nur:",
-     "start": 6.152
+     "start": 5.72
     }
    ],
    "tail": 0
@@ -2067,27 +2068,27 @@
   {
    "id": "q6",
    "shot": "treffen",
-   "start": 143.245,
-   "dur": 1.247,
+   "start": 149.252,
+   "dur": 1.92,
    "file": "qissa_hijra/line-2-3.wav",
    "text": "Verrate nichts über *uns*.",
    "speaker": "Zitat",
    "words": [
     {
      "word": "Verrate",
-     "start": 0.05
+     "start": 0.12
     },
     {
      "word": "nichts",
-     "start": 0.39
+     "start": 0.68
     },
     {
      "word": "über",
-     "start": 0.7
+     "start": 1.16
     },
     {
      "word": "*uns*.",
-     "start": 0.93
+     "start": 1.46
     }
    ],
    "tail": 2.4,
@@ -2097,7 +2098,7 @@
   {
    "id": "w2",
    "shot": "rueckweg",
-   "start": 144.992,
+   "start": 151.532,
    "dur": 4.32,
    "file": "qissa_hijra/line-0-24.wav",
    "text": "Auf dem Rückweg trifft er andere *Verfolger*. Er schickt sie zurück:",
@@ -2105,47 +2106,47 @@
    "words": [
     {
      "word": "Auf",
-     "start": 0.14
+     "start": 0.16
     },
     {
      "word": "dem",
-     "start": 0.14
+     "start": 0.3
     },
     {
      "word": "Rückweg",
-     "start": 0.2
+     "start": 0.48
     },
     {
      "word": "trifft",
-     "start": 0.848
+     "start": 0.96
     },
     {
      "word": "er",
-     "start": 1.2
+     "start": 1.28
     },
     {
      "word": "andere",
-     "start": 1.2
+     "start": 1.5
     },
     {
      "word": "*Verfolger*.",
-     "start": 1.74
+     "start": 1.86
     },
     {
      "word": "Er",
-     "start": 2.942
+     "start": 3.26
     },
     {
      "word": "schickt",
-     "start": 2.942
+     "start": 3.46
     },
     {
      "word": "sie",
-     "start": 3.64
+     "start": 3.72
     },
     {
      "word": "zurück:",
-     "start": 3.817
+     "start": 3.9
     }
    ],
    "tail": 0
@@ -2153,23 +2154,23 @@
   {
    "id": "v5",
    "shot": "rueckweg",
-   "start": 149.412,
-   "dur": 0.927,
-   "file": "qissa_hijra/line-1-4.wav",
+   "start": 155.952,
+   "dur": 1.668,
+   "file": "qissa_hijra/line-3-2.wav",
    "text": "Hier ist *niemand*.",
    "speaker": "Suraqa",
    "words": [
     {
      "word": "Hier",
-     "start": 0.05
+     "start": 0.12
     },
     {
      "word": "ist",
-     "start": 0.27
+     "start": 0.38
     },
     {
      "word": "*niemand*.",
-     "start": 0.46
+     "start": 0.64
     }
    ],
    "tail": 0,
@@ -2178,7 +2179,7 @@
   {
    "id": "w3",
    "shot": "abend",
-   "start": 150.839,
+   "start": 158.02,
    "dur": 6.051,
    "file": "qissa_hijra/line-0-25.wav",
    "text": "Am Morgen war er ihr *Jäger*. Am Abend ... ihr *Beschützer*.",
@@ -2186,47 +2187,47 @@
    "words": [
     {
      "word": "Am",
-     "start": 0.142
+     "start": 0.1
     },
     {
      "word": "Morgen",
-     "start": 0.142
+     "start": 0.3
     },
     {
      "word": "war",
-     "start": 0.86
+     "start": 1.4
     },
     {
      "word": "er",
-     "start": 1.292
+     "start": 1.76
     },
     {
      "word": "ihr",
-     "start": 1.292
+     "start": 2.32
     },
     {
      "word": "*Jäger*.",
-     "start": 1.292
+     "start": 2.6
     },
     {
      "word": "Am",
-     "start": 2.268
+     "start": 3.66
     },
     {
      "word": "Abend",
-     "start": 3.28
+     "start": 3.92
     },
     {
      "word": "...",
-     "start": 3.629
+     "start": 4.48
     },
     {
      "word": "ihr",
-     "start": 3.629
+     "start": 5.04
     },
     {
      "word": "*Beschützer*.",
-     "start": 4.44
+     "start": 5.2
     }
    ],
    "tail": 0
@@ -2234,7 +2235,7 @@
   {
    "id": "w4",
    "shot": "abend",
-   "start": 156.89,
+   "start": 164.071,
    "dur": 3.756,
    "file": "qissa_hijra/line-0-26.wav",
    "text": "Jahre später wird Suraqa selbst *Muslim*.",
@@ -2242,27 +2243,27 @@
    "words": [
     {
      "word": "Jahre",
-     "start": 0.32
+     "start": 0.38
     },
     {
      "word": "später",
-     "start": 0.32
+     "start": 0.78
     },
     {
      "word": "wird",
-     "start": 1.228
+     "start": 1.7
     },
     {
      "word": "Suraqa",
-     "start": 1.636
+     "start": 1.96
     },
     {
      "word": "selbst",
-     "start": 1.662
+     "start": 2.58
     },
     {
      "word": "*Muslim*.",
-     "start": 3.005
+     "start": 3.06
     }
    ],
    "tail": 0
@@ -2270,71 +2271,71 @@
   {
    "id": "w5",
    "shot": "medina",
-   "start": 160.646,
+   "start": 167.827,
    "dur": 7.451,
    "file": "qissa_hijra/line-0-27.wav",
-   "text": "Tage später erreichen sie *Medina*. Mit dieser Reise beginnt die islamische *Zeitrechnung* ... bis heute.",
+   "text": "Tage später erreichen sie *al-Madina*. Mit dieser Reise beginnt die islamische *Zeitrechnung* ... bis heute.",
    "speaker": "Erzaehler",
    "words": [
     {
      "word": "Tage",
-     "start": 0.32
+     "start": 0.34
     },
     {
      "word": "später",
-     "start": 0.32
+     "start": 0.64
     },
     {
      "word": "erreichen",
-     "start": 0.32
+     "start": 1.1
     },
     {
      "word": "sie",
-     "start": 1.442
+     "start": 1.54
     },
     {
-     "word": "*Medina*.",
-     "start": 1.652
+     "word": "*al-Madina*.",
+     "start": 1.92
     },
     {
      "word": "Mit",
-     "start": 2.542
+     "start": 3.04
     },
     {
      "word": "dieser",
-     "start": 3.022
+     "start": 3.2
     },
     {
      "word": "Reise",
-     "start": 3.037
+     "start": 3.6
     },
     {
      "word": "beginnt",
-     "start": 3.512
+     "start": 4.0
     },
     {
      "word": "die",
-     "start": 3.885
+     "start": 4.36
     },
     {
      "word": "islamische",
-     "start": 4.272
+     "start": 4.56
     },
     {
      "word": "*Zeitrechnung*",
-     "start": 5.112
+     "start": 5.24
     },
     {
      "word": "...",
-     "start": 6.574
+     "start": 5.89
     },
     {
      "word": "bis",
-     "start": 6.574
+     "start": 6.54
     },
     {
      "word": "heute.",
-     "start": 6.574
+     "start": 6.8
     }
    ],
    "tail": 0
@@ -2344,327 +2345,327 @@
   {
    "id": "q1",
    "shot": "haus",
-   "start": 25.321,
-   "dur": 1.786,
+   "start": 25.121,
+   "dur": 2.72,
    "text": "Mir wurde *erlaubt*, auszuwandern.",
    "by": "der Prophet ﷺ · Bukhari 3905",
    "words": [
     {
      "word": "Mir",
-     "start": 0.05
+     "start": 0.18
     },
     {
      "word": "wurde",
-     "start": 0.28
+     "start": 0.44
     },
     {
      "word": "*erlaubt*,",
-     "start": 0.6
+     "start": 0.72
     },
     {
      "word": "auszuwandern.",
-     "start": 1.02
+     "start": 1.84
     }
    ]
   },
   {
    "id": "q2",
    "shot": "haus",
-   "start": 27.507,
-   "dur": 1.303,
+   "start": 28.101,
+   "dur": 1.68,
    "text": "Darf ich dich *begleiten*?",
    "by": "Abu Bakr · Bukhari 3905",
    "words": [
     {
      "word": "Darf",
-     "start": 0.05
+     "start": 0.32
     },
     {
      "word": "ich",
-     "start": 0.29
+     "start": 0.62
     },
     {
      "word": "dich",
-     "start": 0.49
+     "start": 0.78
     },
     {
      "word": "*begleiten*?",
-     "start": 0.74
+     "start": 1.0
     }
    ]
   },
   {
    "id": "q3",
    "shot": "haus",
-   "start": 29.11,
-   "dur": 0.438,
+   "start": 29.981,
+   "dur": 1.139,
    "text": "*Ja*.",
    "by": "der Prophet ﷺ · Bukhari 3905",
    "words": [
     {
      "word": "*Ja*.",
-     "start": 0.05
+     "start": 0.26
     }
    ]
   },
   {
    "id": "q4",
    "shot": "versteck",
-   "start": 49.727,
-   "dur": 4.527,
+   "start": 50.93,
+   "dur": 5.12,
    "text": "Wenn einer von ihnen auf seine *Füße* schaut ... sieht er uns.",
    "by": "Abu Bakr · Bukhari 3653",
    "words": [
     {
      "word": "Wenn",
-     "start": 0.05
+     "start": 0.16
     },
     {
      "word": "einer",
-     "start": 0.34
+     "start": 0.5
     },
     {
      "word": "von",
-     "start": 0.69
+     "start": 0.96
     },
     {
      "word": "ihnen",
-     "start": 0.94
+     "start": 1.26
     },
     {
      "word": "auf",
-     "start": 1.29
+     "start": 1.64
     },
     {
      "word": "seine",
-     "start": 1.53
+     "start": 1.84
     },
     {
      "word": "*Füße*",
-     "start": 1.88
+     "start": 2.14
     },
     {
      "word": "schaut",
-     "start": 2.18
+     "start": 2.6
     },
     {
      "word": "...",
-     "start": 2.58
+     "start": 3.44
     },
     {
      "word": "sieht",
-     "start": 3.52
+     "start": 4.28
     },
     {
      "word": "er",
-     "start": 3.9
+     "start": 4.52
     },
     {
      "word": "uns.",
-     "start": 4.13
+     "start": 4.74
     }
    ]
   },
   {
    "id": "q5",
    "shot": "versteck",
-   "start": 58.935,
-   "dur": 3.26,
+   "start": 60.591,
+   "dur": 4.32,
    "text": "Was denkst du von *zweien* ... deren Dritter *Allah* ist?",
    "by": "der Prophet ﷺ · Bukhari 3653",
    "words": [
     {
      "word": "Was",
-     "start": 0.05
+     "start": 0.16
     },
     {
      "word": "denkst",
-     "start": 0.3
+     "start": 0.32
     },
     {
      "word": "du",
-     "start": 0.71
+     "start": 0.56
     },
     {
      "word": "von",
-     "start": 0.92
+     "start": 0.72
     },
     {
      "word": "*zweien*",
-     "start": 1.18
+     "start": 0.98
     },
     {
      "word": "...",
-     "start": 1.59
+     "start": 1.78
     },
     {
      "word": "deren",
-     "start": 1.69
+     "start": 2.58
     },
     {
      "word": "Dritter",
-     "start": 2.05
+     "start": 2.88
     },
     {
      "word": "*Allah*",
-     "start": 2.52
+     "start": 3.56
     },
     {
      "word": "ist?",
-     "start": 2.88
+     "start": 4.059
     }
    ]
   },
   {
    "id": "q6",
    "shot": "treffen",
-   "start": 143.245,
-   "dur": 1.247,
+   "start": 149.252,
+   "dur": 1.92,
    "text": "Verrate nichts über *uns*.",
    "by": "der Prophet ﷺ · Bukhari 3906",
    "words": [
     {
      "word": "Verrate",
-     "start": 0.05
+     "start": 0.12
     },
     {
      "word": "nichts",
-     "start": 0.39
+     "start": 0.68
     },
     {
      "word": "über",
-     "start": 0.7
+     "start": 1.16
     },
     {
      "word": "*uns*.",
-     "start": 0.93
+     "start": 1.46
     }
    ]
   }
  ],
  "choice": null,
  "events": {
-  "hundert_h1": 0.636,
-  "kamele_h1": 0.98,
-  "tot_h1": 4.18,
-  "reiter_h2": 7.148,
-  "spur_h2": 8.055,
-  "wüste_h3": 10.312,
-  "mekka_m1": 14.117,
-  "quraisch_m1": 14.222,
-  "plan_m1": 15.749,
-  "festhalten_m1": 18.853,
-  "töten_m1": 20.106,
-  "vertreiben_m1": 20.965,
-  "mittagshitze_m2": 22.488,
-  "abu_m2": 24.079,
-  "bakr_m2": 24.399,
-  "erlaubt_q1": 25.921,
-  "begleiten_q2": 28.247,
-  "ja_q3": 29.16,
-  "nachts_m3": 30.249,
-  "sie_m3": 31.648,
-  "mekka_m3": 31.648,
-  "medina_m3": 34.748,
-  "süden_m3": 36.478,
-  "höhle_m3": 36.905,
-  "thaur_m3": 38.478,
-  "drei_c1": 39.52,
-  "nächte_c1": 39.52,
-  "sie_c1": 41.238,
-  "dort_c1": 41.43,
-  "dann_c2": 42.424,
-  "schritte_c2": 42.864,
-  "verfolger_c2": 44.481,
-  "höhle_c2": 46.777,
-  "abu_c3": 48.017,
-  "bakr_c3": 48.017,
-  "flüstert_c3": 48.017,
-  "füße_q4": 51.607,
-  "uns_q4": 53.857,
-  "prophet_c4": 54.727,
-  "ruhig_c4": 57.638,
-  "zweien_q5": 60.115,
-  "dritter_q5": 60.985,
-  "allah_q5": 61.455,
-  "draußen_c5": 62.911,
-  "verfolger_c5": 63.715,
-  "spinnennetz_c5": 65.055,
-  "eingang_c5": 66.419,
-  "netz_v1": 69.865,
-  "schritte_c6": 70.581,
-  "entfernen_c6": 71.353,
-  "dann_s1": 73.333,
-  "sie_s1": 73.901,
-  "küste_s1": 74.681,
-  "suraqa_s2": 76.277,
-  "stamm_s2": 77.608,
-  "mann_s2": 78.566,
-  "gestalten_v2": 80.812,
-  "küste_v2": 81.392,
-  "sie_v2": 82.882,
-  "suraqa_s3": 83.552,
-  "winkt_s3": 84.026,
-  "nein_v3": 85.106,
-  "andere_v3": 86.216,
-  "heimlich_s4": 87.362,
-  "pferd_s4": 89.289,
-  "speer_s4": 90.729,
-  "galoppiert_s5": 92.786,
-  "näher_s6": 94.815,
-  "stolpert_s6": 96.093,
-  "pferd_s6": 96.79,
-  "suraqa_s6": 97.458,
-  "stürzt_s6": 98.31,
-  "sand_s6": 98.998,
-  "lospfeile_s7": 100.125,
-  "schaden_s7": 102.818,
-  "nein_s7": 104.985,
-  "weiter_s7": 107.395,
-  "nah_s8": 108.451,
-  "koran_s8": 111.925,
-  "ruhig_s8": 113.475,
-  "umzudrehen_s8": 115.16,
-  "versinken_s9": 116.69,
-  "bis_s9": 120.104,
-  "knien_s9": 120.766,
-  "suraqa_s10": 121.945,
-  "fällt_s10": 122.498,
-  "mühsam_s10": 123.108,
-  "pferd_s10": 124.438,
-  "staub_s10": 126.446,
-  "rauch_s10": 128.078,
-  "begreift_s11": 129.0,
-  "suraqa_s11": 129.773,
-  "mann_s11": 131.102,
-  "siegen_s11": 133.243,
-  "ruft_s11": 133.818,
-  "sicher_v4": 135.199,
-  "erzählt_w1": 136.576,
-  "kopfgeld_w1": 138.425,
-  "prophet_w1": 139.746,
-  "bittet_w1": 141.685,
-  "uns_q6": 144.175,
-  "rückweg_w2": 145.192,
-  "andere_w2": 146.192,
-  "verfolger_w2": 146.732,
-  "sie_w2": 148.632,
-  "zurück_w2": 148.809,
-  "niemand_v5": 149.872,
-  "morgen_w3": 150.981,
-  "jäger_w3": 152.131,
-  "abend_w3": 154.119,
-  "beschützer_w3": 155.279,
-  "jahre_w4": 157.21,
-  "suraqa_w4": 158.526,
-  "muslim_w4": 159.895,
-  "tage_w5": 160.966,
-  "erreichen_w5": 160.966,
-  "sie_w5": 162.088,
-  "medina_w5": 162.298,
-  "zeitrechnung_w5": 165.758,
-  "bis_w5": 167.22,
-  "heute_w5": 167.22,
+  "hundert_h1": 0.34,
+  "kamele_h1": 1.02,
+  "tot_h1": 4.64,
+  "reiter_h2": 7.308,
+  "spur_h2": 8.328,
+  "wüste_h3": 10.565,
+  "mekka_m1": 13.873,
+  "quraisch_m1": 14.373,
+  "plan_m1": 15.773,
+  "festhalten_m1": 18.813,
+  "töten_m1": 20.073,
+  "vertreiben_m1": 21.213,
+  "mittagshitze_m2": 22.648,
+  "abu_m2": 24.108,
+  "bakr_m2": 24.368,
+  "erlaubt_q1": 25.841,
+  "begleiten_q2": 29.101,
+  "ja_q3": 30.241,
+  "nachts_m3": 31.72,
+  "sie_m3": 33.0,
+  "mekka_m3": 33.14,
+  "madina_m3": 35.36,
+  "süden_m3": 37.34,
+  "höhle_m3": 38.74,
+  "thaur_m3": 40.1,
+  "drei_c1": 40.998,
+  "nächte_c1": 41.378,
+  "sie_c1": 42.398,
+  "dort_c1": 42.738,
+  "dann_c2": 43.637,
+  "schritte_c2": 44.677,
+  "verfolger_c2": 46.297,
+  "höhle_c2": 48.157,
+  "abu_c3": 49.274,
+  "bakr_c3": 49.614,
+  "flüstert_c3": 49.954,
+  "füße_q4": 53.07,
+  "uns_q4": 55.67,
+  "prophet_c4": 56.57,
+  "ruhig_c4": 59.69,
+  "zweien_q5": 61.571,
+  "dritter_q5": 63.471,
+  "allah_q5": 64.151,
+  "draußen_c5": 65.371,
+  "verfolger_c5": 66.351,
+  "spinnennetz_c5": 67.971,
+  "eingang_c5": 69.451,
+  "netz_v1": 72.951,
+  "schritte_c6": 73.771,
+  "entfernen_c6": 74.971,
+  "dann_s1": 76.179,
+  "sie_s1": 76.999,
+  "küste_s1": 77.899,
+  "suraqa_s2": 79.315,
+  "stamm_s2": 80.715,
+  "mann_s2": 82.035,
+  "gestalten_v2": 84.71,
+  "küste_v2": 85.61,
+  "sie_v2": 88.57,
+  "suraqa_s3": 89.23,
+  "winkt_s3": 89.79,
+  "nein_v3": 90.824,
+  "andere_v3": 92.104,
+  "heimlich_s4": 93.232,
+  "pferd_s4": 95.012,
+  "speer_s4": 96.452,
+  "galoppiert_s5": 98.379,
+  "näher_s6": 100.629,
+  "stolpert_s6": 101.909,
+  "pferd_s6": 102.489,
+  "suraqa_s6": 103.369,
+  "stürzt_s6": 103.909,
+  "sand_s6": 104.689,
+  "lospfeile_s7": 106.201,
+  "schaden_s7": 108.521,
+  "nein_s7": 110.941,
+  "weiter_s7": 113.081,
+  "nah_s8": 114.394,
+  "koran_s8": 117.574,
+  "ruhig_s8": 119.594,
+  "umzudrehen_s8": 121.394,
+  "versinken_s9": 122.504,
+  "bis_s9": 125.684,
+  "knien_s9": 126.484,
+  "suraqa_s10": 127.608,
+  "fällt_s10": 128.188,
+  "mühsam_s10": 129.168,
+  "pferd_s10": 130.128,
+  "staub_s10": 132.268,
+  "rauch_s10": 133.768,
+  "begreift_s11": 134.876,
+  "suraqa_s11": 135.456,
+  "mann_s11": 137.216,
+  "siegen_s11": 138.396,
+  "ruft_s11": 139.696,
+  "sicher_v4": 140.872,
+  "erzählt_w1": 142.872,
+  "kopfgeld_w1": 144.672,
+  "prophet_w1": 146.012,
+  "bittet_w1": 147.992,
+  "uns_q6": 150.712,
+  "rückweg_w2": 152.012,
+  "andere_w2": 153.032,
+  "verfolger_w2": 153.392,
+  "sie_w2": 155.252,
+  "zurück_w2": 155.432,
+  "niemand_v5": 156.592,
+  "morgen_w3": 158.32,
+  "jäger_w3": 160.62,
+  "abend_w3": 161.94,
+  "beschützer_w3": 163.22,
+  "jahre_w4": 164.451,
+  "suraqa_w4": 166.031,
+  "muslim_w4": 167.131,
+  "tage_w5": 168.167,
+  "erreichen_w5": 168.927,
+  "sie_w5": 169.367,
+  "madina_w5": 169.747,
+  "zeitrechnung_w5": 173.067,
+  "bis_w5": 174.367,
+  "heute_w5": 174.627,
   "count": []
  }
 }
