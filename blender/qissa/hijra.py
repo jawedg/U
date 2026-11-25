@@ -672,6 +672,39 @@ def smoke_dust(prefix, loc, cam, t0, dur=6.0, n=16, seed=0, rise=1.4, alpha=0.6,
                      fade_in=0.3, fade_out=2.2, col=(0.95, 0.84, 0.7))
 
 
+def smoke_mat():
+    """Wie BW.dust_mat, aber feinere, kontrastreichere Fetzen (Staubsäule sah als weiche Wolke wie ein Fleck aus)."""
+    if "h_smoke" in bpy.data.materials:
+        return bpy.data.materials["h_smoke"]
+    m = BW.dust_mat().copy()
+    m.name = "h_smoke"
+    for nd in m.node_tree.nodes:
+        if nd.type == "TEX_NOISE":
+            nd.inputs["Scale"].default_value = 3.4
+            nd.inputs["Detail"].default_value = 6.0
+        elif nd.type == "MAP_RANGE":
+            nd.inputs["From Min"].default_value = 0.42
+            nd.inputs["From Max"].default_value = 0.66
+    return m
+
+
+def smoke_column(prefix, base, cam, t0, t_emit=2.4, n=30, seed=0, height=5.5, wind=(0.0, 0.0)):
+    """Staubsäule wie Rauch (v2-QA): schmale Karten steigen nacheinander vom Boden auf, werden oben breiter, der Wind
+    versetzt sie leicht – statt weniger riesiger Karten, die zu einem verschwommenen Fleck verschmolzen."""
+    rnd = random.Random(seed)
+    mat = smoke_mat()
+    for k in range(n):
+        a0 = t0 + t_emit * k / n + rnd.uniform(0, 0.1)
+        life = rnd.uniform(2.4, 3.4)
+        p = (base[0] + rnd.uniform(-0.3, 0.3), base[1] + rnd.uniform(-0.3, 0.3), base[2] + rnd.uniform(0.15, 0.8))
+        w = rnd.uniform(0.6, 1.4)
+        o = BW.dust_card(f"{prefix}{k}", p, (rnd.uniform(0.65, 0.95), rnd.uniform(0.85, 1.25)), cam, a0, a0 + life,
+                         rnd.uniform(0.65, 0.9), grow=rnd.uniform(2.0, 2.8),
+                         drift=(wind[0] * w, wind[1] * w, height / life * rnd.uniform(0.7, 1.1)), fade_in=0.25, fade_out=1.4,
+                         col=(0.9, 0.78, 0.64))
+        o.data.materials[0] = mat
+
+
 def _sand_mat():
     return MK.M["sand"]   # gleiche Farbe wie der Boden (v2-Test: eigener Sand war zu hell)
 
@@ -1689,19 +1722,20 @@ def shot_versinken():
     sand_drip("sdr", Hs, ("FL", "FR"), ts - 0.05, ts + 1.4, seed=4)
     for k_, t_ in enumerate((tv + 0.1, tm + 0.25, tm + 1.0)):
         smoke_dust(f"sink{k_}", (fpos.x, fpos.y, fz), cam, t_, dur=2.6, n=7, rise=0.6, alpha=0.75, spread=0.45, size=(1.5, 1.1), seed=k_)
-    for j in range(3):   # Staubsäule: steigt am Pferd hoch wie Rauch (mehrere Schübe, wird oben dünner)
-        smoke_dust(f"smoke{j}", (pos.x, pos.y, fz + 0.2 + 0.6 * j), cam, ts - 0.1 + 0.35 * j, dur=D - ts + 1.0, n=12, rise=1.6 + 0.5 * j,
-                   alpha=0.78 - 0.15 * j, spread=0.55, size=(1.3, 1.7), seed=9 + j)
     # --- ich: Sturz nach vorn links, liege, richte mich auf, schaue zum Pferd, dann dem Staub nach oben
     land = fall_off(rig, shake, tv, tuple(loc0), dv, side=-1, fwd=3.8, out=2.8, Hh=Hh, yaw0=yw0)
+    # Staubsäule (v2-QA): schmal, steigt wie Rauch am Pferd hoch, Wind von links; Pferd bleibt im Bild
+    dl = Vector((pos.x - land.x, pos.y - land.y, 0)).normalized()
+    smoke_dust("smoke_g", (fpos.x, fpos.y, fz), cam, ts - 0.1, dur=2.4, n=6, rise=0.4, alpha=0.6, spread=0.5, size=(1.2, 0.8), seed=9)
+    smoke_column("scol", (fpos.x, fpos.y, fz), cam, ts - 0.2, seed=11, wind=(dl.y * 0.45, -dl.x * 0.45))
     reins(Hh, Hs, off=[(tv + 0.1, None)])
     hd = (pos.x, pos.y, gz(pos.x, pos.y) + 0.8)
     up = (land.x, land.y, gz(land.x, land.y) + 0.95)
     pose(Hh, tv + 1.8, "push")
     pose(Hh, tv + 2.45, "hidden")
     ck(rig, [(tv + 2.55, up, look(up, hd)), (ts - 0.2, None, look(up, hd)),
-             (ts + 0.6, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 2.6))),
-             (D, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 6.5)))])
+             (ts + 0.6, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 1.5))),
+             (D, None, look(up, (pos.x, pos.y, gz(pos.x, pos.y) + 2.6)))])
     Q.handheld(shake, 0, D, amp=0.4, hits=[(tv + 0.05, 0.6), (tv + 0.62, 1.4), (tm + 0.3, 0.25), (ts, 0.35)])
     Q.sc.frame_set(1)
     cfg["mist_amt"] = 0.2
