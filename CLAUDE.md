@@ -291,3 +291,6 @@ Lokal reicht `npm run render:3d`.
   in hijra.py eigenes Verschmelzen per bmesh (Weltmatrix je Objekt). Ich-Sicht im Sattel: `ride()` setzt Kamera je Bild auf das Pferd
   (Pferd ohne Sattel, Mähne als glatter Kamm, Fäuste + Zügel, Blick geradeaus – sonst wirkt der Pferdekopf von oben seltsam).
   Hochformat ist schmal: in der Höhle beide Figuren nahe der Blickachse setzen.
+  `ck()` entfaltet Gierwinkel relativ zum vorigen Schlüssel, `ride()` setzt sie roh → beim Übergang zu ride() kann ein 360°-Sprung
+  entstehen (Kamera dreht sich einmal im Kreis). Sattel-Schlüssel daher per `Q.cam_keys` mit demselben atan2-Winkel wie ride().
+  Nachbesserung einer Einstellung: `scripts/fix_qissa_hijra_pferd.sh` (Einstellung neu, nur betroffenen Remotion-Teil neu, `pN.mp4.ok` löschen).
