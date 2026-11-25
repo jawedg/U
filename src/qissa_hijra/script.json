@@ -48,14 +48,14 @@
    ],
    "flow": true,
    "edge": 0.25,
-   "note": "v2: Abu Bakr = Cornelius (ElevenLabs, Hörprobe A), mit Hall",
+   "note": "v2: Abu Bakr = Cornelius (ElevenLabs, Nutzer wählte A), mit Hall",
    "capPause": 0.45
   },
   "2": {
    "engine": "eleven",
    "model": "eleven_v3",
    "speakers": {
-    "Prophet": "bAFkvitDGeDMmqo9gJzO"
+    "Prophet": "NBqeXKdZHweef6y0B67V"
    },
    "chunks": [
     "q1",
@@ -65,7 +65,7 @@
    ],
    "flow": true,
    "edge": 0.25,
-   "note": "v2: Worte des Propheten ﷺ = Niander (ElevenLabs, Hörprobe A), mit Hall",
+   "note": "v2: Worte des Propheten ﷺ = Christian (ElevenLabs, Nutzer wählte B), mit Hall",
    "capPause": 0.45
   },
   "3": {
@@ -81,35 +81,35 @@
    ],
    "flow": true,
    "edge": 0.25,
-   "note": "v2: Suraqa = Torsten (ElevenLabs, Hörprobe A)",
+   "note": "v2: Suraqa = Torsten (ElevenLabs, Nutzer wählte A)",
    "capPause": 0.45
   },
   "4": {
    "engine": "eleven",
    "model": "eleven_v3",
    "speakers": {
-    "Stammesmann": "IeQubAjK1ujbppIdhJw4"
+    "Stammesmann": "aTTiK3YzK3dXETpuDE2h"
    },
    "chunks": [
     "v2"
    ],
    "flow": true,
    "edge": 0.25,
-   "note": "v2: Mann im Zelt = Markus (ElevenLabs, Hörprobe A)",
+   "note": "v2: Mann im Zelt = Ben (ElevenLabs, Nutzer wählte B)",
    "capPause": 0.45
   },
   "5": {
    "engine": "eleven",
    "model": "eleven_v3",
    "speakers": {
-    "Verfolger": "BDqe1qZiwPi7xspRxTgh"
+    "Verfolger": "uVKHymY7OYMd6OailpG5"
    },
    "chunks": [
     "v1"
    ],
    "flow": true,
    "edge": 0.25,
-   "note": "v2: Verfolger = Roderich (ElevenLabs, Hörprobe A)",
+   "note": "v2: Verfolger = Frederick (ElevenLabs, Nutzer wählte B)",
    "capPause": 0.45
   }
  },

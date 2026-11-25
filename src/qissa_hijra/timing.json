@@ -250,23 +250,23 @@
   },
   {
    "file": "qissa_hijra/line-2-0.wav",
-   "seconds": 3.02,
+   "seconds": 2.78,
    "words": [
     {
      "word": "Mir",
-     "start": 0.18
+     "start": 0.16
     },
     {
      "word": "wurde",
-     "start": 0.44
+     "start": 0.34
     },
     {
      "word": "*erlaubt*,",
-     "start": 0.72
+     "start": 0.62
     },
     {
      "word": "auszuwandern.",
-     "start": 1.84
+     "start": 1.64
     }
    ],
    "flow": 2,
@@ -300,11 +300,11 @@
   },
   {
    "file": "qissa_hijra/line-2-1.wav",
-   "seconds": 1.439,
+   "seconds": 1.258,
    "words": [
     {
      "word": "*Ja*.",
-     "start": 0.26
+     "start": 0.12
     }
    ],
    "flow": 2,
@@ -590,47 +590,47 @@
   },
   {
    "file": "qissa_hijra/line-2-2.wav",
-   "seconds": 4.62,
+   "seconds": 4.46,
    "words": [
     {
      "word": "Was",
-     "start": 0.16
+     "start": 0.14
     },
     {
      "word": "denkst",
-     "start": 0.32
+     "start": 0.36
     },
     {
      "word": "du",
-     "start": 0.56
+     "start": 0.62
     },
     {
      "word": "von",
-     "start": 0.72
+     "start": 0.76
     },
     {
      "word": "*zweien*",
-     "start": 0.98
+     "start": 1.02
     },
     {
      "word": "...",
-     "start": 1.78
+     "start": 1.56
     },
     {
      "word": "deren",
-     "start": 2.58
+     "start": 2.1
     },
     {
      "word": "Dritter",
-     "start": 2.88
+     "start": 2.5
     },
     {
      "word": "*Allah*",
-     "start": 3.56
+     "start": 3.28
     },
     {
      "word": "ist?",
-     "start": 4.059
+     "start": 3.8
     }
    ],
    "flow": 2,
@@ -683,43 +683,43 @@
   },
   {
    "file": "qissa_hijra/line-5-0.wav",
-   "seconds": 3.58,
+   "seconds": 3.828,
    "words": [
     {
      "word": "Wäre",
-     "start": 0.2
+     "start": 0.28
     },
     {
      "word": "er",
-     "start": 0.62
+     "start": 0.74
     },
     {
      "word": "hier",
-     "start": 0.86
+     "start": 0.94
     },
     {
      "word": "drin",
-     "start": 1.12
+     "start": 1.24
     },
     {
      "word": "...",
-     "start": 1.6
+     "start": 1.76
     },
     {
      "word": "gäbe",
-     "start": 2.08
+     "start": 2.28
     },
     {
      "word": "es",
-     "start": 2.44
+     "start": 2.62
     },
     {
      "word": "kein",
-     "start": 2.66
+     "start": 2.8
     },
     {
      "word": "*Netz*.",
-     "start": 2.92
+     "start": 3.12
     }
    ],
    "flow": 5,
@@ -835,55 +835,55 @@
   },
   {
    "file": "qissa_hijra/line-4-0.wav",
-   "seconds": 5.74,
+   "seconds": 4.78,
    "words": [
     {
      "word": "Ich",
-     "start": 0.16
+     "start": 0.54
     },
     {
      "word": "habe",
-     "start": 0.36
+     "start": 0.68
     },
     {
      "word": "Gestalten",
-     "start": 1.26
+     "start": 0.88
     },
     {
      "word": "an",
-     "start": 1.9
+     "start": 1.42
     },
     {
      "word": "der",
-     "start": 2.0
+     "start": 1.5
     },
     {
      "word": "Küste",
-     "start": 2.16
+     "start": 1.62
     },
     {
      "word": "gesehen.",
-     "start": 2.54
+     "start": 1.92
     },
     {
      "word": "Ich",
-     "start": 3.64
+     "start": 2.78
     },
     {
      "word": "glaube,",
-     "start": 3.82
+     "start": 2.92
     },
     {
      "word": "das",
-     "start": 4.56
+     "start": 3.52
     },
     {
      "word": "sind",
-     "start": 4.8
+     "start": 3.7
     },
     {
      "word": "*sie*!",
-     "start": 5.12
+     "start": 3.96
     }
    ],
    "flow": 4,
@@ -1487,23 +1487,23 @@
   },
   {
    "file": "qissa_hijra/line-2-3.wav",
-   "seconds": 2.22,
+   "seconds": 2.78,
    "words": [
     {
      "word": "Verrate",
-     "start": 0.12
+     "start": 0.16
     },
     {
      "word": "nichts",
-     "start": 0.68
+     "start": 0.88
     },
     {
      "word": "über",
-     "start": 1.16
+     "start": 1.66
     },
     {
      "word": "*uns*.",
-     "start": 1.46
+     "start": 2.04
     }
    ],
    "flow": 2,

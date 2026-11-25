@@ -24,7 +24,19 @@
   Tags ~0,3 s zu spät). Szenen-Ende: `" ..."` ans Ende des letzten `el` + 50-ms-Ausblendung (ElevenLabs schneidet hart ab).
   Cache: `out/stimmproben/eleven-<sig>.mp3/.json` (committet → keine Credits beim Neubau). Kosten ~1.500 Credits je Video-Erzählung.
 - Arabische Namen: **arabische Schrift im `el`-Text** (Nutzer verglich 3 Schreibweisen, wählte diese). Zahlen als Wort (Gemini las 622 als 662).
-- Dialog-Rollen (Junge, Frauen, Zitate) weiter Gemini (Puck usw.).
+  Abu Bakr MIT Harakat schreiben: `أَبُو بَكْر` (ohne -> Spracherkennung hörte „Abubakar“), geflüstert lieber `[softly, tense]`.
+- **FIGUREN-STIMMEN (Nutzer, 25.11.2026, gilt für ALLE künftigen Folgen):** Gemini-Dialogstimmen klangen „billig, ohne Emotion,
+  alle gleich“. Jetzt JEDE Figur mit eigener deutscher ElevenLabs-Stimme (Voice Library, `GET /v1/shared-voices?language=de&gender=…&age=…`
+  geht mit dem Schlüssel; Bibliotheks-Stimmen per ID direkt nutzbar) + `eleven_v3` + Regie-Tags je Satz passend zum Gefühl
+  ([hopeful, eager], [whispers, frightened], [dismissive, sly], [shouting from far away, desperate], [out of breath, excited] …).
+  Immer viel Mühe geben: je Figur 2 Kandidaten erzeugen und als **EINZELNE Dateien** schicken (Name = Figur + A/B,
+  z. B. `03-Abu-Bakr-A.m4a`) – eine Sammeldatei mit Zeitmarken verstand der Nutzer nicht. Erst nach Wahl die Dialog-Einstellungen rendern.
+  Folge 5 gewählt: Prophet ﷺ = Christian `NBqeXKdZHweef6y0B67V` (Hall), Abu Bakr = Cornelius `2baru8J0e15nxuG3bzXy` (Hall),
+  Suraqa = Torsten `iCEMyUhOwgAy0egMANye`, Stammesmann = Ben `aTTiK3YzK3dXETpuDE2h`, Verfolger = Frederick `uVKHymY7OYMd6OailpG5`.
+  In script.json je Figur ein voicePart (`engine: eleven`, `chunks` = je Satz, `capPause` 0.45), Satzfeld `el` mit Tags.
+- **Untertitel-Zeiten aus Spracherkennung:** nach voice_gemini.py immer `python3 scripts/stt_retime.py --project <p>` (ElevenLabs
+  Speech-to-Text scribe_v1, zwischengespeichert `out/stimmproben/stt-*.json`; korrigiert auch Wörter am falschen Satz, z. B. „Er kommt“),
+  dann build_*.py. Gesprochenes und Untertitel müssen gleich sein (Nutzer: „al-Madina“ gesprochen, „Medina“ gezeigt -> Untertitel „al-Madina“).
 
 ## Gemini-TTS – wichtig
 - API-Schlüssel kommt aus der Umgebungsvariable `GEMINI_API_KEY`. Niemals ins Repo schreiben.
@@ -294,3 +306,12 @@ Lokal reicht `npm run render:3d`.
   `ck()` entfaltet Gierwinkel relativ zum vorigen Schlüssel, `ride()` setzt sie roh → beim Übergang zu ride() kann ein 360°-Sprung
   entstehen (Kamera dreht sich einmal im Kreis). Sattel-Schlüssel daher per `Q.cam_keys` mit demselben atan2-Winkel wie ride().
   Nachbesserung einer Einstellung: `scripts/fix_qissa_hijra_pferd.sh` (Einstellung neu, nur betroffenen Remotion-Teil neu, `pN.mp4.ok` löschen).
+- **v2 (Nutzer, 25.11.2026):** Reiten neu (`SPath` = weiche Catmull-Rom-Kurve statt Ecken, `Gait` = Anlauf/Abbremsen, `horse_go` statt
+  BW.horse_run: steht lebendig mit geraden Beinen, Kamera halbes Wippen, Bewegungsunschärfe `cfg["mblur"]` kostet nichts), Zügel per
+  Constraint von der Faust zum Gebissring (`reins()`), Mähne aus flatternden Büscheln, `horse_idle` (atmet, schnuppert, scharrt),
+  Sturz nach vorn über die Schulter (`fall_off`), Versinken mit Sandwall um die VORDERbeine (`sand_ring`/`sand_spray`/`sand_drip`, Material
+  = Boden-Sand), Staubsäule, Lospfeile: Hand-Weltmatrix per `_hand_world` angeglichen (Übergabe Köcher -> Hand -> andere Hand unsichtbar),
+  Türnische per Boolean (Schnittkörper muss über Wand/Boden HINAUSragen, sonst kein Loch), Netz per Strahlen in die echte Felsöffnung
+  (`fitted_web`), dunkle Platte hinter dem Netz, Verfolger nahe der Blickachse. `set_z` je Bild (jedes 3. Bild ließ Läufer „hängen“).
+  Überblendungen: jede Einstellung XF = 0,4 s länger gerendert (build: `frames` + Handle), Remotion blendet weich über (`FadeIn`).
+  Einstieg: „KOPFGELD · 100 KAMELE“ / „TOT ODER LEBENDIG“ mit Einschlag. Ablauf: `setsid nohup ./scripts/v2_qissa_hijra.sh >> out/hj_v2.log 2>&1 < /dev/null &`.
