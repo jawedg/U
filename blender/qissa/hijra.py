@@ -743,20 +743,31 @@ def shot_pferd():
     w1 = (hx - 1.6, hy + 1.4, gz(hx - 1.6, hy + 1.4) + EYE)
     ck(rig, [(0, w0, look(w0, (hx, hy, 1.0))), (tm - 0.2, w1, look(w1, (hx, hy, 1.3)))], loc_interp="LINEAR")
     Q.handheld(shake, 0, tm, amp=0.6, walk_from=0.0, walk_to=tm - 0.2, walk_amp=0.9)
-    # aufsteigen (Kamera hebt sich in den Sattel) und losreiten
-    pose(Hh, tm, "spear_low", only="R")
-    pose(Hh, tm + 0.6, "reins")
+    # aufsteigen: harter Schnitt in den Sattel (eine Kamerafahrt dorthin ging mitten durch den Pferdekörper)
+    fcut = Q.T(tm + 0.25)
+    ta, tb_ = (fcut - 2) / Q.FPS, (fcut - 1) / Q.FPS   # zwei aufeinanderfolgende Bilder: vor / nach dem Schnitt
+    pose(Hh, ta, "spear_low", only="R")
+    pose(Hh, ta, "hidden", only="L")
+    pose(Hh, tb_, "reins")
     for o in [bpy.data.objects["pov_spear_r"]] + list(bpy.data.objects["pov_spear_r"].children_recursive):
-        o.keyframe_insert("hide_render", frame=max(1, Q.T(tm + 0.3)))
+        o.keyframe_insert("hide_render", frame=fcut - 1)
         o.hide_render = True
-        o.keyframe_insert("hide_render", frame=max(1, Q.T(tm + 0.35)))
+        o.keyframe_insert("hide_render", frame=fcut)
     pv = Vector(run[1]) - Vector((hx, hy))
     pv.normalize()
     seat = (hx + pv.x * 0.1, hy + pv.y * 0.1, gz(hx, hy) + 2.3)
-    ck(rig, [(tm + 0.7, seat, (math.degrees(math.atan2(-pv.x, pv.y)), -6, 0))])
+    ck(rig, [(ta, w1, look(w1, (hx, hy, 1.3)))])
+    # Sattel-Gierwinkel genau wie in ride() (NICHT entfaltet: sonst -360° Unterschied -> Kamera drehte sich einmal im Kreis)
+    Q.cam_keys(rig, [(tb_, seat, (math.degrees(math.atan2(-pv.x, pv.y)), -6, 0))])
+    cut_objs = [rig, Hh["L"], Hh["R"]]
     ride(Hs, rig, run, tg, D + 0.5, speed=10.5, cam_from=tg)
     ride_dust(Hs, cam, tg, D + 0.5)
     Q.handheld(shake, tm + 0.01, D + 0.5, amp=0.9, hits=[(tg + 0.1, 0.7)])
+    for ob in cut_objs:   # Schlüssel vor dem Schnitt CONSTANT -> Sprung genau zwischen fcut-1 und fcut
+        for fc in Q.fcurves(ob):
+            for kp in fc.keyframe_points:
+                if int(round(kp.co.x)) == fcut - 1:
+                    kp.interpolation = "CONSTANT"
     cfg["mist_amt"] = 0.18
     return cfg
 
