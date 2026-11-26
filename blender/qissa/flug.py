@@ -230,9 +230,14 @@ HP = {   # eigene Hände (Kamera-Raum: x rechts, y oben, -z vorn), Drehung in Gr
     "dua": {"L": ((-0.075, -0.17, -0.33), (58, 180, -14)), "R": ((0.075, -0.17, -0.33), (58, 180, 14))},
     "dua_low": {"L": ((-0.08, -0.26, -0.3), (45, 180, -14)), "R": ((0.08, -0.26, -0.3), (45, 180, 14))},
     "cover": {"L": ((-0.12, -0.05, -0.2), (60, 0, -30)), "R": ((0.12, -0.05, -0.2), (60, 0, 30))},
-    "takbir": {"L": ((-0.125, -0.1, -0.26), (6, 0, 12)), "R": ((0.125, -0.1, -0.26), (6, 0, -12))},
+    "takbir": {"L": ((-0.105, 0.0, -0.36), (5, 0, 12)), "R": ((0.105, 0.0, -0.36), (5, 0, -12))},
     "reach": {"L": ((-0.1, -0.35, -0.42), (-80, 0, -10)), "R": ((0.1, -0.35, -0.42), (-80, 0, 10))},
 }
+
+
+if os.environ.get("TAKBIR"):
+    _v = [float(x) for x in os.environ["TAKBIR"].split(",")]
+    HP["takbir"] = {"L": ((-_v[0], _v[1], _v[2]), (_v[3], 0, _v[4])), "R": ((_v[0], _v[1], _v[2]), (_v[3], 0, -_v[4]))}
 
 
 def hp(H, t, name, only=None):
@@ -817,8 +822,26 @@ def shot_gebetsraum():
     stelle mich auf den Teppich und hebe die Hände zum Takbir („Jetzt.“)."""
     FW.mats()
     FW.prayer_room()
-    # Licht von der offenen Tür (Halle draußen, Morgen)
-    Q.box("prhall", (0, -3, 1.4), (6, 0.1, 3), Q.glow_mat("hallglow", (1.0, 0.86, 0.7), 1.6))
+    # Halle vor der offenen Tür: Terminal-Boden, Lichtbänder, Wartesitze, große Fensterfront im Morgenrot
+    hfl = Q.pbr("prh_floor", (0.4, 0.41, 0.45), 0.22, var=0.03, scale=2, spec=0.6)
+    Q.box("prh_floor", (0, -4.4, -0.05), (12, 8.2, 0.1), hfl)
+    Q.box("prh_ceil", (0, -4.4, 3.6), (12, 8.2, 0.1), Q.pbr("prh_ceil", (0.82, 0.81, 0.8), 0.8))
+    for k in range(4):
+        Q.box(f"prh_strip{k}", (0, -1.3 - k * 1.9, 3.54), (9.0, 0.1, 0.02), Q.glow_mat("prh_strip", (1.0, 0.95, 0.88), 6.0))
+    Q.box("prh_wall", (0, -8.5, 1.8), (12, 0.1, 3.6), Q.pbr("prh_wall", (0.72, 0.7, 0.68), 0.7))
+    Q.box("prh_win_lo", (0, -8.42, 0.9), (10.0, 0.02, 1.0), Q.glow_mat("prh_dawn_lo", (1.0, 0.66, 0.42), 2.4))
+    Q.box("prh_win_hi", (0, -8.42, 2.25), (10.0, 0.02, 1.7), Q.glow_mat("prh_dawn_hi", (0.78, 0.66, 0.72), 1.8))
+    frm = Q.pbr("prh_frame", (0.2, 0.21, 0.23), 0.4, metal=0.6)
+    for k in range(9):
+        Q.box(f"prh_mull{k}", (-4.8 + k * 1.2, -8.38, 1.75), (0.06, 0.05, 2.7), frm)
+    Q.box("prh_trans", (0, -8.38, 1.2), (10.0, 0.05, 0.05), frm)
+    seat = Q.pbr("prh_seat", (0.16, 0.18, 0.22), 0.5)
+    for k in range(7):
+        x = -3.3 + k * 1.1
+        Q.box(f"prh_seat{k}", (x, -6.6, 0.45), (0.5, 0.48, 0.06), seat)
+        Q.box(f"prh_back{k}", (x, -6.36, 0.72), (0.5, 0.05, 0.5), seat)
+    Q.box("prh_bar", (0, -6.6, 0.25), (8.0, 0.08, 0.06), frm)
+    Q.point("prh_light", (0, -3.0, 3.0), 500, (1.0, 0.86, 0.72), radius=1.0)
     Q.world_sky("dawn")
     rug = FW.prayer_rug("rug", (0, 2.4, 0.0))
     rig, shake, cam = me_cam(18.0)
