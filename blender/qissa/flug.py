@@ -470,7 +470,7 @@ def shot_gong():
     belt = FW.img_mat("belt", "flug_belt.png", emit=0.0, base=(0.02, 0.02, 0.02))
     for r in range(-2, 10):
         for s_ in (-1, 1):
-            FW.plane(f"beltsign{r}{s_}", 0.1, 0.04, belt, loc=(1.06 * s_, r * FW.ROW + 0.4, 1.588), rot=(math.radians(180), 0, 0))
+            FW.plane(f"beltsign{r}{s_}", 0.1, 0.04, belt, loc=(1.06 * s_, r * FW.ROW + 0.4, 1.588), rot=(0, math.radians(180), 0))
     t_gong = 0.35
     FW.emit_strength(belt, t_gong - 0.02, 0.0)
     FW.emit_strength(belt, t_gong, 1.1)
@@ -792,7 +792,7 @@ def shot_terminal():
     # Gebetsraum-Tür + Schild rechts an der Wand am Ende
     door_y = 22.0
     FW.plane("prsign_t", 0.9, 0.29, FW.img_mat("prsign_t", "flug_gebetsraum.png", emit=0.6), loc=(8.82, door_y, 2.55),
-             rot=(math.radians(90), 0, math.radians(90)))
+             rot=(math.radians(90), 0, math.radians(-90)))
     Q.box("prdoor", (8.84, door_y, 1.1), (0.06, 1.2, 2.2), Q.pbr("doorwood", (0.42, 0.3, 0.2), 0.5, var=0.1, scale=6))
     Q.box("prdoorhandle", (8.79, door_y - 0.45, 1.05), (0.04, 0.12, 0.03), FW.M["metal"])
     rig, shake, cam = me_cam(18.0)

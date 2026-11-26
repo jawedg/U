@@ -238,8 +238,8 @@ def cabin_shell(shades=None, seed=0):
     Q.box("curtain_front", (0, CAB_Y1 - 0.02, 1.2), (0.6, 0.03, 1.9), Q.pbr("curtain", (0.12, 0.16, 0.32), 0.95, var=0.08, scale=12, bump=0.3, bscale=40))
     Q.box("bulk_back", (0, CAB_Y0 - 0.05, 1.1), (3.7, 0.1, 2.3), M["panel"])
     ex = img_mat("exitsign", "flug_exit.png", emit=3.0)
-    plane("exit_front", 0.32, 0.11, ex, loc=(0, CAB_Y1 - 0.01, 2.0), rot=(math.radians(90), 0, math.radians(180)))
-    plane("exit_back", 0.32, 0.11, ex, loc=(0, CAB_Y0 + 0.01, 2.0), rot=(math.radians(90), 0, 0))
+    plane("exit_front", 0.32, 0.11, ex, loc=(0, CAB_Y1 - 0.01, 2.0), rot=(math.radians(90), 0, 0))
+    plane("exit_back", 0.32, 0.11, ex, loc=(0, CAB_Y0 + 0.01, 2.0), rot=(math.radians(90), 0, math.radians(180)))
     # Bodenmarkierung (Fluchtweg) + Stimmungslicht als echte Lampen (Flächenlichter nach oben an die Decke)
     Q.box("floorpath", (-0.24, (CAB_Y0 + CAB_Y1) / 2, 0.008), (0.012, CAB_Y1 - CAB_Y0, 0.004), M["exit_g"])
     for s_ in (-1, 1):
@@ -296,7 +296,7 @@ def seats(rows=ROWS, skip=()):
                 continue
             o = inst(f"seat{r}{k}", me, (x, y, 0))
             out[(r, k)] = o
-            sc_ = plane(f"ife{r}{k}", 0.22, 0.135, ife, loc=(x, y - 0.369, 1.08), rot=(math.radians(80), 0, math.radians(180)))
+            sc_ = plane(f"ife{r}{k}", 0.22, 0.135, ife, loc=(x, y - 0.369, 1.08), rot=(math.radians(80), 0, 0))
             sc_["ife"] = 1
     return out
 
@@ -754,9 +754,9 @@ def terminal(length=90.0, seed=2):
         Q.box(f"tlight{k}", (2.5, -10 + k * 3.0, 6.88), (0.25, 2.2, 0.02), lm)
     # Abflugtafel, Gate-Schild, Gebetsraum-Schild (rechts an der Wand, am Ende)
     plane("tboard", 3.2, 1.6, img_mat("board", "flug_board.png", emit=2.2, base=(0.02, 0.02, 0.03)),
-          loc=(8.84, 18.0, 3.6), rot=(math.radians(90), 0, math.radians(90)))
-    plane("tgate", 1.8, 0.6, img_mat("gate", "flug_gate.png", emit=1.5), loc=(0.0, 30.0, 5.4), rot=(math.radians(90), 0, math.radians(180)))
-    plane("tgate2", 1.8, 0.6, bpy.data.materials["gate"], loc=(0.0, 30.02, 5.4), rot=(math.radians(90), 0, 0))
+          loc=(8.84, 18.0, 3.6), rot=(math.radians(90), 0, math.radians(-90)))
+    plane("tgate", 1.8, 0.6, img_mat("gate", "flug_gate.png", emit=1.5), loc=(0.0, 30.0, 5.4), rot=(math.radians(90), 0, 0))
+    plane("tgate2", 1.8, 0.6, bpy.data.materials["gate"], loc=(0.0, 30.02, 5.4), rot=(math.radians(90), 0, math.radians(180)))
     # Flugzeuge draußen (Silhouetten mit Lichtern) + Vorfeld
     apron = Q.pbr("apron", (0.32, 0.32, 0.33), 0.6, var=0.05, scale=0.05)
     Q.box("apron", (-80, length / 2, -0.3), (140, length + 300, 0.2), apron)
@@ -797,7 +797,7 @@ def prayer_room(seed=5):
     stripe = Q.pbr("prstripe", (0.55, 0.45, 0.25), 0.95)
     for k in range(5):
         Q.box(f"prrow{k}", (0, 1.2 + k * 0.95, 0.002), (4.3, 0.05, 0.004), stripe)
-    plane("prqibla", 0.6, 0.31, img_mat("qibla", "flug_qibla.png", emit=0.25), loc=(0, 5.64, 1.9), rot=(math.radians(90), 0, math.radians(180)))
+    plane("prqibla", 0.6, 0.31, img_mat("qibla", "flug_qibla.png", emit=0.25), loc=(0, 5.64, 1.9), rot=(math.radians(90), 0, 0))
     plane("prsign", 0.9, 0.29, img_mat("prsign", "flug_gebetsraum.png", emit=0.4), loc=(1.1, -0.26, 2.1), rot=(math.radians(90), 0, 0))
     shelf = Q.pbr("shelf", (0.45, 0.32, 0.2), 0.6, var=0.1, scale=4)
     Q.box("prshelf", (-1.85, 0.6, 0.45), (0.4, 1.4, 0.9), shelf)
