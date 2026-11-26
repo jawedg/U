@@ -1,0 +1,1073 @@
+{
+ "lines": [
+  {
+   "file": "flug/line-2-0.wav",
+   "seconds": 1.726,
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "*Allah!*",
+     "start": 0.58
+    }
+   ],
+   "flow": 2,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-0.wav",
+   "seconds": 4.558,
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.16
+    },
+    {
+     "word": "das",
+     "start": 0.42
+    },
+    {
+     "word": "jetzt",
+     "start": 0.72
+    },
+    {
+     "word": "dein",
+     "start": 1.02
+    },
+    {
+     "word": "*letzter*",
+     "start": 1.3
+    },
+    {
+     "word": "Moment",
+     "start": 1.76
+    },
+    {
+     "word": "wäre",
+     "start": 2.2
+    },
+    {
+     "word": "…",
+     "start": 2.75
+    },
+    {
+     "word": "wärst",
+     "start": 3.3
+    },
+    {
+     "word": "du",
+     "start": 3.6
+    },
+    {
+     "word": "bereit?",
+     "start": 3.72
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-1.wav",
+   "seconds": 7.491,
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.22
+    },
+    {
+     "word": "ganz",
+     "start": 0.46
+    },
+    {
+     "word": "normaler",
+     "start": 0.86
+    },
+    {
+     "word": "*Nachtflug*.",
+     "start": 1.4
+    },
+    {
+     "word": "Neben",
+     "start": 2.72
+    },
+    {
+     "word": "dir",
+     "start": 3.0
+    },
+    {
+     "word": "lacht",
+     "start": 3.22
+    },
+    {
+     "word": "einer",
+     "start": 3.6
+    },
+    {
+     "word": "über",
+     "start": 3.94
+    },
+    {
+     "word": "ein",
+     "start": 4.12
+    },
+    {
+     "word": "Video.",
+     "start": 4.32
+    },
+    {
+     "word": "Hinten",
+     "start": 5.48
+    },
+    {
+     "word": "schläft",
+     "start": 6.1
+    },
+    {
+     "word": "ein",
+     "start": 6.44
+    },
+    {
+     "word": "*Kind*.",
+     "start": 6.62
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-2.wav",
+   "seconds": 5.173,
+   "words": [
+    {
+     "word": "Auf",
+     "start": 0.34
+    },
+    {
+     "word": "deinem",
+     "start": 0.48
+    },
+    {
+     "word": "Handy",
+     "start": 0.76
+    },
+    {
+     "word": "leuchtet",
+     "start": 1.2
+    },
+    {
+     "word": "es",
+     "start": 1.62
+    },
+    {
+     "word": "auf:",
+     "start": 1.88
+    },
+    {
+     "word": "*Isha*.",
+     "start": 3.06
+    },
+    {
+     "word": "Du",
+     "start": 4.04
+    },
+    {
+     "word": "wischst",
+     "start": 4.16
+    },
+    {
+     "word": "es",
+     "start": 4.46
+    },
+    {
+     "word": "weg.",
+     "start": 4.62
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-1-0.wav",
+   "seconds": 2.06,
+   "words": [
+    {
+     "word": "Mach",
+     "start": 0.24
+    },
+    {
+     "word": "ich",
+     "start": 0.46
+    },
+    {
+     "word": "nach",
+     "start": 0.64
+    },
+    {
+     "word": "der",
+     "start": 0.88
+    },
+    {
+     "word": "*Landung*.",
+     "start": 1.02
+    }
+   ],
+   "flow": 1,
+   "stt": true
+  },
+  {
+   "file": "flug/line-3-0.wav",
+   "seconds": 5.536,
+   "words": [
+    {
+     "word": "Meine",
+     "start": 0.16
+    },
+    {
+     "word": "Damen",
+     "start": 0.4
+    },
+    {
+     "word": "und",
+     "start": 0.66
+    },
+    {
+     "word": "Herren,",
+     "start": 0.8
+    },
+    {
+     "word": "bitte",
+     "start": 1.42
+    },
+    {
+     "word": "schnallen",
+     "start": 1.64
+    },
+    {
+     "word": "Sie",
+     "start": 1.98
+    },
+    {
+     "word": "sich",
+     "start": 2.14
+    },
+    {
+     "word": "an.",
+     "start": 2.42
+    },
+    {
+     "word": "Wir",
+     "start": 3.22
+    },
+    {
+     "word": "erwarten",
+     "start": 3.32
+    },
+    {
+     "word": "leichte",
+     "start": 3.88
+    },
+    {
+     "word": "*Turbulenzen*.",
+     "start": 4.3
+    }
+   ],
+   "flow": 3,
+   "stt": true
+  },
+  {
+   "file": "flug/line-2-1.wav",
+   "seconds": 3.66,
+   "words": [
+    {
+     "word": "Chill.",
+     "start": 1.24
+    },
+    {
+     "word": "Das",
+     "start": 2.16
+    },
+    {
+     "word": "passiert",
+     "start": 2.36
+    },
+    {
+     "word": "*ständig*.",
+     "start": 2.74
+    }
+   ],
+   "flow": 2,
+   "stt": true
+  },
+  {
+   "file": "flug/line-4-0.wav",
+   "seconds": 2.22,
+   "words": [
+    {
+     "word": "Kopf",
+     "start": 0.14
+    },
+    {
+     "word": "*runter!*",
+     "start": 0.44
+    },
+    {
+     "word": "Bleiben",
+     "start": 1.1
+    },
+    {
+     "word": "Sie",
+     "start": 1.4
+    },
+    {
+     "word": "unten!",
+     "start": 1.56
+    }
+   ],
+   "flow": 4,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-3.wav",
+   "seconds": 9.819,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.08
+    },
+    {
+     "word": "Flugzeug",
+     "start": 0.28
+    },
+    {
+     "word": "*fällt*.",
+     "start": 0.84
+    },
+    {
+     "word": "Dein",
+     "start": 1.6
+    },
+    {
+     "word": "Magen",
+     "start": 1.88
+    },
+    {
+     "word": "hebt",
+     "start": 2.34
+    },
+    {
+     "word": "ab.",
+     "start": 2.7
+    },
+    {
+     "word": "Und",
+     "start": 3.48
+    },
+    {
+     "word": "auf",
+     "start": 3.62
+    },
+    {
+     "word": "einmal",
+     "start": 3.9
+    },
+    {
+     "word": "ist",
+     "start": 4.6
+    },
+    {
+     "word": "alles",
+     "start": 4.9
+    },
+    {
+     "word": "egal.",
+     "start": 5.38
+    },
+    {
+     "word": "Dein",
+     "start": 6.36
+    },
+    {
+     "word": "Handy.",
+     "start": 6.58
+    },
+    {
+     "word": "Dein",
+     "start": 7.46
+    },
+    {
+     "word": "Geld.",
+     "start": 7.72
+    },
+    {
+     "word": "Deine",
+     "start": 8.44
+    },
+    {
+     "word": "Pläne.",
+     "start": 8.78
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-2-2.wav",
+   "seconds": 5.1,
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "Allah!",
+     "start": 0.98
+    },
+    {
+     "word": "Ya",
+     "start": 2.14
+    },
+    {
+     "word": "Allah,",
+     "start": 3.0
+    },
+    {
+     "word": "*rette*",
+     "start": 3.66
+    },
+    {
+     "word": "uns!",
+     "start": 4.12
+    }
+   ],
+   "flow": 2,
+   "stt": true
+  },
+  {
+   "file": "flug/line-5-0.wav",
+   "seconds": 2.959,
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "Rabbi",
+     "start": 0.38
+    },
+    {
+     "word": "…",
+     "start": 0.94
+    },
+    {
+     "word": "meine",
+     "start": 1.5
+    },
+    {
+     "word": "*Kinder*",
+     "start": 1.88
+    },
+    {
+     "word": "…",
+     "start": 2.18
+    }
+   ],
+   "flow": 5,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-4.wav",
+   "seconds": 7.319,
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.26
+    },
+    {
+     "word": "ruft",
+     "start": 0.7
+    },
+    {
+     "word": "jeder",
+     "start": 1.18
+    },
+    {
+     "word": "*Allah*",
+     "start": 1.8
+    },
+    {
+     "word": "an.",
+     "start": 2.34
+    },
+    {
+     "word": "Auch",
+     "start": 3.2
+    },
+    {
+     "word": "die,",
+     "start": 3.44
+    },
+    {
+     "word": "die",
+     "start": 3.74
+    },
+    {
+     "word": "ihn",
+     "start": 3.9
+    },
+    {
+     "word": "jahrelang",
+     "start": 4.14
+    },
+    {
+     "word": "vergessen",
+     "start": 4.72
+    },
+    {
+     "word": "haben.",
+     "start": 5.2
+    },
+    {
+     "word": "Auch",
+     "start": 6.14
+    },
+    {
+     "word": "*du*.",
+     "start": 6.44
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-1-1.wav",
+   "seconds": 6.574,
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.14
+    },
+    {
+     "word": "Allah",
+     "start": 0.34
+    },
+    {
+     "word": "…",
+     "start": 1.12
+    },
+    {
+     "word": "gib",
+     "start": 1.9
+    },
+    {
+     "word": "mir",
+     "start": 2.1
+    },
+    {
+     "word": "noch",
+     "start": 2.24
+    },
+    {
+     "word": "eine",
+     "start": 2.42
+    },
+    {
+     "word": "*Chance*.",
+     "start": 2.7
+    },
+    {
+     "word": "Ich",
+     "start": 4.12
+    },
+    {
+     "word": "bete.",
+     "start": 4.38
+    },
+    {
+     "word": "Ich",
+     "start": 5.44
+    },
+    {
+     "word": "versprech's.",
+     "start": 5.56
+    }
+   ],
+   "flow": 1,
+   "stt": true
+  },
+  {
+   "file": "flug/line-3-1.wav",
+   "seconds": 5.983,
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.66
+    },
+    {
+     "word": "…",
+     "start": 1.78
+    },
+    {
+     "word": "haben",
+     "start": 1.88
+    },
+    {
+     "word": "es",
+     "start": 1.98
+    },
+    {
+     "word": "*überstanden*.",
+     "start": 2.08
+    },
+    {
+     "word": "Wir",
+     "start": 3.6
+    },
+    {
+     "word": "landen",
+     "start": 3.78
+    },
+    {
+     "word": "in",
+     "start": 4.18
+    },
+    {
+     "word": "zwanzig",
+     "start": 4.44
+    },
+    {
+     "word": "Minuten.",
+     "start": 4.9
+    }
+   ],
+   "flow": 3,
+   "stt": true
+  },
+  {
+   "file": "flug/line-2-3.wav",
+   "seconds": 4.062,
+   "words": [
+    {
+     "word": "Bruder,",
+     "start": 1.12
+    },
+    {
+     "word": "ich",
+     "start": 1.92
+    },
+    {
+     "word": "dachte",
+     "start": 2.1
+    },
+    {
+     "word": "echt,",
+     "start": 2.48
+    },
+    {
+     "word": "das",
+     "start": 2.72
+    },
+    {
+     "word": "*war's*.",
+     "start": 2.98
+    }
+   ],
+   "flow": 2,
+   "stt": true
+  },
+  {
+   "file": "flug/line-2-4.wav",
+   "seconds": 1.82,
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.14
+    },
+    {
+     "word": "muss",
+     "start": 0.5
+    },
+    {
+     "word": "ich",
+     "start": 0.7
+    },
+    {
+     "word": "*posten*.",
+     "start": 0.86
+    }
+   ],
+   "flow": 2,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-5.wav",
+   "seconds": 4.69,
+   "words": [
+    {
+     "word": "Zwanzig",
+     "start": 0.3
+    },
+    {
+     "word": "Minuten",
+     "start": 0.96
+    },
+    {
+     "word": "später",
+     "start": 1.46
+    },
+    {
+     "word": "…",
+     "start": 2.04
+    },
+    {
+     "word": "ist",
+     "start": 2.62
+    },
+    {
+     "word": "alles",
+     "start": 3.12
+    },
+    {
+     "word": "*vergessen*.",
+     "start": 3.62
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-6.wav",
+   "seconds": 4.26,
+   "words": [
+    {
+     "word": "Genau",
+     "start": 0.14
+    },
+    {
+     "word": "diesen",
+     "start": 0.62
+    },
+    {
+     "word": "Moment",
+     "start": 1.02
+    },
+    {
+     "word": "beschreibt",
+     "start": 2.04
+    },
+    {
+     "word": "*Allah*",
+     "start": 2.58
+    },
+    {
+     "word": "im",
+     "start": 3.06
+    },
+    {
+     "word": "Koran:",
+     "start": 3.2
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-7.wav",
+   "seconds": 5.755,
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.1
+    },
+    {
+     "word": "musst",
+     "start": 0.26
+    },
+    {
+     "word": "nicht",
+     "start": 0.64
+    },
+    {
+     "word": "in",
+     "start": 1.0
+    },
+    {
+     "word": "einem",
+     "start": 1.14
+    },
+    {
+     "word": "fallenden",
+     "start": 1.44
+    },
+    {
+     "word": "Flugzeug",
+     "start": 1.92
+    },
+    {
+     "word": "sitzen,",
+     "start": 2.48
+    },
+    {
+     "word": "um",
+     "start": 3.38
+    },
+    {
+     "word": "zu",
+     "start": 3.56
+    },
+    {
+     "word": "Allah",
+     "start": 3.76
+    },
+    {
+     "word": "*zurückzukehren*.",
+     "start": 4.38
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-8.wav",
+   "seconds": 6.418,
+   "words": [
+    {
+     "word": "Vielleicht",
+     "start": 0.14
+    },
+    {
+     "word": "im",
+     "start": 0.7
+    },
+    {
+     "word": "*Flugzeug*.",
+     "start": 0.96
+    },
+    {
+     "word": "Vielleicht",
+     "start": 2.76
+    },
+    {
+     "word": "heute",
+     "start": 3.38
+    },
+    {
+     "word": "Nacht",
+     "start": 3.7
+    },
+    {
+     "word": "…",
+     "start": 4.28
+    },
+    {
+     "word": "in",
+     "start": 4.86
+    },
+    {
+     "word": "deinem",
+     "start": 5.04
+    },
+    {
+     "word": "*Bett*.",
+     "start": 5.5
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-9.wav",
+   "seconds": 3.1,
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.14
+    },
+    {
+     "word": "Prophet,",
+     "start": 0.32
+    },
+    {
+     "word": "Friede",
+     "start": 1.18
+    },
+    {
+     "word": "sei",
+     "start": 1.56
+    },
+    {
+     "word": "mit",
+     "start": 1.74
+    },
+    {
+     "word": "ihm,",
+     "start": 2.0
+    },
+    {
+     "word": "sagte:",
+     "start": 2.26
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-6-0.wav",
+   "seconds": 6.54,
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.1
+    },
+    {
+     "word": "nimmt",
+     "start": 0.7
+    },
+    {
+     "word": "die",
+     "start": 0.9
+    },
+    {
+     "word": "*Reue*",
+     "start": 1.04
+    },
+    {
+     "word": "seines",
+     "start": 1.58
+    },
+    {
+     "word": "Dieners",
+     "start": 1.96
+    },
+    {
+     "word": "an",
+     "start": 2.44
+    },
+    {
+     "word": "…",
+     "start": 2.92
+    },
+    {
+     "word": "solange",
+     "start": 3.4
+    },
+    {
+     "word": "er",
+     "start": 3.9
+    },
+    {
+     "word": "noch",
+     "start": 4.08
+    },
+    {
+     "word": "nicht",
+     "start": 4.34
+    },
+    {
+     "word": "mit",
+     "start": 5.06
+    },
+    {
+     "word": "dem",
+     "start": 5.18
+    },
+    {
+     "word": "Tod",
+     "start": 5.42
+    },
+    {
+     "word": "ringt.",
+     "start": 5.78
+    }
+   ],
+   "flow": 6,
+   "tail": 2.4,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-10.wav",
+   "seconds": 3.321,
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.16
+    },
+    {
+     "word": "Tür",
+     "start": 0.36
+    },
+    {
+     "word": "ist",
+     "start": 0.62
+    },
+    {
+     "word": "*offen*.",
+     "start": 0.92
+    },
+    {
+     "word": "Aber",
+     "start": 1.82
+    },
+    {
+     "word": "nicht",
+     "start": 2.02
+    },
+    {
+     "word": "für",
+     "start": 2.28
+    },
+    {
+     "word": "immer.",
+     "start": 2.5
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  },
+  {
+   "file": "flug/line-0-11.wav",
+   "seconds": 5.77,
+   "words": [
+    {
+     "word": "Kehr",
+     "start": 0.36
+    },
+    {
+     "word": "zu",
+     "start": 0.82
+    },
+    {
+     "word": "Ihm",
+     "start": 1.1
+    },
+    {
+     "word": "zurück.",
+     "start": 1.42
+    },
+    {
+     "word": "*Jetzt.*",
+     "start": 2.74
+    },
+    {
+     "word": "Nicht",
+     "start": 3.92
+    },
+    {
+     "word": "nach",
+     "start": 4.4
+    },
+    {
+     "word": "der",
+     "start": 4.74
+    },
+    {
+     "word": "Landung.",
+     "start": 4.94
+    }
+   ],
+   "flow": 0,
+   "stt": true
+  }
+ ]
+}

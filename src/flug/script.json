@@ -1,0 +1,340 @@
+{
+ "title": "Was, wenn das dein letzter Flug ist? (POV-Erinnerung)",
+ "series": "",
+ "note": "Nutzer 26.11.2026: Text genehmigt. POV im Flugzeug: Turbulenzen/Absturz-Gefahr, alle rufen Allah an, sichere Landung, alles vergessen (Koran 17:67), Erinnerung: jederzeit kann es der letzte Moment sein, zu Allah zurückkehren. KEIN QISSAH-Logo (Nutzer: diesmal ohne). Koran als ECHTE Rezitation (Maher al-Muaiqly, everyayah.com, leichter Hall – Nutzer wählte C) mit arabischer Schrift in Gold + deutscher Übersetzung (Bubenheim/Elyas) – NIE KI-Rezitation. Figuren (Nutzer wählte jeweils A): Du = Juan, Sitznachbar = Albert, Kapitän = Thomas Schendel (Bordlautsprecher-Filter im Ton-Mix), Flugbegleiterin = Anna, Frau = Amira. „Ya Allah“ als „Yaa Allaah“ schreiben (arabische Schrift / „Ya Allah“ klang wie „Yallah“), Frau: „Ya Rabbi“. Worte des Propheten ﷺ als Zitat mit Hall (Christian, wie Folge 5). Menschen ohne Gesicht. Immer Geräusche wie im Film, nie still.",
+ "voiceFilter": "highpass=f=70,equalizer=f=160:t=q:w=1:g=2.5,equalizer=f=3200:t=q:w=1.2:g=1.5,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2",
+ "voiceParts": {
+  "0": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Erzaehler": "JiW03c2Gt43XNUQAumRP"
+   },
+   "voiceName": "Helmut Stieglbauer – Deep and Dynamic (ElevenLabs Voice Library)",
+   "chunks": [
+    "h2",
+    "k1",
+    "a2",
+    "a5",
+    "l3",
+    "q0",
+    "e1",
+    "e2",
+    "e3",
+    "e4"
+   ],
+   "flow": true,
+   "edge": 0.3,
+   "cutmode": "latest",
+   "snap": true,
+   "capPause": 0.6,
+   "note": "je Szene 1 Anfrage, Gefühl je Satz per Regie-Tag"
+  },
+  "1": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Du": "lx8LAX2EUAKftVz0Dk5z"
+   },
+   "chunks": [
+    "k3",
+    "a6"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.45,
+   "note": "Du = Juan (Nutzer wählte A)"
+  },
+  "2": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Sitznachbar": "f2yUVfK5jdm78zlpcZ8C"
+   },
+   "chunks": [
+    "h1",
+    "t2",
+    "a3",
+    "l1",
+    "l2"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.45,
+   "note": "Sitznachbar = Albert (Nutzer wählte A)"
+  },
+  "3": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Kapitaen": "Fghah4fztZORbiKfIGAs"
+   },
+   "chunks": [
+    "t1",
+    "s1"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.6,
+   "note": "Kapitän = Thomas Schendel (Nutzer wählte A), Lautsprecher-Filter in sfx_flug.py"
+  },
+  "4": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Flugbegleiterin": "DEZHhPbmb8LVZmWufkCh"
+   },
+   "chunks": [
+    "a1"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.45,
+   "note": "Flugbegleiterin = Anna (Nutzer wählte A)"
+  },
+  "5": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Frau": "FOfJ2PMgU6HOGbNYnzto"
+   },
+   "chunks": [
+    "a4"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.6,
+   "note": "Frau = Amira (Nutzer wählte A)"
+  },
+  "6": {
+   "engine": "eleven",
+   "model": "eleven_v3",
+   "speakers": {
+    "Prophet": "NBqeXKdZHweef6y0B67V"
+   },
+   "chunks": [
+    "qh"
+   ],
+   "flow": true,
+   "edge": 0.25,
+   "capPause": 0.45,
+   "note": "Worte des Propheten ﷺ = Christian (wie Folge 5), mit Hall"
+  }
+ },
+ "sentences": [
+  {
+   "id": "h1",
+   "part": 2,
+   "speaker": "Sitznachbar",
+   "dialog": true,
+   "text": "Ya *Allah!*",
+   "el": "[screaming, panicked] Yaa Allaah!"
+  },
+  {
+   "id": "h2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Wenn das jetzt dein *letzter* Moment wäre … wärst du bereit?",
+   "el": "[whispers] Wenn das jetzt dein letzter Moment wäre ... [whispers, intense] wärst du bereit? ..."
+  },
+  {
+   "id": "k1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Ein ganz normaler *Nachtflug*. Neben dir lacht einer über ein Video. Hinten schläft ein *Kind*.",
+   "el": "[calm, storytelling] Ein ganz normaler Nachtflug. ... Neben dir lacht einer über ein Video. ... [softly] Hinten schläft ein Kind. ..."
+  },
+  {
+   "id": "k2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Auf deinem Handy leuchtet es auf: *Isha*. Du wischst es weg.",
+   "el": "[calm] Auf deinem Handy leuchtet es auf: Ischa. ... [flat] Du wischst es weg. ..."
+  },
+  {
+   "id": "k3",
+   "part": 1,
+   "speaker": "Du",
+   "dialog": true,
+   "text": "Mach ich nach der *Landung*.",
+   "el": "[casual, quietly, to himself] Mach ich nach der Landung."
+  },
+  {
+   "id": "t1",
+   "part": 3,
+   "speaker": "Kapitaen",
+   "dialog": true,
+   "text": "Meine Damen und Herren, bitte schnallen Sie sich an. Wir erwarten leichte *Turbulenzen*.",
+   "el": "[calm, professional] Meine Damen und Herren, bitte schnallen Sie sich an. Wir erwarten leichte Turbulenzen."
+  },
+  {
+   "id": "t2",
+   "part": 2,
+   "speaker": "Sitznachbar",
+   "dialog": true,
+   "text": "Chill. Das passiert *ständig*.",
+   "el": "[laughs, relaxed] Chill. Das passiert ständig."
+  },
+  {
+   "id": "a1",
+   "part": 4,
+   "speaker": "Flugbegleiterin",
+   "dialog": true,
+   "text": "Kopf *runter!* Bleiben Sie unten!",
+   "el": "[shouting, urgent, panicked] Kopf runter! Bleiben Sie unten!"
+  },
+  {
+   "id": "a2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Das Flugzeug *fällt*. Dein Magen hebt ab. Und auf einmal ist alles egal. Dein Handy. Dein Geld. Deine Pläne.",
+   "el": "[fast, tense] Das Flugzeug fällt. ... Dein Magen hebt ab. ... [intense] Und auf einmal ist alles egal. ... Dein Handy. ... Dein Geld. ... Deine Pläne. ..."
+  },
+  {
+   "id": "a3",
+   "part": 2,
+   "speaker": "Sitznachbar",
+   "dialog": true,
+   "text": "Ya Allah! Ya Allah, *rette* uns!",
+   "el": "[screaming, panicked] Yaa ... Allaah! Yaa ... Allaah, rette uns!"
+  },
+  {
+   "id": "a4",
+   "part": 5,
+   "speaker": "Frau",
+   "dialog": true,
+   "text": "Ya Rabbi … meine *Kinder* …",
+   "el": "[crying, desperate, sobbing] Ya Rabbi … meine Kinder … [sobbing] …"
+  },
+  {
+   "id": "a5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Jetzt ruft jeder *Allah* an. Auch die, die ihn jahrelang vergessen haben. Auch *du*.",
+   "el": "[intense, softly] Jetzt ruft jeder الله an. ... Auch die, die ihn jahrelang vergessen haben. ... [whispers] Auch du. ..."
+  },
+  {
+   "id": "a6",
+   "part": 1,
+   "speaker": "Du",
+   "dialog": true,
+   "text": "Ya Allah … gib mir noch eine *Chance*. Ich bete. Ich versprech's.",
+   "el": "[whispers, terrified, trembling] Yaa Allaah … gib mir noch eine Chance. [crying softly] Ich bete. Ich versprech's."
+  },
+  {
+   "id": "s1",
+   "part": 3,
+   "speaker": "Kapitaen",
+   "dialog": true,
+   "text": "Wir … haben es *überstanden*. Wir landen in zwanzig Minuten.",
+   "el": "[shaky, relieved, exhales] Wir … haben es überstanden. Wir landen in zwanzig Minuten."
+  },
+  {
+   "id": "l1",
+   "part": 2,
+   "speaker": "Sitznachbar",
+   "dialog": true,
+   "text": "Bruder, ich dachte echt, das *war's*.",
+   "el": "[laughing, relieved, out of breath] Bruder, ich dachte echt, das war's."
+  },
+  {
+   "id": "l2",
+   "part": 2,
+   "speaker": "Sitznachbar",
+   "dialog": true,
+   "text": "Das muss ich *posten*.",
+   "el": "[excited, grinning] Das muss ich posten."
+  },
+  {
+   "id": "l3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Zwanzig Minuten später … ist alles *vergessen*.",
+   "el": "[slow, heavy] Zwanzig Minuten später ... [softly] ist alles vergessen. ..."
+  },
+  {
+   "id": "q0",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Genau diesen Moment beschreibt *Allah* im Koran:",
+   "el": "[serious, reverent] Genau diesen Moment ... beschreibt الله im Koran: ..."
+  },
+  {
+   "id": "e1",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Du musst nicht in einem fallenden Flugzeug sitzen, um zu Allah *zurückzukehren*.",
+   "el": "[calm, serious] Du musst nicht in einem fallenden Flugzeug sitzen, ... um zu الله zurückzukehren. ..."
+  },
+  {
+   "id": "e2",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Vielleicht im *Flugzeug*. Vielleicht heute Nacht … in deinem *Bett*.",
+   "el": "[softly] Vielleicht im Flugzeug. ... Vielleicht heute Nacht ... [whispers] in deinem Bett. ..."
+  },
+  {
+   "id": "e3",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Der Prophet, Friede sei mit ihm, sagte:",
+   "el": "[reverent] Der Prophet, Friede sei mit ihm, sagte: ..."
+  },
+  {
+   "id": "qh",
+   "part": 6,
+   "speaker": "Zitat",
+   "quote": true,
+   "fx": "hall",
+   "by": "der Prophet ﷺ · Tirmidhi 3537",
+   "text": "Allah nimmt die *Reue* seines Dieners an … solange er noch nicht mit dem Tod ringt.",
+   "el": "[calm, warm] الله nimmt die Reue seines Dieners an ... solange er noch nicht mit dem Tod ringt."
+  },
+  {
+   "id": "e4",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Die Tür ist *offen*. Aber nicht für immer.",
+   "el": "[serious, softly] Die Tür ist offen. ... [slow] Aber nicht für immer. ..."
+  },
+  {
+   "id": "e5",
+   "part": 0,
+   "speaker": "Erzaehler",
+   "text": "Kehr zu Ihm zurück. *Jetzt.* Nicht nach der Landung.",
+   "el": "[intense, warm] Kehr zu Ihm zurück. ... Jetzt. ... [whispers] Nicht nach der Landung. ..."
+  }
+ ],
+ "recitations": [
+  {
+   "id": "r1",
+   "ref": "Koran 17:67",
+   "file": "flug/rez_17_67.wav",
+   "ar": "وَإِذَا مَسَّكُمُ الضُّرُّ فِي الْبَحْرِ ضَلَّ مَن تَدْعُونَ إِلَّا إِيَّاهُ ۖ فَلَمَّا نَجَّاكُمْ إِلَى الْبَرِّ أَعْرَضْتُمْ ۚ وَكَانَ الْإِنسَانُ كَفُورًا",
+   "de": "Und wenn euch auf dem Meer ein Unheil trifft, sind die, die ihr anruft, verschwunden – außer Ihm. Doch wenn Er euch ans Land errettet hat, wendet ihr euch ab. Der Mensch ist ja sehr undankbar."
+  },
+  {
+   "id": "r2",
+   "ref": "Koran 31:34",
+   "file": "flug/rez_31_34.wav",
+   "ar": "وَمَا تَدْرِي نَفْسٌ مَّاذَا تَكْسِبُ غَدًا ۖ وَمَا تَدْرِي نَفْسٌ بِأَيِّ أَرْضٍ تَمُوتُ",
+   "de": "Und niemand weiß, was er morgen tun wird, und niemand weiß, in welchem Land er sterben wird."
+  },
+  {
+   "id": "r3",
+   "ref": "Koran 2:156",
+   "file": "flug/rez_2_156.wav",
+   "ar": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+   "de": "Wir gehören Allah, und zu Ihm kehren wir zurück."
+  }
+ ],
+ "reciter": "Maher al-Muaiqly (Aufnahmen: everyayah.com, Maher_AlMuaiqly_64kbps), leichter Hall",
+ "choice": null,
+ "sources": [
+  "Koran 17:67 – Wenn euch auf dem Meer ein Unheil trifft, ruft ihr nur Ihn an; wenn Er euch ans Land rettet, wendet ihr euch ab (Übersetzung: Bubenheim/Elyas)",
+  "Koran 31:34 – Niemand weiß, was er morgen tun wird, und niemand weiß, in welchem Land er sterben wird",
+  "Koran 2:156 – Wir gehören Allah, und zu Ihm kehren wir zurück",
+  "Jami' at-Tirmidhi 3537 – Allah nimmt die Reue des Dieners an, solange er nicht im Todeskampf röchelt (hasan)",
+  "Rezitation: Maher al-Muaiqly"
+ ]
+}

@@ -1,0 +1,1757 @@
+{
+ "fps": 60,
+ "render_fps": 30,
+ "xfade": 0.4,
+ "voiced": true,
+ "total": 154.81,
+ "frames": 9289,
+ "segments": [
+  {
+   "id": "hook_a",
+   "kind": "clip",
+   "src": "absturz",
+   "at": 2.6,
+   "start": 0.0,
+   "dur": 1.926
+  },
+  {
+   "id": "hook_b",
+   "kind": "clip",
+   "src": "beten",
+   "at": 2.0,
+   "start": 1.926,
+   "dur": 4.308
+  },
+  {
+   "id": "kabine",
+   "kind": "shot",
+   "label": "FLUG 417 · 11.000 METER · 02:40 UHR",
+   "start": 6.234,
+   "dur": 7.191,
+   "frames": 228
+  },
+  {
+   "id": "handy",
+   "kind": "shot",
+   "label": null,
+   "start": 13.425,
+   "dur": 7.383,
+   "frames": 233
+  },
+  {
+   "id": "gong",
+   "kind": "shot",
+   "label": null,
+   "start": 20.808,
+   "dur": 11.346,
+   "frames": 352
+  },
+  {
+   "id": "absturz",
+   "kind": "shot",
+   "label": null,
+   "start": 32.154,
+   "dur": 17.239,
+   "frames": 529
+  },
+  {
+   "id": "beten",
+   "kind": "shot",
+   "label": null,
+   "start": 49.393,
+   "dur": 17.452,
+   "frames": 536
+  },
+  {
+   "id": "stille",
+   "kind": "shot",
+   "label": null,
+   "start": 66.845,
+   "dur": 7.383,
+   "frames": 233
+  },
+  {
+   "id": "landung",
+   "kind": "shot",
+   "label": null,
+   "start": 74.228,
+   "dur": 7.782,
+   "frames": 245
+  },
+  {
+   "id": "vergessen",
+   "kind": "shot",
+   "label": null,
+   "start": 82.01,
+   "dur": 8.95,
+   "frames": 280
+  },
+  {
+   "id": "koran",
+   "kind": "card",
+   "start": 90.96,
+   "dur": 14.977
+  },
+  {
+   "id": "terminal",
+   "kind": "shot",
+   "label": null,
+   "start": 105.937,
+   "dur": 21.213,
+   "frames": 648
+  },
+  {
+   "id": "gebetsraum",
+   "kind": "shot",
+   "label": null,
+   "start": 127.15,
+   "dur": 18.731,
+   "frames": 574
+  },
+  {
+   "id": "ende",
+   "kind": "card",
+   "start": 145.881,
+   "dur": 8.929
+  }
+ ],
+ "lines": [
+  {
+   "id": "h1",
+   "shot": "hook_a",
+   "start": 0.35,
+   "dur": 1.426,
+   "file": "flug/line-2-0.wav",
+   "text": "Ya *Allah!*",
+   "speaker": "Sitznachbar",
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "*Allah!*",
+     "start": 0.58
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "h2",
+   "shot": "hook_b",
+   "start": 1.976,
+   "dur": 4.258,
+   "file": "flug/line-0-0.wav",
+   "text": "Wenn das jetzt dein *letzter* Moment wäre … wärst du bereit?",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Wenn",
+     "start": 0.16
+    },
+    {
+     "word": "das",
+     "start": 0.42
+    },
+    {
+     "word": "jetzt",
+     "start": 0.72
+    },
+    {
+     "word": "dein",
+     "start": 1.02
+    },
+    {
+     "word": "*letzter*",
+     "start": 1.3
+    },
+    {
+     "word": "Moment",
+     "start": 1.76
+    },
+    {
+     "word": "wäre",
+     "start": 2.2
+    },
+    {
+     "word": "…",
+     "start": 2.75
+    },
+    {
+     "word": "wärst",
+     "start": 3.3
+    },
+    {
+     "word": "du",
+     "start": 3.6
+    },
+    {
+     "word": "bereit?",
+     "start": 3.72
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "k1",
+   "shot": "kabine",
+   "start": 6.234,
+   "dur": 7.191,
+   "file": "flug/line-0-1.wav",
+   "text": "Ein ganz normaler *Nachtflug*. Neben dir lacht einer über ein Video. Hinten schläft ein *Kind*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Ein",
+     "start": 0.22
+    },
+    {
+     "word": "ganz",
+     "start": 0.46
+    },
+    {
+     "word": "normaler",
+     "start": 0.86
+    },
+    {
+     "word": "*Nachtflug*.",
+     "start": 1.4
+    },
+    {
+     "word": "Neben",
+     "start": 2.72
+    },
+    {
+     "word": "dir",
+     "start": 3.0
+    },
+    {
+     "word": "lacht",
+     "start": 3.22
+    },
+    {
+     "word": "einer",
+     "start": 3.6
+    },
+    {
+     "word": "über",
+     "start": 3.94
+    },
+    {
+     "word": "ein",
+     "start": 4.12
+    },
+    {
+     "word": "Video.",
+     "start": 4.32
+    },
+    {
+     "word": "Hinten",
+     "start": 5.48
+    },
+    {
+     "word": "schläft",
+     "start": 6.1
+    },
+    {
+     "word": "ein",
+     "start": 6.44
+    },
+    {
+     "word": "*Kind*.",
+     "start": 6.62
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "k2",
+   "shot": "handy",
+   "start": 13.425,
+   "dur": 4.873,
+   "file": "flug/line-0-2.wav",
+   "text": "Auf deinem Handy leuchtet es auf: *Isha*. Du wischst es weg.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Auf",
+     "start": 0.34
+    },
+    {
+     "word": "deinem",
+     "start": 0.48
+    },
+    {
+     "word": "Handy",
+     "start": 0.76
+    },
+    {
+     "word": "leuchtet",
+     "start": 1.2
+    },
+    {
+     "word": "es",
+     "start": 1.62
+    },
+    {
+     "word": "auf:",
+     "start": 1.88
+    },
+    {
+     "word": "*Isha*.",
+     "start": 3.06
+    },
+    {
+     "word": "Du",
+     "start": 4.04
+    },
+    {
+     "word": "wischst",
+     "start": 4.16
+    },
+    {
+     "word": "es",
+     "start": 4.46
+    },
+    {
+     "word": "weg.",
+     "start": 4.62
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "k3",
+   "shot": "handy",
+   "start": 18.548,
+   "dur": 1.76,
+   "file": "flug/line-1-0.wav",
+   "text": "Mach ich nach der *Landung*.",
+   "speaker": "Du",
+   "words": [
+    {
+     "word": "Mach",
+     "start": 0.24
+    },
+    {
+     "word": "ich",
+     "start": 0.46
+    },
+    {
+     "word": "nach",
+     "start": 0.64
+    },
+    {
+     "word": "der",
+     "start": 0.88
+    },
+    {
+     "word": "*Landung*.",
+     "start": 1.02
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "t1",
+   "shot": "gong",
+   "start": 21.608,
+   "dur": 5.236,
+   "file": "flug/line-3-0.wav",
+   "text": "Meine Damen und Herren, bitte schnallen Sie sich an. Wir erwarten leichte *Turbulenzen*.",
+   "speaker": "Kapitaen",
+   "words": [
+    {
+     "word": "Meine",
+     "start": 0.16
+    },
+    {
+     "word": "Damen",
+     "start": 0.4
+    },
+    {
+     "word": "und",
+     "start": 0.66
+    },
+    {
+     "word": "Herren,",
+     "start": 0.8
+    },
+    {
+     "word": "bitte",
+     "start": 1.42
+    },
+    {
+     "word": "schnallen",
+     "start": 1.64
+    },
+    {
+     "word": "Sie",
+     "start": 1.98
+    },
+    {
+     "word": "sich",
+     "start": 2.14
+    },
+    {
+     "word": "an.",
+     "start": 2.42
+    },
+    {
+     "word": "Wir",
+     "start": 3.22
+    },
+    {
+     "word": "erwarten",
+     "start": 3.32
+    },
+    {
+     "word": "leichte",
+     "start": 3.88
+    },
+    {
+     "word": "*Turbulenzen*.",
+     "start": 4.3
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "t2",
+   "shot": "gong",
+   "start": 27.194,
+   "dur": 3.36,
+   "file": "flug/line-2-1.wav",
+   "text": "Chill. Das passiert *ständig*.",
+   "speaker": "Sitznachbar",
+   "words": [
+    {
+     "word": "Chill.",
+     "start": 1.24
+    },
+    {
+     "word": "Das",
+     "start": 2.16
+    },
+    {
+     "word": "passiert",
+     "start": 2.36
+    },
+    {
+     "word": "*ständig*.",
+     "start": 2.74
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "a1",
+   "shot": "absturz",
+   "start": 32.454,
+   "dur": 1.92,
+   "file": "flug/line-4-0.wav",
+   "text": "Kopf *runter!* Bleiben Sie unten!",
+   "speaker": "Flugbegleiterin",
+   "words": [
+    {
+     "word": "Kopf",
+     "start": 0.14
+    },
+    {
+     "word": "*runter!*",
+     "start": 0.44
+    },
+    {
+     "word": "Bleiben",
+     "start": 1.1
+    },
+    {
+     "word": "Sie",
+     "start": 1.4
+    },
+    {
+     "word": "unten!",
+     "start": 1.56
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "a2",
+   "shot": "absturz",
+   "start": 34.574,
+   "dur": 9.519,
+   "file": "flug/line-0-3.wav",
+   "text": "Das Flugzeug *fällt*. Dein Magen hebt ab. Und auf einmal ist alles egal. Dein Handy. Dein Geld. Deine Pläne.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.08
+    },
+    {
+     "word": "Flugzeug",
+     "start": 0.28
+    },
+    {
+     "word": "*fällt*.",
+     "start": 0.84
+    },
+    {
+     "word": "Dein",
+     "start": 1.6
+    },
+    {
+     "word": "Magen",
+     "start": 1.88
+    },
+    {
+     "word": "hebt",
+     "start": 2.34
+    },
+    {
+     "word": "ab.",
+     "start": 2.7
+    },
+    {
+     "word": "Und",
+     "start": 3.48
+    },
+    {
+     "word": "auf",
+     "start": 3.62
+    },
+    {
+     "word": "einmal",
+     "start": 3.9
+    },
+    {
+     "word": "ist",
+     "start": 4.6
+    },
+    {
+     "word": "alles",
+     "start": 4.9
+    },
+    {
+     "word": "egal.",
+     "start": 5.38
+    },
+    {
+     "word": "Dein",
+     "start": 6.36
+    },
+    {
+     "word": "Handy.",
+     "start": 6.58
+    },
+    {
+     "word": "Dein",
+     "start": 7.46
+    },
+    {
+     "word": "Geld.",
+     "start": 7.72
+    },
+    {
+     "word": "Deine",
+     "start": 8.44
+    },
+    {
+     "word": "Pläne.",
+     "start": 8.78
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "a3",
+   "shot": "absturz",
+   "start": 44.293,
+   "dur": 4.8,
+   "file": "flug/line-2-2.wav",
+   "text": "Ya Allah! Ya Allah, *rette* uns!",
+   "speaker": "Sitznachbar",
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "Allah!",
+     "start": 0.98
+    },
+    {
+     "word": "Ya",
+     "start": 2.14
+    },
+    {
+     "word": "Allah,",
+     "start": 3.0
+    },
+    {
+     "word": "*rette*",
+     "start": 3.66
+    },
+    {
+     "word": "uns!",
+     "start": 4.12
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "a4",
+   "shot": "beten",
+   "start": 49.493,
+   "dur": 2.659,
+   "file": "flug/line-5-0.wav",
+   "text": "Ya Rabbi … meine *Kinder* …",
+   "speaker": "Frau",
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.18
+    },
+    {
+     "word": "Rabbi",
+     "start": 0.38
+    },
+    {
+     "word": "…",
+     "start": 0.94
+    },
+    {
+     "word": "meine",
+     "start": 1.5
+    },
+    {
+     "word": "*Kinder*",
+     "start": 1.88
+    },
+    {
+     "word": "…",
+     "start": 2.18
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "a5",
+   "shot": "beten",
+   "start": 52.452,
+   "dur": 7.019,
+   "file": "flug/line-0-4.wav",
+   "text": "Jetzt ruft jeder *Allah* an. Auch die, die ihn jahrelang vergessen haben. Auch *du*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Jetzt",
+     "start": 0.26
+    },
+    {
+     "word": "ruft",
+     "start": 0.7
+    },
+    {
+     "word": "jeder",
+     "start": 1.18
+    },
+    {
+     "word": "*Allah*",
+     "start": 1.8
+    },
+    {
+     "word": "an.",
+     "start": 2.34
+    },
+    {
+     "word": "Auch",
+     "start": 3.2
+    },
+    {
+     "word": "die,",
+     "start": 3.44
+    },
+    {
+     "word": "die",
+     "start": 3.74
+    },
+    {
+     "word": "ihn",
+     "start": 3.9
+    },
+    {
+     "word": "jahrelang",
+     "start": 4.14
+    },
+    {
+     "word": "vergessen",
+     "start": 4.72
+    },
+    {
+     "word": "haben.",
+     "start": 5.2
+    },
+    {
+     "word": "Auch",
+     "start": 6.14
+    },
+    {
+     "word": "*du*.",
+     "start": 6.44
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "a6",
+   "shot": "beten",
+   "start": 59.771,
+   "dur": 6.274,
+   "file": "flug/line-1-1.wav",
+   "text": "Ya Allah … gib mir noch eine *Chance*. Ich bete. Ich versprech's.",
+   "speaker": "Du",
+   "words": [
+    {
+     "word": "Ya",
+     "start": 0.14
+    },
+    {
+     "word": "Allah",
+     "start": 0.34
+    },
+    {
+     "word": "…",
+     "start": 1.12
+    },
+    {
+     "word": "gib",
+     "start": 1.9
+    },
+    {
+     "word": "mir",
+     "start": 2.1
+    },
+    {
+     "word": "noch",
+     "start": 2.24
+    },
+    {
+     "word": "eine",
+     "start": 2.42
+    },
+    {
+     "word": "*Chance*.",
+     "start": 2.7
+    },
+    {
+     "word": "Ich",
+     "start": 4.12
+    },
+    {
+     "word": "bete.",
+     "start": 4.38
+    },
+    {
+     "word": "Ich",
+     "start": 5.44
+    },
+    {
+     "word": "versprech's.",
+     "start": 5.56
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "s1",
+   "shot": "stille",
+   "start": 68.045,
+   "dur": 5.683,
+   "file": "flug/line-3-1.wav",
+   "text": "Wir … haben es *überstanden*. Wir landen in zwanzig Minuten.",
+   "speaker": "Kapitaen",
+   "words": [
+    {
+     "word": "Wir",
+     "start": 0.66
+    },
+    {
+     "word": "…",
+     "start": 1.78
+    },
+    {
+     "word": "haben",
+     "start": 1.88
+    },
+    {
+     "word": "es",
+     "start": 1.98
+    },
+    {
+     "word": "*überstanden*.",
+     "start": 2.08
+    },
+    {
+     "word": "Wir",
+     "start": 3.6
+    },
+    {
+     "word": "landen",
+     "start": 3.78
+    },
+    {
+     "word": "in",
+     "start": 4.18
+    },
+    {
+     "word": "zwanzig",
+     "start": 4.44
+    },
+    {
+     "word": "Minuten.",
+     "start": 4.9
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "l1",
+   "shot": "landung",
+   "start": 76.328,
+   "dur": 3.762,
+   "file": "flug/line-2-3.wav",
+   "text": "Bruder, ich dachte echt, das *war's*.",
+   "speaker": "Sitznachbar",
+   "words": [
+    {
+     "word": "Bruder,",
+     "start": 1.12
+    },
+    {
+     "word": "ich",
+     "start": 1.92
+    },
+    {
+     "word": "dachte",
+     "start": 2.1
+    },
+    {
+     "word": "echt,",
+     "start": 2.48
+    },
+    {
+     "word": "das",
+     "start": 2.72
+    },
+    {
+     "word": "*war's*.",
+     "start": 2.98
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "l2",
+   "shot": "landung",
+   "start": 80.09,
+   "dur": 1.52,
+   "file": "flug/line-2-4.wav",
+   "text": "Das muss ich *posten*.",
+   "speaker": "Sitznachbar",
+   "words": [
+    {
+     "word": "Das",
+     "start": 0.14
+    },
+    {
+     "word": "muss",
+     "start": 0.5
+    },
+    {
+     "word": "ich",
+     "start": 0.7
+    },
+    {
+     "word": "*posten*.",
+     "start": 0.86
+    }
+   ],
+   "tail": 0,
+   "dialog": true
+  },
+  {
+   "id": "l3",
+   "shot": "vergessen",
+   "start": 82.31,
+   "dur": 4.39,
+   "file": "flug/line-0-5.wav",
+   "text": "Zwanzig Minuten später … ist alles *vergessen*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Zwanzig",
+     "start": 0.3
+    },
+    {
+     "word": "Minuten",
+     "start": 0.96
+    },
+    {
+     "word": "später",
+     "start": 1.46
+    },
+    {
+     "word": "…",
+     "start": 2.04
+    },
+    {
+     "word": "ist",
+     "start": 2.62
+    },
+    {
+     "word": "alles",
+     "start": 3.12
+    },
+    {
+     "word": "*vergessen*.",
+     "start": 3.62
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "q0",
+   "shot": "vergessen",
+   "start": 86.7,
+   "dur": 3.96,
+   "file": "flug/line-0-6.wav",
+   "text": "Genau diesen Moment beschreibt *Allah* im Koran:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Genau",
+     "start": 0.14
+    },
+    {
+     "word": "diesen",
+     "start": 0.62
+    },
+    {
+     "word": "Moment",
+     "start": 1.02
+    },
+    {
+     "word": "beschreibt",
+     "start": 2.04
+    },
+    {
+     "word": "*Allah*",
+     "start": 2.58
+    },
+    {
+     "word": "im",
+     "start": 3.06
+    },
+    {
+     "word": "Koran:",
+     "start": 3.2
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e1",
+   "shot": "terminal",
+   "start": 106.237,
+   "dur": 5.455,
+   "file": "flug/line-0-7.wav",
+   "text": "Du musst nicht in einem fallenden Flugzeug sitzen, um zu Allah *zurückzukehren*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Du",
+     "start": 0.1
+    },
+    {
+     "word": "musst",
+     "start": 0.26
+    },
+    {
+     "word": "nicht",
+     "start": 0.64
+    },
+    {
+     "word": "in",
+     "start": 1.0
+    },
+    {
+     "word": "einem",
+     "start": 1.14
+    },
+    {
+     "word": "fallenden",
+     "start": 1.44
+    },
+    {
+     "word": "Flugzeug",
+     "start": 1.92
+    },
+    {
+     "word": "sitzen,",
+     "start": 2.48
+    },
+    {
+     "word": "um",
+     "start": 3.38
+    },
+    {
+     "word": "zu",
+     "start": 3.56
+    },
+    {
+     "word": "Allah",
+     "start": 3.76
+    },
+    {
+     "word": "*zurückzukehren*.",
+     "start": 4.38
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e2",
+   "shot": "terminal",
+   "start": 121.032,
+   "dur": 6.118,
+   "file": "flug/line-0-8.wav",
+   "text": "Vielleicht im *Flugzeug*. Vielleicht heute Nacht … in deinem *Bett*.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Vielleicht",
+     "start": 0.14
+    },
+    {
+     "word": "im",
+     "start": 0.7
+    },
+    {
+     "word": "*Flugzeug*.",
+     "start": 0.96
+    },
+    {
+     "word": "Vielleicht",
+     "start": 2.76
+    },
+    {
+     "word": "heute",
+     "start": 3.38
+    },
+    {
+     "word": "Nacht",
+     "start": 3.7
+    },
+    {
+     "word": "…",
+     "start": 4.28
+    },
+    {
+     "word": "in",
+     "start": 4.86
+    },
+    {
+     "word": "deinem",
+     "start": 5.04
+    },
+    {
+     "word": "*Bett*.",
+     "start": 5.5
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e3",
+   "shot": "gebetsraum",
+   "start": 127.15,
+   "dur": 2.8,
+   "file": "flug/line-0-9.wav",
+   "text": "Der Prophet, Friede sei mit ihm, sagte:",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Der",
+     "start": 0.14
+    },
+    {
+     "word": "Prophet,",
+     "start": 0.32
+    },
+    {
+     "word": "Friede",
+     "start": 1.18
+    },
+    {
+     "word": "sei",
+     "start": 1.56
+    },
+    {
+     "word": "mit",
+     "start": 1.74
+    },
+    {
+     "word": "ihm,",
+     "start": 2.0
+    },
+    {
+     "word": "sagte:",
+     "start": 2.26
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "qh",
+   "shot": "gebetsraum",
+   "start": 130.05,
+   "dur": 6.24,
+   "file": "flug/line-6-0.wav",
+   "text": "Allah nimmt die *Reue* seines Dieners an … solange er noch nicht mit dem Tod ringt.",
+   "speaker": "Zitat",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.1
+    },
+    {
+     "word": "nimmt",
+     "start": 0.7
+    },
+    {
+     "word": "die",
+     "start": 0.9
+    },
+    {
+     "word": "*Reue*",
+     "start": 1.04
+    },
+    {
+     "word": "seines",
+     "start": 1.58
+    },
+    {
+     "word": "Dieners",
+     "start": 1.96
+    },
+    {
+     "word": "an",
+     "start": 2.44
+    },
+    {
+     "word": "…",
+     "start": 2.92
+    },
+    {
+     "word": "solange",
+     "start": 3.4
+    },
+    {
+     "word": "er",
+     "start": 3.9
+    },
+    {
+     "word": "noch",
+     "start": 4.08
+    },
+    {
+     "word": "nicht",
+     "start": 4.34
+    },
+    {
+     "word": "mit",
+     "start": 5.06
+    },
+    {
+     "word": "dem",
+     "start": 5.18
+    },
+    {
+     "word": "Tod",
+     "start": 5.42
+    },
+    {
+     "word": "ringt.",
+     "start": 5.78
+    }
+   ],
+   "tail": 2.4,
+   "quote": true,
+   "by": "der Prophet ﷺ · Tirmidhi 3537"
+  },
+  {
+   "id": "e4",
+   "shot": "gebetsraum",
+   "start": 136.59,
+   "dur": 3.021,
+   "file": "flug/line-0-10.wav",
+   "text": "Die Tür ist *offen*. Aber nicht für immer.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Die",
+     "start": 0.16
+    },
+    {
+     "word": "Tür",
+     "start": 0.36
+    },
+    {
+     "word": "ist",
+     "start": 0.62
+    },
+    {
+     "word": "*offen*.",
+     "start": 0.92
+    },
+    {
+     "word": "Aber",
+     "start": 1.82
+    },
+    {
+     "word": "nicht",
+     "start": 2.02
+    },
+    {
+     "word": "für",
+     "start": 2.28
+    },
+    {
+     "word": "immer.",
+     "start": 2.5
+    }
+   ],
+   "tail": 0
+  },
+  {
+   "id": "e5",
+   "shot": "gebetsraum",
+   "start": 139.611,
+   "dur": 5.47,
+   "file": "flug/line-0-11.wav",
+   "text": "Kehr zu Ihm zurück. *Jetzt.* Nicht nach der Landung.",
+   "speaker": "Erzaehler",
+   "words": [
+    {
+     "word": "Kehr",
+     "start": 0.36
+    },
+    {
+     "word": "zu",
+     "start": 0.82
+    },
+    {
+     "word": "Ihm",
+     "start": 1.1
+    },
+    {
+     "word": "zurück.",
+     "start": 1.42
+    },
+    {
+     "word": "*Jetzt.*",
+     "start": 2.74
+    },
+    {
+     "word": "Nicht",
+     "start": 3.92
+    },
+    {
+     "word": "nach",
+     "start": 4.4
+    },
+    {
+     "word": "der",
+     "start": 4.74
+    },
+    {
+     "word": "Landung.",
+     "start": 4.94
+    }
+   ],
+   "tail": 0
+  }
+ ],
+ "quotes": [
+  {
+   "id": "qh",
+   "shot": "gebetsraum",
+   "start": 130.05,
+   "dur": 6.24,
+   "text": "Allah nimmt die *Reue* seines Dieners an … solange er noch nicht mit dem Tod ringt.",
+   "by": "der Prophet ﷺ · Tirmidhi 3537",
+   "words": [
+    {
+     "word": "Allah",
+     "start": 0.1
+    },
+    {
+     "word": "nimmt",
+     "start": 0.7
+    },
+    {
+     "word": "die",
+     "start": 0.9
+    },
+    {
+     "word": "*Reue*",
+     "start": 1.04
+    },
+    {
+     "word": "seines",
+     "start": 1.58
+    },
+    {
+     "word": "Dieners",
+     "start": 1.96
+    },
+    {
+     "word": "an",
+     "start": 2.44
+    },
+    {
+     "word": "…",
+     "start": 2.92
+    },
+    {
+     "word": "solange",
+     "start": 3.4
+    },
+    {
+     "word": "er",
+     "start": 3.9
+    },
+    {
+     "word": "noch",
+     "start": 4.08
+    },
+    {
+     "word": "nicht",
+     "start": 4.34
+    },
+    {
+     "word": "mit",
+     "start": 5.06
+    },
+    {
+     "word": "dem",
+     "start": 5.18
+    },
+    {
+     "word": "Tod",
+     "start": 5.42
+    },
+    {
+     "word": "ringt.",
+     "start": 5.78
+    }
+   ]
+  }
+ ],
+ "recites": [
+  {
+   "id": "r1",
+   "shot": "koran",
+   "start": 91.16,
+   "dur": 14.477,
+   "full": 16.277,
+   "file": "flug/rez_17_67.wav",
+   "ar": "وَإِذَا مَسَّكُمُ الضُّرُّ فِي الْبَحْرِ ضَلَّ مَن تَدْعُونَ إِلَّا إِيَّاهُ ۖ فَلَمَّا نَجَّاكُمْ إِلَى الْبَرِّ أَعْرَضْتُمْ ۚ وَكَانَ الْإِنسَانُ كَفُورًا",
+   "de": "Und wenn euch auf dem Meer ein Unheil trifft, sind die, die ihr anruft, verschwunden – außer Ihm. Doch wenn Er euch ans Land errettet hat, wendet ihr euch ab. Der Mensch ist ja sehr undankbar.",
+   "ref": "Koran 17:67",
+   "words": [
+    {
+     "word": "وَإِذَا",
+     "start": 0.14
+    },
+    {
+     "word": "مَسَّكُمُ",
+     "start": 0.74
+    },
+    {
+     "word": "الضُّرُّ",
+     "start": 1.4
+    },
+    {
+     "word": "فِي",
+     "start": 2.04
+    },
+    {
+     "word": "الْبَحْرِ",
+     "start": 2.16
+    },
+    {
+     "word": "ضَلَّ",
+     "start": 2.76
+    },
+    {
+     "word": "مَن",
+     "start": 3.2
+    },
+    {
+     "word": "تَدْعُونَ",
+     "start": 3.96
+    },
+    {
+     "word": "إِلَّا",
+     "start": 4.72
+    },
+    {
+     "word": "إِيَّاهُ",
+     "start": 6.26
+    },
+    {
+     "word": "فَلَمَّا",
+     "start": 7.58
+    },
+    {
+     "word": "نَجَّاكُمْ",
+     "start": 8.4
+    },
+    {
+     "word": "إِلَى",
+     "start": 9.3
+    },
+    {
+     "word": "الْبَرِّ",
+     "start": 9.56
+    },
+    {
+     "word": "أَعْرَضْتُمْ",
+     "start": 10.14
+    },
+    {
+     "word": "وَكَانَ",
+     "start": 11.0
+    },
+    {
+     "word": "الْإِنسَانُ",
+     "start": 11.54
+    },
+    {
+     "word": "كَفُورًا",
+     "start": 12.8
+    }
+   ]
+  },
+  {
+   "id": "r2",
+   "shot": "terminal",
+   "start": 111.992,
+   "dur": 8.74,
+   "full": 10.54,
+   "file": "flug/rez_31_34.wav",
+   "ar": "وَمَا تَدْرِي نَفْسٌ مَّاذَا تَكْسِبُ غَدًا ۖ وَمَا تَدْرِي نَفْسٌ بِأَيِّ أَرْضٍ تَمُوتُ",
+   "de": "Und niemand weiß, was er morgen tun wird, und niemand weiß, in welchem Land er sterben wird.",
+   "ref": "Koran 31:34",
+   "words": [
+    {
+     "word": "وَمَا",
+     "start": 0.1
+    },
+    {
+     "word": "تَدْرِي",
+     "start": 0.52
+    },
+    {
+     "word": "نَفْسٌ",
+     "start": 1.08
+    },
+    {
+     "word": "مَّاذَا",
+     "start": 1.84
+    },
+    {
+     "word": "تَكْسِبُ",
+     "start": 2.46
+    },
+    {
+     "word": "غَدًا",
+     "start": 3.08
+    },
+    {
+     "word": "وَمَا",
+     "start": 4.1
+    },
+    {
+     "word": "تَدْرِي",
+     "start": 4.54
+    },
+    {
+     "word": "نَفْسٌ",
+     "start": 5.08
+    },
+    {
+     "word": "بِأَيِّ",
+     "start": 5.82
+    },
+    {
+     "word": "أَرْضٍ",
+     "start": 6.38
+    },
+    {
+     "word": "تَمُوتُ",
+     "start": 7.36
+    }
+   ]
+  },
+  {
+   "id": "r3",
+   "shot": "ende",
+   "start": 146.231,
+   "dur": 8.379,
+   "full": 8.379,
+   "file": "flug/rez_2_156.wav",
+   "ar": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+   "de": "Wir gehören Allah, und zu Ihm kehren wir zurück.",
+   "ref": "Koran 2:156",
+   "words": [
+    {
+     "word": "إِنَّا",
+     "start": 0.08
+    },
+    {
+     "word": "لِلَّهِ",
+     "start": 0.76
+    },
+    {
+     "word": "وَإِنَّا",
+     "start": 1.44
+    },
+    {
+     "word": "إِلَيْهِ",
+     "start": 4.019
+    },
+    {
+     "word": "رَاجِعُونَ",
+     "start": 4.54
+    }
+   ]
+  }
+ ],
+ "events": {
+  "ya_h1": 0.53,
+  "allah_h1": 0.93,
+  "wenn_h2": 2.136,
+  "das_h2": 2.396,
+  "jetzt_h2": 2.696,
+  "dein_h2": 2.996,
+  "letzter_h2": 3.276,
+  "moment_h2": 3.736,
+  "wäre_h2": 4.176,
+  "wärst_h2": 5.276,
+  "du_h2": 5.576,
+  "bereit_h2": 5.696,
+  "ein_k1": 6.454,
+  "ganz_k1": 6.694,
+  "normaler_k1": 7.094,
+  "nachtflug_k1": 7.634,
+  "neben_k1": 8.954,
+  "dir_k1": 9.234,
+  "lacht_k1": 9.454,
+  "einer_k1": 9.834,
+  "über_k1": 10.174,
+  "video_k1": 10.554,
+  "hinten_k1": 11.714,
+  "schläft_k1": 12.334,
+  "kind_k1": 12.854,
+  "auf_k2": 13.765,
+  "deinem_k2": 13.905,
+  "handy_k2": 14.185,
+  "leuchtet_k2": 14.625,
+  "es_k2": 15.045,
+  "isha_k2": 16.485,
+  "du_k2": 17.465,
+  "wischst_k2": 17.585,
+  "weg_k2": 18.045,
+  "mach_k3": 18.788,
+  "ich_k3": 19.008,
+  "nach_k3": 19.188,
+  "der_k3": 19.428,
+  "landung_k3": 19.568,
+  "meine_t1": 21.768,
+  "damen_t1": 22.008,
+  "und_t1": 22.268,
+  "herren_t1": 22.408,
+  "bitte_t1": 23.028,
+  "schnallen_t1": 23.248,
+  "sie_t1": 23.588,
+  "sich_t1": 23.748,
+  "an_t1": 24.028,
+  "wir_t1": 24.828,
+  "erwarten_t1": 24.928,
+  "leichte_t1": 25.488,
+  "turbulenzen_t1": 25.908,
+  "chill_t2": 28.434,
+  "das_t2": 29.354,
+  "passiert_t2": 29.554,
+  "ständig_t2": 29.934,
+  "kopf_a1": 32.594,
+  "runter_a1": 32.894,
+  "bleiben_a1": 33.554,
+  "sie_a1": 33.854,
+  "unten_a1": 34.014,
+  "das_a2": 34.654,
+  "flugzeug_a2": 34.854,
+  "fällt_a2": 35.414,
+  "dein_a2": 36.174,
+  "magen_a2": 36.454,
+  "hebt_a2": 36.914,
+  "ab_a2": 37.274,
+  "und_a2": 38.054,
+  "auf_a2": 38.194,
+  "einmal_a2": 38.474,
+  "ist_a2": 39.174,
+  "alles_a2": 39.474,
+  "egal_a2": 39.954,
+  "handy_a2": 41.154,
+  "geld_a2": 42.294,
+  "deine_a2": 43.014,
+  "pläne_a2": 43.354,
+  "ya_a3": 44.473,
+  "allah_a3": 45.273,
+  "rette_a3": 47.953,
+  "uns_a3": 48.413,
+  "ya_a4": 49.673,
+  "rabbi_a4": 49.873,
+  "meine_a4": 50.993,
+  "kinder_a4": 51.373,
+  "jetzt_a5": 52.712,
+  "ruft_a5": 53.152,
+  "jeder_a5": 53.632,
+  "allah_a5": 54.252,
+  "an_a5": 54.792,
+  "auch_a5": 55.652,
+  "die_a5": 55.892,
+  "ihn_a5": 56.352,
+  "jahrelang_a5": 56.592,
+  "vergessen_a5": 57.172,
+  "haben_a5": 57.652,
+  "du_a5": 58.892,
+  "ya_a6": 59.911,
+  "allah_a6": 60.111,
+  "gib_a6": 61.671,
+  "mir_a6": 61.871,
+  "noch_a6": 62.011,
+  "eine_a6": 62.191,
+  "chance_a6": 62.471,
+  "ich_a6": 63.891,
+  "bete_a6": 64.151,
+  "versprechs_a6": 65.331,
+  "wir_s1": 68.705,
+  "haben_s1": 69.925,
+  "es_s1": 70.025,
+  "überstanden_s1": 70.125,
+  "landen_s1": 71.825,
+  "in_s1": 72.225,
+  "zwanzig_s1": 72.485,
+  "minuten_s1": 72.945,
+  "bruder_l1": 77.448,
+  "ich_l1": 78.248,
+  "dachte_l1": 78.428,
+  "echt_l1": 78.808,
+  "das_l1": 79.048,
+  "wars_l1": 79.308,
+  "das_l2": 80.23,
+  "muss_l2": 80.59,
+  "ich_l2": 80.79,
+  "posten_l2": 80.95,
+  "zwanzig_l3": 82.61,
+  "minuten_l3": 83.27,
+  "später_l3": 83.77,
+  "ist_l3": 84.93,
+  "alles_l3": 85.43,
+  "vergessen_l3": 85.93,
+  "genau_q0": 86.84,
+  "diesen_q0": 87.32,
+  "moment_q0": 87.72,
+  "beschreibt_q0": 88.74,
+  "allah_q0": 89.28,
+  "im_q0": 89.76,
+  "koran_q0": 89.9,
+  "rez_r1": 91.16,
+  "du_e1": 106.337,
+  "musst_e1": 106.497,
+  "nicht_e1": 106.877,
+  "in_e1": 107.237,
+  "einem_e1": 107.377,
+  "fallenden_e1": 107.677,
+  "flugzeug_e1": 108.157,
+  "sitzen_e1": 108.717,
+  "um_e1": 109.617,
+  "zu_e1": 109.797,
+  "allah_e1": 109.997,
+  "zurückzukehren_e1": 110.617,
+  "rez_r2": 111.992,
+  "vielleicht_e2": 121.172,
+  "im_e2": 121.732,
+  "flugzeug_e2": 121.992,
+  "heute_e2": 124.412,
+  "nacht_e2": 124.732,
+  "in_e2": 125.892,
+  "deinem_e2": 126.072,
+  "bett_e2": 126.532,
+  "der_e3": 127.29,
+  "prophet_e3": 127.47,
+  "friede_e3": 128.33,
+  "sei_e3": 128.71,
+  "mit_e3": 128.89,
+  "ihm_e3": 129.15,
+  "sagte_e3": 129.41,
+  "allah_qh": 130.15,
+  "nimmt_qh": 130.75,
+  "die_qh": 130.95,
+  "reue_qh": 131.09,
+  "seines_qh": 131.63,
+  "dieners_qh": 132.01,
+  "an_qh": 132.49,
+  "solange_qh": 133.45,
+  "er_qh": 133.95,
+  "noch_qh": 134.13,
+  "nicht_qh": 134.39,
+  "mit_qh": 135.11,
+  "dem_qh": 135.23,
+  "tod_qh": 135.47,
+  "ringt_qh": 135.83,
+  "die_e4": 136.75,
+  "tür_e4": 136.95,
+  "ist_e4": 137.21,
+  "offen_e4": 137.51,
+  "aber_e4": 138.41,
+  "nicht_e4": 138.61,
+  "für_e4": 138.87,
+  "immer_e4": 139.09,
+  "kehr_e5": 139.971,
+  "zu_e5": 140.431,
+  "ihm_e5": 140.711,
+  "zurück_e5": 141.031,
+  "jetzt_e5": 142.351,
+  "nicht_e5": 143.531,
+  "nach_e5": 144.011,
+  "der_e5": 144.351,
+  "landung_e5": 144.551,
+  "rez_r3": 146.231
+ }
+}
