@@ -274,6 +274,7 @@ NBP = {   # (Schulter L, Ellenbogen L, Schulter R, Ellenbogen R, Brust, Nacken) 
     "relief": ((30, 18, 0), (-90, 0, 0), (110, -40, 0), (-120, 0, 0), (-12, 0, 0), (-12, 0, -20)),
     "post": ((70, 18, 0), (-95, 0, 0), (70, -18, 0), (-95, 0, 0), (2, 0, 0), (34, 0, 0)),
     "rest": ((28, 14, 0), (-50, 0, 0), (28, -14, 0), (-50, 0, 0), (-6, 0, 0), (4, 0, 0)),
+    "pray": ((72, 12, 0), (-125, 0, 0), (72, -12, 0), (-125, 0, 0), (56, 0, 0), (40, 0, 0)),   # tief vorgebeugt, Hände vor dem Gesicht
 }
 
 
@@ -544,7 +545,7 @@ def shot_absturz():
     t_egal = ev("egal_a2", ta2 + 3.6)
     t_handy = ev("handy_a2", ta2 + 5.4)
     ck(rig, [(0, tuple(SEATA), (-22, -6, 0)), (ta1 + 1.0, None, (-18, -2, 0)), (ta2 - 0.1, None, (-14, -4, 0)),
-             (t_fall - 0.2, None, (70, -18, 0)), (t_egal - 0.6, None, (96, -26, 8)), (t_handy - 0.4, None, (10, 4, -6)),
+             (t_fall - 0.2, None, (22, -30, 0)), (t_egal - 0.6, None, (16, -10, 8)), (t_handy - 0.4, None, (10, 4, -6)),
              (ta3 - 0.3, None, (-6, 2, 0)), (ta3 + 0.2, tuple(SEATA + Vector((-0.04, 0.1, 0))), (-90, -8, 0)), (D, None, (-96, -6, 0))])
     # Flugbegleiterin: hält sich fest, schreit (Kopf vor), Arm deutet nach unten
     FW.kf_rot(S["chest"], ta1, (-6, 0, 0))
@@ -602,8 +603,9 @@ def shot_absturz():
     turbulence(shake, 0, D, amp, seed=3, jolts=[(0.2, 1.0), (t_fall, 1.6), (ta3, 1.0)], lift=[(t_fall, 1.6, 0.16)])
     flicker_lights(C, 0, D, seed=7, low=0.0, high=0.7)
     rnd2 = random.Random(5)
-    for k, tl_ in enumerate((0.6, t_fall + 0.1, t_egal - 0.4, ta3 + 0.5, D - 1.5)):
-        FW.lightning(tl_, [(wl, 800)], st[1], bg, seed=k)
+    for k, (tl_, s_) in enumerate(((0.6, 1.0), (t_fall + 0.1, 1.0), (t_fall + 1.1, 0.7), (t_egal - 0.4, 1.0), (t_egal + 0.6, 0.6),
+                                    (ta3 + 0.5, 1.0), (D - 1.5, 1.0))):
+        FW.lightning(tl_, [(wl, 800)], st[1], bg, strength=s_, seed=k, base=0.3)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.25, "mblur": 0.35}
 
 
@@ -615,8 +617,8 @@ def shot_beten():
     H = my_hands(cam)
     ta4, ta5, ta6 = ls("a4"), ls("a5"), ls("a6")
     t_du = ev("du_a5", ta5 + 5.4)
-    ck(rig, [(0, tuple(SEATA + Vector((0.0, 0.05, -0.06))), (-84, -12, 0)), (ta5 - 0.2, None, (-80, -10, 0)),
-             (ta5 + 1.2, tuple(SEATA + Vector((0.06, 0.06, -0.06))), (-16, -4, 0)), (t_du - 0.5, None, (-10, -8, 0)),
+    ck(rig, [(0, tuple(SEATA + Vector((0.16, 0.02, 0.22))), (-80, -20, 0)), (ta5 - 0.2, None, (-76, -18, 0)),
+             (ta5 + 1.2, tuple(SEATA + Vector((0.2, 0.1, 0.26))), (-36, -7, 0)), (t_du - 0.5, tuple(SEATA + Vector((0.18, 0.1, 0.22))), (-26, -6, 0)),
              (t_du + 0.3, tuple(SEATA + Vector((0.02, 0.04, -0.1))), (-2, -22, 0)), (D, None, (0, -24, 0))])
     hp(H, 0, "hidden")
     hp(H, t_du - 0.1, "dua_low")
@@ -642,15 +644,15 @@ def shot_beten():
     for k, P in pax.items():
         if k in ((0, "D"), (0, "E")):
             continue
-        if rnd.random() < 0.45:
-            FW.kf_rot(P["chest"], 0, (14, 0, 0))
-            FW.kf_rot(P["neck"], 0, (26, 0, 0))
+        if rnd.random() < 0.55:   # Hände hoch zum Himmel (über den Sitzlehnen sichtbar)
+            FW.kf_rot(P["chest"], 0, (-4, 0, 0))
+            FW.kf_rot(P["neck"], 0, (-14, 0, 0))
             for nm, s_ in (("L", -1), ("R", 1)):
-                FW.kf_rot(P[f"sh.{nm}"], 0, (62, 18 * s_, 0))
-                FW.kf_rot(P[f"el.{nm}"], 0, (-95, 0, 0))
+                FW.kf_rot(P[f"sh.{nm}"], 0, (158, 26 * s_, 0))
+                FW.kf_rot(P[f"el.{nm}"], 0, (-28, 0, 0))
         else:
             FW.brace(P, 0, seed=rnd.randint(0, 99))
-    nb_pose(NB, 0, "brace")
+    nb_pose(NB, 0, "pray")
     heads = [P["neck"] for P in pax.values()] + [NB["neck"]]
     amp = lambda t: 0.85 if t < ta6 else 0.7
     jiggle(heads, 0, D, amp, step=0.11, axis_deg=5)

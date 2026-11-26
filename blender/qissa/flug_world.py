@@ -631,7 +631,7 @@ def storm_clouds(world, cam_side=-1, seed=1, n=46, spread=(260, 900)):
     return out, m
 
 
-def lightning(t, lights, cloud_m, world_bg=None, strength=1.0, seed=0):
+def lightning(t, lights, cloud_m, world_bg=None, strength=1.0, seed=0, base=0.0):
     """Blitz: kurzes zweifaches Aufflackern (Licht draußen + Wolken leuchten von innen + Himmel)."""
     rnd = random.Random(seed)
     seq = ((0.0, 0.0), (0.03, 1.0), (0.09, 0.15), (0.14, 0.8), (0.26, 0.05), (0.5, 0.0))
@@ -639,7 +639,7 @@ def lightning(t, lights, cloud_m, world_bg=None, strength=1.0, seed=0):
         for L_, e in lights:
             L_.data.energy = e * v * strength
             L_.data.keyframe_insert("energy", frame=max(1, Q.T(t + dt)))
-        emit_strength(cloud_m, t + dt, 2.5 * v * strength)
+        emit_strength(cloud_m, t + dt, base + 2.5 * v * strength)
         if world_bg is not None:
             world_bg.inputs["Strength"].default_value = 1.0 + 6.0 * v * strength
             world_bg.inputs["Strength"].keyframe_insert("default_value", frame=max(1, Q.T(t + dt)))
