@@ -25,6 +25,7 @@ import { QissaZamzamVideo, ZAMZAM_FPS, ZAMZAM_FRAMES } from "./qissa_zamzam/Qiss
 import { QissaKaabaVideo, KAABA_FPS, KAABA_FRAMES } from "./qissa_kaaba/QissaKaaba";
 import { QissaBadrVideo, BADR_FPS, BADR_FRAMES } from "./qissa_badr/QissaBadr";
 import { QissaHijraVideo, HIJRA_FPS, HIJRA_FRAMES } from "./qissa_hijra/QissaHijra";
+import { FlugVideo, FLUG_FPS, FLUG_FRAMES } from "./flug/Flug";
 
 export const FPS = 30;
 
@@ -112,6 +113,7 @@ export const RemotionRoot: React.FC = () => {
     <Composition id="QissaKaaba" component={QissaKaabaVideo} durationInFrames={KAABA_FRAMES} fps={KAABA_FPS} width={1080} height={1920} />
     <Composition id="QissaBadr" component={QissaBadrVideo} durationInFrames={BADR_FRAMES} fps={BADR_FPS} width={1080} height={1920} />
     <Composition id="QissaHijra" component={QissaHijraVideo} durationInFrames={HIJRA_FRAMES} fps={HIJRA_FPS} width={1080} height={1920} />
+    <Composition id="Flug" component={FlugVideo} durationInFrames={FLUG_FRAMES} fps={FLUG_FPS} width={1080} height={1920} />
     <Composition id="Pov3DProbe" component={Pov3DVideo} durationInFrames={POV_FRAMES} fps={POV_FPS} width={1080} height={1920} />
     <Composition id="AnimeFolge1" component={AnimeVideo} durationInFrames={animeFrames()} fps={30} width={1080} height={1920} />
     <Composition id="WasWaere" component={WhatIfVideo} durationInFrames={whatifFrames()} fps={WFPS2} width={1080} height={1920} />

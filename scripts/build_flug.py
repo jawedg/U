@@ -26,7 +26,7 @@ REC_TAIL = 1.8    # Rezitationen haben ~2,4 s Nachhall – der nächste Satz dar
 PLAN = [
     ("clip", "hook_a", "absturz", 2.6, [("p", 0.35), ("l", "h1"), ("p", 0.15)]),
     ("clip", "hook_b", "beten", 2.0, [("p", 0.05), ("l", "h2"), ("p", 0.35)]),
-    ("shot", "kabine", "FLUG 417 · 11.000 METER · 02:40 UHR", [("p", 0.35), ("l", "k1"), ("p", 0.15)]),
+    ("shot", "kabine", "FLUG 417 · 11.000 METER · 21:40 UHR", [("p", 0.35), ("l", "k1"), ("p", 0.15)]),
     ("shot", "handy", None, [("p", 0.1), ("l", "k2"), ("p", 0.25), ("l", "k3"), ("p", 0.5)]),
     ("shot", "gong", None, [("p", 0.8), ("l", "t1"), ("p", 0.35), ("l", "t2"), ("p", 1.6)]),
     ("shot", "absturz", None, [("p", 0.3), ("l", "a1"), ("p", 0.2), ("l", "a2"), ("p", 0.2), ("l", "a3"), ("p", 0.3)]),
