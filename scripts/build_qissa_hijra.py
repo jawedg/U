@@ -46,7 +46,7 @@ PLAN = [
     ("shot", "treffen", None, [("p", 0.1), ("l", "w1"), ("p", 0.2), ("q", "q6"), ("p", 0.26)]),
     ("shot", "rueckweg", None, [("p", 0.1), ("l", "w2"), ("p", 0.1), ("l", "v5"), ("p", 0.2)]),
     ("shot", "abend", None, [("p", 0.2), ("l", "w3"), ("p", 0.2), ("l", "w4"), ("p", 0.2)]),
-    ("shot", "medina", "MEDINA", [("p", 0.2), ("l", "w5"), ("p", 0.39)]),
+    ("shot", "medina", "AL-MADINA", [("p", 0.2), ("l", "w5"), ("p", 0.39)]),
     ("card", "logo", "QISSAH", 2.8),
     ("extra", "jagd", 8.0),
 ]

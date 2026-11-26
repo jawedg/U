@@ -315,3 +315,9 @@ Lokal reicht `npm run render:3d`.
   (`fitted_web`), dunkle Platte hinter dem Netz, Verfolger nahe der Blickachse. `set_z` je Bild (jedes 3. Bild ließ Läufer „hängen“).
   Überblendungen: jede Einstellung XF = 0,4 s länger gerendert (build: `frames` + Handle), Remotion blendet weich über (`FadeIn`).
   Einstieg: „KOPFGELD · 100 KAMELE“ / „TOT ODER LEBENDIG“ mit Einschlag. Ablauf: `setsid nohup ./scripts/v2_qissa_hijra.sh >> out/hj_v2.log 2>&1 < /dev/null &`.
+  Staubsäule: `smoke_column` (viele SCHMALE Karten steigen nacheinander auf, `smoke_mat` mit feinerem Rauschen, leichter Wind) –
+  wenige große Karten verschmolzen zu einem verschwommenen Fleck; Kamera dabei nicht in den Himmel schwenken (Pferd bleibt im Bild).
+  Ort-Zeile = gesprochene Form („AL-MADINA“, nicht „MEDINA“). Fertige Einstellungen während des Renderns per Kontaktbogen prüfen
+  (ffmpeg select+tile) – Nachbessern ist dann billiger. Änderungen an hijra.py während laufender Renderjobs: erst Kopie testen,
+  dann per `mv` tauschen (neue Blender-Prozesse laden die Datei neu), Einstellung erst danach löschen (keine alten Zwischenbilder).
+  v2-Ergebnis: 2:57,7, 58,9 MB, −14 LUFS.
