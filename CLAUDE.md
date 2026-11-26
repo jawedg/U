@@ -321,3 +321,29 @@ Lokal reicht `npm run render:3d`.
   (ffmpeg select+tile) – Nachbessern ist dann billiger. Änderungen an hijra.py während laufender Renderjobs: erst Kopie testen,
   dann per `mv` tauschen (neue Blender-Prozesse laden die Datei neu), Einstellung erst danach löschen (keine alten Zwischenbilder).
   v2-Ergebnis: 2:57,7, 58,9 MB, −14 LUFS.
+
+## POV-Erinnerung „Was, wenn das dein letzter Flug ist?“ (Nov. 2026, ohne QISSAH-Logo)
+- Nutzerwunsch: anderes Format – Ich-Sicht im Flugzeug, Turbulenzen/Absturzgefahr, alle rufen Allah an, sichere Landung, nach 20 min
+  alles vergessen (Koran 17:67), Erinnerung: jederzeit kann es der letzte Moment sein → zu Allah zurückkehren. Text genehmigt. KEIN QISSAH-Logo
+  („ohne diesmal, einfach was Passendes“) – Ende = schwarze Tafel mit 2:156. Länge 2:35 (inkl. ~35 s Rezitation).
+- **Koran: ECHTER Rezitator** (Nutzer wollte erst KI – Probe C „Erzähler liest Arabisch“ und arabische KI-Stimmen A/B verworfen, dann
+  „mach einfach echte Rezitator“): **Maher al-Muaiqly** (Nutzer wählte aus 8 Proben), Aufnahmen Vers für Vers von **everyayah.com**
+  (Host in Umgebung „Standard“ freigeschaltet, `https://everyayah.com/data/<Rezitator>/<SSSVVV>.mp3`), Teilstücke per Lautstärke-Hüllkurve +
+  Spracherkennung (Arabisch) geschnitten, **leichter Hall** (`voice_gemini.hall(sec=2.0, wet=0.25)`; Nutzer fragte, ob erlaubt – leichter
+  Hall ändert die Worte nicht). Bild: arabische Schrift in Gold Wort für Wort (Zeiten aus STT) + deutsche Übersetzung (Bubenheim/Elyas) darunter.
+- Figuren (je Figur 2 Proben, Nutzer wählte jeweils A): Du = Juan `lx8LAX2EUAKftVz0Dk5z`, Sitznachbar = Albert `f2yUVfK5jdm78zlpcZ8C`,
+  Kapitän = Thomas Schendel `Fghah4fztZORbiKfIGAs` (Bordlautsprecher-Filter in sfx_flug.py), Flugbegleiterin = Anna `DEZHhPbmb8LVZmWufkCh`,
+  Frau = Amira `FOfJ2PMgU6HOGbNYnzto`, Worte des Propheten ﷺ = Christian (wie Folge 5). **„Ya Allah“ im el-Text als „Yaa Allaah“**
+  (arabische Schrift / „Ya Allah“ wurde zu „Yallah“ = andere Bedeutung!), Frau „Ya Rabbi“; jede Figurenzeile per STT geprüft.
+- Ton „wie im Film, nie still“ (Nutzer): 28 ElevenLabs-Geräusche `assets/sfx/el_fl_*.flac` (Kabine, Gong, Durchsage, Turbulenz, Absacken,
+  Alarm, Masken, Sturm, Schreie, Donner, Baby, Sturzflug, Aufsetzen, Applaus, Gate, Terminal, Schritte, Tür, Raum, Teppich, Handy, Herzschlag …),
+  Mix `scripts/sfx_flug.py` (Atmo präsenter: 0.22).
+- Dateien: `src/flug/` (script.json mit `recitations`, Flug.tsx, Komposition `Flug`), `scripts/build_flug.py` (Schritt ("r", id) = Rezitation,
+  Tafeln mit Schritten), Blender `blender/qissa/flug.py` (10 Einstellungen) + `flug_world.py` (Kabine 3+3 mit echten Fensteröffnungen per
+  Boolean, Gepäckfächer mit Klappen, Service-Leiste, Masken fallen + pendeln, Flügel mit Positions-/Blitzlicht, Wolkenmeer, Gewittertürme +
+  Blitze, Landebahn + Flughafenlichter, Terminal bei Dämmerung, Gebetsraum + Teppich zum Ausrollen), Texturen `scripts/flug_textures.py`
+  → `blender/qissa/tex/flug_*.png` (Handy-Feed, „Isha“-Hinweis, Flugkarte, Schilder). Ablauf: `setsid nohup ./scripts/v1_flug.sh >> out/fl_v1.log 2>&1 < /dev/null &`
+  → `out/flug-letzter-flug-klein.mp4`. TikTok-Text: `videos/flug-letzter-flug.md`.
+- Gelernt: Bild-Flächen brauchen eine UV-Lage VOR `create_grid(calc_uvs=True)`, und join_static verlor die UVs → Bildflächen mit
+  `["person"]=1` einzeln lassen. `lib.person(sit=True)` sitzt im Schneidersitz (Knie breit) → im Flugzeugsitz `seat_knees()`. Nachbar direkt
+  daneben (0,46 m) klebte an der Kamera → Platz 0B frei, Nachbar am Gang (0C). Blitz-Licht durchs Fenster max. ~800 W (sonst alles weiß).
