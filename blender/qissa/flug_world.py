@@ -308,6 +308,69 @@ HAIR = [(0.03, 0.025, 0.02), (0.08, 0.05, 0.03), (0.2, 0.13, 0.07), (0.02, 0.02,
 HIJAB = [(0.1, 0.1, 0.12), (0.55, 0.45, 0.4), (0.25, 0.3, 0.45), (0.6, 0.2, 0.25), (0.82, 0.78, 0.7), (0.3, 0.38, 0.32)]
 
 
+EYE_COL = [(0.12, 0.07, 0.04), (0.06, 0.04, 0.03), (0.2, 0.14, 0.08), (0.1, 0.12, 0.08)]
+
+
+def face(P, seed=0, sleep=False, brows=None):
+    """Gesicht (Nutzer: bei diesem Video dürfen Gesichter sein): Augen mit Iris + Lidern, Brauen, Nase, Mund, Ohren.
+    Kopf schaut lokal nach -Y. Rückgabe: dict mit Mund (für Lachen/Schreien) und Augen (für Blinzeln/Schließen)."""
+    rnd = random.Random(seed)
+    name = P["name"]
+    h = P["head"]
+    skin = bpy.data.materials.get(f"skin_{name}")
+    sk = skin.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value[:3] if skin else (0.55, 0.38, 0.27)
+    dark = Q.pbr(f"skind_{name}", tuple(c * 0.78 for c in sk), 0.6)
+    white = Q.pbr("eyewhite", (0.85, 0.84, 0.8), 0.25)
+    iris = Q.pbr(f"iris{seed % 4}", rnd.choice(EYE_COL), 0.2)
+    brow_m = Q.pbr("brow", brows or (0.04, 0.03, 0.025), 0.8)
+    lip = Q.pbr(f"lip_{name}", (sk[0] * 0.75, sk[1] * 0.5, sk[2] * 0.48), 0.5)
+    mouth_in = Q.pbr("mouthin", (0.12, 0.03, 0.03), 0.6)
+    F = {"eyes": [], "lids": []}
+    for s_ in (-1, 1):
+        x = 0.036 * s_
+        e = Q.ball(f"{name}_eye{s_}", (x, -0.088, 0.128), (0.017, 0.012, 0.011), white, parent=h, seg=14)
+        i_ = Q.ball(f"{name}_iris{s_}", (x, -0.0985, 0.128), (0.0085, 0.004, 0.0085), iris, parent=h, seg=12)
+        lid = Q.ball(f"{name}_lid{s_}", (x, -0.091, 0.133), (0.019, 0.012, 0.0125 if sleep else 0.006), skin, parent=h, seg=12)
+        Q.box(f"{name}_brow{s_}", (x, -0.098, 0.153), (0.03, 0.008, 0.006), brow_m, parent=h,
+              rot=(0, math.radians(-8 * s_), 0))
+        Q.ball(f"{name}_ear{s_}", (0.097 * s_, -0.002, 0.115), (0.012, 0.022, 0.03), skin, parent=h, seg=10)
+        F["eyes"] += [e, i_]
+        F["lids"].append(lid)
+    Q.ball(f"{name}_nose", (0, -0.104, 0.105), (0.012, 0.02, 0.022), dark, parent=h, seg=12)
+    Q.ball(f"{name}_nosetip", (0, -0.117, 0.096), (0.011, 0.01, 0.01), skin, parent=h, seg=10)
+    m = Q.ball(f"{name}_mouth", (0, -0.097, 0.071), (0.022, 0.008, 0.0045), mouth_in, parent=h, seg=14)
+    Q.ball(f"{name}_lipu", (0, -0.099, 0.077), (0.023, 0.007, 0.004), lip, parent=h, seg=12)
+    Q.ball(f"{name}_chin", (0, -0.08, 0.035), (0.045, 0.035, 0.03), skin, parent=h, seg=12)
+    F["mouth"] = m
+    hair = bpy.data.objects.get(f"{name}_hair")
+    if hair:   # Haar nicht über das Gesicht: nach hinten/oben
+        hair.location = (0, 0.03, 0.152)
+        hair.scale = (1.0, 0.92, 0.88)
+    return F
+
+
+def mouth(F, t, open_=0.0):
+    """Mund auf (0 zu … 1 weit offen – Schreien) zu Zeit t."""
+    m = F["mouth"]
+    m.scale = (1.0 + 0.2 * open_, 1.0, 1.0 + 5.0 * open_)
+    m.location = (0, -0.097, 0.071 - 0.012 * open_)
+    m.keyframe_insert("scale", frame=max(1, Q.T(t)))
+    m.keyframe_insert("location", frame=max(1, Q.T(t)))
+
+
+def blink(F, t0, t1, seed=0):
+    rnd = random.Random(seed)
+    t = t0 + rnd.uniform(0.5, 2.5)
+    for lid in F["lids"]:
+        lid.keyframe_insert("scale", frame=max(1, Q.T(t0)))
+    while t < t1:
+        for lid in F["lids"]:
+            for dt, sz in ((0.0, 1.0), (0.05, 2.1), (0.12, 1.0)):
+                lid.scale = (1, 1, sz)
+                lid.keyframe_insert("scale", frame=max(1, Q.T(t + dt)))
+        t += rnd.uniform(2.5, 5.0)
+
+
 def seat_knees(name):
     """Im engen Flugzeugsitz: Knie nach vorn statt breit (lib.person sitzt im Schneidersitz), kein Kontaktschatten."""
     for o in list(bpy.data.objects):
@@ -340,6 +403,7 @@ def passenger(name, r, seat, seed=0, kind=None, height=0.88, lean=-6.0):
         Q.ball(f"{name}_visor", (0, -0.1, 0.17), (0.08, 0.06, 0.012), bpy.data.materials.get(f"wrap_{name}"), parent=P["head"])
     P["chest"].rotation_euler = (math.radians(lean), 0, 0)
     P["kind"] = kind
+    P["face"] = face(P, seed=seed, sleep=(kind == "child"))
     return P
 
 

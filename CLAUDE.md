@@ -68,7 +68,8 @@ Lokal reicht `npm run render:3d`.
 - Zielänge: **1:30–2:00 min** (über 1 min für Creator Rewards, nicht gehetzt, max. ~2:30).
 - **QISSAH-Folgen (Nutzer, 23.11.2026): höchstens 3:00 min** – Folge 3 (4:17) war zu lang. Vorbild Folge 1 „Der erste Adhan“
   (2:41 = „irgendwie perfekt“). Ziel ~2:30–2:50; Text vorher auf die Länge kürzen (ElevenLabs-Erzähler ≈ 2,3 Wörter/s inkl. Pausen).
-- **Menschen dürfen gezeigt werden, aber NIE mit Gesicht** (leerer Kopf). Sahaba/wichtige Personen zusätzlich mit
+- **Menschen dürfen gezeigt werden, aber NIE mit Gesicht** (leerer Kopf) – gilt für die Geschichten (Sahaba, Propheten, damalige Zeit).
+  **Ausnahme (Nutzer, 26.11.2026):** bei modernen, erfundenen Erinnerungs-Videos (z. B. Flug-Video) dürfen Gesichter sein (`flug_world.face()`). Sahaba/wichtige Personen zusätzlich mit
   Licht über dem Kopf (`glow`). **Den Propheten ﷺ nie darstellen** – nur als Licht (`HolyLight`).
 - **Immer Sound:** Atmo in jeder Szene (nie Stille) + passende Effekte (`scripts/sfx.py`, synthetisch erzeugt,
   in `scenes.tsx` per `sfx` an gesprochene Wörter gekoppelt). Keine Musik.

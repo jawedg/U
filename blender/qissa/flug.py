@@ -251,6 +251,8 @@ def neighbor(seed=21):
     P = Q.person("nb", (FW.SX["C"], -0.02, 0.5), yaw=math.pi, robe=(0.34, 0.35, 0.38), skin=(0.6, 0.44, 0.32),
                  wrap=(0.04, 0.03, 0.025), head="bare", sit=True, seed=seed, height=0.9)
     FW.seat_knees("nb")
+    P["face"] = FW.face(P, seed=seed, brows=(0.03, 0.02, 0.015))
+    FW.blink(P["face"], 0, D, seed=seed)
     ph, pm, ps = FW.phone("nbp", P["hand.R"], "flug_feed_nb.png", loc=(-0.06, -0.05, -0.05), rot=(math.radians(-80), 0, math.radians(90)))
     P["phone"], P["phone_mat"], P["phone_scr"] = ph, pm, ps
     nb_pose(P, 0, "phone")
@@ -288,8 +290,12 @@ def laugh(P, t0, t1, amp=5.0):
     while t < t1:
         P["chest"].rotation_euler.x = math.radians(base + (amp if k % 2 else 0))
         P["chest"].keyframe_insert("rotation_euler", index=0, frame=max(1, Q.T(t)))
+        if P.get("face"):
+            FW.mouth(P["face"], t, 0.55 if k % 2 else 0.35)
         t += 0.13
         k += 1
+    if P.get("face"):
+        FW.mouth(P["face"], t1 + 0.15, 0.08)
 
 
 def my_tray(cup=True):
@@ -326,6 +332,7 @@ def stewardess(y, seed=31):
     P = Q.person("stw", (0.0, y, 0.0), yaw=0.0, robe=(0.06, 0.09, 0.2), skin=(0.62, 0.46, 0.35), wrap=(0.06, 0.04, 0.03),
                  head="bare", seed=seed, height=0.98)
     Q.ball("stw_bun", (0, 0.1, 0.17), 0.05, bpy.data.materials.get("wrap_stw"), parent=P["head"])
+    P["face"] = FW.face(P, seed=seed, brows=(0.05, 0.035, 0.025))
     Q.box("stw_scarf", (0, -0.1, 0.4), (0.12, 0.03, 0.08), Q.pbr("scarfred", (0.6, 0.08, 0.1), 0.7), parent=P["chest"])
     for nm, s_ in (("L", -1), ("R", 1)):
         FW.kf_rot(P[f"sh.{nm}"], 0, (60, 55 * s_, 0))
@@ -370,6 +377,7 @@ def shot_kabine():
     for k, P in pax.items():
         if k not in ((-1, "B"), (-1, "C")):
             FW.breathe(P, 0, D, seed=hash(k) % 100)
+            FW.blink(P["face"], 0, D, seed=hash(k) % 100)
     reading_lights([(3, "D"), (6, "B"), (9, "F"), (-2, "E"), (1, "F")])
     window_light([(0, 6.0)])
     rig, shake, cam = me_cam(19.0)
@@ -478,6 +486,8 @@ def shot_gong():
     laugh(NB, tt + 0.2, tt + 1.6, 4)
     nb_pose(NB, t_drop - 0.05, "wave")
     nb_pose(NB, t_drop + 0.3, "scream")
+    FW.mouth(NB["face"], t_drop + 0.1, 0.1)
+    FW.mouth(NB["face"], t_drop + 0.35, 1.0)
     for o in objs.values():
         fly_up(o, t_drop, v=(random.uniform(-0.2, 0.2), 0.15, 2.4), dur=1.5)
     # ein Gepäckfach gegenüber springt auf, Tasche fällt in den Gang
@@ -537,6 +547,8 @@ def shot_absturz():
     FW.kf_rot(S["sh.R"], ta1 + 0.3, (120, -10, 0))
     FW.kf_rot(S["sh.R"], ta1 + 0.8, (70, -10, 0))
     FW.kf_rot(S["sh.R"], ta1 + 1.2, (125, -10, 0))
+    for tt_, o_ in ((ta1 - 0.1, 0.1), (ta1 + 0.1, 0.9), (ta1 + 0.55, 0.5), (ta1 + 0.9, 0.95), (ta1 + 1.9, 0.3), (ta1 + 2.4, 0.8), (D, 0.6)):
+        FW.mouth(S["face"], tt_, o_)
     # Nase kippt nach unten: die Welt draußen dreht sich (Wolken stürzen nach oben)
     FW.kf_rot(world, t_fall - 0.3, (0, 0, 0))
     FW.kf_rot(world, t_fall + 1.4, (-24, 0, 8))
@@ -570,8 +582,15 @@ def shot_absturz():
     nb_pose(NB, 0, "brace")
     nb_pose(NB, ta3 - 0.4, "brace")
     nb_pose(NB, ta3, "scream")
+    FW.mouth(NB["face"], ta3 - 0.25, 0.0)
+    FW.mouth(NB["face"], ta3 + 0.05, 1.0)
+    FW.mouth(NB["face"], ta3 + 1.4, 0.75)
+    FW.mouth(NB["face"], ta3 + 1.8, 1.0)
+    FW.mouth(NB["face"], D, 0.9)
     for P in pax.values():
         FW.brace(P, rnd.uniform(0.0, ta2), seed=rnd.randint(0, 99))
+        if rnd.random() < 0.5:
+            FW.mouth(P["face"], rnd.uniform(0, 1.0), rnd.uniform(0.6, 1.0))
     heads = [P["neck"] for P in pax.values()] + [NB["neck"], S["neck"]]
     amp = lambda t: 1.0 if t < t_fall else 1.25
     jiggle(heads, 0, D, amp, step=0.1, axis_deg=6)
@@ -740,6 +759,8 @@ def shot_vergessen():
         FW.kf_rot(P["neck"], 0, (30, 0, 0))
         ph, pm, ps = FW.phone(f"stp{k}", P["hand.R"], rnd.choice(("flug_feed_mine.png", "flug_feed_nb.png")), loc=(0, -0.04, -0.06),
                               rot=(math.radians(-60), 0, 0), emit=1.6)
+        P["face"] = FW.face(P, seed=40 + k)
+        FW.blink(P["face"], 0, D, seed=k)
         FW.breathe(P, 0, D, seed=k)
         people.append(P)
     # zwei Fächer offen
