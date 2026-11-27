@@ -350,4 +350,5 @@ Lokal reicht `npm run render:3d`.
   daneben (0,46 m) klebte an der Kamera → Platz 0B frei, Nachbar am Gang (0C). Blitz-Licht durchs Fenster max. ~800 W (sonst alles weiß);
   schaut die Kamera auf die nahe Lehne, schon ~280 W zu hell → dort Blitz-Stärke 0,1–0,2. Eigene Sauerstoffmaske hängt 0,2 m vor dem Auge
   (gelber Fleck füllt das Bild) → im Absturz 0,27 m höher. Schwebende Sachen nur zwischen Auge und Lehne (Lehne bei y ≈ 0,44) und mittig
-  (Hochformat ist auf 0,3 m Abstand nur ~0,25 m breit).
+  (Hochformat ist auf 0,3 m Abstand nur ~0,25 m breit). `FW.img_mat(emit=0)` verbindet das Bild NICHT mit der Leuchtfarbe → später per
+  `emit_strength` eingeschaltet leuchtet die Fläche gleichmäßig weiß (Anschnallzeichen) → `emit=0.001` nehmen.
