@@ -473,17 +473,19 @@ def shot_gong():
     bg, st = outside_night(world, W, t_end=D, storm=True)
     NB = neighbor()
     tray, objs = my_tray()
-    belt = FW.img_mat("belt", "flug_belt.png", emit=0.0, base=(0.02, 0.02, 0.02))
+    belt = FW.img_mat("belt", "flug_belt.png", emit=0.001, base=(0.02, 0.02, 0.02))   # emit > 0: Bild -> Leuchtfarbe (sonst gleichmäßig weiß)
     for r in range(-2, 10):
         for s_ in (-1, 1):
-            FW.plane(f"beltsign{r}{s_}", 0.1, 0.04, belt, loc=(1.06 * s_, r * FW.ROW + 0.4, 1.588), rot=(0, math.radians(180), 0))
+            # schräg zum Passagier geneigt (Oberkante zur Leiste), sonst sieht man es von unten nur als weißen Strich
+            bs_ = FW.plane(f"beltsign{r}{s_}", 0.14, 0.056, belt, loc=(1.2 * s_, r * FW.ROW + 0.42, 1.565), rot=(math.radians(130), 0, 0))
+            bs_["person"] = 1   # nicht verschmelzen (join_static verliert die UVs -> Bild wäre eine graue Fläche)
     t_gong = 0.35
-    FW.emit_strength(belt, t_gong - 0.02, 0.0)
-    FW.emit_strength(belt, t_gong, 1.1)
+    FW.emit_strength(belt, 0.0, 0.0)
+    FW.emit_strength(belt, t_gong, 2.0)
     tt = ls("t2")
     t_drop = D - TL.get("xfade", 0.4) - 1.45
     rig, shake, cam = me_cam(19.0)
-    ck(rig, [(0, tuple(SEATA), (-4, 38, 0)), (t_gong + 1.4, None, (-6, 30, 0)), (t_gong + 2.6, None, (-14, -4, 0)),
+    ck(rig, [(0, tuple(SEATA), (-12, 36, 0)), (t_gong + 1.4, None, (-10, 30, 0)), (t_gong + 2.6, None, (-14, -4, 0)),
              (tt - 0.6, None, (-18, -6, 0)), (tt, tuple(SEATA + Vector((-0.04, 0.1, 0))), (-92, -14, 0)), (t_drop - 0.1, None, (-88, -12, 0)),
              (t_drop + 0.25, None, (-30, 8, 0)), (D, None, (-12, -2, 0))])
     nb_pose(NB, 0, "phone")
@@ -758,13 +760,87 @@ def shot_landung():
     return {"mist_col": (0.01, 0.012, 0.02), "mist_amt": 0.0, "exposure": 0.2, "mblur": 0.3}
 
 
+def gate_apron(world, G=-3.6):
+    """Vorfeld bei Nacht (links vor dem Fenster): Flugzeug am Nachbar-Gate mit hellen Kabinenfenstern + Blinklicht,
+    Pier-Gebäude mit Glasband, Lichtmasten, Gepäckschlepper mit Rundumleuchte, Führungslinien."""
+    FW.mats()
+    par = lambda o: (setattr(o, "parent", world), o)[1]
+    apron = Q.pbr("apron_v", (0.16, 0.16, 0.17), 0.55, var=0.08, scale=0.04)
+    par(Q.box("apron_v", (-70, 0, G - 0.1), (160, 260, 0.2), apron))
+    yel = Q.glow_mat("leadline", (1.0, 0.72, 0.12), 0.5)
+    par(Q.box("lead0", (-24, 0, G + 0.01), (0.22, 120, 0.01), yel))
+    par(Q.box("lead1", (-46, 26, G + 0.01), (0.22, 30, 0.01), yel))
+    par(Q.box("stop0", (-46, 11, G + 0.01), (4.0, 0.25, 0.01), yel))
+    # Flugzeug am Nachbar-Gate (parallel, ~46 m links), rechte Seite zu uns
+    body = Q.pbr("acbody_v", (0.8, 0.81, 0.84), 0.35)
+    dark = Q.pbr("acdark_v", (0.12, 0.13, 0.15), 0.5)
+    xa, za = -40.0, 0.5
+    par(Q.cyl("nbac_f", (xa, -4, za), 2.0, 36, body, seg=32, rot=(math.radians(90), 0, 0)))
+    par(Q.ball("nbac_n", (xa, 14, za), (2.0, 3.4, 2.0), body))
+    par(Q.ball("nbac_t", (xa, -22, za + 0.5), (1.6, 6.0, 1.5), body))
+    fin = Q.box("nbac_fin", (xa, -23.5, za + 5.0), (0.4, 5.0, 7.0), body, rot=(math.radians(-24), 0, 0))
+    par(fin)
+    par(Q.box("nbac_hs", (xa, -24.5, za + 1.0), (12, 2.6, 0.25), body))
+    par(Q.box("nbac_w", (xa + 8.5, -2.5, za - 1.1), (17, 5.0, 0.45), body, rot=(0, math.radians(-5), math.radians(-12))))
+    par(Q.cyl("nbac_eng", (xa + 7.0, 0.2, za - 2.6), 1.05, 3.6, dark, seg=24, rot=(math.radians(90), 0, 0)))
+    par(Q.cyl("nbac_engr", (xa + 7.0, 2.0, za - 2.6), 1.08, 0.3, body, seg=24, rot=(math.radians(90), 0, 0)))
+    par(Q.cyl("nbac_gear", (xa + 2.5, -1, G + 1.3), 0.12, 2.6, dark, seg=8))
+    par(Q.cyl("nbac_gearn", (xa, 11, G + 1.3), 0.1, 2.6, dark, seg=8))
+    for gx in (xa + 2.1, xa + 2.9):
+        par(Q.cyl(f"nbac_tyre{gx}", (gx, -1, G + 0.55), 0.55, 0.35, dark, seg=16, rot=(0, math.radians(90), 0)))
+    win = Q.glow_mat("acwin_v", (1.0, 0.88, 0.66), 5.0)
+    for k in range(34):   # Kabinenfenster (rechte Seite) – drinnen ist Licht an
+        par(Q.box(f"nbac_win{k}", (xa + 1.93, -17.5 + k * 0.92, za + 0.55), (0.06, 0.26, 0.34), win))
+    par(Q.box("nbac_door", (xa + 1.95, 10.5, za + 0.2), (0.05, 0.9, 1.9), win))
+    grn = Q.glow_mat("navgreen_v", (0.2, 1.0, 0.35), 30.0)
+    par(Q.ball("nbac_navg", (xa + 17.0, -5.0, za - 0.2), (0.12, 0.12, 0.12), grn, seg=8))
+    beacon = Q.glow_mat("beacon_v", (1.0, 0.08, 0.04), 0.0)
+    par(Q.ball("nbac_bcn", (xa, -3, za + 2.05), (0.16, 0.16, 0.1), beacon, seg=8))
+    t = 0.2
+    while t < D + 0.5:   # rotes Blinklicht (Triebwerke laufen noch an)
+        FW.emit_strength(beacon, t - 0.01, 0.0)
+        FW.emit_strength(beacon, t, 60.0)
+        FW.emit_strength(beacon, t + 0.12, 0.0)
+        t += 1.1
+    # Pier-Gebäude dahinter mit hellem Glasband
+    wall = Q.pbr("pier_v", (0.1, 0.105, 0.12), 0.7)
+    par(Q.box("pier", (-98, 0, G + 6.5), (12, 240, 13), wall))
+    glass = Q.glow_mat("pierglass_v", (1.0, 0.86, 0.62), 3.2)
+    par(Q.box("pierglass", (-91.9, 0, G + 8.0), (0.1, 236, 4.2), glass))
+    par(Q.box("pierglass2", (-91.9, 0, G + 2.4), (0.1, 236, 1.6), Q.glow_mat("pierlow_v", (0.85, 0.9, 1.0), 1.6)))
+    for k in range(80):
+        par(Q.box(f"piermul{k}", (-91.8, -118 + k * 3.0, G + 6.5), (0.12, 0.25, 13), wall))
+    # Fluggastbrücke am Nachbar-Flugzeug (vorn, Tür)
+    jb = Q.pbr("jetbridge_v", (0.55, 0.56, 0.58), 0.45, metal=0.3)
+    par(Q.box("jbridge", (-68, 10.5, za + 0.9), (40, 3.0, 2.8), jb))
+    par(Q.box("jbwin", (-68, 9.0, za + 1.2), (38, 0.05, 0.5), Q.glow_mat("jbwin_v", (1.0, 0.9, 0.75), 2.0)))
+    par(Q.cyl("jbleg", (-52, 10.5, (G + za) / 2), 0.25, za - G, dark, seg=8))
+    # Lichtmasten (orange) – beleuchten Vorfeld und Flugzeug
+    head = Q.glow_mat("masthead_v", (1.0, 0.72, 0.4), 40.0)
+    for k, (mx, my) in enumerate(((-30, 30), (-66, -12), (-64, 34), (-30, -30))):
+        par(Q.cyl(f"mast{k}", (mx, my, G + 12.5), 0.22, 25, dark, seg=8))
+        par(Q.box(f"masth{k}", (mx, my, G + 25.2), (2.4, 1.2, 0.5), head))
+        L_ = Q.point(f"mastl{k}", (mx, my, G + 24.5), 8000, (1.0, 0.7, 0.4), radius=1.0)
+        L_.parent = world
+    # Gepäckschlepper mit Wagen + Rundumleuchte
+    tug = Q.pbr("tug_v", (0.85, 0.62, 0.1), 0.5)
+    par(Q.box("tug", (-38, 4.0, G + 0.7), (1.6, 2.6, 1.2), tug))
+    for k in range(3):
+        par(Q.box(f"cart{k}", (-38, 0.6 - k * 3.0, G + 0.8), (1.5, 2.4, 1.0), Q.pbr("cart_v", (0.3, 0.32, 0.36), 0.6)))
+    amb = Q.glow_mat("tugbcn_v", (1.0, 0.6, 0.1), 0.0)
+    par(Q.ball("tugbcn", (-38, 4.4, G + 1.42), (0.12, 0.12, 0.1), amb, seg=8))
+    t = 0.0
+    while t < D + 0.5:
+        FW.emit_strength(amb, t, 40.0)
+        FW.emit_strength(amb, t + 0.35, 2.0)
+        t += 0.7
+
+
 def shot_vergessen():
     """Am Gate: helles Licht, alle stehen im Gang, holen Taschen, schauen aufs Handy – als wäre nichts gewesen."""
     C, seats, pax, world, W = cabin_base(occupancy=0.0)
     FW.night_world(moon=False)
-    # Terminal-Lichter draußen (Gate)
-    gate = Q.glow_mat("gatelight", (1.0, 0.85, 0.6), 6.0)
-    Q.box("gatewall", (-40, 0, 2), (2, 80, 8), gate).parent = world
+    gate_apron(world)
     NB = neighbor()
     nb_pose(NB, 0, "post")
     rnd = random.Random(12)
