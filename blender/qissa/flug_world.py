@@ -635,14 +635,18 @@ def lightning(t, lights, cloud_m, world_bg=None, strength=1.0, seed=0, base=0.0)
     """Blitz: kurzes zweifaches Aufflackern (Licht draußen + Wolken leuchten von innen + Himmel)."""
     rnd = random.Random(seed)
     seq = ((0.0, 0.0), (0.03, 1.0), (0.09, 0.15), (0.14, 0.8), (0.26, 0.05), (0.5, 0.0))
+    last = -1
     for dt, v in seq:
+        # Schlüssel nie auf dasselbe Bild legen (sonst überschreibt 1.0 die 0 davor -> Licht steigt sekundenlang an)
+        f = max(1, Q.T(t + dt), last + 1)
+        last = f
         for L_, e in lights:
             L_.data.energy = e * v * strength
-            L_.data.keyframe_insert("energy", frame=max(1, Q.T(t + dt)))
-        emit_strength(cloud_m, t + dt, base + 2.5 * v * strength)
+            L_.data.keyframe_insert("energy", frame=f)
+        emit_strength(cloud_m, (f - 1) / Q.FPS, base + 2.5 * v * strength)
         if world_bg is not None:
             world_bg.inputs["Strength"].default_value = 1.0 + 6.0 * v * strength
-            world_bg.inputs["Strength"].keyframe_insert("default_value", frame=max(1, Q.T(t + dt)))
+            world_bg.inputs["Strength"].keyframe_insert("default_value", frame=f)
 
 
 def night_world(moon=True, stars=True):

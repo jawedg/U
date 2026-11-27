@@ -673,8 +673,11 @@ def shot_beten():
     jiggle(heads, 0, D, amp, step=0.11, axis_deg=5)
     turbulence(shake, 0, D, amp, seed=5, jolts=[(1.2, 0.8), (ta5 + 2.5, 1.0), (ta6 + 1.0, 0.7)])
     flicker_lights(C, 0, D, seed=11, low=0.0, high=0.55)
-    for k, tl_ in enumerate((0.8, ta5 + 0.4, ta5 + 3.6, t_du + 0.3, ta6 + 2.6, D - 1.0)):
+    for k, tl_ in enumerate((0.8, ta5 + 0.4, ta5 + 3.6, t_du + 0.3, ta6 + 2.6)):
         FW.lightning(tl_, [(wl, 700)], st[1], bg, seed=k + 3)
+    # letzter Blitz: D - 1.0 lag bei 30 fps so, dass Schlüssel 0 und 1 auf DASSELBE Bild fielen (0 überschrieben) ->
+    # Fensterlicht stieg 3 s lang langsam an (Bild fast weiß). Zeit leicht verschoben + schwächer (Kamera sieht auf die Lehne).
+    FW.lightning(D - 1.02, [(wl, 700)], st[1], bg, seed=8, strength=0.35)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.25, "mblur": 0.3}
 
 

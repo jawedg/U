@@ -354,3 +354,6 @@ Lokal reicht `npm run render:3d`.
   `emit_strength` eingeschaltet leuchtet die Fläche gleichmäßig weiß (Anschnallzeichen) → `emit=0.001` nehmen.
   Bewegte Außenwelt (`world`) dreht um IHREN Ursprung: eine Restneigung (0,5°) hebt den Boden beim Ausrollen um y·sin(Winkel)
   durch die Kabine (Nachbar schien zu versinken) → nach dem Aufsetzen Neigung auf 0 schlüsseln.
+  Blitz-Schlüssel (`FW.lightning`, 0 → 1 nach 0,03 s) fielen bei 30 fps teils auf DASSELBE Bild → die 0 wurde überschrieben und das
+  Fensterlicht stieg sekundenlang an (Bild fast weiß). Helfer legt Schlüssel jetzt auf verschiedene Bilder. Teil-Neurendern einer Einstellung:
+  `FRAMES=a-b` (Haupt- und `MID=1`-Bilder) in eigenen Ordner, erstes Bild per PSNR mit dem alten Video vergleichen, dann einsetzen.
