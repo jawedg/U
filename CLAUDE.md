@@ -352,3 +352,5 @@ Lokal reicht `npm run render:3d`.
   (gelber Fleck füllt das Bild) → im Absturz 0,27 m höher. Schwebende Sachen nur zwischen Auge und Lehne (Lehne bei y ≈ 0,44) und mittig
   (Hochformat ist auf 0,3 m Abstand nur ~0,25 m breit). `FW.img_mat(emit=0)` verbindet das Bild NICHT mit der Leuchtfarbe → später per
   `emit_strength` eingeschaltet leuchtet die Fläche gleichmäßig weiß (Anschnallzeichen) → `emit=0.001` nehmen.
+  Bewegte Außenwelt (`world`) dreht um IHREN Ursprung: eine Restneigung (0,5°) hebt den Boden beim Ausrollen um y·sin(Winkel)
+  durch die Kabine (Nachbar schien zu versinken) → nach dem Aufsetzen Neigung auf 0 schlüsseln.

@@ -728,6 +728,7 @@ def shot_landung():
     world.keyframe_insert("location", frame=Q.T(D))
     FW.kf_rot(world, 0, (2.5, 0, 0))
     FW.kf_rot(world, t_td, (0.5, 0, 0))
+    FW.kf_rot(world, t_td + 0.6, (0, 0, 0))   # Bugrad setzt auf: sonst hebt die 0,5°-Neigung den Boden beim Ausrollen durch die Kabine
     FW.strobe(W, 0, D)
     NB = neighbor()
     rig, shake, cam = me_cam(19.0)
