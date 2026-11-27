@@ -347,4 +347,7 @@ Lokal reicht `npm run render:3d`.
   → `out/flug-letzter-flug-klein.mp4`. TikTok-Text: `videos/flug-letzter-flug.md`.
 - Gelernt: Bild-Flächen brauchen eine UV-Lage VOR `create_grid(calc_uvs=True)`, und join_static verlor die UVs → Bildflächen mit
   `["person"]=1` einzeln lassen. `lib.person(sit=True)` sitzt im Schneidersitz (Knie breit) → im Flugzeugsitz `seat_knees()`. Nachbar direkt
-  daneben (0,46 m) klebte an der Kamera → Platz 0B frei, Nachbar am Gang (0C). Blitz-Licht durchs Fenster max. ~800 W (sonst alles weiß).
+  daneben (0,46 m) klebte an der Kamera → Platz 0B frei, Nachbar am Gang (0C). Blitz-Licht durchs Fenster max. ~800 W (sonst alles weiß);
+  schaut die Kamera auf die nahe Lehne, schon ~280 W zu hell → dort Blitz-Stärke 0,1–0,2. Eigene Sauerstoffmaske hängt 0,2 m vor dem Auge
+  (gelber Fleck füllt das Bild) → im Absturz 0,27 m höher. Schwebende Sachen nur zwischen Auge und Lehne (Lehne bei y ≈ 0,44) und mittig
+  (Hochformat ist auf 0,3 m Abstand nur ~0,25 m breit).

@@ -538,6 +538,15 @@ def shot_absturz():
     """Absturzgefahr: Masken pendeln, Licht flackert, die Flugbegleiterin schreit „Kopf runter!“, draußen Blitze, die Nase kippt
     nach unten – Handy, Geldscheine, Zettel schweben hoch; der Nachbar schreit „Ya Allah!“."""
     C, pax, world, W, bg, st, masks, NB, wl = storm_cabin(D)
+    # eigene Maske (Platz 0A) hängt höher – direkt vor dem Auge füllte sie als gelber Fleck das ganze Bild
+    pv = bpy.data.objects.get("msk0_-1_0")
+    if pv:
+        for fc in Q.fcurves(pv):
+            if fc.data_path == "location" and fc.array_index == 2:
+                for kp in fc.keyframe_points:
+                    for v_ in (kp.co, kp.handle_left, kp.handle_right):
+                        v_[1] += 0.27
+        pv.location.z += 0.27
     S = stewardess(2.7)
     rig, shake, cam = me_cam(18.0)
     ta1, ta2, ta3 = ls("a1"), ls("a2"), ls("a3")
@@ -545,7 +554,7 @@ def shot_absturz():
     t_egal = ev("egal_a2", ta2 + 3.6)
     t_handy = ev("handy_a2", ta2 + 5.4)
     ck(rig, [(0, tuple(SEATA), (-22, -6, 0)), (ta1 + 1.0, None, (-18, -2, 0)), (ta2 - 0.1, None, (-14, -4, 0)),
-             (t_fall - 0.2, None, (22, -30, 0)), (t_egal - 0.6, None, (16, -10, 8)), (t_handy - 0.4, None, (10, 4, -6)),
+             (t_fall - 0.2, None, (10, -26, 0)), (t_egal - 0.6, None, (6, -8, 8)), (t_handy - 0.4, None, (4, 2, -6)),
              (ta3 - 0.3, None, (-6, 2, 0)), (ta3 + 0.2, tuple(SEATA + Vector((-0.04, 0.1, 0))), (-90, -8, 0)), (D, None, (-96, -6, 0))])
     # Flugbegleiterin: hält sich fest, schreit (Kopf vor), Arm deutet nach unten
     FW.kf_rot(S["chest"], ta1, (-6, 0, 0))
@@ -565,9 +574,10 @@ def shot_absturz():
     paper = Q.pbr("paper", (0.92, 0.92, 0.9), 0.8)
     floaters = []
     rnd = random.Random(8)
+    # zwischen mir und der Lehne vor mir (Lehne bei y ~0,44), mittig vor der Kamera – das Hochformat ist schmal
     for k in range(9):
-        m_ = money if k < 5 else paper
-        o = Q.box(f"float{k}", (FW.SX["A"] + rnd.uniform(-0.15, 0.4), rnd.uniform(0.35, 0.7), 0.62), (0.15, 0.07, 0.002) if k < 5 else (0.12, 0.17, 0.002), m_)
+        m_ = money if k < 6 else paper
+        o = Q.box(f"float{k}", (FW.SX["A"] + 0.06 + rnd.uniform(-0.2, 0.2), rnd.uniform(0.26, 0.42), 0.62), (0.12, 0.055, 0.002) if k < 6 else (0.075, 0.105, 0.002), m_)
         o["person"] = 1
         floaters.append(o)
     ph, pm, ps = FW.phone("fl", None, "flug_feed_mine.png", loc=(FW.SX["A"] + 0.05, 0.3, 0.6), emit=2.0)
@@ -577,13 +587,16 @@ def shot_absturz():
         p0 = Vector(o.location)
         o.keyframe_insert("location", frame=max(1, Q.T(t_fall)))
         FW.kf_rot(o, t_fall, (0, 0, 0))
-        tgt = Vector((FW.SX["A"] + rnd.uniform(-0.2, 0.5), rnd.uniform(0.45, 0.85), rnd.uniform(0.95, 1.35)))
+        tgt = Vector((FW.SX["A"] + 0.06 + rnd.uniform(-0.15, 0.15), rnd.uniform(0.3, 0.42), rnd.uniform(0.82, 1.36)))
         if o is ph:
-            tgt = Vector((FW.SX["A"] + 0.05, 0.42, 1.12))
+            tgt = Vector((FW.SX["A"] + 0.06, 0.36, 1.08))
         for u in (0.6, 1.2, 2.5, 4.0):
             o.location = p0.lerp(tgt, min(1, u / 2.0)) + Vector((rnd.uniform(-0.04, 0.04), rnd.uniform(-0.04, 0.04), 0.03 * math.sin(u * 3 + k)))
             o.keyframe_insert("location", frame=max(1, Q.T(t_fall + u)))
-            FW.kf_rot(o, t_fall + u, (rnd.uniform(-90, 90) * u, rnd.uniform(-60, 60) * u, rnd.uniform(-90, 90) * u))
+            if o is ph:   # Handy dreht sich kaum – Bildschirm bleibt zur Kamera
+                FW.kf_rot(o, t_fall + u, (72 * min(1, u / 2.0) + 8 * math.sin(u * 2), 6 * math.cos(u * 1.7), 10 * math.sin(u * 1.3)))
+            else:
+                FW.kf_rot(o, t_fall + u, (rnd.uniform(-90, 90) * u, rnd.uniform(-60, 60) * u, rnd.uniform(-90, 90) * u))
     # Nachbar: klammert sich fest, dann schreit er mit erhobenen Armen
     nb_pose(NB, 0, "brace")
     nb_pose(NB, ta3 - 0.4, "brace")
@@ -603,8 +616,8 @@ def shot_absturz():
     turbulence(shake, 0, D, amp, seed=3, jolts=[(0.2, 1.0), (t_fall, 1.6), (ta3, 1.0)], lift=[(t_fall, 1.6, 0.16)])
     flicker_lights(C, 0, D, seed=7, low=0.0, high=0.7)
     rnd2 = random.Random(5)
-    for k, (tl_, s_) in enumerate(((0.6, 1.0), (t_fall + 0.1, 1.0), (t_fall + 1.1, 0.7), (t_egal - 0.4, 1.0), (t_egal + 0.6, 0.6),
-                                    (ta3 + 0.5, 1.0), (D - 1.5, 1.0))):
+    for k, (tl_, s_) in enumerate(((0.6, 0.9), (t_fall + 0.1, 0.12), (t_fall + 1.1, 0.1), (t_egal - 0.4, 0.2), (t_egal + 0.6, 0.12),
+                                    (ta3 + 0.5, 0.8), (D - 1.5, 0.8))):
         FW.lightning(tl_, [(wl, 800)], st[1], bg, strength=s_, seed=k, base=0.3)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.25, "mblur": 0.35}
 
