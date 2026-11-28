@@ -372,3 +372,7 @@ Lokal reicht `npm run render:3d`.
   - Fenster: Superellipse-Schnitt GRÖSSER als der Schacht + Blende bündig auf der Wand + Schacht bis zur Scheibe (`window_well`), Rollo im Schacht.
   - Bildschirm-Bilder `flug_ife*.png` (22:25 / NOCH 20 MIN / GELANDET / WILLKOMMEN 22:46) per `FW.set_ife`. Applaus neu `el_fl_applause2`
     (altes hatte Jubelrufe – Geräusche per STT `tag_audio_events=true` prüfen).
+  - minterpolate macht bei schnellen Kameraschwenks Geister-/Doppelbilder (auch schon in v1). Abhilfe ohne ganze Zwischenbild-
+    Durchgänge: Schwenkstellen über Bild-Unterschiede der Hauptbilder finden (`out/fl_frames/mid_ranges.json`), Blender rendert nur dort
+    echte Zwischenbilder (`MID=1 MIDLIST="8-18,44-52"`), `scripts/fixmid_flug.sh` setzt sie ein (minterpolate-MP4: Hauptbild k = Bild 2k-1,
+    Zwischenbild k = Bild 2k, ab 1 gezählt; per PSNR geprüft) und macht danach Ton + Schnitt (~500 Bilder ≈ 50 min).
