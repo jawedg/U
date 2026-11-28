@@ -49,19 +49,17 @@
    "engine": "eleven",
    "model": "eleven_v3",
    "speakers": {
-    "Sitznachbar": "f2yUVfK5jdm78zlpcZ8C"
+    "Sitznachbar": "GoXyzBapJk3AoCJoMQl9"
    },
    "chunks": [
-    "h1",
     "t2",
-    "a3",
     "l1",
     "l2"
    ],
    "flow": true,
    "edge": 0.25,
    "capPause": 0.45,
-   "note": "Sitznachbar = Albert (Nutzer wählte A)"
+   "note": "Sitznachbar v2 = Lennart (Nutzer wählte B; Albert klang zu hoch, wie Clown)"
   },
   "3": {
    "engine": "eleven",
@@ -96,15 +94,17 @@
    "engine": "eleven",
    "model": "eleven_v3",
    "speakers": {
-    "Frau": "FOfJ2PMgU6HOGbNYnzto"
+    "Frau": "9zTcBiIWSks5baYw5ntG"
    },
    "chunks": [
+    "h1",
+    "a3",
     "a4"
    ],
    "flow": true,
    "edge": 0.25,
    "capPause": 0.6,
-   "note": "Frau = Amira (Nutzer wählte A)"
+   "note": "Frau v2 = Freya (Nutzer wählte A, mittlere Stimmlage mit Gefühl); ruft auch „Ya Allah, rette uns“"
   },
   "6": {
    "engine": "eleven",
@@ -124,11 +124,11 @@
  "sentences": [
   {
    "id": "h1",
-   "part": 2,
-   "speaker": "Sitznachbar",
+   "part": 5,
+   "speaker": "Frau",
    "dialog": true,
    "text": "Ya *Allah!*",
-   "el": "[screaming, panicked] Yaa Allaah!"
+   "el": "[frightened, shouting] Yaa Allaah!"
   },
   {
    "id": "h2",
@@ -173,7 +173,7 @@
    "speaker": "Sitznachbar",
    "dialog": true,
    "text": "Chill. Das passiert *ständig*.",
-   "el": "[laughs, relaxed] Chill. Das passiert ständig."
+   "el": "[relaxed, calm] Chill. Das passiert ständig."
   },
   {
    "id": "a1",
@@ -192,11 +192,11 @@
   },
   {
    "id": "a3",
-   "part": 2,
-   "speaker": "Sitznachbar",
+   "part": 5,
+   "speaker": "Frau",
    "dialog": true,
    "text": "Ya Allah! Ya Allah, *rette* uns!",
-   "el": "[screaming, panicked] Yaa ... Allaah! Yaa ... Allaah, rette uns!"
+   "el": "[terrified, desperate, praying out loud] Yaa Allaah! Yaa Allaah, rette uns!"
   },
   {
    "id": "a4",
@@ -204,7 +204,7 @@
    "speaker": "Frau",
    "dialog": true,
    "text": "Ya Rabbi … meine *Kinder* …",
-   "el": "[crying, desperate, sobbing] Ya Rabbi … meine Kinder … [sobbing] …"
+   "el": "[voice breaking, fearful, holding her child close] Ya Rabbi ... meine Kinder ..."
   },
   {
    "id": "a5",
@@ -234,8 +234,8 @@
    "part": 2,
    "speaker": "Sitznachbar",
    "dialog": true,
-   "text": "Bruder, ich dachte echt, das *war's*.",
-   "el": "[laughing, relieved, out of breath] Bruder, ich dachte echt, das war's."
+   "text": "*Alhamdulillah* … ich dachte echt, das war's.",
+   "el": "[exhales, relieved, shaky] Alhamdulillah ... ich dachte echt, das war's."
   },
   {
    "id": "l2",
@@ -243,7 +243,7 @@
    "speaker": "Sitznachbar",
    "dialog": true,
    "text": "Das muss ich *posten*.",
-   "el": "[excited, grinning] Das muss ich posten."
+   "el": "[relieved, quietly amused] Das muss ich posten."
   },
   {
    "id": "l3",

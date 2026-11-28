@@ -148,12 +148,13 @@ def main():
     add(t_drop - 0.05, el("fl_drop"), 1.0, fx=True)
     add(t_drop + 0.15, el("fl_bin"), 0.6, pan=0.35, fx=True)
     add(t_drop + 0.3, el("fl_screams"), 0.6, dur=2.2, fade_out=0.6, fx=True)
+    add(t_drop + 0.25, el("fl_masks"), 0.7, fx=True)   # v2: Masken fallen schon beim Absacken
     add(t_drop, el("fl_storm"), 0.9, dur=g1 - t_drop + 0.5, fade_in=0.15)
     # ------------------------------------------------------------------ Absturz: Sturm, Masken, Alarm, Donner, Sturzflug, Schreie, Baby
     s0, s1 = seg("absturz")
     e0, e1 = seg("beten")
     add(s0, el("fl_storm", 2.0), 1.0, dur=e1 - s0 + 0.2, fade_out=0.6)
-    add(s0 + 0.1, el("fl_masks"), 0.8, fx=True)
+    add(s0 + 0.1, el("fl_masks"), 0.35, fx=True)
     add(s0 + 0.3, el("fl_alarm"), 0.32, dur=s1 - s0 - 0.3, fade_in=0.2, fade_out=0.5, fx=True)
     t_fall = EV.get("fällt_a2", s0 + 3.2)
     add(t_fall - 0.25, el("fl_dive"), 0.95, fade_out=1.0, fx=True)
@@ -181,7 +182,8 @@ def main():
     l0, l1 = seg("landung")
     add(l0 - 0.2, el("fl_cabin", 8.0), 0.9, dur=l1 - l0 + 0.6, fade_in=0.3, fade_out=0.5)
     add(l0 + 1.4 - 0.3, el("fl_touchdown"), 1.0, fx=True)
-    add(l0 + 2.6, el("fl_applause"), 0.7, dur=l1 - l0, fade_out=1.5, fx=True)
+    # v2 (Nutzer: „was war das für ein Geschrei“): altes Applaus-Geräusch hatte Jubelrufe -> reines Klatschen + erleichtertes Murmeln
+    add(l0 + 2.0, el("fl_applause2"), 0.5, dur=l1 - l0 - 1.6, fade_in=0.4, fade_out=1.2, fx=True)
     # ------------------------------------------------------------------ Am Gate: Gurte, Fächer, Stimmen, Handys
     v0, v1 = seg("vergessen")
     add(v0 - 0.2, el("fl_gate"), 0.9, dur=v1 - v0 + 0.6, fade_in=0.4, fade_out=0.8)

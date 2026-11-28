@@ -3,8 +3,8 @@
  "render_fps": 30,
  "xfade": 0.4,
  "voiced": true,
- "total": 154.81,
- "frames": 9289,
+ "total": 150.011,
+ "frames": 9001,
  "segments": [
   {
    "id": "hook_a",
@@ -12,21 +12,21 @@
    "src": "absturz",
    "at": 2.6,
    "start": 0.0,
-   "dur": 1.926
+   "dur": 1.482
   },
   {
    "id": "hook_b",
    "kind": "clip",
    "src": "beten",
    "at": 2.0,
-   "start": 1.926,
+   "start": 1.482,
    "dur": 4.308
   },
   {
    "id": "kabine",
    "kind": "shot",
    "label": "FLUG 417 · 11.000 METER · 21:40 UHR",
-   "start": 6.234,
+   "start": 5.79,
    "dur": 7.191,
    "frames": 228
   },
@@ -34,7 +34,7 @@
    "id": "handy",
    "kind": "shot",
    "label": null,
-   "start": 13.425,
+   "start": 12.981,
    "dur": 7.383,
    "frames": 233
   },
@@ -42,31 +42,31 @@
    "id": "gong",
    "kind": "shot",
    "label": null,
-   "start": 20.808,
-   "dur": 11.346,
-   "frames": 352
+   "start": 20.364,
+   "dur": 10.284,
+   "frames": 321
   },
   {
    "id": "absturz",
    "kind": "shot",
    "label": null,
-   "start": 32.154,
-   "dur": 17.239,
-   "frames": 529
+   "start": 30.648,
+   "dur": 14.539,
+   "frames": 448
   },
   {
    "id": "beten",
    "kind": "shot",
    "label": null,
-   "start": 49.393,
-   "dur": 17.452,
-   "frames": 536
+   "start": 45.187,
+   "dur": 17.021,
+   "frames": 523
   },
   {
    "id": "stille",
    "kind": "shot",
    "label": null,
-   "start": 66.845,
+   "start": 62.208,
    "dur": 7.383,
    "frames": 233
   },
@@ -74,29 +74,29 @@
    "id": "landung",
    "kind": "shot",
    "label": null,
-   "start": 74.228,
-   "dur": 7.782,
-   "frames": 245
+   "start": 69.591,
+   "dur": 7.62,
+   "frames": 241
   },
   {
    "id": "vergessen",
    "kind": "shot",
    "label": null,
-   "start": 82.01,
+   "start": 77.211,
    "dur": 8.95,
    "frames": 280
   },
   {
    "id": "koran",
    "kind": "card",
-   "start": 90.96,
+   "start": 86.161,
    "dur": 14.977
   },
   {
    "id": "terminal",
    "kind": "shot",
    "label": null,
-   "start": 105.937,
+   "start": 101.138,
    "dur": 21.213,
    "frames": 648
   },
@@ -104,14 +104,14 @@
    "id": "gebetsraum",
    "kind": "shot",
    "label": null,
-   "start": 127.15,
+   "start": 122.351,
    "dur": 18.731,
    "frames": 574
   },
   {
    "id": "ende",
    "kind": "card",
-   "start": 145.881,
+   "start": 141.082,
    "dur": 8.929
   }
  ],
@@ -120,18 +120,18 @@
    "id": "h1",
    "shot": "hook_a",
    "start": 0.35,
-   "dur": 1.426,
-   "file": "flug/line-2-0.wav",
+   "dur": 0.982,
+   "file": "flug/line-5-0.wav",
    "text": "Ya *Allah!*",
-   "speaker": "Sitznachbar",
+   "speaker": "Frau",
    "words": [
     {
      "word": "Ya",
-     "start": 0.18
+     "start": 0.14
     },
     {
      "word": "*Allah!*",
-     "start": 0.58
+     "start": 0.34
     }
    ],
    "tail": 0,
@@ -140,7 +140,7 @@
   {
    "id": "h2",
    "shot": "hook_b",
-   "start": 1.976,
+   "start": 1.532,
    "dur": 4.258,
    "file": "flug/line-0-0.wav",
    "text": "Wenn das jetzt dein *letzter* Moment wäre … wärst du bereit?",
@@ -196,7 +196,7 @@
   {
    "id": "k1",
    "shot": "kabine",
-   "start": 6.234,
+   "start": 5.79,
    "dur": 7.191,
    "file": "flug/line-0-1.wav",
    "text": "Ein ganz normaler *Nachtflug*. Neben dir lacht einer über ein Video. Hinten schläft ein *Kind*.",
@@ -268,7 +268,7 @@
   {
    "id": "k2",
    "shot": "handy",
-   "start": 13.425,
+   "start": 12.981,
    "dur": 4.873,
    "file": "flug/line-0-2.wav",
    "text": "Auf deinem Handy leuchtet es auf: *Isha*. Du wischst es weg.",
@@ -324,7 +324,7 @@
   {
    "id": "k3",
    "shot": "handy",
-   "start": 18.548,
+   "start": 18.104,
    "dur": 1.76,
    "file": "flug/line-1-0.wav",
    "text": "Mach ich nach der *Landung*.",
@@ -357,7 +357,7 @@
   {
    "id": "t1",
    "shot": "gong",
-   "start": 21.608,
+   "start": 21.164,
    "dur": 5.236,
    "file": "flug/line-3-0.wav",
    "text": "Meine Damen und Herren, bitte schnallen Sie sich an. Wir erwarten leichte *Turbulenzen*.",
@@ -422,27 +422,27 @@
   {
    "id": "t2",
    "shot": "gong",
-   "start": 27.194,
-   "dur": 3.36,
-   "file": "flug/line-2-1.wav",
+   "start": 26.75,
+   "dur": 2.298,
+   "file": "flug/line-2-0.wav",
    "text": "Chill. Das passiert *ständig*.",
    "speaker": "Sitznachbar",
    "words": [
     {
      "word": "Chill.",
-     "start": 1.24
+     "start": 0.14
     },
     {
      "word": "Das",
-     "start": 2.16
+     "start": 1.16
     },
     {
      "word": "passiert",
-     "start": 2.36
+     "start": 1.36
     },
     {
      "word": "*ständig*.",
-     "start": 2.74
+     "start": 1.8
     }
    ],
    "tail": 0,
@@ -451,7 +451,7 @@
   {
    "id": "a1",
    "shot": "absturz",
-   "start": 32.454,
+   "start": 30.948,
    "dur": 1.92,
    "file": "flug/line-4-0.wav",
    "text": "Kopf *runter!* Bleiben Sie unten!",
@@ -484,7 +484,7 @@
   {
    "id": "a2",
    "shot": "absturz",
-   "start": 34.574,
+   "start": 33.068,
    "dur": 9.519,
    "file": "flug/line-0-3.wav",
    "text": "Das Flugzeug *fällt*. Dein Magen hebt ab. Und auf einmal ist alles egal. Dein Handy. Dein Geld. Deine Pläne.",
@@ -572,11 +572,11 @@
   {
    "id": "a3",
    "shot": "absturz",
-   "start": 44.293,
-   "dur": 4.8,
-   "file": "flug/line-2-2.wav",
+   "start": 42.787,
+   "dur": 2.4,
+   "file": "flug/line-5-1.wav",
    "text": "Ya Allah! Ya Allah, *rette* uns!",
-   "speaker": "Sitznachbar",
+   "speaker": "Frau",
    "words": [
     {
      "word": "Ya",
@@ -584,23 +584,23 @@
     },
     {
      "word": "Allah!",
-     "start": 0.98
+     "start": 0.32
     },
     {
      "word": "Ya",
-     "start": 2.14
+     "start": 1.34
     },
     {
      "word": "Allah,",
-     "start": 3.0
+     "start": 1.52
     },
     {
      "word": "*rette*",
-     "start": 3.66
+     "start": 1.8
     },
     {
      "word": "uns!",
-     "start": 4.12
+     "start": 2.1
     }
    ],
    "tail": 0,
@@ -609,35 +609,35 @@
   {
    "id": "a4",
    "shot": "beten",
-   "start": 49.493,
-   "dur": 2.659,
-   "file": "flug/line-5-0.wav",
+   "start": 45.187,
+   "dur": 2.328,
+   "file": "flug/line-5-2.wav",
    "text": "Ya Rabbi … meine *Kinder* …",
    "speaker": "Frau",
    "words": [
     {
      "word": "Ya",
-     "start": 0.18
+     "start": 0.26
     },
     {
      "word": "Rabbi",
-     "start": 0.38
+     "start": 0.46
     },
     {
      "word": "…",
-     "start": 0.94
+     "start": 1.0
     },
     {
      "word": "meine",
-     "start": 1.5
+     "start": 1.54
     },
     {
      "word": "*Kinder*",
-     "start": 1.88
+     "start": 1.86
     },
     {
      "word": "…",
-     "start": 2.18
+     "start": 2.16
     }
    ],
    "tail": 0,
@@ -646,7 +646,7 @@
   {
    "id": "a5",
    "shot": "beten",
-   "start": 52.452,
+   "start": 47.815,
    "dur": 7.019,
    "file": "flug/line-0-4.wav",
    "text": "Jetzt ruft jeder *Allah* an. Auch die, die ihn jahrelang vergessen haben. Auch *du*.",
@@ -714,7 +714,7 @@
   {
    "id": "a6",
    "shot": "beten",
-   "start": 59.771,
+   "start": 55.134,
    "dur": 6.274,
    "file": "flug/line-1-1.wav",
    "text": "Ya Allah … gib mir noch eine *Chance*. Ich bete. Ich versprech's.",
@@ -775,7 +775,7 @@
   {
    "id": "s1",
    "shot": "stille",
-   "start": 68.045,
+   "start": 63.408,
    "dur": 5.683,
    "file": "flug/line-3-1.wav",
    "text": "Wir … haben es *überstanden*. Wir landen in zwanzig Minuten.",
@@ -828,35 +828,39 @@
   {
    "id": "l1",
    "shot": "landung",
-   "start": 76.328,
-   "dur": 3.762,
-   "file": "flug/line-2-3.wav",
-   "text": "Bruder, ich dachte echt, das *war's*.",
+   "start": 71.691,
+   "dur": 3.52,
+   "file": "flug/line-2-1.wav",
+   "text": "*Alhamdulillah* … ich dachte echt, das war's.",
    "speaker": "Sitznachbar",
    "words": [
     {
-     "word": "Bruder,",
-     "start": 1.12
+     "word": "*Alhamdulillah*",
+     "start": 0.24
+    },
+    {
+     "word": "…",
+     "start": 1.23
     },
     {
      "word": "ich",
-     "start": 1.92
+     "start": 2.22
     },
     {
      "word": "dachte",
-     "start": 2.1
+     "start": 2.36
     },
     {
      "word": "echt,",
-     "start": 2.48
+     "start": 2.68
     },
     {
      "word": "das",
-     "start": 2.72
+     "start": 2.88
     },
     {
-     "word": "*war's*.",
-     "start": 2.98
+     "word": "war's.",
+     "start": 3.1
     }
    ],
    "tail": 0,
@@ -865,27 +869,27 @@
   {
    "id": "l2",
    "shot": "landung",
-   "start": 80.09,
-   "dur": 1.52,
-   "file": "flug/line-2-4.wav",
+   "start": 75.211,
+   "dur": 1.6,
+   "file": "flug/line-2-2.wav",
    "text": "Das muss ich *posten*.",
    "speaker": "Sitznachbar",
    "words": [
     {
      "word": "Das",
-     "start": 0.14
+     "start": 0.18
     },
     {
      "word": "muss",
-     "start": 0.5
+     "start": 0.58
     },
     {
      "word": "ich",
-     "start": 0.7
+     "start": 0.82
     },
     {
      "word": "*posten*.",
-     "start": 0.86
+     "start": 1.0
     }
    ],
    "tail": 0,
@@ -894,7 +898,7 @@
   {
    "id": "l3",
    "shot": "vergessen",
-   "start": 82.31,
+   "start": 77.511,
    "dur": 4.39,
    "file": "flug/line-0-5.wav",
    "text": "Zwanzig Minuten später … ist alles *vergessen*.",
@@ -934,7 +938,7 @@
   {
    "id": "q0",
    "shot": "vergessen",
-   "start": 86.7,
+   "start": 81.901,
    "dur": 3.96,
    "file": "flug/line-0-6.wav",
    "text": "Genau diesen Moment beschreibt *Allah* im Koran:",
@@ -974,7 +978,7 @@
   {
    "id": "e1",
    "shot": "terminal",
-   "start": 106.237,
+   "start": 101.438,
    "dur": 5.455,
    "file": "flug/line-0-7.wav",
    "text": "Du musst nicht in einem fallenden Flugzeug sitzen, um zu Allah *zurückzukehren*.",
@@ -1034,7 +1038,7 @@
   {
    "id": "e2",
    "shot": "terminal",
-   "start": 121.032,
+   "start": 116.233,
    "dur": 6.118,
    "file": "flug/line-0-8.wav",
    "text": "Vielleicht im *Flugzeug*. Vielleicht heute Nacht … in deinem *Bett*.",
@@ -1086,7 +1090,7 @@
   {
    "id": "e3",
    "shot": "gebetsraum",
-   "start": 127.15,
+   "start": 122.351,
    "dur": 2.8,
    "file": "flug/line-0-9.wav",
    "text": "Der Prophet, Friede sei mit ihm, sagte:",
@@ -1126,7 +1130,7 @@
   {
    "id": "qh",
    "shot": "gebetsraum",
-   "start": 130.05,
+   "start": 125.251,
    "dur": 6.24,
    "file": "flug/line-6-0.wav",
    "text": "Allah nimmt die *Reue* seines Dieners an … solange er noch nicht mit dem Tod ringt.",
@@ -1204,7 +1208,7 @@
   {
    "id": "e4",
    "shot": "gebetsraum",
-   "start": 136.59,
+   "start": 131.791,
    "dur": 3.021,
    "file": "flug/line-0-10.wav",
    "text": "Die Tür ist *offen*. Aber nicht für immer.",
@@ -1248,7 +1252,7 @@
   {
    "id": "e5",
    "shot": "gebetsraum",
-   "start": 139.611,
+   "start": 134.812,
    "dur": 5.47,
    "file": "flug/line-0-11.wav",
    "text": "Kehr zu Ihm zurück. *Jetzt.* Nicht nach der Landung.",
@@ -1298,7 +1302,7 @@
   {
    "id": "qh",
    "shot": "gebetsraum",
-   "start": 130.05,
+   "start": 125.251,
    "dur": 6.24,
    "text": "Allah nimmt die *Reue* seines Dieners an … solange er noch nicht mit dem Tod ringt.",
    "by": "der Prophet ﷺ · Tirmidhi 3537",
@@ -1374,7 +1378,7 @@
   {
    "id": "r1",
    "shot": "koran",
-   "start": 91.16,
+   "start": 86.361,
    "dur": 14.477,
    "full": 16.277,
    "file": "flug/rez_17_67.wav",
@@ -1459,7 +1463,7 @@
   {
    "id": "r2",
    "shot": "terminal",
-   "start": 111.992,
+   "start": 107.193,
    "dur": 8.74,
    "full": 10.54,
    "file": "flug/rez_31_34.wav",
@@ -1520,7 +1524,7 @@
   {
    "id": "r3",
    "shot": "ende",
-   "start": 146.231,
+   "start": 141.432,
    "dur": 8.379,
    "full": 8.379,
    "file": "flug/rez_2_156.wav",
@@ -1552,206 +1556,206 @@
   }
  ],
  "events": {
-  "ya_h1": 0.53,
-  "allah_h1": 0.93,
-  "wenn_h2": 2.136,
-  "das_h2": 2.396,
-  "jetzt_h2": 2.696,
-  "dein_h2": 2.996,
-  "letzter_h2": 3.276,
-  "moment_h2": 3.736,
-  "wäre_h2": 4.176,
-  "wärst_h2": 5.276,
-  "du_h2": 5.576,
-  "bereit_h2": 5.696,
-  "ein_k1": 6.454,
-  "ganz_k1": 6.694,
-  "normaler_k1": 7.094,
-  "nachtflug_k1": 7.634,
-  "neben_k1": 8.954,
-  "dir_k1": 9.234,
-  "lacht_k1": 9.454,
-  "einer_k1": 9.834,
-  "über_k1": 10.174,
-  "video_k1": 10.554,
-  "hinten_k1": 11.714,
-  "schläft_k1": 12.334,
-  "kind_k1": 12.854,
-  "auf_k2": 13.765,
-  "deinem_k2": 13.905,
-  "handy_k2": 14.185,
-  "leuchtet_k2": 14.625,
-  "es_k2": 15.045,
-  "isha_k2": 16.485,
-  "du_k2": 17.465,
-  "wischst_k2": 17.585,
-  "weg_k2": 18.045,
-  "mach_k3": 18.788,
-  "ich_k3": 19.008,
-  "nach_k3": 19.188,
-  "der_k3": 19.428,
-  "landung_k3": 19.568,
-  "meine_t1": 21.768,
-  "damen_t1": 22.008,
-  "und_t1": 22.268,
-  "herren_t1": 22.408,
-  "bitte_t1": 23.028,
-  "schnallen_t1": 23.248,
-  "sie_t1": 23.588,
-  "sich_t1": 23.748,
-  "an_t1": 24.028,
-  "wir_t1": 24.828,
-  "erwarten_t1": 24.928,
-  "leichte_t1": 25.488,
-  "turbulenzen_t1": 25.908,
-  "chill_t2": 28.434,
-  "das_t2": 29.354,
-  "passiert_t2": 29.554,
-  "ständig_t2": 29.934,
-  "kopf_a1": 32.594,
-  "runter_a1": 32.894,
-  "bleiben_a1": 33.554,
-  "sie_a1": 33.854,
-  "unten_a1": 34.014,
-  "das_a2": 34.654,
-  "flugzeug_a2": 34.854,
-  "fällt_a2": 35.414,
-  "dein_a2": 36.174,
-  "magen_a2": 36.454,
-  "hebt_a2": 36.914,
-  "ab_a2": 37.274,
-  "und_a2": 38.054,
-  "auf_a2": 38.194,
-  "einmal_a2": 38.474,
-  "ist_a2": 39.174,
-  "alles_a2": 39.474,
-  "egal_a2": 39.954,
-  "handy_a2": 41.154,
-  "geld_a2": 42.294,
-  "deine_a2": 43.014,
-  "pläne_a2": 43.354,
-  "ya_a3": 44.473,
-  "allah_a3": 45.273,
-  "rette_a3": 47.953,
-  "uns_a3": 48.413,
-  "ya_a4": 49.673,
-  "rabbi_a4": 49.873,
-  "meine_a4": 50.993,
-  "kinder_a4": 51.373,
-  "jetzt_a5": 52.712,
-  "ruft_a5": 53.152,
-  "jeder_a5": 53.632,
-  "allah_a5": 54.252,
-  "an_a5": 54.792,
-  "auch_a5": 55.652,
-  "die_a5": 55.892,
-  "ihn_a5": 56.352,
-  "jahrelang_a5": 56.592,
-  "vergessen_a5": 57.172,
-  "haben_a5": 57.652,
-  "du_a5": 58.892,
-  "ya_a6": 59.911,
-  "allah_a6": 60.111,
-  "gib_a6": 61.671,
-  "mir_a6": 61.871,
-  "noch_a6": 62.011,
-  "eine_a6": 62.191,
-  "chance_a6": 62.471,
-  "ich_a6": 63.891,
-  "bete_a6": 64.151,
-  "versprechs_a6": 65.331,
-  "wir_s1": 68.705,
-  "haben_s1": 69.925,
-  "es_s1": 70.025,
-  "überstanden_s1": 70.125,
-  "landen_s1": 71.825,
-  "in_s1": 72.225,
-  "zwanzig_s1": 72.485,
-  "minuten_s1": 72.945,
-  "bruder_l1": 77.448,
-  "ich_l1": 78.248,
-  "dachte_l1": 78.428,
-  "echt_l1": 78.808,
-  "das_l1": 79.048,
-  "wars_l1": 79.308,
-  "das_l2": 80.23,
-  "muss_l2": 80.59,
-  "ich_l2": 80.79,
-  "posten_l2": 80.95,
-  "zwanzig_l3": 82.61,
-  "minuten_l3": 83.27,
-  "später_l3": 83.77,
-  "ist_l3": 84.93,
-  "alles_l3": 85.43,
-  "vergessen_l3": 85.93,
-  "genau_q0": 86.84,
-  "diesen_q0": 87.32,
-  "moment_q0": 87.72,
-  "beschreibt_q0": 88.74,
-  "allah_q0": 89.28,
-  "im_q0": 89.76,
-  "koran_q0": 89.9,
-  "rez_r1": 91.16,
-  "du_e1": 106.337,
-  "musst_e1": 106.497,
-  "nicht_e1": 106.877,
-  "in_e1": 107.237,
-  "einem_e1": 107.377,
-  "fallenden_e1": 107.677,
-  "flugzeug_e1": 108.157,
-  "sitzen_e1": 108.717,
-  "um_e1": 109.617,
-  "zu_e1": 109.797,
-  "allah_e1": 109.997,
-  "zurückzukehren_e1": 110.617,
-  "rez_r2": 111.992,
-  "vielleicht_e2": 121.172,
-  "im_e2": 121.732,
-  "flugzeug_e2": 121.992,
-  "heute_e2": 124.412,
-  "nacht_e2": 124.732,
-  "in_e2": 125.892,
-  "deinem_e2": 126.072,
-  "bett_e2": 126.532,
-  "der_e3": 127.29,
-  "prophet_e3": 127.47,
-  "friede_e3": 128.33,
-  "sei_e3": 128.71,
-  "mit_e3": 128.89,
-  "ihm_e3": 129.15,
-  "sagte_e3": 129.41,
-  "allah_qh": 130.15,
-  "nimmt_qh": 130.75,
-  "die_qh": 130.95,
-  "reue_qh": 131.09,
-  "seines_qh": 131.63,
-  "dieners_qh": 132.01,
-  "an_qh": 132.49,
-  "solange_qh": 133.45,
-  "er_qh": 133.95,
-  "noch_qh": 134.13,
-  "nicht_qh": 134.39,
-  "mit_qh": 135.11,
-  "dem_qh": 135.23,
-  "tod_qh": 135.47,
-  "ringt_qh": 135.83,
-  "die_e4": 136.75,
-  "tür_e4": 136.95,
-  "ist_e4": 137.21,
-  "offen_e4": 137.51,
-  "aber_e4": 138.41,
-  "nicht_e4": 138.61,
-  "für_e4": 138.87,
-  "immer_e4": 139.09,
-  "kehr_e5": 139.971,
-  "zu_e5": 140.431,
-  "ihm_e5": 140.711,
-  "zurück_e5": 141.031,
-  "jetzt_e5": 142.351,
-  "nicht_e5": 143.531,
-  "nach_e5": 144.011,
-  "der_e5": 144.351,
-  "landung_e5": 144.551,
-  "rez_r3": 146.231
+  "ya_h1": 0.49,
+  "allah_h1": 0.69,
+  "wenn_h2": 1.692,
+  "das_h2": 1.952,
+  "jetzt_h2": 2.252,
+  "dein_h2": 2.552,
+  "letzter_h2": 2.832,
+  "moment_h2": 3.292,
+  "wäre_h2": 3.732,
+  "wärst_h2": 4.832,
+  "du_h2": 5.132,
+  "bereit_h2": 5.252,
+  "ein_k1": 6.01,
+  "ganz_k1": 6.25,
+  "normaler_k1": 6.65,
+  "nachtflug_k1": 7.19,
+  "neben_k1": 8.51,
+  "dir_k1": 8.79,
+  "lacht_k1": 9.01,
+  "einer_k1": 9.39,
+  "über_k1": 9.73,
+  "video_k1": 10.11,
+  "hinten_k1": 11.27,
+  "schläft_k1": 11.89,
+  "kind_k1": 12.41,
+  "auf_k2": 13.321,
+  "deinem_k2": 13.461,
+  "handy_k2": 13.741,
+  "leuchtet_k2": 14.181,
+  "es_k2": 14.601,
+  "isha_k2": 16.041,
+  "du_k2": 17.021,
+  "wischst_k2": 17.141,
+  "weg_k2": 17.601,
+  "mach_k3": 18.344,
+  "ich_k3": 18.564,
+  "nach_k3": 18.744,
+  "der_k3": 18.984,
+  "landung_k3": 19.124,
+  "meine_t1": 21.324,
+  "damen_t1": 21.564,
+  "und_t1": 21.824,
+  "herren_t1": 21.964,
+  "bitte_t1": 22.584,
+  "schnallen_t1": 22.804,
+  "sie_t1": 23.144,
+  "sich_t1": 23.304,
+  "an_t1": 23.584,
+  "wir_t1": 24.384,
+  "erwarten_t1": 24.484,
+  "leichte_t1": 25.044,
+  "turbulenzen_t1": 25.464,
+  "chill_t2": 26.89,
+  "das_t2": 27.91,
+  "passiert_t2": 28.11,
+  "ständig_t2": 28.55,
+  "kopf_a1": 31.088,
+  "runter_a1": 31.388,
+  "bleiben_a1": 32.048,
+  "sie_a1": 32.348,
+  "unten_a1": 32.508,
+  "das_a2": 33.148,
+  "flugzeug_a2": 33.348,
+  "fällt_a2": 33.908,
+  "dein_a2": 34.668,
+  "magen_a2": 34.948,
+  "hebt_a2": 35.408,
+  "ab_a2": 35.768,
+  "und_a2": 36.548,
+  "auf_a2": 36.688,
+  "einmal_a2": 36.968,
+  "ist_a2": 37.668,
+  "alles_a2": 37.968,
+  "egal_a2": 38.448,
+  "handy_a2": 39.648,
+  "geld_a2": 40.788,
+  "deine_a2": 41.508,
+  "pläne_a2": 41.848,
+  "ya_a3": 42.967,
+  "allah_a3": 43.107,
+  "rette_a3": 44.587,
+  "uns_a3": 44.887,
+  "ya_a4": 45.447,
+  "rabbi_a4": 45.647,
+  "meine_a4": 46.727,
+  "kinder_a4": 47.047,
+  "jetzt_a5": 48.075,
+  "ruft_a5": 48.515,
+  "jeder_a5": 48.995,
+  "allah_a5": 49.615,
+  "an_a5": 50.155,
+  "auch_a5": 51.015,
+  "die_a5": 51.255,
+  "ihn_a5": 51.715,
+  "jahrelang_a5": 51.955,
+  "vergessen_a5": 52.535,
+  "haben_a5": 53.015,
+  "du_a5": 54.255,
+  "ya_a6": 55.274,
+  "allah_a6": 55.474,
+  "gib_a6": 57.034,
+  "mir_a6": 57.234,
+  "noch_a6": 57.374,
+  "eine_a6": 57.554,
+  "chance_a6": 57.834,
+  "ich_a6": 59.254,
+  "bete_a6": 59.514,
+  "versprechs_a6": 60.694,
+  "wir_s1": 64.068,
+  "haben_s1": 65.288,
+  "es_s1": 65.388,
+  "überstanden_s1": 65.488,
+  "landen_s1": 67.188,
+  "in_s1": 67.588,
+  "zwanzig_s1": 67.848,
+  "minuten_s1": 68.308,
+  "alhamdulillah_l1": 71.931,
+  "ich_l1": 73.911,
+  "dachte_l1": 74.051,
+  "echt_l1": 74.371,
+  "das_l1": 74.571,
+  "wars_l1": 74.791,
+  "das_l2": 75.391,
+  "muss_l2": 75.791,
+  "ich_l2": 76.031,
+  "posten_l2": 76.211,
+  "zwanzig_l3": 77.811,
+  "minuten_l3": 78.471,
+  "später_l3": 78.971,
+  "ist_l3": 80.131,
+  "alles_l3": 80.631,
+  "vergessen_l3": 81.131,
+  "genau_q0": 82.041,
+  "diesen_q0": 82.521,
+  "moment_q0": 82.921,
+  "beschreibt_q0": 83.941,
+  "allah_q0": 84.481,
+  "im_q0": 84.961,
+  "koran_q0": 85.101,
+  "rez_r1": 86.361,
+  "du_e1": 101.538,
+  "musst_e1": 101.698,
+  "nicht_e1": 102.078,
+  "in_e1": 102.438,
+  "einem_e1": 102.578,
+  "fallenden_e1": 102.878,
+  "flugzeug_e1": 103.358,
+  "sitzen_e1": 103.918,
+  "um_e1": 104.818,
+  "zu_e1": 104.998,
+  "allah_e1": 105.198,
+  "zurückzukehren_e1": 105.818,
+  "rez_r2": 107.193,
+  "vielleicht_e2": 116.373,
+  "im_e2": 116.933,
+  "flugzeug_e2": 117.193,
+  "heute_e2": 119.613,
+  "nacht_e2": 119.933,
+  "in_e2": 121.093,
+  "deinem_e2": 121.273,
+  "bett_e2": 121.733,
+  "der_e3": 122.491,
+  "prophet_e3": 122.671,
+  "friede_e3": 123.531,
+  "sei_e3": 123.911,
+  "mit_e3": 124.091,
+  "ihm_e3": 124.351,
+  "sagte_e3": 124.611,
+  "allah_qh": 125.351,
+  "nimmt_qh": 125.951,
+  "die_qh": 126.151,
+  "reue_qh": 126.291,
+  "seines_qh": 126.831,
+  "dieners_qh": 127.211,
+  "an_qh": 127.691,
+  "solange_qh": 128.651,
+  "er_qh": 129.151,
+  "noch_qh": 129.331,
+  "nicht_qh": 129.591,
+  "mit_qh": 130.311,
+  "dem_qh": 130.431,
+  "tod_qh": 130.671,
+  "ringt_qh": 131.031,
+  "die_e4": 131.951,
+  "tür_e4": 132.151,
+  "ist_e4": 132.411,
+  "offen_e4": 132.711,
+  "aber_e4": 133.611,
+  "nicht_e4": 133.811,
+  "für_e4": 134.071,
+  "immer_e4": 134.291,
+  "kehr_e5": 135.172,
+  "zu_e5": 135.632,
+  "ihm_e5": 135.912,
+  "zurück_e5": 136.232,
+  "jetzt_e5": 137.552,
+  "nicht_e5": 138.732,
+  "nach_e5": 139.212,
+  "der_e5": 139.552,
+  "landung_e5": 139.752,
+  "rez_r3": 141.432
  }
 }

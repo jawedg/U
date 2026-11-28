@@ -3,7 +3,7 @@
 # Längen und Ereignisse: src/flug/timeline.json (scripts/build_flug.py). Welt: blender/qissa/flug_world.py.
 # Regeln: Menschen ohne Gesicht; ich bin die Kamera (Fensterplatz 0A, Sitznachbar 0B); keine KI-Koranrezitation (Ton: echte Aufnahme).
 import bpy, sys, os, math, json, random
-from mathutils import Vector
+from mathutils import Vector, Matrix
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
@@ -12,6 +12,7 @@ import lib as Q
 import mekka as MK
 import medina as MD
 import flug_world as FW
+import flug_pose as FP
 
 TL = json.load(open(os.environ.get("TL_FILE") or os.path.join(ROOT, "src", "flug", "timeline.json"), encoding="utf-8"))
 SEG = {s["id"]: s for s in TL["segments"]}
@@ -205,6 +206,8 @@ def cabin_base(people_rows=range(-3, 12), skip=(), kinds=None, outside="night", 
     seats = FW.seats()
     skip = set(skip) | {(0, "A"), (0, "B"), (0, "C")}
     pax = FW.cabin_people(people_rows, occupancy=occupancy, seed=seed, skip=skip, kinds=kinds)
+    for P in pax.values():
+        FP.lap_pose(P, spread=0.05 if P["kind"] == "child" else 0.09)
     world = Q.empty("outside", (0, 0, 0))
     world["person"] = 1
     W = FW.wing(-1)
@@ -232,6 +235,8 @@ HP = {   # eigene Hände (Kamera-Raum: x rechts, y oben, -z vorn), Drehung in Gr
     "cover": {"L": ((-0.12, -0.05, -0.2), (60, 0, -30)), "R": ((0.12, -0.05, -0.2), (60, 0, 30))},
     "takbir": {"L": ((-0.105, 0.0, -0.36), (5, 0, 12)), "R": ((0.105, 0.0, -0.36), (5, 0, -12))},
     "reach": {"L": ((-0.1, -0.35, -0.42), (-80, 0, -10)), "R": ((0.1, -0.35, -0.42), (-80, 0, 10))},
+    "mask_reach": {"L": ((-0.09, -0.24, -0.3), (-70, 0, -20)), "R": ((0.03, -0.2, -0.28), (-70, 0, 10))},
+    "mask_face": {"L": ((-0.07, -0.16, -0.12), (-35, 0, -40)), "R": ((0.03, -0.13, -0.1), (-35, 0, 30))},
 }
 
 
@@ -258,21 +263,48 @@ def neighbor(seed=21):
     FW.seat_knees("nb")
     P["face"] = FW.face(P, seed=seed, brows=(0.03, 0.02, 0.015))
     FW.blink(P["face"], 0, D, seed=seed)
-    ph, pm, ps = FW.phone("nbp", P["hand.R"], "flug_feed_nb.png", loc=(-0.06, -0.05, -0.05), rot=(math.radians(-80), 0, math.radians(90)))
+    R_ = Matrix(((-1, 0, 0), (0, -0.866, 0.5), (0, 0.5, 0.866))).transposed()   # Spalten: Breite, Oberkante (vor+hoch), Bildschirm (zum Gesicht)
+    ph, pm, ps = FW.phone("nbp", P["chest"], "flug_feed_nb.png", loc=(0, -0.3, 0.33), rot=tuple(R_.to_euler("XYZ")))
     P["phone"], P["phone_mat"], P["phone_scr"] = ph, pm, ps
-    nb_pose(P, 0, "phone")
+    P["row"], P["seat"] = 0, "C"
+    nb_phone(P, 0)
     return P
 
 
+def nb_phone(NB, t, chest=(-2, 0, 0), neck=(28, 0, 0)):
+    """Handy mit beiden Händen vor dem Bauch (Hände gerechnet an die Handykanten)."""
+    FP.set_body(NB, chest, neck)
+    FP.key_body(NB, t)
+    M = FP.chain(NB, "hips", "chest")
+    edges = [M @ Vector((x, -0.3, 0.33)) for x in (0.045, -0.045)]
+    for side in ("L", "R"):
+        sw = FP.shoulder_world(NB, side)
+        e = min(edges, key=lambda v: (v - sw).length)
+        sx = FP.outward(NB, side)
+        FP.set_arm(NB, side, t, e + Vector((0.012 * sx, 0, -0.01)), pole=(0.25 * sx, 0.7, -1.0), hand_twist=80 * sx)
+
+
+def nb_relief(NB, t):
+    """Erleichtert: Hand aufs Herz, andere Hand im Schoß, Kopf leicht zurück."""
+    FP.set_body(NB, (-2, 0, 0), (-6, 0, -8))
+    FP.key_body(NB, t)
+    heart = FP.chain(NB, "hips", "chest") @ Vector((0.05, -0.2, 0.3))
+    a = "L" if FP.outward(NB, "L") > 0 else "R"
+    b = "R" if a == "L" else "L"
+    FP.set_arm(NB, b, t, heart, pole=(-0.3, 0.6, -1.0), hand_twist=-70)
+    c = FP.chain(NB, "hips", "chest").translation
+    FP.set_arm(NB, a, t, Vector((c.x + 0.09, NB["root"].location.y + 0.24, 0.73)), pole=(0.2, 0.7, -1.0))
+
+
 NBP = {   # (Schulter L, Ellenbogen L, Schulter R, Ellenbogen R, Brust, Nacken) in Grad
-    "phone": ((62, 18, 0), (-75, 0, 0), (62, -18, 0), (-75, 0, 0), (-2, 0, 0), (28, 0, 0)),
-    "laugh": ((66, 18, 0), (-80, 0, 0), (66, -18, 0), (-80, 0, 0), (8, 0, 0), (34, 0, 0)),
+    "phone": ((62, 7, 0), (-75, 0, 0), (62, -7, 0), (-75, 0, 0), (-2, 0, 0), (28, 0, 0)),
+    "laugh": ((66, 7, 0), (-80, 0, 0), (66, -7, 0), (-80, 0, 0), (8, 0, 0), (34, 0, 0)),
     "turn": ((40, 18, 0), (-60, 0, 0), (62, -18, 0), (-75, 0, 0), (-4, 0, -14), (6, 0, -38)),
     "wave": ((40, 18, 0), (-60, 0, 0), (80, -30, -30), (-40, 0, 0), (-6, 0, -10), (2, 0, -30)),
     "scream": ((150, 30, 0), (-60, 0, 0), (150, -30, 0), (-60, 0, 0), (-18, 0, 0), (-30, 0, 0)),
     "brace": ((150, 30, 0), (-110, 0, 0), (150, -30, 0), (-110, 0, 0), (48, 0, 0), (30, 0, 0)),
     "relief": ((30, 18, 0), (-90, 0, 0), (110, -40, 0), (-120, 0, 0), (-12, 0, 0), (-12, 0, -20)),
-    "post": ((70, 18, 0), (-95, 0, 0), (70, -18, 0), (-95, 0, 0), (2, 0, 0), (34, 0, 0)),
+    "post": ((70, 7, 0), (-95, 0, 0), (70, -7, 0), (-95, 0, 0), (2, 0, 0), (34, 0, 0)),
     "rest": ((28, 14, 0), (-50, 0, 0), (28, -14, 0), (-50, 0, 0), (-6, 0, 0), (4, 0, 0)),
     "pray": ((72, 12, 0), (-125, 0, 0), (72, -12, 0), (-125, 0, 0), (56, 0, 0), (40, 0, 0)),   # tief vorgebeugt, Hände vor dem Gesicht
 }
@@ -286,6 +318,13 @@ def nb_pose(P, t, name):
     FW.kf_rot(P["el.R"], t, elR)
     FW.kf_rot(P["chest"], t, ch)
     FW.kf_rot(P["neck"], t, nk)
+
+
+def nb_chill(NB, t0, t1):
+    """„Chill. Das passiert ständig.“ – dreht sich halb zu mir, grinst, Handy bleibt in den Händen."""
+    nb_phone(NB, t0, chest=(-3, 0, -10), neck=(6, 0, -30))
+    laugh(NB, t0 + 0.2, t0 + 1.6, 3)
+    nb_phone(NB, t1, chest=(-3, 0, -10), neck=(8, 0, -24))
 
 
 def laugh(P, t0, t1, amp=5.0):
@@ -364,7 +403,7 @@ def outside_night(world, W, cloud_z=-70.0, storm=False, t_end=20.0, speed=40.0, 
 def shot_kabine():
     """Nachtflug: Blick aus dem Fenster (Flügel, Wolken im Mondlicht, Blitzlicht am Flügel), dann zum Nachbarn, der über ein Video
     lacht, dann über die Schulter nach hinten: ein Kind schläft an seine Mutter gelehnt."""
-    kinds = {(-1, "C"): "hijab", (-1, "B"): "child"}
+    kinds = dict(FAMILY)
     C, seats, pax, world, W = cabin_base(kinds=kinds, occupancy=0.7)
     outside_night(world, W, t_end=D)
     NB = neighbor()
@@ -380,8 +419,13 @@ def shot_kabine():
     if mo:
         FW.kf_rot(mo["neck"], 0, (14, 0, 18))
         FW.breathe(mo, 0, D, seed=6, amp=1.0, sleep=True)
+    k2 = pax.get(KID2)
+    if k2:   # zweites Kind schläft ans Fenster gelehnt
+        FW.kf_rot(k2["chest"], 0, (6, 12, 0))
+        FW.kf_rot(k2["neck"], 0, (16, 0, 22))
+        FW.breathe(k2, 0, D, seed=7, amp=1.5, sleep=True)
     for k, P in pax.items():
-        if k not in ((-1, "B"), (-1, "C")):
+        if k not in (KID1, MOM, KID2):
             FW.breathe(P, 0, D, seed=hash(k) % 100)
             FW.blink(P["face"], 0, D, seed=hash(k) % 100)
     reading_lights([(3, "D"), (6, "B"), (9, "F"), (-2, "E"), (1, "F")])
@@ -389,16 +433,16 @@ def shot_kabine():
     rig, shake, cam = me_cam(19.0)
     tw = ev("video_k1", 4.3)
     tk = ev("hinten_k1", 5.5)
-    ew = Vector((-1.44, 0.4, 1.13))   # zum Fenster gelehnt: Blick schräg nach hinten auf den Flügel
+    ew = Vector((-1.58, 0.38, 1.12))   # ans Fenster gelehnt (v2: näher, Nutzer: „besser rausschauen“): Blick schräg nach hinten auf den Flügel
     e1 = SEATA + Vector((0.02, 0.16, 0.04))
     e2 = SEATA + Vector((0.24, -0.04, 0.24))
     ck(rig, [(0, tuple(ew), (134, -15, 0)), (tw - 1.5, tuple(ew + Vector((0, -0.04, 0))), (128, -13, 0)),
              (tw - 0.9, tuple(SEATA + Vector((0.02, 0.1, 0))), (40, -6, 0)), (tw - 0.35, tuple(e1), (-96, -18, 0)),
              (tk - 0.45, None, (-100, -20, 0)), (tk + 0.4, tuple(e2), (-138, -14, 0)), (D, None, (-143, -16, 0))])
-    nb_pose(NB, 0, "phone")
-    nb_pose(NB, tw - 0.6, "laugh")
+    nb_phone(NB, tw - 0.9)
+    nb_phone(NB, tw - 0.6, chest=(6, 0, 0), neck=(32, 0, 0))
     laugh(NB, tw - 0.5, tw + 1.6)
-    nb_pose(NB, tw + 1.7, "phone")
+    nb_phone(NB, tw + 1.7)
     Q.handheld(shake, 0, D, amp=0.25)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.8}
 
@@ -460,7 +504,6 @@ def shot_handy():
     ban.keyframe_insert("hide_render", frame=max(1, Q.T(t_sw + 0.22) - 1))
     ban.hide_render = True
     ban.keyframe_insert("hide_render", frame=max(1, Q.T(t_sw + 0.22)))
-    nb_pose(NB, 0, "phone")
     Q.handheld(shake, 0, D, amp=0.2)
     window_light([(0, 4.0)])
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.1}
@@ -469,7 +512,7 @@ def shot_handy():
 def shot_gong():
     """Gong: das Anschnallzeichen leuchtet, der Kapitän meldet Turbulenzen, der Nachbar winkt ab („Chill“) – dann sackt das
     Flugzeug ab: Becher und Dose fliegen hoch, ein Gepäckfach springt auf, Schreie."""
-    C, seats, pax, world, W = cabin_base(occupancy=0.78)
+    C, seats, pax, world, W = cabin_base(kinds=FAMILY, occupancy=0.78)
     bg, st = outside_night(world, W, t_end=D, storm=True)
     NB = neighbor()
     tray, objs = my_tray()
@@ -488,14 +531,19 @@ def shot_gong():
     ck(rig, [(0, tuple(SEATA), (-12, 36, 0)), (t_gong + 1.4, None, (-10, 30, 0)), (t_gong + 2.6, None, (-14, -4, 0)),
              (tt - 0.6, None, (-18, -6, 0)), (tt, tuple(SEATA + Vector((-0.04, 0.1, 0))), (-92, -14, 0)), (t_drop - 0.1, None, (-88, -12, 0)),
              (t_drop + 0.25, None, (-30, 8, 0)), (D, None, (-12, -2, 0))])
-    nb_pose(NB, 0, "phone")
-    nb_pose(NB, tt - 0.2, "turn")
-    nb_pose(NB, tt + 0.5, "wave")
-    laugh(NB, tt + 0.2, tt + 1.6, 4)
-    nb_pose(NB, t_drop - 0.05, "wave")
-    nb_pose(NB, t_drop + 0.3, "scream")
+    nb_phone(NB, tt - 0.35)
+    nb_chill(NB, tt - 0.1, t_drop - 0.05)
+    hold(NB, t_drop + 0.02)
+    FP.set_body(NB, (4, 0, 0), (6, 0, -6))
+    FP.key_body(NB, t_drop + 0.3)
+    FP.hands_armrest(NB, t_drop + 0.3)
+    for o in NB["phone"].children_recursive:   # Handy fällt ihm aus der Hand
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(t_drop + 0.15)))
+        o.hide_render = True
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(t_drop + 0.2)))
     FW.mouth(NB["face"], t_drop + 0.1, 0.1)
-    FW.mouth(NB["face"], t_drop + 0.35, 1.0)
+    FW.mouth(NB["face"], t_drop + 0.35, 0.8)
+    MMg = mask_map(FW.oxygen_masks(range(-3, 12), t_drop + 0.25, seed=0))
     for o in objs.values():
         fly_up(o, t_drop, v=(random.uniform(-0.2, 0.2), 0.15, 2.4), dur=1.5)
     # ein Gepäckfach gegenüber springt auf, Tasche fällt in den Gang
@@ -512,13 +560,15 @@ def shot_gong():
             bag.keyframe_insert("location", frame=max(1, Q.T(t_drop + 0.25 + u)))
         FW.kf_rot(bag, t_drop + 0.25, (0, 0, 0))
         FW.kf_rot(bag, t_drop + 1.0, (20, 70, 30))
-    heads = [P["neck"] for P in pax.values()]
     amp = lambda t: 0.08 + (0.25 if t > t_gong + 1.5 else 0) + (0.9 if t > t_drop else 0)
-    jiggle(heads, 0, D, amp, step=0.12)
-    for P in pax.values():   # beim Absacken: Köpfe hoch, Arme hoch
-        if random.random() < 0.5:
-            FW.kf_rot(P["sh.L"], t_drop, (28, -14, 0))
-            FW.kf_rot(P["sh.L"], t_drop + 0.25, (110, -30, 0))
+    shake_heads(pax.values(), 0, D, amp, seed=1, step=0.12, deg=4.0)
+    rg = random.Random(17)
+    for P in pax.values():   # beim Absacken: zusammenzucken, an die Armlehnen krallen (wie im echten Leben)
+        t_ = t_drop + rg.uniform(0.08, 0.3)
+        hold(P, t_ - 0.08)
+        FP.set_body(P, (4 + rg.uniform(-2, 3), 0, 0), (rg.uniform(2, 10), rg.uniform(-10, 10), 0))
+        FP.key_body(P, t_)
+        FP.hands_armrest(P, t_)
     turbulence(shake, 0, D, amp, jolts=[(t_gong + 1.8, 0.4), (t_drop, 1.4)], lift=[(t_drop, 0.9, 0.12)])
     window_light([(0, 4.0)])
     FW.lightning(t_drop + 0.3, [(bpy.data.objects["winlight"], 700)], st[1] if st else FW.M["cove"], bg, seed=2)
@@ -526,60 +576,185 @@ def shot_gong():
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.2}
 
 
-def storm_cabin(t_end, seed=0):
+MOM, KID1, KID2 = (-1, "C"), (-1, "B"), (-1, "A")   # Familie direkt HINTER mir (wie in „kabine“): Mutter, Kind daneben, Kind am Fenster
+FAMILY = {MOM: "hijab", KID1: "child", KID2: "child"}
+
+
+def mask_map(masks):
+    return {(m["row"], m["seat"]): m for m in masks}
+
+
+def hold(P, t):
+    """Aktuelle Haltung bei t festhalten (vor einer neuen Pose – sonst gilt die neue schon ab Bild 1)."""
+    for n in ("chest", "neck", "sh.L", "sh.R", "el.L", "el.R", "hand.L", "hand.R"):
+        P[n].keyframe_insert("rotation_euler", frame=max(1, Q.T(t)))
+
+
+def shake_heads(Ps, t0, t1, amp, seed=0, step=0.1, deg=2.0):
+    """Kopf wackelt mit der Erschütterung – am Kopf-Gelenk (Nacken/Brust tragen die gerechnete Haltung)."""
+    jiggle([P["head"] for P in Ps], t0, t1, amp, seed=seed, step=step, axis_deg=deg)
+
+
+def kneel_stewardess(y, seed=31):
+    """Flugbegleiterin kniet im Gang (wie bei schweren Turbulenzen üblich), schaut zu den Fluggästen, hält sich an den Sitzen."""
+    P = Q.person("stw", (0.0, y, 0.175), yaw=0.0, robe=(0.06, 0.09, 0.2), skin=(0.62, 0.46, 0.35), wrap=(0.06, 0.04, 0.03),
+                 head="bare", sit=True, seed=seed, height=0.98)
+    FW.seat_knees("stw")
+    for s_ in (-1, 1):   # Knie auf dem Boden, Gesäß auf den Fersen
+        k = bpy.data.objects.get(f"stw_knee{s_}")
+        if k:
+            k.location = (0.12 * s_, -0.25, -0.33)
+            k.scale = (0.75, 1.2, 1.0)
+    Q.ball("stw_bun", (0, 0.1, 0.17), 0.05, bpy.data.materials.get("wrap_stw"), parent=P["head"])
+    P["face"] = FW.face(P, seed=seed, brows=(0.05, 0.035, 0.025))
+    Q.box("stw_scarf", (0, -0.1, 0.4), (0.12, 0.03, 0.08), Q.pbr("scarfred", (0.6, 0.08, 0.1), 0.7), parent=P["chest"])
+    P["root"]["person"] = 1
+    return P
+
+
+def stw_hold(S, t, y_row):
+    """Hände vorn an der Armlehne (Sitz C) und an der Sitzkante (Sitz D) der Reihe vor ihr; Ellenbogen nach hinten (im Gang)."""
+    FP.set_arm(S, "L" if FP.outward(S, "L") < 0 else "R", t, Vector((-0.215, y_row + 0.17, 0.765)), pole=(0.25, 0.8, -1.0))
+    FP.set_arm(S, "L" if FP.outward(S, "L") > 0 else "R", t, Vector((0.235, y_row + 0.19, 0.6)), pole=(-0.25, 0.8, -1.0))
+
+
+def my_mask(cam, H, piv, t_grab=None, t_on=None, worn_from_start=False):
+    """Meine Maske: greifen (rechte Hand), ans Gesicht ziehen, aufsetzen. Aufgesetzt sitzt der Becher knapp UNTER dem Bild
+    (sonst gelber Fleck), man sieht den Schlauch von der Service-Leiste nach unten laufen."""
+    psu = Vector((piv.location.x, piv.location.y, FP.PSU_Z))
+    worn = FP.worn_mask("me", cam, (0, -0.088, -0.035), (math.radians(180), 0, 0), psu)
+    for o in worn:
+        o.hide_render = True
+        if o.name.startswith("mskwtube"):   # eigener Schlauch läuft direkt vor der Linse -> unscharfer Balken: für die Kamera unsichtbar
+            o.visible_camera = False
+    if worn_from_start:
+        for o in worn:
+            o.hide_render = False
+        for o in FP.mask_parts(piv):
+            o.hide_render = True
+        return worn, None
+    held = FP.worn_mask("meheld", H["R"], (0.0, 0.08, -0.055), (math.radians(180), 0, 0), psu)
+    for o in held:
+        o.hide_render = True
+        if o.name.startswith("mskwtube"):
+            o.visible_camera = False
+    FP._vis(FP.mask_parts(piv), t_grab, False)
+    FP._vis(held, t_grab, True)
+    FP._vis(held, t_on, False)
+    FP._vis(worn, t_on, True)
+    return worn, held
+
+
+def pov_grab_keys(cam, H, piv, t_grab, t_on):
+    """Hände zur hängenden Maske (Ort aus Kamera + Pendel zur Zeit t_grab) – erst NACH allen anderen Schlüsseln aufrufen."""
+    sc = bpy.context.scene
+    sc.frame_set(Q.T(t_grab))
+    cw = FP.dangling_cup(piv, t_grab)
+    loc = cam.matrix_world.inverted() @ cw
+    H["R"].location = loc + Vector((0.0, -0.075, 0.06))
+    H["R"].rotation_euler = [math.radians(a) for a in (-70, 0, 10)]
+    for f in (Q.T(t_grab),):
+        H["R"].keyframe_insert("location", frame=f)
+        H["R"].keyframe_insert("rotation_euler", frame=f)
+    H["L"].location = loc + Vector((-0.07, -0.1, 0.07))
+    H["L"].rotation_euler = [math.radians(a) for a in (-70, 0, -20)]
+    H["L"].keyframe_insert("location", frame=Q.T(t_grab))
+    H["L"].keyframe_insert("rotation_euler", frame=Q.T(t_grab))
+    sc.frame_set(1)
+
+
+def kid_dir(pax):
+    mo, k1 = pax.get(MOM), pax.get(KID1)
+    return 1.0 if k1["root"].location.x > mo["root"].location.x else -1.0
+
+
+def family(pax, t, MM=None, mode="hug", seed=0):
+    """Mutter über ihr Kind gebeugt (Arme schützend davor, Hände an seinen Schultern); Kind lehnt sich an sie;
+    das zweite Kind am Fenster in Schutzhaltung. Seitenneigung: Brust-Y negativ = zur Welt-+x."""
+    mo, k1, k2 = pax.get(MOM), pax.get(KID1), pax.get(KID2)
+    if not (mo and k1):
+        return mo, k1, k2
+    dx = kid_dir(pax)
+    FP.set_body(k1, (6, 10 * dx, 0), (10, 0, 6 * dx))
+    FP.key_body(k1, t)
+    FP.hands_lap(k1, t, spread=0.04)
+    if k2:
+        FP.brace_real(k2, t, seed=seed + 1)
+    FP.set_body(mo, (14, -16 * dx, 0), (24, 0, -14 * dx))
+    FP.key_body(mo, t)
+    kid_side = "L" if FP.outward(mo, "L") == dx else "R"
+    other = "R" if kid_side == "L" else "L"
+    shs = sorted((FP.chain(k1, "hips", "chest", f"sh.{sd}").translation for sd in ("L", "R")), key=lambda v: v.x * dx)
+    near, far = shs[0], shs[1]
+    # beide Hände halten das Kind an den Schultern (von vorn), Arme schützend vor ihm
+    FP.set_arm(mo, kid_side, t, far + Vector((0.0, 0.09, 0.0)), pole=(0.5 * dx, -0.1, -1.0), hand_twist=60 * dx)
+    FP.set_arm(mo, other, t, near + Vector((0.01 * dx, 0.1, -0.03)), pole=(-0.4 * dx, 0.2, -1.0), hand_twist=-60 * dx)
+    return mo, k1, k2
+
+
+def storm_cabin(t_end, seed=0, t_drop=-1.6):
     """Gemeinsam für absturz/beten: Masken unten, Sturm draußen, Blitze, flackerndes Licht, schwere Erschütterung."""
-    C, seats, pax, world, W = cabin_base(kinds={(0, "D"): "hijab", (0, "E"): "child"}, occupancy=0.8, seed=3)
+    C, seats, pax, world, W = cabin_base(kinds=FAMILY, occupancy=0.8, seed=3)
     bg, st = outside_night(world, W, t_end=t_end, storm=True, speed=70.0)
-    masks = FW.oxygen_masks(range(-1, 9), -1.0, seed=seed)
+    MM = mask_map(FW.oxygen_masks(range(-3, 12), t_drop, seed=seed))
     NB = neighbor()
+    for o in NB["phone"].children_recursive:   # Handy steckt weg
+        o.hide_render = True
+    reading_lights([(MOM[0], MOM[1]), (KID1[0], KID1[1])], energy=9.0)   # Leselampen der Familie hinter mir an
     wl = window_light([(0, 3.0)])
-    return C, pax, world, W, bg, st, masks, NB, wl
+    return C, pax, world, W, bg, st, MM, NB, wl
 
 
 def shot_absturz():
-    """Absturzgefahr: Masken pendeln, Licht flackert, die Flugbegleiterin schreit „Kopf runter!“, draußen Blitze, die Nase kippt
-    nach unten – Handy, Geldscheine, Zettel schweben hoch; der Nachbar schreit „Ya Allah!“."""
-    C, pax, world, W, bg, st, masks, NB, wl = storm_cabin(D)
-    # eigene Maske (Platz 0A) hängt höher – direkt vor dem Auge füllte sie als gelber Fleck das ganze Bild
-    pv = bpy.data.objects.get("msk0_-1_0")
-    if pv:
-        for fc in Q.fcurves(pv):
-            if fc.data_path == "location" and fc.array_index == 2:
-                for kp in fc.keyframe_points:
-                    for v_ in (kp.co, kp.handle_left, kp.handle_right):
-                        v_[1] += 0.27
-        pv.location.z += 0.27
-    S = stewardess(2.7)
+    """Absturzgefahr (wie im echten Notfall): alle ziehen die Sauerstoffmasken auf (die Mutter erst sich, dann dem Kind),
+    die Flugbegleiterin kniet im Gang und ruft „Kopf runter!“, alle gehen in die Schutzhaltung (Stirn an die Lehne, Hände darüber);
+    auch ich setze meine Maske auf. Die Nase kippt nach unten – Handy, Geld, Zettel schweben hoch. Die Mutter ruft „Ya Allah, rette uns!“."""
+    C, pax, world, W, bg, st, MM, NB, wl = storm_cabin(D)
+    S = kneel_stewardess(2.70)
     rig, shake, cam = me_cam(18.0)
+    H = my_hands(cam)
     ta1, ta2, ta3 = ls("a1"), ls("a2"), ls("a3")
     t_fall = ev("fällt_a2", ta2 + 0.6)
     t_egal = ev("egal_a2", ta2 + 3.6)
     t_handy = ev("handy_a2", ta2 + 5.4)
-    ck(rig, [(0, tuple(SEATA), (-22, -6, 0)), (ta1 + 1.0, None, (-18, -2, 0)), (ta2 - 0.1, None, (-14, -4, 0)),
-             (t_fall - 0.2, None, (10, -26, 0)), (t_egal - 0.6, None, (6, -8, 8)), (t_handy - 0.4, None, (4, 2, -6)),
-             (ta3 - 0.3, None, (-6, 2, 0)), (ta3 + 0.2, tuple(SEATA + Vector((-0.04, 0.1, 0))), (-90, -8, 0)), (D, None, (-96, -6, 0))])
-    # Flugbegleiterin: hält sich fest, schreit (Kopf vor), Arm deutet nach unten
-    FW.kf_rot(S["chest"], ta1, (-6, 0, 0))
-    FW.kf_rot(S["chest"], ta1 + 0.3, (16, 0, 0))
-    FW.kf_rot(S["sh.R"], ta1 + 0.3, (120, -10, 0))
-    FW.kf_rot(S["sh.R"], ta1 + 0.8, (70, -10, 0))
-    FW.kf_rot(S["sh.R"], ta1 + 1.2, (125, -10, 0))
-    for tt_, o_ in ((ta1 - 0.1, 0.1), (ta1 + 0.1, 0.9), (ta1 + 0.55, 0.5), (ta1 + 0.9, 0.95), (ta1 + 1.9, 0.3), (ta1 + 2.4, 0.8), (D, 0.6)):
+    t_grab, t_on = 0.75, 1.45
+    ck(rig, [(0, tuple(SEATA), (12, 2, 0)), (t_grab, None, (10, -4, 0)), (t_on, None, (2, -14, 0)),
+             (t_on + 0.55, tuple(SEATA + Vector((0.02, 0.04, 0.03))), (-72, -14, 0)), (ta2 - 0.3, None, (-76, -18, 0)),
+             (t_fall - 0.2, tuple(SEATA), (10, -26, 0)), (t_egal - 0.6, None, (6, -8, 8)),
+             (t_handy - 0.4, None, (4, 2, -6)), (ta3 - 0.4, None, (-6, 2, 0)),
+             (ta3 + 0.2, tuple(SEATA + Vector((0.12, -0.05, 0.24))), (-145, -20, 0)), (D, None, (-148, -18, 0))])
+    my_mask(cam, H, MM[(0, "A")], t_grab, t_on)
+    hp(H, 0, "hidden")
+    hp(H, t_grab - 0.45, "mask_reach")
+    hp(H, t_on, "mask_face")
+    hp(H, t_on + 0.5, "hidden")
+    # Flugbegleiterin: kniet, hält sich fest, ruft, zeigt mit der Hand nach unten
+    hold(S, 0)
+    stw_hold(S, 0, 2.43)
+    FP.set_body(S, (14, 0, 0), (-4, 0, 0))
+    FP.key_body(S, ta1)
+    FP.set_body(S, (22, 0, 0), (-10, 0, 0))
+    FP.key_body(S, ta1 + 0.3)
+    push = "L" if FP.outward(S, "L") > 0 else "R"
+    for k_, (tt_, zz) in enumerate(((ta1 + 0.35, 0.98), (ta1 + 0.75, 0.74), (ta1 + 1.15, 0.98), (ta1 + 1.6, 0.74))):
+        FP.set_arm(S, push, tt_, Vector((0.1, 2.3, zz)), pole=(0.15, 0.8, -0.8), hand_twist=0)
+    FP.set_arm(S, push, ta1 + 2.0, Vector((0.18, 2.52, 0.68)), pole=(0.1, 0.8, -0.8), hand_twist=0)
+    stw_hold(S, ta1 + 2.4, 2.43)
+    for tt_, o_ in ((ta1 - 0.1, 0.1), (ta1 + 0.1, 0.9), (ta1 + 0.55, 0.5), (ta1 + 0.9, 0.95), (ta1 + 1.9, 0.3), (ta1 + 2.4, 0.6), (D, 0.4)):
         FW.mouth(S["face"], tt_, o_)
     # Nase kippt nach unten: die Welt draußen dreht sich (Wolken stürzen nach oben)
     FW.kf_rot(world, t_fall - 0.3, (0, 0, 0))
     FW.kf_rot(world, t_fall + 1.4, (-24, 0, 8))
     FW.kf_rot(world, D, (-30, 0, 12))
-    # schwebende Gegenstände (Handy, Geldscheine, Zettel)
+    # schwebende Gegenstände (Handy, Geldscheine, Zettel) zwischen mir und der Lehne vor mir, mittig (Hochformat ist schmal)
     FW.mats()
     money = Q.pbr("money", (0.55, 0.62, 0.45), 0.8, var=0.2, scale=40)
     paper = Q.pbr("paper", (0.92, 0.92, 0.9), 0.8)
     floaters = []
     rnd = random.Random(8)
-    # zwischen mir und der Lehne vor mir (Lehne bei y ~0,44), mittig vor der Kamera – das Hochformat ist schmal
     for k in range(9):
         m_ = money if k < 6 else paper
-        o = Q.box(f"float{k}", (FW.SX["A"] + 0.06 + rnd.uniform(-0.2, 0.2), rnd.uniform(0.26, 0.42), 0.62), (0.12, 0.055, 0.002) if k < 6 else (0.075, 0.105, 0.002), m_)
+        o = Q.box(f"float{k}", (FW.SX["A"] + 0.06 + rnd.uniform(-0.2, 0.2), rnd.uniform(0.26, 0.4), 0.62), (0.12, 0.055, 0.002) if k < 6 else (0.075, 0.105, 0.002), m_)
         o["person"] = 1
         floaters.append(o)
     ph, pm, ps = FW.phone("fl", None, "flug_feed_mine.png", loc=(FW.SX["A"] + 0.05, 0.3, 0.6), emit=2.0)
@@ -589,121 +764,172 @@ def shot_absturz():
         p0 = Vector(o.location)
         o.keyframe_insert("location", frame=max(1, Q.T(t_fall)))
         FW.kf_rot(o, t_fall, (0, 0, 0))
-        tgt = Vector((FW.SX["A"] + 0.06 + rnd.uniform(-0.15, 0.15), rnd.uniform(0.3, 0.42), rnd.uniform(0.82, 1.36)))
+        tgt = Vector((FW.SX["A"] + 0.06 + rnd.uniform(-0.15, 0.15), rnd.uniform(0.3, 0.4), rnd.uniform(0.82, 1.36)))
         if o is ph:
-            tgt = Vector((FW.SX["A"] + 0.06, 0.36, 1.08))
+            tgt = Vector((FW.SX["A"] + 0.06, 0.34, 1.08))
         for u in (0.6, 1.2, 2.5, 4.0):
-            o.location = p0.lerp(tgt, min(1, u / 2.0)) + Vector((rnd.uniform(-0.04, 0.04), rnd.uniform(-0.04, 0.04), 0.03 * math.sin(u * 3 + k)))
+            o.location = p0.lerp(tgt, min(1, u / 2.0)) + Vector((rnd.uniform(-0.04, 0.04), rnd.uniform(-0.03, 0.03), 0.03 * math.sin(u * 3 + k)))
             o.keyframe_insert("location", frame=max(1, Q.T(t_fall + u)))
-            if o is ph:   # Handy dreht sich kaum – Bildschirm bleibt zur Kamera
+            if o is ph:
                 FW.kf_rot(o, t_fall + u, (72 * min(1, u / 2.0) + 8 * math.sin(u * 2), 6 * math.cos(u * 1.7), 10 * math.sin(u * 1.3)))
             else:
                 FW.kf_rot(o, t_fall + u, (rnd.uniform(-90, 90) * u, rnd.uniform(-60, 60) * u, rnd.uniform(-90, 90) * u))
-    # Nachbar: klammert sich fest, dann schreit er mit erhobenen Armen
-    nb_pose(NB, 0, "brace")
-    nb_pose(NB, ta3 - 0.4, "brace")
-    nb_pose(NB, ta3, "scream")
-    FW.mouth(NB["face"], ta3 - 0.25, 0.0)
-    FW.mouth(NB["face"], ta3 + 0.05, 1.0)
-    FW.mouth(NB["face"], ta3 + 1.4, 0.75)
-    FW.mouth(NB["face"], ta3 + 1.8, 1.0)
-    FW.mouth(NB["face"], D, 0.9)
-    for P in pax.values():
-        FW.brace(P, rnd.uniform(0.0, ta2), seed=rnd.randint(0, 99))
-        if rnd.random() < 0.5:
-            FW.mouth(P["face"], rnd.uniform(0, 1.0), rnd.uniform(0.6, 1.0))
-    heads = [P["neck"] for P in pax.values()] + [NB["neck"], S["neck"]]
+    # Fluggäste: Maske auf, dann Schutzhaltung (gerechnet – Stirn 3 cm vor der Lehne)
+    rnd = random.Random(21)
+    fam = set(FAMILY)
+    for k, P in pax.items():
+        if k in fam:
+            continue
+        hold(P, 0)
+        t_o = rnd.uniform(0.4, 2.3)
+        if MM.get(k):
+            FP.put_on(P, MM[k], t_o - 0.45, t_o)
+        FP.brace_real(P, max(t_o + 0.5, ta1 + 0.9) + rnd.uniform(0, 0.7), seed=rnd.randint(0, 999))
+        if rnd.random() < 0.4:
+            FW.mouth(P["face"], rnd.uniform(0, 1.0), rnd.uniform(0.5, 0.9))
+    hold(NB, 0)
+    FP.put_on(NB, MM[(0, "C")], 0.55, 1.0)
+    FP.brace_real(NB, 1.9, seed=3)
+    # Familie: Mutter setzt erst ihre Maske auf, dann die des kleinen Kindes; das große Kind seine eigene
+    mo, k1, k2 = pax.get(MOM), pax.get(KID1), pax.get(KID2)
+    if mo and k1:
+        dx = kid_dir(pax)
+        for P in (mo, k1) + ((k2,) if k2 else ()):
+            hold(P, 0)
+        FP.put_on(mo, MM[MOM], 0.35, 0.8)
+        kp = FP.person_mask(k1, MM[KID1])
+        cup_k = FP.dangling_cup(MM[KID1], 1.25)
+        FP.set_body(mo, (10, -12 * dx, 0), (8, 0, -6 * dx))
+        FP.key_body(mo, 1.25)
+        for side in ("L", "R"):
+            sx = FP.outward(mo, side)
+            FP.set_arm(mo, side, 1.25, cup_k + Vector((0.04 * sx, -0.03, -0.02)), pole=(0.8 * sx, 0.0, -1.0), hand_twist=60 * sx)
+        fk = FP.head_world(k1, (0, -0.15, 0.08))
+        for side in ("L", "R"):
+            sx = FP.outward(mo, side)
+            FP.set_arm(mo, side, 1.95, fk + Vector((0.04 * sx, -0.03, 0.0)), pole=(0.8 * sx, 0.0, -1.0), hand_twist=70 * sx)
+        FP._vis(FP.mask_parts(MM[KID1]), 1.95, False)
+        FP._vis(kp, 1.95, True)
+        if k2:
+            FP.put_on(k2, MM[KID2], 1.0, 1.6)
+        family(pax, 2.7, seed=4)
+        # „Ya Allah, rette uns!“: Kopf hoch, freie Hand erhoben
+        family(pax, ta3 - 0.5, seed=4)
+        FP.set_body(mo, (4, -8 * dx, 0), (-14, 0, 12))   # schaut auf (nach vorn zu mir, ich drehe mich um)
+        FP.key_body(mo, ta3 + 0.05)
+        free = "R" if FP.outward(mo, "L") == dx else "L"
+        hm = FP.head_world(mo)
+        sxf = FP.outward(mo, free)
+        # offene Hand, Handfläche nach oben, auf Brusthöhe (Bittgebet) – nicht über den Kopf gestreckt
+        FP.set_arm(mo, free, ta3 + 0.1, hm + Vector((0.09 * sxf, 0.17, -0.2)), pole=(0.6 * sxf, 0.4, -1.0), hand_twist=-110 * sxf)
+        FP.set_arm(mo, free, D, hm + Vector((0.09 * sxf, 0.18, -0.17)), pole=(0.6 * sxf, 0.4, -1.0), hand_twist=-110 * sxf)
+    shake_heads(list(pax.values()) + [NB], 0, D, lambda t: 1.0 if t < t_fall else 1.25, seed=2, step=0.1, deg=2.0)
+    shake_heads([S], 0, D, lambda t: 1.0, seed=5, step=0.1, deg=4.0)
     amp = lambda t: 1.0 if t < t_fall else 1.25
-    jiggle(heads, 0, D, amp, step=0.1, axis_deg=6)
     turbulence(shake, 0, D, amp, seed=3, jolts=[(0.2, 1.0), (t_fall, 1.6), (ta3, 1.0)], lift=[(t_fall, 1.6, 0.16)])
     flicker_lights(C, 0, D, seed=7, low=0.0, high=0.7)
-    rnd2 = random.Random(5)
     for k, (tl_, s_) in enumerate(((0.6, 0.9), (t_fall + 0.1, 0.12), (t_fall + 1.1, 0.1), (t_egal - 0.4, 0.2), (t_egal + 0.6, 0.12),
-                                    (ta3 + 0.5, 0.8), (D - 1.5, 0.8))):
+                                    (ta3 + 0.5, 0.15), (D - 1.5, 0.25))):
         FW.lightning(tl_, [(wl, 800)], st[1], bg, strength=s_, seed=k, base=0.3)
+    pov_grab_keys(cam, H, MM[(0, "A")], t_grab, t_on)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.25, "mblur": 0.35}
 
 
 def shot_beten():
-    """Alle beten: die Frau gegenüber schützt ihr Kind („Ya Rabbi … meine Kinder“), Leute mit erhobenen Händen, Masken pendeln;
-    dann meine eigenen Hände – Bittgebet: „Ya Allah … gib mir noch eine Chance.“"""
-    C, pax, world, W, bg, st, masks, NB, wl = storm_cabin(D, seed=2)
+    """Alle beten – mit Masken, wie im echten Notfall: die Mutter gegenüber hält ihr Kind („Ya Rabbi … meine Kinder“), viele in
+    Schutzhaltung, einige mit erhobenen Händen; dann meine eigenen Hände – Bittgebet: „Ya Allah … gib mir noch eine Chance.“"""
+    C, pax, world, W, bg, st, MM, NB, wl = storm_cabin(D, seed=2, t_drop=-20.0)
     rig, shake, cam = me_cam(19.0)
     H = my_hands(cam)
+    my_mask(cam, H, MM[(0, "A")], worn_from_start=True)
     ta4, ta5, ta6 = ls("a4"), ls("a5"), ls("a6")
     t_du = ev("du_a5", ta5 + 5.4)
-    ck(rig, [(0, tuple(SEATA + Vector((0.16, 0.02, 0.22))), (-80, -20, 0)), (ta5 - 0.2, None, (-76, -18, 0)),
-             (ta5 + 1.2, tuple(SEATA + Vector((0.2, 0.1, 0.26))), (-36, -7, 0)), (t_du - 0.5, tuple(SEATA + Vector((0.18, 0.1, 0.22))), (-26, -6, 0)),
-             (t_du + 0.3, tuple(SEATA + Vector((0.02, 0.04, -0.1))), (-2, -22, 0)), (D, None, (0, -24, 0))])
+    ck(rig, [(0, tuple(SEATA + Vector((0.12, -0.05, 0.24))), (-147, -20, 0)), (ta5 - 0.2, None, (-143, -19, 0)),
+             (ta5 + 1.2, tuple(SEATA + Vector((0.12, 0.08, 0.18))), (-36, -9, 0)), (t_du - 0.5, tuple(SEATA + Vector((0.1, 0.08, 0.16))), (-26, -8, 0)),
+             (t_du + 0.3, tuple(SEATA + Vector((0.02, 0.0, -0.08))), (-2, -20, 0)), (D, None, (0, -22, 0))])
     hp(H, 0, "hidden")
     hp(H, t_du - 0.1, "dua_low")
     hp(H, t_du + 0.5, "dua")
     hp(H, ta6 + 1.6, "dua")
     hp(H, ta6 + 2.2, "dua_low")
     hp(H, D, "dua")
-    # Frau gegenüber (0D) beugt sich über ihr Kind (0E)
-    mo, ch = pax.get((0, "D")), pax.get((0, "E"))
-    if mo:
-        FW.kf_rot(mo["chest"], 0, (30, 0, -18))
-        FW.kf_rot(mo["neck"], 0, (20, 0, -20))
-        FW.kf_rot(mo["sh.L"], 0, (70, 40, 0))
-        FW.kf_rot(mo["sh.R"], 0, (90, -10, 0))
-        t = 0
-        while t < D:   # Schluchzen
-            FW.kf_rot(mo["chest"], t, (30 + (4 if int(t * 3) % 2 else 0), 0, -18))
+    for k, P in pax.items():
+        if MM.get(k):
+            FP.wear_from_start(P, MM[k])
+    FP.wear_from_start(NB, MM[(0, "C")])
+    FP.brace_real(NB, 0, seed=5)
+    mo, k1, k2 = family(pax, 0, seed=4)
+    if mo:   # leises Schluchzen: Schultern zucken
+        base = list(mo["chest"].rotation_euler)
+        t = 0.2
+        while t < D:
+            mo["chest"].rotation_euler = (base[0] + math.radians(3.0 if int(t * 3) % 2 else 0.0), base[1], base[2])
+            mo["chest"].keyframe_insert("rotation_euler", frame=max(1, Q.T(t)))
             t += 0.33
-    if ch:
-        FW.kf_rot(ch["chest"], 0, (20, 0, 10))
-    # andere: Köpfe unten, manche Hände erhoben (Bittgebet)
     rnd = random.Random(4)
     for k, P in pax.items():
-        if k in ((0, "D"), (0, "E")):
+        if k in FAMILY:
             continue
-        if rnd.random() < 0.55:   # Hände hoch zum Himmel (über den Sitzlehnen sichtbar)
-            FW.kf_rot(P["chest"], 0, (-4, 0, 0))
-            FW.kf_rot(P["neck"], 0, (-14, 0, 0))
-            for nm, s_ in (("L", -1), ("R", 1)):
-                FW.kf_rot(P[f"sh.{nm}"], 0, (158, 26 * s_, 0))
-                FW.kf_rot(P[f"el.{nm}"], 0, (-28, 0, 0))
+        if rnd.random() < 0.4:   # aufrecht, Hände zum Bittgebet erhoben
+            FP.upright(P, 0, lean=-2, neck=(rnd.uniform(-8, 4), 0, 0))
+            FP.hands_dua(P, 0, seed=rnd.randint(0, 99), high=rnd.uniform(0.0, 0.08))
         else:
-            FW.brace(P, 0, seed=rnd.randint(0, 99))
-    nb_pose(NB, 0, "pray")
-    heads = [P["neck"] for P in pax.values()] + [NB["neck"]]
+            FP.brace_real(P, 0, seed=rnd.randint(0, 999))
     amp = lambda t: 0.85 if t < ta6 else 0.7
-    jiggle(heads, 0, D, amp, step=0.11, axis_deg=5)
+    shake_heads(list(pax.values()) + [NB], 0, D, amp, seed=3, step=0.11, deg=2.0)
     turbulence(shake, 0, D, amp, seed=5, jolts=[(1.2, 0.8), (ta5 + 2.5, 1.0), (ta6 + 1.0, 0.7)])
     flicker_lights(C, 0, D, seed=11, low=0.0, high=0.55)
     for k, tl_ in enumerate((0.8, ta5 + 0.4, ta5 + 3.6, t_du + 0.3, ta6 + 2.6)):
-        FW.lightning(tl_, [(wl, 700)], st[1], bg, seed=k + 3)
-    # letzter Blitz: D - 1.0 lag bei 30 fps so, dass Schlüssel 0 und 1 auf DASSELBE Bild fielen (0 überschrieben) ->
-    # Fensterlicht stieg 3 s lang langsam an (Bild fast weiß). Zeit leicht verschoben + schwächer (Kamera sieht auf die Lehne).
-    FW.lightning(D - 1.02, [(wl, 700)], st[1], bg, seed=8, strength=0.35)
+        FW.lightning(tl_, [(wl, 700)], st[1], bg, seed=k + 3, strength=0.6 if tl_ < t_du else 0.25)
+    FW.lightning(D - 1.02, [(wl, 700)], st[1], bg, seed=8, strength=0.3)
     return {"mist_col": (0.02, 0.025, 0.05), "mist_amt": 0.0, "exposure": 0.25, "mblur": 0.3}
 
 
 def shot_stille():
-    """Plötzlich Ruhe: das Rütteln hört auf, das Licht geht an, die Masken hängen still; Köpfe heben sich. Durchsage des Kapitäns."""
-    C, seats, pax, world, W = cabin_base(kinds={(0, "D"): "hijab", (0, "E"): "child"}, occupancy=0.8)
+    """Plötzlich Ruhe: das Rütteln hört auf, das Licht geht an; die Leute heben die Köpfe, einige nehmen die Maske ab (auch der Nachbar),
+    die Mutter hält ihre Kinder. Durchsage des Kapitäns – der Bildschirm zeigt: noch 20 Minuten."""
+    C, seats, pax, world, W = cabin_base(kinds=FAMILY, occupancy=0.8)
+    FW.set_ife("flug_ife_s.png")   # „Wir landen in zwanzig Minuten“ -> Karte: NOCH 20 MIN
     bg, st = outside_night(world, W, t_end=D, speed=50.0)
     FW.city_lights(world, z=-900, center=(-400, 300))
-    masks = FW.oxygen_masks(range(-1, 9), -10.0, seed=2)
+    MM = mask_map(FW.oxygen_masks(range(-3, 12), -20.0, seed=2))
     NB = neighbor()
+    for o in NB["phone"].children_recursive:
+        o.hide_render = True
     rig, shake, cam = me_cam(19.0)
+    H = my_hands(cam)
+    my_mask(cam, H, MM[(0, "A")], worn_from_start=True)
+    hp(H, 0, "hidden")
     ts = ls("s1")
     ck(rig, [(0, tuple(SEATA + Vector((0.04, 0.08, -0.1))), (-6, -26, 0)), (1.2, None, (-8, -14, 0)), (ts - 0.2, tuple(SEATA), (-12, 2, 0)),
              (ts + 2.6, None, (-24, 0, 0)), (D, None, (-34, -2, 0))])
     rnd = random.Random(3)
-    for P in pax.values():
-        FW.brace(P, 0, seed=rnd.randint(0, 99))
-        FW.brace(P, 0.4 + rnd.uniform(0, 1.0), seed=rnd.randint(0, 99), down=True)
-        FW.brace(P, 1.6 + rnd.uniform(0, 2.6), seed=rnd.randint(0, 99), down=False)
-    nb_pose(NB, 0, "brace")
-    nb_pose(NB, 2.0, "brace")
-    nb_pose(NB, 3.2, "rest")
-    amp = lambda t: max(0.04, 0.7 * math.exp(-t / 0.5))
-    turbulence(shake, 0, D, amp, seed=8)
-    for k, P in enumerate(pax.values()):
-        FW.breathe(P, 4.0, D, seed=k)
+    for k, P in pax.items():
+        if MM.get(k):
+            FP.wear_from_start(P, MM[k])
+        if k in FAMILY:
+            continue
+        FP.brace_real(P, 0, seed=rnd.randint(0, 999))
+        tu = 0.6 + rnd.uniform(0, 2.8)
+        FP.brace_real(P, tu - 0.4, seed=rnd.randint(0, 999))
+        FP.upright(P, tu, lean=-1, neck=(rnd.uniform(-2, 8), rnd.uniform(-10, 10), 0))
+        FP.hands_lap(P, tu)
+        if MM.get(k) and rnd.random() < 0.45:
+            to = tu + 0.8 + rnd.uniform(0, 3.0)
+            hold(P, to - 0.4)
+            FP.take_off(P, MM[k], to, to + 0.4)
+            FP.hands_lap(P, to + 0.7)
+    FP.wear_from_start(NB, MM[(0, "C")])
+    FP.brace_real(NB, 0, seed=5)
+    FP.brace_real(NB, 1.4, seed=5)
+    FP.upright(NB, 2.0, lean=-2, neck=(-2, 0, 0))
+    FP.hands_lap(NB, 2.0)
+    hold(NB, 2.9)
+    FP.take_off(NB, MM[(0, "C")], 3.3, 3.7)
+    FP.hands_lap(NB, 4.0)
+    family(pax, 0, seed=4)
+    family(pax, 2.0, seed=4)
+    turbulence(shake, 0, D, lambda t: max(0.04, 0.7 * math.exp(-t / 0.5)), seed=8)
     flicker_lights(C, 0, 0.9, seed=2, low=0.0, high=0.6)
     lights_level(C, 1.2, 1.0)
     main_lights([(0, 0), (1.0, 0), (1.15, 260), (D, 260)])
@@ -714,7 +940,8 @@ def shot_stille():
 def shot_landung():
     """Landung: draußen Anflugbefeuerung und Landebahn, Aufsetzen (Ruck), Applaus; der Nachbar lacht erleichtert und holt das Handy:
     „Das muss ich posten.“"""
-    C, seats, pax, world, W = cabin_base(occupancy=0.8)
+    C, seats, pax, world, W = cabin_base(kinds=FAMILY, occupancy=0.8)
+    FW.set_ife("flug_ife_l.png")
     bg = FW.night_world(moon=False)
     t_td = 1.4
     rw = FW.runway(world, y0=0.0, length=3200, z=0.0)
@@ -736,26 +963,37 @@ def shot_landung():
     NB = neighbor()
     rig, shake, cam = me_cam(19.0)
     tl1, tl2 = ls("l1"), ls("l2")
-    ck(rig, [(0, tuple(SEATA + Vector((-0.02, -0.06, 0))), (58, -20, 0)), (t_td + 0.8, None, (66, -14, 0)), (tl1 - 0.5, None, (30, -10, 0)),
+    ck(rig, [(0, tuple(SEATA + Vector((-0.2, 0.04, -0.02))), (56, -18, 0)), (t_td + 0.8, None, (64, -12, 0)), (tl1 - 0.6, None, (40, -8, 0)),
+             (tl1 - 0.3, tuple(SEATA + Vector((-0.06, 0.06, 0))), (10, -10, 0)),
              (tl1 + 0.1, tuple(SEATA + Vector((-0.06, 0.12, 0))), (-96, -14, 0)), (tl2, None, (-100, -18, 0)), (D, None, (-104, -22, 0))])
-    nb_pose(NB, 0, "brace")
-    nb_pose(NB, t_td + 0.6, "brace")
-    nb_pose(NB, tl1 - 0.3, "relief")
-    laugh(NB, tl1, tl1 + 1.6, 5)
-    nb_pose(NB, tl2 - 0.1, "relief")
-    nb_pose(NB, tl2 + 0.4, "post")
+    MMl = mask_map(FW.oxygen_masks(range(-3, 12), -30.0, seed=2))
+    for key in ((0, "A"), (0, "B")):   # eigene Masken zur Seite geschoben (sonst gelber Fleck vor Fenster/Kamera)
+        for o in FP.mask_parts(MMl[key]):
+            o.hide_render = True
+    t_rel = min(tl1 - 0.3, t_td + 0.6)
+    FP.brace_real(NB, 0, seed=5)
+    FP.brace_real(NB, min(t_td + 0.3, t_rel - 0.35), seed=5)
+    for o in NB["phone"].children_recursive:   # Handy erst beim „posten“ in der Hand
+        o.hide_render = True
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(tl2 - 0.35)))
+        o.hide_render = False
+        o.keyframe_insert("hide_render", frame=max(1, Q.T(tl2 - 0.3)))
+    nb_relief(NB, t_rel)
+    laugh(NB, tl1 + 0.6, tl1 + 1.8, 3)
+    nb_relief(NB, tl2 - 0.1)
+    nb_phone(NB, tl2 + 0.4, chest=(2, 0, 0), neck=(32, 0, 0))
     pm2 = FW.img_mat("nbpost", "flug_post.png", emit=2.2, base=(0.01, 0.01, 0.012), rough=0.15)
     NB["phone_scr"].data.materials[0] = pm2
     # Applaus: Fluggäste klatschen (Hände vor der Brust, schnell)
     rnd = random.Random(6)
     for P in pax.values():
+        FP.brace_real(P, 0, seed=rnd.randint(0, 999), hands="lap")
+        FP.brace_real(P, t_td + 0.3, seed=rnd.randint(0, 999), hands="lap")
+        tu = t_td + 0.6 + rnd.uniform(0, 0.8)
+        FP.upright(P, tu, lean=-5, neck=(rnd.uniform(-8, 4), rnd.uniform(-8, 8), 0))
+        FP.hands_lap(P, tu)
         if rnd.random() < 0.55:
-            t = t_td + 0.8 + rnd.uniform(0, 0.6)
-            while t < D:
-                for nm, s_ in (("L", -1), ("R", 1)):
-                    FW.kf_rot(P[f"sh.{nm}"], t, (75, (6 if int(t * 7) % 2 else 22) * s_, 0))
-                    FW.kf_rot(P[f"el.{nm}"], t, (-80, 0, 0))
-                t += 0.14
+            FP.hands_clap(P, tu + 0.2, D, seed=rnd.randint(0, 99))
     amp = lambda t: 0.25 + (0.5 if t_td < t < t_td + 2.5 else 0)
     turbulence(shake, 0, D, amp, seed=9, jolts=[(t_td, 1.3), (t_td + 0.5, 0.5)])
     lights_level(C, 0, 0.6)
@@ -843,25 +1081,33 @@ def gate_apron(world, G=-3.6):
 def shot_vergessen():
     """Am Gate: helles Licht, alle stehen im Gang, holen Taschen, schauen aufs Handy – als wäre nichts gewesen."""
     C, seats, pax, world, W = cabin_base(occupancy=0.0)
+    FW.set_ife("flug_ife_welcome.png")   # 20 Minuten nach der Landung am Gate (Nutzer: „zeigt immer noch 23:05“)
     FW.night_world(moon=False)
     gate_apron(world)
+    MMv = mask_map(FW.oxygen_masks(range(-3, 12), -40.0, seed=2))
+    for key in ((0, "A"), (0, "B")):   # eigene Masken zur Seite geschoben (sonst gelber Fleck vor der Kamera)
+        for o in FP.mask_parts(MMv[key]):
+            o.hide_render = True
     NB = neighbor()
-    nb_pose(NB, 0, "post")
+    nb_phone(NB, 0, chest=(2, 0, 0), neck=(32, 0, 0))
     rnd = random.Random(12)
     people = []
     for k in range(9):   # Leute stehen im Gang, Handy in der Hand
         y = -2.0 + k * 1.0 + rnd.uniform(-0.2, 0.2)
-        P = Q.person(f"st{k}", (rnd.uniform(-0.08, 0.08), y, 0), yaw=rnd.choice((0.0, 0.3, -0.3, math.pi)), robe=rnd.choice(FW.CLOTH),
+        P = Q.person(f"st{k}", (rnd.uniform(-0.04, 0.04), y, 0), yaw=rnd.choice((0.0, 0.08, -0.08, math.pi)), robe=rnd.choice(FW.CLOTH),
                      skin=rnd.choice(Q.SKINS), wrap=rnd.choice(FW.HIJAB if k % 3 == 0 else FW.HAIR),
                      head="khimar" if k % 3 == 0 else "bare", seed=40 + k, height=rnd.uniform(0.92, 1.04))
-        FW.kf_rot(P["sh.R"], 0, (70, -10, 0))
-        FW.kf_rot(P["el.R"], 0, (-70, 0, 0))
         FW.kf_rot(P["neck"], 0, (30, 0, 0))
         ph, pm, ps = FW.phone(f"stp{k}", P["hand.R"], rnd.choice(("flug_feed_mine.png", "flug_feed_nb.png")), loc=(0, -0.04, -0.06),
                               rot=(math.radians(-60), 0, 0), emit=1.6)
         P["face"] = FW.face(P, seed=40 + k)
         FW.blink(P["face"], 0, D, seed=k)
         FW.breathe(P, 0, D, seed=k)
+        # Gang ist schmal (Sitzkanten bei x = ±0,24): beide Hände VOR dem Körper (Handy + Hand am Gurt), Ellenbogen am Körper
+        Mc = FP.chain(P, "hips", "chest")
+        back = (Mc.to_3x3() @ Vector((0, 1, 0))).normalized()
+        for side, loc in (("R", (-0.03, -0.24, 0.3)), ("L", (0.07, -0.17, 0.08))):
+            FP.pose_arm(P, side, Mc @ Vector(loc), pole=tuple(back * 0.8 + Vector((0, 0, -1))))
         people.append(P)
     # zwei Fächer offen
     for key in ((1, 9), (-1, 10)):
@@ -871,6 +1117,7 @@ def shot_vergessen():
     # sitzende Gäste (einige) mit Handy
     pax = FW.cabin_people(range(1, 10), occupancy=0.35, seed=8, skip={(0, "A"), (0, "B")})
     for P in pax.values():
+        FP.lap_pose(P)
         FW.kf_rot(P["neck"], 0, (32, 0, 0))
     rig, shake, cam = me_cam(20.0)
     tq = ls("q0")

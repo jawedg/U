@@ -81,8 +81,9 @@ def banner():
     im.save(OUT / "flug_banner.png")
 
 
-def ife_map():
-    """Flugkarte im Sitz-Bildschirm."""
+def ife_map(name="flug_ife.png", eta="ANKUNFT 22:25", alt="HÖHE 11.000 m", spd="850 km/h", prog=0.45, left=None):
+    """Flugkarte im Sitz-Bildschirm. v2 (Nutzer): Zeiten passen zur Geschichte – Handy 21:40, Ankunft 22:25,
+    Kapitän „landen in zwanzig Minuten“ -> Karte zeigt „NOCH 20 MIN“."""
     w, h = 800, 500
     im = Image.new("RGB", (w, h), (8, 20, 44))
     d = ImageDraw.Draw(im)
@@ -93,17 +94,48 @@ def ife_map():
         d.polygon(pts, fill=(28, 56, 52))
     im = im.filter(ImageFilter.GaussianBlur(6))
     d = ImageDraw.Draw(im)
-    d.line([(120, 380), (330, 250), (620, 140)], fill=(240, 200, 90), width=5)
-    d.line([(330, 250), (620, 140)], fill=(240, 200, 90, 90), width=3)
+    path = [(120, 380), (330, 250), (620, 140)]
+    # geflogener Teil kräftig, Rest dünn – Flugzeug bei prog (0 … 1)
+    segs = [(path[0], path[1]), (path[1], path[2])]
+    L0 = math.dist(*segs[0])
+    L1 = math.dist(*segs[1])
+    dist = prog * (L0 + L1)
+    if dist <= L0:
+        u = dist / L0
+        pp = (path[0][0] + (path[1][0] - path[0][0]) * u, path[0][1] + (path[1][1] - path[0][1]) * u)
+        flown = [path[0], pp]
+    else:
+        u = (dist - L0) / L1
+        pp = (path[1][0] + (path[2][0] - path[1][0]) * u, path[1][1] + (path[2][1] - path[1][1]) * u)
+        flown = [path[0], path[1], pp]
+    d.line(path, fill=(150, 130, 80), width=3)
+    d.line(flown, fill=(240, 200, 90), width=6)
     d.ellipse((112, 372, 128, 388), fill=(240, 200, 90))
     d.ellipse((612, 132, 628, 148), fill=(255, 255, 255))
-    d.text((340, 228), "✈", font=font(DEJAVU_B, 44), fill=(255, 255, 255), anchor="mm")
+    d.text(pp, "✈", font=font(DEJAVU_B, 44), fill=(255, 255, 255), anchor="mm")
+    if left:
+        rr(d, (24, 24, 300, 96), 12, (4, 10, 24))
+        d.text((40, 36), left, font=font(INTER_B, 40), fill=(255, 220, 120))
     d.rectangle((0, h - 70, w, h), fill=(4, 10, 24))
     f = font(INTER, 28)
-    d.text((30, h - 52), "HÖHE 11.000 m", font=f, fill=(200, 215, 235))
-    d.text((330, h - 52), "850 km/h", font=f, fill=(200, 215, 235))
-    d.text((w - 30, h - 52), "ANKUNFT 23:05", font=f, fill=(200, 215, 235), anchor="ra")
-    im.save(OUT / "flug_ife.png")
+    d.text((30, h - 52), alt, font=f, fill=(200, 215, 235))
+    d.text((330, h - 52), spd, font=f, fill=(200, 215, 235))
+    d.text((w - 30, h - 52), eta, font=f, fill=(200, 215, 235), anchor="ra")
+    im.save(OUT / name)
+
+
+def ife_welcome():
+    """Nach der Landung am Gate: „Willkommen“ + Ortszeit (20 Minuten nach der Landung)."""
+    w, h = 800, 500
+    im = Image.new("RGB", (w, h), (10, 24, 52))
+    d = ImageDraw.Draw(im)
+    for k in range(h):
+        c = int(10 + 18 * k / h)
+        d.line([(0, k), (w, k)], fill=(c, c + 14, 52 + c))
+    d.text((w / 2, 170), "WILLKOMMEN", font=font(INTER_B, 78), fill=(255, 255, 255), anchor="mm")
+    d.text((w / 2, 250), "Ortszeit 22:46", font=font(INTER, 40), fill=(200, 215, 235), anchor="mm")
+    d.text((w / 2, 440), "Danke, dass Sie mit uns geflogen sind", font=font(INTER, 26), fill=(240, 200, 90), anchor="mm")
+    im.save(OUT / "flug_ife_welcome.png")
 
 
 def seatbelt():
@@ -208,6 +240,9 @@ if __name__ == "__main__":
     feed("feed_nb", 7, [(60, 20, 70), (255, 80, 160), (80, 220, 200), (250, 230, 90), (20, 10, 30)], "@prank.king", "Er hat es NICHT kommen sehen")
     banner()
     ife_map()
+    ife_map("flug_ife_s.png", eta="ANKUNFT 22:25", alt="HÖHE 4.100 m", spd="640 km/h", prog=0.86, left="NOCH 20 MIN")
+    ife_map("flug_ife_l.png", eta="ANKUNFT 22:25", alt="HÖHE 0 m", spd="140 km/h", prog=1.0, left="GELANDET")
+    ife_welcome()
     seatbelt()
     exit_sign()
     board()

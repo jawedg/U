@@ -37,6 +37,7 @@ def mats():
     M["shade"] = Q.pbr("shade", (0.88, 0.88, 0.86), 0.5)
     M["mask"] = Q.pbr("mask", (0.95, 0.78, 0.12), 0.5)
     M["tube"] = Q.pbr("tube", (0.8, 0.82, 0.8), 0.3, alpha=0.45)
+    M["maskbag"] = Q.pbr("maskbag", (0.78, 0.86, 0.8), 0.25, alpha=0.35)
     M["wing"] = Q.pbr("wing", (0.55, 0.57, 0.6), 0.35, metal=0.35, var=0.03, scale=3)
     M["wing_dark"] = Q.pbr("wingdark", (0.2, 0.21, 0.23), 0.4, metal=0.3)
     M["cove"] = Q.glow_mat("cove", (0.42, 0.36, 1.0), 2.4)
@@ -161,6 +162,46 @@ def _profile_mesh(name, pts, y0, y1, step, mat, mirror=False):
     return o
 
 
+def _rrect(a, b, n=4.0, k=40):
+    """Abgerundetes Rechteck (Superellipse) mit Halbachsen a (y) und b (z): Punkte im Kreis."""
+    pts = []
+    for i in range(k):
+        t = 2 * math.pi * i / k
+        c, s = math.cos(t), math.sin(t)
+        pts.append((a * math.copysign(abs(c) ** (2 / n), c), b * math.copysign(abs(s) ** (2 / n), s)))
+    return pts
+
+
+def wall_x(z):
+    """Innenfläche der Seitenwand (Profil WALL) auf Höhe z."""
+    for (x0, z0), (x1, z1) in zip(WALL, WALL[1:]):
+        if z0 <= z <= z1:
+            return x0 + (x1 - x0) * (z - z0) / (z1 - z0)
+    return WALL[-1][0]
+
+
+def window_well(name, s_, y):
+    """Fensterblende + Schacht wie im Flugzeug: flacher Rahmen bündig auf der Wand (verdeckt den Schnittrand),
+    dann ein Schacht, der sich nach außen bis zur Scheibe verjüngt (keine Lücke zwischen Wand und Scheibe)."""
+    rings = []
+    for (a, b), dx in (((0.205, 0.27), -0.004), ((0.168, 0.228), -0.006), ((0.142, 0.196), 0.035), ((0.118, 0.168), 0.09)):
+        ring = []
+        for py, pz in _rrect(a, b):
+            z = WIN_Z + pz
+            x = (wall_x(z) + dx) if dx < 0 else (1.82 + dx)
+            ring.append((x * s_, y + py, z))
+        rings.append(ring)
+    bm = bmesh.new()
+    vs = [[bm.verts.new(c) for c in r] for r in rings]
+    n = len(vs[0])
+    for r0, r1 in zip(vs, vs[1:]):
+        for i in range(n):
+            f = (r0[i], r0[(i + 1) % n], r1[(i + 1) % n], r1[i])
+            bm.faces.new(f if s_ > 0 else tuple(reversed(f)))
+    o = Q._obj(name, bm, M["window_frame"], smooth=True)
+    return o
+
+
 def window_ys():
     return [r * ROW + 0.16 for r in ROWS if CAB_Y0 + 0.5 < r * ROW < CAB_Y1 - 0.8]
 
@@ -178,14 +219,20 @@ def cabin_shell(shades=None, seed=0):
         sol = w.modifiers.new("sol", "SOLIDIFY")
         sol.thickness = 0.07
         sol.offset = 1.0 if s_ < 0 else -1.0
-        # Fensteröffnungen: ein Schneidekörper mit allen Fenstern (Ovale, quer durch die Wand)
+        # Fensteröffnungen (v2, Nutzer: „Lücken zu sehen“): Schnitt als abgerundetes Rechteck, GRÖSSER als der Schacht,
+        # damit keine Schnittkante in den Schacht ragt; die Blende (bündig auf der Wand) verdeckt den Schnittrand.
         bm = bmesh.new()
         for y in window_ys():
-            g = bmesh.ops.create_cone(bm, cap_ends=True, segments=28, radius1=1.0, radius2=1.0, depth=1.0)
-            vs = g["verts"]
-            bmesh.ops.rotate(bm, verts=vs, cent=(0, 0, 0), matrix=Matrix.Rotation(math.radians(90), 3, "Y"))
-            bmesh.ops.scale(bm, vec=(0.9, 0.125, 0.18), verts=vs)
-            bmesh.ops.translate(bm, verts=vs, vec=(1.8 * s_, y, WIN_Z))
+            ring = [(1.70 * s_, y + py, WIN_Z + pz) for py, pz in _rrect(0.172, 0.232)]
+            ring2 = [(2.05 * s_, y + py, WIN_Z + pz) for py, pz in _rrect(0.172, 0.232)]
+            v1 = [bm.verts.new(c) for c in ring]
+            v2 = [bm.verts.new(c) for c in ring2]
+            n = len(v1)
+            for i in range(n):
+                bm.faces.new((v1[i], v1[(i + 1) % n], v2[(i + 1) % n], v2[i]))
+            bm.faces.new(v1)
+            bm.faces.new(list(reversed(v2)))
+        bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
         cut = Q._obj(f"wincut{s_}", bm, None)
         bo = w.modifiers.new("win", "BOOLEAN")
         bo.object = cut
@@ -196,22 +243,21 @@ def cabin_shell(shades=None, seed=0):
         w.modifiers.clear()
         w.data = me
         bpy.data.objects.remove(cut)
-        for p in me.polygons:
-            p.use_smooth = True
-        # Rahmen + Rollo je Fenster
+        for p in me.polygons:   # glatt nur außerhalb der Fensterzone (sonst dunkle Dreiecke unter den Fenstern)
+            c = p.center
+            p.use_smooth = not (0.72 < c.z < 1.48)
+        # je Fenster: Blende + Schacht (Loft vom Wandrand bis zur Scheibe), Rollo IM Schacht, Scheibe am Ende
         for k, y in enumerate(window_ys()):
-            fr = Q.torus(f"winfr{s_}_{k}", (1.76 * s_, y, WIN_Z), 0.15, 0.014, M["window_frame"], seg=32, rseg=8,
-                         scale=(0.9, 1.0, 1.25))
-            fr.rotation_euler = (0, math.radians(90 + 6 * s_), 0)
+            window_well(f"win{s_}_{k}", s_, y)
             op = 1.0
             if shades is not None:
                 op = shades.get((s_, k), 1.0)
             elif rnd.random() < 0.55:
                 op = rnd.choice((0.0, 0.0, 0.3, 0.6))
             if op < 0.98:   # Rollo (oben eingefahren, op = wie weit offen)
-                h = 0.38 * (1 - op)
-                Q.box(f"shade{s_}_{k}", (1.775 * s_, y, WIN_Z + 0.19 - h / 2), (0.012, 0.27, h), M["shade"])
-            Q.box(f"pane{s_}_{k}", (1.86 * s_, y, WIN_Z), (0.004, 0.26, 0.37), Q.pbr("pane", (0.08, 0.1, 0.13), 0.08, alpha=0.18))
+                h = 0.33 * (1 - op)
+                Q.box(f"shade{s_}_{k}", (1.878 * s_, y, WIN_Z + 0.16 - h / 2), (0.006, 0.236, h), M["shade"])
+            Q.box(f"pane{s_}_{k}", (1.905 * s_, y, WIN_Z), (0.004, 0.24, 0.34), Q.pbr("pane", (0.08, 0.1, 0.13), 0.08, alpha=0.18))
         # Gepäckfächer: Körper + Klappen je 2 Reihen (Klappe dreht oben um die Y-Achse)
         Q.box(f"binbody{s_}", (1.34 * s_, (CAB_Y0 + CAB_Y1) / 2, 1.86), (0.68, CAB_Y1 - CAB_Y0, 0.44), M["bin"])
         y = CAB_Y0 + 0.2
@@ -280,6 +326,16 @@ def seat_proto():
     parts.append(B("sp_pocket", (0, -0.355, 0.62), (0.34, 0.03, 0.14), M["seat2"], rot=(math.radians(-10), 0, 0)))
     bpy.context.view_layer.update()
     return merge("seat_mesh", parts)
+
+
+def set_ife(file):
+    """Bild aller Sitz-Bildschirme tauschen (Flugkarte / „NOCH 20 MIN“ / „GELANDET“ / „WILLKOMMEN“)."""
+    m = bpy.data.materials.get("ife")
+    if not m:
+        return
+    for n in m.node_tree.nodes:
+        if n.type == "TEX_IMAGE":
+            n.image = bpy.data.images.load(os.path.join(TEX, file), check_existing=True)
 
 
 def seats(rows=ROWS, skip=()):
@@ -379,14 +435,14 @@ def seat_knees(name):
     for s_ in (-1, 1):
         k = bpy.data.objects.get(f"{name}_knee{s_}")
         if k:
-            k.location = (0.1 * s_, -0.34, -0.15)
-            k.scale = (0.7, 1.4, 1.0)
+            k.location = (0.1 * s_, -0.28, -0.15)   # v2: vorher -0,34 / 1,4 -> Knie steckten bis 3,5 cm im Vordersitz
+            k.scale = (0.7, 1.0, 1.0)
     lap = bpy.data.objects.get(f"{name}_lap")
     if lap:
         lap.scale = (0.6, 1.0, 1.0)
 
 
-def passenger(name, r, seat, seed=0, kind=None, height=0.88, lean=-6.0):
+def passenger(name, r, seat, seed=0, kind=None, height=0.88, lean=-3.0):
     """Sitzender Fluggast (ohne Gesicht), schaut nach vorn (+Y). kind: man | woman | hijab | child."""
     rnd = random.Random(seed)
     kind = kind or rnd.choice(("man", "man", "woman", "hijab", "hijab"))
@@ -403,6 +459,7 @@ def passenger(name, r, seat, seed=0, kind=None, height=0.88, lean=-6.0):
         Q.ball(f"{name}_visor", (0, -0.1, 0.17), (0.08, 0.06, 0.012), bpy.data.materials.get(f"wrap_{name}"), parent=P["head"])
     P["chest"].rotation_euler = (math.radians(lean), 0, 0)
     P["kind"] = kind
+    P["row"], P["seat"] = r, seat
     P["face"] = face(P, seed=seed, sleep=(kind == "child"))
     return P
 
@@ -460,7 +517,9 @@ def cabin_people(rows, occupancy=0.72, seed=3, skip=(), kinds=None):
     out = {}
     for r in rows:
         for k in SX:
-            if (r, k) in skip or rnd.random() > occupancy:
+            if (r, k) in skip:
+                continue
+            if rnd.random() > occupancy and (r, k) not in (kinds or {}):   # vorgegebene Plätze (Familie) immer besetzt
                 continue
             kind = (kinds or {}).get((r, k))
             out[(r, k)] = passenger(f"pax{r}{k}", r, k, seed=seed * 1000 + r * 10 + "ABCDEF".index(k), kind=kind)
@@ -491,6 +550,9 @@ def oxygen_masks(rows, t_drop, seed=0, sides=(-1, 1)):
             for k, x in enumerate((1.38, 0.92, 0.46)):
                 L = rnd.uniform(0.36, 0.48)
                 piv = Q.empty(f"msk{r}_{s_}_{k}", (x * s_, y, 1.6 + L))
+                piv["L"] = L
+                piv["seat"] = ("ABC" if s_ < 0 else "FED")[k]
+                piv["row"] = r
                 Q.limb(f"msktube{r}_{s_}_{k}", (0, 0, 0), (0, 0, -L), 0.0028, 0.0028, M["tube"], parent=piv, seg=6)
                 Q.cyl(f"mskcup{r}_{s_}_{k}", (0, 0, -L - 0.03), 0.045, 0.07, M["mask"], seg=16, parent=piv, r2=0.03)
                 Q.box(f"mskstrap{r}_{s_}_{k}", (0, 0, -L - 0.03), (0.1, 0.004, 0.01), M["tube"], parent=piv)

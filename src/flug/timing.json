@@ -1,19 +1,19 @@
 {
  "lines": [
   {
-   "file": "flug/line-2-0.wav",
-   "seconds": 1.726,
+   "file": "flug/line-5-0.wav",
+   "seconds": 1.282,
    "words": [
     {
      "word": "Ya",
-     "start": 0.18
+     "start": 0.14
     },
     {
      "word": "*Allah!*",
-     "start": 0.58
+     "start": 0.34
     }
    ],
-   "flow": 2,
+   "flow": 5,
    "stt": true
   },
   {
@@ -277,24 +277,24 @@
    "stt": true
   },
   {
-   "file": "flug/line-2-1.wav",
-   "seconds": 3.66,
+   "file": "flug/line-2-0.wav",
+   "seconds": 2.598,
    "words": [
     {
      "word": "Chill.",
-     "start": 1.24
+     "start": 0.14
     },
     {
      "word": "Das",
-     "start": 2.16
+     "start": 1.16
     },
     {
      "word": "passiert",
-     "start": 2.36
+     "start": 1.36
     },
     {
      "word": "*ständig*.",
-     "start": 2.74
+     "start": 1.8
     }
    ],
    "flow": 2,
@@ -413,8 +413,8 @@
    "stt": true
   },
   {
-   "file": "flug/line-2-2.wav",
-   "seconds": 5.1,
+   "file": "flug/line-5-1.wav",
+   "seconds": 2.7,
    "words": [
     {
      "word": "Ya",
@@ -422,55 +422,55 @@
     },
     {
      "word": "Allah!",
-     "start": 0.98
+     "start": 0.32
     },
     {
      "word": "Ya",
-     "start": 2.14
+     "start": 1.34
     },
     {
      "word": "Allah,",
-     "start": 3.0
+     "start": 1.52
     },
     {
      "word": "*rette*",
-     "start": 3.66
+     "start": 1.8
     },
     {
      "word": "uns!",
-     "start": 4.12
+     "start": 2.1
     }
    ],
-   "flow": 2,
+   "flow": 5,
    "stt": true
   },
   {
-   "file": "flug/line-5-0.wav",
-   "seconds": 2.959,
+   "file": "flug/line-5-2.wav",
+   "seconds": 2.628,
    "words": [
     {
      "word": "Ya",
-     "start": 0.18
+     "start": 0.26
     },
     {
      "word": "Rabbi",
-     "start": 0.38
+     "start": 0.46
     },
     {
      "word": "…",
-     "start": 0.94
+     "start": 1.0
     },
     {
      "word": "meine",
-     "start": 1.5
+     "start": 1.54
     },
     {
      "word": "*Kinder*",
-     "start": 1.88
+     "start": 1.86
     },
     {
      "word": "…",
-     "start": 2.18
+     "start": 2.16
     }
    ],
    "flow": 5,
@@ -645,56 +645,60 @@
    "stt": true
   },
   {
-   "file": "flug/line-2-3.wav",
-   "seconds": 4.062,
+   "file": "flug/line-2-1.wav",
+   "seconds": 3.82,
    "words": [
     {
-     "word": "Bruder,",
-     "start": 1.12
+     "word": "*Alhamdulillah*",
+     "start": 0.24
+    },
+    {
+     "word": "…",
+     "start": 1.23
     },
     {
      "word": "ich",
-     "start": 1.92
+     "start": 2.22
     },
     {
      "word": "dachte",
-     "start": 2.1
+     "start": 2.36
     },
     {
      "word": "echt,",
-     "start": 2.48
+     "start": 2.68
     },
     {
      "word": "das",
-     "start": 2.72
+     "start": 2.88
     },
     {
-     "word": "*war's*.",
-     "start": 2.98
+     "word": "war's.",
+     "start": 3.1
     }
    ],
    "flow": 2,
    "stt": true
   },
   {
-   "file": "flug/line-2-4.wav",
-   "seconds": 1.82,
+   "file": "flug/line-2-2.wav",
+   "seconds": 1.9,
    "words": [
     {
      "word": "Das",
-     "start": 0.14
+     "start": 0.18
     },
     {
      "word": "muss",
-     "start": 0.5
+     "start": 0.58
     },
     {
      "word": "ich",
-     "start": 0.7
+     "start": 0.82
     },
     {
      "word": "*posten*.",
-     "start": 0.86
+     "start": 1.0
     }
    ],
    "flow": 2,

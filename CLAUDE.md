@@ -357,3 +357,18 @@ Lokal reicht `npm run render:3d`.
   Blitz-Schlüssel (`FW.lightning`, 0 → 1 nach 0,03 s) fielen bei 30 fps teils auf DASSELBE Bild → die 0 wurde überschrieben und das
   Fensterlicht stieg sekundenlang an (Bild fast weiß). Helfer legt Schlüssel jetzt auf verschiedene Bilder. Teil-Neurendern einer Einstellung:
   `FRAMES=a-b` (Haupt- und `MID=1`-Bilder) in eigenen Ordner, erstes Bild per PSNR mit dem alten Video vergleichen, dann einsetzen.
+- **v2 (Nutzer, 28.11.2026: „Köpfe/Arme durch Sitze/TV, Masken benutzt keiner, Positionen komisch, Fensterlücken, Ya-Allah-Frau
+  kitschig, Chill = Clown-Stimme, Bruder-Satz passt nicht, TV zeigt nach Landung 23:05, Geschrei bei Landung“):**
+  - Stimmen: Albert (Nachbar) lag bei 300–500 Hz (klang wie Frau/Clown) -> Nachbar = Lennart `GoXyzBapJk3AoCJoMQl9` (Nutzer B),
+    „Ya Allah, rette uns“ + „Ya Rabbi … meine Kinder“ = Mutter, Stimme Freya `9zTcBiIWSks5baYw5ntG` (Nutzer A: mittlere Lage MIT Gefühl –
+    zu hoch = kitschig, zu tief = ohne Gefühl). Tonhöhe der Kandidaten messen (`scripts/flug_v2_voices.py`). l1 = „Alhamdulillah … ich dachte
+    echt, das war's.“
+  - Haltungen GERECHNET (`blender/qissa/flug_pose.py`): Zwei-Gelenk-IK `set_arm` (Hand an Weltpunkt), `brace_real` (Stirn 3 cm vor der
+    Lehne, Hände darüber), `hands_armrest`/`hands_lap`/`hands_dua`/`hands_clap`, Masken `put_on`/`take_off`/`wear_from_start`
+    (Maske am Kopf, Schlauch per STRETCH_TO zur Service-Leiste, Namen `mskw…` = nicht verschmelzen). Wackeln am KOPF-Gelenk, nicht am Nacken.
+    Prüfung `blender/qissa/flug_check.py` (DBGPY, nur sichtbare Punkte, Tiefe > 1 cm) -> vor dem Rendern alle Einstellungen auf ~0.
+  - Familie direkt HINTER mir (Reihe -1, wie in „kabine“): bei a3/a4 dreht sich die Kamera über die eigene Lehne um (Gesichter von vorn).
+    Eigener Maskenschlauch `visible_camera = False` (lief als unscharfer Balken vor der Linse). Flugbegleiterin kniet im Gang.
+  - Fenster: Superellipse-Schnitt GRÖSSER als der Schacht + Blende bündig auf der Wand + Schacht bis zur Scheibe (`window_well`), Rollo im Schacht.
+  - Bildschirm-Bilder `flug_ife*.png` (22:25 / NOCH 20 MIN / GELANDET / WILLKOMMEN 22:46) per `FW.set_ife`. Applaus neu `el_fl_applause2`
+    (altes hatte Jubelrufe – Geräusche per STT `tag_audio_events=true` prüfen).
