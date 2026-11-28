@@ -1,0 +1,10 @@
+{
+ "N-Simon":   {"voice": "K5ZVtkkBnuPY6YqXs70E", "lines": ["[relaxed, calm] Chill. Das passiert ständig.", "[exhales, relieved, shaky] Alhamdulillah ... ich dachte echt, das war's.", "[relieved, quietly amused] Das muss ich posten."]},
+ "N-Nils":    {"voice": "mk8kciAPymSDlinAde1e", "lines": ["[relaxed, calm] Chill. Das passiert ständig.", "[exhales, relieved, shaky] Alhamdulillah ... ich dachte echt, das war's.", "[relieved, quietly amused] Das muss ich posten."]},
+ "N-Markus":  {"voice": "IeQubAjK1ujbppIdhJw4", "lines": ["[relaxed, calm] Chill. Das passiert ständig.", "[exhales, relieved, shaky] Alhamdulillah ... ich dachte echt, das war's.", "[relieved, quietly amused] Das muss ich posten."]},
+ "N-Lennart": {"voice": "GoXyzBapJk3AoCJoMQl9", "lines": ["[relaxed, calm] Chill. Das passiert ständig.", "[exhales, relieved, shaky] Alhamdulillah ... ich dachte echt, das war's.", "[relieved, quietly amused] Das muss ich posten."]},
+ "F-Amira":   {"voice": "FOfJ2PMgU6HOGbNYnzto", "lines": ["[urgent, frightened, loud] Yaa Allaah!", "[desperate, loud, praying] Yaa Allaah! Yaa Allaah, rette uns!", "[trembling, desperate, quietly crying] Ya Rabbi ... meine Kinder ..."]},
+ "F-Dana":    {"voice": "otF9rqKzRHFgfwf6serQ", "lines": ["[urgent, frightened, loud] Yaa Allaah!", "[desperate, loud, praying] Yaa Allaah! Yaa Allaah, rette uns!", "[trembling, desperate, quietly crying] Ya Rabbi ... meine Kinder ..."]},
+ "F-Lea":     {"voice": "7eVMgwCnXydb3CikjV7a", "lines": ["[urgent, frightened, loud] Yaa Allaah!", "[desperate, loud, praying] Yaa Allaah! Yaa Allaah, rette uns!", "[trembling, desperate, quietly crying] Ya Rabbi ... meine Kinder ..."]},
+ "F-Annika":  {"voice": "ViKqgJNeCiWZlYgHiAOO", "lines": ["[urgent, frightened, loud] Yaa Allaah!", "[desperate, loud, praying] Yaa Allaah! Yaa Allaah, rette uns!", "[trembling, desperate, quietly crying] Ya Rabbi ... meine Kinder ..."]}
+}
