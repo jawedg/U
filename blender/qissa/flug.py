@@ -1258,7 +1258,10 @@ if os.environ.get("CAMDBG"):
     sys.exit(0)
 os.makedirs(OUT, exist_ok=True)
 if os.environ.get("MID") == "1":
-    for k in range(sc.frame_start, sc.frame_end):
+    ks = range(sc.frame_start, sc.frame_end)
+    if os.environ.get("MIDLIST"):   # nur diese Zwischenbilder, z. B. "8-18,44-52" (schnelle Schwenks, sonst minterpolate)
+        ks = [k for part in os.environ["MIDLIST"].split(",") for k in range(int(part.split("-")[0]), int(part.split("-")[-1]) + 1)]
+    for k in ks:
         fp = os.path.join(OUT, f"{k:04d}.png")
         try:
             os.close(os.open(fp, os.O_CREAT | os.O_EXCL | os.O_WRONLY))
