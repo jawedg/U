@@ -24,15 +24,17 @@ for ((a = 0; a < N; a += CH)); do
 done
 echo "🎞  zusammenfügen $(date -u +%T)"
 ffmpeg -loglevel error -y -f concat -safe 0 -i out/fl_parts/list.txt -i public/flug/master.wav \
-  -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart "out/$NAME.mp4"
+  -map 0:v -map 1:a -c:v copy -af "afade=t=in:d=0.02" -c:a aac -b:a 192k -shortest -movflags +faststart "out/$NAME.mp4"
+# (20-ms-Einblendung: der Einstieg beginnt sofort laut -> AAC überschwang sonst im ersten Block auf +2,8 dBFS = Knacken)
 # kleine Version: HEVC (H.265, ~halbe Datenmenge bei gleicher Qualität -> keine Klötzchen), 2 Durchgänge, ≤ 58 MB
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "out/$NAME.mp4")
 VB=$(python3 -c "print(int(58*8*1024/float('$DUR') - 170))")
 X265="aq-mode=3:psy-rd=1.5:deblock=-1,-1:log-level=error"
 echo "📦 HEVC ${VB}k $(date -u +%T)"
 ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx265 -preset slow -b:v "${VB}k" -x265-params "pass=1:$X265" -an -f mp4 /dev/null
-ffmpeg -loglevel error -y -i "out/$NAME.mp4" -c:v libx265 -preset slow -b:v "${VB}k" -x265-params "pass=2:$X265" -tag:v hvc1 \
-  -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart "out/$NAME-klein.mp4"
+ffmpeg -loglevel error -y -i "out/$NAME.mp4" -i public/flug/master.wav -map 0:v -map 1:a -c:v libx265 -preset slow -b:v "${VB}k" \
+  -x265-params "pass=2:$X265" -tag:v hvc1 -pix_fmt yuv420p -af "afade=t=in:d=0.02" -c:a aac -b:a 160k -shortest \
+  -movflags +faststart "out/$NAME-klein.mp4"
 rm -f x265_2pass.log x265_2pass.log.cutree
 ls -la "out/$NAME.mp4" "out/$NAME-klein.mp4"
 echo "✅ fertig: out/$NAME-klein.mp4 $(date -u +%T)"
